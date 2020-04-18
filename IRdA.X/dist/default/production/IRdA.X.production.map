@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+dist/default/production\IRdA.X.production.sym \
   --cmf=dist/default/production\IRdA.X.production.cmf -z -Q16LF1455 \
-  -oC:\Users\jense\AppData\Local\Temp\sccs.6 \
+  -oC:\Users\jense\AppData\Local\Temp\s5fs.6 \
   -Mdist/default/production/IRdA.X.production.map -E1 -ver=XC8 \
   -ASTACK=02000h-0231fh -pstack=STACK -ACONST=00h-0FFhx32 \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -AENTRY=00h-0FFhx32 \
@@ -31,7 +31,7 @@ Linker command line:
   -ppowerup=CODE -pcinit=CODE -pfunctab=CODE -ACONFIG=08007h-08008h \
   -pconfig=CONFIG -DCONFIG=2 -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 \
   -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\jense\AppData\Local\Temp\sccs.obj \
+  C:\Users\jense\AppData\Local\Temp\s5fs.obj \
   dist/default/production\IRdA.X.production.obj 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 16LF1455
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\jense\AppData\Local\Temp\sccs.obj
+C:\Users\jense\AppData\Local\Temp\s5fs.obj
                 end_init                             17       17        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2    1000E       0

@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
     RCSTAbits.SPEN = 1;
     //RC4 has no ANSEL bit
     
-    
+    //This is a line to test what happens when switching branches
     
     TRISAbits.TRISA5 = 0;
     LATAbits.LATA5 = 0;
