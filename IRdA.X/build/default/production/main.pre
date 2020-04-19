@@ -3360,13 +3360,18 @@ extern unsigned int flash_read(unsigned short addr);
 extern __nonreentrant void _delay(unsigned long);
 
 
-# 21 "main.c"
+# 23 "main.c"
 #pragma config FOSC=INTOSC, FCMEN=ON, WDTE=OFF, IESO=ON, LVP=ON
 #pragma config PWRTE = OFF, BOREN = ON, STVREN = OFF, PLLEN = DISABLED
 
-# 28
+# 30
 void configureInterrupt();
+void configureUART();
+configureUARTrXint();
 volatile char check = 0;
+volatile char rxChar = 0;
+
+
 
 interrupt ISR(void){
 if(INTCONbits.IOCIF){
@@ -3377,6 +3382,11 @@ check = 1;
 
 }
 
+if(PIR1bits.RCIF){
+check = 1;
+rxChar = RCREG;
+}
+
 
 return;
 }
@@ -3384,26 +3394,24 @@ return;
 
 int main(int argc, char** argv) {
 
+configUART();
 
-TXSTAbits.TXEN = 1;
-TXSTAbits.SYNC = 0;
-RCSTAbits.SPEN = 1;
-
-
-
-
+# 73
+configureUARTrXint();
 TRISAbits.TRISA5 = 0;
 LATAbits.LATA5 = 0;
-configureInterrupt();
 while(1){
-if(check){
-LATAbits.LATA5 ^= 1;
+if (check){
 check = 0;
+
+
+if (rxChar =='a'){
+rxChar = 0;
+LATAbits.LATA5 ^= 1;
+}
+}
 }
 
-
-
-}
 return (0);
 }
 
@@ -3416,4 +3424,27 @@ IOCANbits.IOCAN0 = 1;
 
 
 
+}
+
+configUART(){
+
+TXSTAbits.TXEN = 1;
+TXSTAbits.SYNC = 0;
+RCSTAbits.SPEN = 1;
+
+
+
+RCSTAbits.CREN = 1;
+
+
+
+TXSTAbits.BRGH = 0;
+BAUDCONbits.BRG16 = 0;
+SPBRGL = 25;
+}
+
+configureUARTrXint(){
+PIE1bits.RCIE = 1;
+INTCONbits.PEIE = 1;
+INTCONbits.GIE = 1;
 }

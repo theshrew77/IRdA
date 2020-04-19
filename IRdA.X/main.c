@@ -12,6 +12,8 @@
 #define LEDoffPin 4
 #define LEDlat LATC
 
+#define slave
+
 //#include <stdio.h>
 //#include <stdlib.h>
 #include <xc.h>
@@ -26,7 +28,12 @@
  */
 
 void configureInterrupt();
+void configureUART();
+configureUARTrXint();
 volatile char check = 0;
+volatile char rxChar = 0;
+
+
 
 interrupt ISR(void){
     if(INTCONbits.IOCIF){
@@ -37,6 +44,11 @@ interrupt ISR(void){
         
     }
     
+    if(PIR1bits.RCIF){
+        check = 1;
+        rxChar = RCREG;
+    }
+    
     
     return;
 }
@@ -44,26 +56,35 @@ interrupt ISR(void){
 
 int main(int argc, char** argv) {
     
-    //configure UART
-    TXSTAbits.TXEN = 1;
-    TXSTAbits.SYNC = 0;
-    RCSTAbits.SPEN = 1;
-    //RC4 has no ANSEL bit
-    
-    //This is a line to test what happens when switching branches
-    
-    TRISAbits.TRISA5 = 0;
-    LATAbits.LATA5 = 0;
+    configUART();
+
+#ifdef master
+
     configureInterrupt();
     while(1){
         if(check){
-            LATAbits.LATA5 ^= 1;
             check = 0;
+            TXREG = 'a';
         }
-        //__delay_ms(20);
-        //LATAbits.LATA5 = 0;
-        //__delay_ms(20);
     }
+#endif master
+    
+#ifdef slave
+    configureUARTrXint();
+    TRISAbits.TRISA5 = 0;
+    LATAbits.LATA5 = 0;
+    while(1){
+        if (check){
+            check = 0;
+            //retrieve RX buffer contents
+            
+            if (rxChar =='a'){
+                rxChar = 0;
+                LATAbits.LATA5 ^= 1;
+            }
+        }
+    }
+#endif    
     return (EXIT_SUCCESS);
 }
 
@@ -76,4 +97,27 @@ void configureInterrupt(){
     //configure RA0 as intterupt on change
     //RA0 is always input so don't need to set TRIS
     //RA0 has no ANSEL requirement
+}
+
+configUART(){
+    //Enable TX
+    TXSTAbits.TXEN = 1; //enable transmitter circuitry
+    TXSTAbits.SYNC = 0; // configure for asynchronous operation
+    RCSTAbits.SPEN = 1; //enable EUSART and configure TX as output
+    //TX/RC4 has no ANSEL bit
+    
+    //enable RX
+    RCSTAbits.CREN = 1; //enable receiver circuitry
+    
+    
+    //configure 9600 baud
+    TXSTAbits.BRGH = 0;
+    BAUDCONbits.BRG16 = 0;
+    SPBRGL = 25;
+}
+
+configureUARTrXint(){
+    PIE1bits.RCIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
 }
