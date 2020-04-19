@@ -34,24 +34,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
 "59 main.c
 [v _configUART `(i ~T0 @X0 0 ef ]
-"32
-[v _configureUARTrXint `(i ~T0 @X0 0 ef ]
-"929 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16lf1455.h
-[s S62 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S62 . . TRISA4 TRISA5 ]
-"928
-[u S61 `S62 1 ]
-[n S61 . . ]
-"935
-[v _TRISAbits `VS61 ~T0 @X0 0 e@140 ]
-"1724
-[s S100 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S100 . . LATA4 LATA5 ]
-"1723
-[u S99 `S100 1 ]
-[n S99 . . ]
-"1730
-[v _LATAbits `VS99 ~T0 @X0 0 e@268 ]
+"30
+[v _configureInterrupt `(v ~T0 @X0 0 ef ]
+"2573 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16lf1455.h
+[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
 "335
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
 "3623
@@ -2645,122 +2631,105 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 59: configUART();
 "59
 [e ( _configUART ..  ]
-[; ;main.c: 73: configureUARTrXint();
-"73
-[e ( _configureUARTrXint ..  ]
-[; ;main.c: 74: TRISAbits.TRISA5 = 0;
-"74
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 75: LATAbits.LATA5 = 0;
-"75
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 76: while(1){
-"76
+[; ;main.c: 62: configureInterrupt();
+"62
+[e ( _configureInterrupt ..  ]
+[; ;main.c: 63: while(1){
+"63
 [e :U 309 ]
 {
-[; ;main.c: 77: if (check){
-"77
+[; ;main.c: 64: if(check){
+"64
 [e $ ! != -> _check `i -> -> -> 0 `i `Vuc `i 311  ]
 {
-[; ;main.c: 78: check = 0;
-"78
+[; ;main.c: 65: check = 0;
+"65
 [e = _check -> -> 0 `i `uc ]
-[; ;main.c: 81: if (rxChar =='a'){
-"81
-[e $ ! == -> _rxChar `ui -> 97 `ui 312  ]
-{
-[; ;main.c: 82: rxChar = 0;
-"82
-[e = _rxChar -> -> 0 `i `uc ]
-[; ;main.c: 83: LATAbits.LATA5 ^= 1;
-"83
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"84
-}
-[e :U 312 ]
-"85
+[; ;main.c: 66: TXREG = 'a';
+"66
+[e = _TXREG -> -> 97 `ui `uc ]
+"68
 }
 [e :U 311 ]
-"86
+"69
 }
 [e :U 308 ]
-"76
+"63
 [e $U 309  ]
 [e :U 310 ]
-[; ;main.c: 84: }
-[; ;main.c: 85: }
-[; ;main.c: 86: }
-[; ;main.c: 88: return (0);
-"88
+[; ;main.c: 68: }
+[; ;main.c: 69: }
+[; ;main.c: 89: return (0);
+"89
 [e ) -> 0 `i ]
 [e $UE 307  ]
-[; ;main.c: 89: }
-"89
+[; ;main.c: 90: }
+"90
 [e :UE 307 ]
 }
-"92
+"93
 [v _configureInterrupt `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 92: void configureInterrupt(){
+[; ;main.c: 93: void configureInterrupt(){
 [e :U _configureInterrupt ]
 [f ]
-[; ;main.c: 94: INTCON = 0b10001000;
-"94
-[e = _INTCON -> -> 136 `i `uc ]
-[; ;main.c: 95: IOCANbits.IOCAN0 = 1;
+[; ;main.c: 95: INTCON = 0b10001000;
 "95
+[e = _INTCON -> -> 136 `i `uc ]
+[; ;main.c: 96: IOCANbits.IOCAN0 = 1;
+"96
 [e = . . _IOCANbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 100: }
-"100
-[e :UE 313 ]
+[; ;main.c: 101: }
+"101
+[e :UE 312 ]
 }
-"102
+"103
 [v _configUART `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 102: configUART(){
+[; ;main.c: 103: configUART(){
 [e :U _configUART ]
 [f ]
-[; ;main.c: 104: TXSTAbits.TXEN = 1;
-"104
-[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 105: TXSTAbits.SYNC = 0;
+[; ;main.c: 105: TXSTAbits.TXEN = 1;
 "105
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 106: RCSTAbits.SPEN = 1;
+[e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 106: TXSTAbits.SYNC = 0;
 "106
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 107: RCSTAbits.SPEN = 1;
+"107
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 110: RCSTAbits.CREN = 1;
-"110
+[; ;main.c: 111: RCSTAbits.CREN = 1;
+"111
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 114: TXSTAbits.BRGH = 0;
-"114
-[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 115: BAUDCONbits.BRG16 = 0;
+[; ;main.c: 115: TXSTAbits.BRGH = 0;
 "115
-[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 116: SPBRGL = 25;
+[e = . . _TXSTAbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 116: BAUDCONbits.BRG16 = 0;
 "116
-[e = _SPBRGL -> -> 25 `i `uc ]
-[; ;main.c: 117: }
+[e = . . _BAUDCONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 117: SPBRGL = 25;
 "117
-[e :UE 314 ]
+[e = _SPBRGL -> -> 25 `i `uc ]
+[; ;main.c: 118: }
+"118
+[e :UE 313 ]
 }
-"119
+"120
 [v _configureUARTrXint `(i ~T0 @X0 1 ef ]
 {
-[; ;main.c: 119: configureUARTrXint(){
+[; ;main.c: 120: configureUARTrXint(){
 [e :U _configureUARTrXint ]
 [f ]
-[; ;main.c: 120: PIE1bits.RCIE = 1;
-"120
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 121: INTCONbits.PEIE = 1;
+[; ;main.c: 121: PIE1bits.RCIE = 1;
 "121
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 122: INTCONbits.GIE = 1;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 122: INTCONbits.PEIE = 1;
 "122
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 123: }
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 123: INTCONbits.GIE = 1;
 "123
-[e :UE 315 ]
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 124: }
+"124
+[e :UE 314 ]
 }

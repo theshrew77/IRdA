@@ -3396,22 +3396,17 @@ int main(int argc, char** argv) {
 
 configUART();
 
-# 73
-configureUARTrXint();
-TRISAbits.TRISA5 = 0;
-LATAbits.LATA5 = 0;
+
+configureInterrupt();
 while(1){
-if (check){
+if(check){
 check = 0;
+TXREG = 'a';
 
-
-if (rxChar =='a'){
-rxChar = 0;
-LATAbits.LATA5 ^= 1;
-}
 }
 }
 
+# 89
 return (0);
 }
 

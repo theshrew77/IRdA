@@ -12,7 +12,7 @@
 #define LEDoffPin 4
 #define LEDlat LATC
 
-#define slave
+#define master
 
 //#include <stdio.h>
 //#include <stdlib.h>
@@ -59,12 +59,12 @@ int main(int argc, char** argv) {
     configUART();
 
 #ifdef master
-
     configureInterrupt();
     while(1){
         if(check){
             check = 0;
             TXREG = 'a';
+            //SLEEP();
         }
     }
 #endif master
@@ -82,6 +82,7 @@ int main(int argc, char** argv) {
                 rxChar = 0;
                 LATAbits.LATA5 ^= 1;
             }
+            //SLEEP();
         }
     }
 #endif    
