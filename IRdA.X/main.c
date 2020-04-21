@@ -12,7 +12,7 @@
 #define LEDoffPin 4
 #define LEDlat LATC
 
-#define master
+#define slave
 
 //#include <stdio.h>
 //#include <stdlib.h>
@@ -21,7 +21,7 @@
 //#include <pic16f1455.h>
 
 #pragma config FOSC=INTOSC, FCMEN=ON, WDTE=OFF, IESO=ON, LVP=ON 
-#pragma config  PWRTE = OFF, BOREN = ON, STVREN = OFF, PLLEN = DISABLED
+#pragma config  PWRTE = OFF, BOREN = ON, STVREN = OFF, PLLEN = DISABLED, CLKOUTEN=ON
 
 /*
  * 
@@ -55,9 +55,9 @@ interrupt ISR(void){
 
 
 int main(int argc, char** argv) {
-    
+    OSCCON |= 0b00111110; //set oscilator frequency to 16MHz
     configUART();
-
+    //TRISAbits.TRISA4 = 0;
 #ifdef master
     configureInterrupt();
     while(1){

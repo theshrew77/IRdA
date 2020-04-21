@@ -32,12 +32,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 "2554
 [v _RCREG `Vuc ~T0 @X0 0 e@409 ]
 [p mainexit ]
+"1364
+[v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
 "59 main.c
 [v _configUART `(i ~T0 @X0 0 ef ]
-"30
-[v _configureInterrupt `(v ~T0 @X0 0 ef ]
-"2573 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16lf1455.h
-[v _TXREG `Vuc ~T0 @X0 0 e@410 ]
+"32
+[v _configureUARTrXint `(i ~T0 @X0 0 ef ]
+"929 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16lf1455.h
+[s S62 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S62 . . TRISA4 TRISA5 ]
+"928
+[u S61 `S62 1 ]
+[n S61 . . ]
+"935
+[v _TRISAbits `VS61 ~T0 @X0 0 e@140 ]
+"1724
+[s S100 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S100 . . LATA4 LATA5 ]
+"1723
+[u S99 `S100 1 ]
+[n S99 . . ]
+"1730
+[v _LATAbits `VS99 ~T0 @X0 0 e@268 ]
 "335
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
 "3623
@@ -2560,6 +2576,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x BOREN=ON ]
 [p x STVREN=OFF ]
 [p x PLLEN=DISABLED ]
+[p x CLKOUTEN=ON ]
 [; ;main.c: 30: void configureInterrupt();
 [; ;main.c: 31: void configureUART();
 [; ;main.c: 32: configureUARTrXint();
@@ -2628,37 +2645,57 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
+[; ;main.c: 58: OSCCON |= 0b00111110;
+"58
+[e =| _OSCCON -> -> 62 `i `uc ]
 [; ;main.c: 59: configUART();
 "59
 [e ( _configUART ..  ]
-[; ;main.c: 62: configureInterrupt();
-"62
-[e ( _configureInterrupt ..  ]
-[; ;main.c: 63: while(1){
-"63
+[; ;main.c: 73: configureUARTrXint();
+"73
+[e ( _configureUARTrXint ..  ]
+[; ;main.c: 74: TRISAbits.TRISA5 = 0;
+"74
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 75: LATAbits.LATA5 = 0;
+"75
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 76: while(1){
+"76
 [e :U 309 ]
 {
-[; ;main.c: 64: if(check){
-"64
+[; ;main.c: 77: if (check){
+"77
 [e $ ! != -> _check `i -> -> -> 0 `i `Vuc `i 311  ]
 {
-[; ;main.c: 65: check = 0;
-"65
+[; ;main.c: 78: check = 0;
+"78
 [e = _check -> -> 0 `i `uc ]
-[; ;main.c: 66: TXREG = 'a';
-"66
-[e = _TXREG -> -> 97 `ui `uc ]
-"68
+[; ;main.c: 81: if (rxChar =='a'){
+"81
+[e $ ! == -> _rxChar `ui -> 97 `ui 312  ]
+{
+[; ;main.c: 82: rxChar = 0;
+"82
+[e = _rxChar -> -> 0 `i `uc ]
+[; ;main.c: 83: LATAbits.LATA5 ^= 1;
+"83
+[e =^ . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"84
+}
+[e :U 312 ]
+"86
 }
 [e :U 311 ]
-"69
+"87
 }
 [e :U 308 ]
-"63
+"76
 [e $U 309  ]
 [e :U 310 ]
-[; ;main.c: 68: }
-[; ;main.c: 69: }
+[; ;main.c: 84: }
+[; ;main.c: 86: }
+[; ;main.c: 87: }
 [; ;main.c: 89: return (0);
 "89
 [e ) -> 0 `i ]
@@ -2681,7 +2718,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _IOCANbits 0 0 -> -> 1 `i `uc ]
 [; ;main.c: 101: }
 "101
-[e :UE 312 ]
+[e :UE 313 ]
 }
 "103
 [v _configUART `(i ~T0 @X0 1 ef ]
@@ -2712,7 +2749,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _SPBRGL -> -> 25 `i `uc ]
 [; ;main.c: 118: }
 "118
-[e :UE 313 ]
+[e :UE 314 ]
 }
 "120
 [v _configureUARTrXint `(i ~T0 @X0 1 ef ]
@@ -2731,5 +2768,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 [; ;main.c: 124: }
 "124
-[e :UE 314 ]
+[e :UE 315 ]
 }
