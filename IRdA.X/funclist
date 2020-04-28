@@ -1,6 +1,6 @@
-_ISR: CODE, 4 0 31
-_main: CODE, 43 0 40
-__initialization: CODE, 37 0 2
-_configureUARTrXint: CODE, 93 0 5
-_configUART: CODE, 83 0 10
-Total: 88
+_ISR: CODE, 4 0 30
+_main: CODE, 43 0 49
+__initialization: CODE, 36 0 3
+_configureUARTrXint: CODE, 102 0 5
+_configUART: CODE, 92 0 10
+Total: 97

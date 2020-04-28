@@ -32,6 +32,7 @@ void configureUART();
 configureUARTrXint();
 volatile char check = 0;
 volatile char rxChar = 0;
+volatile char rxChar2 = 0;
 
 
 
@@ -40,13 +41,19 @@ interrupt ISR(void){
 
         IOCAFbits.IOCAF0 = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         INTCONbits.IOCIF = 0;
-        check = 1;
+        //check = 1;
         
     }
     
     if(PIR1bits.RCIF){
+        TXREG = 'a';
+        //BAUDCONbits.WUE=1; //doesn't work
         check = 1;
         rxChar = RCREG;
+        //rxChar2 = RCREG; //doesn't work
+        BAUDCONbits.WUE = 1; //making this ^= always makes the interrupt run twice
+        //rxChar2 = RCREG; //doesnt work
+        
     }
     
     
@@ -55,7 +62,10 @@ interrupt ISR(void){
 
 
 int main(int argc, char** argv) {
+    //INTCONbits.PEIE = 0;
+    //INTCONbits.GIE = 0;
     OSCCON |= 0b00111110; //set oscilator frequency to 16MHz
+//    __delay_ms(10);
     configUART();
     //TRISAbits.TRISA4 = 0;
 #ifdef master
@@ -71,19 +81,32 @@ int main(int argc, char** argv) {
     
 #ifdef slave
     configureUARTrXint();
-    TRISAbits.TRISA5 = 0;
-    LATAbits.LATA5 = 0;
+    TRISCbits.TRISC3 = 0;
+    LATCbits.LATC3 = 1;
+    
+
+    
+    check = 0;
     while(1){
+ 
         if (check){
             check = 0;
+            __delay_ms(10); //with this delay the interrupt still fires 2x but the LED behaves as expected
+            
+            //TXREG = 'b';
             //retrieve RX buffer contents
             
-            if (rxChar =='a'){
+            //if (rxChar =='a'){
                 rxChar = 0;
-                LATAbits.LATA5 ^= 1;
-            }
-            //SLEEP();
+                LATCbits.LATC3 ^= 1; //This has nothing to do with it
+                //BAUDCONbits.WUE = 1; //doesn't work
+            //}
+            //check = 0;
+
         }
+        //BAUDCONbits.WUE = 1; //putting this here calls the interrupt twice but LED behavior is normal
+        //SLEEP();
+        NOP();
     }
 #endif    
     return (EXIT_SUCCESS);
@@ -115,6 +138,8 @@ configUART(){
     TXSTAbits.BRGH = 0;
     BAUDCONbits.BRG16 = 0;
     SPBRGL = 25;
+    
+    //BAUDCONbits.WUE = 1;
 }
 
 configureUARTrXint(){

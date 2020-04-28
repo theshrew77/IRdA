@@ -3370,6 +3370,7 @@ void configureUART();
 configureUARTrXint();
 volatile char check = 0;
 volatile char rxChar = 0;
+volatile char rxChar2 = 0;
 
 
 
@@ -3378,13 +3379,19 @@ if(INTCONbits.IOCIF){
 
 IOCAFbits.IOCAF0 = 0;
 INTCONbits.IOCIF = 0;
-check = 1;
+
 
 }
 
 if(PIR1bits.RCIF){
+TXREG = 'a';
+
 check = 1;
 rxChar = RCREG;
+
+BAUDCONbits.WUE = 1;
+
+
 }
 
 
@@ -3393,24 +3400,37 @@ return;
 
 
 int main(int argc, char** argv) {
+
+
 OSCCON |= 0b00111110;
+
 configUART();
 
-# 73
+# 83
 configureUARTrXint();
-TRISAbits.TRISA5 = 0;
-LATAbits.LATA5 = 0;
+TRISCbits.TRISC3 = 0;
+LATCbits.LATC3 = 1;
+
+
+
+check = 0;
 while(1){
+
 if (check){
 check = 0;
+_delay((unsigned long)((10)*(16000000/4000.0)));
 
-
-if (rxChar =='a'){
+# 100
 rxChar = 0;
-LATAbits.LATA5 ^= 1;
-}
+LATCbits.LATC3 ^= 1;
+
+
+
 
 }
+
+
+__nop();
 }
 
 return (0);
@@ -3442,6 +3462,8 @@ RCSTAbits.CREN = 1;
 TXSTAbits.BRGH = 0;
 BAUDCONbits.BRG16 = 0;
 SPBRGL = 25;
+
+
 }
 
 configureUARTrXint(){
