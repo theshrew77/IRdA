@@ -19,7 +19,7 @@
 #include <xc.h>
 
 #pragma config FOSC=INTOSC, FCMEN=ON, WDTE=OFF, IESO=ON, LVP=ON 
-#pragma config  PWRTE = OFF, BOREN = ON, STVREN = OFF, CLKOUTEN=ON
+#pragma config  PWRTE = OFF, BOREN = ON, PLLEN = ON, STVREN = OFF, CLKOUTEN=ON
 //test
 /*
  * 
