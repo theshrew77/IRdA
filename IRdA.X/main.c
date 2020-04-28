@@ -19,7 +19,7 @@
 #include <xc.h>
 
 #pragma config FOSC=INTOSC, FCMEN=ON, WDTE=OFF, IESO=ON, LVP=ON 
-#pragma config  PWRTE = OFF, BOREN = ON, PLLEN = ON, STVREN = OFF, CLKOUTEN=ON
+#pragma config  PWRTE = OFF, BOREN = ON, PLLEN = ENABLED, STVREN = OFF, CLKOUTEN=ON
 //test
 /*
  * 
@@ -31,7 +31,6 @@ configureUARTrXint();
 volatile char check = 0;
 volatile char rxChar = 0;
 volatile char rxChar2 = 0;
-
 
 
 interrupt ISR(void){

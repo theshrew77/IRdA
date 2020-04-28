@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\jense\AppData\Local\Temp\s1b0.obj
+$C:\Users\jense\AppData\Local\Temp\sdes.obj
 end_init CODE 0 22 22 2 2
 reset_vec CODE 0 0 0 2 2
 config CONFIG 0 8007 8007 2 2
@@ -116,54 +116,54 @@ STRING 0006B-01FFF 2
 %LINETAB
 $dist/default/production\IRdA.X.production.obj
 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16lf1455.h":5560 4 intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":39 4 intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":40 9 intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":42 B intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":43 D intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":46 E intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":48 E intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":49 11 intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":51 14 intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":52 18 intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":54 1C intentry CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":61 1D intentry CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":391 24 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":394 24 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":411 24 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":412 25 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":413 26 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":419 27 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":420 27 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":421 28 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\s1b0.":422 29 cinit CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":36 4 intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":37 9 intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":39 B intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":40 D intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":43 E intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":45 E intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":46 11 intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":48 14 intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":49 18 intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":51 1C intentry CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":58 1D intentry CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":391 24 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":394 24 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":411 24 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":412 25 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":413 26 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":419 27 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":420 27 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":421 28 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\sdes.":422 29 cinit CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":61 2B maintext CODE
 "C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":64 2B maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":67 2B maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":69 30 maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":83 33 maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":84 36 maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":85 38 maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":89 3A maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":92 3B maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":93 3E maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":94 3F maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":100 48 maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":101 49 maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":109 5A maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":90 5B maintext CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":126 5C text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":128 5C text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":129 5E text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":130 5F text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":134 60 text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":138 61 text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":139 62 text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":140 63 text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":143 65 text2 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":145 66 text1 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":146 66 text1 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":147 68 text1 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":148 69 text1 CODE
-"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":149 6A text1 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":66 30 maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":80 33 maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":81 36 maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":82 38 maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":86 3A maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":89 3B maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":90 3E maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":91 3F maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":97 48 maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":98 49 maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":106 5A maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":87 5B maintext CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":123 5C text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":125 5C text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":126 5E text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":127 5F text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":131 60 text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":135 61 text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":136 62 text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":137 63 text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":140 65 text2 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":142 66 text1 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":143 66 text1 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":144 68 text1 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":145 69 text1 CODE
+"C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":146 6A text1 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -186,15 +186,15 @@ __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\IRdA.X.production.obj
 __size_of_configUART 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _main 56 0 CODE 0 maintext dist/default/production\IRdA.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\s1b0.obj
+___sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\sdes.obj
 btemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 ttemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-start 44 0 CODE 0 init C:\Users\jense\AppData\Local\Temp\s1b0.obj
+start 44 0 CODE 0 init C:\Users\jense\AppData\Local\Temp\sdes.obj
 _RCREG 199 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _TXREG 19A 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\jense\AppData\Local\Temp\s1b0.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\jense\AppData\Local\Temp\sdes.obj
 ltemp0 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 ttemp0 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
@@ -229,7 +229,7 @@ __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _PIR1bits 11 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __CFG_CLKOUTEN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _LATCbits 10E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\s1b0.obj
+___int_sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\sdes.obj
 _configureUARTrXint CC 0 CODE 0 text1 dist/default/production\IRdA.X.production.obj
 _SPBRGL 19B 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\IRdA.X.production.obj
@@ -259,9 +259,9 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-stackhi 231F 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\s1b0.obj
+stackhi 231F 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\sdes.obj
 _rxChar 79 0 COMMON 1 bssCOMMON dist/default/production\IRdA.X.production.obj
-stacklo 2000 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\s1b0.obj
+stacklo 2000 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\sdes.obj
 __Hinit 44 0 CODE 0 init -
 __Linit 44 0 CODE 0 init -
 __end_of_main B8 0 CODE 0 maintext dist/default/production\IRdA.X.production.obj
@@ -349,7 +349,6 @@ __ptext1 CC 0 CODE 0 text1 dist/default/production\IRdA.X.production.obj
 __ptext2 B8 0 CODE 0 text2 dist/default/production\IRdA.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
-__CFG_PLLEN$DISABLED 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __end_of__initialization 4E 0 CODE 0 cinit dist/default/production\IRdA.X.production.obj
 _BAUDCONbits 19F 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __size_of_configureUARTrXint 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
@@ -425,13 +424,13 @@ __Hend_init 48 0 CODE 0 end_init -
 __Lend_init 44 0 CODE 0 end_init -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-intlevel0 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
+intlevel0 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\sdes.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-intlevel1 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
-intlevel2 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
-intlevel3 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
-intlevel4 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
-intlevel5 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
+intlevel1 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\sdes.obj
+intlevel2 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\sdes.obj
+intlevel3 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\sdes.obj
+intlevel4 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\sdes.obj
+intlevel5 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\sdes.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.obj
@@ -439,6 +438,7 @@ start_initialization 48 0 CODE 0 cinit dist/default/production\IRdA.X.production
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
 __pmaintext 56 0 CODE 0 maintext dist/default/production\IRdA.X.production.obj
+__CFG_PLLEN$ENABLED 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __initialization 48 0 CODE 0 cinit dist/default/production\IRdA.X.production.obj
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
