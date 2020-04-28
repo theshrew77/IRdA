@@ -17,11 +17,9 @@
 //#include <stdio.h>
 //#include <stdlib.h>
 #include <xc.h>
-#include <pic16lf1455.h>
-//#include <pic16f1455.h>
 
 #pragma config FOSC=INTOSC, FCMEN=ON, WDTE=OFF, IESO=ON, LVP=ON 
-#pragma config  PWRTE = OFF, BOREN = ON, STVREN = OFF, PLLEN = DISABLED, CLKOUTEN=ON
+#pragma config  PWRTE = OFF, BOREN = ON, STVREN = OFF, CLKOUTEN=ON
 //test
 /*
  * 
