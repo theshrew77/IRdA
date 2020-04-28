@@ -22,7 +22,7 @@
 
 #pragma config FOSC=INTOSC, FCMEN=ON, WDTE=OFF, IESO=ON, LVP=ON 
 #pragma config  PWRTE = OFF, BOREN = ON, STVREN = OFF, PLLEN = DISABLED, CLKOUTEN=ON
-
+//test
 /*
  * 
  */

@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\jense\AppData\Local\Temp\se7g.obj
+$C:\Users\jense\AppData\Local\Temp\s1b0.obj
 end_init CODE 0 22 22 2 2
 reset_vec CODE 0 0 0 2 2
 config CONFIG 0 8007 8007 2 2
@@ -127,15 +127,15 @@ $dist/default/production\IRdA.X.production.obj
 "C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":52 18 intentry CODE
 "C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":54 1C intentry CODE
 "C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":61 1D intentry CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":391 24 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":394 24 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":411 24 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":412 25 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":413 26 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":419 27 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":420 27 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":421 28 cinit CODE
-"C:\Users\jense\AppData\Local\Temp\se7g.":422 29 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":391 24 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":394 24 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":411 24 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":412 25 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":413 26 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":419 27 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":420 27 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":421 28 cinit CODE
+"C:\Users\jense\AppData\Local\Temp\s1b0.":422 29 cinit CODE
 "C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":64 2B maintext CODE
 "C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":67 2B maintext CODE
 "C:\Users\jense\MPLABXProjects\IRdA\IRdA.X\main.c":69 30 maintext CODE
@@ -186,15 +186,15 @@ __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\IRdA.X.production.obj
 __size_of_configUART 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _main 56 0 CODE 0 maintext dist/default/production\IRdA.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\se7g.obj
+___sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\s1b0.obj
 btemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 ttemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-start 44 0 CODE 0 init C:\Users\jense\AppData\Local\Temp\se7g.obj
+start 44 0 CODE 0 init C:\Users\jense\AppData\Local\Temp\s1b0.obj
 _RCREG 199 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _TXREG 19A 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\jense\AppData\Local\Temp\se7g.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\jense\AppData\Local\Temp\s1b0.obj
 ltemp0 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 ttemp0 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
@@ -229,7 +229,7 @@ __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _PIR1bits 11 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 __CFG_CLKOUTEN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _LATCbits 10E 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\se7g.obj
+___int_sp 0 0 STACK 2 stack C:\Users\jense\AppData\Local\Temp\s1b0.obj
 _configureUARTrXint CC 0 CODE 0 text1 dist/default/production\IRdA.X.production.obj
 _SPBRGL 19B 0 ABS 0 - dist/default/production\IRdA.X.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\IRdA.X.production.obj
@@ -259,9 +259,9 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-stackhi 231F 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\se7g.obj
+stackhi 231F 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\s1b0.obj
 _rxChar 79 0 COMMON 1 bssCOMMON dist/default/production\IRdA.X.production.obj
-stacklo 2000 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\se7g.obj
+stacklo 2000 0 ABS 0 - C:\Users\jense\AppData\Local\Temp\s1b0.obj
 __Hinit 44 0 CODE 0 init -
 __Linit 44 0 CODE 0 init -
 __end_of_main B8 0 CODE 0 maintext dist/default/production\IRdA.X.production.obj
@@ -425,13 +425,13 @@ __Hend_init 48 0 CODE 0 end_init -
 __Lend_init 44 0 CODE 0 end_init -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-intlevel0 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\se7g.obj
+intlevel0 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\IRdA.X.production.obj
-intlevel1 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\se7g.obj
-intlevel2 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\se7g.obj
-intlevel3 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\se7g.obj
-intlevel4 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\se7g.obj
-intlevel5 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\se7g.obj
+intlevel1 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
+intlevel2 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
+intlevel3 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
+intlevel4 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
+intlevel5 0 0 CODE 0 functab C:\Users\jense\AppData\Local\Temp\s1b0.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.obj
