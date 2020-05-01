@@ -1,16 +1,9 @@
 
 Memory Summary:
-<<<<<<< HEAD
-    Program space        used   1BEh (   446) of   800h words   ( 21.8%)
-    Data space           used    9Dh (   157) of   100h bytes   ( 61.3%)
+    Program space        used   653h (  1619) of   800h words   ( 79.1%)
+    Data space           used    D4h (   212) of   100h bytes   ( 82.8%)
     EEPROM space         None available
-    Data stack space     used     0h (     0) of    5Eh bytes   (  0.0%)
-=======
-    Program space        used    4Bh (    75) of   800h words   (  3.7%)
-    Data space           used     Bh (    11) of   100h bytes   (  4.3%)
-    EEPROM space         None available
-    Data stack space     used     0h (     0) of    F0h bytes   (  0.0%)
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+    Data stack space     used     0h (     0) of    1Ah bytes   (  0.0%)
     Configuration bits   used     5h (     5) of     5h words   (100.0%)
     ID Location space    used     0h (     0) of     4h bytes   (  0.0%)
 

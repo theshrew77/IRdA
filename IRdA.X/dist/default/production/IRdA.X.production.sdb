@@ -3,8 +3,17 @@
 [d edition pro ]
 [d chip 16LF15313 ]
 [d frameptr 6 ]
-<<<<<<< HEAD
-"670 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+"1 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"72 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+"670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 "1368
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
@@ -14,36 +23,16 @@
 [v _fputs fputs `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
-=======
-"254 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
-[e E6344 . `uc
-STATUS_OK 0
-STATUS_ERROR 1
-STATUS_BUSY 2
-STATUS_TIMEOUT 3
-STATUS_COMPLETE 4
-]
-"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\memset.c
-[v _memset memset `(*.1v  1 e 1 0 ]
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"56 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Debug.c
-[v _debug_init debug_init `(v  1 e 1 0 ]
 "9 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 "104 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
-<<<<<<< HEAD
-"207
-=======
-"203
->>>>>>> parent of f7a5c67... writing to terminal working with printf
-[v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
 "27 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Que.c
 [v _QInit QInit `(c  1 e 1 0 ]
 "58
@@ -52,59 +41,16 @@ STATUS_COMPLETE 4
 [v _QOut QOut `(c  1 e 1 0 ]
 "125
 [v _QChkQ QChkQ `(c  1 e 1 0 ]
-<<<<<<< HEAD
-"46 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
+"42 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
 [v _putch putch `(v  1 e 1 0 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S277 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S281  1 e 1 0 ]
+[v _getU0_RxBuf_t getU0_RxBuf_t `(*.5S277  1 e 1 0 ]
 "18
 [v _Uart_UCA0Init Uart_UCA0Init `(v  1 e 1 0 ]
 "80
-=======
-"124 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
-[v __fflush _fflush `(i  1 e 2 0 ]
-"190
-[v __fgetchar _fgetchar `(i  1 e 2 0 ]
-"223
-[v __fkbhit _fkbhit `(i  1 e 2 0 ]
-"252
-[v __fgets _fgets `(*.1uc  1 e 1 0 ]
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S275  1 e 1 0 ]
-"18
-[v _Uart_UCA0Init Uart_UCA0Init `(v  1 e 1 0 ]
-"41
-[v _Uart_UCA0deInit Uart_UCA0deInit `(v  1 e 1 0 ]
-"46
-[v _Uart_UCA0_Flush Uart_UCA0_Flush `(c  1 e 1 0 ]
-"57
-[v _Uart_UCA0_kbhit Uart_UCA0_kbhit `(c  1 e 1 0 ]
-"68
-[v _Uart_UCA0_getc Uart_UCA0_getc `(c  1 e 1 0 ]
-"78
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 [v _Uart_UCA0_putc Uart_UCA0_putc `(c  1 e 1 0 ]
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"31 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA1.c
-[v _getU1_RxBuf_t getU1_RxBuf_t `(*.4S275  1 e 1 0 ]
-"61
-[v _Uart_UCA1_kbhit Uart_UCA1_kbhit `(c  1 e 1 0 ]
-"66
-[v _Uart_UCA1_getc Uart_UCA1_getc `(c  1 e 1 0 ]
-"71
-[v _Uart_UCA1_putc Uart_UCA1_putc `(c  1 e 1 0 ]
-[s S303 _IO_FILE 0 ]
-"57 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
-[v _stdin stdin `DC*.26S303  1 e 2 0 ]
-"58
-[v _stdout stdout `DC*.26S303  1 e 2 0 ]
-"59
-[v _stderr stderr `DC*.26S303  1 e 2 0 ]
 "413 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
 [s S22 . 1 `uc 1 INTEDG 1 0 :1:0 
@@ -115,7 +61,7 @@ STATUS_COMPLETE 4
 "426
 [u S27 . 1 `S22 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES27  1 e 1 @11 ]
-[s S45 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S41 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -123,9 +69,9 @@ STATUS_COMPLETE 4
 `uc 1 TRISA5 1 0 :1:5 
 ]
 "511
-[u S52 . 1 `S45 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES52  1 e 1 @18 ]
-[s S62 . 1 `uc 1 LATA0 1 0 :1:0 
+[u S48 . 1 `S41 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES48  1 e 1 @18 ]
+[s S58 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -133,21 +79,15 @@ STATUS_COMPLETE 4
 `uc 1 LATA5 1 0 :1:5 
 ]
 "556
-[u S69 . 1 `S62 1 . 1 0 ]
-[v _LATAbits LATAbits `VES69  1 e 1 @24 ]
+[u S65 . 1 `S58 1 . 1 0 ]
+[v _LATAbits LATAbits `VES65  1 e 1 @24 ]
 "927
 [v _RCREG RCREG `VEuc  1 e 1 @281 ]
-"976
-[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
 "985
 [v _TXREG TXREG `VEuc  1 e 1 @282 ]
 "1050
 [v _SPBRGL SPBRGL `VEuc  1 e 1 @283 ]
-<<<<<<< HEAD
-[s S134 . 1 `uc 1 RX9D 1 0 :1:0 
-=======
 [s S130 . 1 `uc 1 RX9D 1 0 :1:0 
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -157,15 +97,9 @@ STATUS_COMPLETE 4
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1187
-<<<<<<< HEAD
-[u S143 . 1 `S134 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES143  1 e 1 @285 ]
-[s S113 . 1 `uc 1 TX9D 1 0 :1:0 
-=======
 [u S139 . 1 `S130 1 . 1 0 ]
 [v _RC1STAbits RC1STAbits `VES139  1 e 1 @285 ]
 [s S109 . 1 `uc 1 TX9D 1 0 :1:0 
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -175,15 +109,9 @@ STATUS_COMPLETE 4
 `uc 1 CSRC 1 0 :1:7 
 ]
 "1367
-<<<<<<< HEAD
-[u S122 . 1 `S113 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES122  1 e 1 @286 ]
-[s S173 . 1 `uc 1 ABDEN 1 0 :1:0 
-=======
 [u S118 . 1 `S109 1 . 1 0 ]
 [v _TX1STAbits TX1STAbits `VES118  1 e 1 @286 ]
-[s S168 . 1 `uc 1 ABDEN 1 0 :1:0 
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+[s S169 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -193,45 +121,26 @@ STATUS_COMPLETE 4
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "1555
-<<<<<<< HEAD
-[u S182 . 1 `S173 1 . 1 0 ]
-[v _BAUD1CONbits BAUD1CONbits `VES182  1 e 1 @287 ]
-[s S372 . 1 `uc 1 SSP1IF 1 0 :1:0 
-=======
-[u S177 . 1 `S168 1 . 1 0 ]
-[v _BAUD1CONbits BAUD1CONbits `VES177  1 e 1 @287 ]
-"7735
-[v _PIR3 PIR3 `VEuc  1 e 1 @1807 ]
-[s S307 . 1 `uc 1 SSP1IF 1 0 :1:0 
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+[u S178 . 1 `S169 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES178  1 e 1 @287 ]
+[s S367 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
 "7749
-<<<<<<< HEAD
-[u S378 . 1 `S372 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES378  1 e 1 @1807 ]
-[s S195 . 1 `uc 1 SSP1IE 1 0 :1:0 
-=======
-[u S313 . 1 `S307 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES313  1 e 1 @1807 ]
-[s S190 . 1 `uc 1 SSP1IE 1 0 :1:0 
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+[u S373 . 1 `S367 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES373  1 e 1 @1807 ]
+[s S191 . 1 `uc 1 SSP1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
 "8020
-<<<<<<< HEAD
-[u S201 . 1 `S195 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES201  1 e 1 @1817 ]
-=======
-[u S196 . 1 `S190 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES196  1 e 1 @1817 ]
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+[u S197 . 1 `S191 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES197  1 e 1 @1817 ]
 "9441
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "9771
@@ -240,11 +149,7 @@ STATUS_COMPLETE 4
 [v _RX1DTPPS RX1DTPPS `VEuc  1 e 1 @7883 ]
 "15857
 [v _RA0PPS RA0PPS `VEuc  1 e 1 @7952 ]
-<<<<<<< HEAD
-[s S155 . 1 `uc 1 ANSA0 1 0 :1:0 
-=======
 [s S151 . 1 `uc 1 ANSA0 1 0 :1:0 
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -252,15 +157,9 @@ STATUS_COMPLETE 4
 `uc 1 ANSA5 1 0 :1:5 
 ]
 "16136
-<<<<<<< HEAD
-[u S162 . 1 `S155 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES162  1 e 1 @7992 ]
-[s S95 . 1 `uc 1 IOCAN0 1 0 :1:0 
-=======
 [u S158 . 1 `S151 1 . 1 0 ]
 [v _ANSELAbits ANSELAbits `VES158  1 e 1 @7992 ]
 [s S91 . 1 `uc 1 IOCAN0 1 0 :1:0 
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 `uc 1 IOCAN1 1 0 :1:1 
 `uc 1 IOCAN2 1 0 :1:2 
 `uc 1 IOCAN3 1 0 :1:3 
@@ -268,100 +167,151 @@ STATUS_COMPLETE 4
 `uc 1 IOCAN5 1 0 :1:5 
 ]
 "16421
-<<<<<<< HEAD
-[u S102 . 1 `S95 1 . 1 0 ]
-[v _IOCANbits IOCANbits `VES102  1 e 1 @7998 ]
+[u S98 . 1 `S91 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES98  1 e 1 @7998 ]
 "55 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-=======
-[u S98 . 1 `S91 1 . 1 0 ]
-[v _IOCANbits IOCANbits `VES98  1 e 1 @7998 ]
-"51 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Debug.c
-[v _DebugEna DebugEna `us  1 s 2 DebugEna ]
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 "74 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _check check `VEuc  1 e 1 0 ]
 "75
 [v _rxChar rxChar `VEuc  1 e 1 0 ]
 "76
 [v _rxChar2 rxChar2 `VEuc  1 e 1 0 ]
-<<<<<<< HEAD
-[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S277 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "12 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _U0_RxBuf_t U0_RxBuf_t `S281  1 s 66 U0_RxBuf_t ]
-=======
-"42 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
-[v _SerialEcho SerialEcho `s  1 s 2 SerialEcho ]
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"12 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _U0_RxBuf_t U0_RxBuf_t `S275  1 s 66 U0_RxBuf_t ]
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"24 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA1.c
-[v _U1_RxBuf_t U1_RxBuf_t `S275  1 e 66 0 ]
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+[v _U0_RxBuf_t U0_RxBuf_t `S277  1 s 66 U0_RxBuf_t ]
 "104 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"168
+"176
 } 0
-<<<<<<< HEAD
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.4v  1 a 1 31 ]
+[v printf@ap ap `[1]*.4v  1 a 1 9 ]
 "5
-[v printf@fmt fmt `*.25DCuc  1 p 2 26 ]
+[v printf@fmt fmt `*.25DCuc  1 p 2 3 ]
 "13
 } 0
 "1368 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S479 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.1S479  1 a 1 wreg ]
+[s S474 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.1S474  1 a 1 wreg ]
 "1371
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 24 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 1 ]
 "1368
-[v vfprintf@fp fp `*.1S479  1 a 1 wreg ]
-[v vfprintf@fmt fmt `*.25DCuc  1 p 2 18 ]
-[v vfprintf@ap ap `*.4*.4v  1 p 1 20 ]
+[v vfprintf@fp fp `*.1S474  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 73 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 75 ]
 "1373
 "1368
-[v vfprintf@fp fp `*.1S479  1 a 1 23 ]
+[v vfprintf@fp fp `*.1S474  1 a 1 0 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S479 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.1S479  1 a 1 wreg ]
-[v vfpfcnvrt@fp fp `*.1S479  1 a 1 wreg ]
-[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 10 ]
-[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 11 ]
+[s S474 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.1S474  1 a 1 wreg ]
+"674
+[v vfpfcnvrt@ll ll `o  1 a 8 64 ]
+"670
+[v vfpfcnvrt@fp fp `*.1S474  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 57 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 58 ]
 "680
 "670
-[v vfpfcnvrt@fp fp `*.1S479  1 a 1 17 ]
+[v vfpfcnvrt@fp fp `*.1S474  1 a 1 72 ]
 "1365
+} 0
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+[s S474 _IO_FILE 0 ]
+[v dtoa@fp fp `*.1S474  1 a 1 wreg ]
+"277
+[v dtoa@n n `o  1 a 8 47 ]
+"276
+[v dtoa@i i `i  1 a 2 55 ]
+[v dtoa@s s `i  1 a 2 45 ]
+[v dtoa@w w `i  1 a 2 43 ]
+[v dtoa@p p `i  1 a 2 41 ]
+"274
+[v dtoa@fp fp `*.1S474  1 a 1 wreg ]
+[v dtoa@d d `o  1 p 8 27 ]
+"280
+"274
+[v dtoa@fp fp `*.1S474  1 a 1 40 ]
+"315
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+[s S474 _IO_FILE 0 ]
+[v pad@fp fp `*.1S474  1 a 1 wreg ]
+"74
+[v pad@w w `i  1 a 2 24 ]
+[v pad@i i `i  1 a 2 22 ]
+"72
+[v pad@fp fp `*.1S474  1 a 1 wreg ]
+[v pad@buf buf `*.4uc  1 p 1 18 ]
+[v pad@p p `i  1 p 2 19 ]
+"77
+"72
+[v pad@fp fp `*.1S474  1 a 1 26 ]
+"95
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+[v strlen@s s `*.4DCuc  1 a 1 wreg ]
+"7
+[v strlen@a a `*.4DCuc  1 a 1 3 ]
+"5
+[v strlen@s s `*.4DCuc  1 a 1 wreg ]
+"7
+[v strlen@s s `*.4DCuc  1 a 1 4 ]
+"12
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+[v fputs@s s `*.4DCuc  1 a 1 wreg ]
+"11
+[v fputs@i i `i  1 a 2 15 ]
+"10
+[v fputs@c c `uc  1 a 1 14 ]
+"8
+[v fputs@s s `*.4DCuc  1 a 1 wreg ]
+[s S820 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.1S820  1 p 1 10 ]
+"13
+[v fputs@s s `*.4DCuc  1 a 1 17 ]
+"19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 2 ]
-[s S802 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.1S802  1 p 1 4 ]
+[s S820 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.1S820  1 p 1 4 ]
 "21
 } 0
-"46 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
+"42 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
 [v _putch putch `(v  1 e 1 0 ]
 {
-[v putch@c c `uc  1 a 1 wreg ]
-[v putch@c c `uc  1 a 1 wreg ]
-[v putch@c c `uc  1 a 1 1 ]
-"48
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 1 ]
+"44
 } 0
 "80 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
 [v _Uart_UCA0_putc Uart_UCA0_putc `(c  1 e 1 0 ]
@@ -371,52 +321,50 @@ STATUS_COMPLETE 4
 [v Uart_UCA0_putc@c c `c  1 a 1 0 ]
 "85
 } 0
-"207 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
-[v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
+"1 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
 {
-"211
-=======
-"56 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Debug.c
-[v _debug_init debug_init `(v  1 e 1 0 ]
+[v abs@a a `i  1 p 2 19 ]
+"4
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
 {
-"62
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+"12
+[v ___aomod@sign sign `uc  1 a 1 18 ]
+[v ___aomod@counter counter `uc  1 a 1 17 ]
+"7
+[v ___aomod@divisor divisor `o  1 p 8 0 ]
+[v ___aomod@dividend dividend `o  1 p 8 8 ]
+"36
+} 0
+"7 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 19 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 18 ]
+[v ___aodiv@counter counter `uc  1 a 1 17 ]
+"7
+[v ___aodiv@divisor divisor `o  1 p 8 0 ]
+[v ___aodiv@dividend dividend `o  1 p 8 8 ]
+"43
 } 0
 "18 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
 [v _Uart_UCA0Init Uart_UCA0Init `(v  1 e 1 0 ]
 {
 "41
 } 0
-"203 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
-[v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
-{
-"207
-} 0
 "9 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-<<<<<<< HEAD
 "39
 } 0
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S277 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S281  1 e 1 0 ]
-=======
-"42
-} 0
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"31 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA1.c
-[v _getU1_RxBuf_t getU1_RxBuf_t `(*.4S275  1 e 1 0 ]
-{
-"33
-} 0
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S275  1 e 1 0 ]
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+[v _getU0_RxBuf_t getU0_RxBuf_t `(*.5S277  1 e 1 0 ]
 {
 "16
 } 0
@@ -428,13 +376,8 @@ STATUS_COMPLETE 4
 [v QIn@next next `c  1 a 1 4 ]
 "58
 [v QIn@Src Src `c  1 a 1 wreg ]
-<<<<<<< HEAD
-[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-[v QIn@pQ pQ `*.4S281  1 p 1 0 ]
-=======
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-[v QIn@pQ pQ `*.4S275  1 p 1 0 ]
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+[s S277 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[v QIn@pQ pQ `*.5S277  1 p 1 0 ]
 "62
 [v QIn@Src Src `c  1 a 1 3 ]
 "73

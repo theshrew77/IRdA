@@ -79,7 +79,7 @@ int8_t  Uart_UCA0_getc( int8_t *Out )
   */
 int8_t  Uart_UCA0_putc( int8_t c )
 {
-  while(!(IFG2 & UCA0TXIFG));
+  while(!(UCA0TXIFG));
   UCA0TXBUF = c;
   return(c);
 }

@@ -25,9 +25,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"21 ./Retarget.h
-[; ;./Retarget.h: 21: int _fflush(FILE *_fp);
-[v __fflush `(i ~T0 @X0 0 ef1`*S789 ]
+"90 Debug.c
+[; ;Debug.c: 90:     _fflush((stdin));
+[v __fflush `(i ~T0 @X0 0 e? ]
 [v F5837 `*S789 ~T0 @X0 1 t ]
 "57 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h: 57: extern FILE *const stdin;
@@ -35,12 +35,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
 [v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
-"18 ./Retarget.h
-[; ;./Retarget.h: 18: char *_fgets(char *_ptr, int _size, FILE *_fp);
-[v __fgets `(*uc ~T0 @X0 0 ef3`*uc`i`*S789 ]
-"16
-[; ;./Retarget.h: 16: int _fkbhit(FILE *_fp);
-[v __fkbhit `(i ~T0 @X0 0 ef1`*S789 ]
+"92 Debug.c
+[; ;Debug.c: 92:     _fgets(buf, Len, (stdin) );
+[v __fgets `(i ~T0 @X0 0 e? ]
+"108
+[; ;Debug.c: 108:     rval = _fkbhit((stdin));
+[v __fkbhit `(i ~T0 @X0 0 e? ]
 "21 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 21: int8_t Uart_UCA0_Flush(void);
 [v _Uart_UCA0_Flush `(c ~T0 @X0 0 ef ]
@@ -965,13 +965,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "90
 [; ;Debug.c: 90:     _fflush((stdin));
-[e ( __fflush (1 _stdin ]
+[e ( __fflush _stdin ]
 "91
 [; ;Debug.c: 91:     memset(buf,0,Len);
 [e ( _memset (3 , , -> _buf `*v -> 0 `i -> _Len `ui ]
 "92
 [; ;Debug.c: 92:     _fgets(buf, Len, (stdin) );
-[e ( __fgets (3 , , _buf -> _Len `i _stdin ]
+[e ( __fgets , , _buf -> _Len `ui _stdin ]
 "94
 [; ;Debug.c: 94:     return(buf);
 [e ) _buf ]
@@ -1017,7 +1017,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "108
 [; ;Debug.c: 108:     rval = _fkbhit((stdin));
-[e = _rval -> ( __fkbhit (1 _stdin `s ]
+[e = _rval -> ( __fkbhit _stdin `s ]
 "109
 [; ;Debug.c: 109:   }
 }

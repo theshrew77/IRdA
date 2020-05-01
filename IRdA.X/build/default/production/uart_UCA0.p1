@@ -62,10 +62,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;./Que.h: 23: int8_t QOut( int8_t *Dest, t_Q *pQ );
 [v _QOut `(c ~T0 @X0 0 ef2`*c`*S792 ]
-"7735 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7735: extern volatile unsigned char PIR3 __attribute__((address(0x70F)));
-[v _PIR3 `Vuc ~T0 @X0 0 e@1807 ]
-"7741
+"7741 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7741:     struct {
 [s S381 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S381 . SSP1IF BCL1IF . TX1IF RC1IF ]
@@ -1014,17 +1011,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "81
 [; ;uart_UCA0.c: 81: {
 [f ]
-<<<<<<< HEAD
 "82
 [; ;uart_UCA0.c: 82:   while(!(PIR3bits.TX1IF));
-=======
-"80
-[; ;uart_UCA0.c: 80:   while(!(PIR3 & PIR3bits.TX1IF));
->>>>>>> parent of f7a5c67... writing to terminal working with printf
 [e $U 800  ]
 [e :U 801 ]
 [e :U 800 ]
-[e $ ! != & -> _PIR3 `i -> . . _PIR3bits 0 3 `i -> 0 `i 801  ]
+[e $ ! != -> . . _PIR3bits 0 3 `i -> 0 `i 801  ]
 [e :U 802 ]
 "83
 [; ;uart_UCA0.c: 83:   TXREG = c;

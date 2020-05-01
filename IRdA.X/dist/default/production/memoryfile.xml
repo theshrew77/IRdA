@@ -4,24 +4,14 @@
     <memory name="program">
       <units>words</units>
       <length>2048</length>
-<<<<<<< HEAD
-      <used>446</used>
-      <free>1602</free>
-=======
-      <used>75</used>
-      <free>1973</free>
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+      <used>1619</used>
+      <free>429</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>256</length>
-<<<<<<< HEAD
-      <used>157</used>
-      <free>99</free>
-=======
-      <used>11</used>
-      <free>245</free>
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+      <used>212</used>
+      <free>44</free>
     </memory>
   </executable>
 </project>

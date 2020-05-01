@@ -10188,6 +10188,39 @@ typedef enum
   STATUS_COMPLETE = 4U
 } Status_t;
 # 15 "main.c" 2
+
+# 1 "./uart_UCA0.h" 1
+# 11 "./uart_UCA0.h"
+# 1 "./Que.h" 1
+# 14 "./Que.h"
+typedef struct {
+  int8_t Data[64];
+  int8_t In;
+  int8_t Out;
+} t_Q;
+
+
+int8_t QInit( t_Q *pQ );
+int8_t QIn( int8_t Src, t_Q *pQ );
+int8_t QOut( int8_t *Dest, t_Q *pQ );
+int8_t QChkQ( t_Q *pQ );
+# 11 "./uart_UCA0.h" 2
+
+
+
+
+
+
+
+
+void Uart_UCA0Init(void);
+void Uart_UCA0deInit(void);
+int8_t Uart_UCA0_Flush(void);
+int8_t Uart_UCA0_kbhit(void);
+int8_t Uart_UCA0_getc( int8_t *Out );
+int8_t Uart_UCA0_putc( int8_t c );
+t_Q *getU0_RxBuf_t(void);
+# 16 "main.c" 2
 # 32 "main.c"
 #pragma config FEXTOSC = ECH
 #pragma config RSTOSC = HFINT1
@@ -10243,26 +10276,24 @@ int main(int argc, char** argv) {
     OSCFRQ = 0b0000101;
     OSCCON1 = 0b01100000;
 
-    debug_init();
-# 130 "main.c"
-    configureUARTrXint();
+    Uart_UCA0Init();
+# 131 "main.c"
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0;
     _delay((unsigned long)((500)*(16000000/4000.0)));
-    printf("a");
+
     while(1){
 
 
-<<<<<<< HEAD
 
-
-
-=======
-    while(1){
-        TX1REG = 'a';
+        printf("Pizza Timex%d! \n\r",10);
         LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((100)*(16000000/4000.0)));
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+        _delay((unsigned long)((500)*(16000000/4000.0)));
+
+
+
+
+
     }
 
 

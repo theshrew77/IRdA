@@ -7,7 +7,7 @@
 
 #ifndef RETARGET_H
 #define	RETARGET_H
-
+void putch (uint8_t);
 
 #ifdef	__cplusplus
 extern "C" {

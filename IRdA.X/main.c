@@ -13,7 +13,7 @@
 
 #include "Debug.h"
 #include "main.h"
-
+#include "uart_UCA0.h"
 
 
 
@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
     OSCFRQ = 0b0000101;  
     OSCCON1 = 0b01100000;
 
-    debug_init();
+    Uart_UCA0Init();
 
 //    __delay_ms(10);
 //    configUART();
@@ -127,23 +127,23 @@ int main(int argc, char** argv) {
 #endif 
     
 #ifdef slave
-    configureUARTrXint();
+    //configureUARTrXint();
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0; 
     __delay_ms(500);
-    printf("a");
+
     while(1){
-<<<<<<< HEAD
+
         //TX1REG = 'a';
         //Uart_UCA0_putc( 'a' );
-        //printf("Pizza Timex%d! \n\r",10);
-        //LATAbits.LATA2 ^= 1;
-        //__delay_ms(500);
-=======
-        TX1REG = 'a';
+        printf("Pizza Timex%d! \n\r",10);
         LATAbits.LATA2 ^= 1;
-        __delay_ms(100);
->>>>>>> parent of f7a5c67... writing to terminal working with printf
+        __delay_ms(500);
+
+        //TX1REG = 'a';
+        //LATAbits.LATA2 ^= 1;
+       // __delay_ms(100);
+
     }
    
     
