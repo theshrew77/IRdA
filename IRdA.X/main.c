@@ -4,19 +4,25 @@
  *
  * Created on April 14, 2020, 7:54 PM
  */
-
+#include <xc.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define _XTAL_FREQ 16000000
-#define LEDonPin  5
-#define LEDoffPin 4
-#define LEDlat LATC
+#include <stdint.h>
+#include <stdbool.h>
+#include <string.h>
+
+#include "Debug.h"
+#include "main.h"
+
+
+
+
 
 #define slave
 
 //#include <stdio.h>
 //#include <stdlib.h>
-#include <xc.h>
+
 
 // PIC16LF15313 Configuration Bit Settings
 
@@ -103,10 +109,10 @@ int main(int argc, char** argv) {
     OSCFRQ = 0b0000101;  
     OSCCON1 = 0b01100000;
 
-
+    debug_init();
 
 //    __delay_ms(10);
-    configUART();
+//    configUART();
     
     //TRISAbits.TRISA4 = 0;
 #ifdef master
@@ -124,6 +130,7 @@ int main(int argc, char** argv) {
     configureUARTrXint();
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0; 
+
     
     while(1){
         TX1REG = 'a';
@@ -172,14 +179,12 @@ void configureInterrupt(){
 }
 
 void configUART(){
-    RA0PPS = 0x0F;
+   
     //Enable TX
+    RA0PPS = 0x0F;
     TX1STAbits.TXEN = 1;
     TX1STAbits.SYNC = 0;
     RC1STAbits.SPEN = 1;
-    //TXSTAbits.TXEN = 1; //enable transmitter circuitry
-    //TXSTAbits.SYNC = 0; // configure for asynchronous operation
-    //RCSTAbits.SPEN = 1; //enable EUSART and configure TX as output
     //clear RA0/TX ANSEL bit
     ANSELAbits.ANSA0 = 0;
     

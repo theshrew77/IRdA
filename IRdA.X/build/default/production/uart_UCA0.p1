@@ -1,134 +1,84 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"419 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 419:     struct {
-[s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . INTEDG . PEIE GIE ]
-"418
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 418: typedef union {
-[u S30 `S31 1 ]
-[n S30 . . ]
-"426
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"9771
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9771: extern volatile unsigned char OSCFRQ __attribute__((address(0x893)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@2195 ]
-"9441
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9441: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
-"11 ./Debug.h
-[; ;./Debug.h: 11: void debug_init(void);
-[v _debug_init `(v ~T0 @X0 0 ef ]
-"73 main.c
-[v _configureUARTrXint `(v ~T0 @X0 0 e? ]
-"502 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 502:     struct {
-[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . TRISA0 TRISA1 TRISA2 . TRISA4 TRISA5 ]
-"501
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 501: typedef union {
-[u S34 `S35 1 ]
-[n S34 . . ]
-"511
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 511: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x012)));
-[v _TRISAbits `VS34 ~T0 @X0 0 e@18 ]
-"547
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"546
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"556
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
-"976
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 976: extern volatile unsigned char TX1REG __attribute__((address(0x11A)));
-[v _TX1REG `Vuc ~T0 @X0 0 e@282 ]
-[v F5815 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF5815 ~T0 @X0 0 e ]
-[p i __delay ]
-"31
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"413 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 413: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
-[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
-"16412
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16412:     struct {
-[s S761 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S761 . IOCAN0 IOCAN1 IOCAN2 IOCAN3 IOCAN4 IOCAN5 ]
-"16411
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16411: typedef union {
-[u S760 `S761 1 ]
-[n S760 . . ]
-"16421
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16421: extern volatile IOCANbits_t IOCANbits __attribute__((address(0x1F3E)));
-[v _IOCANbits `VS760 ~T0 @X0 0 e@7998 ]
-"15857
+"14 ./Que.h
+[; ;./Que.h: 14: typedef struct {
+[s S792 `c -> 64 `i `c 1 `c 1 ]
+[n S792 . Data In Out ]
+"15857 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15857: extern volatile unsigned char RA0PPS __attribute__((address(0x1F10)));
 [v _RA0PPS `Vuc ~T0 @X0 0 e@7952 ]
 "1356
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1356:     struct {
-[s S86 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S86 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S89 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
 "1355
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1355: typedef union {
-[u S85 `S86 1 ]
-[n S85 . . ]
+[u S88 `S89 1 ]
+[n S88 . . ]
 "1367
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1367: extern volatile TX1STAbits_t TX1STAbits __attribute__((address(0x11E)));
-[v _TX1STAbits `VS85 ~T0 @X0 0 e@286 ]
+[v _TX1STAbits `VS88 ~T0 @X0 0 e@286 ]
 "1176
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1176:     struct {
-[s S80 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S80 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+[s S83 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S83 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
 "1175
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1175: typedef union {
-[u S79 `S80 1 ]
-[n S79 . . ]
+[u S82 `S83 1 ]
+[n S82 . . ]
 "1187
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1187: extern volatile RC1STAbits_t RC1STAbits __attribute__((address(0x11D)));
-[v _RC1STAbits `VS79 ~T0 @X0 0 e@285 ]
+[v _RC1STAbits `VS82 ~T0 @X0 0 e@285 ]
 "16127
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16127:     struct {
-[s S749 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S749 . ANSA0 ANSA1 ANSA2 . ANSA4 ANSA5 ]
+[s S752 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S752 . ANSA0 ANSA1 ANSA2 . ANSA4 ANSA5 ]
 "16126
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16126: typedef union {
-[u S748 `S749 1 ]
-[n S748 . . ]
+[u S751 `S752 1 ]
+[n S751 . . ]
 "16136
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16136: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0x1F38)));
-[v _ANSELAbits `VS748 ~T0 @X0 0 e@7992 ]
+[v _ANSELAbits `VS751 ~T0 @X0 0 e@7992 ]
 "1544
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1544:     struct {
-[s S92 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S92 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
+[s S95 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S95 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
 "1543
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1543: typedef union {
-[u S91 `S92 1 ]
-[n S91 . . ]
+[u S94 `S95 1 ]
+[n S94 . . ]
 "1555
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1555: extern volatile BAUD1CONbits_t BAUD1CONbits __attribute__((address(0x11F)));
-[v _BAUD1CONbits `VS91 ~T0 @X0 0 e@287 ]
+[v _BAUD1CONbits `VS94 ~T0 @X0 0 e@287 ]
 "1050
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1050: extern volatile unsigned char SPBRGL __attribute__((address(0x11B)));
 [v _SPBRGL `Vuc ~T0 @X0 0 e@283 ]
-"8012
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8012:     struct {
-[s S395 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S395 . SSP1IE BCL1IE . TX1IE RC1IE ]
-"8011
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8011: typedef union {
-[u S394 `S395 1 ]
-[n S394 . . ]
-"8020
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8020: extern volatile PIE3bits_t PIE3bits __attribute__((address(0x719)));
-[v _PIE3bits `VS394 ~T0 @X0 0 e@1817 ]
+"21 ./Que.h
+[; ;./Que.h: 21: int8_t QInit( t_Q *pQ );
+[v _QInit `(c ~T0 @X0 0 ef1`*S792 ]
+"24
+[; ;./Que.h: 24: int8_t QChkQ( t_Q *pQ );
+[v _QChkQ `(c ~T0 @X0 0 ef1`*S792 ]
+"23
+[; ;./Que.h: 23: int8_t QOut( int8_t *Dest, t_Q *pQ );
+[v _QOut `(c ~T0 @X0 0 ef2`*c`*S792 ]
+"7735 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7735: extern volatile unsigned char PIR3 __attribute__((address(0x70F)));
+[v _PIR3 `Vuc ~T0 @X0 0 e@1807 ]
+"7741
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7741:     struct {
+[s S381 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S381 . SSP1IF BCL1IF . TX1IF RC1IF ]
+"7740
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7740: typedef union {
+[u S380 `S381 1 ]
+[n S380 . . ]
+"7749
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7749: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
+[v _PIR3bits `VS380 ~T0 @X0 0 e@1807 ]
+"985
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 985: extern volatile unsigned char TXREG __attribute__((address(0x11A)));
+[v _TXREG `Vuc ~T0 @X0 0 e@282 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -930,232 +880,158 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16816
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"32 main.c
-[p x FEXTOSC = ECH ]
-"33
-[p x RSTOSC = HFINT1 ]
-"34
-[p x CLKOUTEN = ON ]
-"35
-[p x CSWEN = ON ]
-"36
-[p x FCMEN = ON ]
-"39
-[p x MCLRE = ON ]
-"40
-[p x PWRTE = OFF ]
-"41
-[p x LPBOREN = OFF ]
-"42
-[p x BOREN = ON ]
-"43
-[p x BORV = LO ]
-"44
-[p x ZCD = OFF ]
-"45
-[p x PPS1WAY = ON ]
-"46
-[p x STVREN = ON ]
-"49
-[p x WDTCPS = WDTCPS_31 ]
-"50
-[p x WDTE = OFF ]
-"51
-[p x WDTCWS = WDTCWS_7 ]
-"52
-[p x WDTCCS = SC ]
-"55
-[p x BBSIZE = BB512 ]
-"56
-[p x BBEN = OFF ]
-"57
-[p x SAFEN = OFF ]
-"58
-[p x WRTAPP = OFF ]
-"59
-[p x WRTB = OFF ]
-"60
-[p x WRTC = OFF ]
-"61
-[p x WRTSAF = OFF ]
-"62
-[p x LVP = ON ]
-"65
-[p x CP = OFF ]
-"74
-[v _check `Vuc ~T0 @X0 1 e ]
-[i _check
--> -> 0 `i `uc
-]
-"75
-[v _rxChar `Vuc ~T0 @X0 1 e ]
-[i _rxChar
--> -> 0 `i `uc
-]
-"76
-[v _rxChar2 `Vuc ~T0 @X0 1 e ]
-[i _rxChar2
--> -> 0 `i `uc
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"104
-[; ;main.c: 104: int main(int argc, char** argv) {
-[v _main `(i ~T0 @X0 1 ef2`i`**uc ]
+"12 uart_UCA0.c
+[; ;uart_UCA0.c: 12: static t_Q U0_RxBuf_t;
+[v _U0_RxBuf_t `S792 ~T0 @X0 1 s ]
+"14
+[; ;uart_UCA0.c: 14: t_Q *getU0_RxBuf_t(void){
+[v _getU0_RxBuf_t `(*S792 ~T0 @X0 1 ef ]
 {
-[e :U _main ]
-[v _argc `i ~T0 @X0 1 r1 ]
-[v _argv `**uc ~T0 @X0 1 r2 ]
+[e :U _getU0_RxBuf_t ]
 [f ]
-"105
-[; ;main.c: 105:     INTCONbits.PEIE = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"109
-[; ;main.c: 109:     OSCFRQ = 0b0000101;
-[e = _OSCFRQ -> -> 5 `i `uc ]
-"110
-[; ;main.c: 110:     OSCCON1 = 0b01100000;
-[e = _OSCCON1 -> -> 96 `i `uc ]
-"112
-[; ;main.c: 112:     debug_init();
-[e ( _debug_init ..  ]
-"130
-[; ;main.c: 130:     configureUARTrXint();
-[e ( _configureUARTrXint ..  ]
-"131
-[; ;main.c: 131:     TRISAbits.TRISA2 = 0;
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-"132
-[; ;main.c: 132:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"135
-[; ;main.c: 135:     while(1){
-[e :U 794 ]
-{
-"136
-[; ;main.c: 136:         TX1REG = 'a';
-[e = _TX1REG -> -> 97 `ui `uc ]
-"137
-[; ;main.c: 137:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"138
-[; ;main.c: 138:         _delay((unsigned long)((100)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"139
-[; ;main.c: 139:     }
+"15
+[; ;uart_UCA0.c: 15:     return(&U0_RxBuf_t);
+[e ) &U _U0_RxBuf_t ]
+[e $UE 793  ]
+"16
+[; ;uart_UCA0.c: 16: }
+[e :UE 793 ]
 }
-[e :U 793 ]
-[e $U 794  ]
-[e :U 795 ]
-"144
-[; ;main.c: 144:     check = 0;
-[e = _check -> -> 0 `i `uc ]
-"145
-[; ;main.c: 145:     while(1){
-[e :U 797 ]
+"18
+[; ;uart_UCA0.c: 18: void Uart_UCA0Init(void)
+[v _Uart_UCA0Init `(v ~T0 @X0 1 ef ]
+"19
+[; ;uart_UCA0.c: 19: {
 {
-"147
-[; ;main.c: 147:         if (check){
-[e $ ! != -> _check `i -> 0 `i 799  ]
-{
-"148
-[; ;main.c: 148:             check = 0;
-[e = _check -> -> 0 `i `uc ]
-"149
-[; ;main.c: 149:             _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"155
-[; ;main.c: 155:                 rxChar = 0;
-[e = _rxChar -> -> 0 `i `uc ]
-"161
-[; ;main.c: 161:         }
-}
-[e :U 799 ]
-"164
-[; ;main.c: 164:         __nop();
-[e ( ___nop ..  ]
-"165
-[; ;main.c: 165:     }
-}
-[e :U 796 ]
-[e $U 797  ]
-[e :U 798 ]
-"167
-[; ;main.c: 167:     return (0);
-[e ) -> 0 `i ]
-[e $UE 792  ]
-"168
-[; ;main.c: 168: }
-[e :UE 792 ]
-}
-"171
-[; ;main.c: 171: void configureInterrupt(){
-[v _configureInterrupt `(v ~T0 @X0 1 ef ]
-{
-[e :U _configureInterrupt ]
+[e :U _Uart_UCA0Init ]
 [f ]
-"173
-[; ;main.c: 173:     INTCON = 0b10001000;
-[e = _INTCON -> -> 136 `i `uc ]
-"174
-[; ;main.c: 174:     IOCANbits.IOCAN0 = 1;
-[e = . . _IOCANbits 0 0 -> -> 1 `i `uc ]
-"179
-[; ;main.c: 179: }
-[e :UE 800 ]
-}
-"181
-[; ;main.c: 181: void configUART(){
-[v _configUART `(v ~T0 @X0 1 ef ]
-{
-[e :U _configUART ]
-[f ]
-"184
-[; ;main.c: 184:     RA0PPS = 0x0F;
+"21
+[; ;uart_UCA0.c: 21:     RA0PPS = 0x0F;
 [e = _RA0PPS -> -> 15 `i `uc ]
-"185
-[; ;main.c: 185:     TX1STAbits.TXEN = 1;
+"22
+[; ;uart_UCA0.c: 22:     TX1STAbits.TXEN = 1;
 [e = . . _TX1STAbits 0 5 -> -> 1 `i `uc ]
-"186
-[; ;main.c: 186:     TX1STAbits.SYNC = 0;
+"23
+[; ;uart_UCA0.c: 23:     TX1STAbits.SYNC = 0;
 [e = . . _TX1STAbits 0 4 -> -> 0 `i `uc ]
-"187
-[; ;main.c: 187:     RC1STAbits.SPEN = 1;
+"24
+[; ;uart_UCA0.c: 24:     RC1STAbits.SPEN = 1;
 [e = . . _RC1STAbits 0 7 -> -> 1 `i `uc ]
-"189
-[; ;main.c: 189:     ANSELAbits.ANSA0 = 0;
+"26
+[; ;uart_UCA0.c: 26:     ANSELAbits.ANSA0 = 0;
 [e = . . _ANSELAbits 0 0 -> -> 0 `i `uc ]
-"192
-[; ;main.c: 192:     RC1STAbits.CREN = 1;
+"29
+[; ;uart_UCA0.c: 29:     RC1STAbits.CREN = 1;
 [e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
-"196
-[; ;main.c: 196:     TX1STAbits.BRGH = 0;
+"33
+[; ;uart_UCA0.c: 33:     TX1STAbits.BRGH = 0;
 [e = . . _TX1STAbits 0 2 -> -> 0 `i `uc ]
-"197
-[; ;main.c: 197:     BAUD1CONbits.BRG16 = 0;
+"34
+[; ;uart_UCA0.c: 34:     BAUD1CONbits.BRG16 = 0;
 [e = . . _BAUD1CONbits 0 3 -> -> 0 `i `uc ]
-"198
-[; ;main.c: 198:     SPBRGL = 25;
+"35
+[; ;uart_UCA0.c: 35:     SPBRGL = 25;
 [e = _SPBRGL -> -> 25 `i `uc ]
-"201
-[; ;main.c: 201: }
-[e :UE 801 ]
+"39
+[; ;uart_UCA0.c: 39: }
+[e :UE 794 ]
 }
-"203
-[; ;main.c: 203: void configureUARTrXint(){
-[v _configureUARTrXint `(v ~T0 @X0 1 ef ]
+"41
+[; ;uart_UCA0.c: 41: void Uart_UCA0deInit(void)
+[v _Uart_UCA0deInit `(v ~T0 @X0 1 ef ]
+"42
+[; ;uart_UCA0.c: 42: {
 {
-[e :U _configureUARTrXint ]
+[e :U _Uart_UCA0deInit ]
 [f ]
-"204
-[; ;main.c: 204:     PIE3bits.RC1IE = 1;
-[e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
-"205
-[; ;main.c: 205:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"206
-[; ;main.c: 206:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"207
-[; ;main.c: 207: }
-[e :UE 802 ]
+"44
+[; ;uart_UCA0.c: 44: }
+[e :UE 795 ]
+}
+"46
+[; ;uart_UCA0.c: 46: int8_t Uart_UCA0_Flush(void)
+[v _Uart_UCA0_Flush `(c ~T0 @X0 1 ef ]
+"47
+[; ;uart_UCA0.c: 47: {
+{
+[e :U _Uart_UCA0_Flush ]
+[f ]
+"48
+[; ;uart_UCA0.c: 48:   QInit( &U0_RxBuf_t );
+[e ( _QInit (1 &U _U0_RxBuf_t ]
+"49
+[; ;uart_UCA0.c: 49:   return(1);
+[e ) -> -> 1 `i `c ]
+[e $UE 796  ]
+"50
+[; ;uart_UCA0.c: 50: }
+[e :UE 796 ]
+}
+"57
+[; ;uart_UCA0.c: 57: int8_t Uart_UCA0_kbhit(void)
+[v _Uart_UCA0_kbhit `(c ~T0 @X0 1 ef ]
+"58
+[; ;uart_UCA0.c: 58: {
+{
+[e :U _Uart_UCA0_kbhit ]
+[f ]
+"59
+[; ;uart_UCA0.c: 59:   return(QChkQ(&U0_RxBuf_t));
+[e ) ( _QChkQ (1 &U _U0_RxBuf_t ]
+[e $UE 797  ]
+"60
+[; ;uart_UCA0.c: 60: }
+[e :UE 797 ]
+}
+"68
+[; ;uart_UCA0.c: 68: int8_t Uart_UCA0_getc( int8_t *Out )
+[v _Uart_UCA0_getc `(c ~T0 @X0 1 ef1`*c ]
+"69
+[; ;uart_UCA0.c: 69: {
+{
+[e :U _Uart_UCA0_getc ]
+"68
+[; ;uart_UCA0.c: 68: int8_t Uart_UCA0_getc( int8_t *Out )
+[v _Out `*c ~T0 @X0 1 r1 ]
+"69
+[; ;uart_UCA0.c: 69: {
+[f ]
+"70
+[; ;uart_UCA0.c: 70:   return(QOut(Out, &U0_RxBuf_t) );
+[e ) ( _QOut (2 , _Out &U _U0_RxBuf_t ]
+[e $UE 798  ]
+"71
+[; ;uart_UCA0.c: 71: }
+[e :UE 798 ]
+}
+"78
+[; ;uart_UCA0.c: 78: int8_t Uart_UCA0_putc( int8_t c )
+[v _Uart_UCA0_putc `(c ~T0 @X0 1 ef1`c ]
+"79
+[; ;uart_UCA0.c: 79: {
+{
+[e :U _Uart_UCA0_putc ]
+"78
+[; ;uart_UCA0.c: 78: int8_t Uart_UCA0_putc( int8_t c )
+[v _c `c ~T0 @X0 1 r1 ]
+"79
+[; ;uart_UCA0.c: 79: {
+[f ]
+"80
+[; ;uart_UCA0.c: 80:   while(!(PIR3 & PIR3bits.TX1IF));
+[e $U 800  ]
+[e :U 801 ]
+[e :U 800 ]
+[e $ ! != & -> _PIR3 `i -> . . _PIR3bits 0 3 `i -> 0 `i 801  ]
+[e :U 802 ]
+"81
+[; ;uart_UCA0.c: 81:   TXREG = c;
+[e = _TXREG -> _c `uc ]
+"82
+[; ;uart_UCA0.c: 82:   return(c);
+[e ) _c ]
+[e $UE 799  ]
+"83
+[; ;uart_UCA0.c: 83: }
+[e :UE 799 ]
 }

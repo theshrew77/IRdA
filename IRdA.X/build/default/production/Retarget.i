@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "Retarget.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
+# 1 "Retarget.c" 2
+# 21 "Retarget.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9875,7 +9870,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 7 "main.c" 2
+# 21 "Retarget.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
@@ -10015,8 +10010,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "main.c" 2
-
+# 22 "Retarget.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -10101,10 +10095,10 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 10 "main.c" 2
+# 23 "Retarget.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 11 "main.c" 2
+# 24 "Retarget.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
@@ -10161,21 +10155,27 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "main.c" 2
+# 25 "Retarget.c" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdarg.h" 1 3
 
 
-# 1 "./Debug.h" 1
-# 11 "./Debug.h"
-void debug_init(void);
-void debug_deinit(void);
-void debug_out(const char *fmt, ...);
-char *debug_in( char *buf, uint16_t Len, uint32_t tmo );
-int16_t debug_kbhit(void);
-uint16_t debug_enable(void);
-uint16_t debug_disable(void);
-uint16_t debug_getstatus(void);
-void debug_flush(void);
-# 14 "main.c" 2
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdarg.h" 2 3
+
+
+#pragma intrinsic(__va_start)
+#pragma intrinsic(__va_arg)
+
+extern void * __va_start(void);
+extern void * __va_arg(void *, ...);
+# 26 "Retarget.c" 2
+
 
 # 1 "./main.h" 1
 # 19 "./main.h"
@@ -10187,139 +10187,309 @@ typedef enum
   STATUS_TIMEOUT = 3U,
   STATUS_COMPLETE = 4U
 } Status_t;
-# 15 "main.c" 2
-# 32 "main.c"
-#pragma config FEXTOSC = ECH
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
+# 28 "Retarget.c" 2
 
 
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = ON
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
 
 
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
+# 1 "./uart_UCA0.h" 1
+# 11 "./uart_UCA0.h"
+# 1 "./Que.h" 1
+# 14 "./Que.h"
+typedef struct {
+  int8_t Data[64];
+  int8_t In;
+  int8_t Out;
+} t_Q;
 
 
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
+int8_t QInit( t_Q *pQ );
+int8_t QIn( int8_t Src, t_Q *pQ );
+int8_t QOut( int8_t *Dest, t_Q *pQ );
+int8_t QChkQ( t_Q *pQ );
+# 11 "./uart_UCA0.h" 2
 
 
 
 
 
-void configureInterrupt();
-void configUART();
-void configureUARTrXint();
-volatile char check = 0;
-volatile char rxChar = 0;
-volatile char rxChar2 = 0;
-# 104 "main.c"
-int main(int argc, char** argv) {
-    INTCONbits.PEIE = 0;
 
 
 
-    OSCFRQ = 0b0000101;
-    OSCCON1 = 0b01100000;
+void Uart_UCA0Init(void);
+void Uart_UCA0deInit(void);
+int8_t Uart_UCA0_Flush(void);
+int8_t Uart_UCA0_kbhit(void);
+int8_t Uart_UCA0_getc( int8_t *Out );
+int8_t Uart_UCA0_putc( int8_t c );
+t_Q *getU0_RxBuf_t(void);
+# 32 "Retarget.c" 2
 
-    debug_init();
-# 130 "main.c"
-    configureUARTrXint();
-    TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 0;
+# 1 "./uart_UCA1.h" 1
+# 18 "./uart_UCA1.h"
+void Uart_UCA1Init(void);
+void Uart_UCA1deInit(void);
+int8_t Uart_UCA1_Flush(void);
+int8_t Uart_UCA1_kbhit(void);
+int8_t Uart_UCA1_getc( int8_t *Out );
+int8_t Uart_UCA1_putc( int8_t c );
+t_Q *getU1_RxBuf_t(void);
+# 33 "Retarget.c" 2
 
 
-    while(1){
-        TX1REG = 'a';
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((100)*(16000000/4000.0)));
+# 1 "./Retarget.h" 1
+# 11 "./Retarget.h"
+int16_t SetSerialEcho( int16_t val );
+
+int fputc(int _c, register FILE *_fp);
+int fputs(const char *_ptr, register FILE *_fp);
+
+int _fkbhit(FILE *_fp);
+int _fgetc(FILE *_fp);
+char *_fgets(char *_ptr, int _size, FILE *_fp);
+char *_fgets_tmo(char *_ptr, int _size, FILE *_fp, uint32_t tmo);
+
+int _fflush(FILE *_fp);
+# 35 "Retarget.c" 2
+
+
+
+
+
+
+
+static int16_t SerialEcho = 1;
+
+int16_t SetSerialEcho( int16_t val )
+{
+  if (1 == val)
+  {
+    SerialEcho = 1;
+  }
+  else
+  {
+    SerialEcho = 0;
+  }
+  return(SerialEcho);
+}
+
+
+
+
+
+
+
+int fputc(int _c, register FILE *_fp)
+{
+
+  if ( (stderr) == _fp )
+  {
+    while(!(PIR3 & PIR3bits.TX1IF));
+    TXREG = (unsigned char) _c;
+  }
+
+  else if( (stdout) == _fp )
+  {
+    while(!(PIR3 & PIR3bits.TX1IF));
+    TXREG = (unsigned char) _c;
+  }
+  else
+  {
+    _c = (-1);
+  }
+  return((unsigned char)_c);
+}
+# 91 "Retarget.c"
+int fputs(const char *_ptr, register FILE *_fp)
+{
+  int i, len;
+
+  len = strlen(_ptr);
+
+  if ( (stderr) == _fp )
+  {
+    for(i=0 ; i<len ; i++)
+    {
+      Uart_UCA1_putc( _ptr[i] );
     }
-
-
-
-
-    check = 0;
-    while(1){
-
-        if (check){
-            check = 0;
-            _delay((unsigned long)((10)*(16000000/4000.0)));
-
-
-
-
-
-                rxChar = 0;
-
-
-
-
-
-        }
-
-
-        __nop();
+  }
+  else if ((stdout) == _fp )
+  {
+    for(i=0 ; i<len ; i++)
+    {
+      Uart_UCA0_putc( _ptr[i] );
     }
-
-    return (0);
+  }
+  else
+  {
+    len = (-1);
+  }
+  return( len );
 }
 
 
-void configureInterrupt(){
-
-    INTCON = 0b10001000;
-    IOCANbits.IOCAN0 = 1;
 
 
 
 
+
+int _fflush(FILE *_fp)
+{
+  int8_t c = (-1);
+
+  if ( (stderr) == _fp )
+  {
+    c = Uart_UCA1_Flush();
+  }
+  else if ( (stdin) == _fp )
+  {
+    c = Uart_UCA0_Flush();
+  }
+  else
+  {
+    c = 0;
+  }
+  return(c);
+}
+# 150 "Retarget.c"
+int _fgetc(FILE *_fp)
+{
+  int8_t c = (-1);
+
+  if ( (stderr) == _fp )
+  {
+    if ( 1 == Uart_UCA1_kbhit() )
+    {
+      Uart_UCA1_getc( &c );
+    }
+    else
+    {
+      c = (-1);
+    }
+  }
+  else if ( (stdin) == _fp )
+  {
+    if ( 1 == Uart_UCA0_kbhit() )
+    {
+      Uart_UCA0_getc( &c );
+    }
+    else
+    {
+      c = (-1);
+    }
+  }
+  else
+  {
+    c = (-1);
+  }
+  return(c);
+}
+# 190 "Retarget.c"
+int _fgetchar(FILE *_fp)
+{
+  int8_t c = (-1);
+
+  if ( (stderr) == _fp )
+  {
+    while ( 0 == Uart_UCA1_kbhit() )
+    {
+    }
+    Uart_UCA1_getc( &c );
+  }
+  else if ( (stdin) == _fp )
+  {
+    while ( 0 == Uart_UCA0_kbhit() )
+    {
+    }
+    Uart_UCA0_getc( &c );
+    if ( 1 == SerialEcho )
+    {
+      Uart_UCA0_putc( c );
+    }
+    else
+    {
+      __nop();
+    }
+  }
+  else
+  {
+    c = (-1);
+  }
+  return(c);
 }
 
-void configUART(){
+int _fkbhit(FILE *_fp)
+{
+  int8_t rval = (-1);
 
-
-    RA0PPS = 0x0F;
-    TX1STAbits.TXEN = 1;
-    TX1STAbits.SYNC = 0;
-    RC1STAbits.SPEN = 1;
-
-    ANSELAbits.ANSA0 = 0;
-
-
-    RC1STAbits.CREN = 1;
-
-
-
-    TX1STAbits.BRGH = 0;
-    BAUD1CONbits.BRG16 = 0;
-    SPBRGL = 25;
-
-
+  if ( (stderr) == _fp )
+  {
+    rval = Uart_UCA1_kbhit();
+  }
+  else if ( (stdin) == _fp )
+  {
+    rval = Uart_UCA0_kbhit();
+  }
+  else
+  {
+    rval = (-1);
+  }
+  return(rval);
 }
+# 252 "Retarget.c"
+char *_fgets(char *_ptr, int _size, FILE *_fp)
+{
+  int8_t rVal = STATUS_BUSY;
+  int cnt = 0;
+  int c;
+  char *pDest;
+  int CR_Flag = 0;
+  int NL_Flag = 0;
 
-void configureUARTrXint(){
-    PIE3bits.RC1IE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
+  pDest = _ptr;
+  memset(pDest,0,_size);
+  do
+  {
+    c = _fgetchar( _fp );
+    if ( (-1) == c )
+    {
+      rVal = STATUS_ERROR;
+    }
+    else
+    {
+      if ( cnt == (_size - 1) )
+      {
+        *pDest = 0;
+        rVal = STATUS_OK;
+      }
+
+      if ('\r' == c)
+      {
+        CR_Flag = 1;
+      }
+      else if ('\n' == c)
+      {
+        NL_Flag = 1;
+      }
+      else
+      {
+        *pDest = c;
+        pDest++;
+        cnt++;
+      }
+    }
+    if ( (1 == CR_Flag) && (1 == NL_Flag))
+    {
+        pDest++;
+        *pDest = 0;
+        rVal = STATUS_OK;
+    }
+  }
+  while( STATUS_BUSY == rVal );
+
+  if (STATUS_ERROR == rVal)
+  {
+    _ptr = ((void*)0);
+  }
+  return(_ptr);
 }

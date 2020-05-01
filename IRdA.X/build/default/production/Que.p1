@@ -1,0 +1,200 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"14 ./Que.h
+[; ;./Que.h: 14: typedef struct {
+[s S4 `c -> 64 `i `c 1 `c 1 ]
+[n S4 . Data In Out ]
+"27 Que.c
+[; ;Que.c: 27: int8_t QInit( t_Q *pQ )
+[v _QInit `(c ~T0 @X0 1 ef1`*S4 ]
+"28
+[; ;Que.c: 28: {
+{
+[e :U _QInit ]
+"27
+[; ;Que.c: 27: int8_t QInit( t_Q *pQ )
+[v _pQ `*S4 ~T0 @X0 1 r1 ]
+"28
+[; ;Que.c: 28: {
+[f ]
+"29
+[; ;Que.c: 29:   int16_t i;
+[v _i `s ~T0 @X0 1 a ]
+"30
+[; ;Que.c: 30:   pQ->In = 0;
+[e = . *U _pQ 1 -> -> 0 `i `c ]
+"31
+[; ;Que.c: 31:   pQ->Out = 0;
+[e = . *U _pQ 2 -> -> 0 `i `c ]
+"32
+[; ;Que.c: 32:   for (i=0;i<64; i++)
+{
+[e = _i -> -> 0 `i `s ]
+[e $ < -> _i `i -> 64 `i 6  ]
+[e $U 7  ]
+[e :U 6 ]
+"33
+[; ;Que.c: 33:   {
+{
+"34
+[; ;Que.c: 34:    pQ->Data[i] = 0;
+[e = *U + &U . *U _pQ 0 * -> -> _i `us `ux -> -> # *U &U . *U _pQ 0 `ui `ux -> -> 0 `i `c ]
+"35
+[; ;Que.c: 35:   }
+}
+[e ++ _i -> -> 1 `i `s ]
+[e $ < -> _i `i -> 64 `i 6  ]
+[e :U 7 ]
+}
+"36
+[; ;Que.c: 36:   return(1);
+[e ) -> -> 1 `i `c ]
+[e $UE 5  ]
+"37
+[; ;Que.c: 37: }
+[e :UE 5 ]
+}
+"58
+[; ;Que.c: 58: int8_t QIn( int8_t Src, t_Q *pQ )
+[v _QIn `(c ~T0 @X0 1 ef2`c`*S4 ]
+"59
+[; ;Que.c: 59: {
+{
+[e :U _QIn ]
+"58
+[; ;Que.c: 58: int8_t QIn( int8_t Src, t_Q *pQ )
+[v _Src `c ~T0 @X0 1 r1 ]
+[v _pQ `*S4 ~T0 @X0 1 r2 ]
+"59
+[; ;Que.c: 59: {
+[f ]
+"60
+[; ;Que.c: 60:   int8_t next;
+[v _next `c ~T0 @X0 1 a ]
+"62
+[; ;Que.c: 62:   next = (pQ->In + 1) % 64;
+[e = _next -> % + -> . *U _pQ 1 `i -> 1 `i -> 64 `i `c ]
+"63
+[; ;Que.c: 63:   if ( next == pQ->Out )
+[e $ ! == -> _next `i -> . *U _pQ 2 `i 10  ]
+"64
+[; ;Que.c: 64:   {
+{
+"65
+[; ;Que.c: 65:     next = -1;
+[e = _next -> -U -> 1 `i `c ]
+"66
+[; ;Que.c: 66:   }
+}
+[e $U 11  ]
+"67
+[; ;Que.c: 67:   else
+[e :U 10 ]
+"68
+[; ;Que.c: 68:   {
+{
+"69
+[; ;Que.c: 69:     pQ->In = next;
+[e = . *U _pQ 1 _next ]
+"70
+[; ;Que.c: 70:     pQ->Data[pQ->In] = Src;
+[e = *U + &U . *U _pQ 0 * -> -> . *U _pQ 1 `uc `ux -> -> # *U &U . *U _pQ 0 `ui `ux _Src ]
+"71
+[; ;Que.c: 71:   }
+}
+[e :U 11 ]
+"72
+[; ;Que.c: 72:   return(next);
+[e ) _next ]
+[e $UE 9  ]
+"73
+[; ;Que.c: 73: }
+[e :UE 9 ]
+}
+"95
+[; ;Que.c: 95: int8_t QOut( int8_t *Dest, t_Q *pQ )
+[v _QOut `(c ~T0 @X0 1 ef2`*c`*S4 ]
+"96
+[; ;Que.c: 96: {
+{
+[e :U _QOut ]
+"95
+[; ;Que.c: 95: int8_t QOut( int8_t *Dest, t_Q *pQ )
+[v _Dest `*c ~T0 @X0 1 r1 ]
+[v _pQ `*S4 ~T0 @X0 1 r2 ]
+"96
+[; ;Que.c: 96: {
+[f ]
+"97
+[; ;Que.c: 97:   if ( pQ->Out == pQ->In ) {
+[e $ ! == -> . *U _pQ 2 `i -> . *U _pQ 1 `i 13  ]
+{
+"98
+[; ;Que.c: 98:     return( 0 );
+[e ) -> -> 0 `i `c ]
+[e $UE 12  ]
+"99
+[; ;Que.c: 99:   }
+}
+[e :U 13 ]
+"100
+[; ;Que.c: 100:   pQ->Out++;
+[e ++ . *U _pQ 2 -> -> 1 `i `c ]
+"101
+[; ;Que.c: 101:   pQ->Out = pQ->Out % 64;
+[e = . *U _pQ 2 -> % -> . *U _pQ 2 `i -> 64 `i `c ]
+"102
+[; ;Que.c: 102:   *Dest = pQ->Data[pQ->Out];
+[e = *U _Dest *U + &U . *U _pQ 0 * -> -> . *U _pQ 2 `uc `ux -> -> # *U &U . *U _pQ 0 `ui `ux ]
+"103
+[; ;Que.c: 103:   return( 1 );
+[e ) -> -> 1 `i `c ]
+[e $UE 12  ]
+"104
+[; ;Que.c: 104: }
+[e :UE 12 ]
+}
+"125
+[; ;Que.c: 125: int8_t QChkQ( t_Q *pQ )
+[v _QChkQ `(c ~T0 @X0 1 ef1`*S4 ]
+"126
+[; ;Que.c: 126: {
+{
+[e :U _QChkQ ]
+"125
+[; ;Que.c: 125: int8_t QChkQ( t_Q *pQ )
+[v _pQ `*S4 ~T0 @X0 1 r1 ]
+"126
+[; ;Que.c: 126: {
+[f ]
+"127
+[; ;Que.c: 127:   if ( pQ->Out == pQ->In )
+[e $ ! == -> . *U _pQ 2 `i -> . *U _pQ 1 `i 15  ]
+"128
+[; ;Que.c: 128:   {
+{
+"129
+[; ;Que.c: 129:     return( 0 );
+[e ) -> -> 0 `i `c ]
+[e $UE 14  ]
+"130
+[; ;Que.c: 130:   }
+}
+[e $U 16  ]
+"131
+[; ;Que.c: 131:   else
+[e :U 15 ]
+"132
+[; ;Que.c: 132:   {
+{
+"133
+[; ;Que.c: 133:     return( 1 );
+[e ) -> -> 1 `i `c ]
+[e $UE 14  ]
+"134
+[; ;Que.c: 134:   }
+}
+[e :U 16 ]
+"135
+[; ;Que.c: 135: }
+[e :UE 14 ]
+}

@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "uart_UCA1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
+# 1 "uart_UCA1.c" 2
+# 10 "uart_UCA1.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9875,7 +9870,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 7 "main.c" 2
+# 10 "uart_UCA1.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
@@ -10015,8 +10010,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "main.c" 2
-
+# 11 "uart_UCA1.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -10101,10 +10095,10 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 10 "main.c" 2
+# 12 "uart_UCA1.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 11 "main.c" 2
+# 13 "uart_UCA1.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
@@ -10161,21 +10155,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "main.c" 2
+# 14 "uart_UCA1.c" 2
 
-
-# 1 "./Debug.h" 1
-# 11 "./Debug.h"
-void debug_init(void);
-void debug_deinit(void);
-void debug_out(const char *fmt, ...);
-char *debug_in( char *buf, uint16_t Len, uint32_t tmo );
-int16_t debug_kbhit(void);
-uint16_t debug_enable(void);
-uint16_t debug_disable(void);
-uint16_t debug_getstatus(void);
-void debug_flush(void);
-# 14 "main.c" 2
 
 # 1 "./main.h" 1
 # 19 "./main.h"
@@ -10187,117 +10168,59 @@ typedef enum
   STATUS_TIMEOUT = 3U,
   STATUS_COMPLETE = 4U
 } Status_t;
-# 15 "main.c" 2
-# 32 "main.c"
-#pragma config FEXTOSC = ECH
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = ON
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
+# 16 "uart_UCA1.c" 2
 
 
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = ON
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
 
 
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
+# 1 "./uart_UCA1.h" 1
+# 10 "./uart_UCA1.h"
+# 1 "./Que.h" 1
+# 14 "./Que.h"
+typedef struct {
+  int8_t Data[64];
+  int8_t In;
+  int8_t Out;
+} t_Q;
 
 
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
+int8_t QInit( t_Q *pQ );
+int8_t QIn( int8_t Src, t_Q *pQ );
+int8_t QOut( int8_t *Dest, t_Q *pQ );
+int8_t QChkQ( t_Q *pQ );
+# 10 "./uart_UCA1.h" 2
 
 
 
 
 
-void configureInterrupt();
-void configUART();
-void configureUARTrXint();
-volatile char check = 0;
-volatile char rxChar = 0;
-volatile char rxChar2 = 0;
-# 104 "main.c"
-int main(int argc, char** argv) {
-    INTCONbits.PEIE = 0;
 
 
 
-    OSCFRQ = 0b0000101;
-    OSCCON1 = 0b01100000;
-
-    debug_init();
-# 130 "main.c"
-    configureUARTrXint();
-    TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 0;
-
-
-    while(1){
-        TX1REG = 'a';
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((100)*(16000000/4000.0)));
-    }
+void Uart_UCA1Init(void);
+void Uart_UCA1deInit(void);
+int8_t Uart_UCA1_Flush(void);
+int8_t Uart_UCA1_kbhit(void);
+int8_t Uart_UCA1_getc( int8_t *Out );
+int8_t Uart_UCA1_putc( int8_t c );
+t_Q *getU1_RxBuf_t(void);
+# 20 "uart_UCA1.c" 2
 
 
 
 
-    check = 0;
-    while(1){
-
-        if (check){
-            check = 0;
-            _delay((unsigned long)((10)*(16000000/4000.0)));
+t_Q U1_RxBuf_t;
 
 
 
 
 
-                rxChar = 0;
 
-
-
-
-
-        }
-
-
-        __nop();
-    }
-
-    return (0);
+t_Q* getU1_RxBuf_t(void){
+    return(&U1_RxBuf_t);
 }
-
-
-void configureInterrupt(){
-
-    INTCON = 0b10001000;
-    IOCANbits.IOCAN0 = 1;
-
-
-
-
-}
-
-void configUART(){
-
+void Uart_UCA1Init(void)
+{
 
     RA0PPS = 0x0F;
     TX1STAbits.TXEN = 1;
@@ -10318,8 +10241,24 @@ void configUART(){
 
 }
 
-void configureUARTrXint(){
-    PIE3bits.RC1IE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
+void Uart_UCA1deInit(void)
+{
+
+}
+
+int8_t Uart_UCA1_kbhit(void)
+{
+  return(QChkQ(&U1_RxBuf_t));
+}
+
+int8_t Uart_UCA1_getc( int8_t *Out )
+{
+  return(QOut(Out, &U1_RxBuf_t) );
+}
+
+int8_t Uart_UCA1_putc( int8_t c )
+{
+  while(!(PIR3 & PIR3bits.TX1IF));
+  TXREG = c;
+  return(c);
 }
