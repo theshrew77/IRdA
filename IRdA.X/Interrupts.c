@@ -20,6 +20,7 @@ __interrupt() void ISR(void){
   {
     QIn( UCA0RXBUF, getU0_RxBuf_t() );
     LATAbits.LATA2 ^= 1;
+    //BAUD1CONbits.WUE = 1;
   }
   
    /*

@@ -10200,6 +10200,7 @@ int8_t Uart_UCA0_kbhit(void);
 int8_t Uart_UCA0_getc( int8_t *Out );
 int8_t Uart_UCA0_putc( int8_t c );
 t_Q *getU0_RxBuf_t(void);
+void Uart_UCA0_RxIntEn(void);
 # 8 "uart_UCA0.c" 2
 
 
@@ -10219,10 +10220,27 @@ void Uart_UCA0Init(void)
     TX1STAbits.SYNC = 0;
     RC1STAbits.SPEN = 1;
     ANSELAbits.ANSA0 = 0;
-# 37 "uart_UCA0.c"
+
+
+
+    RX1DTPPS = 0x01;
+    TRISAbits.TRISA1 = 1;
+    ANSELAbits.ANSA1 = 0;
+    RC1STAbits.CREN = 1;
+
+    BAUD1CONbits.WUE = 1;
+
+
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
     SPBRGL = 25;
+
+}
+
+void Uart_UCA0_RxIntEn(void){
+    PIE3bits.RC1IE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
 
 }
 

@@ -10220,6 +10220,7 @@ int8_t Uart_UCA0_kbhit(void);
 int8_t Uart_UCA0_getc( int8_t *Out );
 int8_t Uart_UCA0_putc( int8_t c );
 t_Q *getU0_RxBuf_t(void);
+void Uart_UCA0_RxIntEn(void);
 # 16 "main.c" 2
 # 32 "main.c"
 #pragma config FEXTOSC = ECH
@@ -10262,14 +10263,13 @@ t_Q *getU0_RxBuf_t(void);
 
 
 void configureInterrupt();
-void configUART();
-void configureUARTrXint();
+
+
 volatile char check = 0;
 volatile char rxChar = 0;
 volatile char rxChar2 = 0;
 # 104 "main.c"
 int main(int argc, char** argv) {
-    INTCONbits.PEIE = 0;
 
 
 
@@ -10277,23 +10277,17 @@ int main(int argc, char** argv) {
     OSCCON1 = 0b01100000;
 
     Uart_UCA0Init();
-# 131 "main.c"
+# 129 "main.c"
+    Uart_UCA0_RxIntEn();
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0;
     _delay((unsigned long)((500)*(16000000/4000.0)));
 
+
+    printf("Entering while(1) \n\r");
+
     while(1){
-
-
-
-        printf("Pizza Timex%d! \n\r",10);
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(16000000/4000.0)));
-
-
-
-
-
+# 149 "main.c"
     }
 
 
@@ -10334,34 +10328,4 @@ void configureInterrupt(){
 
 
 
-}
-
-void configUART(){
-
-
-    RA0PPS = 0x0F;
-    TX1STAbits.TXEN = 1;
-    TX1STAbits.SYNC = 0;
-    RC1STAbits.SPEN = 1;
-    ANSELAbits.ANSA0 = 0;
-
-
-    RX1DTPPS = 0x01;
-    TRISAbits.TRISA1 = 1;
-    ANSELAbits.ANSA1 = 0;
-    RC1STAbits.CREN = 1;
-
-
-
-    TX1STAbits.BRGH = 0;
-    BAUD1CONbits.BRG16 = 0;
-    SPBRGL = 25;
-
-
-}
-
-void configureUARTrXint(){
-    PIE3bits.RC1IE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
 }

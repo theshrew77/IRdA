@@ -23,6 +23,7 @@ int8_t  Uart_UCA0_kbhit(void);
 int8_t  Uart_UCA0_getc( int8_t *Out );
 int8_t  Uart_UCA0_putc( int8_t c );
 t_Q     *getU0_RxBuf_t(void);
+void    Uart_UCA0_RxIntEn(void);
 
 #ifdef	__cplusplus
 extern "C" {

@@ -9999,6 +9999,7 @@ int8_t Uart_UCA0_kbhit(void);
 int8_t Uart_UCA0_getc( int8_t *Out );
 int8_t Uart_UCA0_putc( int8_t c );
 t_Q *getU0_RxBuf_t(void);
+void Uart_UCA0_RxIntEn(void);
 # 3 "Interrupts.c" 2
 
 # 1 "./uart_UCA1.h" 1
@@ -10022,7 +10023,8 @@ __attribute__((picinterrupt(("")))) void ISR(void){
   {
     QIn( RCREG, getU0_RxBuf_t() );
     LATAbits.LATA2 ^= 1;
+
   }
-# 38 "Interrupts.c"
+# 39 "Interrupts.c"
     return;
 }

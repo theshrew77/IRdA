@@ -69,8 +69,8 @@
  */
 
 void configureInterrupt();
-void configUART();
-void configureUARTrXint();
+
+
 volatile char check = 0;
 volatile char rxChar = 0;
 volatile char rxChar2 = 0;
@@ -102,8 +102,7 @@ __interrupt() void ISR(void){
 */
 
 int main(int argc, char** argv) {
-    INTCONbits.PEIE = 0;
-    //INTCONbits.GIE = 0;
+
     
     //set oscilator frequency to 16MHz
     OSCFRQ = 0b0000101;  
@@ -127,18 +126,21 @@ int main(int argc, char** argv) {
 #endif 
     
 #ifdef slave
-    //configureUARTrXint();
+    Uart_UCA0_RxIntEn();
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0; 
     __delay_ms(500);
 
+
+    printf("Entering while(1) \n\r");
+    //printf("Pizza Timex%d! \n\r",5);
     while(1){
 
         //TX1REG = 'a';
         //Uart_UCA0_putc( 'a' );
-        printf("Pizza Timex%d! \n\r",5);
-        LATAbits.LATA2 ^= 1;
-        __delay_ms(500);
+        
+        //LATAbits.LATA2 ^= 1;
+        //__delay_ms(500);
 
         //TX1REG = 'a';
         //LATAbits.LATA2 ^= 1;
@@ -186,32 +188,5 @@ void configureInterrupt(){
     //RA0 has no ANSEL requirement
 }
 
-void configUART(){
-   
-    //Enable TX
-    RA0PPS = 0x0F;          //send UART TX to RA0
-    TX1STAbits.TXEN = 1;    //Enable Transmitter circuitry
-    TX1STAbits.SYNC = 0;    //Disable synchronus mode
-    RC1STAbits.SPEN = 1;    //Enable ESUART and set TX pin as output
-    ANSELAbits.ANSA0 = 0;   //clear RA0/TX ANSEL bit
-    
-    //enable RX
-    RX1DTPPS = 0x01;        //Retrieve UART RX from RA1
-    TRISAbits.TRISA1 = 1;   //Set RX pin as input. Required for RX only; TX handled by setting SPEN
-    ANSELAbits.ANSA1 = 0;   //clear RA1/RX ANSEL bit
-    RC1STAbits.CREN = 1;    //enable receiver circuitry
-    
-    
-    //configure 9600 baud
-    TX1STAbits.BRGH = 0;
-    BAUD1CONbits.BRG16 = 0;
-    SPBRGL = 25;
-    
-    //BAUDCONbits.WUE = 1;
-}
 
-void configureUARTrXint(){
-    PIE3bits.RC1IE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
-}
+

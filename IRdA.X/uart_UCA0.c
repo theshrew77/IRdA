@@ -24,7 +24,7 @@ void Uart_UCA0Init(void)
     RC1STAbits.SPEN = 1;    //Enable ESUART and set TX pin as output
     ANSELAbits.ANSA0 = 0;   //clear RA0/TX ANSEL bit
     
-    /*
+    
     //enable RX
     RX1DTPPS = 0x01;        //Retrieve UART RX from RA1
     TRISAbits.TRISA1 = 1;   //Set RX pin as input. Required for RX only; TX handled by setting SPEN
@@ -32,12 +32,19 @@ void Uart_UCA0Init(void)
     RC1STAbits.CREN = 1;    //enable receiver circuitry
     
     BAUD1CONbits.WUE = 1;   
-    */
+    
     //configure 9600 baud
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
     SPBRGL = 25;
     
+}
+
+void Uart_UCA0_RxIntEn(void){
+    PIE3bits.RC1IE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+    //BAUD1CONbits.WUE = 1;
 }
 
 void Uart_UCA0deInit(void)
@@ -84,10 +91,4 @@ int8_t  Uart_UCA0_putc( int8_t c )
   return(c);
 }
 
-/**
-  * @brief  Receive interrupt for the uart.
-  *         The received byte is placed in the input queue.
-  * @param  none
-  * @retval none
-  */
 

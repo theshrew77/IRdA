@@ -856,14 +856,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;Interrupts.c: 22:     LATAbits.LATA2 ^= 1;
 [e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"23
-[; ;Interrupts.c: 23:   }
+"24
+[; ;Interrupts.c: 24:   }
 }
 [e :U 791 ]
-"38
-[; ;Interrupts.c: 38:     return;
-[e $UE 790  ]
 "39
-[; ;Interrupts.c: 39: }
+[; ;Interrupts.c: 39:     return;
+[e $UE 790  ]
+"40
+[; ;Interrupts.c: 40: }
 [e :UE 790 ]
 }
