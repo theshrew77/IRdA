@@ -8,6 +8,8 @@
       <itemPath>main.h</itemPath>
       <itemPath>Retarget.h</itemPath>
       <itemPath>uart_UCA0.h</itemPath>
+      <itemPath>uart_UCA1.h</itemPath>
+      <itemPath>Debug.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -21,6 +23,8 @@
       <itemPath>Retarget.c</itemPath>
       <itemPath>uart_UCA0.c</itemPath>
       <itemPath>Interrupts.c</itemPath>
+      <itemPath>uart_UCA1.c</itemPath>
+      <itemPath>Debug.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

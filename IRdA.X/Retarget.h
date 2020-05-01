@@ -9,9 +9,6 @@
 #define	RETARGET_H
 
 
-void putch(char c);
-
-
 #ifdef	__cplusplus
 extern "C" {
 #endif

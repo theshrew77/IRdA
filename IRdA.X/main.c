@@ -11,7 +11,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-#include "uart_UCA0.h"
+#include "Debug.h"
 #include "main.h"
 
 
@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
     OSCFRQ = 0b0000101;  
     OSCCON1 = 0b01100000;
 
-    Uart_UCA0Init();
+    debug_init();
 
 //    __delay_ms(10);
 //    configUART();
@@ -133,11 +133,17 @@ int main(int argc, char** argv) {
     __delay_ms(500);
     printf("a");
     while(1){
+<<<<<<< HEAD
         //TX1REG = 'a';
         //Uart_UCA0_putc( 'a' );
         //printf("Pizza Timex%d! \n\r",10);
         //LATAbits.LATA2 ^= 1;
         //__delay_ms(500);
+=======
+        TX1REG = 'a';
+        LATAbits.LATA2 ^= 1;
+        __delay_ms(100);
+>>>>>>> parent of f7a5c67... writing to terminal working with printf
     }
    
     

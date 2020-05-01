@@ -17,9 +17,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9441
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9441: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
-"19 ./uart_UCA0.h
-[; ;./uart_UCA0.h: 19: void Uart_UCA0Init(void);
-[v _Uart_UCA0Init `(v ~T0 @X0 0 ef ]
+"11 ./Debug.h
+[; ;./Debug.h: 11: void debug_init(void);
+[v _debug_init `(v ~T0 @X0 0 ef ]
 "73 main.c
 [v _configureUARTrXint `(v ~T0 @X0 0 e? ]
 "502 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
@@ -44,6 +44,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "556
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
 [v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
+"976
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 976: extern volatile unsigned char TX1REG __attribute__((address(0x11A)));
+[v _TX1REG `Vuc ~T0 @X0 0 e@282 ]
 [v F5815 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF5815 ~T0 @X0 0 e ]
@@ -1018,8 +1021,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 110:     OSCCON1 = 0b01100000;
 [e = _OSCCON1 -> -> 96 `i `uc ]
 "112
-[; ;main.c: 112:     Uart_UCA0Init();
-[e ( _Uart_UCA0Init ..  ]
+[; ;main.c: 112:     debug_init();
+[e ( _debug_init ..  ]
 "130
 [; ;main.c: 130:     configureUARTrXint();
 [e ( _configureUARTrXint ..  ]
@@ -1037,89 +1040,104 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _printf :s 1C ]
 "135
 [; ;main.c: 135:     while(1){
-[e :U 795 ]
+[e :U 794 ]
 {
+<<<<<<< HEAD
 "141
 [; ;main.c: 141:     }
+=======
+"136
+[; ;main.c: 136:         TX1REG = 'a';
+[e = _TX1REG -> -> 97 `ui `uc ]
+"137
+[; ;main.c: 137:         LATAbits.LATA2 ^= 1;
+[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
+"138
+[; ;main.c: 138:         _delay((unsigned long)((100)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"139
+[; ;main.c: 139:     }
+>>>>>>> parent of f7a5c67... writing to terminal working with printf
 }
-[e :U 794 ]
-[e $U 795  ]
-[e :U 796 ]
-"146
-[; ;main.c: 146:     check = 0;
+[e :U 793 ]
+[e $U 794  ]
+[e :U 795 ]
+"144
+[; ;main.c: 144:     check = 0;
 [e = _check -> -> 0 `i `uc ]
-"147
-[; ;main.c: 147:     while(1){
-[e :U 798 ]
-{
-"149
-[; ;main.c: 149:         if (check){
-[e $ ! != -> _check `i -> 0 `i 800  ]
-{
-"150
-[; ;main.c: 150:             check = 0;
-[e = _check -> -> 0 `i `uc ]
-"151
-[; ;main.c: 151:             _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"157
-[; ;main.c: 157:                 rxChar = 0;
-[e = _rxChar -> -> 0 `i `uc ]
-"163
-[; ;main.c: 163:         }
-}
-[e :U 800 ]
-"166
-[; ;main.c: 166:         __nop();
-[e ( ___nop ..  ]
-"167
-[; ;main.c: 167:     }
-}
+"145
+[; ;main.c: 145:     while(1){
 [e :U 797 ]
-[e $U 798  ]
-[e :U 799 ]
-"169
-[; ;main.c: 169:     return (0);
-[e ) -> 0 `i ]
-[e $UE 793  ]
-"170
-[; ;main.c: 170: }
-[e :UE 793 ]
+{
+"147
+[; ;main.c: 147:         if (check){
+[e $ ! != -> _check `i -> 0 `i 799  ]
+{
+"148
+[; ;main.c: 148:             check = 0;
+[e = _check -> -> 0 `i `uc ]
+"149
+[; ;main.c: 149:             _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"155
+[; ;main.c: 155:                 rxChar = 0;
+[e = _rxChar -> -> 0 `i `uc ]
+"161
+[; ;main.c: 161:         }
 }
-"173
-[; ;main.c: 173: void configureInterrupt(){
+[e :U 799 ]
+"164
+[; ;main.c: 164:         __nop();
+[e ( ___nop ..  ]
+"165
+[; ;main.c: 165:     }
+}
+[e :U 796 ]
+[e $U 797  ]
+[e :U 798 ]
+"167
+[; ;main.c: 167:     return (0);
+[e ) -> 0 `i ]
+[e $UE 792  ]
+"168
+[; ;main.c: 168: }
+[e :UE 792 ]
+}
+"171
+[; ;main.c: 171: void configureInterrupt(){
 [v _configureInterrupt `(v ~T0 @X0 1 ef ]
 {
 [e :U _configureInterrupt ]
 [f ]
-"175
-[; ;main.c: 175:     INTCON = 0b10001000;
+"173
+[; ;main.c: 173:     INTCON = 0b10001000;
 [e = _INTCON -> -> 136 `i `uc ]
-"176
-[; ;main.c: 176:     IOCANbits.IOCAN0 = 1;
+"174
+[; ;main.c: 174:     IOCANbits.IOCAN0 = 1;
 [e = . . _IOCANbits 0 0 -> -> 1 `i `uc ]
-"181
-[; ;main.c: 181: }
-[e :UE 801 ]
+"179
+[; ;main.c: 179: }
+[e :UE 800 ]
 }
-"183
-[; ;main.c: 183: void configUART(){
+"181
+[; ;main.c: 181: void configUART(){
 [v _configUART `(v ~T0 @X0 1 ef ]
 {
 [e :U _configUART ]
 [f ]
-"186
-[; ;main.c: 186:     RA0PPS = 0x0F;
+"184
+[; ;main.c: 184:     RA0PPS = 0x0F;
 [e = _RA0PPS -> -> 15 `i `uc ]
-"187
-[; ;main.c: 187:     TX1STAbits.TXEN = 1;
+"185
+[; ;main.c: 185:     TX1STAbits.TXEN = 1;
 [e = . . _TX1STAbits 0 5 -> -> 1 `i `uc ]
-"188
-[; ;main.c: 188:     TX1STAbits.SYNC = 0;
+"186
+[; ;main.c: 186:     TX1STAbits.SYNC = 0;
 [e = . . _TX1STAbits 0 4 -> -> 0 `i `uc ]
-"189
-[; ;main.c: 189:     RC1STAbits.SPEN = 1;
+"187
+[; ;main.c: 187:     RC1STAbits.SPEN = 1;
 [e = . . _RC1STAbits 0 7 -> -> 1 `i `uc ]
+<<<<<<< HEAD
 "190
 [; ;main.c: 190:     ANSELAbits.ANSA0 = 0;
 [e = . . _ANSELAbits 0 0 -> -> 0 `i `uc ]
@@ -1150,10 +1168,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "207
 [; ;main.c: 207: void configureUARTrXint(){
+=======
+"189
+[; ;main.c: 189:     ANSELAbits.ANSA0 = 0;
+[e = . . _ANSELAbits 0 0 -> -> 0 `i `uc ]
+"192
+[; ;main.c: 192:     RC1STAbits.CREN = 1;
+[e = . . _RC1STAbits 0 4 -> -> 1 `i `uc ]
+"196
+[; ;main.c: 196:     TX1STAbits.BRGH = 0;
+[e = . . _TX1STAbits 0 2 -> -> 0 `i `uc ]
+"197
+[; ;main.c: 197:     BAUD1CONbits.BRG16 = 0;
+[e = . . _BAUD1CONbits 0 3 -> -> 0 `i `uc ]
+"198
+[; ;main.c: 198:     SPBRGL = 25;
+[e = _SPBRGL -> -> 25 `i `uc ]
+"201
+[; ;main.c: 201: }
+[e :UE 801 ]
+}
+"203
+[; ;main.c: 203: void configureUARTrXint(){
+>>>>>>> parent of f7a5c67... writing to terminal working with printf
 [v _configureUARTrXint `(v ~T0 @X0 1 ef ]
 {
 [e :U _configureUARTrXint ]
 [f ]
+<<<<<<< HEAD
 "208
 [; ;main.c: 208:     PIE3bits.RC1IE = 1;
 [e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
@@ -1166,6 +1208,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "211
 [; ;main.c: 211: }
 [e :UE 803 ]
+=======
+"204
+[; ;main.c: 204:     PIE3bits.RC1IE = 1;
+[e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
+"205
+[; ;main.c: 205:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"206
+[; ;main.c: 206:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"207
+[; ;main.c: 207: }
+[e :UE 802 ]
+>>>>>>> parent of f7a5c67... writing to terminal working with printf
 }
 [p f _printf 8388608 ]
 [a 1C 97 0 ]

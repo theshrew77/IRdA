@@ -10023,6 +10023,15 @@ __attribute__((picinterrupt(("")))) void ISR(void){
     QIn( RCREG, getU0_RxBuf_t() );
     LATAbits.LATA2 ^= 1;
   }
+<<<<<<< HEAD
 # 38 "Interrupts.c"
+=======
+
+    if ( (PIR3 & (1L << (PIR3bits.RC1IF))))
+  {
+    QIn( RCREG, getU1_RxBuf_t() );
+  }
+# 41 "Interrupts.c"
+>>>>>>> parent of f7a5c67... writing to terminal working with printf
     return;
 }
