@@ -3,15 +3,27 @@
 [d edition pro ]
 [d chip 16LF15313 ]
 [d frameptr 6 ]
+"670 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "9 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 "104 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"205
+"207
 [v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
 "27 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Que.c
 [v _QInit QInit `(c  1 e 1 0 ]
@@ -21,13 +33,15 @@
 [v _QOut QOut `(c  1 e 1 0 ]
 "125
 [v _QChkQ QChkQ `(c  1 e 1 0 ]
+"46 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
+[v _putch putch `(v  1 e 1 0 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S274  1 e 1 0 ]
+[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S281  1 e 1 0 ]
 "18
 [v _Uart_UCA0Init Uart_UCA0Init `(v  1 e 1 0 ]
-"78
+"80
 [v _Uart_UCA0_putc Uart_UCA0_putc `(c  1 e 1 0 ]
 "413 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
@@ -65,7 +79,7 @@
 [v _TXREG TXREG `VEuc  1 e 1 @282 ]
 "1050
 [v _SPBRGL SPBRGL `VEuc  1 e 1 @283 ]
-[s S129 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S134 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -75,9 +89,9 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1187
-[u S138 . 1 `S129 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES138  1 e 1 @285 ]
-[s S108 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S143 . 1 `S134 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES143  1 e 1 @285 ]
+[s S113 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -87,9 +101,9 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "1367
-[u S117 . 1 `S108 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES117  1 e 1 @286 ]
-[s S167 . 1 `uc 1 ABDEN 1 0 :1:0 
+[u S122 . 1 `S113 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES122  1 e 1 @286 ]
+[s S173 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -99,35 +113,35 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "1555
-[u S176 . 1 `S167 1 . 1 0 ]
-[v _BAUD1CONbits BAUD1CONbits `VES176  1 e 1 @287 ]
-"7735
-[v _PIR3 PIR3 `VEuc  1 e 1 @1807 ]
-[s S365 . 1 `uc 1 SSP1IF 1 0 :1:0 
+[u S182 . 1 `S173 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES182  1 e 1 @287 ]
+[s S372 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
 "7749
-[u S371 . 1 `S365 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES371  1 e 1 @1807 ]
-[s S189 . 1 `uc 1 SSP1IE 1 0 :1:0 
+[u S378 . 1 `S372 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES378  1 e 1 @1807 ]
+[s S195 . 1 `uc 1 SSP1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
 "8020
-[u S195 . 1 `S189 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES195  1 e 1 @1817 ]
+[u S201 . 1 `S195 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES201  1 e 1 @1817 ]
 "9441
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "9771
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
+"15741
+[v _RX1DTPPS RX1DTPPS `VEuc  1 e 1 @7883 ]
 "15857
 [v _RA0PPS RA0PPS `VEuc  1 e 1 @7952 ]
-[s S150 . 1 `uc 1 ANSA0 1 0 :1:0 
+[s S155 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -135,9 +149,9 @@
 `uc 1 ANSA5 1 0 :1:5 
 ]
 "16136
-[u S157 . 1 `S150 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES157  1 e 1 @7992 ]
-[s S90 . 1 `uc 1 IOCAN0 1 0 :1:0 
+[u S162 . 1 `S155 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES162  1 e 1 @7992 ]
+[s S95 . 1 `uc 1 IOCAN0 1 0 :1:0 
 `uc 1 IOCAN1 1 0 :1:1 
 `uc 1 IOCAN2 1 0 :1:2 
 `uc 1 IOCAN3 1 0 :1:3 
@@ -145,41 +159,109 @@
 `uc 1 IOCAN5 1 0 :1:5 
 ]
 "16421
-[u S97 . 1 `S90 1 . 1 0 ]
-[v _IOCANbits IOCANbits `VES97  1 e 1 @7998 ]
+[u S102 . 1 `S95 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES102  1 e 1 @7998 ]
+"55 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"69
+[v _nout nout `i  1 s 2 nout ]
 "74 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _check check `VEuc  1 e 1 0 ]
 "75
 [v _rxChar rxChar `VEuc  1 e 1 0 ]
 "76
 [v _rxChar2 rxChar2 `VEuc  1 e 1 0 ]
-[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "12 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _U0_RxBuf_t U0_RxBuf_t `S274  1 s 66 U0_RxBuf_t ]
+[v _U0_RxBuf_t U0_RxBuf_t `S281  1 s 66 U0_RxBuf_t ]
 "104 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
 "170
 } 0
-"205
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.4v  1 a 1 31 ]
+"5
+[v printf@fmt fmt `*.25DCuc  1 p 2 26 ]
+"13
+} 0
+"1368 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+[s S479 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.1S479  1 a 1 wreg ]
+"1371
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 24 ]
+"1368
+[v vfprintf@fp fp `*.1S479  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 18 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 20 ]
+"1373
+"1368
+[v vfprintf@fp fp `*.1S479  1 a 1 23 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+[s S479 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.1S479  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.1S479  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 10 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 11 ]
+"680
+"670
+[v vfpfcnvrt@fp fp `*.1S479  1 a 1 17 ]
+"1365
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 2 ]
+[s S802 _IO_FILE 5 `*.1uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.1S802  1 p 1 4 ]
+"21
+} 0
+"46 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@c c `uc  1 a 1 wreg ]
+[v putch@c c `uc  1 a 1 wreg ]
+[v putch@c c `uc  1 a 1 1 ]
+"48
+} 0
+"80 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
+[v _Uart_UCA0_putc Uart_UCA0_putc `(c  1 e 1 0 ]
+{
+[v Uart_UCA0_putc@c c `c  1 a 1 wreg ]
+[v Uart_UCA0_putc@c c `c  1 a 1 wreg ]
+[v Uart_UCA0_putc@c c `c  1 a 1 0 ]
+"85
+} 0
+"207 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
 {
-"209
+"211
 } 0
 "18 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
 [v _Uart_UCA0Init Uart_UCA0Init `(v  1 e 1 0 ]
 {
-"39
+"41
 } 0
 "9 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"38
+"39
 } 0
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S274  1 e 1 0 ]
+[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S281  1 e 1 0 ]
 {
 "16
 } 0
@@ -191,8 +273,8 @@
 [v QIn@next next `c  1 a 1 4 ]
 "58
 [v QIn@Src Src `c  1 a 1 wreg ]
-[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-[v QIn@pQ pQ `*.4S274  1 p 1 0 ]
+[s S281 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[v QIn@pQ pQ `*.4S281  1 p 1 0 ]
 "62
 [v QIn@Src Src `c  1 a 1 3 ]
 "73

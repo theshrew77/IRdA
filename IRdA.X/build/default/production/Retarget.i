@@ -10238,19 +10238,7 @@ t_Q *getU1_RxBuf_t(void);
 
 
 # 1 "./Retarget.h" 1
-# 11 "./Retarget.h"
-int16_t SetSerialEcho( int16_t val );
-
-int fputc(int _c, register FILE *_fp);
-int fputs(const char *_ptr, register FILE *_fp);
-
-int _fkbhit(FILE *_fp);
-int _fgetc(FILE *_fp);
-char *_fgets(char *_ptr, int _size, FILE *_fp);
-char *_fgets_tmo(char *_ptr, int _size, FILE *_fp, uint32_t tmo);
-
-int _fflush(FILE *_fp);
-
+# 12 "./Retarget.h"
 void putch(char c);
 # 35 "Retarget.c" 2
 

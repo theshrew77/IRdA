@@ -12,9 +12,9 @@
 
 /* Data types ----------------------------------------------------------------*/
 typedef struct {
-  int8_t    Data[Q_MAX];
-  int8_t    In;
-  int8_t    Out;
+  int8_t    Data[Q_MAX];    //array to hold the actual data
+  int8_t    In;             //data array element to start the next write op
+  int8_t    Out;            //data array element to start the nexr read op
 } t_Q;
 
 /* functions prototypes ------------------------------------------------------*/

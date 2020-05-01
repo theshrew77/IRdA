@@ -1,10 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"7735 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7735: extern volatile unsigned char PIR3 __attribute__((address(0x70F)));
-[v _PIR3 `Vuc ~T0 @X0 0 e@1807 ]
-"7741
+"7741 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7741:     struct {
 [s S378 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S378 . SSP1IF BCL1IF . TX1IF RC1IF ]
@@ -28,6 +25,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 25: t_Q *getU0_RxBuf_t(void);
 [v _getU0_RxBuf_t `(*S789 ~T0 @X0 0 ef ]
+"547 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
+"546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"556
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
+[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -837,8 +845,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ISR ]
 [f ]
 "19
-[; ;Interrupts.c: 19:   if ( (PIR3 & (1L << (PIR3bits.RC1IF))))
-[e $ ! != & -> _PIR3 `l << -> 1 `l -> . . _PIR3bits 0 4 `i -> -> 0 `i `l 791  ]
+[; ;Interrupts.c: 19:   if ( PIR3bits.RC1IF )
+[e $ ! != -> . . _PIR3bits 0 4 `i -> 0 `i 791  ]
 "20
 [; ;Interrupts.c: 20:   {
 {
@@ -846,13 +854,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Interrupts.c: 21:     QIn( RCREG, getU0_RxBuf_t() );
 [e ( _QIn (2 , -> _RCREG `c ( _getU0_RxBuf_t ..  ]
 "22
-[; ;Interrupts.c: 22:   }
+[; ;Interrupts.c: 22:     LATAbits.LATA2 ^= 1;
+[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
+"23
+[; ;Interrupts.c: 23:   }
 }
 [e :U 791 ]
-"37
-[; ;Interrupts.c: 37:     return;
-[e $UE 790  ]
 "38
-[; ;Interrupts.c: 38: }
+[; ;Interrupts.c: 38:     return;
+[e $UE 790  ]
+"39
+[; ;Interrupts.c: 39: }
 [e :UE 790 ]
 }

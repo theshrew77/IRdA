@@ -10018,10 +10018,11 @@ t_Q *getU1_RxBuf_t(void);
 
 __attribute__((picinterrupt(("")))) void ISR(void){
 # 19 "Interrupts.c"
-  if ( (PIR3 & (1L << (PIR3bits.RC1IF))))
+  if ( PIR3bits.RC1IF )
   {
     QIn( RCREG, getU0_RxBuf_t() );
+    LATAbits.LATA2 ^= 1;
   }
-# 37 "Interrupts.c"
+# 38 "Interrupts.c"
     return;
 }

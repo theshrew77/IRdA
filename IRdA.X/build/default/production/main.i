@@ -10268,14 +10268,14 @@ int main(int argc, char** argv) {
     configureUARTrXint();
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0;
-
-
+    _delay((unsigned long)((500)*(16000000/4000.0)));
+    printf("a");
     while(1){
 
 
 
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(16000000/4000.0)));
+
+
     }
 
 
@@ -10325,10 +10325,12 @@ void configUART(){
     TX1STAbits.TXEN = 1;
     TX1STAbits.SYNC = 0;
     RC1STAbits.SPEN = 1;
-
     ANSELAbits.ANSA0 = 0;
 
 
+    RX1DTPPS = 0x01;
+    TRISAbits.TRISA1 = 1;
+    ANSELAbits.ANSA1 = 0;
     RC1STAbits.CREN = 1;
 
 

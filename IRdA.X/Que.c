@@ -27,9 +27,9 @@
 int8_t  QInit( t_Q *pQ )
 {
   int16_t i;
-  pQ->In = 0;
-  pQ->Out = 0;
-  for (i=0;i<Q_MAX; i++)
+  pQ->In = 0;               //set next write to start at element 0
+  pQ->Out = 0;              //set next read to start at element 0
+  for (i=0;i<Q_MAX; i++)    //set all data elements to 0
   {
 	  pQ->Data[i] = 0;
   }

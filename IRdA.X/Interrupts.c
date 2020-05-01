@@ -16,9 +16,10 @@ __interrupt() void ISR(void){
         
     }
     */
-  if ( CHECKBIT(IFG2, UCA0RXIFG ))
+  if ( UCA0RXIFG )
   {
     QIn( UCA0RXBUF, getU0_RxBuf_t() );
+    LATAbits.LATA2 ^= 1;
   }
   
    /*

@@ -17,24 +17,26 @@ t_Q *getU0_RxBuf_t(void){
 
 void Uart_UCA0Init(void)
 {
-    //Enable TX
-    RA0PPS = 0x0F;
-    TX1STAbits.TXEN = 1;
-    TX1STAbits.SYNC = 0;
-    RC1STAbits.SPEN = 1;
-    //clear RA0/TX ANSEL bit
-    ANSELAbits.ANSA0 = 0;
+   //Enable TX
+    RA0PPS = 0x0F;          //send UART TX to RA0
+    TX1STAbits.TXEN = 1;    //Enable Transmitter circuitry
+    TX1STAbits.SYNC = 0;    //Disable synchronus mode
+    RC1STAbits.SPEN = 1;    //Enable ESUART and set TX pin as output
+    ANSELAbits.ANSA0 = 0;   //clear RA0/TX ANSEL bit
     
+    /*
     //enable RX
-    RC1STAbits.CREN = 1; //enable receiver circuitry
+    RX1DTPPS = 0x01;        //Retrieve UART RX from RA1
+    TRISAbits.TRISA1 = 1;   //Set RX pin as input. Required for RX only; TX handled by setting SPEN
+    ANSELAbits.ANSA1 = 0;   //clear RA1/RX ANSEL bit
+    RC1STAbits.CREN = 1;    //enable receiver circuitry
     
-    
-    //configure 9600 baud @ 16MHZ Fosc
+    BAUD1CONbits.WUE = 1;   
+    */
+    //configure 9600 baud
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
     SPBRGL = 25;
-    
-    //BAUDCONbits.WUE = 1;   
     
 }
 
