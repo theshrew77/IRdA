@@ -136,7 +136,7 @@ int main(int argc, char** argv) {
 
         //TX1REG = 'a';
         //Uart_UCA0_putc( 'a' );
-        printf("Pizza Timex%d! \n\r",10);
+        printf("Pizza Timex%d! \n\r",5);
         LATAbits.LATA2 ^= 1;
         __delay_ms(500);
 
