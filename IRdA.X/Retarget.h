@@ -20,6 +20,9 @@ char  *_fgets_tmo(char *_ptr, int _size, FILE *_fp, uint32_t tmo);
 
 int   _fflush(FILE *_fp);
 
+void putch(char c);
+
+
 #ifdef	__cplusplus
 extern "C" {
 #endif

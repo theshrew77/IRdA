@@ -21,10 +21,6 @@ __interrupt() void ISR(void){
     QIn( UCA0RXBUF, getU0_RxBuf_t() );
   }
   
-    if ( CHECKBIT(UC1IFG, UCA1RXIFG ))
-  {
-    QIn( UCA1RXBUF, getU1_RxBuf_t() );
-  }
    /*
     if(PIR1bits.RCIF){
         TXREG = 'a';

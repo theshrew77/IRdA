@@ -10273,7 +10273,7 @@ int8_t Uart_UCA0_getc( int8_t *Out )
 
 int8_t Uart_UCA0_putc( int8_t c )
 {
-  while(!(PIR3 & PIR3bits.TX1IF));
+  while(!(PIR3bits.TX1IF));
   TXREG = c;
   return(c);
 }

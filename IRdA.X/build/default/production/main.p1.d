@@ -1,4 +1,5 @@
 build/default/production/main.p1:  \
 main.c  \
-Debug.h  \
+uart_UCA0.h  \
+Que.h  \
 main.h 

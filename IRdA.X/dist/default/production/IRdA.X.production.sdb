@@ -3,29 +3,15 @@
 [d edition pro ]
 [d chip 16LF15313 ]
 [d frameptr 6 ]
-"254 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
-[e E6344 . `uc
-STATUS_OK 0
-STATUS_ERROR 1
-STATUS_BUSY 2
-STATUS_TIMEOUT 3
-STATUS_COMPLETE 4
-]
-"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\memset.c
-[v _memset memset `(*.1v  1 e 1 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"56 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Debug.c
-[v _debug_init debug_init `(v  1 e 1 0 ]
 "9 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 "104 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"203
+"205
 [v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
 "27 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Que.c
 [v _QInit QInit `(c  1 e 1 0 ]
@@ -35,47 +21,14 @@ STATUS_COMPLETE 4
 [v _QOut QOut `(c  1 e 1 0 ]
 "125
 [v _QChkQ QChkQ `(c  1 e 1 0 ]
-"124 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
-[v __fflush _fflush `(i  1 e 2 0 ]
-"190
-[v __fgetchar _fgetchar `(i  1 e 2 0 ]
-"223
-[v __fkbhit _fkbhit `(i  1 e 2 0 ]
-"252
-[v __fgets _fgets `(*.1uc  1 e 1 0 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S275  1 e 1 0 ]
+[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S274  1 e 1 0 ]
 "18
 [v _Uart_UCA0Init Uart_UCA0Init `(v  1 e 1 0 ]
-"41
-[v _Uart_UCA0deInit Uart_UCA0deInit `(v  1 e 1 0 ]
-"46
-[v _Uart_UCA0_Flush Uart_UCA0_Flush `(c  1 e 1 0 ]
-"57
-[v _Uart_UCA0_kbhit Uart_UCA0_kbhit `(c  1 e 1 0 ]
-"68
-[v _Uart_UCA0_getc Uart_UCA0_getc `(c  1 e 1 0 ]
 "78
 [v _Uart_UCA0_putc Uart_UCA0_putc `(c  1 e 1 0 ]
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"31 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA1.c
-[v _getU1_RxBuf_t getU1_RxBuf_t `(*.4S275  1 e 1 0 ]
-"61
-[v _Uart_UCA1_kbhit Uart_UCA1_kbhit `(c  1 e 1 0 ]
-"66
-[v _Uart_UCA1_getc Uart_UCA1_getc `(c  1 e 1 0 ]
-"71
-[v _Uart_UCA1_putc Uart_UCA1_putc `(c  1 e 1 0 ]
-[s S303 _IO_FILE 0 ]
-"57 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
-[v _stdin stdin `DC*.26S303  1 e 2 0 ]
-"58
-[v _stdout stdout `DC*.26S303  1 e 2 0 ]
-"59
-[v _stderr stderr `DC*.26S303  1 e 2 0 ]
 "413 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
 [s S22 . 1 `uc 1 INTEDG 1 0 :1:0 
@@ -108,13 +61,11 @@ STATUS_COMPLETE 4
 [v _LATAbits LATAbits `VES69  1 e 1 @24 ]
 "927
 [v _RCREG RCREG `VEuc  1 e 1 @281 ]
-"976
-[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
 "985
 [v _TXREG TXREG `VEuc  1 e 1 @282 ]
 "1050
 [v _SPBRGL SPBRGL `VEuc  1 e 1 @283 ]
-[s S130 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S129 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -124,9 +75,9 @@ STATUS_COMPLETE 4
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1187
-[u S139 . 1 `S130 1 . 1 0 ]
-[v _RC1STAbits RC1STAbits `VES139  1 e 1 @285 ]
-[s S109 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S138 . 1 `S129 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES138  1 e 1 @285 ]
+[s S108 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -136,9 +87,9 @@ STATUS_COMPLETE 4
 `uc 1 CSRC 1 0 :1:7 
 ]
 "1367
-[u S118 . 1 `S109 1 . 1 0 ]
-[v _TX1STAbits TX1STAbits `VES118  1 e 1 @286 ]
-[s S168 . 1 `uc 1 ABDEN 1 0 :1:0 
+[u S117 . 1 `S108 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES117  1 e 1 @286 ]
+[s S167 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -148,35 +99,35 @@ STATUS_COMPLETE 4
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "1555
-[u S177 . 1 `S168 1 . 1 0 ]
-[v _BAUD1CONbits BAUD1CONbits `VES177  1 e 1 @287 ]
+[u S176 . 1 `S167 1 . 1 0 ]
+[v _BAUD1CONbits BAUD1CONbits `VES176  1 e 1 @287 ]
 "7735
 [v _PIR3 PIR3 `VEuc  1 e 1 @1807 ]
-[s S307 . 1 `uc 1 SSP1IF 1 0 :1:0 
+[s S365 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
 "7749
-[u S313 . 1 `S307 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES313  1 e 1 @1807 ]
-[s S190 . 1 `uc 1 SSP1IE 1 0 :1:0 
+[u S371 . 1 `S365 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES371  1 e 1 @1807 ]
+[s S189 . 1 `uc 1 SSP1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TX1IE 1 0 :1:4 
 `uc 1 RC1IE 1 0 :1:5 
 ]
 "8020
-[u S196 . 1 `S190 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES196  1 e 1 @1817 ]
+[u S195 . 1 `S189 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES195  1 e 1 @1817 ]
 "9441
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "9771
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
 "15857
 [v _RA0PPS RA0PPS `VEuc  1 e 1 @7952 ]
-[s S151 . 1 `uc 1 ANSA0 1 0 :1:0 
+[s S150 . 1 `uc 1 ANSA0 1 0 :1:0 
 `uc 1 ANSA1 1 0 :1:1 
 `uc 1 ANSA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -184,9 +135,9 @@ STATUS_COMPLETE 4
 `uc 1 ANSA5 1 0 :1:5 
 ]
 "16136
-[u S158 . 1 `S151 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES158  1 e 1 @7992 ]
-[s S91 . 1 `uc 1 IOCAN0 1 0 :1:0 
+[u S157 . 1 `S150 1 . 1 0 ]
+[v _ANSELAbits ANSELAbits `VES157  1 e 1 @7992 ]
+[s S90 . 1 `uc 1 IOCAN0 1 0 :1:0 
 `uc 1 IOCAN1 1 0 :1:1 
 `uc 1 IOCAN2 1 0 :1:2 
 `uc 1 IOCAN3 1 0 :1:3 
@@ -194,60 +145,41 @@ STATUS_COMPLETE 4
 `uc 1 IOCAN5 1 0 :1:5 
 ]
 "16421
-[u S98 . 1 `S91 1 . 1 0 ]
-[v _IOCANbits IOCANbits `VES98  1 e 1 @7998 ]
-"51 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Debug.c
-[v _DebugEna DebugEna `us  1 s 2 DebugEna ]
+[u S97 . 1 `S90 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES97  1 e 1 @7998 ]
 "74 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _check check `VEuc  1 e 1 0 ]
 "75
 [v _rxChar rxChar `VEuc  1 e 1 0 ]
 "76
 [v _rxChar2 rxChar2 `VEuc  1 e 1 0 ]
-"42 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Retarget.c
-[v _SerialEcho SerialEcho `s  1 s 2 SerialEcho ]
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "12 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _U0_RxBuf_t U0_RxBuf_t `S275  1 s 66 U0_RxBuf_t ]
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"24 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA1.c
-[v _U1_RxBuf_t U1_RxBuf_t `S275  1 e 66 0 ]
+[v _U0_RxBuf_t U0_RxBuf_t `S274  1 s 66 U0_RxBuf_t ]
 "104 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"168
+"170
 } 0
-"56 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Debug.c
-[v _debug_init debug_init `(v  1 e 1 0 ]
+"205
+[v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
 {
-"62
+"209
 } 0
 "18 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
 [v _Uart_UCA0Init Uart_UCA0Init `(v  1 e 1 0 ]
 {
 "39
 } 0
-"203 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
-[v _configureUARTrXint configureUARTrXint `(v  1 e 1 0 ]
-{
-"207
-} 0
 "9 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"42
+"38
 } 0
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-"31 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA1.c
-[v _getU1_RxBuf_t getU1_RxBuf_t `(*.4S275  1 e 1 0 ]
-{
-"33
-} 0
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X/Que.h
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
 "14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
-[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S275  1 e 1 0 ]
+[v _getU0_RxBuf_t getU0_RxBuf_t `(*.4S274  1 e 1 0 ]
 {
 "16
 } 0
@@ -259,8 +191,8 @@ STATUS_COMPLETE 4
 [v QIn@next next `c  1 a 1 4 ]
 "58
 [v QIn@Src Src `c  1 a 1 wreg ]
-[s S275 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
-[v QIn@pQ pQ `*.4S275  1 p 1 0 ]
+[s S274 . 66 `[64]c 1 Data 64 0 `c 1 In 1 64 `c 1 Out 1 65 ]
+[v QIn@pQ pQ `*.4S274  1 p 1 0 ]
 "62
 [v QIn@Src Src `c  1 a 1 3 ]
 "73

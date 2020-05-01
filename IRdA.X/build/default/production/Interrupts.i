@@ -10022,11 +10022,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
   {
     QIn( RCREG, getU0_RxBuf_t() );
   }
-
-    if ( (PIR3 & (1L << (PIR3bits.RC1IF))))
-  {
-    QIn( RCREG, getU1_RxBuf_t() );
-  }
-# 41 "Interrupts.c"
+# 37 "Interrupts.c"
     return;
 }

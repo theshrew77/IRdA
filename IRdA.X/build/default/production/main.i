@@ -10164,17 +10164,37 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 12 "main.c" 2
 
 
-# 1 "./Debug.h" 1
-# 11 "./Debug.h"
-void debug_init(void);
-void debug_deinit(void);
-void debug_out(const char *fmt, ...);
-char *debug_in( char *buf, uint16_t Len, uint32_t tmo );
-int16_t debug_kbhit(void);
-uint16_t debug_enable(void);
-uint16_t debug_disable(void);
-uint16_t debug_getstatus(void);
-void debug_flush(void);
+# 1 "./uart_UCA0.h" 1
+# 11 "./uart_UCA0.h"
+# 1 "./Que.h" 1
+# 14 "./Que.h"
+typedef struct {
+  int8_t Data[64];
+  int8_t In;
+  int8_t Out;
+} t_Q;
+
+
+int8_t QInit( t_Q *pQ );
+int8_t QIn( int8_t Src, t_Q *pQ );
+int8_t QOut( int8_t *Dest, t_Q *pQ );
+int8_t QChkQ( t_Q *pQ );
+# 11 "./uart_UCA0.h" 2
+
+
+
+
+
+
+
+
+void Uart_UCA0Init(void);
+void Uart_UCA0deInit(void);
+int8_t Uart_UCA0_Flush(void);
+int8_t Uart_UCA0_kbhit(void);
+int8_t Uart_UCA0_getc( int8_t *Out );
+int8_t Uart_UCA0_putc( int8_t c );
+t_Q *getU0_RxBuf_t(void);
 # 14 "main.c" 2
 
 # 1 "./main.h" 1
@@ -10243,7 +10263,7 @@ int main(int argc, char** argv) {
     OSCFRQ = 0b0000101;
     OSCCON1 = 0b01100000;
 
-    debug_init();
+    Uart_UCA0Init();
 # 130 "main.c"
     configureUARTrXint();
     TRISAbits.TRISA2 = 0;
@@ -10251,9 +10271,11 @@ int main(int argc, char** argv) {
 
 
     while(1){
-        TX1REG = 'a';
+
+
+
         LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((100)*(16000000/4000.0)));
+        _delay((unsigned long)((500)*(16000000/4000.0)));
     }
 
 

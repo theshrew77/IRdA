@@ -28,9 +28,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 25: t_Q *getU0_RxBuf_t(void);
 [v _getU0_RxBuf_t `(*S789 ~T0 @X0 0 ef ]
-"24 ./uart_UCA1.h
-[; ;./uart_UCA1.h: 24: t_Q *getU1_RxBuf_t(void);
-[v _getU1_RxBuf_t `(*S789 ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -852,23 +849,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Interrupts.c: 22:   }
 }
 [e :U 791 ]
-"24
-[; ;Interrupts.c: 24:     if ( (PIR3 & (1L << (PIR3bits.RC1IF))))
-[e $ ! != & -> _PIR3 `l << -> 1 `l -> . . _PIR3bits 0 4 `i -> -> 0 `i `l 792  ]
-"25
-[; ;Interrupts.c: 25:   {
-{
-"26
-[; ;Interrupts.c: 26:     QIn( RCREG, getU1_RxBuf_t() );
-[e ( _QIn (2 , -> _RCREG `c ( _getU1_RxBuf_t ..  ]
-"27
-[; ;Interrupts.c: 27:   }
-}
-[e :U 792 ]
-"41
-[; ;Interrupts.c: 41:     return;
+"37
+[; ;Interrupts.c: 37:     return;
 [e $UE 790  ]
-"42
-[; ;Interrupts.c: 42: }
+"38
+[; ;Interrupts.c: 38: }
 [e :UE 790 ]
 }
