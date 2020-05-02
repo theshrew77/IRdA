@@ -10277,7 +10277,7 @@ int main(int argc, char** argv) {
     OSCCON1 = 0b01100000;
 
     Uart_UCA0Init();
-# 129 "main.c"
+# 121 "main.c"
     Uart_UCA0_RxIntEn();
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0;
@@ -10287,7 +10287,7 @@ int main(int argc, char** argv) {
     printf("Entering while(1) \n\r");
 
     while(1){
-# 149 "main.c"
+# 141 "main.c"
     }
 
 
@@ -10322,8 +10322,16 @@ int main(int argc, char** argv) {
 
 void configureInterrupt(){
 
-    INTCON = 0b10001000;
-    IOCANbits.IOCAN0 = 1;
+    PIE0bits.IOCIE = 1;
+
+    INTCONbits.GIE = 1;
+
+
+    IOCANbits.IOCAN4 = 1;
+    TRISAbits.TRISA4 = 1;
+    ANSELAbits.ANSA4 = 0;
+
+
 
 
 

@@ -24,14 +24,15 @@ void Uart_UCA0Init(void)
     RC1STAbits.SPEN = 1;    //Enable ESUART and set TX pin as output
     ANSELAbits.ANSA0 = 0;   //clear RA0/TX ANSEL bit
     
-    
+    /*
     //enable RX
     RX1DTPPS = 0x01;        //Retrieve UART RX from RA1
     TRISAbits.TRISA1 = 1;   //Set RX pin as input. Required for RX only; TX handled by setting SPEN
     ANSELAbits.ANSA1 = 0;   //clear RA1/RX ANSEL bit
     RC1STAbits.CREN = 1;    //enable receiver circuitry
-    
-    BAUD1CONbits.WUE = 1;   
+    */
+     
+    //BAUD1CONbits.WUE = 1;   
     
     //configure 9600 baud
     TX1STAbits.BRGH = 0;

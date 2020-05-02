@@ -3,26 +3,30 @@
 #include "uart_UCA0.h"
 #include "uart_UCA1.h"
 #include <stdint.h>
-
+#include <stdio.h>
 
 
 __interrupt() void ISR(void){
-    /*
-    if(INTCONbits.IOCIF){
+    
+    
+    if(PIR0bits.IOCIF){
 
-        IOCAFbits.IOCAF0 = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
-        INTCONbits.IOCIF = 0;
+        IOCAFbits.IOCAF4 = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
+        PIR0bits.IOCIF = 0;
+        LATAbits.LATA2 ^= 1;
         //check = 1;
         
     }
-    */
+    
+    /*
   if ( UCA0RXIFG )
   {
     QIn( UCA0RXBUF, getU0_RxBuf_t() );
+    printf("PIR3 = %d \r\n",PIR3);
     LATAbits.LATA2 ^= 1;
-    //BAUD1CONbits.WUE = 1;
+    BAUD1CONbits.WUE = 1;
   }
-  
+  */
    /*
     if(PIR1bits.RCIF){
         TXREG = 'a';

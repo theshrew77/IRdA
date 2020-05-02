@@ -10220,17 +10220,7 @@ void Uart_UCA0Init(void)
     TX1STAbits.SYNC = 0;
     RC1STAbits.SPEN = 1;
     ANSELAbits.ANSA0 = 0;
-
-
-
-    RX1DTPPS = 0x01;
-    TRISAbits.TRISA1 = 1;
-    ANSELAbits.ANSA1 = 0;
-    RC1STAbits.CREN = 1;
-
-    BAUD1CONbits.WUE = 1;
-
-
+# 38 "uart_UCA0.c"
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
     SPBRGL = 25;

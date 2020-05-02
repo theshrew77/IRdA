@@ -1,31 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"7741 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7741:     struct {
-[s S378 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S378 . SSP1IF BCL1IF . TX1IF RC1IF ]
-"7740
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7740: typedef union {
-[u S377 `S378 1 ]
-[n S377 . . ]
-"7749
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7749: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x70F)));
-[v _PIR3bits `VS377 ~T0 @X0 0 e@1807 ]
-"14 ./Que.h
-[; ;./Que.h: 14: typedef struct {
-[s S789 `c -> 64 `i `c 1 `c 1 ]
-[n S789 . Data In Out ]
-"22
-[; ;./Que.h: 22: int8_t QIn( int8_t Src, t_Q *pQ );
-[v _QIn `(c ~T0 @X0 0 ef2`c`*S789 ]
-"927 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 927: extern volatile unsigned char RCREG __attribute__((address(0x119)));
-[v _RCREG `Vuc ~T0 @X0 0 e@281 ]
-"25 ./uart_UCA0.h
-[; ;./uart_UCA0.h: 25: t_Q *getU0_RxBuf_t(void);
-[v _getU0_RxBuf_t `(*S789 ~T0 @X0 0 ef ]
-"547 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+"7642 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7642:     struct {
+[s S372 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S372 . INTF . IOCIF TMR0IF ]
+"7641
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7641: typedef union {
+[u S371 `S372 1 ]
+[n S371 . . ]
+"7649
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7649: extern volatile PIR0bits_t PIR0bits __attribute__((address(0x70C)));
+[v _PIR0bits `VS371 ~T0 @X0 0 e@1804 ]
+"16462
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16462:     struct {
+[s S763 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S763 . IOCAF0 IOCAF1 IOCAF2 IOCAF3 IOCAF4 IOCAF5 ]
+"16461
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16461: typedef union {
+[u S762 `S763 1 ]
+[n S762 . . ]
+"16471
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16471: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x1F3F)));
+[v _IOCAFbits `VS762 ~T0 @X0 0 e@7999 ]
+"547
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
 [s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
@@ -844,26 +842,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ISR ]
 [f ]
-"19
-[; ;Interrupts.c: 19:   if ( PIR3bits.RC1IF )
-[e $ ! != -> . . _PIR3bits 0 4 `i -> 0 `i 791  ]
-"20
-[; ;Interrupts.c: 20:   {
+"12
+[; ;Interrupts.c: 12:     if(PIR0bits.IOCIF){
+[e $ ! != -> . . _PIR0bits 0 2 `i -> 0 `i 793  ]
 {
-"21
-[; ;Interrupts.c: 21:     QIn( RCREG, getU0_RxBuf_t() );
-[e ( _QIn (2 , -> _RCREG `c ( _getU0_RxBuf_t ..  ]
-"22
-[; ;Interrupts.c: 22:     LATAbits.LATA2 ^= 1;
+"14
+[; ;Interrupts.c: 14:         IOCAFbits.IOCAF4 = 0;
+[e = . . _IOCAFbits 0 4 -> -> 0 `i `uc ]
+"15
+[; ;Interrupts.c: 15:         PIR0bits.IOCIF = 0;
+[e = . . _PIR0bits 0 2 -> -> 0 `i `uc ]
+"16
+[; ;Interrupts.c: 16:         LATAbits.LATA2 ^= 1;
 [e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"24
-[; ;Interrupts.c: 24:   }
+"19
+[; ;Interrupts.c: 19:     }
 }
-[e :U 791 ]
-"39
-[; ;Interrupts.c: 39:     return;
-[e $UE 790  ]
-"40
-[; ;Interrupts.c: 40: }
-[e :UE 790 ]
+[e :U 793 ]
+"43
+[; ;Interrupts.c: 43:     return;
+[e $UE 792  ]
+"44
+[; ;Interrupts.c: 44: }
+[e :UE 792 ]
 }

@@ -18,7 +18,7 @@
 
 
 
-#define slave
+
 
 //#include <stdio.h>
 //#include <stdlib.h>
@@ -109,23 +109,15 @@ int main(int argc, char** argv) {
     OSCCON1 = 0b01100000;
 
     Uart_UCA0Init();
+    //configureInterrupt();
 
 //    __delay_ms(10);
 //    configUART();
     
     //TRISAbits.TRISA4 = 0;
-#ifdef master
-    configureInterrupt();
-    while(1){
-        if(check){
-            check = 0;
-            TXREG = 'a';
-            //SLEEP();
-        }
-    }
-#endif 
+
     
-#ifdef slave
+
     Uart_UCA0_RxIntEn();
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0; 
@@ -173,15 +165,23 @@ int main(int argc, char** argv) {
         //SLEEP();
         NOP();
     }
-#endif    
+  
     return (EXIT_SUCCESS);
 }
 
 
 void configureInterrupt(){
     //enable interrupt on change
-    INTCON = 0b10001000; //enable global interrupts and interrupt on change
-    IOCANbits.IOCAN0 = 1; //enable negative edge detection on RA0
+    PIE0bits.IOCIE = 1;
+    //enable global interrupts
+    INTCONbits.GIE = 1;
+    
+    //enable IOCA4 for negative edge detection
+    IOCANbits.IOCAN4 = 1;
+    TRISAbits.TRISA4 = 1;
+    ANSELAbits.ANSA4 = 0;
+    //INTCON = 0b10001000; //enable global interrupts and interrupt on change
+    //IOCANbits.IOCAN0 = 1; //enable negative edge detection on RA0
     //UCONbits.USBEN = 0;
     //configure RA0 as intterupt on change
     //RA0 is always input so don't need to set TRIS
