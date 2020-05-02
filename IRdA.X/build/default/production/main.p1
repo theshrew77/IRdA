@@ -9,7 +9,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 19: void Uart_UCA0Init(void);
 [v _Uart_UCA0Init `(v ~T0 @X0 0 ef ]
-"26
+"71 main.c
+[v _configureInterrupt `(v ~T0 @X0 0 e? ]
+"26 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 26: void Uart_UCA0_RxIntEn(void);
 [v _Uart_UCA0_RxIntEn `(v ~T0 @X0 0 ef ]
 "502 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
@@ -893,7 +895,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33
 [p x RSTOSC = HFINT1 ]
 "34
-[p x CLKOUTEN = ON ]
+[p x CLKOUTEN = OFF ]
 "35
 [p x CSWEN = ON ]
 "36
@@ -973,6 +975,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "111
 [; ;main.c: 111:     Uart_UCA0Init();
 [e ( _Uart_UCA0Init ..  ]
+"112
+[; ;main.c: 112:     configureInterrupt();
+[e ( _configureInterrupt ..  ]
 "121
 [; ;main.c: 121:     Uart_UCA0_RxIntEn();
 [e ( _Uart_UCA0_RxIntEn ..  ]

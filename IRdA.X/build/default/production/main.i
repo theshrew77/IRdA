@@ -10225,7 +10225,7 @@ void Uart_UCA0_RxIntEn(void);
 # 32 "main.c"
 #pragma config FEXTOSC = ECH
 #pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = ON
+#pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON
 
@@ -10277,6 +10277,7 @@ int main(int argc, char** argv) {
     OSCCON1 = 0b01100000;
 
     Uart_UCA0Init();
+    configureInterrupt();
 # 121 "main.c"
     Uart_UCA0_RxIntEn();
     TRISAbits.TRISA2 = 0;

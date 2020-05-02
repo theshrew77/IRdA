@@ -31,7 +31,7 @@
 // CONFIG1
 #pragma config FEXTOSC = ECH    // External Oscillator mode selection bits (EC above 8MHz; PFM set to high power)
 #pragma config RSTOSC = HFINT1  // Power-up default value for COSC bits (HFINTOSC (1MHz))
-#pragma config CLKOUTEN = ON    // Clock Out Enable bit (CLKOUT function is enabled; FOSC/4 clock appears at OSC2)
+#pragma config CLKOUTEN = OFF    // Clock Out Enable bit (CLKOUT function is enabled; FOSC/4 clock appears at OSC2)
 #pragma config CSWEN = ON       // Clock Switch Enable bit (Writing to NOSC and NDIV is allowed)
 #pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable bit (FSCM timer enabled)
 
@@ -109,7 +109,7 @@ int main(int argc, char** argv) {
     OSCCON1 = 0b01100000;
 
     Uart_UCA0Init();
-    //configureInterrupt();
+    configureInterrupt();
 
 //    __delay_ms(10);
 //    configUART();
