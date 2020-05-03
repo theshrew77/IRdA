@@ -8,7 +8,7 @@
 #ifndef QUE_H
 #define	QUE_H
 
-#define Q_MAX   64
+#define Q_MAX   2
 
 /* Data types ----------------------------------------------------------------*/
 typedef struct {

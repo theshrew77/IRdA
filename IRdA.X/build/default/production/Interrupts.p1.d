@@ -3,4 +3,5 @@ Interrupts.c  \
 main.h  \
 uart_UCA0.h  \
 Que.h  \
-uart_UCA1.h 
+tmr_TMR1.h  \
+Interrupts.h 

@@ -9872,15 +9872,41 @@ extern __bank0 __bit __timeout;
 # 1 "Interrupts.c" 2
 
 # 1 "./main.h" 1
-# 19 "./main.h"
-typedef enum
-{
-  STATUS_OK = 0U,
-  STATUS_ERROR = 1U,
-  STATUS_BUSY = 2U,
-  STATUS_TIMEOUT = 3U,
-  STATUS_COMPLETE = 4U
-} Status_t;
+# 29 "./main.h"
+#pragma config FEXTOSC = ECH
+#pragma config RSTOSC = HFINT1
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = ON
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
 # 2 "Interrupts.c" 2
 
 # 1 "./uart_UCA0.h" 1
@@ -9973,7 +9999,7 @@ typedef uint32_t uint_fast32_t;
 # 1 "./Que.h" 1
 # 14 "./Que.h"
 typedef struct {
-  int8_t Data[64];
+  int8_t Data[2];
   int8_t In;
   int8_t Out;
 } t_Q;
@@ -10002,158 +10028,46 @@ t_Q *getU0_RxBuf_t(void);
 void Uart_UCA0_RxIntEn(void);
 # 3 "Interrupts.c" 2
 
-# 1 "./uart_UCA1.h" 1
-# 18 "./uart_UCA1.h"
-void Uart_UCA1Init(void);
-void Uart_UCA1deInit(void);
-int8_t Uart_UCA1_Flush(void);
-int8_t Uart_UCA1_kbhit(void);
-int8_t Uart_UCA1_getc( int8_t *Out );
-int8_t Uart_UCA1_putc( int8_t c );
-t_Q *getU1_RxBuf_t(void);
+# 1 "./tmr_TMR1.h" 1
+# 20 "./tmr_TMR1.h"
+void tmr_TMR1Init(void);
+void tmr_TMR1ClrRollovers(void);
+uint16_t *tmr_TMR1GetRollovers(void);
+void tmr_TMR1IncRollovers(void);
+void tmr_TMR1En(void);
+void tmr_TMR1Dis(void);
+void tmr_TMR1Toggle(void);
+uint32_t tmr_TMR1GetCount(void);
+void tmr_TMR1reset(void);
+void tmr_TMR1mark(void);
+uint8_t accquisitionComplete(void);
+uint16_t *getTMR1countArray(void);
+uint16_t *getTMR1rolloverArray(void);
+uint16_t computeDelta(uint8_t i);
 # 4 "Interrupts.c" 2
 
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
+# 1 "./Interrupts.h" 1
+# 19 "./Interrupts.h"
+void configureIOCInt(void);
+# 5 "Interrupts.c" 2
 
 
 
 
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
+void configureIOCInt(void){
 
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
+    PIE0bits.IOCIE = 1;
+
+    INTCONbits.GIE = 1;
+
+
+    IOCANbits.IOCAN4 = 1;
+    TRISAbits.TRISA4 = 1;
+    ANSELAbits.ANSA4 = 0;
 
 
 
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 6 "Interrupts.c" 2
-
+}
 
 
 __attribute__((picinterrupt(("")))) void ISR(void){
@@ -10166,7 +10080,18 @@ __attribute__((picinterrupt(("")))) void ISR(void){
         LATAbits.LATA2 ^= 1;
 
 
+        if (!T1CONbits.ON) T1CONbits.ON = 1;
+        tmr_TMR1mark();
+
+
     }
-# 43 "Interrupts.c"
+
+    if(PIR4bits.TMR1IF){
+        PIR4bits.TMR1IF = 0;
+
+        tmr_TMR1IncRollovers();
+
+    }
+# 71 "Interrupts.c"
     return;
 }
