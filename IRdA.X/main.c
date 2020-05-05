@@ -56,20 +56,23 @@ int main(int argc, char** argv) {
  
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0; 
-    __delay_ms(500);
+    //__delay_ms(500);
 
 
     //printf("Entering while(1) \n\r");
     //printf("Pizza Timex%d! \n\r",5);
     
     while(1){
-        if(accquisitionComplete()){
+        SLEEP();
+        NOP();
+        while(!accquisitionComplete());
             //process to NEC
             //check for NEC start condition
             NECcommand = nec_ProcessPacket();
             nec_ExecuteCommand(NECcommand);          
-            tmr_TMR1reset();        
-        }
+            tmr_TMR1reset();
+            __delay_ms(5);
+        
     }
 
     return (EXIT_SUCCESS);

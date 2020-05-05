@@ -10169,20 +10169,23 @@ int main(int argc, char** argv) {
 
     TRISAbits.TRISA2 = 0;
     LATAbits.LATA2 = 0;
-    _delay((unsigned long)((500)*(16000000/4000.0)));
+
 
 
 
 
 
     while(1){
-        if(accquisitionComplete()){
+        __asm("sleep");
+        __nop();
+        while(!accquisitionComplete());
 
 
             NECcommand = nec_ProcessPacket();
             nec_ExecuteCommand(NECcommand);
             tmr_TMR1reset();
-        }
+            _delay((unsigned long)((5)*(16000000/4000.0)));
+
     }
 
     return (0);

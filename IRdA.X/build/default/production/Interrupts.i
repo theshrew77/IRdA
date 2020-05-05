@@ -10061,9 +10061,9 @@ void configureIOCInt(void){
     INTCONbits.GIE = 1;
 
 
-    IOCANbits.IOCAN4 = 1;
-    TRISAbits.TRISA4 = 1;
-    ANSELAbits.ANSA4 = 0;
+    IOCANbits.IOCAN1 = 1;
+    TRISAbits.TRISA1 = 1;
+    ANSELAbits.ANSA1 = 0;
 
 
 
@@ -10075,7 +10075,7 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
     if(PIR0bits.IOCIF){
 
-        IOCAFbits.IOCAF4 = 0;
+        IOCAFbits.IOCAF1 = 0;
         PIR0bits.IOCIF = 0;
         LATAbits.LATA2 ^= 1;
 

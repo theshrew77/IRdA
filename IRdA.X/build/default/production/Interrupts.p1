@@ -995,14 +995,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Interrupts.c: 13:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "16
-[; ;Interrupts.c: 16:     IOCANbits.IOCAN4 = 1;
-[e = . . _IOCANbits 0 4 -> -> 1 `i `uc ]
+[; ;Interrupts.c: 16:     IOCANbits.IOCAN1 = 1;
+[e = . . _IOCANbits 0 1 -> -> 1 `i `uc ]
 "17
-[; ;Interrupts.c: 17:     TRISAbits.TRISA4 = 1;
-[e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
+[; ;Interrupts.c: 17:     TRISAbits.TRISA1 = 1;
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
 "18
-[; ;Interrupts.c: 18:     ANSELAbits.ANSA4 = 0;
-[e = . . _ANSELAbits 0 4 -> -> 0 `i `uc ]
+[; ;Interrupts.c: 18:     ANSELAbits.ANSA1 = 0;
+[e = . . _ANSELAbits 0 1 -> -> 0 `i `uc ]
 "22
 [; ;Interrupts.c: 22: }
 [e :UE 790 ]
@@ -1019,8 +1019,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! != -> . . _PIR0bits 0 2 `i -> 0 `i 792  ]
 {
 "30
-[; ;Interrupts.c: 30:         IOCAFbits.IOCAF4 = 0;
-[e = . . _IOCAFbits 0 4 -> -> 0 `i `uc ]
+[; ;Interrupts.c: 30:         IOCAFbits.IOCAF1 = 0;
+[e = . . _IOCAFbits 0 1 -> -> 0 `i `uc ]
 "31
 [; ;Interrupts.c: 31:         PIR0bits.IOCIF = 0;
 [e = . . _PIR0bits 0 2 -> -> 0 `i `uc ]

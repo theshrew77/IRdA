@@ -10,11 +10,11 @@
 #define P_IE        INTCONbits.PEIE
 #define G_IE        INTCONbits.GIE
 #define IOC_IE      PIE0bits.IOCIE
-#define IOCA_N      IOCANbits.IOCAN4
-#define IOCA_TRIS   TRISAbits.TRISA4
-#define IOCA_ANSEL  ANSELAbits.ANSA4
 #define IOC_IF      PIR0bits.IOCIF
-#define IOCA_F      IOCAFbits.IOCAF4
+#define IOCA_N      IOCANbits.IOCAN1
+#define IOCA_TRIS   TRISAbits.TRISA1
+#define IOCA_ANSEL  ANSELAbits.ANSA1
+#define IOCA_F      IOCAFbits.IOCAF1
 
 void configureIOCInt(void);
 
