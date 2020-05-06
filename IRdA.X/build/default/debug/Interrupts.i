@@ -9873,8 +9873,8 @@ extern __bank0 __bit __timeout;
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = ECH
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON
@@ -10029,7 +10029,7 @@ void Uart_UCA0_RxIntEn(void);
 # 3 "Interrupts.c" 2
 
 # 1 "./tmr_TMR1.h" 1
-# 12 "./tmr_TMR1.h"
+# 20 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -10043,8 +10043,13 @@ void tmr_TMR1mark(void);
 uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
-uint16_t computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 # 4 "Interrupts.c" 2
+
+# 1 "./Interrupts.h" 1
+# 19 "./Interrupts.h"
+void configureIOCInt(void);
+# 5 "Interrupts.c" 2
 
 
 
@@ -10056,9 +10061,9 @@ void configureIOCInt(void){
     INTCONbits.GIE = 1;
 
 
-    IOCANbits.IOCAN4 = 1;
-    TRISAbits.TRISA4 = 1;
-    ANSELAbits.ANSA4 = 0;
+    IOCANbits.IOCAN1 = 1;
+    TRISAbits.TRISA1 = 1;
+    ANSELAbits.ANSA1 = 0;
 
 
 
@@ -10070,7 +10075,7 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
     if(PIR0bits.IOCIF){
 
-        IOCAFbits.IOCAF4 = 0;
+        IOCAFbits.IOCAF1 = 0;
         PIR0bits.IOCIF = 0;
         LATAbits.LATA2 ^= 1;
 
@@ -10087,6 +10092,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
         tmr_TMR1IncRollovers();
 
     }
-# 70 "Interrupts.c"
+# 71 "Interrupts.c"
     return;
 }

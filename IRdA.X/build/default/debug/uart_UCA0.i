@@ -10159,8 +10159,8 @@ extern __bank0 __bit __timeout;
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = ECH
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON

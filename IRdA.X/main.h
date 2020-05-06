@@ -11,7 +11,7 @@
 /* Constants -----------------------------------------------------------------*/
 #define TRUE        1
 #define FALSE       0
-#define _XTAL_FREQ 16000000
+#define _XTAL_FREQ 32768
 
 /* Macro Definitions ---------------------------------------------------------*/
 #define CHECKBIT(var,nbit)  (var &  (1L << (nbit)))
@@ -26,8 +26,8 @@
 // 'C' source line config statements
 
 // CONFIG1
-#pragma config FEXTOSC = ECH    // External Oscillator mode selection bits (EC above 8MHz; PFM set to high power)
-#pragma config RSTOSC = HFINT1  // Power-up default value for COSC bits (HFINTOSC (1MHz))
+#pragma config FEXTOSC = LP    // External Oscillator mode selection bits (EC above 8MHz; PFM set to high power)
+#pragma config RSTOSC = EXT1X  // Power-up default value for COSC bits (HFINTOSC (1MHz))
 #pragma config CLKOUTEN = OFF    // Clock Out Enable bit (CLKOUT function is enabled; FOSC/4 clock appears at OSC2)
 #pragma config CSWEN = ON       // Clock Switch Enable bit (Writing to NOSC and NDIV is allowed)
 #pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable bit (FSCM timer enabled)

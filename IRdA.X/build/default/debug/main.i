@@ -10040,8 +10040,8 @@ void debug_flush(void);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = ECH
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON
@@ -10111,12 +10111,12 @@ void Uart_UCA0_RxIntEn(void);
 # 16 "main.c" 2
 
 # 1 "./Interrupts.h" 1
-# 10 "./Interrupts.h"
+# 19 "./Interrupts.h"
 void configureIOCInt(void);
 # 17 "main.c" 2
 
 # 1 "./tmr_TMR1.h" 1
-# 12 "./tmr_TMR1.h"
+# 20 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -10130,61 +10130,64 @@ void tmr_TMR1mark(void);
 uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
-uint16_t computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 # 18 "main.c" 2
 
 # 1 "./NEC.h" 1
+# 20 "./NEC.h"
+typedef enum {
+    POWER = 0xFF,
+    OFF = 0xBF,
+    TIMER2H = 0xDF,
+    TIMER4H = 0x9F,
+    TIMER6H = 0xEF,
+    TIMER8H = 0xAF,
+    DIM = 0xF7,
+    BRIGHT = 0xB7,
+} NEC_commands_t;
+
+uint8_t nec_ProcessPacket(void);
+void nec_ExecuteCommand(uint8_t NECcommand);
 # 19 "main.c" 2
-# 40 "main.c"
+
+# 1 "./LED.h" 1
+# 13 "./LED.h"
+void led_ConfigureLED(void);
+void led_Blink(uint8_t times);
+# 20 "main.c" 2
+# 41 "main.c"
 int main(int argc, char** argv) {
-    uint16_t delta;
-    uint8_t NECpacket [32];
+    uint8_t NECcommand = 0;
 
 
 
     OSCFRQ = 0b0000101;
-    OSCCON1 = 0b01100000;
 
+    OSCCON1 = 0b01110000;
 
 
 
     Uart_UCA0Init();
     configureIOCInt();
+    led_ConfigureLED();
     tmr_TMR1Init();
     tmr_TMR1reset();
-
-
-    TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 0;
-    _delay((unsigned long)((500)*(16000000/4000.0)));
-
-
-
-
+# 66 "main.c"
+    led_Blink(5);
+    while(1);
 
     while(1){
-        if(accquisitionComplete()){
+        __asm("sleep");
+        __nop();
+        while(!accquisitionComplete());
 
 
-            delta = computeDelta(0);
-
-            if (10800 < delta && delta < 16200){
-                for (int i = 1; i < 33; i++){
-                    delta = computeDelta(i);
-                    if (1000 < delta && delta < 1500){
-                        NECpacket[i-1] = 0;
-                    }
-                    if (2000 < delta && delta < 3000){
-                        NECpacket[i-1] = 1;
-                    }
-                }
-            }
-
+            NECcommand = nec_ProcessPacket();
+            nec_ExecuteCommand(NECcommand);
             tmr_TMR1reset();
-            Uart_UCA0_putc( delta );
-        }
-# 98 "main.c"
+            _delay((unsigned long)((5)*(32768/4000.0)));
+
     }
-# 126 "main.c"
+
     return (0);
 }

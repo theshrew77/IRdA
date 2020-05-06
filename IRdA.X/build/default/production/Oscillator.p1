@@ -1,30 +1,43 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"502 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 502:     struct {
-[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . TRISA0 TRISA1 TRISA2 . TRISA4 TRISA5 ]
-"501
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 501: typedef union {
-[u S34 `S35 1 ]
-[n S34 . . ]
-"511
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 511: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x012)));
-[v _TRISAbits `VS34 ~T0 @X0 0 e@18 ]
-"547
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"546
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"556
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
-[v F5815 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF5815 ~T0 @X0 0 e ]
-[p i __delay ]
+"9771 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9771: extern volatile unsigned char OSCFRQ __attribute__((address(0x893)));
+[v _OSCFRQ `Vuc ~T0 @X0 0 e@2195 ]
+"9441
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9441: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
+[v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
+"9621
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9621:     struct {
+[s S471 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S471 . PLLR . ADOR . LFOR MFOR HFOR EXTOR ]
+"9620
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9620: typedef union {
+[u S470 `S471 1 ]
+[n S470 . . ]
+"9632
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9632: extern volatile OSCSTATbits_t OSCSTATbits __attribute__((address(0x890)));
+[v _OSCSTATbits `VS470 ~T0 @X0 0 e@2192 ]
+"9673
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9673:     struct {
+[s S473 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S473 . . ADOEN . LFOEN MFOEN HFOEN EXTOEN ]
+"9672
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9672: typedef union {
+[u S472 `S473 1 ]
+[n S472 . . ]
+"9683
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9683: extern volatile OSCENbits_t OSCENbits __attribute__((address(0x891)));
+[v _OSCENbits `VS472 ~T0 @X0 0 e@2193 ]
+"9587
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9587:     struct {
+[s S469 :3 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S469 . . NOSCR ORDY . CSWHOLD ]
+"9586
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9586: typedef union {
+[u S468 `S469 1 ]
+[n S468 . . ]
+"9595
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9595: extern volatile OSCCON3bits_t OSCCON3bits __attribute__((address(0x88F)));
+[v _OSCCON3bits `VS468 ~T0 @X0 0 e@2191 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -826,110 +839,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16816
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"29 ./main.h
-[p x FEXTOSC = LP ]
-"30
-[p x RSTOSC = EXT1X ]
-"31
-[p x CLKOUTEN = OFF ]
-"32
-[p x CSWEN = ON ]
-"33
-[p x FCMEN = ON ]
-"36
-[p x MCLRE = ON ]
-"37
-[p x PWRTE = OFF ]
-"38
-[p x LPBOREN = OFF ]
-"39
-[p x BOREN = ON ]
-"40
-[p x BORV = LO ]
-"41
-[p x ZCD = OFF ]
-"42
-[p x PPS1WAY = ON ]
-"43
-[p x STVREN = ON ]
-"46
-[p x WDTCPS = WDTCPS_31 ]
-"47
-[p x WDTE = OFF ]
-"48
-[p x WDTCWS = WDTCWS_7 ]
-"49
-[p x WDTCCS = SC ]
-"52
-[p x BBSIZE = BB512 ]
-"53
-[p x BBEN = OFF ]
-"54
-[p x SAFEN = OFF ]
-"55
-[p x WRTAPP = OFF ]
-"56
-[p x WRTB = OFF ]
-"57
-[p x WRTC = OFF ]
-"58
-[p x WRTSAF = OFF ]
-"59
-[p x LVP = ON ]
-"62
-[p x CP = OFF ]
-"6 LED.c
-[; ;LED.c: 6: void led_ConfigureLED(void){
-[v _led_ConfigureLED `(v ~T0 @X0 1 ef ]
+"4 Oscillator.c
+[; ;Oscillator.c: 4: void osc_Config16MHz(void){
+[v _osc_Config16MHz `(v ~T0 @X0 1 ef ]
 {
-[e :U _led_ConfigureLED ]
+[e :U _osc_Config16MHz ]
 [f ]
+"6
+[; ;Oscillator.c: 6:     OSCFRQ = 0b0000101;
+[e = _OSCFRQ -> -> 5 `i `uc ]
 "7
-[; ;LED.c: 7:     TRISAbits.TRISA2 = 0;
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+[; ;Oscillator.c: 7:     OSCCON1 = 0b01100000;
+[e = _OSCCON1 -> -> 96 `i `uc ]
 "8
-[; ;LED.c: 8:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"9
-[; ;LED.c: 9: }
+[; ;Oscillator.c: 8: }
 [e :UE 789 ]
 }
-"11
-[; ;LED.c: 11: void led_Blink(uint8_t times){
-[v _led_Blink `(v ~T0 @X0 1 ef1`uc ]
+"10
+[; ;Oscillator.c: 10: void _osc_Config32768Hz(void){
+[v __osc_Config32768Hz `(v ~T0 @X0 1 ef ]
 {
-[e :U _led_Blink ]
-[v _times `uc ~T0 @X0 1 r1 ]
+[e :U __osc_Config32768Hz ]
 [f ]
-"12
-[; ;LED.c: 12:     for (int i = 0; i < times; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 794  ]
-[e :U 791 ]
-{
-"13
-[; ;LED.c: 13:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"14
-[; ;LED.c: 14:         _delay((unsigned long)((500)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
-"15
-[; ;LED.c: 15:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"16
-[; ;LED.c: 16:         _delay((unsigned long)((500)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
-"17
-[; ;LED.c: 17:     }
-}
-[e ++ _i -> 1 `i ]
-[e :U 794 ]
-[e $ < _i -> _times `i 791  ]
+"11
+[; ;Oscillator.c: 11:     while(!OSCSTATbits.EXTOR);
+[e $U 791  ]
 [e :U 792 ]
-}
-"18
-[; ;LED.c: 18: }
+[e :U 791 ]
+[e $ ! != -> . . _OSCSTATbits 0 7 `i -> 0 `i 792  ]
+[e :U 793 ]
+"12
+[; ;Oscillator.c: 12:     OSCENbits.EXTOEN = 1;
+[e = . . _OSCENbits 0 6 -> -> 1 `i `uc ]
+"13
+[; ;Oscillator.c: 13:     OSCCON1 = 0b01110000;
+[e = _OSCCON1 -> -> 112 `i `uc ]
+"14
+[; ;Oscillator.c: 14:     while(!OSCCON3bits.ORDY);
+[e $U 794  ]
+[e :U 795 ]
+[e :U 794 ]
+[e $ ! != -> . . _OSCCON3bits 0 2 `i -> 0 `i 795  ]
+[e :U 796 ]
+"15
+[; ;Oscillator.c: 15: }
 [e :UE 790 ]
 }

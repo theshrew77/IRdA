@@ -10040,8 +10040,8 @@ void debug_flush(void);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = ECH
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON
@@ -10155,25 +10155,26 @@ void nec_ExecuteCommand(uint8_t NECcommand);
 void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
 # 20 "main.c" 2
-# 41 "main.c"
+
+# 1 "./Oscillator.h" 1
+# 14 "./Oscillator.h"
+void _osc_Config32768Hz(void);
+void osc_Config16MHz(void);
+# 21 "main.c" 2
+# 42 "main.c"
 int main(int argc, char** argv) {
     uint8_t NECcommand = 0;
 
-
-
-    OSCFRQ = 0b0000101;
-    OSCCON1 = 0b01100000;
-
-
-
-
-    Uart_UCA0Init();
-    configureIOCInt();
+    _osc_Config32768Hz();
+# 54 "main.c"
     led_ConfigureLED();
-    tmr_TMR1Init();
-    tmr_TMR1reset();
-# 66 "main.c"
-    led_Blink(5);
+# 72 "main.c"
+    while(1){
+        LATAbits.LATA2 ^= 1;
+        _delay((unsigned long)((500)*(32768/4000.0)));
+        LATAbits.LATA2 ^= 1;
+        _delay((unsigned long)((500)*(32768/4000.0)));
+    }
 
     while(1){
         __asm("sleep");
@@ -10184,7 +10185,7 @@ int main(int argc, char** argv) {
             NECcommand = nec_ProcessPacket();
             nec_ExecuteCommand(NECcommand);
             tmr_TMR1reset();
-            _delay((unsigned long)((5)*(16000000/4000.0)));
+            _delay((unsigned long)((5)*(32768/4000.0)));
 
     }
 

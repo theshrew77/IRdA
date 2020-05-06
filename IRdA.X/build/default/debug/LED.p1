@@ -888,8 +888,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LED.c: 7:     TRISAbits.TRISA2 = 0;
 [e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
 "8
-[; ;LED.c: 8:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+[; ;LED.c: 8:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 "9
 [; ;LED.c: 9: }
 [e :UE 789 ]

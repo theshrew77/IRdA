@@ -13,6 +13,7 @@
       <itemPath>NEC.h</itemPath>
       <itemPath>PowerManagement.h</itemPath>
       <itemPath>LED.h</itemPath>
+      <itemPath>Oscillator.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -30,6 +31,7 @@
       <itemPath>NEC.c</itemPath>
       <itemPath>PowerManagement.c</itemPath>
       <itemPath>LED.c</itemPath>
+      <itemPath>Oscillator.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

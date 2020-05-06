@@ -9,50 +9,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 19: void Uart_UCA0Init(void);
 [v _Uart_UCA0Init `(v ~T0 @X0 0 ef ]
-"10 ./Interrupts.h
-[; ;./Interrupts.h: 10: void configureIOCInt(void);
+"19 ./Interrupts.h
+[; ;./Interrupts.h: 19: void configureIOCInt(void);
 [v _configureIOCInt `(v ~T0 @X0 0 ef ]
-"12 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 12: void tmr_TMR1Init(void);
+"13 ./LED.h
+[; ;./LED.h: 13: void led_ConfigureLED(void);
+[v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
+"20 ./tmr_TMR1.h
+[; ;./tmr_TMR1.h: 20: void tmr_TMR1Init(void);
 [v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
-"20
-[; ;./tmr_TMR1.h: 20: void tmr_TMR1reset(void);
+"28
+[; ;./tmr_TMR1.h: 28: void tmr_TMR1reset(void);
 [v _tmr_TMR1reset `(v ~T0 @X0 0 ef ]
-"502 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 502:     struct {
-[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . TRISA0 TRISA1 TRISA2 . TRISA4 TRISA5 ]
-"501
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 501: typedef union {
-[u S34 `S35 1 ]
-[n S34 . . ]
-"511
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 511: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x012)));
-[v _TRISAbits `VS34 ~T0 @X0 0 e@18 ]
-"547
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"546
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"556
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
+"14 ./LED.h
+[; ;./LED.h: 14: void led_Blink(uint8_t times);
+[v _led_Blink `(v ~T0 @X0 0 ef1`uc ]
+"31 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
+"30 ./tmr_TMR1.h
+[; ;./tmr_TMR1.h: 30: uint8_t accquisitionComplete(void);
+[v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
+"31 ./NEC.h
+[; ;./NEC.h: 31: uint8_t nec_ProcessPacket(void);
+[v _nec_ProcessPacket `(uc ~T0 @X0 0 ef ]
+"32
+[; ;./NEC.h: 32: void nec_ExecuteCommand(uint8_t NECcommand);
+[v _nec_ExecuteCommand `(v ~T0 @X0 0 ef1`uc ]
 [v F5815 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF5815 ~T0 @X0 0 e ]
 [p i __delay ]
-"22 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 22: uint8_t accquisitionComplete(void);
-[v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
-"25
-[; ;./tmr_TMR1.h: 25: uint16_t computeDelta(uint8_t i);
-[v _computeDelta `(us ~T0 @X0 0 ef1`uc ]
-"24 ./uart_UCA0.h
-[; ;./uart_UCA0.h: 24: int8_t Uart_UCA0_putc( int8_t c );
-[v _Uart_UCA0_putc `(c ~T0 @X0 0 ef1`c ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -855,9 +842,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "29 ./main.h
-[p x FEXTOSC = ECH ]
+[p x FEXTOSC = LP ]
 "30
-[p x RSTOSC = HFINT1 ]
+[p x RSTOSC = EXT1X ]
 "31
 [p x CLKOUTEN = OFF ]
 "32
@@ -907,26 +894,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [p x CP = OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"40 main.c
-[; ;main.c: 40: int main(int argc, char** argv) {
+"41 main.c
+[; ;main.c: 41: int main(int argc, char** argv) {
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"41
-[; ;main.c: 41:     uint16_t delta;
-[v _delta `us ~T0 @X0 1 a ]
 "42
-[; ;main.c: 42:     uint8_t NECpacket [32];
-[v _NECpacket `uc ~T0 @X0 -> 32 `i a ]
+[; ;main.c: 42:     uint8_t NECcommand = 0;
+[v _NECcommand `uc ~T0 @X0 1 a ]
+[e = _NECcommand -> -> 0 `i `uc ]
 "46
 [; ;main.c: 46:     OSCFRQ = 0b0000101;
 [e = _OSCFRQ -> -> 5 `i `uc ]
-"47
-[; ;main.c: 47:     OSCCON1 = 0b01100000;
-[e = _OSCCON1 -> -> 96 `i `uc ]
+"48
+[; ;main.c: 48:     OSCCON1 = 0b01110000;
+[e = _OSCCON1 -> -> 112 `i `uc ]
 "52
 [; ;main.c: 52:     Uart_UCA0Init();
 [e ( _Uart_UCA0Init ..  ]
@@ -934,101 +919,63 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 53:     configureIOCInt();
 [e ( _configureIOCInt ..  ]
 "54
-[; ;main.c: 54:     tmr_TMR1Init();
-[e ( _tmr_TMR1Init ..  ]
+[; ;main.c: 54:     led_ConfigureLED();
+[e ( _led_ConfigureLED ..  ]
 "55
-[; ;main.c: 55:     tmr_TMR1reset();
+[; ;main.c: 55:     tmr_TMR1Init();
+[e ( _tmr_TMR1Init ..  ]
+"56
+[; ;main.c: 56:     tmr_TMR1reset();
 [e ( _tmr_TMR1reset ..  ]
-"58
-[; ;main.c: 58:     TRISAbits.TRISA2 = 0;
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-"59
-[; ;main.c: 59:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"60
-[; ;main.c: 60:     _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "66
-[; ;main.c: 66:     while(1){
-[e :U 793 ]
-{
+[; ;main.c: 66:     led_Blink(5);
+[e ( _led_Blink (1 -> -> 5 `i `uc ]
 "67
-[; ;main.c: 67:         if(accquisitionComplete()){
-[e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 795  ]
-{
-"70
-[; ;main.c: 70:             delta = computeDelta(0);
-[e = _delta ( _computeDelta (1 -> -> 0 `i `uc ]
-"72
-[; ;main.c: 72:             if (10800 < delta && delta < 16200){
-[e $ ! && < -> -> 10800 `i `ui -> _delta `ui < -> _delta `ui -> -> 16200 `i `ui 796  ]
-{
-"73
-[; ;main.c: 73:                 for (int i = 1; i < 33; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 1 `i ]
-[e $ < _i -> 33 `i 797  ]
-[e $U 798  ]
-[e :U 797 ]
-{
-"74
-[; ;main.c: 74:                     delta = computeDelta(i);
-[e = _delta ( _computeDelta (1 -> _i `uc ]
-"75
-[; ;main.c: 75:                     if (1000 < delta && delta < 1500){
-[e $ ! && < -> -> 1000 `i `ui -> _delta `ui < -> _delta `ui -> -> 1500 `i `ui 800  ]
-{
-"76
-[; ;main.c: 76:                         NECpacket[i-1] = 0;
-[e = *U + &U _NECpacket * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 0 `i `uc ]
-"77
-[; ;main.c: 77:                     }
-}
-[e :U 800 ]
-"78
-[; ;main.c: 78:                     if (2000 < delta && delta < 3000){
-[e $ ! && < -> -> 2000 `i `ui -> _delta `ui < -> _delta `ui -> -> 3000 `i `ui 801  ]
-{
-"79
-[; ;main.c: 79:                         NECpacket[i-1] = 1;
-[e = *U + &U _NECpacket * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 1 `i `uc ]
-"80
-[; ;main.c: 80:                     }
-}
-[e :U 801 ]
-"81
-[; ;main.c: 81:                 }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 33 `i 797  ]
-[e :U 798 ]
-}
-"82
-[; ;main.c: 82:             }
-}
-[e :U 796 ]
-"84
-[; ;main.c: 84:             tmr_TMR1reset();
-[e ( _tmr_TMR1reset ..  ]
-"85
-[; ;main.c: 85:             Uart_UCA0_putc( delta );
-[e ( _Uart_UCA0_putc (1 -> _delta `c ]
-"86
-[; ;main.c: 86:         }
-}
-[e :U 795 ]
-"98
-[; ;main.c: 98:     }
-}
+[; ;main.c: 67:     while(1);
+[e :U 793 ]
 [e :U 792 ]
 [e $U 793  ]
 [e :U 794 ]
-"126
-[; ;main.c: 126:     return (0);
+"69
+[; ;main.c: 69:     while(1){
+[e :U 796 ]
+{
+"70
+[; ;main.c: 70:         __asm("sleep");
+[; <" sleep ;# ">
+"71
+[; ;main.c: 71:         __nop();
+[e ( ___nop ..  ]
+"72
+[; ;main.c: 72:         while(!accquisitionComplete());
+[e $U 798  ]
+[e :U 799 ]
+[e :U 798 ]
+[e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 799  ]
+[e :U 800 ]
+"75
+[; ;main.c: 75:             NECcommand = nec_ProcessPacket();
+[e = _NECcommand ( _nec_ProcessPacket ..  ]
+"76
+[; ;main.c: 76:             nec_ExecuteCommand(NECcommand);
+[e ( _nec_ExecuteCommand (1 _NECcommand ]
+"77
+[; ;main.c: 77:             tmr_TMR1reset();
+[e ( _tmr_TMR1reset ..  ]
+"78
+[; ;main.c: 78:             _delay((unsigned long)((5)*(32768/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
+"80
+[; ;main.c: 80:     }
+}
+[e :U 795 ]
+[e $U 796  ]
+[e :U 797 ]
+"82
+[; ;main.c: 82:     return (0);
 [e ) -> 0 `i ]
 [e $UE 791  ]
-"127
-[; ;main.c: 127: }
+"83
+[; ;main.c: 83: }
 [e :UE 791 ]
 }

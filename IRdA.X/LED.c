@@ -5,7 +5,7 @@
 
 void led_ConfigureLED(void){
     LEDTRIS = 0;
-    LEDLAT  = 1;
+    LEDLAT  = 0;
 }
 
 void led_Blink(uint8_t times){

@@ -1,0 +1,215 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"33 ./tmr_TMR1.h
+[; ;./tmr_TMR1.h: 33: uint16_t tmr_computeDelta(uint8_t i);
+[v _tmr_computeDelta `(us ~T0 @X0 0 ef1`uc ]
+"24 ./uart_UCA0.h
+[; ;./uart_UCA0.h: 24: int8_t Uart_UCA0_putc( int8_t c );
+[v _Uart_UCA0_putc `(c ~T0 @X0 0 ef1`c ]
+"67 NEC.c
+[; ;NEC.c: 67:     }
+[c E34 255 191 223 159 239 175 247 183 .. ]
+[n E34 . POWER OFF TIMER2H TIMER4H TIMER6H TIMER8H DIM BRIGHT  ]
+"7 NEC.c
+[; ;NEC.c: 7: uint8_t nec_ProcessPacket(void){
+[v _nec_ProcessPacket `(uc ~T0 @X0 1 ef ]
+{
+[e :U _nec_ProcessPacket ]
+[f ]
+"8
+[; ;NEC.c: 8:     uint16_t delta;
+[v _delta `us ~T0 @X0 1 a ]
+"9
+[; ;NEC.c: 9:     uint8_t NECpacket [32];
+[v _NECpacket `uc ~T0 @X0 -> 32 `i a ]
+"10
+[; ;NEC.c: 10:     uint8_t command = 0;
+[v _command `uc ~T0 @X0 1 a ]
+[e = _command -> -> 0 `i `uc ]
+"12
+[; ;NEC.c: 12:     delta = tmr_computeDelta(0);
+[e = _delta ( _tmr_computeDelta (1 -> -> 0 `i `uc ]
+"14
+[; ;NEC.c: 14:     if (10800 < delta && delta < 16200){
+[e $ ! && < -> -> 10800 `i `ui -> _delta `ui < -> _delta `ui -> -> 16200 `i `ui 3  ]
+{
+"16
+[; ;NEC.c: 16:         for (int i = 1; i < 33; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 1 `i ]
+[e $ < _i -> 33 `i 4  ]
+[e $U 5  ]
+[e :U 4 ]
+{
+"17
+[; ;NEC.c: 17:             delta = tmr_computeDelta(i);
+[e = _delta ( _tmr_computeDelta (1 -> _i `uc ]
+"18
+[; ;NEC.c: 18:             if (1000 < delta && delta < 1500){
+[e $ ! && < -> -> 1000 `i `ui -> _delta `ui < -> _delta `ui -> -> 1500 `i `ui 7  ]
+{
+"19
+[; ;NEC.c: 19:                 NECpacket[i-1] = 0;
+[e = *U + &U _NECpacket * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 0 `i `uc ]
+"20
+[; ;NEC.c: 20:             }
+}
+[e :U 7 ]
+"21
+[; ;NEC.c: 21:             if (2000 < delta && delta < 3000){
+[e $ ! && < -> -> 2000 `i `ui -> _delta `ui < -> _delta `ui -> -> 3000 `i `ui 8  ]
+{
+"22
+[; ;NEC.c: 22:                 NECpacket[i-1] = 1;
+[e = *U + &U _NECpacket * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 1 `i `uc ]
+"23
+[; ;NEC.c: 23:             }
+}
+[e :U 8 ]
+"24
+[; ;NEC.c: 24:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 33 `i 4  ]
+[e :U 5 ]
+}
+"26
+[; ;NEC.c: 26:         command += NECpacket[31];
+[e =+ _command -> *U + &U _NECpacket * -> -> -> 31 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `uc ]
+"27
+[; ;NEC.c: 27:         command += NECpacket[30]*2;
+[e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 30 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 2 `i `uc ]
+"28
+[; ;NEC.c: 28:         command += NECpacket[29]*4;
+[e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 29 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 4 `i `uc ]
+"29
+[; ;NEC.c: 29:         command += NECpacket[28]*8;
+[e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 28 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 8 `i `uc ]
+"30
+[; ;NEC.c: 30:         command += NECpacket[27]*16;
+[e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 27 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 16 `i `uc ]
+"31
+[; ;NEC.c: 31:         command += NECpacket[26]*32;
+[e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 26 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 32 `i `uc ]
+"32
+[; ;NEC.c: 32:         command += NECpacket[25]*64;
+[e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 25 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 64 `i `uc ]
+"33
+[; ;NEC.c: 33:         command += NECpacket[24]*128;
+[e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 24 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 128 `i `uc ]
+"35
+[; ;NEC.c: 35:     }
+}
+[e :U 3 ]
+"36
+[; ;NEC.c: 36:     return(command);
+[e ) _command ]
+[e $UE 2  ]
+"37
+[; ;NEC.c: 37: }
+[e :UE 2 ]
+}
+"39
+[; ;NEC.c: 39: void nec_ExecuteCommand(uint8_t NECcommand){
+[v _nec_ExecuteCommand `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _nec_ExecuteCommand ]
+[v _NECcommand `uc ~T0 @X0 1 r1 ]
+[f ]
+"41
+[; ;NEC.c: 41:     switch (NECcommand)
+[e $U 11  ]
+"42
+[; ;NEC.c: 42:     {
+{
+"43
+[; ;NEC.c: 43:         case POWER:
+[e :U 12 ]
+"44
+[; ;NEC.c: 44:             Uart_UCA0_putc( 'a' );
+[e ( _Uart_UCA0_putc (1 -> -> 97 `ui `c ]
+"45
+[; ;NEC.c: 45:             break;
+[e $U 10  ]
+"46
+[; ;NEC.c: 46:         case OFF:
+[e :U 13 ]
+"47
+[; ;NEC.c: 47:             Uart_UCA0_putc( 'b' );
+[e ( _Uart_UCA0_putc (1 -> -> 98 `ui `c ]
+"48
+[; ;NEC.c: 48:             break;
+[e $U 10  ]
+"49
+[; ;NEC.c: 49:         case TIMER2H:
+[e :U 14 ]
+"50
+[; ;NEC.c: 50:             Uart_UCA0_putc( 'c' );
+[e ( _Uart_UCA0_putc (1 -> -> 99 `ui `c ]
+"51
+[; ;NEC.c: 51:             break;
+[e $U 10  ]
+"52
+[; ;NEC.c: 52:         case TIMER4H:
+[e :U 15 ]
+"53
+[; ;NEC.c: 53:             Uart_UCA0_putc( 'd' );
+[e ( _Uart_UCA0_putc (1 -> -> 100 `ui `c ]
+"54
+[; ;NEC.c: 54:             break;
+[e $U 10  ]
+"55
+[; ;NEC.c: 55:         case TIMER6H:
+[e :U 16 ]
+"56
+[; ;NEC.c: 56:             Uart_UCA0_putc( 'e' );
+[e ( _Uart_UCA0_putc (1 -> -> 101 `ui `c ]
+"57
+[; ;NEC.c: 57:             break;
+[e $U 10  ]
+"58
+[; ;NEC.c: 58:         case TIMER8H:
+[e :U 17 ]
+"59
+[; ;NEC.c: 59:             Uart_UCA0_putc( 'f' );
+[e ( _Uart_UCA0_putc (1 -> -> 102 `ui `c ]
+"60
+[; ;NEC.c: 60:             break;
+[e $U 10  ]
+"61
+[; ;NEC.c: 61:         case DIM:
+[e :U 18 ]
+"62
+[; ;NEC.c: 62:             Uart_UCA0_putc( 'g' );
+[e ( _Uart_UCA0_putc (1 -> -> 103 `ui `c ]
+"63
+[; ;NEC.c: 63:             break;
+[e $U 10  ]
+"64
+[; ;NEC.c: 64:         case BRIGHT:
+[e :U 19 ]
+"65
+[; ;NEC.c: 65:             Uart_UCA0_putc( 'h' );
+[e ( _Uart_UCA0_putc (1 -> -> 104 `ui `c ]
+"66
+[; ;NEC.c: 66:             break;
+[e $U 10  ]
+"67
+[; ;NEC.c: 67:     }
+}
+[e $U 10  ]
+[e :U 11 ]
+[e [\ -> _NECcommand `i , $ . `E34 0 12
+ , $ . `E34 1 13
+ , $ . `E34 2 14
+ , $ . `E34 3 15
+ , $ . `E34 4 16
+ , $ . `E34 5 17
+ , $ . `E34 6 18
+ , $ . `E34 7 19
+ 10 ]
+[e :U 10 ]
+"68
+[; ;NEC.c: 68: }
+[e :UE 9 ]
+}

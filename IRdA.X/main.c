@@ -18,6 +18,7 @@
 #include "tmr_TMR1.h"
 #include "NEC.h"
 #include "LED.h"
+#include "Oscillator.h"
 
 
 
@@ -41,20 +42,24 @@
 int main(int argc, char** argv) {
     uint8_t NECcommand = 0;
     
+    _osc_Config32768Hz();
+    /*
+    while(!OSCSTATbits.EXTOR); //wait for the external oscillator to be ready
+    OSCENbits.EXTOEN = 1;       //explicitly enable external osciallator
+    OSCCON1 = 0b01110000;       //set clock tree to accept external oscillator with 1:1 prescaler
+    while(!OSCCON3bits.ORDY);   //wait for the oscillator to be ready
+    */
     
-    //set oscilator frequency to 16MHz
-    OSCFRQ = 0b0000101;  
-    OSCCON1 = 0b01100000;
     
-
-    
-    
+    led_ConfigureLED();
+  
+    /*
     Uart_UCA0Init();
     configureIOCInt();
-    led_ConfigureLED();
+    
     tmr_TMR1Init();
     tmr_TMR1reset();
-
+*/
  
  
     //__delay_ms(500);
@@ -63,7 +68,13 @@ int main(int argc, char** argv) {
     //printf("Entering while(1) \n\r");
     //printf("Pizza Timex%d! \n\r",5);
     
-    led_Blink(5);
+    
+    while(1){
+        LEDLAT ^= 1;
+        __delay_ms(500);
+        LEDLAT ^= 1;
+        __delay_ms(500);
+    }
     
     while(1){
         SLEEP();

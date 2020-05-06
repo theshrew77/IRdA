@@ -9964,8 +9964,8 @@ void led_Blink(uint8_t times);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = ECH
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON
@@ -10003,14 +10003,14 @@ void led_Blink(uint8_t times);
 
 void led_ConfigureLED(void){
     TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 1;
+    LATAbits.LATA2 = 0;
 }
 
 void led_Blink(uint8_t times){
     for (int i = 0; i < times; i++){
         LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(16000000/4000.0)));
+        _delay((unsigned long)((500)*(32768/4000.0)));
         LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(16000000/4000.0)));
+        _delay((unsigned long)((500)*(32768/4000.0)));
     }
 }
