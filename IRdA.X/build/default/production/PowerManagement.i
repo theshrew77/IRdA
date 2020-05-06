@@ -8,9 +8,9 @@
 # 2 "<built-in>" 2
 # 1 "PowerManagement.c" 2
 # 1 "./PowerManagement.h" 1
-# 15 "./PowerManagement.h"
-    void pwrmgmt_DisablePeripherals(void);
-    void pwrmgmt_ConfigUnusedPins(void);
+# 10 "./PowerManagement.h"
+void pwrmgmt_DisablePeripherals(void);
+void pwrmgmt_ConfigUnusedPins(void);
 # 1 "PowerManagement.c" 2
 
 

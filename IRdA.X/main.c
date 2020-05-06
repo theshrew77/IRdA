@@ -17,6 +17,7 @@
 #include "Interrupts.h"
 #include "tmr_TMR1.h"
 #include "NEC.h"
+#include "LED.h"
 
 
 
@@ -50,17 +51,19 @@ int main(int argc, char** argv) {
     
     Uart_UCA0Init();
     configureIOCInt();
+    led_ConfigureLED();
     tmr_TMR1Init();
     tmr_TMR1reset();
 
  
-    TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 0; 
+ 
     //__delay_ms(500);
 
 
     //printf("Entering while(1) \n\r");
     //printf("Pizza Timex%d! \n\r",5);
+    
+    led_Blink(5);
     
     while(1){
         SLEEP();
