@@ -9,12 +9,12 @@ uint8_t nec_ProcessPacket(void){
     uint8_t NECpacket [32];
     uint8_t command = 0;
     
-    delta = computeDelta(0);
+    delta = tmr_computeDelta(0);
             
     if (NEC_START_LOW < delta && delta < NEC_START_HIGH){
         
         for (int i = 1; i < 33; i++){
-            delta = computeDelta(i);
+            delta = tmr_computeDelta(i);
             if (NEC_0_LOW < delta && delta < NEC_0_HIGH){
                 NECpacket[i-1] = 0;
             }

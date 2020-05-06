@@ -10130,11 +10130,11 @@ void tmr_TMR1mark(void);
 uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
-uint16_t computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 # 18 "main.c" 2
 
 # 1 "./NEC.h" 1
-# 19 "./NEC.h"
+# 20 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,

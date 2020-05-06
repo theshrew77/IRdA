@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\IRdA.X.production.sym \
   --cmf=dist/default/production\IRdA.X.production.cmf -z -Q16LF15313 \
-  -oC:\Users\10158431\AppData\Local\Temp\s3194.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\10158431\AppData\Local\Temp\s9tg.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/IRdA.X.production.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=02094h-0209Fh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
   -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
@@ -38,7 +38,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-0800Bh -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -DCODE=2 -DSTRCODE=2 \
   -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\10158431\AppData\Local\Temp\s3194.o \
+  C:\Users\10158431\AppData\Local\Temp\s9tg.o \
   dist/default/production\IRdA.X.production.o 
 
 Object code version is 3.11
@@ -48,7 +48,7 @@ Machine type is 16LF15313
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\10158431\AppData\Local\Temp\s3194.o
+C:\Users\10158431\AppData\Local\Temp\s9tg.o
                 end_init                             32       32        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        5    1000E       0
@@ -495,7 +495,7 @@ UNUSED ADDRESS RANGES
                                   Symbol Table
 
 ?___lmul                       cstackCOMMON 00072
-?_computeDelta                 cstackBANK0  00024
+?_tmr_computeDelta             cstackBANK0  00024
 Uart_UCA0_putc@c               cstackCOMMON 00072
 _ANSELAbits                    (abs)        01F38
 _BAUD1CONbits                  (abs)        0011F
@@ -887,7 +887,6 @@ __end_of_Uart_UCA0_putc        text7        002E0
 __end_of___lmul                text5        00267
 __end_of__initialization       cinit        0004D
 __end_of_accquisitionComplete  text11       002F9
-__end_of_computeDelta          text4        0015F
 __end_of_configureIOCInt       text10       002EA
 __end_of_led_Blink             text9        001F6
 __end_of_led_ConfigureLED      text8        002F4
@@ -899,6 +898,7 @@ __end_of_tmr_TMR1IncRollovers  text15       002BA
 __end_of_tmr_TMR1Init          text2        002D6
 __end_of_tmr_TMR1mark          text14       002A6
 __end_of_tmr_TMR1reset         text1        0028C
+__end_of_tmr_computeDelta      text4        0015F
 __initialization               cinit        00033
 __pbssBANK0                    bssBANK0     00062
 __pbssBANK1                    bssBANK1     000A0
@@ -928,7 +928,6 @@ __size_of_Uart_UCA0Init        (abs)        00000
 __size_of_Uart_UCA0_putc       (abs)        00000
 __size_of___lmul               (abs)        00000
 __size_of_accquisitionComplete (abs)        00000
-__size_of_computeDelta         (abs)        00000
 __size_of_configureIOCInt      (abs)        00000
 __size_of_led_Blink            (abs)        00000
 __size_of_led_ConfigureLED     (abs)        00000
@@ -940,9 +939,9 @@ __size_of_tmr_TMR1IncRollovers (abs)        00000
 __size_of_tmr_TMR1Init         (abs)        00000
 __size_of_tmr_TMR1mark         (abs)        00000
 __size_of_tmr_TMR1reset        (abs)        00000
+__size_of_tmr_computeDelta     (abs)        00000
 _accComplete                   bssCOMMON    0007A
 _accquisitionComplete          text11       002F7
-_computeDelta                  text4        0010A
 _configureIOCInt               text10       002E0
 _led_Blink                     text9        001AC
 _led_ConfigureLED              text8        002F0
@@ -955,9 +954,9 @@ _tmr_TMR1IncRollovers          text15       002A6
 _tmr_TMR1Init                  text2        002C9
 _tmr_TMR1mark                  text14       0028C
 _tmr_TMR1reset                 text1        00267
+_tmr_computeDelta              text4        0010A
 btemp                          (abs)        0007E
 clear_ram0                     clrtext      002EA
-computeDelta@i                 cstackBANK0  00034
 end_of_initialization          cinit        0004D
 int$flags                      (abs)        0007E
 intlevel0                      functab      00000
@@ -978,6 +977,7 @@ reset_vec                      reset_vec    00000
 start                          init         00032
 start_initialization           cinit        00033
 tmr_TMR1reset@i                cstackCOMMON 00073
+tmr_computeDelta@i             cstackBANK0  00034
 wtemp0                         (abs)        0007E
 
 
@@ -1108,13 +1108,13 @@ Total ram usage:       39 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    5
  This function calls:
-		_computeDelta
+		_tmr_computeDelta
  This function is called by:
 		_main
  This function uses a non-reentrant model
 
 
- *************** function _computeDelta *****************
+ *************** function _tmr_computeDelta *****************
  Defined at:
 		line 15 in file "tmr_TMR1.c"
  Parameters:    Size  Location     Type
@@ -1171,7 +1171,7 @@ Total ram usage:       12 bytes
  This function calls:
 		Nothing
  This function is called by:
-		_computeDelta
+		_tmr_computeDelta
 		_tmr_TMR1GetCount
  This function uses a non-reentrant model
 
@@ -1523,11 +1523,11 @@ LED.c
 LED.c estimated size: 80
 
 tmr_TMR1.c
+		_tmr_computeDelta		CODE           	010A	0000	86
 		_tmr_TMR1Dis   		CODE           	02F4	0000	4
 		_tmr_TMR1mark  		CODE           	028C	0000	27
 		_tmr_TMR1Init  		CODE           	02C9	0000	14
 		_tmr_TMR1reset 		CODE           	0267	0000	38
-		_computeDelta  		CODE           	010A	0000	86
 		_tmr_TMR1IncRollovers		CODE           	02A6	0000	21
 		_accquisitionComplete		CODE           	02F7	0000	3
 

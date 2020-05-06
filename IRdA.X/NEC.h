@@ -8,6 +8,7 @@
 #ifndef NEC_H
 #define	NEC_H
 
+//Fosc = 16Mhz settings
 #define NEC_START_LOW   10800
 #define NEC_START_HIGH  16200
 #define NEC_0_LOW       1000

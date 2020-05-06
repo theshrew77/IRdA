@@ -8,6 +8,7 @@ __Hintentry 32 0 CODE 0
 __Lintentry 4 0 CODE 0
 __CFG_BOREN$ON 0 0 ABS 0
 __pintentry 4 0 CODE 0
+__end_of_tmr_computeDelta 15F 0 CODE 0
 _TMR1 20C 0 ABS 0
 __end_of_led_ConfigureLED 2F4 0 CODE 0
 __CFG_CSWEN$ON 0 0 ABS 0
@@ -18,6 +19,7 @@ _tmr_TMR1mark 28C 0 CODE 0
 start 32 0 CODE 0
 _accComplete 7A 0 COMMON 1
 led_Blink@i 75 0 COMMON 1
+__size_of_tmr_computeDelta 0 0 ABS 0
 _TXREG 11A 0 ABS 0
 reset_vec 0 0 CODE 0
 wtemp0 7E 0 ABS 0
@@ -98,6 +100,7 @@ __pcstackBANK0 20 0 BANK0 1
 ___lmul 231 0 CODE 0
 __Hinit 32 0 CODE 0
 __Linit 32 0 CODE 0
+?_tmr_computeDelta 24 0 BANK0 1
 __end_of_main 231 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
@@ -208,7 +211,6 @@ __Hsfr19 0 0 ABS 0
 __Lsfr57 0 0 ABS 0
 __Lsfr38 0 0 ABS 0
 __Lsfr19 0 0 ABS 0
-?_computeDelta 24 0 BANK0 1
 __Hsfr48 0 0 ABS 0
 __Hsfr29 0 0 ABS 0
 __Lsfr48 0 0 ABS 0
@@ -229,13 +231,11 @@ _T1CONbits 20E 0 ABS 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 __size_of_tmr_TMR1Dis 0 0 ABS 0
-computeDelta@i 34 0 BANK0 1
 __Hbank0 0 0 ABS 0
 __Lbank0 0 0 ABS 0
 __Hbank1 0 0 ABS 0
 __Lbank1 0 0 ABS 0
 __Hbank2 0 0 ABS 0
-__end_of_computeDelta 15F 0 CODE 0
 __Lbank2 0 0 ABS 0
 __Hbank3 0 0 BANK3 1
 __Lbank3 0 0 BANK3 1
@@ -261,11 +261,13 @@ __ptext3 50 0 CODE 0
 __ptext4 10A 0 CODE 0
 __ptext5 231 0 CODE 0
 __ptext6 15F 0 CODE 0
+_tmr_computeDelta 10A 0 CODE 0
 __ptext7 2D6 0 CODE 0
 __ptext8 2F0 0 CODE 0
 __ptext9 1AC 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
+tmr_computeDelta@i 34 0 BANK0 1
 __size_of_tmr_TMR1mark 0 0 ABS 0
 __end_of_tmr_TMR1IncRollovers 2BA 0 CODE 0
 __size_of_tmr_TMR1Init 0 0 ABS 0
@@ -322,7 +324,6 @@ __Hbank12 0 0 BANK12 1
 __Lbank50 0 0 BANK50 1
 __Lbank31 0 0 BANK31 1
 __Lbank12 0 0 BANK12 1
-_computeDelta 10A 0 CODE 0
 __CFG_WRTAPP$OFF 0 0 ABS 0
 __Hbank60 0 0 BANK60 1
 __Hbank41 0 0 BANK41 1
@@ -464,7 +465,6 @@ __size_of___lmul 0 0 ABS 0
 __CFG_WRTC$OFF 0 0 ABS 0
 intlevel4 0 0 ENTRY 0
 intlevel5 0 0 ENTRY 0
-__size_of_computeDelta 0 0 ABS 0
 __HcstackCOMMON 0 0 ABS 0
 __LcstackCOMMON 0 0 ABS 0
 __pcstackCOMMON 70 0 COMMON 1
@@ -493,7 +493,7 @@ bssBANK2 120 163 BANK2 120 1
 cstackBANK0 20 69 BANK0 20 1
 %locals
 dist/default/production\IRdA.X.production.o
-C:\Users\10158431\AppData\Local\Temp\s3194.s
+C:\Users\10158431\AppData\Local\Temp\s9tg.s
 3426 33 0 CODE 0
 3429 33 0 CODE 0
 3480 33 0 CODE 0

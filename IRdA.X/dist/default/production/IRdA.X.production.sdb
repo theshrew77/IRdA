@@ -41,7 +41,7 @@ BRIGHT 183
 "125
 [v _QChkQ QChkQ `(c  1 e 1 0 ]
 "15 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR1.c
-[v _computeDelta computeDelta `(us  1 e 2 0 ]
+[v _tmr_computeDelta tmr_computeDelta `(us  1 e 2 0 ]
 "27
 [v _accquisitionComplete accquisitionComplete `(uc  1 e 1 0 ]
 "31
@@ -294,11 +294,11 @@ BRIGHT 183
 "37
 } 0
 "15 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR1.c
-[v _computeDelta computeDelta `(us  1 e 2 0 ]
+[v _tmr_computeDelta tmr_computeDelta `(us  1 e 2 0 ]
 {
-[v computeDelta@i i `uc  1 a 1 wreg ]
-[v computeDelta@i i `uc  1 a 1 wreg ]
-[v computeDelta@i i `uc  1 a 1 20 ]
+[v tmr_computeDelta@i i `uc  1 a 1 wreg ]
+[v tmr_computeDelta@i i `uc  1 a 1 wreg ]
+[v tmr_computeDelta@i i `uc  1 a 1 20 ]
 "17
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c

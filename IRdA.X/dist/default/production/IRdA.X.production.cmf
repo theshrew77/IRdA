@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\10158431\AppData\Local\Temp\s3194.o
+$C:\Users\10158431\AppData\Local\Temp\s9tg.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 32 32 1 2
 config CONFIG 0 8007 8007 5 2
@@ -145,32 +145,32 @@ STRING 2F9-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\IRdA.X.production.o
-33 cinit CODE >3426:C:\Users\10158431\AppData\Local\Temp\s3194.s
-33 cinit CODE >3429:C:\Users\10158431\AppData\Local\Temp\s3194.s
-33 cinit CODE >3480:C:\Users\10158431\AppData\Local\Temp\s3194.s
-34 cinit CODE >3481:C:\Users\10158431\AppData\Local\Temp\s3194.s
-35 cinit CODE >3485:C:\Users\10158431\AppData\Local\Temp\s3194.s
-36 cinit CODE >3486:C:\Users\10158431\AppData\Local\Temp\s3194.s
-37 cinit CODE >3487:C:\Users\10158431\AppData\Local\Temp\s3194.s
-38 cinit CODE >3488:C:\Users\10158431\AppData\Local\Temp\s3194.s
-39 cinit CODE >3489:C:\Users\10158431\AppData\Local\Temp\s3194.s
-3A cinit CODE >3490:C:\Users\10158431\AppData\Local\Temp\s3194.s
-3D cinit CODE >3494:C:\Users\10158431\AppData\Local\Temp\s3194.s
-3E cinit CODE >3495:C:\Users\10158431\AppData\Local\Temp\s3194.s
-3F cinit CODE >3496:C:\Users\10158431\AppData\Local\Temp\s3194.s
-40 cinit CODE >3497:C:\Users\10158431\AppData\Local\Temp\s3194.s
-41 cinit CODE >3498:C:\Users\10158431\AppData\Local\Temp\s3194.s
-42 cinit CODE >3499:C:\Users\10158431\AppData\Local\Temp\s3194.s
-45 cinit CODE >3503:C:\Users\10158431\AppData\Local\Temp\s3194.s
-46 cinit CODE >3504:C:\Users\10158431\AppData\Local\Temp\s3194.s
-47 cinit CODE >3505:C:\Users\10158431\AppData\Local\Temp\s3194.s
-48 cinit CODE >3506:C:\Users\10158431\AppData\Local\Temp\s3194.s
-49 cinit CODE >3507:C:\Users\10158431\AppData\Local\Temp\s3194.s
-4A cinit CODE >3508:C:\Users\10158431\AppData\Local\Temp\s3194.s
-4D cinit CODE >3514:C:\Users\10158431\AppData\Local\Temp\s3194.s
-4D cinit CODE >3516:C:\Users\10158431\AppData\Local\Temp\s3194.s
-4E cinit CODE >3517:C:\Users\10158431\AppData\Local\Temp\s3194.s
-4F cinit CODE >3518:C:\Users\10158431\AppData\Local\Temp\s3194.s
+33 cinit CODE >3426:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+33 cinit CODE >3429:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+33 cinit CODE >3480:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+34 cinit CODE >3481:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+35 cinit CODE >3485:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+36 cinit CODE >3486:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+37 cinit CODE >3487:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+38 cinit CODE >3488:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+39 cinit CODE >3489:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+3A cinit CODE >3490:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+3D cinit CODE >3494:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+3E cinit CODE >3495:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+3F cinit CODE >3496:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+40 cinit CODE >3497:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+41 cinit CODE >3498:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+42 cinit CODE >3499:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+45 cinit CODE >3503:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+46 cinit CODE >3504:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+47 cinit CODE >3505:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+48 cinit CODE >3506:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+49 cinit CODE >3507:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+4A cinit CODE >3508:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+4D cinit CODE >3514:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+4D cinit CODE >3516:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+4E cinit CODE >3517:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+4F cinit CODE >3518:C:\Users\10158431\AppData\Local\Temp\s9tg.s
 4 intentry CODE >25:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 6 intentry CODE >28:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 B intentry CODE >30:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
@@ -320,14 +320,14 @@ FD text3 CODE >33:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
 21F maintext CODE >75:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 223 maintext CODE >76:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 226 maintext CODE >77:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
-2EA clrtext CODE >3469:C:\Users\10158431\AppData\Local\Temp\s3194.s
-2EA clrtext CODE >3470:C:\Users\10158431\AppData\Local\Temp\s3194.s
-2EB clrtext CODE >3471:C:\Users\10158431\AppData\Local\Temp\s3194.s
-2EB clrtext CODE >3472:C:\Users\10158431\AppData\Local\Temp\s3194.s
-2EC clrtext CODE >3473:C:\Users\10158431\AppData\Local\Temp\s3194.s
-2ED clrtext CODE >3474:C:\Users\10158431\AppData\Local\Temp\s3194.s
-2EE clrtext CODE >3475:C:\Users\10158431\AppData\Local\Temp\s3194.s
-2EF clrtext CODE >3476:C:\Users\10158431\AppData\Local\Temp\s3194.s
+2EA clrtext CODE >3469:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+2EA clrtext CODE >3470:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+2EB clrtext CODE >3471:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+2EB clrtext CODE >3472:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+2EC clrtext CODE >3473:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+2ED clrtext CODE >3474:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+2EE clrtext CODE >3475:C:\Users\10158431\AppData\Local\Temp\s9tg.s
+2EF clrtext CODE >3476:C:\Users\10158431\AppData\Local\Temp\s9tg.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -355,26 +355,26 @@ _T1CONbits 20E 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 _TMR1 20C 0 ABS 0 - dist/default/production\IRdA.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s3194.o
+___sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s9tg.o
 _main 3EC 0 CODE 0 maintext dist/default/production\IRdA.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.o
 tmr_TMR1reset@i 73 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.o
 __end_of_led_ConfigureLED 5E8 0 CODE 0 text8 dist/default/production\IRdA.X.production.o
-start 64 0 CODE 0 init C:\Users\10158431\AppData\Local\Temp\s3194.o
+start 64 0 CODE 0 init C:\Users\10158431\AppData\Local\Temp\s9tg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 ?___lmul 72 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.o
 __size_of_led_ConfigureLED 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
+_tmr_computeDelta 214 0 CODE 0 text4 dist/default/production\IRdA.X.production.o
 _TMR1rollovers 68 0 BANK0 1 bssBANK0 dist/default/production\IRdA.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-_computeDelta 214 0 CODE 0 text4 dist/default/production\IRdA.X.production.o
 _tmr_TMR1IncRollovers 54C 0 CODE 0 text15 dist/default/production\IRdA.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s3194.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s3194.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s3194.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s3194.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s3194.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s3194.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s9tg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s9tg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s9tg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s9tg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s9tg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s9tg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\IRdA.X.production.o
 _tmr_TMR1reset 4CE 0 CODE 0 text1 dist/default/production\IRdA.X.production.o
@@ -386,21 +386,20 @@ _nec_ProcessPacket A0 0 CODE 0 text3 dist/default/production\IRdA.X.production.o
 _Uart_UCA0_putc 5AC 0 CODE 0 text7 dist/default/production\IRdA.X.production.o
 _tmr_TMR1Dis 5E8 0 CODE 0 text16 dist/default/production\IRdA.X.production.o
 led_Blink@times 74 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.o
-__size_of_computeDelta 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __end_of___lmul 4CE 0 CODE 0 text5 dist/default/production\IRdA.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_FEXTOSC$ECH 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_accquisitionComplete 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
-___stackhi 209F 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s3194.o
-___stacklo 2094 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s3194.o
-__end_of_computeDelta 2BE 0 CODE 0 text4 dist/default/production\IRdA.X.production.o
+__end_of_tmr_computeDelta 2BE 0 CODE 0 text4 dist/default/production\IRdA.X.production.o
+___stackhi 209F 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s9tg.o
+___stacklo 2094 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s9tg.o
 __CFG_SAFEN$OFF 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
+__size_of_tmr_computeDelta 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __end_of_Uart_UCA0_putc 5C0 0 CODE 0 text7 dist/default/production\IRdA.X.production.o
 __end_of_accquisitionComplete 5F2 0 CODE 0 text11 dist/default/production\IRdA.X.production.o
 _tmr_TMR1Init 592 0 CODE 0 text2 dist/default/production\IRdA.X.production.o
 _tmr_TMR1mark 518 0 CODE 0 text14 dist/default/production\IRdA.X.production.o
 start_initialization 66 0 CODE 0 cinit dist/default/production\IRdA.X.production.o
-?_computeDelta 24 0 BANK0 1 cstackBANK0 dist/default/production\IRdA.X.production.o
 _OSCFRQ 893 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 _TRISAbits 12 0 ABS 0 - dist/default/production\IRdA.X.production.o
@@ -410,7 +409,7 @@ clear_ram0 5D4 0 CODE 0 clrtext dist/default/production\IRdA.X.production.o
 _SPBRGL 11B 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\IRdA.X.production.o
 __end_of_nec_ExecuteCommand 358 0 CODE 0 text6 dist/default/production\IRdA.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s3194.o
+___int_sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s9tg.o
 __size_of_tmr_TMR1Init 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_tmr_TMR1mark 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -653,12 +652,14 @@ __end_of_ISR 64 0 CODE 0 intentry dist/default/production\IRdA.X.production.o
 _configureIOCInt 5C0 0 CODE 0 text10 dist/default/production\IRdA.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\10158431\AppData\Local\Temp\s3194.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\10158431\AppData\Local\Temp\s9tg.o
+tmr_computeDelta@i 34 0 BANK0 1 cstackBANK0 dist/default/production\IRdA.X.production.o
 __size_of___lmul 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __LbssBANK2 0 0 ABS 0 bssBANK2 -
 _Uart_UCA0Init 574 0 CODE 0 text12 dist/default/production\IRdA.X.production.o
+?_tmr_computeDelta 24 0 BANK0 1 cstackBANK0 dist/default/production\IRdA.X.production.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __end_of_tmr_TMR1Dis 5EE 0 CODE 0 text16 dist/default/production\IRdA.X.production.o
 _IOCAFbits 1F3F 0 ABS 0 - dist/default/production\IRdA.X.production.o
@@ -787,7 +788,6 @@ __ptext9 358 0 CODE 0 text9 dist/default/production\IRdA.X.production.o
 __size_of_Uart_UCA0Init 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-computeDelta@i 34 0 BANK0 1 cstackBANK0 dist/default/production\IRdA.X.production.o
 led_Blink@i 75 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\IRdA.X.production.o

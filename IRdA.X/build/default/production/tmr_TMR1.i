@@ -9833,7 +9833,7 @@ void tmr_TMR1mark(void);
 uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
-uint16_t computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 # 5 "tmr_TMR1.c" 2
 
 # 1 "./Interrupts.h" 1
@@ -9849,7 +9849,7 @@ static uint16_t TMR1rolloverArray [34] = {0};
 static uint8_t sample = 0;
 static uint8_t accComplete = 0;
 
-uint16_t computeDelta(uint8_t i){
+uint16_t tmr_computeDelta(uint8_t i){
     return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*0xFFFF - TMR1countArray[i])>>4);
 }
 

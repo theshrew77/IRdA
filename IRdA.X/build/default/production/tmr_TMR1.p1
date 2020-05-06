@@ -911,10 +911,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "15
-[; ;tmr_TMR1.c: 15: uint16_t computeDelta(uint8_t i){
-[v _computeDelta `(us ~T0 @X0 1 ef1`uc ]
+[; ;tmr_TMR1.c: 15: uint16_t tmr_computeDelta(uint8_t i){
+[v _tmr_computeDelta `(us ~T0 @X0 1 ef1`uc ]
 {
-[e :U _computeDelta ]
+[e :U _tmr_computeDelta ]
 [v _i `uc ~T0 @X0 1 r1 ]
 [f ]
 "16

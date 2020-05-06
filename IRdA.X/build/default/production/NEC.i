@@ -114,7 +114,7 @@ typedef uint32_t uint_fast32_t;
 # 1 "NEC.c" 2
 
 # 1 "./NEC.h" 1
-# 19 "./NEC.h"
+# 20 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,
@@ -145,7 +145,7 @@ void tmr_TMR1mark(void);
 uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
-uint16_t computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 # 3 "NEC.c" 2
 
 # 1 "./uart_UCA0.h" 1
@@ -189,12 +189,12 @@ uint8_t nec_ProcessPacket(void){
     uint8_t NECpacket [32];
     uint8_t command = 0;
 
-    delta = computeDelta(0);
+    delta = tmr_computeDelta(0);
 
     if (10800 < delta && delta < 16200){
 
         for (int i = 1; i < 33; i++){
-            delta = computeDelta(i);
+            delta = tmr_computeDelta(i);
             if (1000 < delta && delta < 1500){
                 NECpacket[i-1] = 0;
             }

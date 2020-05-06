@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "33 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 33: uint16_t computeDelta(uint8_t i);
-[v _computeDelta `(us ~T0 @X0 0 ef1`uc ]
+[; ;./tmr_TMR1.h: 33: uint16_t tmr_computeDelta(uint8_t i);
+[v _tmr_computeDelta `(us ~T0 @X0 0 ef1`uc ]
 "24 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 24: int8_t Uart_UCA0_putc( int8_t c );
 [v _Uart_UCA0_putc `(c ~T0 @X0 0 ef1`c ]
@@ -26,8 +26,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _command `uc ~T0 @X0 1 a ]
 [e = _command -> -> 0 `i `uc ]
 "12
-[; ;NEC.c: 12:     delta = computeDelta(0);
-[e = _delta ( _computeDelta (1 -> -> 0 `i `uc ]
+[; ;NEC.c: 12:     delta = tmr_computeDelta(0);
+[e = _delta ( _tmr_computeDelta (1 -> -> 0 `i `uc ]
 "14
 [; ;NEC.c: 14:     if (10800 < delta && delta < 16200){
 [e $ ! && < -> -> 10800 `i `ui -> _delta `ui < -> _delta `ui -> -> 16200 `i `ui 3  ]
@@ -42,8 +42,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 4 ]
 {
 "17
-[; ;NEC.c: 17:             delta = computeDelta(i);
-[e = _delta ( _computeDelta (1 -> _i `uc ]
+[; ;NEC.c: 17:             delta = tmr_computeDelta(i);
+[e = _delta ( _tmr_computeDelta (1 -> _i `uc ]
 "18
 [; ;NEC.c: 18:             if (1000 < delta && delta < 1500){
 [e $ ! && < -> -> 1000 `i `ui -> _delta `ui < -> _delta `ui -> -> 1500 `i `ui 7  ]

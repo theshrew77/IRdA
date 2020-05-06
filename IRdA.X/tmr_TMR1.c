@@ -12,7 +12,7 @@ static uint16_t TMR1rolloverArray [34] = {0};
 static uint8_t sample = 0;
 static uint8_t accComplete = 0;
 
-uint16_t computeDelta(uint8_t i){
+uint16_t tmr_computeDelta(uint8_t i){
     return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*TMR1MAX - TMR1countArray[i])>>4);
 }
 
