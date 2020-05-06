@@ -11,6 +11,8 @@
       <itemPath>tmr_TMR1.h</itemPath>
       <itemPath>Interrupts.h</itemPath>
       <itemPath>NEC.h</itemPath>
+      <itemPath>PowerManagement.h</itemPath>
+      <itemPath>LED.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -26,6 +28,8 @@
       <itemPath>Interrupts.c</itemPath>
       <itemPath>tmr_TMR1.c</itemPath>
       <itemPath>NEC.c</itemPath>
+      <itemPath>PowerManagement.c</itemPath>
+      <itemPath>LED.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
