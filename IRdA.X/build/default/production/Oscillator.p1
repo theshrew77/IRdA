@@ -16,17 +16,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9632
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9632: extern volatile OSCSTATbits_t OSCSTATbits __attribute__((address(0x890)));
 [v _OSCSTATbits `VS470 ~T0 @X0 0 e@2192 ]
-"9673
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9673:     struct {
-[s S473 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S473 . . ADOEN . LFOEN MFOEN HFOEN EXTOEN ]
-"9672
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9672: typedef union {
-[u S472 `S473 1 ]
-[n S472 . . ]
-"9683
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9683: extern volatile OSCENbits_t OSCENbits __attribute__((address(0x891)));
-[v _OSCENbits `VS472 ~T0 @X0 0 e@2193 ]
 "9587
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9587:     struct {
 [s S469 :3 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
@@ -868,9 +857,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 791 ]
 [e $ ! != -> . . _OSCSTATbits 0 7 `i -> 0 `i 792  ]
 [e :U 793 ]
-"12
-[; ;Oscillator.c: 12:     OSCENbits.EXTOEN = 1;
-[e = . . _OSCENbits 0 6 -> -> 1 `i `uc ]
 "13
 [; ;Oscillator.c: 13:     OSCCON1 = 0b01110000;
 [e = _OSCCON1 -> -> 112 `i `uc ]

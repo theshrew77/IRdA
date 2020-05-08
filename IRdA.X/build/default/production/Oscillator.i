@@ -9886,7 +9886,7 @@ void osc_Config16MHz(void){
 
 void _osc_Config32768Hz(void){
     while(!OSCSTATbits.EXTOR);
-    OSCENbits.EXTOEN = 1;
+
     OSCCON1 = 0b01110000;
     while(!OSCCON3bits.ORDY);
 }
