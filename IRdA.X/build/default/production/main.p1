@@ -9,23 +9,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19 ./Interrupts.h
 [; ;./Interrupts.h: 19: void configureIOCInt(void);
 [v _configureIOCInt `(v ~T0 @X0 0 ef ]
-"20 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 20: void tmr_TMR1Init(void);
-[v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
-"28
-[; ;./tmr_TMR1.h: 28: void tmr_TMR1reset(void);
-[v _tmr_TMR1reset `(v ~T0 @X0 0 ef ]
+"21 ./tmr_TMR0.h
+[; ;./tmr_TMR0.h: 21: void tmr_TMR0Init(void);
+[v _tmr_TMR0Init `(v ~T0 @X0 0 ef ]
+"25
+[; ;./tmr_TMR0.h: 25: void tmr_TMR0reset(void);
+[v _tmr_TMR0reset `(v ~T0 @X0 0 ef ]
 "31 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"30 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 30: uint8_t accquisitionComplete(void);
+"23 ./tmr_TMR0.h
+[; ;./tmr_TMR0.h: 23: uint8_t accquisitionComplete(void);
 [v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
-"41 ./NEC.h
-[; ;./NEC.h: 41: uint8_t nec_ProcessPacket(void);
+"419 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 419:     struct {
+[s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . INTEDG . PEIE GIE ]
+"418
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 418: typedef union {
+[u S30 `S31 1 ]
+[n S30 . . ]
+"426
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
+"51 ./NEC.h
+[; ;./NEC.h: 51: uint8_t nec_ProcessPacket(void);
 [v _nec_ProcessPacket `(uc ~T0 @X0 0 ef ]
-"42
-[; ;./NEC.h: 42: void nec_ExecuteCommand(uint8_t NECcommand);
+"52
+[; ;./NEC.h: 52: void nec_ExecuteCommand(uint8_t NECcommand);
 [v _nec_ExecuteCommand `(v ~T0 @X0 0 ef1`uc ]
 [v F5815 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
@@ -907,51 +918,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 59:     configureIOCInt();
 [e ( _configureIOCInt ..  ]
 "61
-[; ;main.c: 61:     tmr_TMR1Init();
-[e ( _tmr_TMR1Init ..  ]
+[; ;main.c: 61:     tmr_TMR0Init();
+[e ( _tmr_TMR0Init ..  ]
 "62
-[; ;main.c: 62:     tmr_TMR1reset();
-[e ( _tmr_TMR1reset ..  ]
-"74
-[; ;main.c: 74:     while(1){
+[; ;main.c: 62:     tmr_TMR0reset();
+[e ( _tmr_TMR0reset ..  ]
+"75
+[; ;main.c: 75:     while(1){
 [e :U 793 ]
 {
-"75
-[; ;main.c: 75:         __asm("sleep");
-[; <" sleep ;# ">
 "76
-[; ;main.c: 76:         __nop();
+[; ;main.c: 76:         __asm("sleep");
+[; <" sleep ;# ">
+"77
+[; ;main.c: 77:         __nop();
 [e ( ___nop ..  ]
-"78
-[; ;main.c: 78:         while(!accquisitionComplete());
+"79
+[; ;main.c: 79:         while(!accquisitionComplete());
 [e $U 795  ]
 [e :U 796 ]
 [e :U 795 ]
 [e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 796  ]
 [e :U 797 ]
-"82
-[; ;main.c: 82:             NECcommand = nec_ProcessPacket();
-[e = _NECcommand ( _nec_ProcessPacket ..  ]
+"80
+[; ;main.c: 80:             INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
 "83
-[; ;main.c: 83:             nec_ExecuteCommand(NECcommand);
-[e ( _nec_ExecuteCommand (1 _NECcommand ]
+[; ;main.c: 83:             NECcommand = nec_ProcessPacket();
+[e = _NECcommand ( _nec_ProcessPacket ..  ]
 "84
-[; ;main.c: 84:             tmr_TMR1reset();
-[e ( _tmr_TMR1reset ..  ]
+[; ;main.c: 84:             nec_ExecuteCommand(NECcommand);
+[e ( _nec_ExecuteCommand (1 _NECcommand ]
 "85
-[; ;main.c: 85:             _delay((unsigned long)((5)*(32768/4000.0)));
+[; ;main.c: 85:             tmr_TMR0reset();
+[e ( _tmr_TMR0reset ..  ]
+"86
+[; ;main.c: 86:             _delay((unsigned long)((5)*(32768/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
 "87
-[; ;main.c: 87:     }
+[; ;main.c: 87:             INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"89
+[; ;main.c: 89:     }
 }
 [e :U 792 ]
 [e $U 793  ]
 [e :U 794 ]
-"89
-[; ;main.c: 89:     return (0);
+"91
+[; ;main.c: 91:     return (0);
 [e ) -> 0 `i ]
 [e $UE 791  ]
-"90
-[; ;main.c: 90: }
+"92
+[; ;main.c: 92: }
 [e :UE 791 ]
 }

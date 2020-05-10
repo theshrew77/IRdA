@@ -9957,7 +9957,7 @@ typedef uint32_t uint_fast32_t;
 # 2 "NEC.c" 2
 
 # 1 "./NEC.h" 1
-# 30 "./NEC.h"
+# 40 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,
@@ -9973,22 +9973,15 @@ uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 # 3 "NEC.c" 2
 
-# 1 "./tmr_TMR1.h" 1
-# 20 "./tmr_TMR1.h"
-void tmr_TMR1Init(void);
-void tmr_TMR1ClrRollovers(void);
-uint16_t *tmr_TMR1GetRollovers(void);
-void tmr_TMR1IncRollovers(void);
-void tmr_TMR1En(void);
-void tmr_TMR1Dis(void);
-void tmr_TMR1Toggle(void);
-uint32_t tmr_TMR1GetCount(void);
-void tmr_TMR1reset(void);
-void tmr_TMR1mark(void);
+# 1 "./tmr_TMR0.h" 1
+# 21 "./tmr_TMR0.h"
+void tmr_TMR0Init(void);
+uint8_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
-uint16_t *getTMR1countArray(void);
-uint16_t *getTMR1rolloverArray(void);
-uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR0mark(void);
+void tmr_TMR0reset(void);
+void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Dis(void);
 # 4 "NEC.c" 2
 
 # 1 "./uart_UCA0.h" 1
@@ -10072,7 +10065,7 @@ void led_Blink(uint8_t times);
 
 
 uint8_t nec_ProcessPacket(void){
-    uint16_t delta;
+    uint8_t delta;
     uint8_t NECpacket [32];
     uint8_t command = 0;
 
@@ -10082,25 +10075,25 @@ uint8_t nec_ProcessPacket(void){
 
 
 
-
     delta = tmr_computeDelta(0);
 
-    highbyte = (uint8_t)((delta & 0xFF00) >> 8);
-    lowbyte = (uint8_t)(delta & 0xFF);
-    Uart_UCA0_putc( highbyte );
-    LATAbits.LATA2 = 1;
-    _delay((unsigned long)((100)*(32768/4000.0)));
-    LATAbits.LATA2 = 0;
-    Uart_UCA0_putc( lowbyte );
 
-    if (353 < delta && delta < 530){
+
+    Uart_UCA0_putc( delta );
+
+
+
+    if (44 < delta && delta < 66){
+        LATAbits.LATA2 = 1;
+        _delay((unsigned long)((100)*(32768/4000.0)));
+        LATAbits.LATA2 = 0;
 
         for (int i = 1; i < 33; i++){
             delta = tmr_computeDelta(i);
-            if (32 < delta && delta < 48){
+            if (4 < delta && delta < 6){
                 NECpacket[i-1] = 0;
             }
-            if (64 < delta && delta < 97){
+            if (8 < delta && delta < 12){
                 NECpacket[i-1] = 1;
             }
         }
@@ -10124,6 +10117,7 @@ void nec_ExecuteCommand(uint8_t NECcommand){
     {
         case POWER:
             Uart_UCA0_putc( 'a' );
+
             break;
         case OFF:
             Uart_UCA0_putc( 'b' );

@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include "main.h"
 #include "uart_UCA0.h"
-#include "tmr_TMR1.h"
+#include "tmr_TMR0.h"
 #include "Interrupts.h"
 #include "LED.h"
 //#include <stdio.h>
@@ -30,22 +30,26 @@ __interrupt() void ISR(void){
 
         IOCA_F = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         IOC_IF = 0;
-        //LATAbits.LATA2 ^= 1;
         //printf("TMR1 total count = %u\r\n",tmr_TMR1GetCount());
         //printf("TMR1 rollovers = %u\r\n",*tmr_TMR1GetRollovers());
-        if (!TMR1_ON) TMR1_ON = 1;
-        tmr_TMR1mark();
+        if (!TMR0_ON) TMR0_ON = 1;
+        tmr_TMR0mark();
         //check = 1;
         
     }
-    
+    /*
     if(TMR1IFG){
         TMR1IFG = 0;
         //printf("TMR1 rolled over\r\n");
         tmr_TMR1IncRollovers();
         
     }
-    
+    */
+    if (TMR0IFG){
+        TMR0IFG = 0;
+        tmr_TMR0IncRollovers();
+        
+    }
     
     /*
   if ( UCA0RXIFG )

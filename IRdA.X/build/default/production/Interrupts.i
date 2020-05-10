@@ -10028,22 +10028,15 @@ t_Q *getU0_RxBuf_t(void);
 void Uart_UCA0_RxIntEn(void);
 # 4 "Interrupts.c" 2
 
-# 1 "./tmr_TMR1.h" 1
-# 20 "./tmr_TMR1.h"
-void tmr_TMR1Init(void);
-void tmr_TMR1ClrRollovers(void);
-uint16_t *tmr_TMR1GetRollovers(void);
-void tmr_TMR1IncRollovers(void);
-void tmr_TMR1En(void);
-void tmr_TMR1Dis(void);
-void tmr_TMR1Toggle(void);
-uint32_t tmr_TMR1GetCount(void);
-void tmr_TMR1reset(void);
-void tmr_TMR1mark(void);
+# 1 "./tmr_TMR0.h" 1
+# 21 "./tmr_TMR0.h"
+void tmr_TMR0Init(void);
+uint8_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
-uint16_t *getTMR1countArray(void);
-uint16_t *getTMR1rolloverArray(void);
-uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR0mark(void);
+void tmr_TMR0reset(void);
+void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Dis(void);
 # 5 "Interrupts.c" 2
 
 # 1 "./Interrupts.h" 1
@@ -10084,19 +10077,17 @@ __attribute__((picinterrupt(("")))) void ISR(void){
         PIR0bits.IOCIF = 0;
 
 
+        if (!T0CON0bits.T0EN) T0CON0bits.T0EN = 1;
+        tmr_TMR0mark();
 
-        if (!T1CONbits.ON) T1CONbits.ON = 1;
-        tmr_TMR1mark();
-
-
-    }
-
-    if(PIR4bits.TMR1IF){
-        PIR4bits.TMR1IF = 0;
-
-        tmr_TMR1IncRollovers();
 
     }
-# 72 "Interrupts.c"
+# 48 "Interrupts.c"
+    if (PIR0bits.TMR0IF){
+        PIR0bits.TMR0IF = 0;
+        tmr_TMR0IncRollovers();
+
+    }
+# 76 "Interrupts.c"
     return;
 }

@@ -15,7 +15,7 @@
 #include "main.h"
 #include "uart_UCA0.h"
 #include "Interrupts.h"
-#include "tmr_TMR1.h"
+#include "tmr_TMR0.h"
 #include "NEC.h"
 #include "LED.h"
 #include "Oscillator.h"
@@ -58,9 +58,10 @@ int main(int argc, char** argv) {
     Uart_UCA0Init();
     configureIOCInt();
     
-    tmr_TMR1Init();
-    tmr_TMR1reset();
-
+    tmr_TMR0Init();
+    tmr_TMR0reset();
+    
+    
 
  
     //__delay_ms(500);
@@ -76,13 +77,14 @@ int main(int argc, char** argv) {
         NOP();
         
         while(!accquisitionComplete());
-  
+            G_IE = 0;
             //process to NEC
             //check for NEC start condition
             NECcommand = nec_ProcessPacket();
             nec_ExecuteCommand(NECcommand);          
-            tmr_TMR1reset();
+            tmr_TMR0reset();
             __delay_ms(5);
+            G_IE = 1;
         
     }
 

@@ -1,14 +1,14 @@
 #include <xc.h>
 #include <stdint.h>
 #include "NEC.h"
-#include "tmr_TMR1.h"
+#include "tmr_TMR0.h"
 #include "uart_UCA0.h"
 #include "LED.h"
 #include "main.h"
 
 
 uint8_t nec_ProcessPacket(void){
-    uint16_t delta;
+    uint8_t delta;
     uint8_t NECpacket [32];
     uint8_t command = 0;
     
@@ -16,21 +16,21 @@ uint8_t nec_ProcessPacket(void){
     uint8_t lowbyte = 0;
     
 
-    
- 
+
     
     delta = tmr_computeDelta(0);
     
-    highbyte = (uint8_t)((delta & 0xFF00) >> 8);
-    lowbyte = (uint8_t)(delta & 0xFF);
-    Uart_UCA0_putc( highbyte );
-    LEDLAT = 1;
-    __delay_ms(100);
-    LEDLAT = 0;
-    Uart_UCA0_putc( lowbyte );
+    //highbyte = (uint8_t)((delta & 0xFF00) >> 8);
+    //lowbyte = (uint8_t)(delta & 0xFF);
+    Uart_UCA0_putc( delta );
+
+    //Uart_UCA0_putc( lowbyte );
 
     if (NEC_START_LOW < delta && delta < NEC_START_HIGH){
-        
+        LEDLAT = 1;
+        __delay_ms(100);
+        LEDLAT = 0;
+
         for (int i = 1; i < 33; i++){
             delta = tmr_computeDelta(i);
             if (NEC_0_LOW < delta && delta < NEC_0_HIGH){
@@ -60,6 +60,7 @@ void nec_ExecuteCommand(uint8_t NECcommand){
     {
         case POWER:
             Uart_UCA0_putc( 'a' );
+
             break;
         case OFF:
             Uart_UCA0_putc( 'b' );

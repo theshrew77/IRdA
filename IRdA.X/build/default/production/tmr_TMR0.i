@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "tmr_TMR0.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
+# 1 "tmr_TMR0.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9875,9 +9869,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 7 "main.c" 2
-
-
+# 1 "tmr_TMR0.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -9962,81 +9954,23 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 10 "main.c" 2
+# 2 "tmr_TMR0.c" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 11 "main.c" 2
+# 1 "./tmr_TMR0.h" 1
+# 21 "./tmr_TMR0.h"
+void tmr_TMR0Init(void);
+uint8_t tmr_computeDelta(uint8_t i);
+uint8_t accquisitionComplete(void);
+void tmr_TMR0mark(void);
+void tmr_TMR0reset(void);
+void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Dis(void);
+# 3 "tmr_TMR0.c" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 411 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "main.c" 2
-
-
-# 1 "./Debug.h" 1
-# 11 "./Debug.h"
-void debug_init(void);
-void debug_deinit(void);
-void debug_out(const char *fmt, ...);
-char *debug_in( char *buf, uint16_t Len, uint32_t tmo );
-int16_t debug_kbhit(void);
-uint16_t debug_enable(void);
-uint16_t debug_disable(void);
-uint16_t debug_getstatus(void);
-void debug_flush(void);
-# 14 "main.c" 2
+# 1 "./Interrupts.h" 1
+# 19 "./Interrupts.h"
+void configureIOCInt(void);
+# 4 "tmr_TMR0.c" 2
 
 # 1 "./main.h" 1
 # 29 "./main.h"
@@ -10074,115 +10008,69 @@ void debug_flush(void);
 
 
 #pragma config CP = OFF
-# 15 "main.c" 2
-
-# 1 "./uart_UCA0.h" 1
-# 11 "./uart_UCA0.h"
-# 1 "./Que.h" 1
-# 14 "./Que.h"
-typedef struct {
-  int8_t Data[2];
-  int8_t In;
-  int8_t Out;
-} t_Q;
+# 5 "tmr_TMR0.c" 2
 
 
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-# 11 "./uart_UCA0.h" 2
+static uint8_t TMR0rollovers = 0;
+uint8_t TMR0count = 0;
+static uint8_t TMR0countArray [34] = {0};
+static uint8_t TMR0rolloverArray [34] = {0};
+static uint8_t sample = 0;
+static uint8_t accComplete = 0;
 
+uint8_t tmr_computeDelta(uint8_t i){
 
+    return ((uint8_t)(TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*0xFF - TMR0countArray[i]));
 
+}
 
+uint8_t accquisitionComplete(void){
+    return(accComplete);
+}
 
+void tmr_TMR0mark(void){
+    TMR0countArray[sample] = TMR0L;
+    TMR0rolloverArray[sample] = TMR0rollovers;
+    TMR0rollovers = 0;
+    sample++;
+}
 
+void tmr_TMR0reset(void){
+    for (int i = 0; i < 33; i++){
+        TMR0countArray[i] = 0;
+        TMR0rolloverArray[i] = 0;
+    }
+    sample = 0;
+    accComplete = 0;
+}
 
+void tmr_TMR0IncRollovers(void){
+    TMR0rollovers++;
 
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-# 16 "main.c" 2
-
-# 1 "./Interrupts.h" 1
-# 19 "./Interrupts.h"
-void configureIOCInt(void);
-# 17 "main.c" 2
-
-# 1 "./tmr_TMR0.h" 1
-# 21 "./tmr_TMR0.h"
-void tmr_TMR0Init(void);
-uint8_t tmr_computeDelta(uint8_t i);
-uint8_t accquisitionComplete(void);
-void tmr_TMR0mark(void);
-void tmr_TMR0reset(void);
-void tmr_TMR0IncRollovers(void);
-void tmr_TMR0Dis(void);
-# 18 "main.c" 2
-
-# 1 "./NEC.h" 1
-# 40 "./NEC.h"
-typedef enum {
-    POWER = 0xFF,
-    OFF = 0xBF,
-    TIMER2H = 0xDF,
-    TIMER4H = 0x9F,
-    TIMER6H = 0xEF,
-    TIMER8H = 0xAF,
-    DIM = 0xF7,
-    BRIGHT = 0xB7,
-} NEC_commands_t;
-
-uint8_t nec_ProcessPacket(void);
-void nec_ExecuteCommand(uint8_t NECcommand);
-# 19 "main.c" 2
-
-# 1 "./LED.h" 1
-# 13 "./LED.h"
-void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
-# 20 "main.c" 2
-
-# 1 "./Oscillator.h" 1
-# 14 "./Oscillator.h"
-void _osc_Config32768Hz(void);
-void osc_Config16MHz(void);
-# 21 "main.c" 2
-# 42 "main.c"
-int main(int argc, char** argv) {
-
-    uint8_t NECcommand = 0;
-# 55 "main.c"
-    led_ConfigureLED();
-
-
-    Uart_UCA0Init();
-    configureIOCInt();
-
-    tmr_TMR0Init();
-    tmr_TMR0reset();
-# 75 "main.c"
-    while(1){
-        __asm("sleep");
-        __nop();
-
-        while(!accquisitionComplete());
-            INTCONbits.GIE = 0;
-
-
-            NECcommand = nec_ProcessPacket();
-            nec_ExecuteCommand(NECcommand);
-            tmr_TMR0reset();
-            _delay((unsigned long)((5)*(32768/4000.0)));
-            INTCONbits.GIE = 1;
-
+    if ( TMR0rollovers > 1){
+        tmr_TMR0Dis();
+        accComplete = 1;
     }
 
-    return (0);
+}
+
+void tmr_TMR0Init(void){
+    T0CON1bits.T0CKPS = 0;
+    T0CON0bits.T016BIT = 0;
+    T0CON1bits.T0CS = 2;
+
+
+    PIE0bits.TMR0IE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+
+
+
+
+}
+
+void tmr_TMR0Dis(void){
+
+    T0CON0bits.T0EN = 0;
 }

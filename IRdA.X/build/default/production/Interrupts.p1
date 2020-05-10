@@ -78,46 +78,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16471
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16471: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x1F3F)));
 [v _IOCAFbits `VS762 ~T0 @X0 0 e@7999 ]
-"3013
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3013:     struct {
-[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
-[n S148 . ON RD16 nSYNC . CKPS ]
-"3020
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3020:     struct {
-[s S149 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S149 . TMR1ON T1RD16 nT1SYNC . T1CKPS0 T1CKPS1 ]
-"3028
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3028:     struct {
-[s S150 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S150 . . CKPS0 CKPS1 ]
-"3033
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3033:     struct {
-[s S151 :1 `uc 1 :1 `uc 1 ]
-[n S151 . . RD161 ]
-"3012
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3012: typedef union {
-[u S147 `S148 1 `S149 1 `S150 1 `S151 1 ]
-[n S147 . . . . . ]
-"3038
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3038: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x20E)));
-[v _T1CONbits `VS147 ~T0 @X0 0 e@526 ]
-"29 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 29: void tmr_TMR1mark(void);
-[v _tmr_TMR1mark `(v ~T0 @X0 0 ef ]
-"7780 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7780:     struct {
-[s S380 :1 `uc 1 :1 `uc 1 ]
-[n S380 . TMR1IF TMR2IF ]
-"7779
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7779: typedef union {
-[u S379 `S380 1 ]
-[n S379 . . ]
-"7785
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7785: extern volatile PIR4bits_t PIR4bits __attribute__((address(0x710)));
-[v _PIR4bits `VS379 ~T0 @X0 0 e@1808 ]
-"23 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 23: void tmr_TMR1IncRollovers(void);
-[v _tmr_TMR1IncRollovers `(v ~T0 @X0 0 ef ]
+"6729
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6729:     struct {
+[s S330 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S330 . T0OUTPS T016BIT T0OUT . T0EN ]
+"6736
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6736:     struct {
+[s S331 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S331 . T0OUTPS0 T0OUTPS1 T0OUTPS2 T0OUTPS3 ]
+"6728
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6728: typedef union {
+[u S329 `S330 1 `S331 1 ]
+[n S329 . . . ]
+"6743
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6743: extern volatile T0CON0bits_t T0CON0bits __attribute__((address(0x59E)));
+[v _T0CON0bits `VS329 ~T0 @X0 0 e@1438 ]
+"24 ./tmr_TMR0.h
+[; ;./tmr_TMR0.h: 24: void tmr_TMR0mark(void);
+[v _tmr_TMR0mark `(v ~T0 @X0 0 ef ]
+"26
+[; ;./tmr_TMR0.h: 26: void tmr_TMR0IncRollovers(void);
+[v _tmr_TMR0IncRollovers `(v ~T0 @X0 0 ef ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1013,36 +994,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [; ;Interrupts.c: 32:         PIR0bits.IOCIF = 0;
 [e = . . _PIR0bits 0 2 -> -> 0 `i `uc ]
-"36
-[; ;Interrupts.c: 36:         if (!T1CONbits.ON) T1CONbits.ON = 1;
-[e $ ! ! != -> . . _T1CONbits 0 0 `i -> 0 `i 793  ]
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"35
+[; ;Interrupts.c: 35:         if (!T0CON0bits.T0EN) T0CON0bits.T0EN = 1;
+[e $ ! ! != -> . . _T0CON0bits 0 4 `i -> 0 `i 793  ]
+[e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
 [e :U 793 ]
-"37
-[; ;Interrupts.c: 37:         tmr_TMR1mark();
-[e ( _tmr_TMR1mark ..  ]
-"40
-[; ;Interrupts.c: 40:     }
+"36
+[; ;Interrupts.c: 36:         tmr_TMR0mark();
+[e ( _tmr_TMR0mark ..  ]
+"39
+[; ;Interrupts.c: 39:     }
 }
 [e :U 792 ]
-"42
-[; ;Interrupts.c: 42:     if(PIR4bits.TMR1IF){
-[e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 794  ]
+"48
+[; ;Interrupts.c: 48:     if (PIR0bits.TMR0IF){
+[e $ ! != -> . . _PIR0bits 0 3 `i -> 0 `i 794  ]
 {
-"43
-[; ;Interrupts.c: 43:         PIR4bits.TMR1IF = 0;
-[e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-"45
-[; ;Interrupts.c: 45:         tmr_TMR1IncRollovers();
-[e ( _tmr_TMR1IncRollovers ..  ]
-"47
-[; ;Interrupts.c: 47:     }
+"49
+[; ;Interrupts.c: 49:         PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
+"50
+[; ;Interrupts.c: 50:         tmr_TMR0IncRollovers();
+[e ( _tmr_TMR0IncRollovers ..  ]
+"52
+[; ;Interrupts.c: 52:     }
 }
 [e :U 794 ]
-"72
-[; ;Interrupts.c: 72:     return;
+"76
+[; ;Interrupts.c: 76:     return;
 [e $UE 791  ]
-"73
-[; ;Interrupts.c: 73: }
+"77
+[; ;Interrupts.c: 77: }
 [e :UE 791 ]
 }
