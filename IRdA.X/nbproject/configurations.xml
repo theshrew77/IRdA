@@ -12,8 +12,8 @@
       <itemPath>NEC.h</itemPath>
       <itemPath>PowerManagement.h</itemPath>
       <itemPath>LED.h</itemPath>
-      <itemPath>Oscillator.h</itemPath>
       <itemPath>tmr_TMR0.h</itemPath>
+      <itemPath>Oscillator.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

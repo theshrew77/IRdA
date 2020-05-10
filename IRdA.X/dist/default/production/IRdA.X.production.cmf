@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\10158431\AppData\Local\Temp\s2ov8.o
+$C:\Users\10158431\AppData\Local\Temp\s34qo.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 23 23 1 2
 config CONFIG 0 8007 8007 5 2
@@ -142,26 +142,26 @@ STRING 209-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\IRdA.X.production.o
-24 cinit CODE >4493:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-24 cinit CODE >4496:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-24 cinit CODE >4544:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-25 cinit CODE >4545:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-26 cinit CODE >4549:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-27 cinit CODE >4550:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-28 cinit CODE >4551:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-29 cinit CODE >4552:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-2A cinit CODE >4553:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-2B cinit CODE >4554:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-2E cinit CODE >4558:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-2F cinit CODE >4559:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-30 cinit CODE >4560:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-31 cinit CODE >4561:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-32 cinit CODE >4562:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-33 cinit CODE >4563:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-36 cinit CODE >4569:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-36 cinit CODE >4571:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-37 cinit CODE >4572:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-38 cinit CODE >4573:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
+24 cinit CODE >4493:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+24 cinit CODE >4496:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+24 cinit CODE >4544:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+25 cinit CODE >4545:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+26 cinit CODE >4549:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+27 cinit CODE >4550:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+28 cinit CODE >4551:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+29 cinit CODE >4552:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+2A cinit CODE >4553:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+2B cinit CODE >4554:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+2E cinit CODE >4558:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+2F cinit CODE >4559:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+30 cinit CODE >4560:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+31 cinit CODE >4561:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+32 cinit CODE >4562:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+33 cinit CODE >4563:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+36 cinit CODE >4569:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+36 cinit CODE >4571:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+37 cinit CODE >4572:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+38 cinit CODE >4573:C:\Users\10158431\AppData\Local\Temp\s34qo.s
 4 intentry CODE >26:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 6 intentry CODE >29:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 B intentry CODE >31:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
@@ -297,14 +297,14 @@ ED text3 CODE >55:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
 160 maintext CODE >85:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 163 maintext CODE >86:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 167 maintext CODE >87:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
-1F9 clrtext CODE >4533:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-1F9 clrtext CODE >4534:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-1FA clrtext CODE >4535:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-1FA clrtext CODE >4536:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-1FB clrtext CODE >4537:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-1FC clrtext CODE >4538:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-1FD clrtext CODE >4539:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
-1FE clrtext CODE >4540:C:\Users\10158431\AppData\Local\Temp\s2ov8.s
+1F9 clrtext CODE >4533:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+1F9 clrtext CODE >4534:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+1FA clrtext CODE >4535:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+1FA clrtext CODE >4536:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+1FB clrtext CODE >4537:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+1FC clrtext CODE >4538:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+1FD clrtext CODE >4539:C:\Users\10158431\AppData\Local\Temp\s34qo.s
+1FE clrtext CODE >4540:C:\Users\10158431\AppData\Local\Temp\s34qo.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -328,23 +328,23 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s2ov8.o
+___sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s34qo.o
 _main 276 0 CODE 0 maintext dist/default/production\IRdA.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __end_of_led_ConfigureLED 406 0 CODE 0 text7 dist/default/production\IRdA.X.production.o
-start 46 0 CODE 0 init C:\Users\10158431\AppData\Local\Temp\s2ov8.o
+start 46 0 CODE 0 init C:\Users\10158431\AppData\Local\Temp\s34qo.o
 __size_of_main 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _TMR0rollovers 7C 0 COMMON 1 bssCOMMON dist/default/production\IRdA.X.production.o
 __size_of_led_ConfigureLED 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 _tmr_computeDelta 344 0 CODE 0 text4 dist/default/production\IRdA.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s2ov8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s2ov8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s2ov8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s2ov8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s2ov8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s2ov8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s34qo.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s34qo.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s34qo.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s34qo.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s34qo.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s34qo.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 tmr_TMR0reset@i 72 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.o
 _tmr_TMR0reset 2D4 0 CODE 0 text1 dist/default/production\IRdA.X.production.o
@@ -360,8 +360,8 @@ __CFG_RSTOSC$EXT1X 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of_accquisitionComplete 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __end_of_tmr_computeDelta 370 0 CODE 0 text4 dist/default/production\IRdA.X.production.o
-___stackhi 20EF 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s2ov8.o
-___stacklo 2072 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s2ov8.o
+___stackhi 20EF 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s34qo.o
+___stacklo 2072 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s34qo.o
 __CFG_SAFEN$OFF 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_tmr_computeDelta 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __end_of_Uart_UCA0_putc 3DE 0 CODE 0 text6 dist/default/production\IRdA.X.production.o
@@ -384,7 +384,7 @@ _TMR0rolloverArray A0 0 BANK1 1 bssBANK1 dist/default/production\IRdA.X.producti
 __end_of_nec_ExecuteCommand 276 0 CODE 0 text5 dist/default/production\IRdA.X.production.o
 _TMR0countArray 20 0 BANK0 1 bssBANK0 dist/default/production\IRdA.X.production.o
 __end_of_tmr_TMR0IncRollovers 392 0 CODE 0 text13 dist/default/production\IRdA.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s2ov8.o
+___int_sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s34qo.o
 __size_of_tmr_TMR0Init 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_tmr_TMR0mark 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -626,7 +626,7 @@ __end_of_ISR 46 0 CODE 0 intentry dist/default/production\IRdA.X.production.o
 _configureIOCInt 3DE 0 CODE 0 text8 dist/default/production\IRdA.X.production.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\10158431\AppData\Local\Temp\s2ov8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\10158431\AppData\Local\Temp\s34qo.o
 tmr_computeDelta@i 73 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
