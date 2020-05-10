@@ -1085,8 +1085,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tmr_TMR1.c: 64:     TMR1rollovers++;
 [e ++ _TMR1rollovers -> -> 1 `i `us ]
 "66
-[; ;tmr_TMR1.c: 66:     if ( TMR1rollovers > 4){
-[e $ ! > -> _TMR1rollovers `ui -> -> 4 `i `ui 797  ]
+[; ;tmr_TMR1.c: 66:     if ( TMR1rollovers > 0){
+[e $ ! > -> _TMR1rollovers `ui -> -> 0 `i `ui 797  ]
 {
 "67
 [; ;tmr_TMR1.c: 67:         tmr_TMR1Dis();

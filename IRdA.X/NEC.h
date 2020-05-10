@@ -7,7 +7,7 @@
 
 #ifndef NEC_H
 #define	NEC_H
-
+/*
 //Fosc = 16Mhz settings
 #define NEC_START_LOW   10800
 #define NEC_START_HIGH  16200
@@ -15,6 +15,16 @@
 #define NEC_0_HIGH      1500
 #define NEC_1_LOW       2000
 #define NEC_1_HIGH      3000
+#define NEC_ADDRESS     0
+*/
+
+//Fosc = 32768 settings
+#define NEC_START_LOW   353
+#define NEC_START_HIGH  530
+#define NEC_0_LOW       32
+#define NEC_0_HIGH      48
+#define NEC_1_LOW       64
+#define NEC_1_HIGH      97
 #define NEC_ADDRESS     0
 
 typedef enum {

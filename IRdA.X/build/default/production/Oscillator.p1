@@ -857,8 +857,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 791 ]
 [e $ ! != -> . . _OSCSTATbits 0 7 `i -> 0 `i 792  ]
 [e :U 793 ]
-"13
-[; ;Oscillator.c: 13:     OSCCON1 = 0b01110000;
+"12
+[; ;Oscillator.c: 12:     OSCCON1 = 0b01110000;
 [e = _OSCCON1 -> -> 112 `i `uc ]
 "14
 [; ;Oscillator.c: 14:     while(!OSCCON3bits.ORDY);

@@ -9871,46 +9871,6 @@ extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 1 "Interrupts.c" 2
 
-# 1 "./main.h" 1
-# 29 "./main.h"
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXT1X
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = ON
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-# 2 "Interrupts.c" 2
-
-# 1 "./uart_UCA0.h" 1
-# 10 "./uart_UCA0.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -9994,8 +9954,48 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 10 "./uart_UCA0.h" 2
+# 2 "Interrupts.c" 2
 
+# 1 "./main.h" 1
+# 29 "./main.h"
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = OFF
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = ON
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+# 3 "Interrupts.c" 2
+
+# 1 "./uart_UCA0.h" 1
+# 11 "./uart_UCA0.h"
 # 1 "./Que.h" 1
 # 14 "./Que.h"
 typedef struct {
@@ -10026,7 +10026,7 @@ int8_t Uart_UCA0_getc( int8_t *Out );
 int8_t Uart_UCA0_putc( int8_t c );
 t_Q *getU0_RxBuf_t(void);
 void Uart_UCA0_RxIntEn(void);
-# 3 "Interrupts.c" 2
+# 4 "Interrupts.c" 2
 
 # 1 "./tmr_TMR1.h" 1
 # 20 "./tmr_TMR1.h"
@@ -10044,13 +10044,18 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
-# 4 "Interrupts.c" 2
+# 5 "Interrupts.c" 2
 
 # 1 "./Interrupts.h" 1
 # 19 "./Interrupts.h"
 void configureIOCInt(void);
-# 5 "Interrupts.c" 2
+# 6 "Interrupts.c" 2
 
+# 1 "./LED.h" 1
+# 13 "./LED.h"
+void led_ConfigureLED(void);
+void led_Blink(uint8_t times);
+# 7 "Interrupts.c" 2
 
 
 
@@ -10077,7 +10082,7 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
         IOCAFbits.IOCAF1 = 0;
         PIR0bits.IOCIF = 0;
-        LATAbits.LATA2 ^= 1;
+
 
 
         if (!T1CONbits.ON) T1CONbits.ON = 1;
@@ -10092,6 +10097,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
         tmr_TMR1IncRollovers();
 
     }
-# 71 "Interrupts.c"
+# 72 "Interrupts.c"
     return;
 }

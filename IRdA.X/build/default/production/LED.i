@@ -9968,7 +9968,7 @@ void led_Blink(uint8_t times);
 #pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
-#pragma config FCMEN = ON
+#pragma config FCMEN = OFF
 
 
 #pragma config MCLRE = ON

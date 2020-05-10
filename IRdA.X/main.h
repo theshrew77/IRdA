@@ -30,7 +30,7 @@
 #pragma config RSTOSC = EXT1X  // Power-up default value for COSC bits (HFINTOSC (1MHz))
 #pragma config CLKOUTEN = OFF    // Clock Out Enable bit (CLKOUT function is enabled; FOSC/4 clock appears at OSC2)
 #pragma config CSWEN = ON       // Clock Switch Enable bit (Writing to NOSC and NDIV is allowed)
-#pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable bit (FSCM timer enabled)
+#pragma config FCMEN = OFF       // Fail-Safe Clock Monitor Enable bit (FSCM timer enabled)
 
 // CONFIG2
 #pragma config MCLRE = ON       // Master Clear Enable bit (MCLR pin is Master Clear function)

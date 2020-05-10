@@ -10044,7 +10044,7 @@ void debug_flush(void);
 #pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
-#pragma config FCMEN = ON
+#pragma config FCMEN = OFF
 
 
 #pragma config MCLRE = ON
@@ -10134,7 +10134,7 @@ uint16_t tmr_computeDelta(uint8_t i);
 # 18 "main.c" 2
 
 # 1 "./NEC.h" 1
-# 20 "./NEC.h"
+# 30 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,
@@ -10163,23 +10163,24 @@ void osc_Config16MHz(void);
 # 21 "main.c" 2
 # 42 "main.c"
 int main(int argc, char** argv) {
+
     uint8_t NECcommand = 0;
-
-    _osc_Config32768Hz();
-# 54 "main.c"
+# 55 "main.c"
     led_ConfigureLED();
-# 72 "main.c"
-    while(1){
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(32768/4000.0)));
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(32768/4000.0)));
-    }
 
+
+    Uart_UCA0Init();
+    configureIOCInt();
+
+    tmr_TMR1Init();
+    tmr_TMR1reset();
+# 74 "main.c"
     while(1){
         __asm("sleep");
         __nop();
+
         while(!accquisitionComplete());
+
 
 
             NECcommand = nec_ProcessPacket();

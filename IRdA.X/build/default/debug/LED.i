@@ -9968,11 +9968,11 @@ void led_Blink(uint8_t times);
 #pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
-#pragma config FCMEN = ON
+#pragma config FCMEN = OFF
 
 
 #pragma config MCLRE = ON
-#pragma config PWRTE = OFF
+#pragma config PWRTE = ON
 #pragma config LPBOREN = OFF
 #pragma config BOREN = ON
 #pragma config BORV = LO
@@ -10003,7 +10003,7 @@ void led_Blink(uint8_t times);
 
 void led_ConfigureLED(void){
     TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 1;
+    LATAbits.LATA2 = 0;
 }
 
 void led_Blink(uint8_t times){

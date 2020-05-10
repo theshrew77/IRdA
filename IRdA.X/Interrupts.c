@@ -1,9 +1,10 @@
 #include <xc.h>
+#include <stdint.h>
 #include "main.h"
 #include "uart_UCA0.h"
 #include "tmr_TMR1.h"
 #include "Interrupts.h"
-#include <stdint.h>
+#include "LED.h"
 //#include <stdio.h>
 
 void configureIOCInt(void){
@@ -29,7 +30,7 @@ __interrupt() void ISR(void){
 
         IOCA_F = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         IOC_IF = 0;
-        LATAbits.LATA2 ^= 1;
+        //LATAbits.LATA2 ^= 1;
         //printf("TMR1 total count = %u\r\n",tmr_TMR1GetCount());
         //printf("TMR1 rollovers = %u\r\n",*tmr_TMR1GetRollovers());
         if (!TMR1_ON) TMR1_ON = 1;

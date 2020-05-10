@@ -9900,7 +9900,7 @@ void tmr_TMR1ClrRollovers(void){
 void tmr_TMR1IncRollovers(void){
     TMR1rollovers++;
 
-    if ( TMR1rollovers > 4){
+    if ( TMR1rollovers > 0){
         tmr_TMR1Dis();
         accComplete = 1;
     }

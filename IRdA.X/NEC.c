@@ -1,7 +1,10 @@
+#include <xc.h>
 #include <stdint.h>
 #include "NEC.h"
 #include "tmr_TMR1.h"
 #include "uart_UCA0.h"
+#include "LED.h"
+#include "main.h"
 
 
 uint8_t nec_ProcessPacket(void){
@@ -9,8 +12,23 @@ uint8_t nec_ProcessPacket(void){
     uint8_t NECpacket [32];
     uint8_t command = 0;
     
+    uint8_t highbyte = 0;
+    uint8_t lowbyte = 0;
+    
+
+    
+ 
+    
     delta = tmr_computeDelta(0);
-            
+    
+    highbyte = (uint8_t)((delta & 0xFF00) >> 8);
+    lowbyte = (uint8_t)(delta & 0xFF);
+    Uart_UCA0_putc( highbyte );
+    LEDLAT = 1;
+    __delay_ms(100);
+    LEDLAT = 0;
+    Uart_UCA0_putc( lowbyte );
+
     if (NEC_START_LOW < delta && delta < NEC_START_HIGH){
         
         for (int i = 1; i < 33; i++){

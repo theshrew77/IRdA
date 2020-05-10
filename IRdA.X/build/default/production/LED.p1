@@ -835,7 +835,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [p x CSWEN = ON ]
 "33
-[p x FCMEN = ON ]
+[p x FCMEN = OFF ]
 "36
 [p x MCLRE = ON ]
 "37

@@ -40,9 +40,10 @@
 
 
 int main(int argc, char** argv) {
+    
     uint8_t NECcommand = 0;
     
-    _osc_Config32768Hz();
+    
     /*
     while(!OSCSTATbits.EXTOR); //wait for the external oscillator to be ready
     OSCENbits.EXTOEN = 1;       //explicitly enable external osciallator
@@ -53,14 +54,14 @@ int main(int argc, char** argv) {
     
     led_ConfigureLED();
   
-    /*
+    
     Uart_UCA0Init();
     configureIOCInt();
     
     tmr_TMR1Init();
     tmr_TMR1reset();
-*/
- 
+
+
  
     //__delay_ms(500);
 
@@ -69,17 +70,13 @@ int main(int argc, char** argv) {
     //printf("Pizza Timex%d! \n\r",5);
     
     
-    while(1){
-        LEDLAT ^= 1;
-        __delay_ms(500);
-        LEDLAT ^= 1;
-        __delay_ms(500);
-    }
-    
+
     while(1){
         SLEEP();
         NOP();
+        
         while(!accquisitionComplete());
+  
             //process to NEC
             //check for NEC start condition
             NECcommand = nec_ProcessPacket();

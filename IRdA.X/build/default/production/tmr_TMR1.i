@@ -9841,6 +9841,44 @@ uint16_t tmr_computeDelta(uint8_t i);
 void configureIOCInt(void);
 # 6 "tmr_TMR1.c" 2
 
+# 1 "./main.h" 1
+# 29 "./main.h"
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = OFF
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = ON
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+# 7 "tmr_TMR1.c" 2
+
 
 static uint16_t TMR1rollovers = 0;
 uint16_t TMR1count = 0;
@@ -9850,7 +9888,13 @@ static uint8_t sample = 0;
 static uint8_t accComplete = 0;
 
 uint16_t tmr_computeDelta(uint8_t i){
-    return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*0xFFFF - TMR1countArray[i])>>4);
+    if (32768 == 16000000){
+        return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*0xFFFF - TMR1countArray[i])>>4);
+    }
+
+    if (32768 == 32768){
+        return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*0xFFFF - TMR1countArray[i]));
+    }
 }
 
 uint16_t *getTMR1countArray(void){
@@ -9900,7 +9944,7 @@ void tmr_TMR1ClrRollovers(void){
 void tmr_TMR1IncRollovers(void){
     TMR1rollovers++;
 
-    if ( TMR1rollovers > 4){
+    if ( TMR1rollovers > 0){
         tmr_TMR1Dis();
         accComplete = 1;
     }

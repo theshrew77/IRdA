@@ -1,45 +1,47 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"9771 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9771: extern volatile unsigned char OSCFRQ __attribute__((address(0x893)));
-[v _OSCFRQ `Vuc ~T0 @X0 0 e@2195 ]
-"9441
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9441: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
-[v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
+"13 ./LED.h
+[; ;./LED.h: 13: void led_ConfigureLED(void);
+[v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
 "19 ./uart_UCA0.h
 [; ;./uart_UCA0.h: 19: void Uart_UCA0Init(void);
 [v _Uart_UCA0Init `(v ~T0 @X0 0 ef ]
 "19 ./Interrupts.h
 [; ;./Interrupts.h: 19: void configureIOCInt(void);
 [v _configureIOCInt `(v ~T0 @X0 0 ef ]
-"13 ./LED.h
-[; ;./LED.h: 13: void led_ConfigureLED(void);
-[v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
 "20 ./tmr_TMR1.h
 [; ;./tmr_TMR1.h: 20: void tmr_TMR1Init(void);
 [v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
 "28
 [; ;./tmr_TMR1.h: 28: void tmr_TMR1reset(void);
 [v _tmr_TMR1reset `(v ~T0 @X0 0 ef ]
-"14 ./LED.h
-[; ;./LED.h: 14: void led_Blink(uint8_t times);
-[v _led_Blink `(v ~T0 @X0 0 ef1`uc ]
 "31 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
 "30 ./tmr_TMR1.h
 [; ;./tmr_TMR1.h: 30: uint8_t accquisitionComplete(void);
 [v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
+"547 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
+"546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"556
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
+[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
+[v F5815 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF5815 ~T0 @X0 0 e ]
+[p i __delay ]
 "31 ./NEC.h
 [; ;./NEC.h: 31: uint8_t nec_ProcessPacket(void);
 [v _nec_ProcessPacket `(uc ~T0 @X0 0 ef ]
 "32
 [; ;./NEC.h: 32: void nec_ExecuteCommand(uint8_t NECcommand);
 [v _nec_ExecuteCommand `(v ~T0 @X0 0 ef1`uc ]
-[v F5815 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF5815 ~T0 @X0 0 e ]
-[p i __delay ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -850,11 +852,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [p x CSWEN = ON ]
 "33
-[p x FCMEN = ON ]
+[p x FCMEN = OFF ]
 "36
 [p x MCLRE = ON ]
 "37
-[p x PWRTE = OFF ]
+[p x PWRTE = ON ]
 "38
 [p x LPBOREN = OFF ]
 "39
@@ -894,88 +896,101 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [p x CP = OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"41 main.c
-[; ;main.c: 41: int main(int argc, char** argv) {
+"42 main.c
+[; ;main.c: 42: int main(int argc, char** argv) {
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"42
-[; ;main.c: 42:     uint8_t NECcommand = 0;
+"44
+[; ;main.c: 44:     uint8_t NECcommand = 0;
 [v _NECcommand `uc ~T0 @X0 1 a ]
 [e = _NECcommand -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     OSCFRQ = 0b0000101;
-[e = _OSCFRQ -> -> 5 `i `uc ]
-"48
-[; ;main.c: 48:     OSCCON1 = 0b01110000;
-[e = _OSCCON1 -> -> 112 `i `uc ]
-"52
-[; ;main.c: 52:     Uart_UCA0Init();
-[e ( _Uart_UCA0Init ..  ]
-"53
-[; ;main.c: 53:     configureIOCInt();
-[e ( _configureIOCInt ..  ]
-"54
-[; ;main.c: 54:     led_ConfigureLED();
-[e ( _led_ConfigureLED ..  ]
-"55
-[; ;main.c: 55:     tmr_TMR1Init();
-[e ( _tmr_TMR1Init ..  ]
-"56
-[; ;main.c: 56:     tmr_TMR1reset();
-[e ( _tmr_TMR1reset ..  ]
-"66
-[; ;main.c: 66:     led_Blink(5);
-[e ( _led_Blink (1 -> -> 5 `i `uc ]
-"67
-[; ;main.c: 67:     while(1);
+"45
+[; ;main.c: 45:     while(1);
 [e :U 793 ]
 [e :U 792 ]
 [e $U 793  ]
 [e :U 794 ]
-"69
-[; ;main.c: 69:     while(1){
+"55
+[; ;main.c: 55:     led_ConfigureLED();
+[e ( _led_ConfigureLED ..  ]
+"58
+[; ;main.c: 58:     Uart_UCA0Init();
+[e ( _Uart_UCA0Init ..  ]
+"59
+[; ;main.c: 59:     configureIOCInt();
+[e ( _configureIOCInt ..  ]
+"61
+[; ;main.c: 61:     tmr_TMR1Init();
+[e ( _tmr_TMR1Init ..  ]
+"62
+[; ;main.c: 62:     tmr_TMR1reset();
+[e ( _tmr_TMR1reset ..  ]
+"74
+[; ;main.c: 74:     while(1){
 [e :U 796 ]
 {
-"70
-[; ;main.c: 70:         __asm("sleep");
+"75
+[; ;main.c: 75:         __asm("sleep");
 [; <" sleep ;# ">
-"71
-[; ;main.c: 71:         __nop();
+"76
+[; ;main.c: 76:         __nop();
 [e ( ___nop ..  ]
-"72
-[; ;main.c: 72:         while(!accquisitionComplete());
+"78
+[; ;main.c: 78:         while(!accquisitionComplete());
 [e $U 798  ]
 [e :U 799 ]
 [e :U 798 ]
 [e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 799  ]
 [e :U 800 ]
-"75
-[; ;main.c: 75:             NECcommand = nec_ProcessPacket();
-[e = _NECcommand ( _nec_ProcessPacket ..  ]
-"76
-[; ;main.c: 76:             nec_ExecuteCommand(NECcommand);
-[e ( _nec_ExecuteCommand (1 _NECcommand ]
-"77
-[; ;main.c: 77:             tmr_TMR1reset();
-[e ( _tmr_TMR1reset ..  ]
-"78
-[; ;main.c: 78:             _delay((unsigned long)((5)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
+"79
+[; ;main.c: 79:         while(1){
+[e :U 802 ]
+{
 "80
-[; ;main.c: 80:     }
+[; ;main.c: 80:             LATAbits.LATA2 ^= 1;
+[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
+"81
+[; ;main.c: 81:             _delay((unsigned long)((500)*(32768/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
+"82
+[; ;main.c: 82:             LATAbits.LATA2 ^= 1;
+[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
+"83
+[; ;main.c: 83:             _delay((unsigned long)((500)*(32768/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
+"84
+[; ;main.c: 84:     }
+}
+[e :U 801 ]
+[e $U 802  ]
+[e :U 803 ]
+"88
+[; ;main.c: 88:             NECcommand = nec_ProcessPacket();
+[e = _NECcommand ( _nec_ProcessPacket ..  ]
+"89
+[; ;main.c: 89:             nec_ExecuteCommand(NECcommand);
+[e ( _nec_ExecuteCommand (1 _NECcommand ]
+"90
+[; ;main.c: 90:             tmr_TMR1reset();
+[e ( _tmr_TMR1reset ..  ]
+"91
+[; ;main.c: 91:             _delay((unsigned long)((5)*(32768/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
+"93
+[; ;main.c: 93:     }
 }
 [e :U 795 ]
 [e $U 796  ]
 [e :U 797 ]
-"82
-[; ;main.c: 82:     return (0);
+"95
+[; ;main.c: 95:     return (0);
 [e ) -> 0 `i ]
 [e $UE 791  ]
-"83
-[; ;main.c: 83: }
+"96
+[; ;main.c: 96: }
 [e :UE 791 ]
 }

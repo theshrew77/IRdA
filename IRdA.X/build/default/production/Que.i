@@ -319,7 +319,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 #pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
-#pragma config FCMEN = ON
+#pragma config FCMEN = OFF
 
 
 #pragma config MCLRE = ON

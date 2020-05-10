@@ -10163,11 +10163,11 @@ extern __bank0 __bit __timeout;
 #pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
-#pragma config FCMEN = ON
+#pragma config FCMEN = OFF
 
 
 #pragma config MCLRE = ON
-#pragma config PWRTE = OFF
+#pragma config PWRTE = ON
 #pragma config LPBOREN = OFF
 #pragma config BOREN = ON
 #pragma config BORV = LO

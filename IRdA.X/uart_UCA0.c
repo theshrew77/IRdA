@@ -33,11 +33,16 @@ void Uart_UCA0Init(void)
     */
      
     //BAUD1CONbits.WUE = 1;   
-    
-    //configure 9600 baud
+    /**
+    //configure 9600 baud @ 16MHZ
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
     SPBRGL = 25;
+    */
+    //configure 110 baud @ 32768Hz
+    TX1STAbits.BRGH = 0;
+    BAUD1CONbits.BRG16 = 0;
+    SPBRGL = 4;
     
 }
 

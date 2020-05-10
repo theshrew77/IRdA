@@ -908,7 +908,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [p x CSWEN = ON ]
 "33
-[p x FCMEN = ON ]
+[p x FCMEN = OFF ]
 "36
 [p x MCLRE = ON ]
 "37
@@ -991,134 +991,134 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [; ;uart_UCA0.c: 25:     ANSELAbits.ANSA0 = 0;
 [e = . . _ANSELAbits 0 0 -> -> 0 `i `uc ]
-"38
-[; ;uart_UCA0.c: 38:     TX1STAbits.BRGH = 0;
+"43
+[; ;uart_UCA0.c: 43:     TX1STAbits.BRGH = 0;
 [e = . . _TX1STAbits 0 2 -> -> 0 `i `uc ]
-"39
-[; ;uart_UCA0.c: 39:     BAUD1CONbits.BRG16 = 0;
+"44
+[; ;uart_UCA0.c: 44:     BAUD1CONbits.BRG16 = 0;
 [e = . . _BAUD1CONbits 0 3 -> -> 0 `i `uc ]
-"40
-[; ;uart_UCA0.c: 40:     SPBRGL = 25;
-[e = _SPBRGL -> -> 25 `i `uc ]
-"42
-[; ;uart_UCA0.c: 42: }
+"45
+[; ;uart_UCA0.c: 45:     SPBRGL = 4;
+[e = _SPBRGL -> -> 4 `i `uc ]
+"47
+[; ;uart_UCA0.c: 47: }
 [e :UE 794 ]
 }
-"44
-[; ;uart_UCA0.c: 44: void Uart_UCA0_RxIntEn(void){
+"49
+[; ;uart_UCA0.c: 49: void Uart_UCA0_RxIntEn(void){
 [v _Uart_UCA0_RxIntEn `(v ~T0 @X0 1 ef ]
 {
 [e :U _Uart_UCA0_RxIntEn ]
 [f ]
-"45
-[; ;uart_UCA0.c: 45:     PIE3bits.RC1IE = 1;
+"50
+[; ;uart_UCA0.c: 50:     PIE3bits.RC1IE = 1;
 [e = . . _PIE3bits 0 4 -> -> 1 `i `uc ]
-"46
-[; ;uart_UCA0.c: 46:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"47
-[; ;uart_UCA0.c: 47:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"49
-[; ;uart_UCA0.c: 49: }
-[e :UE 795 ]
-}
 "51
-[; ;uart_UCA0.c: 51: void Uart_UCA0deInit(void)
-[v _Uart_UCA0deInit `(v ~T0 @X0 1 ef ]
+[; ;uart_UCA0.c: 51:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
 "52
-[; ;uart_UCA0.c: 52: {
-{
-[e :U _Uart_UCA0deInit ]
-[f ]
+[; ;uart_UCA0.c: 52:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
 "54
 [; ;uart_UCA0.c: 54: }
-[e :UE 796 ]
+[e :UE 795 ]
 }
 "56
-[; ;uart_UCA0.c: 56: int8_t Uart_UCA0_Flush(void)
-[v _Uart_UCA0_Flush `(c ~T0 @X0 1 ef ]
+[; ;uart_UCA0.c: 56: void Uart_UCA0deInit(void)
+[v _Uart_UCA0deInit `(v ~T0 @X0 1 ef ]
 "57
 [; ;uart_UCA0.c: 57: {
 {
+[e :U _Uart_UCA0deInit ]
+[f ]
+"59
+[; ;uart_UCA0.c: 59: }
+[e :UE 796 ]
+}
+"61
+[; ;uart_UCA0.c: 61: int8_t Uart_UCA0_Flush(void)
+[v _Uart_UCA0_Flush `(c ~T0 @X0 1 ef ]
+"62
+[; ;uart_UCA0.c: 62: {
+{
 [e :U _Uart_UCA0_Flush ]
 [f ]
-"58
-[; ;uart_UCA0.c: 58:   QInit( &U0_RxBuf_t );
+"63
+[; ;uart_UCA0.c: 63:   QInit( &U0_RxBuf_t );
 [e ( _QInit (1 &U _U0_RxBuf_t ]
-"59
-[; ;uart_UCA0.c: 59:   return(1);
+"64
+[; ;uart_UCA0.c: 64:   return(1);
 [e ) -> -> 1 `i `c ]
 [e $UE 797  ]
-"60
-[; ;uart_UCA0.c: 60: }
+"65
+[; ;uart_UCA0.c: 65: }
 [e :UE 797 ]
 }
-"67
-[; ;uart_UCA0.c: 67: int8_t Uart_UCA0_kbhit(void)
+"72
+[; ;uart_UCA0.c: 72: int8_t Uart_UCA0_kbhit(void)
 [v _Uart_UCA0_kbhit `(c ~T0 @X0 1 ef ]
-"68
-[; ;uart_UCA0.c: 68: {
+"73
+[; ;uart_UCA0.c: 73: {
 {
 [e :U _Uart_UCA0_kbhit ]
 [f ]
-"69
-[; ;uart_UCA0.c: 69:   return(QChkQ(&U0_RxBuf_t));
+"74
+[; ;uart_UCA0.c: 74:   return(QChkQ(&U0_RxBuf_t));
 [e ) ( _QChkQ (1 &U _U0_RxBuf_t ]
 [e $UE 798  ]
-"70
-[; ;uart_UCA0.c: 70: }
+"75
+[; ;uart_UCA0.c: 75: }
 [e :UE 798 ]
 }
-"78
-[; ;uart_UCA0.c: 78: int8_t Uart_UCA0_getc( int8_t *Out )
+"83
+[; ;uart_UCA0.c: 83: int8_t Uart_UCA0_getc( int8_t *Out )
 [v _Uart_UCA0_getc `(c ~T0 @X0 1 ef1`*c ]
-"79
-[; ;uart_UCA0.c: 79: {
+"84
+[; ;uart_UCA0.c: 84: {
 {
 [e :U _Uart_UCA0_getc ]
-"78
-[; ;uart_UCA0.c: 78: int8_t Uart_UCA0_getc( int8_t *Out )
+"83
+[; ;uart_UCA0.c: 83: int8_t Uart_UCA0_getc( int8_t *Out )
 [v _Out `*c ~T0 @X0 1 r1 ]
-"79
-[; ;uart_UCA0.c: 79: {
+"84
+[; ;uart_UCA0.c: 84: {
 [f ]
-"80
-[; ;uart_UCA0.c: 80:   return(QOut(Out, &U0_RxBuf_t) );
+"85
+[; ;uart_UCA0.c: 85:   return(QOut(Out, &U0_RxBuf_t) );
 [e ) ( _QOut (2 , _Out &U _U0_RxBuf_t ]
 [e $UE 799  ]
-"81
-[; ;uart_UCA0.c: 81: }
+"86
+[; ;uart_UCA0.c: 86: }
 [e :UE 799 ]
 }
-"88
-[; ;uart_UCA0.c: 88: int8_t Uart_UCA0_putc( int8_t c )
+"93
+[; ;uart_UCA0.c: 93: int8_t Uart_UCA0_putc( int8_t c )
 [v _Uart_UCA0_putc `(c ~T0 @X0 1 ef1`c ]
-"89
-[; ;uart_UCA0.c: 89: {
+"94
+[; ;uart_UCA0.c: 94: {
 {
 [e :U _Uart_UCA0_putc ]
-"88
-[; ;uart_UCA0.c: 88: int8_t Uart_UCA0_putc( int8_t c )
+"93
+[; ;uart_UCA0.c: 93: int8_t Uart_UCA0_putc( int8_t c )
 [v _c `c ~T0 @X0 1 r1 ]
-"89
-[; ;uart_UCA0.c: 89: {
+"94
+[; ;uart_UCA0.c: 94: {
 [f ]
-"90
-[; ;uart_UCA0.c: 90:   while(!(PIR3bits.TX1IF));
+"95
+[; ;uart_UCA0.c: 95:   while(!(PIR3bits.TX1IF));
 [e $U 801  ]
 [e :U 802 ]
 [e :U 801 ]
 [e $ ! != -> . . _PIR3bits 0 3 `i -> 0 `i 802  ]
 [e :U 803 ]
-"91
-[; ;uart_UCA0.c: 91:   TXREG = c;
+"96
+[; ;uart_UCA0.c: 96:   TXREG = c;
 [e = _TXREG -> _c `uc ]
-"92
-[; ;uart_UCA0.c: 92:   return(c);
+"97
+[; ;uart_UCA0.c: 97:   return(c);
 [e ) _c ]
 [e $UE 800  ]
-"93
-[; ;uart_UCA0.c: 93: }
+"98
+[; ;uart_UCA0.c: 98: }
 [e :UE 800 ]
 }

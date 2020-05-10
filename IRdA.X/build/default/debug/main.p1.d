@@ -7,4 +7,5 @@ Que.h  \
 Interrupts.h  \
 tmr_TMR1.h  \
 NEC.h  \
-LED.h 
+LED.h  \
+Oscillator.h 

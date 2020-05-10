@@ -78,17 +78,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16471
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16471: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x1F3F)));
 [v _IOCAFbits `VS762 ~T0 @X0 0 e@7999 ]
-"547
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"546
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"556
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
 "3013
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3013:     struct {
 [s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
@@ -939,7 +928,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [p x CSWEN = ON ]
 "33
-[p x FCMEN = ON ]
+[p x FCMEN = OFF ]
 "36
 [p x MCLRE = ON ]
 "37
@@ -982,81 +971,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LVP = ON ]
 "62
 [p x CP = OFF ]
-"9 Interrupts.c
-[; ;Interrupts.c: 9: void configureIOCInt(void){
+"10 Interrupts.c
+[; ;Interrupts.c: 10: void configureIOCInt(void){
 [v _configureIOCInt `(v ~T0 @X0 1 ef ]
 {
 [e :U _configureIOCInt ]
 [f ]
-"11
-[; ;Interrupts.c: 11:     PIE0bits.IOCIE = 1;
+"12
+[; ;Interrupts.c: 12:     PIE0bits.IOCIE = 1;
 [e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
-"13
-[; ;Interrupts.c: 13:     INTCONbits.GIE = 1;
+"14
+[; ;Interrupts.c: 14:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"16
-[; ;Interrupts.c: 16:     IOCANbits.IOCAN1 = 1;
-[e = . . _IOCANbits 0 1 -> -> 1 `i `uc ]
 "17
-[; ;Interrupts.c: 17:     TRISAbits.TRISA1 = 1;
-[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+[; ;Interrupts.c: 17:     IOCANbits.IOCAN1 = 1;
+[e = . . _IOCANbits 0 1 -> -> 1 `i `uc ]
 "18
-[; ;Interrupts.c: 18:     ANSELAbits.ANSA1 = 0;
+[; ;Interrupts.c: 18:     TRISAbits.TRISA1 = 1;
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+"19
+[; ;Interrupts.c: 19:     ANSELAbits.ANSA1 = 0;
 [e = . . _ANSELAbits 0 1 -> -> 0 `i `uc ]
-"22
-[; ;Interrupts.c: 22: }
+"23
+[; ;Interrupts.c: 23: }
 [e :UE 790 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"25
-[; ;Interrupts.c: 25: __attribute__((picinterrupt(("")))) void ISR(void){
+"26
+[; ;Interrupts.c: 26: __attribute__((picinterrupt(("")))) void ISR(void){
 [v _ISR `(v ~T1 @X0 1 ef ]
 {
 [e :U _ISR ]
 [f ]
-"28
-[; ;Interrupts.c: 28:     if(PIR0bits.IOCIF){
+"29
+[; ;Interrupts.c: 29:     if(PIR0bits.IOCIF){
 [e $ ! != -> . . _PIR0bits 0 2 `i -> 0 `i 792  ]
 {
-"30
-[; ;Interrupts.c: 30:         IOCAFbits.IOCAF1 = 0;
-[e = . . _IOCAFbits 0 1 -> -> 0 `i `uc ]
 "31
-[; ;Interrupts.c: 31:         PIR0bits.IOCIF = 0;
-[e = . . _PIR0bits 0 2 -> -> 0 `i `uc ]
+[; ;Interrupts.c: 31:         IOCAFbits.IOCAF1 = 0;
+[e = . . _IOCAFbits 0 1 -> -> 0 `i `uc ]
 "32
-[; ;Interrupts.c: 32:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"35
-[; ;Interrupts.c: 35:         if (!T1CONbits.ON) T1CONbits.ON = 1;
+[; ;Interrupts.c: 32:         PIR0bits.IOCIF = 0;
+[e = . . _PIR0bits 0 2 -> -> 0 `i `uc ]
+"36
+[; ;Interrupts.c: 36:         if (!T1CONbits.ON) T1CONbits.ON = 1;
 [e $ ! ! != -> . . _T1CONbits 0 0 `i -> 0 `i 793  ]
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 [e :U 793 ]
-"36
-[; ;Interrupts.c: 36:         tmr_TMR1mark();
+"37
+[; ;Interrupts.c: 37:         tmr_TMR1mark();
 [e ( _tmr_TMR1mark ..  ]
-"39
-[; ;Interrupts.c: 39:     }
+"40
+[; ;Interrupts.c: 40:     }
 }
 [e :U 792 ]
-"41
-[; ;Interrupts.c: 41:     if(PIR4bits.TMR1IF){
+"42
+[; ;Interrupts.c: 42:     if(PIR4bits.TMR1IF){
 [e $ ! != -> . . _PIR4bits 0 0 `i -> 0 `i 794  ]
 {
-"42
-[; ;Interrupts.c: 42:         PIR4bits.TMR1IF = 0;
+"43
+[; ;Interrupts.c: 43:         PIR4bits.TMR1IF = 0;
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-"44
-[; ;Interrupts.c: 44:         tmr_TMR1IncRollovers();
+"45
+[; ;Interrupts.c: 45:         tmr_TMR1IncRollovers();
 [e ( _tmr_TMR1IncRollovers ..  ]
-"46
-[; ;Interrupts.c: 46:     }
+"47
+[; ;Interrupts.c: 47:     }
 }
 [e :U 794 ]
-"71
-[; ;Interrupts.c: 71:     return;
-[e $UE 791  ]
 "72
-[; ;Interrupts.c: 72: }
+[; ;Interrupts.c: 72:     return;
+[e $UE 791  ]
+"73
+[; ;Interrupts.c: 73: }
 [e :UE 791 ]
 }
