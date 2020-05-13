@@ -55,37 +55,30 @@ int main(int argc, char** argv) {
     led_ConfigureLED();
   
     
-    Uart_UCA0Init();
+    //Uart_UCA0Init();
     configureIOCInt();
     
     tmr_TMR0Init();
     tmr_TMR0reset();
     
-    
 
- 
-    //__delay_ms(500);
-
-
-    //printf("Entering while(1) \n\r");
-    //printf("Pizza Timex%d! \n\r",5);
     
-    
+    osc_Config1MHz();
 
     while(1){
         SLEEP();
-        NOP();
+        //osc_Config16MHz();
         
         while(!accquisitionComplete());
-            G_IE = 0;
-            //process to NEC
-            //check for NEC start condition
-            NECcommand = nec_ProcessPacket();
-            nec_ExecuteCommand(NECcommand);          
-            tmr_TMR0reset();
-            __delay_ms(5);
-            G_IE = 1;
-        
+        G_IE = 0;
+        //process to NEC
+        //check for NEC start condition
+        NECcommand = nec_ProcessPacket();
+        nec_ExecuteCommand(NECcommand);          
+        tmr_TMR0reset();
+        __delay_ms(5);
+        G_IE = 1;
+        //_osc_Config32768Hz();
     }
 
     return (EXIT_SUCCESS);

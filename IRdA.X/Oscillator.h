@@ -13,6 +13,7 @@ extern "C" {
 #endif
 void _osc_Config32768Hz(void);
 void osc_Config16MHz(void);
+void osc_Config1MHz(void);
 
 
 #ifdef	__cplusplus

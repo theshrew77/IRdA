@@ -845,29 +845,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 789 ]
 }
 "10
-[; ;Oscillator.c: 10: void _osc_Config32768Hz(void){
+[; ;Oscillator.c: 10: void osc_Config1MHz(void){
+[v _osc_Config1MHz `(v ~T0 @X0 1 ef ]
+{
+[e :U _osc_Config1MHz ]
+[f ]
+"12
+[; ;Oscillator.c: 12:     OSCFRQ = 0b0000000;
+[e = _OSCFRQ -> -> 0 `i `uc ]
+"13
+[; ;Oscillator.c: 13:     OSCCON1 = 0b01100000;
+[e = _OSCCON1 -> -> 96 `i `uc ]
+"14
+[; ;Oscillator.c: 14: }
+[e :UE 790 ]
+}
+"17
+[; ;Oscillator.c: 17: void _osc_Config32768Hz(void){
 [v __osc_Config32768Hz `(v ~T0 @X0 1 ef ]
 {
 [e :U __osc_Config32768Hz ]
 [f ]
-"11
-[; ;Oscillator.c: 11:     while(!OSCSTATbits.EXTOR);
-[e $U 791  ]
-[e :U 792 ]
-[e :U 791 ]
-[e $ ! != -> . . _OSCSTATbits 0 7 `i -> 0 `i 792  ]
+"18
+[; ;Oscillator.c: 18:     while(!OSCSTATbits.EXTOR);
+[e $U 792  ]
 [e :U 793 ]
-"12
-[; ;Oscillator.c: 12:     OSCCON1 = 0b01110000;
-[e = _OSCCON1 -> -> 112 `i `uc ]
-"14
-[; ;Oscillator.c: 14:     while(!OSCCON3bits.ORDY);
-[e $U 794  ]
-[e :U 795 ]
+[e :U 792 ]
+[e $ ! != -> . . _OSCSTATbits 0 7 `i -> 0 `i 793  ]
 [e :U 794 ]
-[e $ ! != -> . . _OSCCON3bits 0 2 `i -> 0 `i 795  ]
+"19
+[; ;Oscillator.c: 19:     OSCCON1 = 0b01110000;
+[e = _OSCCON1 -> -> 112 `i `uc ]
+"21
+[; ;Oscillator.c: 21:     while(!OSCCON3bits.ORDY);
+[e $U 795  ]
 [e :U 796 ]
-"15
-[; ;Oscillator.c: 15: }
-[e :UE 790 ]
+[e :U 795 ]
+[e $ ! != -> . . _OSCCON3bits 0 2 `i -> 0 `i 796  ]
+[e :U 797 ]
+"22
+[; ;Oscillator.c: 22: }
+[e :UE 791 ]
 }

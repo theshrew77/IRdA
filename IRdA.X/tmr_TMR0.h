@@ -19,7 +19,7 @@
 
 
 void tmr_TMR0Init(void);
-uint8_t tmr_computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);

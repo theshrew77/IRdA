@@ -6,7 +6,7 @@
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/Que.h</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/Interrupts.c</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/LED.c</file>
-            <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/tmr_TMR1.c</file>
+            <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/tmr_TMR0.c</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/PowerManagement.c</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/NEC.c</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/LED.h</file>
@@ -19,10 +19,10 @@
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/main.c</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/Retarget.h</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/Oscillator.c</file>
-            <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/tmr_TMR1.h</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/Que.c</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/Interrupts.h</file>
             <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/main.h</file>
+            <file>file:/C:/Users/10158431/MPLABXProjects/IRdA/IRdA.X/tmr_TMR0.h</file>
         </group>
     </open-files>
 </project-private>

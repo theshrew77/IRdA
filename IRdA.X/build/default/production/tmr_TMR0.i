@@ -9959,7 +9959,7 @@ typedef uint32_t uint_fast32_t;
 # 1 "./tmr_TMR0.h" 1
 # 21 "./tmr_TMR0.h"
 void tmr_TMR0Init(void);
-uint8_t tmr_computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
@@ -10013,14 +10013,15 @@ void configureIOCInt(void);
 
 static uint8_t TMR0rollovers = 0;
 uint8_t TMR0count = 0;
-static uint8_t TMR0countArray [34] = {0};
+static uint16_t TMR0countArray [34] = {0};
 static uint8_t TMR0rolloverArray [34] = {0};
 static uint8_t sample = 0;
 static uint8_t accComplete = 0;
 
-uint8_t tmr_computeDelta(uint8_t i){
+uint16_t tmr_computeDelta(uint8_t i){
 
-    return ((uint8_t)(TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*0xFF - TMR0countArray[i]));
+
+    return ((TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*0xFF - TMR0countArray[i]));
 
 }
 
@@ -10030,6 +10031,7 @@ uint8_t accquisitionComplete(void){
 
 void tmr_TMR0mark(void){
     TMR0countArray[sample] = TMR0L;
+    TMR0countArray[sample] += (uint16_t)TMR0H << 8;
     TMR0rolloverArray[sample] = TMR0rollovers;
     TMR0rollovers = 0;
     sample++;
@@ -10047,7 +10049,7 @@ void tmr_TMR0reset(void){
 void tmr_TMR0IncRollovers(void){
     TMR0rollovers++;
 
-    if ( TMR0rollovers > 1){
+    if ( TMR0rollovers > 0){
         tmr_TMR0Dis();
         accComplete = 1;
     }
@@ -10056,7 +10058,7 @@ void tmr_TMR0IncRollovers(void){
 
 void tmr_TMR0Init(void){
     T0CON1bits.T0CKPS = 0;
-    T0CON0bits.T016BIT = 0;
+    T0CON0bits.T016BIT = 1;
     T0CON1bits.T0CS = 2;
 
 

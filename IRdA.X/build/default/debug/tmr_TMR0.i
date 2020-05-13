@@ -1,4 +1,4 @@
-# 1 "NEC.c"
+# 1 "tmr_TMR0.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "NEC.c" 2
+# 1 "tmr_TMR0.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9869,7 +9869,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "NEC.c" 2
+# 1 "tmr_TMR0.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -9954,24 +9954,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 2 "NEC.c" 2
-
-# 1 "./NEC.h" 1
-# 49 "./NEC.h"
-typedef enum {
-    POWER = 0xFF,
-    OFF = 0xBF,
-    TIMER2H = 0xDF,
-    TIMER4H = 0x9F,
-    TIMER6H = 0xEF,
-    TIMER8H = 0xAF,
-    DIM = 0xF7,
-    BRIGHT = 0xB7,
-} NEC_commands_t;
-
-uint8_t nec_ProcessPacket(void);
-void nec_ExecuteCommand(uint8_t NECcommand);
-# 3 "NEC.c" 2
+# 2 "tmr_TMR0.c" 2
 
 # 1 "./tmr_TMR0.h" 1
 # 21 "./tmr_TMR0.h"
@@ -9982,47 +9965,12 @@ void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
 void tmr_TMR0IncRollovers(void);
 void tmr_TMR0Dis(void);
-# 4 "NEC.c" 2
+# 3 "tmr_TMR0.c" 2
 
-# 1 "./uart_UCA0.h" 1
-# 11 "./uart_UCA0.h"
-# 1 "./Que.h" 1
-# 14 "./Que.h"
-typedef struct {
-  int8_t Data[2];
-  int8_t In;
-  int8_t Out;
-} t_Q;
-
-
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-# 11 "./uart_UCA0.h" 2
-
-
-
-
-
-
-
-
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-# 5 "NEC.c" 2
-
-# 1 "./LED.h" 1
-# 13 "./LED.h"
-void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
-# 6 "NEC.c" 2
+# 1 "./Interrupts.h" 1
+# 19 "./Interrupts.h"
+void configureIOCInt(void);
+# 4 "tmr_TMR0.c" 2
 
 # 1 "./main.h" 1
 # 29 "./main.h"
@@ -10060,76 +10008,71 @@ void led_Blink(uint8_t times);
 
 
 #pragma config CP = OFF
-# 7 "NEC.c" 2
+# 5 "tmr_TMR0.c" 2
 
 
+static uint8_t TMR0rollovers = 0;
+uint8_t TMR0count = 0;
+static uint8_t TMR0countArray [34] = {0};
+static uint8_t TMR0rolloverArray [34] = {0};
+static uint8_t sample = 0;
+static uint8_t accComplete = 0;
 
-uint8_t nec_ProcessPacket(void){
-    uint16_t delta;
-    uint8_t NECpacket [32] = {0};
-    uint8_t command = 0;
-
-
-
-
-
-    delta = tmr_computeDelta(0);
+uint16_t tmr_computeDelta(uint8_t i){
 
 
-    if (2700 < delta && delta < 4050){
+    return ((TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*0xFF - TMR0countArray[i]));
 
-
-        for (int i = 1; i < 33; i++){
-            delta = tmr_computeDelta(i);
-            if (250 < delta && delta < 375){
-                NECpacket[i-1] = 0;
-            }
-            if (500 < delta && delta < 750){
-                NECpacket[i-1] = 1;
-            }
-        }
-
-        command += NECpacket[31];
-        command += NECpacket[30]*2;
-        command += NECpacket[29]*4;
-        command += NECpacket[28]*8;
-        command += NECpacket[27]*16;
-        command += NECpacket[26]*32;
-        command += NECpacket[25]*64;
-        command += NECpacket[24]*128;
-
-    }
-    return(command);
 }
 
-void nec_ExecuteCommand(uint8_t NECcommand){
+uint8_t accquisitionComplete(void){
+    return(accComplete);
+}
 
-    switch (NECcommand)
-    {
-        case POWER:
+void tmr_TMR0mark(void){
+    TMR0countArray[sample] = TMR0L;
 
+    TMR0rolloverArray[sample] = TMR0rollovers;
+    TMR0rollovers = 0;
+    sample++;
+}
 
-            break;
-        case OFF:
-
-            break;
-        case TIMER2H:
-
-            break;
-        case TIMER4H:
-
-            break;
-        case TIMER6H:
-
-            break;
-        case TIMER8H:
-
-            break;
-        case DIM:
-
-            break;
-        case BRIGHT:
-
-            break;
+void tmr_TMR0reset(void){
+    for (int i = 0; i < 33; i++){
+        TMR0countArray[i] = 0;
+        TMR0rolloverArray[i] = 0;
     }
+    sample = 0;
+    accComplete = 0;
+}
+
+void tmr_TMR0IncRollovers(void){
+    TMR0rollovers++;
+
+    if ( TMR0rollovers > 13){
+        tmr_TMR0Dis();
+        accComplete = 1;
+    }
+
+}
+
+void tmr_TMR0Init(void){
+    T0CON1bits.T0CKPS = 0;
+    T0CON0bits.T016BIT = 0;
+    T0CON1bits.T0CS = 2;
+
+
+    PIE0bits.TMR0IE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+
+
+
+
+}
+
+void tmr_TMR0Dis(void){
+
+    T0CON0bits.T0EN = 0;
 }

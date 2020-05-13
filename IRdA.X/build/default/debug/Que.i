@@ -323,7 +323,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 
 #pragma config MCLRE = ON
-#pragma config PWRTE = ON
+#pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
 #pragma config BOREN = ON
 #pragma config BORV = LO

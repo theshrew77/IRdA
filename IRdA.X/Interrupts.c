@@ -30,11 +30,8 @@ __interrupt() void ISR(void){
 
         IOCA_F = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         IOC_IF = 0;
-        //printf("TMR1 total count = %u\r\n",tmr_TMR1GetCount());
-        //printf("TMR1 rollovers = %u\r\n",*tmr_TMR1GetRollovers());
         if (!TMR0_ON) TMR0_ON = 1;
         tmr_TMR0mark();
-        //check = 1;
         
     }
     /*

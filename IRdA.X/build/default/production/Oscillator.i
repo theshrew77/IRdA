@@ -9875,6 +9875,7 @@ extern __bank0 __bit __timeout;
 # 14 "./Oscillator.h"
 void _osc_Config32768Hz(void);
 void osc_Config16MHz(void);
+void osc_Config1MHz(void);
 # 2 "Oscillator.c" 2
 
 
@@ -9883,6 +9884,13 @@ void osc_Config16MHz(void){
     OSCFRQ = 0b0000101;
     OSCCON1 = 0b01100000;
 }
+
+void osc_Config1MHz(void){
+
+    OSCFRQ = 0b0000000;
+    OSCCON1 = 0b01100000;
+}
+
 
 void _osc_Config32768Hz(void){
     while(!OSCSTATbits.EXTOR);

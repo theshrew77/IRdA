@@ -10118,7 +10118,7 @@ void configureIOCInt(void);
 # 1 "./tmr_TMR0.h" 1
 # 21 "./tmr_TMR0.h"
 void tmr_TMR0Init(void);
-uint8_t tmr_computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
@@ -10127,7 +10127,7 @@ void tmr_TMR0Dis(void);
 # 18 "main.c" 2
 
 # 1 "./NEC.h" 1
-# 40 "./NEC.h"
+# 49 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,
@@ -10153,6 +10153,7 @@ void led_Blink(uint8_t times);
 # 14 "./Oscillator.h"
 void _osc_Config32768Hz(void);
 void osc_Config16MHz(void);
+void osc_Config1MHz(void);
 # 21 "main.c" 2
 # 42 "main.c"
 int main(int argc, char** argv) {
@@ -10162,25 +10163,29 @@ int main(int argc, char** argv) {
     led_ConfigureLED();
 
 
-    Uart_UCA0Init();
+
     configureIOCInt();
 
     tmr_TMR0Init();
     tmr_TMR0reset();
-# 75 "main.c"
+
+
+
+    osc_Config1MHz();
+
     while(1){
         __asm("sleep");
-        __nop();
+
 
         while(!accquisitionComplete());
-            INTCONbits.GIE = 0;
+        INTCONbits.GIE = 0;
 
 
-            NECcommand = nec_ProcessPacket();
-            nec_ExecuteCommand(NECcommand);
-            tmr_TMR0reset();
-            _delay((unsigned long)((5)*(32768/4000.0)));
-            INTCONbits.GIE = 1;
+        NECcommand = nec_ProcessPacket();
+        nec_ExecuteCommand(NECcommand);
+        tmr_TMR0reset();
+        _delay((unsigned long)((5)*(32768/4000.0)));
+        INTCONbits.GIE = 1;
 
     }
 

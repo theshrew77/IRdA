@@ -9972,7 +9972,7 @@ void led_Blink(uint8_t times);
 
 
 #pragma config MCLRE = ON
-#pragma config PWRTE = ON
+#pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
 #pragma config BOREN = ON
 #pragma config BORV = LO
@@ -10000,17 +10000,3 @@ void led_Blink(uint8_t times);
 #pragma config CP = OFF
 # 4 "LED.c" 2
 
-
-void led_ConfigureLED(void){
-    TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 0;
-}
-
-void led_Blink(uint8_t times){
-    for (int i = 0; i < times; i++){
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(32768/4000.0)));
-        LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(32768/4000.0)));
-    }
-}

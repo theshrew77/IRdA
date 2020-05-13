@@ -3,9 +3,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13 ./LED.h
 [; ;./LED.h: 13: void led_ConfigureLED(void);
 [v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
-"19 ./uart_UCA0.h
-[; ;./uart_UCA0.h: 19: void Uart_UCA0Init(void);
-[v _Uart_UCA0Init `(v ~T0 @X0 0 ef ]
 "19 ./Interrupts.h
 [; ;./Interrupts.h: 19: void configureIOCInt(void);
 [v _configureIOCInt `(v ~T0 @X0 0 ef ]
@@ -15,9 +12,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [; ;./tmr_TMR0.h: 25: void tmr_TMR0reset(void);
 [v _tmr_TMR0reset `(v ~T0 @X0 0 ef ]
-"31 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
+"16 ./Oscillator.h
+[; ;./Oscillator.h: 16: void osc_Config1MHz(void);
+[v _osc_Config1MHz `(v ~T0 @X0 0 ef ]
 "23 ./tmr_TMR0.h
 [; ;./tmr_TMR0.h: 23: uint8_t accquisitionComplete(void);
 [v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
@@ -32,11 +29,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "426
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"51 ./NEC.h
-[; ;./NEC.h: 51: uint8_t nec_ProcessPacket(void);
+"60 ./NEC.h
+[; ;./NEC.h: 60: uint8_t nec_ProcessPacket(void);
 [v _nec_ProcessPacket `(uc ~T0 @X0 0 ef ]
-"52
-[; ;./NEC.h: 52: void nec_ExecuteCommand(uint8_t NECcommand);
+"61
+[; ;./NEC.h: 61: void nec_ExecuteCommand(uint8_t NECcommand);
 [v _nec_ExecuteCommand `(v ~T0 @X0 0 ef1`uc ]
 [v F5815 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
@@ -911,9 +908,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;main.c: 55:     led_ConfigureLED();
 [e ( _led_ConfigureLED ..  ]
-"58
-[; ;main.c: 58:     Uart_UCA0Init();
-[e ( _Uart_UCA0Init ..  ]
 "59
 [; ;main.c: 59:     configureIOCInt();
 [e ( _configureIOCInt ..  ]
@@ -923,52 +917,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [; ;main.c: 62:     tmr_TMR0reset();
 [e ( _tmr_TMR0reset ..  ]
-"75
-[; ;main.c: 75:     while(1){
+"66
+[; ;main.c: 66:     osc_Config1MHz();
+[e ( _osc_Config1MHz ..  ]
+"68
+[; ;main.c: 68:     while(1){
 [e :U 793 ]
 {
-"76
-[; ;main.c: 76:         __asm("sleep");
+"69
+[; ;main.c: 69:         __asm("sleep");
 [; <" sleep ;# ">
-"77
-[; ;main.c: 77:         __nop();
-[e ( ___nop ..  ]
-"79
-[; ;main.c: 79:         while(!accquisitionComplete());
+"72
+[; ;main.c: 72:         while(!accquisitionComplete());
 [e $U 795  ]
 [e :U 796 ]
 [e :U 795 ]
 [e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 796  ]
 [e :U 797 ]
-"80
-[; ;main.c: 80:             INTCONbits.GIE = 0;
+"73
+[; ;main.c: 73:         INTCONbits.GIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"83
-[; ;main.c: 83:             NECcommand = nec_ProcessPacket();
+"76
+[; ;main.c: 76:         NECcommand = nec_ProcessPacket();
 [e = _NECcommand ( _nec_ProcessPacket ..  ]
-"84
-[; ;main.c: 84:             nec_ExecuteCommand(NECcommand);
+"77
+[; ;main.c: 77:         nec_ExecuteCommand(NECcommand);
 [e ( _nec_ExecuteCommand (1 _NECcommand ]
-"85
-[; ;main.c: 85:             tmr_TMR0reset();
+"78
+[; ;main.c: 78:         tmr_TMR0reset();
 [e ( _tmr_TMR0reset ..  ]
-"86
-[; ;main.c: 86:             _delay((unsigned long)((5)*(32768/4000.0)));
+"79
+[; ;main.c: 79:         _delay((unsigned long)((5)*(32768/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
-"87
-[; ;main.c: 87:             INTCONbits.GIE = 1;
+"80
+[; ;main.c: 80:         INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"89
-[; ;main.c: 89:     }
+"82
+[; ;main.c: 82:     }
 }
 [e :U 792 ]
 [e $U 793  ]
 [e :U 794 ]
-"91
-[; ;main.c: 91:     return (0);
+"84
+[; ;main.c: 84:     return (0);
 [e ) -> 0 `i ]
 [e $UE 791  ]
-"92
-[; ;main.c: 92: }
+"85
+[; ;main.c: 85: }
 [e :UE 791 ]
 }

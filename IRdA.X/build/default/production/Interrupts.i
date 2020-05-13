@@ -10031,7 +10031,7 @@ void Uart_UCA0_RxIntEn(void);
 # 1 "./tmr_TMR0.h" 1
 # 21 "./tmr_TMR0.h"
 void tmr_TMR0Init(void);
-uint8_t tmr_computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
@@ -10075,19 +10075,16 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
         IOCAFbits.IOCAF1 = 0;
         PIR0bits.IOCIF = 0;
-
-
         if (!T0CON0bits.T0EN) T0CON0bits.T0EN = 1;
         tmr_TMR0mark();
 
-
     }
-# 48 "Interrupts.c"
+# 45 "Interrupts.c"
     if (PIR0bits.TMR0IF){
         PIR0bits.TMR0IF = 0;
         tmr_TMR0IncRollovers();
 
     }
-# 76 "Interrupts.c"
+# 73 "Interrupts.c"
     return;
 }

@@ -9957,7 +9957,7 @@ typedef uint32_t uint_fast32_t;
 # 2 "NEC.c" 2
 
 # 1 "./NEC.h" 1
-# 40 "./NEC.h"
+# 49 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,
@@ -9976,7 +9976,7 @@ void nec_ExecuteCommand(uint8_t NECcommand);
 # 1 "./tmr_TMR0.h" 1
 # 21 "./tmr_TMR0.h"
 void tmr_TMR0Init(void);
-uint8_t tmr_computeDelta(uint8_t i);
+uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
@@ -10065,12 +10065,10 @@ void led_Blink(uint8_t times);
 
 
 uint8_t nec_ProcessPacket(void){
-    uint8_t delta;
-    uint8_t NECpacket [32];
+    uint16_t delta;
+    uint8_t NECpacket [32] = {0};
     uint8_t command = 0;
 
-    uint8_t highbyte = 0;
-    uint8_t lowbyte = 0;
 
 
 
@@ -10078,22 +10076,15 @@ uint8_t nec_ProcessPacket(void){
     delta = tmr_computeDelta(0);
 
 
+    if (2700 < delta && delta < 4050){
 
-    Uart_UCA0_putc( delta );
-
-
-
-    if (44 < delta && delta < 66){
-        LATAbits.LATA2 = 1;
-        _delay((unsigned long)((100)*(32768/4000.0)));
-        LATAbits.LATA2 = 0;
 
         for (int i = 1; i < 33; i++){
             delta = tmr_computeDelta(i);
-            if (4 < delta && delta < 6){
+            if (250 < delta && delta < 375){
                 NECpacket[i-1] = 0;
             }
-            if (8 < delta && delta < 12){
+            if (500 < delta && delta < 750){
                 NECpacket[i-1] = 1;
             }
         }
@@ -10116,29 +10107,29 @@ void nec_ExecuteCommand(uint8_t NECcommand){
     switch (NECcommand)
     {
         case POWER:
-            Uart_UCA0_putc( 'a' );
 
+            LATAbits.LATA2 ^= 1;
             break;
         case OFF:
-            Uart_UCA0_putc( 'b' );
+
             break;
         case TIMER2H:
-            Uart_UCA0_putc( 'c' );
+
             break;
         case TIMER4H:
-            Uart_UCA0_putc( 'd' );
+
             break;
         case TIMER6H:
-            Uart_UCA0_putc( 'e' );
+
             break;
         case TIMER8H:
-            Uart_UCA0_putc( 'f' );
+
             break;
         case DIM:
-            Uart_UCA0_putc( 'g' );
+
             break;
         case BRIGHT:
-            Uart_UCA0_putc( 'h' );
+
             break;
     }
 }

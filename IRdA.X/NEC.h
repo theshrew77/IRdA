@@ -26,6 +26,7 @@
 #define NEC_1_LOW       64
 #define NEC_1_HIGH      97
 */
+/*
 //Fosc = 32768 settings timer 0
 #define NEC_START_LOW   44
 #define NEC_START_HIGH  66
@@ -33,7 +34,15 @@
 #define NEC_0_HIGH      6
 #define NEC_1_LOW       8
 #define NEC_1_HIGH      12
+*/
+//Fosc = 1MHz timer 0
 
+#define NEC_START_LOW   2700
+#define NEC_START_HIGH  4050
+#define NEC_0_LOW       250
+#define NEC_0_HIGH      375
+#define NEC_1_LOW       500
+#define NEC_1_HIGH      750
 
 #define NEC_ADDRESS     0
 

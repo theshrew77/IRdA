@@ -10167,7 +10167,7 @@ extern __bank0 __bit __timeout;
 
 
 #pragma config MCLRE = ON
-#pragma config PWRTE = ON
+#pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
 #pragma config BOREN = ON
 #pragma config BORV = LO
@@ -10246,10 +10246,10 @@ void Uart_UCA0Init(void)
     TX1STAbits.SYNC = 0;
     RC1STAbits.SPEN = 1;
     ANSELAbits.ANSA0 = 0;
-# 38 "uart_UCA0.c"
+# 43 "uart_UCA0.c"
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
-    SPBRGL = 25;
+    SPBRGL = 4;
 
 }
 

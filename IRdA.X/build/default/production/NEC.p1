@@ -1,10 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "22 ./tmr_TMR0.h
-[; ;./tmr_TMR0.h: 22: uint8_t tmr_computeDelta(uint8_t i);
-[v _tmr_computeDelta `(uc ~T0 @X0 0 ef1`uc ]
-"24 ./uart_UCA0.h
-[; ;./uart_UCA0.h: 24: int8_t Uart_UCA0_putc( int8_t c );
-[v _Uart_UCA0_putc `(c ~T0 @X0 0 ef1`c ]
+[; ;./tmr_TMR0.h: 22: uint16_t tmr_computeDelta(uint8_t i);
+[v _tmr_computeDelta `(us ~T0 @X0 0 ef1`uc ]
 "547 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
 [s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -16,12 +13,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "556
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
 [v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
-[v F5815 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF5815 ~T0 @X0 0 e ]
-[p i __delay ]
-"86 NEC.c
-[; ;NEC.c: 86:     }
+"77 NEC.c
+[; ;NEC.c: 77:     }
 [c E5856 255 191 223 159 239 175 247 183 .. ]
 [n E5856 . POWER OFF TIMER2H TIMER4H TIMER6H TIMER8H DIM BRIGHT  ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
@@ -884,44 +877,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _nec_ProcessPacket ]
 [f ]
 "11
-[; ;NEC.c: 11:     uint8_t delta;
-[v _delta `uc ~T0 @X0 1 a ]
+[; ;NEC.c: 11:     uint16_t delta;
+[v _delta `us ~T0 @X0 1 a ]
+[v F5907 `uc ~T0 @X0 -> 32 `i s ]
+[i F5907
+:U ..
 "12
-[; ;NEC.c: 12:     uint8_t NECpacket [32];
+[; ;NEC.c: 12:     uint8_t NECpacket [32] = {0};
+-> -> 0 `i `uc
+..
+]
 [v _NECpacket `uc ~T0 @X0 -> 32 `i a ]
+[e = _NECpacket F5907 ]
 "13
 [; ;NEC.c: 13:     uint8_t command = 0;
 [v _command `uc ~T0 @X0 1 a ]
 [e = _command -> -> 0 `i `uc ]
-"15
-[; ;NEC.c: 15:     uint8_t highbyte = 0;
-[v _highbyte `uc ~T0 @X0 1 a ]
-[e = _highbyte -> -> 0 `i `uc ]
-"16
-[; ;NEC.c: 16:     uint8_t lowbyte = 0;
-[v _lowbyte `uc ~T0 @X0 1 a ]
-[e = _lowbyte -> -> 0 `i `uc ]
-"21
-[; ;NEC.c: 21:     delta = tmr_computeDelta(0);
+"19
+[; ;NEC.c: 19:     delta = tmr_computeDelta(0);
 [e = _delta ( _tmr_computeDelta (1 -> -> 0 `i `uc ]
-"25
-[; ;NEC.c: 25:     Uart_UCA0_putc( delta );
-[e ( _Uart_UCA0_putc (1 -> _delta `c ]
-"29
-[; ;NEC.c: 29:     if (44 < delta && delta < 66){
-[e $ ! && < -> 44 `i -> _delta `i < -> _delta `i -> 66 `i 791  ]
+"22
+[; ;NEC.c: 22:     if (2700 < delta && delta < 4050){
+[e $ ! && < -> -> 2700 `i `ui -> _delta `ui < -> _delta `ui -> -> 4050 `i `ui 791  ]
 {
-"30
-[; ;NEC.c: 30:         LATAbits.LATA2 = 1;
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"31
-[; ;NEC.c: 31:         _delay((unsigned long)((100)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
-"32
-[; ;NEC.c: 32:         LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"34
-[; ;NEC.c: 34:         for (int i = 1; i < 33; i++){
+"25
+[; ;NEC.c: 25:         for (int i = 1; i < 33; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 1 `i ]
@@ -929,161 +909,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 793  ]
 [e :U 792 ]
 {
-"35
-[; ;NEC.c: 35:             delta = tmr_computeDelta(i);
+"26
+[; ;NEC.c: 26:             delta = tmr_computeDelta(i);
 [e = _delta ( _tmr_computeDelta (1 -> _i `uc ]
-"36
-[; ;NEC.c: 36:             if (4 < delta && delta < 6){
-[e $ ! && < -> 4 `i -> _delta `i < -> _delta `i -> 6 `i 795  ]
+"27
+[; ;NEC.c: 27:             if (250 < delta && delta < 375){
+[e $ ! && < -> -> 250 `i `ui -> _delta `ui < -> _delta `ui -> -> 375 `i `ui 795  ]
 {
-"37
-[; ;NEC.c: 37:                 NECpacket[i-1] = 0;
+"28
+[; ;NEC.c: 28:                 NECpacket[i-1] = 0;
 [e = *U + &U _NECpacket * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 0 `i `uc ]
-"38
-[; ;NEC.c: 38:             }
+"29
+[; ;NEC.c: 29:             }
 }
 [e :U 795 ]
-"39
-[; ;NEC.c: 39:             if (8 < delta && delta < 12){
-[e $ ! && < -> 8 `i -> _delta `i < -> _delta `i -> 12 `i 796  ]
+"30
+[; ;NEC.c: 30:             if (500 < delta && delta < 750){
+[e $ ! && < -> -> 500 `i `ui -> _delta `ui < -> _delta `ui -> -> 750 `i `ui 796  ]
 {
-"40
-[; ;NEC.c: 40:                 NECpacket[i-1] = 1;
+"31
+[; ;NEC.c: 31:                 NECpacket[i-1] = 1;
 [e = *U + &U _NECpacket * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 1 `i `uc ]
-"41
-[; ;NEC.c: 41:             }
+"32
+[; ;NEC.c: 32:             }
 }
 [e :U 796 ]
-"42
-[; ;NEC.c: 42:         }
+"33
+[; ;NEC.c: 33:         }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 33 `i 792  ]
 [e :U 793 ]
 }
-"44
-[; ;NEC.c: 44:         command += NECpacket[31];
+"35
+[; ;NEC.c: 35:         command += NECpacket[31];
 [e =+ _command -> *U + &U _NECpacket * -> -> -> 31 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `uc ]
-"45
-[; ;NEC.c: 45:         command += NECpacket[30]*2;
+"36
+[; ;NEC.c: 36:         command += NECpacket[30]*2;
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 30 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 2 `i `uc ]
-"46
-[; ;NEC.c: 46:         command += NECpacket[29]*4;
+"37
+[; ;NEC.c: 37:         command += NECpacket[29]*4;
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 29 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 4 `i `uc ]
-"47
-[; ;NEC.c: 47:         command += NECpacket[28]*8;
+"38
+[; ;NEC.c: 38:         command += NECpacket[28]*8;
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 28 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 8 `i `uc ]
-"48
-[; ;NEC.c: 48:         command += NECpacket[27]*16;
+"39
+[; ;NEC.c: 39:         command += NECpacket[27]*16;
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 27 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 16 `i `uc ]
-"49
-[; ;NEC.c: 49:         command += NECpacket[26]*32;
+"40
+[; ;NEC.c: 40:         command += NECpacket[26]*32;
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 26 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 32 `i `uc ]
-"50
-[; ;NEC.c: 50:         command += NECpacket[25]*64;
+"41
+[; ;NEC.c: 41:         command += NECpacket[25]*64;
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 25 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 64 `i `uc ]
-"51
-[; ;NEC.c: 51:         command += NECpacket[24]*128;
+"42
+[; ;NEC.c: 42:         command += NECpacket[24]*128;
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 24 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `i -> 128 `i `uc ]
-"53
-[; ;NEC.c: 53:     }
+"44
+[; ;NEC.c: 44:     }
 }
 [e :U 791 ]
-"54
-[; ;NEC.c: 54:     return(command);
+"45
+[; ;NEC.c: 45:     return(command);
 [e ) _command ]
 [e $UE 790  ]
-"55
-[; ;NEC.c: 55: }
+"46
+[; ;NEC.c: 46: }
 [e :UE 790 ]
 }
-"57
-[; ;NEC.c: 57: void nec_ExecuteCommand(uint8_t NECcommand){
+"48
+[; ;NEC.c: 48: void nec_ExecuteCommand(uint8_t NECcommand){
 [v _nec_ExecuteCommand `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _nec_ExecuteCommand ]
 [v _NECcommand `uc ~T0 @X0 1 r1 ]
 [f ]
-"59
-[; ;NEC.c: 59:     switch (NECcommand)
+"50
+[; ;NEC.c: 50:     switch (NECcommand)
 [e $U 799  ]
-"60
-[; ;NEC.c: 60:     {
+"51
+[; ;NEC.c: 51:     {
 {
-"61
-[; ;NEC.c: 61:         case POWER:
+"52
+[; ;NEC.c: 52:         case POWER:
 [e :U 800 ]
+"54
+[; ;NEC.c: 54:             LATAbits.LATA2 ^= 1;
+[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
+"55
+[; ;NEC.c: 55:             break;
+[e $U 798  ]
+"56
+[; ;NEC.c: 56:         case OFF:
+[e :U 801 ]
+"58
+[; ;NEC.c: 58:             break;
+[e $U 798  ]
+"59
+[; ;NEC.c: 59:         case TIMER2H:
+[e :U 802 ]
+"61
+[; ;NEC.c: 61:             break;
+[e $U 798  ]
 "62
-[; ;NEC.c: 62:             Uart_UCA0_putc( 'a' );
-[e ( _Uart_UCA0_putc (1 -> -> 97 `ui `c ]
+[; ;NEC.c: 62:         case TIMER4H:
+[e :U 803 ]
 "64
 [; ;NEC.c: 64:             break;
 [e $U 798  ]
 "65
-[; ;NEC.c: 65:         case OFF:
-[e :U 801 ]
-"66
-[; ;NEC.c: 66:             Uart_UCA0_putc( 'b' );
-[e ( _Uart_UCA0_putc (1 -> -> 98 `ui `c ]
+[; ;NEC.c: 65:         case TIMER6H:
+[e :U 804 ]
 "67
 [; ;NEC.c: 67:             break;
 [e $U 798  ]
 "68
-[; ;NEC.c: 68:         case TIMER2H:
-[e :U 802 ]
-"69
-[; ;NEC.c: 69:             Uart_UCA0_putc( 'c' );
-[e ( _Uart_UCA0_putc (1 -> -> 99 `ui `c ]
+[; ;NEC.c: 68:         case TIMER8H:
+[e :U 805 ]
 "70
 [; ;NEC.c: 70:             break;
 [e $U 798  ]
 "71
-[; ;NEC.c: 71:         case TIMER4H:
-[e :U 803 ]
-"72
-[; ;NEC.c: 72:             Uart_UCA0_putc( 'd' );
-[e ( _Uart_UCA0_putc (1 -> -> 100 `ui `c ]
+[; ;NEC.c: 71:         case DIM:
+[e :U 806 ]
 "73
 [; ;NEC.c: 73:             break;
 [e $U 798  ]
 "74
-[; ;NEC.c: 74:         case TIMER6H:
-[e :U 804 ]
-"75
-[; ;NEC.c: 75:             Uart_UCA0_putc( 'e' );
-[e ( _Uart_UCA0_putc (1 -> -> 101 `ui `c ]
+[; ;NEC.c: 74:         case BRIGHT:
+[e :U 807 ]
 "76
 [; ;NEC.c: 76:             break;
 [e $U 798  ]
 "77
-[; ;NEC.c: 77:         case TIMER8H:
-[e :U 805 ]
-"78
-[; ;NEC.c: 78:             Uart_UCA0_putc( 'f' );
-[e ( _Uart_UCA0_putc (1 -> -> 102 `ui `c ]
-"79
-[; ;NEC.c: 79:             break;
-[e $U 798  ]
-"80
-[; ;NEC.c: 80:         case DIM:
-[e :U 806 ]
-"81
-[; ;NEC.c: 81:             Uart_UCA0_putc( 'g' );
-[e ( _Uart_UCA0_putc (1 -> -> 103 `ui `c ]
-"82
-[; ;NEC.c: 82:             break;
-[e $U 798  ]
-"83
-[; ;NEC.c: 83:         case BRIGHT:
-[e :U 807 ]
-"84
-[; ;NEC.c: 84:             Uart_UCA0_putc( 'h' );
-[e ( _Uart_UCA0_putc (1 -> -> 104 `ui `c ]
-"85
-[; ;NEC.c: 85:             break;
-[e $U 798  ]
-"86
-[; ;NEC.c: 86:     }
+[; ;NEC.c: 77:     }
 }
 [e $U 798  ]
 [e :U 799 ]
@@ -1097,7 +1056,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ . `E5856 7 807
  798 ]
 [e :U 798 ]
-"87
-[; ;NEC.c: 87: }
+"78
+[; ;NEC.c: 78: }
 [e :UE 797 ]
 }

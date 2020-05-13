@@ -10187,7 +10187,7 @@ extern void * __va_arg(void *, ...);
 
 
 #pragma config MCLRE = ON
-#pragma config PWRTE = ON
+#pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
 #pragma config BOREN = ON
 #pragma config BORV = LO

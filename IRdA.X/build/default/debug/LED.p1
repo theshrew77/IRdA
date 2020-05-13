@@ -1,30 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"502 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 502:     struct {
-[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . TRISA0 TRISA1 TRISA2 . TRISA4 TRISA5 ]
-"501
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 501: typedef union {
-[u S34 `S35 1 ]
-[n S34 . . ]
-"511
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 511: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x012)));
-[v _TRISAbits `VS34 ~T0 @X0 0 e@18 ]
-"547
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"546
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"556
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
-[v F5815 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF5815 ~T0 @X0 0 e ]
-[p i __delay ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -839,7 +813,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [p x MCLRE = ON ]
 "37
-[p x PWRTE = ON ]
+[p x PWRTE = OFF ]
 "38
 [p x LPBOREN = OFF ]
 "39
@@ -878,58 +852,3 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LVP = ON ]
 "62
 [p x CP = OFF ]
-"6 LED.c
-[; ;LED.c: 6: void led_ConfigureLED(void){
-[v _led_ConfigureLED `(v ~T0 @X0 1 ef ]
-{
-[e :U _led_ConfigureLED ]
-[f ]
-"7
-[; ;LED.c: 7:     TRISAbits.TRISA2 = 0;
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-"8
-[; ;LED.c: 8:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"9
-[; ;LED.c: 9: }
-[e :UE 789 ]
-}
-"11
-[; ;LED.c: 11: void led_Blink(uint8_t times){
-[v _led_Blink `(v ~T0 @X0 1 ef1`uc ]
-{
-[e :U _led_Blink ]
-[v _times `uc ~T0 @X0 1 r1 ]
-[f ]
-"12
-[; ;LED.c: 12:     for (int i = 0; i < times; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 794  ]
-[e :U 791 ]
-{
-"13
-[; ;LED.c: 13:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"14
-[; ;LED.c: 14:         _delay((unsigned long)((500)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
-"15
-[; ;LED.c: 15:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
-"16
-[; ;LED.c: 16:         _delay((unsigned long)((500)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
-"17
-[; ;LED.c: 17:     }
-}
-[e ++ _i -> 1 `i ]
-[e :U 794 ]
-[e $ < _i -> _times `i 791  ]
-[e :U 792 ]
-}
-"18
-[; ;LED.c: 18: }
-[e :UE 790 ]
-}

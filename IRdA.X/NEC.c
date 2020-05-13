@@ -8,28 +8,19 @@
 
 
 uint8_t nec_ProcessPacket(void){
-    uint8_t delta;
-    uint8_t NECpacket [32];
+    uint16_t delta;
+    uint8_t NECpacket [32] = {0};
     uint8_t command = 0;
     
-    uint8_t highbyte = 0;
-    uint8_t lowbyte = 0;
     
 
 
     
     delta = tmr_computeDelta(0);
     
-    //highbyte = (uint8_t)((delta & 0xFF00) >> 8);
-    //lowbyte = (uint8_t)(delta & 0xFF);
-    Uart_UCA0_putc( delta );
-
-    //Uart_UCA0_putc( lowbyte );
 
     if (NEC_START_LOW < delta && delta < NEC_START_HIGH){
-        LEDLAT = 1;
-        __delay_ms(100);
-        LEDLAT = 0;
+        
 
         for (int i = 1; i < 33; i++){
             delta = tmr_computeDelta(i);
@@ -59,29 +50,29 @@ void nec_ExecuteCommand(uint8_t NECcommand){
     switch (NECcommand)
     {
         case POWER:
-            Uart_UCA0_putc( 'a' );
-
+            //Uart_UCA0_putc( 'a' );
+            LEDLAT ^= 1;
             break;
         case OFF:
-            Uart_UCA0_putc( 'b' );
+            //Uart_UCA0_putc( 'b' );
             break;
         case TIMER2H:
-            Uart_UCA0_putc( 'c' );
+            //Uart_UCA0_putc( 'c' );
             break;
         case TIMER4H:
-            Uart_UCA0_putc( 'd' );
+            //Uart_UCA0_putc( 'd' );
             break;
         case TIMER6H:
-            Uart_UCA0_putc( 'e' );
+            //Uart_UCA0_putc( 'e' );
             break;
         case TIMER8H:
-            Uart_UCA0_putc( 'f' );
+            //Uart_UCA0_putc( 'f' );
             break;
         case DIM:
-            Uart_UCA0_putc( 'g' );
+            //Uart_UCA0_putc( 'g' );
             break;
         case BRIGHT:
-            Uart_UCA0_putc( 'h' );
+            //Uart_UCA0_putc( 'h' );
             break;
     }
 }
