@@ -1095,29 +1095,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;tmr_TMR0.c: 55:     T0CON1bits.T0CS = 2;
 [e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
-"58
-[; ;tmr_TMR0.c: 58:     PIE0bits.TMR0IE = 1;
-[e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
-"59
-[; ;tmr_TMR0.c: 59:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"56
+[; ;tmr_TMR0.c: 56:     TMR0H = 0;
+[e = _TMR0H -> -> 0 `i `uc ]
+"57
+[; ;tmr_TMR0.c: 57:     TMR0L = 0;
+[e = _TMR0L -> -> 0 `i `uc ]
 "60
-[; ;tmr_TMR0.c: 60:     INTCONbits.GIE = 1;
+[; ;tmr_TMR0.c: 60:     PIE0bits.TMR0IE = 1;
+[e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
+"61
+[; ;tmr_TMR0.c: 61:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"62
+[; ;tmr_TMR0.c: 62:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"66
-[; ;tmr_TMR0.c: 66: }
+"68
+[; ;tmr_TMR0.c: 68: }
 [e :UE 798 ]
 }
-"68
-[; ;tmr_TMR0.c: 68: void tmr_TMR0Dis(void){
+"70
+[; ;tmr_TMR0.c: 70: void tmr_TMR0Dis(void){
 [v _tmr_TMR0Dis `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR0Dis ]
 [f ]
-"70
-[; ;tmr_TMR0.c: 70:     T0CON0bits.T0EN = 0;
+"72
+[; ;tmr_TMR0.c: 72:     T0CON0bits.T0EN = 0;
 [e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
-"71
-[; ;tmr_TMR0.c: 71: }
+"73
+[; ;tmr_TMR0.c: 73: }
 [e :UE 799 ]
 }

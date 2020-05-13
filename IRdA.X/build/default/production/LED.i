@@ -10009,8 +10009,8 @@ void led_ConfigureLED(void){
 void led_Blink(uint8_t times){
     for (int i = 0; i < times; i++){
         LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(32768/4000.0)));
+        _delay((unsigned long)((500)*(1000000/4000.0)));
         LATAbits.LATA2 ^= 1;
-        _delay((unsigned long)((500)*(32768/4000.0)));
+        _delay((unsigned long)((500)*(1000000/4000.0)));
     }
 }

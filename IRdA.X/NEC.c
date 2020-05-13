@@ -51,10 +51,11 @@ void nec_ExecuteCommand(uint8_t NECcommand){
     {
         case POWER:
             //Uart_UCA0_putc( 'a' );
-            LEDLAT ^= 1;
+            led_Blink(1);
             break;
         case OFF:
             //Uart_UCA0_putc( 'b' );
+            led_Blink(2);
             break;
         case TIMER2H:
             //Uart_UCA0_putc( 'c' );

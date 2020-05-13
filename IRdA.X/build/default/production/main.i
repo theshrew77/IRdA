@@ -10175,7 +10175,7 @@ int main(int argc, char** argv) {
 
     while(1){
         __asm("sleep");
-
+        __nop();
 
         while(!accquisitionComplete());
         INTCONbits.GIE = 0;
@@ -10184,7 +10184,7 @@ int main(int argc, char** argv) {
         NECcommand = nec_ProcessPacket();
         nec_ExecuteCommand(NECcommand);
         tmr_TMR0reset();
-        _delay((unsigned long)((5)*(32768/4000.0)));
+        _delay((unsigned long)((5)*(1000000/4000.0)));
         INTCONbits.GIE = 1;
 
     }

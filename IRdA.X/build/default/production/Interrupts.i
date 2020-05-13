@@ -10076,15 +10076,16 @@ __attribute__((picinterrupt(("")))) void ISR(void){
         IOCAFbits.IOCAF1 = 0;
         PIR0bits.IOCIF = 0;
         if (!T0CON0bits.T0EN) T0CON0bits.T0EN = 1;
+
         tmr_TMR0mark();
 
     }
-# 45 "Interrupts.c"
+# 46 "Interrupts.c"
     if (PIR0bits.TMR0IF){
         PIR0bits.TMR0IF = 0;
         tmr_TMR0IncRollovers();
 
     }
-# 73 "Interrupts.c"
+# 74 "Interrupts.c"
     return;
 }

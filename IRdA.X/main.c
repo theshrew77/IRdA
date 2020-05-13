@@ -67,7 +67,7 @@ int main(int argc, char** argv) {
 
     while(1){
         SLEEP();
-        //osc_Config16MHz();
+        NOP();
         
         while(!accquisitionComplete());
         G_IE = 0;
@@ -78,7 +78,7 @@ int main(int argc, char** argv) {
         tmr_TMR0reset();
         __delay_ms(5);
         G_IE = 1;
-        //_osc_Config32768Hz();
+      
     }
 
     return (EXIT_SUCCESS);

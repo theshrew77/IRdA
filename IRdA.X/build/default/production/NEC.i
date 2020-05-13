@@ -10108,10 +10108,11 @@ void nec_ExecuteCommand(uint8_t NECcommand){
     {
         case POWER:
 
-            LATAbits.LATA2 ^= 1;
+            led_Blink(1);
             break;
         case OFF:
 
+            led_Blink(2);
             break;
         case TIMER2H:
 

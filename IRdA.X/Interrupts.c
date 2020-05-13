@@ -31,6 +31,7 @@ __interrupt() void ISR(void){
         IOCA_F = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         IOC_IF = 0;
         if (!TMR0_ON) TMR0_ON = 1;
+        
         tmr_TMR0mark();
         
     }

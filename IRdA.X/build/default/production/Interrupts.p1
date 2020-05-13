@@ -999,31 +999,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! ! != -> . . _T0CON0bits 0 4 `i -> 0 `i 793  ]
 [e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
 [e :U 793 ]
-"34
-[; ;Interrupts.c: 34:         tmr_TMR0mark();
+"35
+[; ;Interrupts.c: 35:         tmr_TMR0mark();
 [e ( _tmr_TMR0mark ..  ]
-"36
-[; ;Interrupts.c: 36:     }
+"37
+[; ;Interrupts.c: 37:     }
 }
 [e :U 792 ]
-"45
-[; ;Interrupts.c: 45:     if (PIR0bits.TMR0IF){
+"46
+[; ;Interrupts.c: 46:     if (PIR0bits.TMR0IF){
 [e $ ! != -> . . _PIR0bits 0 3 `i -> 0 `i 794  ]
 {
-"46
-[; ;Interrupts.c: 46:         PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
 "47
-[; ;Interrupts.c: 47:         tmr_TMR0IncRollovers();
+[; ;Interrupts.c: 47:         PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
+"48
+[; ;Interrupts.c: 48:         tmr_TMR0IncRollovers();
 [e ( _tmr_TMR0IncRollovers ..  ]
-"49
-[; ;Interrupts.c: 49:     }
+"50
+[; ;Interrupts.c: 50:     }
 }
 [e :U 794 ]
-"73
-[; ;Interrupts.c: 73:     return;
-[e $UE 791  ]
 "74
-[; ;Interrupts.c: 74: }
+[; ;Interrupts.c: 74:     return;
+[e $UE 791  ]
+"75
+[; ;Interrupts.c: 75: }
 [e :UE 791 ]
 }

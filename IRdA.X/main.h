@@ -11,7 +11,7 @@
 /* Constants -----------------------------------------------------------------*/
 #define TRUE        1
 #define FALSE       0
-#define _XTAL_FREQ 32768
+#define _XTAL_FREQ 1000000
 
 /* Macro Definitions ---------------------------------------------------------*/
 #define CHECKBIT(var,nbit)  (var &  (1L << (nbit)))

@@ -913,14 +913,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;LED.c: 13:         LATAbits.LATA2 ^= 1;
 [e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
 "14
-[; ;LED.c: 14:         _delay((unsigned long)((500)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
+[; ;LED.c: 14:         _delay((unsigned long)((500)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "15
 [; ;LED.c: 15:         LATAbits.LATA2 ^= 1;
 [e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
 "16
-[; ;LED.c: 16:         _delay((unsigned long)((500)*(32768/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 32768 `l `d .4000.0 `ul ]
+[; ;LED.c: 16:         _delay((unsigned long)((500)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "17
 [; ;LED.c: 17:     }
 }

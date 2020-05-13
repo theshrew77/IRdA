@@ -10060,6 +10060,8 @@ void tmr_TMR0Init(void){
     T0CON1bits.T0CKPS = 0;
     T0CON0bits.T016BIT = 1;
     T0CON1bits.T0CS = 2;
+    TMR0H = 0;
+    TMR0L = 0;
 
 
     PIE0bits.TMR0IE = 1;
