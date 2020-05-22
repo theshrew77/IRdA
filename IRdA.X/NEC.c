@@ -12,10 +12,6 @@ uint8_t nec_ProcessPacket(void){
     uint8_t NECpacket [32] = {0};
     uint8_t command = 0;
     
-    
-
-
-    
     delta = tmr_computeDelta(0);
     
 
@@ -46,7 +42,7 @@ uint8_t nec_ProcessPacket(void){
 }
 
 void nec_ExecuteCommand(uint8_t NECcommand){
-
+    LEDLAT = 0;
     switch (NECcommand)
     {
         case POWER:

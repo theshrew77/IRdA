@@ -19,6 +19,7 @@
 #include "NEC.h"
 #include "LED.h"
 #include "Oscillator.h"
+#include "PowerManagement.h"
 
 
 
@@ -42,8 +43,10 @@
 int main(int argc, char** argv) {
     
     uint8_t NECcommand = 0;
-    
-    
+    CPUDOZEbits.IDLEN = 0;
+    osc_Config1MHz();
+
+   
     /*
     while(!OSCSTATbits.EXTOR); //wait for the external oscillator to be ready
     OSCENbits.EXTOEN = 1;       //explicitly enable external osciallator
@@ -51,7 +54,12 @@ int main(int argc, char** argv) {
     while(!OSCCON3bits.ORDY);   //wait for the oscillator to be ready
     */
     
-    
+    pwrmgmt_ConfigUnusedPins();
+    pwrmgmt_DisablePeripherals();
+    #ifdef _16F15313 
+        VREGCONbits.VREGPM=1;
+    #endif
+
     led_ConfigureLED();
   
     
@@ -61,14 +69,12 @@ int main(int argc, char** argv) {
     tmr_TMR0Init();
     tmr_TMR0reset();
     
-
     
-    osc_Config1MHz();
+    
+   
 
     while(1){
         SLEEP();
-        NOP();
-        
         while(!accquisitionComplete());
         G_IE = 0;
         //process to NEC
@@ -78,6 +84,7 @@ int main(int argc, char** argv) {
         tmr_TMR0reset();
         __delay_ms(5);
         G_IE = 1;
+        
       
     }
 

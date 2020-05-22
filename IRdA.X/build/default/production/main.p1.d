@@ -8,4 +8,5 @@ Interrupts.h  \
 tmr_TMR0.h  \
 NEC.h  \
 LED.h  \
-Oscillator.h 
+Oscillator.h  \
+PowerManagement.h 

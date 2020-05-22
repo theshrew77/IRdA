@@ -35,15 +35,26 @@
 #define NEC_1_LOW       8
 #define NEC_1_HIGH      12
 */
-//Fosc = 1MHz timer 0
 
+//Fosc = 1MHz timer 0
 #define NEC_START_LOW   2700
 #define NEC_START_HIGH  4050
 #define NEC_0_LOW       250
 #define NEC_0_HIGH      375
 #define NEC_1_LOW       500
 #define NEC_1_HIGH      750
+#define NEC_TIMEOUT     0
 
+/*
+//Fosc = 4MHz external oscillator timer 0
+#define NEC_START_LOW   8160
+#define NEC_START_HIGH  12240
+#define NEC_0_LOW       1000
+#define NEC_0_HIGH      1500
+#define NEC_1_LOW       2000
+#define NEC_1_HIGH      3000
+#define NEC_TIMEOUT     0
+*/
 #define NEC_ADDRESS     0
 
 typedef enum {

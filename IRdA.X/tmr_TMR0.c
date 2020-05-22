@@ -3,6 +3,7 @@
 #include "tmr_TMR0.h"
 #include "Interrupts.h"
 #include "main.h"
+#include "NEC.h"
 
 static uint8_t TMR0rollovers = 0;
 uint8_t TMR0count = 0;
@@ -42,7 +43,7 @@ void tmr_TMR0reset(void){
 void tmr_TMR0IncRollovers(void){
     TMR0rollovers++;
     
-    if ( TMR0rollovers > 0){
+    if ( TMR0rollovers > NEC_TIMEOUT){
         tmr_TMR0Dis();
         accComplete = 1;
     }

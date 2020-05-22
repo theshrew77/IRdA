@@ -315,7 +315,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = XT
 #pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -325,7 +325,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 #pragma config MCLRE = ON
 #pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
-#pragma config BOREN = ON
+#pragma config BOREN = OFF
 #pragma config BORV = LO
 #pragma config ZCD = OFF
 #pragma config PPS1WAY = ON
@@ -345,7 +345,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 #pragma config WRTB = OFF
 #pragma config WRTC = OFF
 #pragma config WRTSAF = OFF
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config CP = OFF

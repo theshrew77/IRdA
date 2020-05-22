@@ -10040,8 +10040,8 @@ void debug_flush(void);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXT1X
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = OFF
@@ -10050,7 +10050,7 @@ void debug_flush(void);
 #pragma config MCLRE = ON
 #pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
-#pragma config BOREN = ON
+#pragma config BOREN = OFF
 #pragma config BORV = LO
 #pragma config ZCD = OFF
 #pragma config PPS1WAY = ON
@@ -10070,7 +10070,7 @@ void debug_flush(void);
 #pragma config WRTB = OFF
 #pragma config WRTC = OFF
 #pragma config WRTSAF = OFF
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config CP = OFF
@@ -10127,7 +10127,7 @@ void tmr_TMR0Dis(void);
 # 18 "main.c" 2
 
 # 1 "./NEC.h" 1
-# 49 "./NEC.h"
+# 60 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,
@@ -10155,11 +10155,25 @@ void _osc_Config32768Hz(void);
 void osc_Config16MHz(void);
 void osc_Config1MHz(void);
 # 21 "main.c" 2
-# 42 "main.c"
+
+# 1 "./PowerManagement.h" 1
+# 10 "./PowerManagement.h"
+void pwrmgmt_DisablePeripherals(void);
+void pwrmgmt_ConfigUnusedPins(void);
+# 22 "main.c" 2
+# 43 "main.c"
 int main(int argc, char** argv) {
 
     uint8_t NECcommand = 0;
-# 55 "main.c"
+    CPUDOZEbits.IDLEN = 0;
+    osc_Config1MHz();
+# 57 "main.c"
+    pwrmgmt_ConfigUnusedPins();
+    pwrmgmt_DisablePeripherals();
+
+
+
+
     led_ConfigureLED();
 
 
@@ -10171,12 +10185,10 @@ int main(int argc, char** argv) {
 
 
 
-    osc_Config1MHz();
+
 
     while(1){
         __asm("sleep");
-        __nop();
-
         while(!accquisitionComplete());
         INTCONbits.GIE = 0;
 
@@ -10186,6 +10198,7 @@ int main(int argc, char** argv) {
         tmr_TMR0reset();
         _delay((unsigned long)((5)*(1000000/4000.0)));
         INTCONbits.GIE = 1;
+
 
     }
 

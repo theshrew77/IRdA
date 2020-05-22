@@ -9957,7 +9957,7 @@ typedef uint32_t uint_fast32_t;
 # 2 "NEC.c" 2
 
 # 1 "./NEC.h" 1
-# 49 "./NEC.h"
+# 60 "./NEC.h"
 typedef enum {
     POWER = 0xFF,
     OFF = 0xBF,
@@ -10026,8 +10026,8 @@ void led_Blink(uint8_t times);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXT1X
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = OFF
@@ -10036,7 +10036,7 @@ void led_Blink(uint8_t times);
 #pragma config MCLRE = ON
 #pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
-#pragma config BOREN = ON
+#pragma config BOREN = OFF
 #pragma config BORV = LO
 #pragma config ZCD = OFF
 #pragma config PPS1WAY = ON
@@ -10056,7 +10056,7 @@ void led_Blink(uint8_t times);
 #pragma config WRTB = OFF
 #pragma config WRTC = OFF
 #pragma config WRTSAF = OFF
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config CP = OFF
@@ -10068,10 +10068,6 @@ uint8_t nec_ProcessPacket(void){
     uint16_t delta;
     uint8_t NECpacket [32] = {0};
     uint8_t command = 0;
-
-
-
-
 
     delta = tmr_computeDelta(0);
 
@@ -10103,7 +10099,7 @@ uint8_t nec_ProcessPacket(void){
 }
 
 void nec_ExecuteCommand(uint8_t NECcommand){
-
+    LATAbits.LATA2 = 0;
     switch (NECcommand)
     {
         case POWER:

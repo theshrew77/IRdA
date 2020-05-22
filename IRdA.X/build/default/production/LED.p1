@@ -827,9 +827,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "29 ./main.h
-[p x FEXTOSC = LP ]
+[p x FEXTOSC = HS ]
 "30
-[p x RSTOSC = EXT1X ]
+[p x RSTOSC = HFINT1 ]
 "31
 [p x CLKOUTEN = OFF ]
 "32
@@ -843,7 +843,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [p x LPBOREN = OFF ]
 "39
-[p x BOREN = ON ]
+[p x BOREN = OFF ]
 "40
 [p x BORV = LO ]
 "41
@@ -875,7 +875,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [p x WRTSAF = OFF ]
 "59
-[p x LVP = ON ]
+[p x LVP = OFF ]
 "62
 [p x CP = OFF ]
 "6 LED.c
@@ -910,14 +910,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 791 ]
 {
 "13
-[; ;LED.c: 13:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
+[; ;LED.c: 13:         LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 "14
 [; ;LED.c: 14:         _delay((unsigned long)((500)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "15
-[; ;LED.c: 15:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
+[; ;LED.c: 15:         LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "16
 [; ;LED.c: 16:         _delay((unsigned long)((500)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]

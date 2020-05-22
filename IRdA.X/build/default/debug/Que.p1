@@ -4,7 +4,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [s S4 `c -> 2 `i `c 1 `c 1 ]
 [n S4 . Data In Out ]
 "29 ./main.h
-[p x FEXTOSC = LP ]
+[p x FEXTOSC = XT ]
 "30
 [p x RSTOSC = EXT1X ]
 "31
@@ -20,7 +20,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [p x LPBOREN = OFF ]
 "39
-[p x BOREN = ON ]
+[p x BOREN = OFF ]
 "40
 [p x BORV = LO ]
 "41
@@ -52,7 +52,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [p x WRTSAF = OFF ]
 "59
-[p x LVP = ON ]
+[p x LVP = OFF ]
 "62
 [p x CP = OFF ]
 "27 Que.c

@@ -9974,8 +9974,8 @@ void configureIOCInt(void);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXT1X
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = OFF
@@ -9984,7 +9984,7 @@ void configureIOCInt(void);
 #pragma config MCLRE = ON
 #pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
-#pragma config BOREN = ON
+#pragma config BOREN = OFF
 #pragma config BORV = LO
 #pragma config ZCD = OFF
 #pragma config PPS1WAY = ON
@@ -10004,11 +10004,28 @@ void configureIOCInt(void);
 #pragma config WRTB = OFF
 #pragma config WRTC = OFF
 #pragma config WRTSAF = OFF
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config CP = OFF
 # 5 "tmr_TMR0.c" 2
+
+# 1 "./NEC.h" 1
+# 60 "./NEC.h"
+typedef enum {
+    POWER = 0xFF,
+    OFF = 0xBF,
+    TIMER2H = 0xDF,
+    TIMER4H = 0x9F,
+    TIMER6H = 0xEF,
+    TIMER8H = 0xAF,
+    DIM = 0xF7,
+    BRIGHT = 0xB7,
+} NEC_commands_t;
+
+uint8_t nec_ProcessPacket(void);
+void nec_ExecuteCommand(uint8_t NECcommand);
+# 6 "tmr_TMR0.c" 2
 
 
 static uint8_t TMR0rollovers = 0;

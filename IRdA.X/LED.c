@@ -10,9 +10,9 @@ void led_ConfigureLED(void){
 
 void led_Blink(uint8_t times){
     for (int i = 0; i < times; i++){
-        LEDLAT ^= 1;
+        LEDLAT = 1;
         __delay_ms(500);
-        LEDLAT ^= 1;
+        LEDLAT = 0;
         __delay_ms(500);
     }
 }

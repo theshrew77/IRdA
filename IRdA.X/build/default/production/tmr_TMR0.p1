@@ -870,9 +870,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "29 ./main.h
-[p x FEXTOSC = LP ]
+[p x FEXTOSC = HS ]
 "30
-[p x RSTOSC = EXT1X ]
+[p x RSTOSC = HFINT1 ]
 "31
 [p x CLKOUTEN = OFF ]
 "32
@@ -886,7 +886,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [p x LPBOREN = OFF ]
 "39
-[p x BOREN = ON ]
+[p x BOREN = OFF ]
 "40
 [p x BORV = LO ]
 "41
@@ -918,111 +918,111 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [p x WRTSAF = OFF ]
 "59
-[p x LVP = ON ]
+[p x LVP = OFF ]
 "62
 [p x CP = OFF ]
-"7 tmr_TMR0.c
-[; ;tmr_TMR0.c: 7: static uint8_t TMR0rollovers = 0;
+"8 tmr_TMR0.c
+[; ;tmr_TMR0.c: 8: static uint8_t TMR0rollovers = 0;
 [v _TMR0rollovers `uc ~T0 @X0 1 s ]
 [i _TMR0rollovers
 -> -> 0 `i `uc
 ]
-"8
-[; ;tmr_TMR0.c: 8: uint8_t TMR0count = 0;
+"9
+[; ;tmr_TMR0.c: 9: uint8_t TMR0count = 0;
 [v _TMR0count `uc ~T0 @X0 1 e ]
 [i _TMR0count
 -> -> 0 `i `uc
 ]
-"9
-[; ;tmr_TMR0.c: 9: static uint16_t TMR0countArray [34] = {0};
+"10
+[; ;tmr_TMR0.c: 10: static uint16_t TMR0countArray [34] = {0};
 [v _TMR0countArray `us ~T0 @X0 -> 34 `i s ]
 [i _TMR0countArray
 :U ..
 -> -> 0 `i `us
 ..
 ]
-"10
-[; ;tmr_TMR0.c: 10: static uint8_t TMR0rolloverArray [34] = {0};
+"11
+[; ;tmr_TMR0.c: 11: static uint8_t TMR0rolloverArray [34] = {0};
 [v _TMR0rolloverArray `uc ~T0 @X0 -> 34 `i s ]
 [i _TMR0rolloverArray
 :U ..
 -> -> 0 `i `uc
 ..
 ]
-"11
-[; ;tmr_TMR0.c: 11: static uint8_t sample = 0;
+"12
+[; ;tmr_TMR0.c: 12: static uint8_t sample = 0;
 [v _sample `uc ~T0 @X0 1 s ]
 [i _sample
 -> -> 0 `i `uc
 ]
-"12
-[; ;tmr_TMR0.c: 12: static uint8_t accComplete = 0;
+"13
+[; ;tmr_TMR0.c: 13: static uint8_t accComplete = 0;
 [v _accComplete `uc ~T0 @X0 1 s ]
 [i _accComplete
 -> -> 0 `i `uc
 ]
-"14
-[; ;tmr_TMR0.c: 14: uint16_t tmr_computeDelta(uint8_t i){
+"15
+[; ;tmr_TMR0.c: 15: uint16_t tmr_computeDelta(uint8_t i){
 [v _tmr_computeDelta `(us ~T0 @X0 1 ef1`uc ]
 {
 [e :U _tmr_computeDelta ]
 [v _i `uc ~T0 @X0 1 r1 ]
 [f ]
-"17
-[; ;tmr_TMR0.c: 17:     return ((TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*0xFF - TMR0countArray[i]));
+"18
+[; ;tmr_TMR0.c: 18:     return ((TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*0xFF - TMR0countArray[i]));
 [e ) -> - + -> *U + &U _TMR0countArray * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _TMR0countArray `ui `ux `ui * -> -> *U + &U _TMR0rolloverArray * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _TMR0rolloverArray `ui `ux `us `ui -> -> 255 `i `ui -> *U + &U _TMR0countArray * -> _i `ux -> -> # *U &U _TMR0countArray `ui `ux `ui `us ]
 [e $UE 789  ]
-"19
-[; ;tmr_TMR0.c: 19: }
+"20
+[; ;tmr_TMR0.c: 20: }
 [e :UE 789 ]
 }
-"21
-[; ;tmr_TMR0.c: 21: uint8_t accquisitionComplete(void){
+"22
+[; ;tmr_TMR0.c: 22: uint8_t accquisitionComplete(void){
 [v _accquisitionComplete `(uc ~T0 @X0 1 ef ]
 {
 [e :U _accquisitionComplete ]
 [f ]
-"22
-[; ;tmr_TMR0.c: 22:     return(accComplete);
+"23
+[; ;tmr_TMR0.c: 23:     return(accComplete);
 [e ) _accComplete ]
 [e $UE 790  ]
-"23
-[; ;tmr_TMR0.c: 23: }
+"24
+[; ;tmr_TMR0.c: 24: }
 [e :UE 790 ]
 }
-"25
-[; ;tmr_TMR0.c: 25: void tmr_TMR0mark(void){
+"26
+[; ;tmr_TMR0.c: 26: void tmr_TMR0mark(void){
 [v _tmr_TMR0mark `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR0mark ]
 [f ]
-"26
-[; ;tmr_TMR0.c: 26:     TMR0countArray[sample] = TMR0L;
-[e = *U + &U _TMR0countArray * -> _sample `ux -> -> # *U &U _TMR0countArray `ui `ux -> _TMR0L `us ]
 "27
-[; ;tmr_TMR0.c: 27:     TMR0countArray[sample] += (uint16_t)TMR0H << 8;
-[e =+ *U + &U _TMR0countArray * -> _sample `ux -> -> # *U &U _TMR0countArray `ui `ux -> << -> -> _TMR0H `us `ui -> 8 `i `us ]
+[; ;tmr_TMR0.c: 27:     TMR0countArray[sample] = TMR0L;
+[e = *U + &U _TMR0countArray * -> _sample `ux -> -> # *U &U _TMR0countArray `ui `ux -> _TMR0L `us ]
 "28
-[; ;tmr_TMR0.c: 28:     TMR0rolloverArray[sample] = TMR0rollovers;
-[e = *U + &U _TMR0rolloverArray * -> _sample `ux -> -> # *U &U _TMR0rolloverArray `ui `ux _TMR0rollovers ]
+[; ;tmr_TMR0.c: 28:     TMR0countArray[sample] += (uint16_t)TMR0H << 8;
+[e =+ *U + &U _TMR0countArray * -> _sample `ux -> -> # *U &U _TMR0countArray `ui `ux -> << -> -> _TMR0H `us `ui -> 8 `i `us ]
 "29
-[; ;tmr_TMR0.c: 29:     TMR0rollovers = 0;
-[e = _TMR0rollovers -> -> 0 `i `uc ]
+[; ;tmr_TMR0.c: 29:     TMR0rolloverArray[sample] = TMR0rollovers;
+[e = *U + &U _TMR0rolloverArray * -> _sample `ux -> -> # *U &U _TMR0rolloverArray `ui `ux _TMR0rollovers ]
 "30
-[; ;tmr_TMR0.c: 30:     sample++;
-[e ++ _sample -> -> 1 `i `uc ]
+[; ;tmr_TMR0.c: 30:     TMR0rollovers = 0;
+[e = _TMR0rollovers -> -> 0 `i `uc ]
 "31
-[; ;tmr_TMR0.c: 31: }
+[; ;tmr_TMR0.c: 31:     sample++;
+[e ++ _sample -> -> 1 `i `uc ]
+"32
+[; ;tmr_TMR0.c: 32: }
 [e :UE 791 ]
 }
-"33
-[; ;tmr_TMR0.c: 33: void tmr_TMR0reset(void){
+"34
+[; ;tmr_TMR0.c: 34: void tmr_TMR0reset(void){
 [v _tmr_TMR0reset `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR0reset ]
 [f ]
-"34
-[; ;tmr_TMR0.c: 34:     for (int i = 0; i < 33; i++){
+"35
+[; ;tmr_TMR0.c: 35:     for (int i = 0; i < 33; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -1030,100 +1030,100 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 794  ]
 [e :U 793 ]
 {
-"35
-[; ;tmr_TMR0.c: 35:         TMR0countArray[i] = 0;
-[e = *U + &U _TMR0countArray * -> -> _i `ui `ux -> -> # *U &U _TMR0countArray `ui `ux -> -> 0 `i `us ]
 "36
-[; ;tmr_TMR0.c: 36:         TMR0rolloverArray[i] = 0;
-[e = *U + &U _TMR0rolloverArray * -> -> _i `ui `ux -> -> # *U &U _TMR0rolloverArray `ui `ux -> -> 0 `i `uc ]
+[; ;tmr_TMR0.c: 36:         TMR0countArray[i] = 0;
+[e = *U + &U _TMR0countArray * -> -> _i `ui `ux -> -> # *U &U _TMR0countArray `ui `ux -> -> 0 `i `us ]
 "37
-[; ;tmr_TMR0.c: 37:     }
+[; ;tmr_TMR0.c: 37:         TMR0rolloverArray[i] = 0;
+[e = *U + &U _TMR0rolloverArray * -> -> _i `ui `ux -> -> # *U &U _TMR0rolloverArray `ui `ux -> -> 0 `i `uc ]
+"38
+[; ;tmr_TMR0.c: 38:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 33 `i 793  ]
 [e :U 794 ]
 }
-"38
-[; ;tmr_TMR0.c: 38:     sample = 0;
-[e = _sample -> -> 0 `i `uc ]
 "39
-[; ;tmr_TMR0.c: 39:     accComplete = 0;
-[e = _accComplete -> -> 0 `i `uc ]
+[; ;tmr_TMR0.c: 39:     sample = 0;
+[e = _sample -> -> 0 `i `uc ]
 "40
-[; ;tmr_TMR0.c: 40: }
+[; ;tmr_TMR0.c: 40:     accComplete = 0;
+[e = _accComplete -> -> 0 `i `uc ]
+"41
+[; ;tmr_TMR0.c: 41: }
 [e :UE 792 ]
 }
-"42
-[; ;tmr_TMR0.c: 42: void tmr_TMR0IncRollovers(void){
+"43
+[; ;tmr_TMR0.c: 43: void tmr_TMR0IncRollovers(void){
 [v _tmr_TMR0IncRollovers `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR0IncRollovers ]
 [f ]
-"43
-[; ;tmr_TMR0.c: 43:     TMR0rollovers++;
+"44
+[; ;tmr_TMR0.c: 44:     TMR0rollovers++;
 [e ++ _TMR0rollovers -> -> 1 `i `uc ]
-"45
-[; ;tmr_TMR0.c: 45:     if ( TMR0rollovers > 0){
+"46
+[; ;tmr_TMR0.c: 46:     if ( TMR0rollovers > 0){
 [e $ ! > -> _TMR0rollovers `i -> 0 `i 797  ]
 {
-"46
-[; ;tmr_TMR0.c: 46:         tmr_TMR0Dis();
-[e ( _tmr_TMR0Dis ..  ]
 "47
-[; ;tmr_TMR0.c: 47:         accComplete = 1;
-[e = _accComplete -> -> 1 `i `uc ]
+[; ;tmr_TMR0.c: 47:         tmr_TMR0Dis();
+[e ( _tmr_TMR0Dis ..  ]
 "48
-[; ;tmr_TMR0.c: 48:     }
+[; ;tmr_TMR0.c: 48:         accComplete = 1;
+[e = _accComplete -> -> 1 `i `uc ]
+"49
+[; ;tmr_TMR0.c: 49:     }
 }
 [e :U 797 ]
-"50
-[; ;tmr_TMR0.c: 50: }
+"51
+[; ;tmr_TMR0.c: 51: }
 [e :UE 796 ]
 }
-"52
-[; ;tmr_TMR0.c: 52: void tmr_TMR0Init(void){
+"53
+[; ;tmr_TMR0.c: 53: void tmr_TMR0Init(void){
 [v _tmr_TMR0Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR0Init ]
 [f ]
-"53
-[; ;tmr_TMR0.c: 53:     T0CON1bits.T0CKPS = 0;
-[e = . . _T0CON1bits 0 0 -> -> 0 `i `uc ]
 "54
-[; ;tmr_TMR0.c: 54:     T0CON0bits.T016BIT = 1;
-[e = . . _T0CON0bits 0 1 -> -> 1 `i `uc ]
+[; ;tmr_TMR0.c: 54:     T0CON1bits.T0CKPS = 0;
+[e = . . _T0CON1bits 0 0 -> -> 0 `i `uc ]
 "55
-[; ;tmr_TMR0.c: 55:     T0CON1bits.T0CS = 2;
-[e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
+[; ;tmr_TMR0.c: 55:     T0CON0bits.T016BIT = 1;
+[e = . . _T0CON0bits 0 1 -> -> 1 `i `uc ]
 "56
-[; ;tmr_TMR0.c: 56:     TMR0H = 0;
-[e = _TMR0H -> -> 0 `i `uc ]
+[; ;tmr_TMR0.c: 56:     T0CON1bits.T0CS = 2;
+[e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
 "57
-[; ;tmr_TMR0.c: 57:     TMR0L = 0;
+[; ;tmr_TMR0.c: 57:     TMR0H = 0;
+[e = _TMR0H -> -> 0 `i `uc ]
+"58
+[; ;tmr_TMR0.c: 58:     TMR0L = 0;
 [e = _TMR0L -> -> 0 `i `uc ]
-"60
-[; ;tmr_TMR0.c: 60:     PIE0bits.TMR0IE = 1;
-[e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
 "61
-[; ;tmr_TMR0.c: 61:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+[; ;tmr_TMR0.c: 61:     PIE0bits.TMR0IE = 1;
+[e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
 "62
-[; ;tmr_TMR0.c: 62:     INTCONbits.GIE = 1;
+[; ;tmr_TMR0.c: 62:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"63
+[; ;tmr_TMR0.c: 63:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"68
-[; ;tmr_TMR0.c: 68: }
+"69
+[; ;tmr_TMR0.c: 69: }
 [e :UE 798 ]
 }
-"70
-[; ;tmr_TMR0.c: 70: void tmr_TMR0Dis(void){
+"71
+[; ;tmr_TMR0.c: 71: void tmr_TMR0Dis(void){
 [v _tmr_TMR0Dis `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR0Dis ]
 [f ]
-"72
-[; ;tmr_TMR0.c: 72:     T0CON0bits.T0EN = 0;
-[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
 "73
-[; ;tmr_TMR0.c: 73: }
+[; ;tmr_TMR0.c: 73:     T0CON0bits.T0EN = 0;
+[e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
+"74
+[; ;tmr_TMR0.c: 74: }
 [e :UE 799 ]
 }

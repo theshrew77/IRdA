@@ -27,11 +27,11 @@ __interrupt() void ISR(void){
     
     
     if(IOC_IF){
-
+        
         IOCA_F = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         IOC_IF = 0;
         if (!TMR0_ON) TMR0_ON = 1;
-        
+        //LEDLAT ^= 1;
         tmr_TMR0mark();
         
     }
@@ -46,6 +46,7 @@ __interrupt() void ISR(void){
     if (TMR0IFG){
         TMR0IFG = 0;
         tmr_TMR0IncRollovers();
+        
         
     }
     
