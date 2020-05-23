@@ -42,16 +42,15 @@ uint8_t nec_ProcessPacket(void){
 }
 
 void nec_ExecuteCommand(uint8_t NECcommand){
-    LEDLAT = 0;
     switch (NECcommand)
     {
-        case POWER:
+        case LEDON:
             //Uart_UCA0_putc( 'a' );
-            led_Blink(1);
+            LEDLAT = 0;
             break;
-        case OFF:
+        case LEDOFF:
             //Uart_UCA0_putc( 'b' );
-            led_Blink(2);
+            LEDLAT = 1;
             break;
         case TIMER2H:
             //Uart_UCA0_putc( 'c' );

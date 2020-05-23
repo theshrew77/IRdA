@@ -10039,16 +10039,42 @@ void tmr_TMR0IncRollovers(void);
 void tmr_TMR0Dis(void);
 # 5 "Interrupts.c" 2
 
+# 1 "./tmr_TMR1.h" 1
+# 20 "./tmr_TMR1.h"
+void tmr_TMR1Init(void);
+void tmr_TMR1ClrRollovers(void);
+uint16_t *tmr_TMR1GetRollovers(void);
+void tmr_TMR1IncRollovers(void);
+void tmr_TMR1En(void);
+void tmr_TMR1Dis(void);
+void tmr_TMR1Toggle(void);
+uint32_t tmr_TMR1GetCount(void);
+void tmr_TMR1reset(void);
+void tmr_TMR1mark(void);
+uint8_t accquisitionComplete(void);
+uint16_t *getTMR1countArray(void);
+uint16_t *getTMR1rolloverArray(void);
+uint16_t tmr_computeDelta(uint8_t i);
+# 6 "Interrupts.c" 2
+
 # 1 "./Interrupts.h" 1
 # 19 "./Interrupts.h"
 void configureIOCInt(void);
-# 6 "Interrupts.c" 2
+# 7 "Interrupts.c" 2
 
 # 1 "./LED.h" 1
 # 13 "./LED.h"
 void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
-# 7 "Interrupts.c" 2
+# 8 "Interrupts.c" 2
+
+# 1 "./ccp_CCP1.h" 1
+# 11 "./ccp_CCP1.h"
+void ccp_CCP1Init(void);
+void ccp_CCP1En(void);
+void ccp_CCP1Dis(void);
+void ccp_CCP1CompareMatch(void);
+# 9 "Interrupts.c" 2
 
 
 
@@ -10080,13 +10106,19 @@ __attribute__((picinterrupt(("")))) void ISR(void){
         tmr_TMR0mark();
 
     }
-# 46 "Interrupts.c"
+# 48 "Interrupts.c"
+    if (CCP1IF){
+        ccp_CCP1CompareMatch();
+    }
+
+
+
     if (PIR0bits.TMR0IF){
         PIR0bits.TMR0IF = 0;
         tmr_TMR0IncRollovers();
 
 
     }
-# 75 "Interrupts.c"
+# 83 "Interrupts.c"
     return;
 }

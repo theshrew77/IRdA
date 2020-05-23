@@ -45,15 +45,6 @@ int main(int argc, char** argv) {
     uint8_t NECcommand = 0;
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
-
-   
-    /*
-    while(!OSCSTATbits.EXTOR); //wait for the external oscillator to be ready
-    OSCENbits.EXTOEN = 1;       //explicitly enable external osciallator
-    OSCCON1 = 0b01110000;       //set clock tree to accept external oscillator with 1:1 prescaler
-    while(!OSCCON3bits.ORDY);   //wait for the oscillator to be ready
-    */
-    
     pwrmgmt_ConfigUnusedPins();
     pwrmgmt_DisablePeripherals();
     #ifdef _16F15313 
@@ -61,15 +52,11 @@ int main(int argc, char** argv) {
     #endif
 
     led_ConfigureLED();
-  
-    
-    //Uart_UCA0Init();
     configureIOCInt();
-    
     tmr_TMR0Init();
     tmr_TMR0reset();
     
-    
+    LEDLAT = 0;
     
    
 

@@ -10129,8 +10129,8 @@ void tmr_TMR0Dis(void);
 # 1 "./NEC.h" 1
 # 60 "./NEC.h"
 typedef enum {
-    POWER = 0xFF,
-    OFF = 0xBF,
+    LEDON = 0xFF,
+    LEDOFF = 0xBF,
     TIMER2H = 0xDF,
     TIMER4H = 0x9F,
     TIMER6H = 0xEF,
@@ -10167,7 +10167,6 @@ int main(int argc, char** argv) {
     uint8_t NECcommand = 0;
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
-# 57 "main.c"
     pwrmgmt_ConfigUnusedPins();
     pwrmgmt_DisablePeripherals();
 
@@ -10175,15 +10174,11 @@ int main(int argc, char** argv) {
 
 
     led_ConfigureLED();
-
-
-
     configureIOCInt();
-
     tmr_TMR0Init();
     tmr_TMR0reset();
 
-
+    LATAbits.LATA2 = 0;
 
 
 

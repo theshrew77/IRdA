@@ -58,8 +58,8 @@
 #define NEC_ADDRESS     0
 
 typedef enum {
-    POWER   =   0xFF,
-    OFF     =   0xBF,
+    LEDON   =   0xFF,
+    LEDOFF     =   0xBF,
     TIMER2H =   0xDF,    
     TIMER4H =   0x9F, 
     TIMER6H =   0xEF, 

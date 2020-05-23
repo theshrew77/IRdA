@@ -8,11 +8,11 @@
 
 static uint16_t TMR1rollovers = 0;
 uint16_t TMR1count = 0;
-static uint16_t TMR1countArray [34] = {0};
-static uint16_t TMR1rolloverArray [34] = {0};
+//static uint16_t TMR1countArray [34] = {0};
+//static uint16_t TMR1rolloverArray [34] = {0};
 static uint8_t sample = 0;
 static uint8_t accComplete = 0;
-
+/*
 uint16_t tmr_computeDelta(uint8_t i){
     if (_XTAL_FREQ == 16000000){
         return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*TMR1MAX - TMR1countArray[i])>>4);
@@ -66,7 +66,7 @@ uint16_t *tmr_TMR1GetRollovers(void){
 void tmr_TMR1ClrRollovers(void){
     TMR1rollovers = 0;
 }
-
+*/
 void tmr_TMR1IncRollovers(void){
     TMR1rollovers++;
     
@@ -78,10 +78,15 @@ void tmr_TMR1IncRollovers(void){
 }
 
 void tmr_TMR1Init(void){
-    TMR1PRE = 0; //1:1 prescaler
-    TMR116BEN = 1; //enable reading timer register in 1 16 bit operation
-    TMR1CS = 2;   //select Fosc as clock source
+    //setup timer 1 to provide 1 second tick to facilitate hour timers
+    //with Fosc setup as 1MHz, clock source to timer 1 = Fosc/4
+    //prescaler 1:8 will reach 1 second every 31250 counts:
+    //31250*1/(1000000/(8*4)) = 1
+    TMR1PRE = 0x03;     //1:8 prescaler
+    TMR116BEN = 1;      //enable reading timer register in 1 16 bit operation
+    TMR1CS = 0x01;      //select Fosc/4 as clock source
     
+
     //enable rollover interrupts
     TMR1_IE  = 1;
     P_IE = 1;

@@ -9843,8 +9843,8 @@ void configureIOCInt(void);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = LP
-#pragma config RSTOSC = EXT1X
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = OFF
@@ -9853,7 +9853,7 @@ void configureIOCInt(void);
 #pragma config MCLRE = ON
 #pragma config PWRTE = OFF
 #pragma config LPBOREN = OFF
-#pragma config BOREN = ON
+#pragma config BOREN = OFF
 #pragma config BORV = LO
 #pragma config ZCD = OFF
 #pragma config PPS1WAY = ON
@@ -9873,7 +9873,7 @@ void configureIOCInt(void);
 #pragma config WRTB = OFF
 #pragma config WRTC = OFF
 #pragma config WRTSAF = OFF
-#pragma config LVP = ON
+#pragma config LVP = OFF
 
 
 #pragma config CP = OFF
@@ -9882,65 +9882,11 @@ void configureIOCInt(void);
 
 static uint16_t TMR1rollovers = 0;
 uint16_t TMR1count = 0;
-static uint16_t TMR1countArray [34] = {0};
-static uint16_t TMR1rolloverArray [34] = {0};
+
+
 static uint8_t sample = 0;
 static uint8_t accComplete = 0;
-
-uint16_t tmr_computeDelta(uint8_t i){
-    if (32768 == 16000000){
-        return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*0xFFFF - TMR1countArray[i])>>4);
-    }
-
-    if (32768 == 32768){
-        return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*0xFFFF - TMR1countArray[i]));
-    }
-}
-
-uint16_t *getTMR1countArray(void){
-    return(TMR1countArray);
-}
-
-uint16_t *getTMR1rolloverArray(void){
-    return(TMR1rolloverArray);
-}
-
-uint8_t accquisitionComplete(void){
-    return(accComplete);
-}
-
-void tmr_TMR1mark(void){
-    TMR1countArray[sample] = TMR1;
-    TMR1rolloverArray[sample] = TMR1rollovers;
-    TMR1rollovers = 0;
-    sample++;
-}
-
-void tmr_TMR1reset(void){
-    for (int i = 0; i < 33; i++){
-        TMR1countArray[i] = 0;
-        TMR1rolloverArray[i] = 0;
-    }
-    sample = 0;
-    accComplete = 0;
-}
-
-uint32_t tmr_TMR1GetCount(){
-    uint32_t TMR1TotalCount = TMR1;
-    TMR1TotalCount = TMR1TotalCount + (uint32_t)TMR1rollovers*0xFFFF;
-
-
-    return(TMR1TotalCount);
-}
-
-uint16_t *tmr_TMR1GetRollovers(void){
-    return(&TMR1rollovers);
-}
-
-void tmr_TMR1ClrRollovers(void){
-    TMR1rollovers = 0;
-}
-
+# 70 "tmr_TMR1.c"
 void tmr_TMR1IncRollovers(void){
     TMR1rollovers++;
 
@@ -9952,9 +9898,14 @@ void tmr_TMR1IncRollovers(void){
 }
 
 void tmr_TMR1Init(void){
-    T1CONbits.CKPS = 0;
+
+
+
+
+    T1CONbits.CKPS = 0x03;
     T1CONbits.RD16 = 1;
-    T1CLKbits.CS = 2;
+    T1CLKbits.CS = 0x01;
+
 
 
     PIE4bits.TMR1IE = 1;

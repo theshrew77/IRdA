@@ -3,8 +3,10 @@
 #include "main.h"
 #include "uart_UCA0.h"
 #include "tmr_TMR0.h"
+#include "tmr_TMR1.h"
 #include "Interrupts.h"
 #include "LED.h"
+#include "ccp_CCP1.h"
 //#include <stdio.h>
 
 void configureIOCInt(void){
@@ -38,11 +40,17 @@ __interrupt() void ISR(void){
     /*
     if(TMR1IFG){
         TMR1IFG = 0;
-        //printf("TMR1 rolled over\r\n");
         tmr_TMR1IncRollovers();
         
     }
     */
+    
+    if (CCP1IF){
+        ccp_CCP1CompareMatch();
+    }
+    
+    
+    
     if (TMR0IFG){
         TMR0IFG = 0;
         tmr_TMR0IncRollovers();

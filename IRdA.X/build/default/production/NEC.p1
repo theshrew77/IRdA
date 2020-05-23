@@ -13,13 +13,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "556
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
 [v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
-"14 ./LED.h
-[; ;./LED.h: 14: void led_Blink(uint8_t times);
-[v _led_Blink `(v ~T0 @X0 0 ef1`uc ]
-"74 NEC.c
-[; ;NEC.c: 74:     }
+"73 NEC.c
+[; ;NEC.c: 73:     }
 [c E5856 255 191 223 159 239 175 247 183 .. ]
-[n E5856 . POWER OFF TIMER2H TIMER4H TIMER6H TIMER8H DIM BRIGHT  ]
+[n E5856 . LEDON LEDOFF TIMER2H TIMER4H TIMER6H TIMER8H DIM BRIGHT  ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -988,70 +985,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _NECcommand `uc ~T0 @X0 1 r1 ]
 [f ]
 "45
-[; ;NEC.c: 45:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"46
-[; ;NEC.c: 46:     switch (NECcommand)
+[; ;NEC.c: 45:     switch (NECcommand)
 [e $U 799  ]
-"47
-[; ;NEC.c: 47:     {
+"46
+[; ;NEC.c: 46:     {
 {
-"48
-[; ;NEC.c: 48:         case POWER:
+"47
+[; ;NEC.c: 47:         case LEDON:
 [e :U 800 ]
+"49
+[; ;NEC.c: 49:             LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "50
-[; ;NEC.c: 50:             led_Blink(1);
-[e ( _led_Blink (1 -> -> 1 `i `uc ]
+[; ;NEC.c: 50:             break;
+[e $U 798  ]
 "51
-[; ;NEC.c: 51:             break;
-[e $U 798  ]
-"52
-[; ;NEC.c: 52:         case OFF:
+[; ;NEC.c: 51:         case LEDOFF:
 [e :U 801 ]
+"53
+[; ;NEC.c: 53:             LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
 "54
-[; ;NEC.c: 54:             led_Blink(2);
-[e ( _led_Blink (1 -> -> 2 `i `uc ]
+[; ;NEC.c: 54:             break;
+[e $U 798  ]
 "55
-[; ;NEC.c: 55:             break;
-[e $U 798  ]
-"56
-[; ;NEC.c: 56:         case TIMER2H:
+[; ;NEC.c: 55:         case TIMER2H:
 [e :U 802 ]
+"57
+[; ;NEC.c: 57:             break;
+[e $U 798  ]
 "58
-[; ;NEC.c: 58:             break;
-[e $U 798  ]
-"59
-[; ;NEC.c: 59:         case TIMER4H:
+[; ;NEC.c: 58:         case TIMER4H:
 [e :U 803 ]
+"60
+[; ;NEC.c: 60:             break;
+[e $U 798  ]
 "61
-[; ;NEC.c: 61:             break;
-[e $U 798  ]
-"62
-[; ;NEC.c: 62:         case TIMER6H:
+[; ;NEC.c: 61:         case TIMER6H:
 [e :U 804 ]
+"63
+[; ;NEC.c: 63:             break;
+[e $U 798  ]
 "64
-[; ;NEC.c: 64:             break;
-[e $U 798  ]
-"65
-[; ;NEC.c: 65:         case TIMER8H:
+[; ;NEC.c: 64:         case TIMER8H:
 [e :U 805 ]
+"66
+[; ;NEC.c: 66:             break;
+[e $U 798  ]
 "67
-[; ;NEC.c: 67:             break;
-[e $U 798  ]
-"68
-[; ;NEC.c: 68:         case DIM:
+[; ;NEC.c: 67:         case DIM:
 [e :U 806 ]
+"69
+[; ;NEC.c: 69:             break;
+[e $U 798  ]
 "70
-[; ;NEC.c: 70:             break;
-[e $U 798  ]
-"71
-[; ;NEC.c: 71:         case BRIGHT:
+[; ;NEC.c: 70:         case BRIGHT:
 [e :U 807 ]
-"73
-[; ;NEC.c: 73:             break;
+"72
+[; ;NEC.c: 72:             break;
 [e $U 798  ]
-"74
-[; ;NEC.c: 74:     }
+"73
+[; ;NEC.c: 73:     }
 }
 [e $U 798  ]
 [e :U 799 ]
@@ -1065,7 +1059,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ . `E5856 7 807
  798 ]
 [e :U 798 ]
-"75
-[; ;NEC.c: 75: }
+"74
+[; ;NEC.c: 74: }
 [e :UE 797 ]
 }

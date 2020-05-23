@@ -1,4 +1,4 @@
-# 1 "NEC.c"
+# 1 "ccp_CCP1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "NEC.c" 2
+# 1 "ccp_CCP1.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -9869,263 +9869,37 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "NEC.c" 2
+# 1 "ccp_CCP1.c" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
+# 1 "./ccp_CCP1.h" 1
+# 11 "./ccp_CCP1.h"
+void ccp_CCP1Init(void);
+void ccp_CCP1En(void);
+void ccp_CCP1Dis(void);
+void ccp_CCP1CompareMatch(void);
+# 2 "ccp_CCP1.c" 2
 
 
 
 
-typedef short int16_t;
-# 173 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
+void ccp_CCP1Init(void){
 
+    CCPR1H = 0x7A;
+    CCPR1L = 0x12;
 
 
+    CCP1CONbits.MODE = 0x01;
 
-
-typedef long long int64_t;
-# 188 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int32_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint32_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 2 "NEC.c" 2
-
-# 1 "./NEC.h" 1
-# 60 "./NEC.h"
-typedef enum {
-    LEDON = 0xFF,
-    LEDOFF = 0xBF,
-    TIMER2H = 0xDF,
-    TIMER4H = 0x9F,
-    TIMER6H = 0xEF,
-    TIMER8H = 0xAF,
-    DIM = 0xF7,
-    BRIGHT = 0xB7,
-} NEC_commands_t;
-
-uint8_t nec_ProcessPacket(void);
-void nec_ExecuteCommand(uint8_t NECcommand);
-# 3 "NEC.c" 2
-
-# 1 "./tmr_TMR0.h" 1
-# 21 "./tmr_TMR0.h"
-void tmr_TMR0Init(void);
-uint16_t tmr_computeDelta(uint8_t i);
-uint8_t accquisitionComplete(void);
-void tmr_TMR0mark(void);
-void tmr_TMR0reset(void);
-void tmr_TMR0IncRollovers(void);
-void tmr_TMR0Dis(void);
-# 4 "NEC.c" 2
-
-# 1 "./uart_UCA0.h" 1
-# 11 "./uart_UCA0.h"
-# 1 "./Que.h" 1
-# 14 "./Que.h"
-typedef struct {
-  int8_t Data[2];
-  int8_t In;
-  int8_t Out;
-} t_Q;
-
-
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-# 11 "./uart_UCA0.h" 2
-
-
-
-
-
-
-
-
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-# 5 "NEC.c" 2
-
-# 1 "./LED.h" 1
-# 13 "./LED.h"
-void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
-# 6 "NEC.c" 2
-
-# 1 "./main.h" 1
-# 29 "./main.h"
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTSAF = OFF
-#pragma config LVP = OFF
-
-
-#pragma config CP = OFF
-# 7 "NEC.c" 2
-
-
-
-uint8_t nec_ProcessPacket(void){
-    uint16_t delta;
-    uint8_t NECpacket [32] = {0};
-    uint8_t command = 0;
-
-    delta = tmr_computeDelta(0);
-
-
-    if (2700 < delta && delta < 4050){
-
-
-        for (int i = 1; i < 33; i++){
-            delta = tmr_computeDelta(i);
-            if (250 < delta && delta < 375){
-                NECpacket[i-1] = 0;
-            }
-            if (500 < delta && delta < 750){
-                NECpacket[i-1] = 1;
-            }
-        }
-
-        command += NECpacket[31];
-        command += NECpacket[30]*2;
-        command += NECpacket[29]*4;
-        command += NECpacket[28]*8;
-        command += NECpacket[27]*16;
-        command += NECpacket[26]*32;
-        command += NECpacket[25]*64;
-        command += NECpacket[24]*128;
-
-    }
-    return(command);
 }
 
-void nec_ExecuteCommand(uint8_t NECcommand){
-    switch (NECcommand)
-    {
-        case LEDON:
+void ccp_CCP1En(void){
+    CCP1CONbits.CCP1EN = 1;
+}
 
-            LATAbits.LATA2 = 0;
-            break;
-        case LEDOFF:
+void ccp_CCP1Dis(void){
+    CCP1CONbits.CCP1EN = 0;
+}
 
-            LATAbits.LATA2 = 1;
-            break;
-        case TIMER2H:
+void ccp_CCP1CompareMatch(void){
 
-            break;
-        case TIMER4H:
-
-            break;
-        case TIMER6H:
-
-            break;
-        case TIMER8H:
-
-            break;
-        case DIM:
-
-            break;
-        case BRIGHT:
-
-            break;
-    }
 }
