@@ -9878,25 +9878,7 @@ void configureIOCInt(void);
 
 #pragma config CP = OFF
 # 7 "tmr_TMR1.c" 2
-
-
-static uint16_t TMR1rollovers = 0;
-uint16_t TMR1count = 0;
-
-
-static uint8_t sample = 0;
-static uint8_t accComplete = 0;
-# 70 "tmr_TMR1.c"
-void tmr_TMR1IncRollovers(void){
-    TMR1rollovers++;
-
-    if ( TMR1rollovers > 0){
-        tmr_TMR1Dis();
-        accComplete = 1;
-    }
-
-}
-
+# 81 "tmr_TMR1.c"
 void tmr_TMR1Init(void){
 
 
@@ -9905,6 +9887,7 @@ void tmr_TMR1Init(void){
     T1CONbits.CKPS = 0x03;
     T1CONbits.RD16 = 1;
     T1CLKbits.CS = 0x01;
+    TMR1 = 0x00;
 
 
 
@@ -9927,11 +9910,4 @@ void tmr_TMR1En(void){
 void tmr_TMR1Dis(void){
 
     T1CONbits.ON = 0;
-}
-
-
-void tmr_TMR1Toggle(void){
-
-    T1CONbits.ON ^= 1;
-
 }

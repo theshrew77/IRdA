@@ -10161,9 +10161,35 @@ void osc_Config1MHz(void);
 void pwrmgmt_DisablePeripherals(void);
 void pwrmgmt_ConfigUnusedPins(void);
 # 22 "main.c" 2
-# 43 "main.c"
-int main(int argc, char** argv) {
 
+# 1 "./tmr_TMR1.h" 1
+# 20 "./tmr_TMR1.h"
+void tmr_TMR1Init(void);
+void tmr_TMR1ClrRollovers(void);
+uint16_t *tmr_TMR1GetRollovers(void);
+void tmr_TMR1IncRollovers(void);
+void tmr_TMR1En(void);
+void tmr_TMR1Dis(void);
+void tmr_TMR1Toggle(void);
+uint32_t tmr_TMR1GetCount(void);
+void tmr_TMR1reset(void);
+void tmr_TMR1mark(void);
+uint8_t accquisitionComplete(void);
+uint16_t *getTMR1countArray(void);
+uint16_t *getTMR1rolloverArray(void);
+uint16_t tmr_computeDelta(uint8_t i);
+# 23 "main.c" 2
+
+# 1 "./ccp_CCP1.h" 1
+# 13 "./ccp_CCP1.h"
+void ccp_CCP1Init(void);
+void ccp_CCP1En(void);
+void ccp_CCP1Dis(void);
+void ccp_CCP1CompareMatch(void);
+# 24 "main.c" 2
+# 45 "main.c"
+int main(int argc, char** argv) {
+    LATAbits.LATA2 = 0;
     uint8_t NECcommand = 0;
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
@@ -10178,7 +10204,11 @@ int main(int argc, char** argv) {
     tmr_TMR0Init();
     tmr_TMR0reset();
 
-    LATAbits.LATA2 = 0;
+    tmr_TMR1Init();
+
+
+    tmr_TMR1En();
+    while(1);
 
 
 

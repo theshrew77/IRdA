@@ -20,6 +20,8 @@
 #include "LED.h"
 #include "Oscillator.h"
 #include "PowerManagement.h"
+#include "tmr_TMR1.h"
+#include "ccp_CCP1.h"
 
 
 
@@ -41,7 +43,7 @@
 
 
 int main(int argc, char** argv) {
-    
+    LEDLAT = 0;
     uint8_t NECcommand = 0;
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
@@ -56,7 +58,11 @@ int main(int argc, char** argv) {
     tmr_TMR0Init();
     tmr_TMR0reset();
     
-    LEDLAT = 0;
+    tmr_TMR1Init();
+    //ccp_CCP1Init();
+    //ccp_CCP1En();
+    tmr_TMR1En();
+    while(1);
     
    
 

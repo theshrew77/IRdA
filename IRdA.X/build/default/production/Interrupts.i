@@ -10069,7 +10069,7 @@ void led_Blink(uint8_t times);
 # 8 "Interrupts.c" 2
 
 # 1 "./ccp_CCP1.h" 1
-# 11 "./ccp_CCP1.h"
+# 13 "./ccp_CCP1.h"
 void ccp_CCP1Init(void);
 void ccp_CCP1En(void);
 void ccp_CCP1Dis(void);
@@ -10106,8 +10106,17 @@ __attribute__((picinterrupt(("")))) void ISR(void){
         tmr_TMR0mark();
 
     }
-# 48 "Interrupts.c"
-    if (CCP1IF){
+
+    if(PIR4bits.TMR1IF){
+        PIR4bits.TMR1IF = 0;
+        LATAbits.LATA2 ^= 1;
+
+
+    }
+
+
+    if (PIR6bits.CCP1IF){
+        PIR6bits.CCP1IF = 0;
         ccp_CCP1CompareMatch();
     }
 
@@ -10119,6 +10128,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
 
     }
-# 83 "Interrupts.c"
+# 85 "Interrupts.c"
     return;
 }

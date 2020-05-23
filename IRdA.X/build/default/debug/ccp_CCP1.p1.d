@@ -1,4 +1,4 @@
-build/default/production/ccp_CCP1.p1:  \
+build/default/debug/ccp_CCP1.p1:  \
 ccp_CCP1.c  \
 ccp_CCP1.h  \
 LED.h  \

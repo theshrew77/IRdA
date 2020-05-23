@@ -1,6 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"9382 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+"547 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
+"546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"556
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
+[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
+"9382
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9382:     struct {
 [s S460 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S460 . DOZE . DOE ROI DOZEN IDLEN ]
@@ -36,19 +47,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [; ;./tmr_TMR0.h: 25: void tmr_TMR0reset(void);
 [v _tmr_TMR0reset `(v ~T0 @X0 0 ef ]
-"547 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"546
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"556
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
-"23 ./tmr_TMR0.h
-[; ;./tmr_TMR0.h: 23: uint8_t accquisitionComplete(void);
+"20 ./tmr_TMR1.h
+[; ;./tmr_TMR1.h: 20: void tmr_TMR1Init(void);
+[v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
+"24
+[; ;./tmr_TMR1.h: 24: void tmr_TMR1En(void);
+[v _tmr_TMR1En `(v ~T0 @X0 0 ef ]
+"30
+[; ;./tmr_TMR1.h: 30: uint8_t accquisitionComplete(void);
 [v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
 "419 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 419:     struct {
@@ -925,88 +931,100 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [p x CP = OFF ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"43 main.c
-[; ;main.c: 43: int main(int argc, char** argv) {
+"45 main.c
+[; ;main.c: 45: int main(int argc, char** argv) {
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"45
-[; ;main.c: 45:     uint8_t NECcommand = 0;
+"46
+[; ;main.c: 46:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"47
+[; ;main.c: 47:     uint8_t NECcommand = 0;
 [v _NECcommand `uc ~T0 @X0 1 a ]
 [e = _NECcommand -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     CPUDOZEbits.IDLEN = 0;
-[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:     osc_Config1MHz();
-[e ( _osc_Config1MHz ..  ]
 "48
-[; ;main.c: 48:     pwrmgmt_ConfigUnusedPins();
-[e ( _pwrmgmt_ConfigUnusedPins ..  ]
+[; ;main.c: 48:     CPUDOZEbits.IDLEN = 0;
+[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
 "49
-[; ;main.c: 49:     pwrmgmt_DisablePeripherals();
+[; ;main.c: 49:     osc_Config1MHz();
+[e ( _osc_Config1MHz ..  ]
+"50
+[; ;main.c: 50:     pwrmgmt_ConfigUnusedPins();
+[e ( _pwrmgmt_ConfigUnusedPins ..  ]
+"51
+[; ;main.c: 51:     pwrmgmt_DisablePeripherals();
 [e ( _pwrmgmt_DisablePeripherals ..  ]
-"54
-[; ;main.c: 54:     led_ConfigureLED();
-[e ( _led_ConfigureLED ..  ]
-"55
-[; ;main.c: 55:     configureIOCInt();
-[e ( _configureIOCInt ..  ]
 "56
-[; ;main.c: 56:     tmr_TMR0Init();
-[e ( _tmr_TMR0Init ..  ]
+[; ;main.c: 56:     led_ConfigureLED();
+[e ( _led_ConfigureLED ..  ]
 "57
-[; ;main.c: 57:     tmr_TMR0reset();
-[e ( _tmr_TMR0reset ..  ]
+[; ;main.c: 57:     configureIOCInt();
+[e ( _configureIOCInt ..  ]
+"58
+[; ;main.c: 58:     tmr_TMR0Init();
+[e ( _tmr_TMR0Init ..  ]
 "59
-[; ;main.c: 59:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"63
-[; ;main.c: 63:     while(1){
-[e :U 793 ]
-{
-"64
-[; ;main.c: 64:         __asm("sleep");
-[; <" sleep ;# ">
-"65
-[; ;main.c: 65:         while(!accquisitionComplete());
-[e $U 795  ]
-[e :U 796 ]
-[e :U 795 ]
-[e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 796  ]
-[e :U 797 ]
-"66
-[; ;main.c: 66:         INTCONbits.GIE = 0;
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:         NECcommand = nec_ProcessPacket();
-[e = _NECcommand ( _nec_ProcessPacket ..  ]
-"70
-[; ;main.c: 70:         nec_ExecuteCommand(NECcommand);
-[e ( _nec_ExecuteCommand (1 _NECcommand ]
-"71
-[; ;main.c: 71:         tmr_TMR0reset();
+[; ;main.c: 59:     tmr_TMR0reset();
 [e ( _tmr_TMR0reset ..  ]
-"72
-[; ;main.c: 72:         _delay((unsigned long)((5)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"73
-[; ;main.c: 73:         INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:     }
-}
+"61
+[; ;main.c: 61:     tmr_TMR1Init();
+[e ( _tmr_TMR1Init ..  ]
+"64
+[; ;main.c: 64:     tmr_TMR1En();
+[e ( _tmr_TMR1En ..  ]
+"65
+[; ;main.c: 65:     while(1);
+[e :U 793 ]
 [e :U 792 ]
 [e $U 793  ]
 [e :U 794 ]
+"69
+[; ;main.c: 69:     while(1){
+[e :U 796 ]
+{
+"70
+[; ;main.c: 70:         __asm("sleep");
+[; <" sleep ;# ">
+"71
+[; ;main.c: 71:         while(!accquisitionComplete());
+[e $U 798  ]
+[e :U 799 ]
+[e :U 798 ]
+[e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 799  ]
+[e :U 800 ]
+"72
+[; ;main.c: 72:         INTCONbits.GIE = 0;
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:         NECcommand = nec_ProcessPacket();
+[e = _NECcommand ( _nec_ProcessPacket ..  ]
+"76
+[; ;main.c: 76:         nec_ExecuteCommand(NECcommand);
+[e ( _nec_ExecuteCommand (1 _NECcommand ]
+"77
+[; ;main.c: 77:         tmr_TMR0reset();
+[e ( _tmr_TMR0reset ..  ]
 "78
-[; ;main.c: 78:     return (0);
+[; ;main.c: 78:         _delay((unsigned long)((5)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"79
+[; ;main.c: 79:         INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"82
+[; ;main.c: 82:     }
+}
+[e :U 795 ]
+[e $U 796  ]
+[e :U 797 ]
+"84
+[; ;main.c: 84:     return (0);
 [e ) -> 0 `i ]
 [e $UE 791  ]
-"79
-[; ;main.c: 79: }
+"85
+[; ;main.c: 85: }
 [e :UE 791 ]
 }

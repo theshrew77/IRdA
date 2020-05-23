@@ -1,7 +1,4 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"25 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
-[v _tmr_TMR1Dis `(v ~T0 @X0 0 ef ]
 "3013 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3013:     struct {
 [s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
@@ -44,6 +41,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3492
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3492: extern volatile T1CLKbits_t T1CLKbits __attribute__((address(0x211)));
 [v _T1CLKbits `VS163 ~T0 @X0 0 e@529 ]
+"2710
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2710: extern volatile unsigned short TMR1 __attribute__((address(0x20C)));
+[v _TMR1 `Vus ~T0 @X0 0 e@524 ]
 "8051
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8051:     struct {
 [s S392 :1 `uc 1 :1 `uc 1 ]
@@ -919,121 +919,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LVP = OFF ]
 "62
 [p x CP = OFF ]
-"9 tmr_TMR1.c
-[; ;tmr_TMR1.c: 9: static uint16_t TMR1rollovers = 0;
-[v _TMR1rollovers `us ~T0 @X0 1 s ]
-[i _TMR1rollovers
--> -> 0 `i `us
-]
-"10
-[; ;tmr_TMR1.c: 10: uint16_t TMR1count = 0;
-[v _TMR1count `us ~T0 @X0 1 e ]
-[i _TMR1count
--> -> 0 `i `us
-]
-"13
-[; ;tmr_TMR1.c: 13: static uint8_t sample = 0;
-[v _sample `uc ~T0 @X0 1 s ]
-[i _sample
--> -> 0 `i `uc
-]
-"14
-[; ;tmr_TMR1.c: 14: static uint8_t accComplete = 0;
-[v _accComplete `uc ~T0 @X0 1 s ]
-[i _accComplete
--> -> 0 `i `uc
-]
-"70
-[; ;tmr_TMR1.c: 70: void tmr_TMR1IncRollovers(void){
-[v _tmr_TMR1IncRollovers `(v ~T0 @X0 1 ef ]
-{
-[e :U _tmr_TMR1IncRollovers ]
-[f ]
-"71
-[; ;tmr_TMR1.c: 71:     TMR1rollovers++;
-[e ++ _TMR1rollovers -> -> 1 `i `us ]
-"73
-[; ;tmr_TMR1.c: 73:     if ( TMR1rollovers > 0){
-[e $ ! > -> _TMR1rollovers `ui -> -> 0 `i `ui 785  ]
-{
-"74
-[; ;tmr_TMR1.c: 74:         tmr_TMR1Dis();
-[e ( _tmr_TMR1Dis ..  ]
-"75
-[; ;tmr_TMR1.c: 75:         accComplete = 1;
-[e = _accComplete -> -> 1 `i `uc ]
-"76
-[; ;tmr_TMR1.c: 76:     }
-}
-[e :U 785 ]
-"78
-[; ;tmr_TMR1.c: 78: }
-[e :UE 784 ]
-}
-"80
-[; ;tmr_TMR1.c: 80: void tmr_TMR1Init(void){
+"81 tmr_TMR1.c
+[; ;tmr_TMR1.c: 81: void tmr_TMR1Init(void){
 [v _tmr_TMR1Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR1Init ]
 [f ]
-"85
-[; ;tmr_TMR1.c: 85:     T1CONbits.CKPS = 0x03;
-[e = . . _T1CONbits 0 4 -> -> 3 `i `uc ]
 "86
-[; ;tmr_TMR1.c: 86:     T1CONbits.RD16 = 1;
-[e = . . _T1CONbits 0 1 -> -> 1 `i `uc ]
+[; ;tmr_TMR1.c: 86:     T1CONbits.CKPS = 0x03;
+[e = . . _T1CONbits 0 4 -> -> 3 `i `uc ]
 "87
-[; ;tmr_TMR1.c: 87:     T1CLKbits.CS = 0x01;
+[; ;tmr_TMR1.c: 87:     T1CONbits.RD16 = 1;
+[e = . . _T1CONbits 0 1 -> -> 1 `i `uc ]
+"88
+[; ;tmr_TMR1.c: 88:     T1CLKbits.CS = 0x01;
 [e = . . _T1CLKbits 0 0 -> -> 1 `i `uc ]
-"91
-[; ;tmr_TMR1.c: 91:     PIE4bits.TMR1IE = 1;
-[e = . . _PIE4bits 0 0 -> -> 1 `i `uc ]
-"92
-[; ;tmr_TMR1.c: 92:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"89
+[; ;tmr_TMR1.c: 89:     TMR1 = 0x00;
+[e = _TMR1 -> -> 0 `i `us ]
 "93
-[; ;tmr_TMR1.c: 93:     INTCONbits.GIE = 1;
+[; ;tmr_TMR1.c: 93:     PIE4bits.TMR1IE = 1;
+[e = . . _PIE4bits 0 0 -> -> 1 `i `uc ]
+"94
+[; ;tmr_TMR1.c: 94:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"95
+[; ;tmr_TMR1.c: 95:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"99
-[; ;tmr_TMR1.c: 99: }
-[e :UE 786 ]
-}
 "101
-[; ;tmr_TMR1.c: 101: void tmr_TMR1En(void){
+[; ;tmr_TMR1.c: 101: }
+[e :UE 784 ]
+}
+"103
+[; ;tmr_TMR1.c: 103: void tmr_TMR1En(void){
 [v _tmr_TMR1En `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR1En ]
 [f ]
-"103
-[; ;tmr_TMR1.c: 103:     T1CONbits.ON = 1;
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 "105
-[; ;tmr_TMR1.c: 105: }
-[e :UE 787 ]
-}
+[; ;tmr_TMR1.c: 105:     T1CONbits.ON = 1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
 "107
-[; ;tmr_TMR1.c: 107: void tmr_TMR1Dis(void){
+[; ;tmr_TMR1.c: 107: }
+[e :UE 785 ]
+}
+"109
+[; ;tmr_TMR1.c: 109: void tmr_TMR1Dis(void){
 [v _tmr_TMR1Dis `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR1Dis ]
 [f ]
-"109
-[; ;tmr_TMR1.c: 109:     T1CONbits.ON = 0;
+"111
+[; ;tmr_TMR1.c: 111:     T1CONbits.ON = 0;
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"110
-[; ;tmr_TMR1.c: 110: }
-[e :UE 788 ]
-}
-"113
-[; ;tmr_TMR1.c: 113: void tmr_TMR1Toggle(void){
-[v _tmr_TMR1Toggle `(v ~T0 @X0 1 ef ]
-{
-[e :U _tmr_TMR1Toggle ]
-[f ]
-"115
-[; ;tmr_TMR1.c: 115:     T1CONbits.ON ^= 1;
-[e =^ . . _T1CONbits 0 0 -> -> 1 `i `Vuc ]
-"117
-[; ;tmr_TMR1.c: 117: }
-[e :UE 789 ]
+"112
+[; ;tmr_TMR1.c: 112: }
+[e :UE 786 ]
 }

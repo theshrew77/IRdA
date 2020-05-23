@@ -932,61 +932,58 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;PowerManagement.c: 18:         PMD2bits.ZCDMD = 1;
 [e = . . _PMD2bits 0 0 -> -> 1 `i `uc ]
 "20
-[; ;PowerManagement.c: 20:         PMD3bits.CCP1MD = 1;
-[e = . . _PMD3bits 0 0 -> -> 1 `i `uc ]
-"21
-[; ;PowerManagement.c: 21:         PMD3bits.CCP2MD = 1;
+[; ;PowerManagement.c: 20:         PMD3bits.CCP2MD = 1;
 [e = . . _PMD3bits 0 1 -> -> 1 `i `uc ]
-"22
-[; ;PowerManagement.c: 22:         PMD3bits.PWM3MD = 1;
+"21
+[; ;PowerManagement.c: 21:         PMD3bits.PWM3MD = 1;
 [e = . . _PMD3bits 0 2 -> -> 1 `i `uc ]
-"23
-[; ;PowerManagement.c: 23:         PMD3bits.PWM4MD = 1;
+"22
+[; ;PowerManagement.c: 22:         PMD3bits.PWM4MD = 1;
 [e = . . _PMD3bits 0 3 -> -> 1 `i `uc ]
-"24
-[; ;PowerManagement.c: 24:         PMD3bits.PWM5MD = 1;
+"23
+[; ;PowerManagement.c: 23:         PMD3bits.PWM5MD = 1;
 [e = . . _PMD3bits 0 4 -> -> 1 `i `uc ]
-"25
-[; ;PowerManagement.c: 25:         PMD3bits.PWM6MD = 1;
+"24
+[; ;PowerManagement.c: 24:         PMD3bits.PWM6MD = 1;
 [e = . . _PMD3bits 0 5 -> -> 1 `i `uc ]
-"27
-[; ;PowerManagement.c: 27:         PMD4bits.UART1MD = 1;
+"26
+[; ;PowerManagement.c: 26:         PMD4bits.UART1MD = 1;
 [e = . . _PMD4bits 0 4 -> -> 1 `i `uc ]
-"28
-[; ;PowerManagement.c: 28:         PMD4bits.CWG1MD = 1;
+"27
+[; ;PowerManagement.c: 27:         PMD4bits.CWG1MD = 1;
 [e = . . _PMD4bits 0 0 -> -> 1 `i `uc ]
-"29
-[; ;PowerManagement.c: 29:         PMD4bits.MSSP1MD = 1;
+"28
+[; ;PowerManagement.c: 28:         PMD4bits.MSSP1MD = 1;
 [e = . . _PMD4bits 0 2 -> -> 1 `i `uc ]
-"31
-[; ;PowerManagement.c: 31:         PMD5bits.CLC1MD = 1;
+"30
+[; ;PowerManagement.c: 30:         PMD5bits.CLC1MD = 1;
 [e = . . _PMD5bits 0 1 -> -> 1 `i `uc ]
-"32
-[; ;PowerManagement.c: 32:         PMD5bits.CLC2MD = 1;
+"31
+[; ;PowerManagement.c: 31:         PMD5bits.CLC2MD = 1;
 [e = . . _PMD5bits 0 2 -> -> 1 `i `uc ]
-"33
-[; ;PowerManagement.c: 33:         PMD5bits.CLC3MD = 1;
+"32
+[; ;PowerManagement.c: 32:         PMD5bits.CLC3MD = 1;
 [e = . . _PMD5bits 0 3 -> -> 1 `i `uc ]
-"34
-[; ;PowerManagement.c: 34:         PMD5bits.CLC4MD = 1;
+"33
+[; ;PowerManagement.c: 33:         PMD5bits.CLC4MD = 1;
 [e = . . _PMD5bits 0 4 -> -> 1 `i `uc ]
-"36
-[; ;PowerManagement.c: 36:     }
+"35
+[; ;PowerManagement.c: 35:     }
 [e :UE 784 ]
 }
-"37
-[; ;PowerManagement.c: 37:     void pwrmgmt_ConfigUnusedPins(void){
+"36
+[; ;PowerManagement.c: 36:     void pwrmgmt_ConfigUnusedPins(void){
 [v _pwrmgmt_ConfigUnusedPins `(v ~T0 @X0 1 ef ]
 {
 [e :U _pwrmgmt_ConfigUnusedPins ]
 [f ]
-"38
-[; ;PowerManagement.c: 38:         TRISAbits.TRISA0 = 1;
+"37
+[; ;PowerManagement.c: 37:         TRISAbits.TRISA0 = 1;
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-"39
-[; ;PowerManagement.c: 39:         ANSELAbits.ANSA0 = 1;
+"38
+[; ;PowerManagement.c: 38:         ANSELAbits.ANSA0 = 1;
 [e = . . _ANSELAbits 0 0 -> -> 1 `i `uc ]
-"40
-[; ;PowerManagement.c: 40:     }
+"39
+[; ;PowerManagement.c: 39:     }
 [e :UE 785 ]
 }

@@ -37,15 +37,17 @@ __interrupt() void ISR(void){
         tmr_TMR0mark();
         
     }
-    /*
+    
     if(TMR1IFG){
         TMR1IFG = 0;
-        tmr_TMR1IncRollovers();
+        LEDLAT ^= 1;
+        //tmr_TMR1IncRollovers();
         
     }
-    */
     
-    if (CCP1IF){
+    
+    if (CCP1_IF){   
+        CCP1_IF = 0;
         ccp_CCP1CompareMatch();
     }
     

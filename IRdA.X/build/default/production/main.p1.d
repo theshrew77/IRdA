@@ -9,4 +9,6 @@ tmr_TMR0.h  \
 NEC.h  \
 LED.h  \
 Oscillator.h  \
-PowerManagement.h 
+PowerManagement.h  \
+tmr_TMR1.h  \
+ccp_CCP1.h 

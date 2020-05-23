@@ -9733,7 +9733,6 @@ void pwrmgmt_ConfigUnusedPins(void);
         PMD2bits.CMP1MD = 1;
         PMD2bits.ZCDMD = 1;
 
-        PMD3bits.CCP1MD = 1;
         PMD3bits.CCP2MD = 1;
         PMD3bits.PWM3MD = 1;
         PMD3bits.PWM4MD = 1;

@@ -9841,76 +9841,54 @@ uint16_t tmr_computeDelta(uint8_t i);
 void configureIOCInt(void);
 # 6 "tmr_TMR1.c" 2
 
-
-static uint16_t TMR1rollovers = 0;
-uint16_t TMR1count = 0;
-static uint16_t TMR1countArray [34] = {0};
-static uint16_t TMR1rolloverArray [34] = {0};
-static uint8_t sample = 0;
-static uint8_t accComplete = 0;
-
-uint16_t tmr_computeDelta(uint8_t i){
-    return ((TMR1countArray[i+1]+(uint32_t)TMR1rolloverArray[i+1]*0xFFFF - TMR1countArray[i])>>4);
-}
-
-uint16_t *getTMR1countArray(void){
-    return(TMR1countArray);
-}
-
-uint16_t *getTMR1rolloverArray(void){
-    return(TMR1rolloverArray);
-}
-
-uint8_t accquisitionComplete(void){
-    return(accComplete);
-}
-
-void tmr_TMR1mark(void){
-    TMR1countArray[sample] = TMR1;
-    TMR1rolloverArray[sample] = TMR1rollovers;
-    TMR1rollovers = 0;
-    sample++;
-}
-
-void tmr_TMR1reset(void){
-    for (int i = 0; i < 33; i++){
-        TMR1countArray[i] = 0;
-        TMR1rolloverArray[i] = 0;
-    }
-    sample = 0;
-    accComplete = 0;
-}
-
-uint32_t tmr_TMR1GetCount(){
-    uint32_t TMR1TotalCount = TMR1;
-    TMR1TotalCount = TMR1TotalCount + (uint32_t)TMR1rollovers*0xFFFF;
+# 1 "./main.h" 1
+# 29 "./main.h"
+#pragma config FEXTOSC = HS
+#pragma config RSTOSC = HFINT1
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = OFF
 
 
-    return(TMR1TotalCount);
-}
+#pragma config MCLRE = ON
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = OFF
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
 
-uint16_t *tmr_TMR1GetRollovers(void){
-    return(&TMR1rollovers);
-}
 
-void tmr_TMR1ClrRollovers(void){
-    TMR1rollovers = 0;
-}
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
 
-void tmr_TMR1IncRollovers(void){
-    TMR1rollovers++;
 
-    if ( TMR1rollovers > 0){
-        tmr_TMR1Dis();
-        accComplete = 1;
-    }
+#pragma config BBSIZE = BB512
+#pragma config BBEN = OFF
+#pragma config SAFEN = OFF
+#pragma config WRTAPP = OFF
+#pragma config WRTB = OFF
+#pragma config WRTC = OFF
+#pragma config WRTSAF = OFF
+#pragma config LVP = OFF
 
-}
 
+#pragma config CP = OFF
+# 7 "tmr_TMR1.c" 2
+# 81 "tmr_TMR1.c"
 void tmr_TMR1Init(void){
-    T1CONbits.CKPS = 0;
+
+
+
+
+    T1CONbits.CKPS = 0x03;
     T1CONbits.RD16 = 1;
-    T1CLKbits.CS = 2;
+    T1CLKbits.CS = 0x01;
+
+
 
 
     PIE4bits.TMR1IE = 1;
@@ -9932,11 +9910,4 @@ void tmr_TMR1En(void){
 void tmr_TMR1Dis(void){
 
     T1CONbits.ON = 0;
-}
-
-
-void tmr_TMR1Toggle(void){
-
-    T1CONbits.ON ^= 1;
-
 }
