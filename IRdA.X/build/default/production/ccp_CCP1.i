@@ -9869,8 +9869,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "ccp_CCP1.c" 2
-
+# 2 "ccp_CCP1.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -9954,22 +9953,19 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 2 "ccp_CCP1.c" 2
-
+# 3 "ccp_CCP1.c" 2
 # 1 "./ccp_CCP1.h" 1
 # 13 "./ccp_CCP1.h"
 void ccp_CCP1Init(void);
 void ccp_CCP1En(void);
 void ccp_CCP1Dis(void);
 void ccp_CCP1CompareMatch(void);
-# 3 "ccp_CCP1.c" 2
-
+# 4 "ccp_CCP1.c" 2
 # 1 "./LED.h" 1
 # 13 "./LED.h"
 void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
-# 4 "ccp_CCP1.c" 2
-
+# 5 "ccp_CCP1.c" 2
 # 1 "./tmr_TMR1.h" 1
 # 20 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
@@ -9986,13 +9982,11 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
-# 5 "ccp_CCP1.c" 2
-
+# 6 "ccp_CCP1.c" 2
 # 1 "./Interrupts.h" 1
 # 19 "./Interrupts.h"
 void configureIOCInt(void);
-# 6 "ccp_CCP1.c" 2
-
+# 7 "ccp_CCP1.c" 2
 
 uint16_t seconds = 0;
 uint16_t delay = 0;
@@ -10000,12 +9994,16 @@ uint16_t delay = 0;
 void ccp_CCP1Init(void){
 
 
-    CCP1CONbits.MODE = 0x01;
+    CCP1CON = 0b00001011;
 
 
 
-    CCPR1H = 0x7A;
-    CCPR1L = 0x12;
+
+
+
+
+    CCPR1H = 0x10;
+    CCPR1L = 0x00;
 
 
     INTCONbits.PEIE = 1;
@@ -10024,7 +10022,8 @@ void ccp_CCP1Dis(void){
 }
 
 void ccp_CCP1CompareMatch(void){
-# 47 "ccp_CCP1.c"
+    LATAbits.LATA2 ^= 1;
+# 51 "ccp_CCP1.c"
 }
 
 void ccp_CCP1CompareReset(void){

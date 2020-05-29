@@ -10109,7 +10109,7 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
     if(PIR4bits.TMR1IF){
         PIR4bits.TMR1IF = 0;
-        LATAbits.LATA2 ^= 1;
+
 
 
     }
@@ -10117,6 +10117,7 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
     if (PIR6bits.CCP1IF){
         PIR6bits.CCP1IF = 0;
+        TMR1 = 0;
         ccp_CCP1CompareMatch();
     }
 
@@ -10128,6 +10129,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
 
     }
-# 85 "Interrupts.c"
+# 86 "Interrupts.c"
     return;
 }

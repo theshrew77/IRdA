@@ -9843,8 +9843,8 @@ void configureIOCInt(void);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = OFF
@@ -9880,25 +9880,16 @@ void configureIOCInt(void);
 # 7 "tmr_TMR1.c" 2
 # 81 "tmr_TMR1.c"
 void tmr_TMR1Init(void){
-
-
-
-
+# 97 "tmr_TMR1.c"
     T1CONbits.CKPS = 0x03;
     T1CONbits.RD16 = 1;
-    T1CLKbits.CS = 0x01;
-    TMR1 = 0x00;
+
+    T1CLKbits.CS = 0x00;
 
 
-
-    PIE4bits.TMR1IE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
-
-
-
-
-
+    T1CONbits.nSYNC = 1;
+    T1CKIPPS = 0x05;
+# 117 "tmr_TMR1.c"
 }
 
 void tmr_TMR1En(void){

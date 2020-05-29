@@ -32,9 +32,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11 ./PowerManagement.h
 [; ;./PowerManagement.h: 11: void pwrmgmt_ConfigUnusedPins(void);
 [v _pwrmgmt_ConfigUnusedPins `(v ~T0 @X0 0 ef ]
-"10
-[; ;./PowerManagement.h: 10: void pwrmgmt_DisablePeripherals(void);
-[v _pwrmgmt_DisablePeripherals `(v ~T0 @X0 0 ef ]
 "13 ./LED.h
 [; ;./LED.h: 13: void led_ConfigureLED(void);
 [v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
@@ -50,7 +47,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 ./tmr_TMR1.h
 [; ;./tmr_TMR1.h: 20: void tmr_TMR1Init(void);
 [v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
-"24
+"13 ./ccp_CCP1.h
+[; ;./ccp_CCP1.h: 13: void ccp_CCP1Init(void);
+[v _ccp_CCP1Init `(v ~T0 @X0 0 ef ]
+"14
+[; ;./ccp_CCP1.h: 14: void ccp_CCP1En(void);
+[v _ccp_CCP1En `(v ~T0 @X0 0 ef ]
+"24 ./tmr_TMR1.h
 [; ;./tmr_TMR1.h: 24: void tmr_TMR1En(void);
 [v _tmr_TMR1En `(v ~T0 @X0 0 ef ]
 "30
@@ -955,9 +958,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "50
 [; ;main.c: 50:     pwrmgmt_ConfigUnusedPins();
 [e ( _pwrmgmt_ConfigUnusedPins ..  ]
-"51
-[; ;main.c: 51:     pwrmgmt_DisablePeripherals();
-[e ( _pwrmgmt_DisablePeripherals ..  ]
 "56
 [; ;main.c: 56:     led_ConfigureLED();
 [e ( _led_ConfigureLED ..  ]
@@ -973,6 +973,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "61
 [; ;main.c: 61:     tmr_TMR1Init();
 [e ( _tmr_TMR1Init ..  ]
+"62
+[; ;main.c: 62:     ccp_CCP1Init();
+[e ( _ccp_CCP1Init ..  ]
+"63
+[; ;main.c: 63:     ccp_CCP1En();
+[e ( _ccp_CCP1En ..  ]
 "64
 [; ;main.c: 64:     tmr_TMR1En();
 [e ( _tmr_TMR1En ..  ]

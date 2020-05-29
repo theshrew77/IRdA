@@ -6,7 +6,7 @@
         PMD0bits.FVRMD = 1;
         PMD0bits.NVMMD = 1;
         PMD0bits.CLKRMD = 1;
-        PMD0bits.SYSCMD = 1;
+        //PMD0bits.SYSCMD = 1;
         
         PMD1bits.NCOMD = 1;
         PMD1bits.TMR2MD = 1;

@@ -26,7 +26,7 @@ void configureIOCInt(void){
 
 
 __interrupt() void ISR(void){
-    
+   
     
     if(IOC_IF){
         
@@ -40,7 +40,7 @@ __interrupt() void ISR(void){
     
     if(TMR1IFG){
         TMR1IFG = 0;
-        LEDLAT ^= 1;
+        //LEDLAT ^= 1;
         //tmr_TMR1IncRollovers();
         
     }
@@ -48,6 +48,7 @@ __interrupt() void ISR(void){
     
     if (CCP1_IF){   
         CCP1_IF = 0;
+        TMR1 = 0;
         ccp_CCP1CompareMatch();
     }
     

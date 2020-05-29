@@ -315,8 +315,8 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = OFF

@@ -80,19 +80,35 @@ void tmr_TMR1IncRollovers(void){
 
 void tmr_TMR1Init(void){
     //setup timer 1 to provide 1 second tick to facilitate hour timers
+    
     //with Fosc setup as 1MHz, clock source to timer 1 = Fosc/4
     //prescaler 1:8 will reach 1 second every 31250 counts:
     //31250*1/(1000000/(8*4)) = 1
-    TMR1PRE = 0x03;     //1:8 prescaler
-    TMR116BEN = 1;      //enable reading timer register in 1 16 bit operation
-    TMR1CS = 0x01;      //select Fosc/4 as clock source
+    
+    //with LFINTOSC setup as 31KHz, clock source to timer 1 = LFINTOSC
+    //prescaler 1:8 will reach 1 second every 31250 counts:
+    //3875*1/(31000/(8)) = 1
+    
+    //with 32.768KHz external crystal, clock source set to TICKIPPS
+    //prescaler 1:8 will reach 1 second every 4096 counts:
+    //4096*1/(32768/8)= 1
+    
+    
+    TMR1PRE = 0x03;         //1:8 prescaler
+    TMR116BEN = 1;          //enable reading timer register in 1 16 bit operation
+    //TMR1CS = 0x01;        //select Fosc/4 as clock source
+    TMR1CS = 0x00;          //select external clock source
+    //TMR1CS = 0x04;         //set LFINTOSC as clock source
+    
+    T1CONbits.nSYNC = 1;    //set sync bit
+    T1CKIPPS = 0x05;        //get TICKI from RA5
     //TMR1 = 0x00;
     
 
     //enable rollover interrupts
-    TMR1_IE  = 1;
-    P_IE = 1;
-    G_IE = 1;
+    //TMR1_IE  = 1;
+    //P_IE = 1;
+    //G_IE = 1;
     
     //calculate timer 1 max microseconds
     //TMR1Max = TMR1MAX / _XTAL_FREQ

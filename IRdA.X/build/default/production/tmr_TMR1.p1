@@ -41,31 +41,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3492
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3492: extern volatile T1CLKbits_t T1CLKbits __attribute__((address(0x211)));
 [v _T1CLKbits `VS163 ~T0 @X0 0 e@529 ]
-"2710
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2710: extern volatile unsigned short TMR1 __attribute__((address(0x20C)));
-[v _TMR1 `Vus ~T0 @X0 0 e@524 ]
-"8051
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8051:     struct {
-[s S392 :1 `uc 1 :1 `uc 1 ]
-[n S392 . TMR1IE TMR2IE ]
-"8050
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8050: typedef union {
-[u S391 `S392 1 ]
-[n S391 . . ]
-"8056
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8056: extern volatile PIE4bits_t PIE4bits __attribute__((address(0x71A)));
-[v _PIE4bits `VS391 ~T0 @X0 0 e@1818 ]
-"419
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 419:     struct {
-[s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . INTEDG . PEIE GIE ]
-"418
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 418: typedef union {
-[u S25 `S26 1 ]
-[n S25 . . ]
-"426
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 426: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
+"14929
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14929: extern volatile unsigned char T1CKIPPS __attribute__((address(0x1E92)));
+[v _T1CKIPPS `Vuc ~T0 @X0 0 e@7826 ]
 "110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -868,9 +846,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "29 ./main.h
-[p x FEXTOSC = HS ]
+[p x FEXTOSC = LP ]
 "30
-[p x RSTOSC = HFINT1 ]
+[p x RSTOSC = EXT1X ]
 "31
 [p x CLKOUTEN = OFF ]
 "32
@@ -925,54 +903,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _tmr_TMR1Init ]
 [f ]
-"86
-[; ;tmr_TMR1.c: 86:     T1CONbits.CKPS = 0x03;
+"97
+[; ;tmr_TMR1.c: 97:     T1CONbits.CKPS = 0x03;
 [e = . . _T1CONbits 0 4 -> -> 3 `i `uc ]
-"87
-[; ;tmr_TMR1.c: 87:     T1CONbits.RD16 = 1;
+"98
+[; ;tmr_TMR1.c: 98:     T1CONbits.RD16 = 1;
 [e = . . _T1CONbits 0 1 -> -> 1 `i `uc ]
-"88
-[; ;tmr_TMR1.c: 88:     T1CLKbits.CS = 0x01;
-[e = . . _T1CLKbits 0 0 -> -> 1 `i `uc ]
-"89
-[; ;tmr_TMR1.c: 89:     TMR1 = 0x00;
-[e = _TMR1 -> -> 0 `i `us ]
-"93
-[; ;tmr_TMR1.c: 93:     PIE4bits.TMR1IE = 1;
-[e = . . _PIE4bits 0 0 -> -> 1 `i `uc ]
-"94
-[; ;tmr_TMR1.c: 94:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"95
-[; ;tmr_TMR1.c: 95:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"101
-[; ;tmr_TMR1.c: 101: }
+"100
+[; ;tmr_TMR1.c: 100:     T1CLKbits.CS = 0x00;
+[e = . . _T1CLKbits 0 0 -> -> 0 `i `uc ]
+"103
+[; ;tmr_TMR1.c: 103:     T1CONbits.nSYNC = 1;
+[e = . . _T1CONbits 0 2 -> -> 1 `i `uc ]
+"104
+[; ;tmr_TMR1.c: 104:     T1CKIPPS = 0x05;
+[e = _T1CKIPPS -> -> 5 `i `uc ]
+"117
+[; ;tmr_TMR1.c: 117: }
 [e :UE 784 ]
 }
-"103
-[; ;tmr_TMR1.c: 103: void tmr_TMR1En(void){
+"119
+[; ;tmr_TMR1.c: 119: void tmr_TMR1En(void){
 [v _tmr_TMR1En `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR1En ]
 [f ]
-"105
-[; ;tmr_TMR1.c: 105:     T1CONbits.ON = 1;
+"121
+[; ;tmr_TMR1.c: 121:     T1CONbits.ON = 1;
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"107
-[; ;tmr_TMR1.c: 107: }
+"123
+[; ;tmr_TMR1.c: 123: }
 [e :UE 785 ]
 }
-"109
-[; ;tmr_TMR1.c: 109: void tmr_TMR1Dis(void){
+"125
+[; ;tmr_TMR1.c: 125: void tmr_TMR1Dis(void){
 [v _tmr_TMR1Dis `(v ~T0 @X0 1 ef ]
 {
 [e :U _tmr_TMR1Dis ]
 [f ]
-"111
-[; ;tmr_TMR1.c: 111:     T1CONbits.ON = 0;
+"127
+[; ;tmr_TMR1.c: 127:     T1CONbits.ON = 0;
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"112
-[; ;tmr_TMR1.c: 112: }
+"128
+[; ;tmr_TMR1.c: 128: }
 [e :UE 786 ]
 }

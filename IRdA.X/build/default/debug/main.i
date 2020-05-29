@@ -10194,7 +10194,7 @@ int main(int argc, char** argv) {
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
     pwrmgmt_ConfigUnusedPins();
-    pwrmgmt_DisablePeripherals();
+
 
 
 
@@ -10205,8 +10205,8 @@ int main(int argc, char** argv) {
     tmr_TMR0reset();
 
     tmr_TMR1Init();
-
-
+    ccp_CCP1Init();
+    ccp_CCP1En();
     tmr_TMR1En();
     while(1);
 

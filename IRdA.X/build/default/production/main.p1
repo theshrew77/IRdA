@@ -50,7 +50,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20 ./tmr_TMR1.h
 [; ;./tmr_TMR1.h: 20: void tmr_TMR1Init(void);
 [v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
-"24
+"13 ./ccp_CCP1.h
+[; ;./ccp_CCP1.h: 13: void ccp_CCP1Init(void);
+[v _ccp_CCP1Init `(v ~T0 @X0 0 ef ]
+"14
+[; ;./ccp_CCP1.h: 14: void ccp_CCP1En(void);
+[v _ccp_CCP1En `(v ~T0 @X0 0 ef ]
+"24 ./tmr_TMR1.h
 [; ;./tmr_TMR1.h: 24: void tmr_TMR1En(void);
 [v _tmr_TMR1En `(v ~T0 @X0 0 ef ]
 "30
@@ -879,9 +885,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "29 ./main.h
-[p x FEXTOSC = HS ]
+[p x FEXTOSC = LP ]
 "30
-[p x RSTOSC = HFINT1 ]
+[p x RSTOSC = EXT1X ]
 "31
 [p x CLKOUTEN = OFF ]
 "32
@@ -973,58 +979,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 "61
 [; ;main.c: 61:     tmr_TMR1Init();
 [e ( _tmr_TMR1Init ..  ]
+"62
+[; ;main.c: 62:     ccp_CCP1Init();
+[e ( _ccp_CCP1Init ..  ]
+"63
+[; ;main.c: 63:     ccp_CCP1En();
+[e ( _ccp_CCP1En ..  ]
 "64
 [; ;main.c: 64:     tmr_TMR1En();
 [e ( _tmr_TMR1En ..  ]
-"65
-[; ;main.c: 65:     while(1);
+"66
+[; ;main.c: 66:     while(1);
 [e :U 793 ]
 [e :U 792 ]
 [e $U 793  ]
 [e :U 794 ]
-"69
-[; ;main.c: 69:     while(1){
+"70
+[; ;main.c: 70:     while(1){
 [e :U 796 ]
 {
-"70
-[; ;main.c: 70:         __asm("sleep");
-[; <" sleep ;# ">
 "71
-[; ;main.c: 71:         while(!accquisitionComplete());
+[; ;main.c: 71:         __asm("sleep");
+[; <" sleep ;# ">
+"72
+[; ;main.c: 72:         while(!accquisitionComplete());
 [e $U 798  ]
 [e :U 799 ]
 [e :U 798 ]
 [e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 799  ]
 [e :U 800 ]
-"72
-[; ;main.c: 72:         INTCONbits.GIE = 0;
+"73
+[; ;main.c: 73:         INTCONbits.GIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"75
-[; ;main.c: 75:         NECcommand = nec_ProcessPacket();
-[e = _NECcommand ( _nec_ProcessPacket ..  ]
 "76
-[; ;main.c: 76:         nec_ExecuteCommand(NECcommand);
-[e ( _nec_ExecuteCommand (1 _NECcommand ]
+[; ;main.c: 76:         NECcommand = nec_ProcessPacket();
+[e = _NECcommand ( _nec_ProcessPacket ..  ]
 "77
-[; ;main.c: 77:         tmr_TMR0reset();
-[e ( _tmr_TMR0reset ..  ]
+[; ;main.c: 77:         nec_ExecuteCommand(NECcommand);
+[e ( _nec_ExecuteCommand (1 _NECcommand ]
 "78
-[; ;main.c: 78:         _delay((unsigned long)((5)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+[; ;main.c: 78:         tmr_TMR0reset();
+[e ( _tmr_TMR0reset ..  ]
 "79
-[; ;main.c: 79:         INTCONbits.GIE = 1;
+[; ;main.c: 79:         _delay((unsigned long)((5)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"80
+[; ;main.c: 80:         INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"82
-[; ;main.c: 82:     }
+"83
+[; ;main.c: 83:     }
 }
 [e :U 795 ]
 [e $U 796  ]
 [e :U 797 ]
-"84
-[; ;main.c: 84:     return (0);
+"85
+[; ;main.c: 85:     return (0);
 [e ) -> 0 `i ]
 [e $UE 791  ]
-"85
-[; ;main.c: 85: }
+"86
+[; ;main.c: 86: }
 [e :UE 791 ]
 }

@@ -10040,8 +10040,8 @@ void debug_flush(void);
 
 # 1 "./main.h" 1
 # 29 "./main.h"
-#pragma config FEXTOSC = HS
-#pragma config RSTOSC = HFINT1
+#pragma config FEXTOSC = LP
+#pragma config RSTOSC = EXT1X
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = OFF
@@ -10205,9 +10205,10 @@ int main(int argc, char** argv) {
     tmr_TMR0reset();
 
     tmr_TMR1Init();
-
-
+    ccp_CCP1Init();
+    ccp_CCP1En();
     tmr_TMR1En();
+
     while(1);
 
 

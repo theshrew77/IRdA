@@ -900,9 +900,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "29 ./main.h
-[p x FEXTOSC = HS ]
+[p x FEXTOSC = LP ]
 "30
-[p x RSTOSC = HFINT1 ]
+[p x RSTOSC = EXT1X ]
 "31
 [p x CLKOUTEN = OFF ]
 "32

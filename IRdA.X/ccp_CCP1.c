@@ -11,12 +11,16 @@ uint16_t delay = 0;
 void ccp_CCP1Init(void){
 
     //Set to compare mode, toggle output on match (not used) clear TMR1
-    CCP1CONbits.MODE = 0x01;
+    CCP1CON = 0b00001011;
   
-    
+    /*
     //Load 31250 = 0x7A12 into CCPR
     CCPR1H = 0x7A;
     CCPR1L = 0x12;
+    */
+       //Load 4096 = 0x1000 into CCPR
+    CCPR1H = 0x10;
+    CCPR1L = 0x00;
     
     //Enable CCP1 match interrupt
     P_IE = 1;
@@ -35,7 +39,7 @@ void ccp_CCP1Dis(void){
 }
 
 void ccp_CCP1CompareMatch(void){
-    //LEDLAT ^=1;
+    LEDLAT ^= 1;
     /*
     seconds++;
     if (seconds == delay){

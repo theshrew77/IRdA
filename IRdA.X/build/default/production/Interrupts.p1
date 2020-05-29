@@ -107,17 +107,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7785
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7785: extern volatile PIR4bits_t PIR4bits __attribute__((address(0x710)));
 [v _PIR4bits `VS379 ~T0 @X0 0 e@1808 ]
-"547
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 547:     struct {
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"546
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 546: typedef union {
-[u S36 `S37 1 ]
-[n S36 . . ]
-"556
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 556: extern volatile LATAbits_t LATAbits __attribute__((address(0x018)));
-[v _LATAbits `VS36 ~T0 @X0 0 e@24 ]
 "7851
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7851:     struct {
 [s S384 :1 `uc 1 :1 `uc 1 ]
@@ -129,6 +118,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7856
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7856: extern volatile PIR6bits_t PIR6bits __attribute__((address(0x712)));
 [v _PIR6bits `VS383 ~T0 @X0 0 e@1810 ]
+"2710
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2710: extern volatile unsigned short TMR1 __attribute__((address(0x20C)));
+[v _TMR1 `Vus ~T0 @X0 0 e@524 ]
 "16 ./ccp_CCP1.h
 [; ;./ccp_CCP1.h: 16: void ccp_CCP1CompareMatch(void);
 [v _ccp_CCP1CompareMatch `(v ~T0 @X0 0 ef ]
@@ -937,9 +929,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
 "29 ./main.h
-[p x FEXTOSC = HS ]
+[p x FEXTOSC = LP ]
 "30
-[p x RSTOSC = HFINT1 ]
+[p x RSTOSC = EXT1X ]
 "31
 [p x CLKOUTEN = OFF ]
 "32
@@ -1049,9 +1041,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42
 [; ;Interrupts.c: 42:         PIR4bits.TMR1IF = 0;
 [e = . . _PIR4bits 0 0 -> -> 0 `i `uc ]
-"43
-[; ;Interrupts.c: 43:         LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
 "46
 [; ;Interrupts.c: 46:     }
 }
@@ -1064,30 +1053,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Interrupts.c: 50:         PIR6bits.CCP1IF = 0;
 [e = . . _PIR6bits 0 0 -> -> 0 `i `uc ]
 "51
-[; ;Interrupts.c: 51:         ccp_CCP1CompareMatch();
-[e ( _ccp_CCP1CompareMatch ..  ]
+[; ;Interrupts.c: 51:         TMR1 = 0;
+[e = _TMR1 -> -> 0 `i `us ]
 "52
-[; ;Interrupts.c: 52:     }
+[; ;Interrupts.c: 52:         ccp_CCP1CompareMatch();
+[e ( _ccp_CCP1CompareMatch ..  ]
+"53
+[; ;Interrupts.c: 53:     }
 }
 [e :U 795 ]
-"56
-[; ;Interrupts.c: 56:     if (PIR0bits.TMR0IF){
+"57
+[; ;Interrupts.c: 57:     if (PIR0bits.TMR0IF){
 [e $ ! != -> . . _PIR0bits 0 3 `i -> 0 `i 796  ]
 {
-"57
-[; ;Interrupts.c: 57:         PIR0bits.TMR0IF = 0;
-[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
 "58
-[; ;Interrupts.c: 58:         tmr_TMR0IncRollovers();
+[; ;Interrupts.c: 58:         PIR0bits.TMR0IF = 0;
+[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
+"59
+[; ;Interrupts.c: 59:         tmr_TMR0IncRollovers();
 [e ( _tmr_TMR0IncRollovers ..  ]
-"61
-[; ;Interrupts.c: 61:     }
+"62
+[; ;Interrupts.c: 62:     }
 }
 [e :U 796 ]
-"85
-[; ;Interrupts.c: 85:     return;
-[e $UE 791  ]
 "86
-[; ;Interrupts.c: 86: }
+[; ;Interrupts.c: 86:     return;
+[e $UE 791  ]
+"87
+[; ;Interrupts.c: 87: }
 [e :UE 791 ]
 }

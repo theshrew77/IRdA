@@ -907,9 +907,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8
 [; ;PowerManagement.c: 8:         PMD0bits.CLKRMD = 1;
 [e = . . _PMD0bits 0 1 -> -> 1 `i `uc ]
-"9
-[; ;PowerManagement.c: 9:         PMD0bits.SYSCMD = 1;
-[e = . . _PMD0bits 0 5 -> -> 1 `i `uc ]
 "11
 [; ;PowerManagement.c: 11:         PMD1bits.NCOMD = 1;
 [e = . . _PMD1bits 1 1 -> -> 1 `i `uc ]
