@@ -7,13 +7,15 @@
 
 #ifndef TMR_TMR1_H
 #define	TMR_TMR1_H
-#define TMR1IFG     PIR4bits.TMR1IF
+#define TMR1IFG     PIR1bits.TMR1IF
 #define TMR1MAX     0xFFFF
-#define TMR1PRE     T1CONbits.CKPS
-#define TMR116BEN   T1CONbits.RD16
-#define TMR1CS      T1CLKbits.CS
-#define TMR1_ON     T1CONbits.ON
-#define TMR1_IE     PIE4bits.TMR1IE
+#define TMR1_1s     0x7FFF
+#define TMR1PRE     T1CONbits.T1CKPS
+//#define TMR116BEN   T1CONbits.RD16
+#define TMR1CS      T1CONbits.TMR1CS
+#define TMR1_ON     T1CONbits.TMR1ON
+#define TMR1_IE     PIE1bits.TMR1IE
+#define TMR1XTALEN  T1CONbits.T1SOSC
 
 
 
@@ -23,6 +25,7 @@ uint16_t *tmr_TMR1GetRollovers(void);
 void tmr_TMR1IncRollovers(void);
 void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
+void tmr_TMR1Reset(void);
 void tmr_TMR1Toggle(void);
 uint32_t tmr_TMR1GetCount(void);
 void tmr_TMR1reset(void);

@@ -18,7 +18,8 @@ void ccp_CCP1Init(void){
     CCPR1H = 0x7A;
     CCPR1L = 0x12;
     */
-       //Load 4096 = 0x1000 into CCPR
+    
+    //Load 4096 = 0x1000 into CCPR
     CCPR1H = 0x10;
     CCPR1L = 0x00;
     

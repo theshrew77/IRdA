@@ -15,8 +15,8 @@ void osc_Config1MHz(void){
 
 
 void _osc_Config32768Hz(void){
-    while(!OSCSTATbits.EXTOR); //wait for the external oscillator to be ready
+    while(!XTAL_READY); //wait for the external oscillator to be ready
     OSCCON1 = 0b01110000;       //set clock tree to accept external oscillator with 1:1 prescaler
     //OSCCON2 = 0b01110000;
-    while(!OSCCON3bits.ORDY);   //wait for the oscillator to be ready
+    while(!OSC_READY);   //wait for the oscillator to be ready
 }

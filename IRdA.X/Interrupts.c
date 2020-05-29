@@ -9,6 +9,8 @@
 #include "ccp_CCP1.h"
 //#include <stdio.h>
 
+extern uint8_t IR_received;
+
 void configureIOCInt(void){
     //enable interrupt on change
     IOC_IE = 1;
@@ -29,7 +31,7 @@ __interrupt() void ISR(void){
    
     
     if(IOC_IF){
-        
+        IR_received = 1;
         IOCA_F = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         IOC_IF = 0;
         if (!TMR0_ON) TMR0_ON = 1;
@@ -39,17 +41,17 @@ __interrupt() void ISR(void){
     }
     
     if(TMR1IFG){
-        TMR1IFG = 0;
         //LEDLAT ^= 1;
-        //tmr_TMR1IncRollovers();
-        
+        TMR1IFG = 0;
+        tmr_TMR1Reset();
+
     }
     
     
     if (CCP1_IF){   
         CCP1_IF = 0;
-        TMR1 = 0;
-        ccp_CCP1CompareMatch();
+        //TMR1 = 0;
+        //ccp_CCP1CompareMatch();
     }
     
     

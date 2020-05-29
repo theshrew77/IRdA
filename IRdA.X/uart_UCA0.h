@@ -13,8 +13,9 @@
 #define UCA0TXBUF TXREG
 #define UCA0RXBUF RCREG
 #define IFG2 PIR3
-#define UCA0TXIFG PIR3bits.TX1IF
-#define UCA0RXIFG PIR3bits.RC1IF
+#define UCA0TXIFG   PIR1bits.TXIF
+#define UCA0RXIFG   PIR1bits.RCIF
+#define REC_IE      PIE1bits.RCIE
 
 void    Uart_UCA0Init(void);
 void    Uart_UCA0deInit(void);

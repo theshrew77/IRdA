@@ -1,4 +1,4 @@
-#include <pic16lf15313.h>
+#include <xc.h>
 #include <stdint.h>
 //#include <stdio.h>
 
@@ -89,29 +89,36 @@ void tmr_TMR1Init(void){
     //prescaler 1:8 will reach 1 second every 31250 counts:
     //3875*1/(31000/(8)) = 1
     
-    //with 32.768KHz external crystal, clock source set to TICKIPPS
+    //with 32.768KHz external crystal, clock source set to OSCI
     //prescaler 1:8 will reach 1 second every 4096 counts:
     //4096*1/(32768/8)= 1
     
+     //with 32.768KHz external crystal, clock source set to OSCI
+    //prescaler 1:1 will reach 1 second every 32768 counts:
+    //32768*1/(32768/1)= 1
+    //set TMR1 = 32767
     
-    TMR1PRE = 0x03;         //1:8 prescaler
-    TMR116BEN = 1;          //enable reading timer register in 1 16 bit operation
-    //TMR1CS = 0x01;        //select Fosc/4 as clock source
-    TMR1CS = 0x00;          //select external clock source
-    //TMR1CS = 0x04;         //set LFINTOSC as clock source
     
-    T1CONbits.nSYNC = 1;    //set sync bit
-    T1CKIPPS = 0x05;        //get TICKI from RA5
-    //TMR1 = 0x00;
+    TMR1PRE = 0x00;                 //1:1 prescaler
+    TMR1CS = 0x02;                  //select external clock source
+    T1CONbits.T1SYNC = 1;           //put TMR1 in asynchronous mode to enable operation during sleep
+    
+    OSCCON3bits.SOSCPWR = 0x00;     //set SOSC power level = low
+    OSCCON3bits.SOSCBE = 0x00;      //configure secondary oscillator as crystal
+    
+    TMR1XTALEN = 0x01;              //enable SOSC as clock source
+    
+    TMR1IFG = 0;                    //clear TMR1 interrupt flag
+    TMR1H = (TMR1_1s & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
+    TMR1L = TMR1_1s & 0x00FF;
+ 
     
 
     //enable rollover interrupts
-    //TMR1_IE  = 1;
-    //P_IE = 1;
-    //G_IE = 1;
+    TMR1_IE  = 1;
+    P_IE = 1;
+    G_IE = 1;
     
-    //calculate timer 1 max microseconds
-    //TMR1Max = TMR1MAX / _XTAL_FREQ
 
     
 }
@@ -125,6 +132,13 @@ void tmr_TMR1En(void){
 void tmr_TMR1Dis(void){
     //turn timer off
     TMR1_ON = 0;
+}
+
+void tmr_TMR1Reset(void){
+    TMR1_ON = 0;
+    TMR1H = (TMR1_1s & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
+    TMR1L = TMR1_1s & 0x00FF;
+    TMR1_ON = 1;
 }
 
 /*

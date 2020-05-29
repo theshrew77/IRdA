@@ -8,6 +8,9 @@
 #ifndef OSCILLATOR_H
 #define	OSCILLATOR_H
 
+#define XTAL_READY  OSCSTAT1bits.EXTOR
+#define OSC_READY   OSCCON3bits.ORDY
+
 #ifdef	__cplusplus
 extern "C" {
 #endif

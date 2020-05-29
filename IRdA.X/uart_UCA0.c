@@ -47,7 +47,7 @@ void Uart_UCA0Init(void)
 }
 
 void Uart_UCA0_RxIntEn(void){
-    PIE3bits.RC1IE = 1;
+    REC_IE = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
     //BAUD1CONbits.WUE = 1;

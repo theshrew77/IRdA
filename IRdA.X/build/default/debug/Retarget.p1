@@ -1,860 +1,765 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"24 ./uart_UCA0.h
-[; ;./uart_UCA0.h: 24: int8_t Uart_UCA0_putc( int8_t c );
+"25 ./uart_UCA0.h
+[; ;./uart_UCA0.h: 25: int8_t Uart_UCA0_putc( int8_t c );
 [v _Uart_UCA0_putc `(c ~T0 @X0 0 ef1`c ]
-"110 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 110: __asm("INDF0 equ 00h");
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
-"130
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 130: __asm("INDF1 equ 01h");
+"74
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 74: __asm("INDF1 equ 01h");
 [; <" INDF1 equ 01h ;# ">
-"150
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 150: __asm("PCL equ 02h");
+"94
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 94: __asm("PCL equ 02h");
 [; <" PCL equ 02h ;# ">
-"170
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 170: __asm("STATUS equ 03h");
+"114
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 114: __asm("STATUS equ 03h");
 [; <" STATUS equ 03h ;# ">
-"233
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 233: __asm("FSR0L equ 04h");
+"177
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 177: __asm("FSR0L equ 04h");
 [; <" FSR0L equ 04h ;# ">
-"253
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 253: __asm("FSR0H equ 05h");
+"197
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 197: __asm("FSR0H equ 05h");
 [; <" FSR0H equ 05h ;# ">
-"277
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 277: __asm("FSR1L equ 06h");
+"221
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 221: __asm("FSR1L equ 06h");
 [; <" FSR1L equ 06h ;# ">
-"297
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 297: __asm("FSR1H equ 07h");
+"241
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 241: __asm("FSR1H equ 07h");
 [; <" FSR1H equ 07h ;# ">
-"317
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 317: __asm("BSR equ 08h");
+"261
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 261: __asm("BSR equ 08h");
 [; <" BSR equ 08h ;# ">
-"375
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 375: __asm("WREG equ 09h");
+"313
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 313: __asm("WREG equ 09h");
 [; <" WREG equ 09h ;# ">
-"395
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 395: __asm("PCLATH equ 0Ah");
+"333
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 333: __asm("PCLATH equ 0Ah");
 [; <" PCLATH equ 0Ah ;# ">
-"415
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 415: __asm("INTCON equ 0Bh");
+"353
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 353: __asm("INTCON equ 0Bh");
 [; <" INTCON equ 0Bh ;# ">
-"448
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 448: __asm("PORTA equ 0Ch");
+"386
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 386: __asm("PORTA equ 0Ch");
 [; <" PORTA equ 0Ch ;# ">
-"498
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 498: __asm("TRISA equ 012h");
-[; <" TRISA equ 012h ;# ">
-"543
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 543: __asm("LATA equ 018h");
-[; <" LATA equ 018h ;# ">
-"588
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 588: __asm("ADRES equ 09Bh");
+"436
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 436: __asm("PIR0 equ 010h");
+[; <" PIR0 equ 010h ;# ">
+"469
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 469: __asm("PIR1 equ 011h");
+[; <" PIR1 equ 011h ;# ">
+"531
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 531: __asm("PIR2 equ 012h");
+[; <" PIR2 equ 012h ;# ">
+"564
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 564: __asm("PIR3 equ 013h");
+[; <" PIR3 equ 013h ;# ">
+"603
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 603: __asm("PIR4 equ 014h");
+[; <" PIR4 equ 014h ;# ">
+"636
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 636: __asm("TMR0L equ 015h");
+[; <" TMR0L equ 015h ;# ">
+"641
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 641: __asm("TMR0 equ 015h");
+[; <" TMR0 equ 015h ;# ">
+"774
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 774: __asm("TMR0H equ 016h");
+[; <" TMR0H equ 016h ;# ">
+"779
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 779: __asm("PR0 equ 016h");
+[; <" PR0 equ 016h ;# ">
+"1028
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1028: __asm("T0CON0 equ 017h");
+[; <" T0CON0 equ 017h ;# ">
+"1093
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1093: __asm("T0CON1 equ 018h");
+[; <" T0CON1 equ 018h ;# ">
+"1170
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1170: __asm("TMR1 equ 019h");
+[; <" TMR1 equ 019h ;# ">
+"1177
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1177: __asm("TMR1L equ 019h");
+[; <" TMR1L equ 019h ;# ">
+"1197
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1197: __asm("TMR1H equ 01Ah");
+[; <" TMR1H equ 01Ah ;# ">
+"1217
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1217: __asm("T1CON equ 01Bh");
+[; <" T1CON equ 01Bh ;# ">
+"1289
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1289: __asm("T1GCON equ 01Ch");
+[; <" T1GCON equ 01Ch ;# ">
+"1359
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1359: __asm("TMR2 equ 01Dh");
+[; <" TMR2 equ 01Dh ;# ">
+"1379
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1379: __asm("PR2 equ 01Eh");
+[; <" PR2 equ 01Eh ;# ">
+"1399
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1399: __asm("T2CON equ 01Fh");
+[; <" T2CON equ 01Fh ;# ">
+"1470
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1470: __asm("TRISA equ 08Ch");
+[; <" TRISA equ 08Ch ;# ">
+"1515
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1515: __asm("PIE0 equ 090h");
+[; <" PIE0 equ 090h ;# ">
+"1548
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1548: __asm("PIE1 equ 091h");
+[; <" PIE1 equ 091h ;# ">
+"1610
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1610: __asm("PIE2 equ 092h");
+[; <" PIE2 equ 092h ;# ">
+"1643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1643: __asm("PIE3 equ 093h");
+[; <" PIE3 equ 093h ;# ">
+"1682
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1682: __asm("PIE4 equ 094h");
+[; <" PIE4 equ 094h ;# ">
+"1715
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1715: __asm("WDTCON equ 097h");
+[; <" WDTCON equ 097h ;# ">
+"1774
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1774: __asm("ADRES equ 09Bh");
 [; <" ADRES equ 09Bh ;# ">
-"595
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 595: __asm("ADRESL equ 09Bh");
+"1781
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1781: __asm("ADRESL equ 09Bh");
 [; <" ADRESL equ 09Bh ;# ">
-"665
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 665: __asm("ADRESH equ 09Ch");
+"1801
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1801: __asm("ADRESH equ 09Ch");
 [; <" ADRESH equ 09Ch ;# ">
-"735
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 735: __asm("ADCON0 equ 09Dh");
+"1821
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1821: __asm("ADCON0 equ 09Dh");
 [; <" ADCON0 equ 09Dh ;# ">
-"806
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 806: __asm("ADCON1 equ 09Eh");
+"1907
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1907: __asm("ADCON1 equ 09Eh");
 [; <" ADCON1 equ 09Eh ;# ">
-"872
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 872: __asm("ADACT equ 09Fh");
-[; <" ADACT equ 09Fh ;# ">
-"924
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 924: __asm("RC1REG equ 0119h");
-[; <" RC1REG equ 0119h ;# ">
-"929
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 929: __asm("RCREG equ 0119h");
-[; <" RCREG equ 0119h ;# ">
-"933
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 933: __asm("RCREG1 equ 0119h");
-[; <" RCREG1 equ 0119h ;# ">
-"978
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 978: __asm("TX1REG equ 011Ah");
-[; <" TX1REG equ 011Ah ;# ">
-"983
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 983: __asm("TXREG1 equ 011Ah");
-[; <" TXREG1 equ 011Ah ;# ">
-"987
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 987: __asm("TXREG equ 011Ah");
-[; <" TXREG equ 011Ah ;# ">
-"1032
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1032: __asm("SP1BRG equ 011Bh");
-[; <" SP1BRG equ 011Bh ;# ">
-"1039
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1039: __asm("SP1BRGL equ 011Bh");
-[; <" SP1BRGL equ 011Bh ;# ">
-"1044
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1044: __asm("SPBRG equ 011Bh");
-[; <" SPBRG equ 011Bh ;# ">
-"1048
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1048: __asm("SPBRG1 equ 011Bh");
-[; <" SPBRG1 equ 011Bh ;# ">
-"1052
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1052: __asm("SPBRGL equ 011Bh");
-[; <" SPBRGL equ 011Bh ;# ">
-"1109
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1109: __asm("SP1BRGH equ 011Ch");
-[; <" SP1BRGH equ 011Ch ;# ">
-"1114
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1114: __asm("SPBRGH equ 011Ch");
-[; <" SPBRGH equ 011Ch ;# ">
-"1118
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1118: __asm("SPBRGH1 equ 011Ch");
-[; <" SPBRGH1 equ 011Ch ;# ">
-"1163
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1163: __asm("RC1STA equ 011Dh");
-[; <" RC1STA equ 011Dh ;# ">
-"1168
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1168: __asm("RCSTA1 equ 011Dh");
-[; <" RCSTA1 equ 011Dh ;# ">
-"1172
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1172: __asm("RCSTA equ 011Dh");
-[; <" RCSTA equ 011Dh ;# ">
-"1343
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1343: __asm("TX1STA equ 011Eh");
-[; <" TX1STA equ 011Eh ;# ">
-"1348
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1348: __asm("TXSTA1 equ 011Eh");
-[; <" TXSTA1 equ 011Eh ;# ">
-"1352
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1352: __asm("TXSTA equ 011Eh");
-[; <" TXSTA equ 011Eh ;# ">
-"1523
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1523: __asm("BAUD1CON equ 011Fh");
-[; <" BAUD1CON equ 011Fh ;# ">
-"1528
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1528: __asm("BAUDCON1 equ 011Fh");
-[; <" BAUDCON1 equ 011Fh ;# ">
-"1532
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1532: __asm("BAUDCTL1 equ 011Fh");
-[; <" BAUDCTL1 equ 011Fh ;# ">
-"1536
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1536: __asm("BAUDCON equ 011Fh");
-[; <" BAUDCON equ 011Fh ;# ">
-"1540
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1540: __asm("BAUDCTL equ 011Fh");
-[; <" BAUDCTL equ 011Fh ;# ">
-"1769
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1769: __asm("SSP1BUF equ 018Ch");
-[; <" SSP1BUF equ 018Ch ;# ">
-"1789
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1789: __asm("SSP1ADD equ 018Dh");
-[; <" SSP1ADD equ 018Dh ;# ">
-"1909
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1909: __asm("SSP1MSK equ 018Eh");
-[; <" SSP1MSK equ 018Eh ;# ">
 "1979
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 1979: __asm("SSP1STAT equ 018Fh");
-[; <" SSP1STAT equ 018Fh ;# ">
-"2343
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2343: __asm("SSP1CON1 equ 0190h");
-[; <" SSP1CON1 equ 0190h ;# ">
-"2463
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2463: __asm("SSP1CON2 equ 0191h");
-[; <" SSP1CON2 equ 0191h ;# ">
-"2650
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2650: __asm("SSP1CON3 equ 0192h");
-[; <" SSP1CON3 equ 0192h ;# ">
-"2712
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2712: __asm("TMR1 equ 020Ch");
-[; <" TMR1 equ 020Ch ;# ">
-"2719
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2719: __asm("TMR1L equ 020Ch");
-[; <" TMR1L equ 020Ch ;# ">
-"2889
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 2889: __asm("TMR1H equ 020Dh");
-[; <" TMR1H equ 020Dh ;# ">
-"3009
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3009: __asm("T1CON equ 020Eh");
-[; <" T1CON equ 020Eh ;# ">
-"3105
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3105: __asm("T1GCON equ 020Fh");
-[; <" T1GCON equ 020Fh ;# ">
-"3110
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3110: __asm("PR1 equ 020Fh");
-[; <" PR1 equ 020Fh ;# ">
-"3301
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3301: __asm("T1GATE equ 0210h");
-[; <" T1GATE equ 0210h ;# ">
-"3306
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3306: __asm("TMR1GATE equ 0210h");
-[; <" TMR1GATE equ 0210h ;# ">
-"3467
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3467: __asm("T1CLK equ 0211h");
-[; <" T1CLK equ 0211h ;# ">
-"3472
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3472: __asm("TMR1CLK equ 0211h");
-[; <" TMR1CLK equ 0211h ;# ">
-"3609
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3609: __asm("T2TMR equ 028Ch");
-[; <" T2TMR equ 028Ch ;# ">
-"3614
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3614: __asm("TMR2 equ 028Ch");
-[; <" TMR2 equ 028Ch ;# ">
-"3663
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3663: __asm("T2PR equ 028Dh");
-[; <" T2PR equ 028Dh ;# ">
-"3668
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3668: __asm("PR2 equ 028Dh");
-[; <" PR2 equ 028Dh ;# ">
-"3717
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3717: __asm("T2CON equ 028Eh");
-[; <" T2CON equ 028Eh ;# ">
-"3863
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3863: __asm("T2HLT equ 028Fh");
-[; <" T2HLT equ 028Fh ;# ">
-"3991
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 3991: __asm("T2CLKCON equ 0290h");
-[; <" T2CLKCON equ 0290h ;# ">
-"4071
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4071: __asm("T2RST equ 0291h");
-[; <" T2RST equ 0291h ;# ">
-"4151
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4151: __asm("CCPR1 equ 030Ch");
-[; <" CCPR1 equ 030Ch ;# ">
-"4158
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4158: __asm("CCPR1L equ 030Ch");
-[; <" CCPR1L equ 030Ch ;# ">
-"4178
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4178: __asm("CCPR1H equ 030Dh");
-[; <" CCPR1H equ 030Dh ;# ">
-"4198
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4198: __asm("CCP1CON equ 030Eh");
-[; <" CCP1CON equ 030Eh ;# ">
-"4325
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4325: __asm("CCP1CAP equ 030Fh");
-[; <" CCP1CAP equ 030Fh ;# ">
-"4393
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4393: __asm("CCPR2 equ 0310h");
-[; <" CCPR2 equ 0310h ;# ">
-"4400
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4400: __asm("CCPR2L equ 0310h");
-[; <" CCPR2L equ 0310h ;# ">
-"4420
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4420: __asm("CCPR2H equ 0311h");
-[; <" CCPR2H equ 0311h ;# ">
-"4440
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4440: __asm("CCP2CON equ 0312h");
-[; <" CCP2CON equ 0312h ;# ">
-"4567
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4567: __asm("CCP2CAP equ 0313h");
-[; <" CCP2CAP equ 0313h ;# ">
-"4635
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4635: __asm("PWM3DC equ 0314h");
-[; <" PWM3DC equ 0314h ;# ">
-"4642
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4642: __asm("PWM3DCL equ 0314h");
-[; <" PWM3DCL equ 0314h ;# ">
-"4708
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4708: __asm("PWM3DCH equ 0315h");
-[; <" PWM3DCH equ 0315h ;# ">
-"4878
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4878: __asm("PWM3CON equ 0316h");
-[; <" PWM3CON equ 0316h ;# ">
-"4934
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4934: __asm("PWM4DC equ 0318h");
-[; <" PWM4DC equ 0318h ;# ">
-"4941
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 4941: __asm("PWM4DCL equ 0318h");
-[; <" PWM4DCL equ 0318h ;# ">
-"5007
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5007: __asm("PWM4DCH equ 0319h");
-[; <" PWM4DCH equ 0319h ;# ">
-"5177
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5177: __asm("PWM4CON equ 031Ah");
-[; <" PWM4CON equ 031Ah ;# ">
-"5233
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5233: __asm("PWM5DC equ 031Ch");
-[; <" PWM5DC equ 031Ch ;# ">
-"5240
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5240: __asm("PWM5DCL equ 031Ch");
-[; <" PWM5DCL equ 031Ch ;# ">
-"5306
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5306: __asm("PWM5DCH equ 031Dh");
-[; <" PWM5DCH equ 031Dh ;# ">
-"5476
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5476: __asm("PWM5CON equ 031Eh");
-[; <" PWM5CON equ 031Eh ;# ">
-"5532
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5532: __asm("PWM6DC equ 038Ch");
-[; <" PWM6DC equ 038Ch ;# ">
-"5539
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5539: __asm("PWM6DCL equ 038Ch");
-[; <" PWM6DCL equ 038Ch ;# ">
-"5605
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5605: __asm("PWM6DCH equ 038Dh");
-[; <" PWM6DCH equ 038Dh ;# ">
-"5775
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5775: __asm("PWM6CON equ 038Eh");
-[; <" PWM6CON equ 038Eh ;# ">
-"5833
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5833: __asm("NCO1ACC equ 058Ch");
-[; <" NCO1ACC equ 058Ch ;# ">
-"5840
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5840: __asm("NCO1ACCL equ 058Ch");
-[; <" NCO1ACCL equ 058Ch ;# ">
-"5910
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5910: __asm("NCO1ACCH equ 058Dh");
-[; <" NCO1ACCH equ 058Dh ;# ">
-"5980
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 5980: __asm("NCO1ACCU equ 058Eh");
-[; <" NCO1ACCU equ 058Eh ;# ">
-"6028
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6028: __asm("NCO1INC equ 058Fh");
-[; <" NCO1INC equ 058Fh ;# ">
-"6035
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6035: __asm("NCO1INCL equ 058Fh");
-[; <" NCO1INCL equ 058Fh ;# ">
-"6105
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6105: __asm("NCO1INCH equ 0590h");
-[; <" NCO1INCH equ 0590h ;# ">
-"6175
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6175: __asm("NCO1INCU equ 0591h");
-[; <" NCO1INCU equ 0591h ;# ">
-"6221
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6221: __asm("NCO1CON equ 0592h");
-[; <" NCO1CON equ 0592h ;# ">
-"6261
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6261: __asm("NCO1CLK equ 0593h");
-[; <" NCO1CLK equ 0593h ;# ">
-"6333
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6333: __asm("TMR0L equ 059Ch");
-[; <" TMR0L equ 059Ch ;# ">
-"6338
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6338: __asm("TMR0 equ 059Ch");
-[; <" TMR0 equ 059Ch ;# ">
-"6471
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6471: __asm("TMR0H equ 059Dh");
-[; <" TMR0H equ 059Dh ;# ">
-"6476
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6476: __asm("PR0 equ 059Dh");
-[; <" PR0 equ 059Dh ;# ">
-"6725
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6725: __asm("T0CON0 equ 059Eh");
-[; <" T0CON0 equ 059Eh ;# ">
-"6790
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6790: __asm("T0CON1 equ 059Fh");
-[; <" T0CON1 equ 059Fh ;# ">
-"6901
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6901: __asm("CWG1CLKCON equ 060Ch");
-[; <" CWG1CLKCON equ 060Ch ;# ">
-"6929
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6929: __asm("CWG1DAT equ 060Dh");
-[; <" CWG1DAT equ 060Dh ;# ">
-"6975
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 6975: __asm("CWG1DBR equ 060Eh");
-[; <" CWG1DBR equ 060Eh ;# ">
-"7079
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7079: __asm("CWG1DBF equ 060Fh");
-[; <" CWG1DBF equ 060Fh ;# ">
-"7183
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7183: __asm("CWG1CON0 equ 0610h");
-[; <" CWG1CON0 equ 0610h ;# ">
-"7284
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7284: __asm("CWG1CON1 equ 0611h");
-[; <" CWG1CON1 equ 0611h ;# ">
-"7362
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7362: __asm("CWG1AS0 equ 0612h");
-[; <" CWG1AS0 equ 0612h ;# ">
-"7482
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7482: __asm("CWG1AS1 equ 0613h");
-[; <" CWG1AS1 equ 0613h ;# ">
-"7526
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7526: __asm("CWG1STR equ 0614h");
-[; <" CWG1STR equ 0614h ;# ">
-"7638
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7638: __asm("PIR0 equ 070Ch");
-[; <" PIR0 equ 070Ch ;# ">
-"7671
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7671: __asm("PIR1 equ 070Dh");
-[; <" PIR1 equ 070Dh ;# ">
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1979: __asm("ADACT equ 09Fh");
+[; <" ADACT equ 09Fh ;# ">
+"2025
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2025: __asm("LATA equ 010Ch");
+[; <" LATA equ 010Ch ;# ">
+"2070
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2070: __asm("CM1CON0 equ 0111h");
+[; <" CM1CON0 equ 0111h ;# ">
+"2122
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2122: __asm("CM1CON1 equ 0112h");
+[; <" CM1CON1 equ 0112h ;# ">
+"2198
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2198: __asm("CMOUT equ 0115h");
+[; <" CMOUT equ 0115h ;# ">
+"2218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2218: __asm("BORCON equ 0116h");
+[; <" BORCON equ 0116h ;# ">
+"2245
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2245: __asm("FVRCON equ 0117h");
+[; <" FVRCON equ 0117h ;# ">
+"2321
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2321: __asm("DACCON0 equ 0118h");
+[; <" DACCON0 equ 0118h ;# ">
+"2377
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2377: __asm("DACCON1 equ 0119h");
+[; <" DACCON1 equ 0119h ;# ">
+"2429
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2429: __asm("ANSELA equ 018Ch");
+[; <" ANSELA equ 018Ch ;# ">
+"2474
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2474: __asm("RC1REG equ 0199h");
+[; <" RC1REG equ 0199h ;# ">
+"2479
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2479: __asm("RCREG equ 0199h");
+[; <" RCREG equ 0199h ;# ">
+"2483
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2483: __asm("RCREG1 equ 0199h");
+[; <" RCREG1 equ 0199h ;# ">
+"2528
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2528: __asm("TX1REG equ 019Ah");
+[; <" TX1REG equ 019Ah ;# ">
+"2533
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2533: __asm("TXREG1 equ 019Ah");
+[; <" TXREG1 equ 019Ah ;# ">
+"2537
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2537: __asm("TXREG equ 019Ah");
+[; <" TXREG equ 019Ah ;# ">
+"2582
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2582: __asm("SP1BRG equ 019Bh");
+[; <" SP1BRG equ 019Bh ;# ">
+"2589
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2589: __asm("SP1BRGL equ 019Bh");
+[; <" SP1BRGL equ 019Bh ;# ">
+"2594
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2594: __asm("SPBRG equ 019Bh");
+[; <" SPBRG equ 019Bh ;# ">
+"2598
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2598: __asm("SPBRG1 equ 019Bh");
+[; <" SPBRG1 equ 019Bh ;# ">
+"2602
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2602: __asm("SPBRGL equ 019Bh");
+[; <" SPBRGL equ 019Bh ;# ">
+"2659
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2659: __asm("SP1BRGH equ 019Ch");
+[; <" SP1BRGH equ 019Ch ;# ">
+"2664
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2664: __asm("SPBRGH equ 019Ch");
+[; <" SPBRGH equ 019Ch ;# ">
+"2668
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2668: __asm("SPBRGH1 equ 019Ch");
+[; <" SPBRGH1 equ 019Ch ;# ">
+"2713
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2713: __asm("RC1STA equ 019Dh");
+[; <" RC1STA equ 019Dh ;# ">
+"2718
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2718: __asm("RCSTA1 equ 019Dh");
+[; <" RCSTA1 equ 019Dh ;# ">
+"2722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2722: __asm("RCSTA equ 019Dh");
+[; <" RCSTA equ 019Dh ;# ">
+"2893
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2893: __asm("TX1STA equ 019Eh");
+[; <" TX1STA equ 019Eh ;# ">
+"2898
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2898: __asm("TXSTA1 equ 019Eh");
+[; <" TXSTA1 equ 019Eh ;# ">
+"2902
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2902: __asm("TXSTA equ 019Eh");
+[; <" TXSTA equ 019Eh ;# ">
+"3073
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3073: __asm("BAUD1CON equ 019Fh");
+[; <" BAUD1CON equ 019Fh ;# ">
+"3078
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3078: __asm("BAUDCON1 equ 019Fh");
+[; <" BAUDCON1 equ 019Fh ;# ">
+"3082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3082: __asm("BAUDCTL1 equ 019Fh");
+[; <" BAUDCTL1 equ 019Fh ;# ">
+"3086
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3086: __asm("BAUDCON equ 019Fh");
+[; <" BAUDCON equ 019Fh ;# ">
+"3090
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3090: __asm("BAUDCTL equ 019Fh");
+[; <" BAUDCTL equ 019Fh ;# ">
+"3319
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3319: __asm("WPUA equ 020Ch");
+[; <" WPUA equ 020Ch ;# ">
+"3369
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3369: __asm("SSP1BUF equ 0211h");
+[; <" SSP1BUF equ 0211h ;# ">
+"3374
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3374: __asm("SSPBUF equ 0211h");
+[; <" SSPBUF equ 0211h ;# ">
+"3623
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3623: __asm("SSP1ADD equ 0212h");
+[; <" SSP1ADD equ 0212h ;# ">
+"3628
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3628: __asm("SSPADD equ 0212h");
+[; <" SSPADD equ 0212h ;# ">
+"3877
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3877: __asm("SSP1MSK equ 0213h");
+[; <" SSP1MSK equ 0213h ;# ">
+"3882
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 3882: __asm("SSPMSK equ 0213h");
+[; <" SSPMSK equ 0213h ;# ">
+"4131
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4131: __asm("SSP1STAT equ 0214h");
+[; <" SSP1STAT equ 0214h ;# ">
+"4136
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4136: __asm("SSPSTAT equ 0214h");
+[; <" SSPSTAT equ 0214h ;# ">
+"4253
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4253: __asm("SSP1CON1 equ 0215h");
+[; <" SSP1CON1 equ 0215h ;# ">
+"4258
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4258: __asm("SSPCON equ 0215h");
+[; <" SSPCON equ 0215h ;# ">
+"4262
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4262: __asm("SSPCON1 equ 0215h");
+[; <" SSPCON1 equ 0215h ;# ">
+"4266
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4266: __asm("SSP1CON equ 0215h");
+[; <" SSP1CON equ 0215h ;# ">
+"4523
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4523: __asm("SSP1CON2 equ 0216h");
+[; <" SSP1CON2 equ 0216h ;# ">
+"4528
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4528: __asm("SSPCON2 equ 0216h");
+[; <" SSPCON2 equ 0216h ;# ">
+"4645
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4645: __asm("SSP1CON3 equ 0217h");
+[; <" SSP1CON3 equ 0217h ;# ">
+"4650
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4650: __asm("SSPCON3 equ 0217h");
+[; <" SSPCON3 equ 0217h ;# ">
+"4767
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4767: __asm("ODCONA equ 028Ch");
+[; <" ODCONA equ 028Ch ;# ">
+"4812
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4812: __asm("CCPR1 equ 0291h");
+[; <" CCPR1 equ 0291h ;# ">
+"4819
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4819: __asm("CCPR1L equ 0291h");
+[; <" CCPR1L equ 0291h ;# ">
+"4839
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4839: __asm("CCPR1H equ 0292h");
+[; <" CCPR1H equ 0292h ;# ">
+"4859
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4859: __asm("CCP1CON equ 0293h");
+[; <" CCP1CON equ 0293h ;# ">
+"4924
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4924: __asm("CCP1CAP equ 0294h");
+[; <" CCP1CAP equ 0294h ;# ">
+"4964
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4964: __asm("CCPR2 equ 0295h");
+[; <" CCPR2 equ 0295h ;# ">
+"4971
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4971: __asm("CCPR2L equ 0295h");
+[; <" CCPR2L equ 0295h ;# ">
+"4991
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4991: __asm("CCPR2H equ 0296h");
+[; <" CCPR2H equ 0296h ;# ">
+"5011
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5011: __asm("CCP2CON equ 0297h");
+[; <" CCP2CON equ 0297h ;# ">
+"5076
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5076: __asm("CCP2CAP equ 0298h");
+[; <" CCP2CAP equ 0298h ;# ">
+"5116
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5116: __asm("SLRCONA equ 030Ch");
+[; <" SLRCONA equ 030Ch ;# ">
+"5161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5161: __asm("INLVLA equ 038Ch");
+[; <" INLVLA equ 038Ch ;# ">
+"5211
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5211: __asm("IOCAP equ 0391h");
+[; <" IOCAP equ 0391h ;# ">
+"5261
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5261: __asm("IOCAN equ 0392h");
+[; <" IOCAN equ 0392h ;# ">
+"5311
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5311: __asm("IOCAF equ 0393h");
+[; <" IOCAF equ 0393h ;# ">
+"5361
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5361: __asm("CLKRCON equ 039Ah");
+[; <" CLKRCON equ 039Ah ;# ">
+"5426
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5426: __asm("MDCON equ 039Ch");
+[; <" MDCON equ 039Ch ;# ">
+"5466
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5466: __asm("MDSRC equ 039Dh");
+[; <" MDSRC equ 039Dh ;# ">
+"5512
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5512: __asm("MDCARH equ 039Eh");
+[; <" MDCARH equ 039Eh ;# ">
+"5571
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5571: __asm("MDCARL equ 039Fh");
+[; <" MDCARL equ 039Fh ;# ">
+"5632
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5632: __asm("NCO1ACC equ 0498h");
+[; <" NCO1ACC equ 0498h ;# ">
+"5639
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5639: __asm("NCO1ACCL equ 0498h");
+[; <" NCO1ACCL equ 0498h ;# ">
+"5659
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5659: __asm("NCO1ACCH equ 0499h");
+[; <" NCO1ACCH equ 0499h ;# ">
+"5679
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5679: __asm("NCO1ACCU equ 049Ah");
+[; <" NCO1ACCU equ 049Ah ;# ">
+"5701
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5701: __asm("NCO1INC equ 049Bh");
+[; <" NCO1INC equ 049Bh ;# ">
+"5708
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5708: __asm("NCO1INCL equ 049Bh");
+[; <" NCO1INCL equ 049Bh ;# ">
+"5728
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5728: __asm("NCO1INCH equ 049Ch");
+[; <" NCO1INCH equ 049Ch ;# ">
+"5748
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5748: __asm("NCO1INCU equ 049Dh");
+[; <" NCO1INCU equ 049Dh ;# ">
+"5768
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5768: __asm("NCO1CON equ 049Eh");
+[; <" NCO1CON equ 049Eh ;# ">
+"5808
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5808: __asm("NCO1CLK equ 049Fh");
+[; <" NCO1CLK equ 049Fh ;# ">
+"5835
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5835: __asm("PWM5DCL equ 0617h");
+[; <" PWM5DCL equ 0617h ;# ">
+"5871
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5871: __asm("PWM5DCH equ 0618h");
+[; <" PWM5DCH equ 0618h ;# ">
+"5941
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5941: __asm("PWM5CON equ 0619h");
+[; <" PWM5CON equ 0619h ;# ">
+"5946
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 5946: __asm("PWM5CON0 equ 0619h");
+[; <" PWM5CON0 equ 0619h ;# ">
+"6007
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6007: __asm("PWM6DCL equ 061Ah");
+[; <" PWM6DCL equ 061Ah ;# ">
+"6043
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6043: __asm("PWM6DCH equ 061Bh");
+[; <" PWM6DCH equ 061Bh ;# ">
+"6113
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6113: __asm("PWM6CON equ 061Ch");
+[; <" PWM6CON equ 061Ch ;# ">
+"6118
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6118: __asm("PWM6CON0 equ 061Ch");
+[; <" PWM6CON0 equ 061Ch ;# ">
+"6179
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6179: __asm("CWG1CLKCON equ 0691h");
+[; <" CWG1CLKCON equ 0691h ;# ">
+"6207
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6207: __asm("CWG1DAT equ 0692h");
+[; <" CWG1DAT equ 0692h ;# ">
+"6253
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6253: __asm("CWG1DBR equ 0693h");
+[; <" CWG1DBR equ 0693h ;# ">
+"6357
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6357: __asm("CWG1DBF equ 0694h");
+[; <" CWG1DBF equ 0694h ;# ">
+"6461
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6461: __asm("CWG1CON0 equ 0695h");
+[; <" CWG1CON0 equ 0695h ;# ">
+"6562
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6562: __asm("CWG1CON1 equ 0696h");
+[; <" CWG1CON1 equ 0696h ;# ">
+"6640
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6640: __asm("CWG1AS0 equ 0697h");
+[; <" CWG1AS0 equ 0697h ;# ">
+"6760
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6760: __asm("CWG1AS1 equ 0698h");
+[; <" CWG1AS1 equ 0698h ;# ">
+"6793
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6793: __asm("CWG1STR equ 0699h");
+[; <" CWG1STR equ 0699h ;# ">
+"6905
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6905: __asm("NVMADR equ 0891h");
+[; <" NVMADR equ 0891h ;# ">
+"6910
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6910: __asm("EEADR equ 0891h");
+[; <" EEADR equ 0891h ;# ">
+"6914
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6914: __asm("PMADR equ 0891h");
+[; <" PMADR equ 0891h ;# ">
+"6921
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6921: __asm("NVMADRL equ 0891h");
+[; <" NVMADRL equ 0891h ;# ">
+"6926
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6926: __asm("EEADRL equ 0891h");
+[; <" EEADRL equ 0891h ;# ">
+"6930
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 6930: __asm("PMADRL equ 0891h");
+[; <" PMADRL equ 0891h ;# ">
+"7323
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7323: __asm("NVMADRH equ 0892h");
+[; <" NVMADRH equ 0892h ;# ">
+"7328
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7328: __asm("EEADRH equ 0892h");
+[; <" EEADRH equ 0892h ;# ">
+"7332
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7332: __asm("PMADRH equ 0892h");
+[; <" PMADRH equ 0892h ;# ">
+"7689
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7689: __asm("NVMDAT equ 0893h");
+[; <" NVMDAT equ 0893h ;# ">
+"7694
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7694: __asm("EEDAT equ 0893h");
+[; <" EEDAT equ 0893h ;# ">
+"7698
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7698: __asm("PMDAT equ 0893h");
+[; <" PMDAT equ 0893h ;# ">
+"7705
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7705: __asm("NVMDATL equ 0893h");
+[; <" NVMDATL equ 0893h ;# ">
 "7710
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7710: __asm("PIR2 equ 070Eh");
-[; <" PIR2 equ 070Eh ;# ">
-"7737
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7737: __asm("PIR3 equ 070Fh");
-[; <" PIR3 equ 070Fh ;# ">
-"7776
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7776: __asm("PIR4 equ 0710h");
-[; <" PIR4 equ 0710h ;# ">
-"7802
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7802: __asm("PIR5 equ 0711h");
-[; <" PIR5 equ 0711h ;# ">
-"7847
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7847: __asm("PIR6 equ 0712h");
-[; <" PIR6 equ 0712h ;# ">
-"7873
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7873: __asm("PIR7 equ 0713h");
-[; <" PIR7 equ 0713h ;# ">
-"7915
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7915: __asm("PIE0 equ 0716h");
-[; <" PIE0 equ 0716h ;# ">
-"7948
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7948: __asm("PIE1 equ 0717h");
-[; <" PIE1 equ 0717h ;# ">
-"7981
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 7981: __asm("PIE2 equ 0718h");
-[; <" PIE2 equ 0718h ;# ">
-"8008
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8008: __asm("PIE3 equ 0719h");
-[; <" PIE3 equ 0719h ;# ">
-"8047
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8047: __asm("PIE4 equ 071Ah");
-[; <" PIE4 equ 071Ah ;# ">
-"8073
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8073: __asm("PIE5 equ 071Bh");
-[; <" PIE5 equ 071Bh ;# ">
-"8118
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8118: __asm("PIE6 equ 071Ch");
-[; <" PIE6 equ 071Ch ;# ">
-"8144
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8144: __asm("PIE7 equ 071Dh");
-[; <" PIE7 equ 071Dh ;# ">
-"8186
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8186: __asm("PMD0 equ 0796h");
-[; <" PMD0 equ 0796h ;# ">
-"8231
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8231: __asm("PMD1 equ 0797h");
-[; <" PMD1 equ 0797h ;# ">
-"8279
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8279: __asm("PMD2 equ 0798h");
-[; <" PMD2 equ 0798h ;# ">
-"8318
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8318: __asm("PMD3 equ 0799h");
-[; <" PMD3 equ 0799h ;# ">
-"8368
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8368: __asm("PMD4 equ 079Ah");
-[; <" PMD4 equ 079Ah ;# ">
-"8402
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8402: __asm("PMD5 equ 079Bh");
-[; <" PMD5 equ 079Bh ;# ">
-"8441
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8441: __asm("WDTCON0 equ 080Ch");
-[; <" WDTCON0 equ 080Ch ;# ">
-"8516
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8516: __asm("WDTCON1 equ 080Dh");
-[; <" WDTCON1 equ 080Dh ;# ">
-"8610
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8610: __asm("WDTPSL equ 080Eh");
-[; <" WDTPSL equ 080Eh ;# ">
-"8738
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8738: __asm("WDTPSH equ 080Fh");
-[; <" WDTPSH equ 080Fh ;# ">
-"8866
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8866: __asm("WDTTMR equ 0810h");
-[; <" WDTTMR equ 0810h ;# ">
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7710: __asm("EEDATL equ 0893h");
+[; <" EEDATL equ 0893h ;# ">
+"7714
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 7714: __asm("PMDATL equ 0893h");
+[; <" PMDATL equ 0893h ;# ">
+"8107
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8107: __asm("NVMDATH equ 0894h");
+[; <" NVMDATH equ 0894h ;# ">
+"8112
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8112: __asm("EEDATH equ 0894h");
+[; <" EEDATH equ 0894h ;# ">
+"8116
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8116: __asm("PMDATH equ 0894h");
+[; <" PMDATH equ 0894h ;# ">
+"8437
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8437: __asm("NVMCON1 equ 0895h");
+[; <" NVMCON1 equ 0895h ;# ">
+"8442
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8442: __asm("EECON1 equ 0895h");
+[; <" EECON1 equ 0895h ;# ">
+"8446
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8446: __asm("PMCON1 equ 0895h");
+[; <" PMCON1 equ 0895h ;# ">
+"8626
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8626: __asm("NVMCON2 equ 0896h");
+[; <" NVMCON2 equ 0896h ;# ">
+"8631
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8631: __asm("EECON2 equ 0896h");
+[; <" EECON2 equ 0896h ;# ">
+"8635
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8635: __asm("PMCON2 equ 0896h");
+[; <" PMCON2 equ 0896h ;# ">
+"8728
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8728: __asm("PCON0 equ 089Bh");
+[; <" PCON0 equ 089Bh ;# ">
+"8785
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8785: __asm("PMD0 equ 0911h");
+[; <" PMD0 equ 0911h ;# ">
+"8830
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8830: __asm("PMD1 equ 0912h");
+[; <" PMD1 equ 0912h ;# ">
+"8869
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8869: __asm("PMD2 equ 0913h");
+[; <" PMD2 equ 0913h ;# ">
+"8903
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8903: __asm("PMD3 equ 0914h");
+[; <" PMD3 equ 0914h ;# ">
 "8948
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8948: __asm("BORCON equ 0811h");
-[; <" BORCON equ 0811h ;# ">
-"8975
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 8975: __asm("PCON0 equ 0813h");
-[; <" PCON0 equ 0813h ;# ">
-"9037
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9037: __asm("PCON1 equ 0814h");
-[; <" PCON1 equ 0814h ;# ">
-"9058
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9058: __asm("NVMADR equ 081Ah");
-[; <" NVMADR equ 081Ah ;# ">
-"9065
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9065: __asm("NVMADRL equ 081Ah");
-[; <" NVMADRL equ 081Ah ;# ">
-"9127
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9127: __asm("NVMADRH equ 081Bh");
-[; <" NVMADRH equ 081Bh ;# ">
-"9183
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9183: __asm("NVMDAT equ 081Ch");
-[; <" NVMDAT equ 081Ch ;# ">
-"9190
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9190: __asm("NVMDATL equ 081Ch");
-[; <" NVMDATL equ 081Ch ;# ">
-"9252
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9252: __asm("NVMDATH equ 081Dh");
-[; <" NVMDATH equ 081Dh ;# ">
-"9302
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9302: __asm("NVMCON1 equ 081Eh");
-[; <" NVMCON1 equ 081Eh ;# ">
-"9358
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9358: __asm("NVMCON2 equ 081Fh");
-[; <" NVMCON2 equ 081Fh ;# ">
-"9378
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9378: __asm("CPUDOZE equ 088Ch");
-[; <" CPUDOZE equ 088Ch ;# ">
-"9443
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9443: __asm("OSCCON1 equ 088Dh");
-[; <" OSCCON1 equ 088Dh ;# ">
-"9513
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9513: __asm("OSCCON2 equ 088Eh");
-[; <" OSCCON2 equ 088Eh ;# ">
-"9583
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9583: __asm("OSCCON3 equ 088Fh");
-[; <" OSCCON3 equ 088Fh ;# ">
-"9617
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9617: __asm("OSCSTAT equ 0890h");
-[; <" OSCSTAT equ 0890h ;# ">
-"9669
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9669: __asm("OSCEN equ 0891h");
-[; <" OSCEN equ 0891h ;# ">
-"9715
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9715: __asm("OSCTUNE equ 0892h");
-[; <" OSCTUNE equ 0892h ;# ">
-"9773
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9773: __asm("OSCFRQ equ 0893h");
-[; <" OSCFRQ equ 0893h ;# ">
-"9813
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9813: __asm("CLKRCON equ 0895h");
-[; <" CLKRCON equ 0895h ;# ">
-"9878
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9878: __asm("CLKRCLK equ 0896h");
-[; <" CLKRCLK equ 0896h ;# ">
-"9924
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 9924: __asm("FVRCON equ 090Ch");
-[; <" FVRCON equ 090Ch ;# ">
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8948: __asm("PMD4 equ 0915h");
+[; <" PMD4 equ 0915h ;# ">
+"8976
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 8976: __asm("PMD5 equ 0916h");
+[; <" PMD5 equ 0916h ;# ">
+"9008
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9008: __asm("CPUDOZE equ 0918h");
+[; <" CPUDOZE equ 0918h ;# ">
+"9073
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9073: __asm("OSCCON1 equ 0919h");
+[; <" OSCCON1 equ 0919h ;# ">
+"9143
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9143: __asm("OSCCON2 equ 091Ah");
+[; <" OSCCON2 equ 091Ah ;# ">
+"9213
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9213: __asm("OSCCON3 equ 091Bh");
+[; <" OSCCON3 equ 091Bh ;# ">
+"9258
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9258: __asm("OSCSTAT1 equ 091Ch");
+[; <" OSCSTAT1 equ 091Ch ;# ">
+"9310
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9310: __asm("OSCEN equ 091Dh");
+[; <" OSCEN equ 091Dh ;# ">
+"9356
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9356: __asm("OSCTUNE equ 091Eh");
+[; <" OSCTUNE equ 091Eh ;# ">
+"9414
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9414: __asm("OSCFRQ equ 091Fh");
+[; <" OSCFRQ equ 091Fh ;# ">
+"9460
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9460: __asm("PPSLOCK equ 0E0Fh");
+[; <" PPSLOCK equ 0E0Fh ;# ">
+"9480
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9480: __asm("INTPPS equ 0E10h");
+[; <" INTPPS equ 0E10h ;# ">
+"9532
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9532: __asm("T0CKIPPS equ 0E11h");
+[; <" T0CKIPPS equ 0E11h ;# ">
+"9584
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9584: __asm("T1CKIPPS equ 0E12h");
+[; <" T1CKIPPS equ 0E12h ;# ">
+"9636
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9636: __asm("T1GPPS equ 0E13h");
+[; <" T1GPPS equ 0E13h ;# ">
+"9688
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9688: __asm("CCP1PPS equ 0E14h");
+[; <" CCP1PPS equ 0E14h ;# ">
+"9740
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9740: __asm("CCP2PPS equ 0E15h");
+[; <" CCP2PPS equ 0E15h ;# ">
+"9792
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9792: __asm("CWG1PPS equ 0E18h");
+[; <" CWG1PPS equ 0E18h ;# ">
+"9844
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9844: __asm("MDCIN1PPS equ 0E1Ah");
+[; <" MDCIN1PPS equ 0E1Ah ;# ">
+"9896
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9896: __asm("MDCIN2PPS equ 0E1Bh");
+[; <" MDCIN2PPS equ 0E1Bh ;# ">
+"9948
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9948: __asm("MDMINPPS equ 0E1Ch");
+[; <" MDMINPPS equ 0E1Ch ;# ">
 "10000
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10000: __asm("DAC1CON0 equ 090Eh");
-[; <" DAC1CON0 equ 090Eh ;# ">
-"10101
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10101: __asm("DAC1CON1 equ 090Fh");
-[; <" DAC1CON1 equ 090Fh ;# ">
-"10153
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10153: __asm("ZCDCON equ 091Fh");
-[; <" ZCDCON equ 091Fh ;# ">
-"10199
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10199: __asm("CMOUT equ 098Fh");
-[; <" CMOUT equ 098Fh ;# ">
-"10204
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10204: __asm("CMSTAT equ 098Fh");
-[; <" CMSTAT equ 098Fh ;# ">
-"10277
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10277: __asm("CM1CON0 equ 0990h");
-[; <" CM1CON0 equ 0990h ;# ">
-"10357
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10357: __asm("CM1CON1 equ 0991h");
-[; <" CM1CON1 equ 0991h ;# ">
-"10397
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10397: __asm("CM1NCH equ 0992h");
-[; <" CM1NCH equ 0992h ;# ">
-"10457
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10457: __asm("CM1PCH equ 0993h");
-[; <" CM1PCH equ 0993h ;# ">
-"10517
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10517: __asm("CLCDATA equ 01E0Fh");
-[; <" CLCDATA equ 01E0Fh ;# ">
-"10555
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10555: __asm("CLC1CON equ 01E10h");
-[; <" CLC1CON equ 01E10h ;# ">
-"10673
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10673: __asm("CLC1POL equ 01E11h");
-[; <" CLC1POL equ 01E11h ;# ">
-"10751
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10751: __asm("CLC1SEL0 equ 01E12h");
-[; <" CLC1SEL0 equ 01E12h ;# ">
-"10855
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10855: __asm("CLC1SEL1 equ 01E13h");
-[; <" CLC1SEL1 equ 01E13h ;# ">
-"10959
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 10959: __asm("CLC1SEL2 equ 01E14h");
-[; <" CLC1SEL2 equ 01E14h ;# ">
-"11063
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11063: __asm("CLC1SEL3 equ 01E15h");
-[; <" CLC1SEL3 equ 01E15h ;# ">
-"11167
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11167: __asm("CLC1GLS0 equ 01E16h");
-[; <" CLC1GLS0 equ 01E16h ;# ">
-"11279
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11279: __asm("CLC1GLS1 equ 01E17h");
-[; <" CLC1GLS1 equ 01E17h ;# ">
-"11391
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11391: __asm("CLC1GLS2 equ 01E18h");
-[; <" CLC1GLS2 equ 01E18h ;# ">
-"11503
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11503: __asm("CLC1GLS3 equ 01E19h");
-[; <" CLC1GLS3 equ 01E19h ;# ">
-"11615
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11615: __asm("CLC2CON equ 01E1Ah");
-[; <" CLC2CON equ 01E1Ah ;# ">
-"11733
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11733: __asm("CLC2POL equ 01E1Bh");
-[; <" CLC2POL equ 01E1Bh ;# ">
-"11811
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11811: __asm("CLC2SEL0 equ 01E1Ch");
-[; <" CLC2SEL0 equ 01E1Ch ;# ">
-"11915
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 11915: __asm("CLC2SEL1 equ 01E1Dh");
-[; <" CLC2SEL1 equ 01E1Dh ;# ">
-"12019
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12019: __asm("CLC2SEL2 equ 01E1Eh");
-[; <" CLC2SEL2 equ 01E1Eh ;# ">
-"12123
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12123: __asm("CLC2SEL3 equ 01E1Fh");
-[; <" CLC2SEL3 equ 01E1Fh ;# ">
-"12227
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12227: __asm("CLC2GLS0 equ 01E20h");
-[; <" CLC2GLS0 equ 01E20h ;# ">
-"12339
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12339: __asm("CLC2GLS1 equ 01E21h");
-[; <" CLC2GLS1 equ 01E21h ;# ">
-"12451
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12451: __asm("CLC2GLS2 equ 01E22h");
-[; <" CLC2GLS2 equ 01E22h ;# ">
-"12563
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12563: __asm("CLC2GLS3 equ 01E23h");
-[; <" CLC2GLS3 equ 01E23h ;# ">
-"12675
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12675: __asm("CLC3CON equ 01E24h");
-[; <" CLC3CON equ 01E24h ;# ">
-"12793
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12793: __asm("CLC3POL equ 01E25h");
-[; <" CLC3POL equ 01E25h ;# ">
-"12871
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12871: __asm("CLC3SEL0 equ 01E26h");
-[; <" CLC3SEL0 equ 01E26h ;# ">
-"12975
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 12975: __asm("CLC3SEL1 equ 01E27h");
-[; <" CLC3SEL1 equ 01E27h ;# ">
-"13079
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13079: __asm("CLC3SEL2 equ 01E28h");
-[; <" CLC3SEL2 equ 01E28h ;# ">
-"13183
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13183: __asm("CLC3SEL3 equ 01E29h");
-[; <" CLC3SEL3 equ 01E29h ;# ">
-"13287
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13287: __asm("CLC3GLS0 equ 01E2Ah");
-[; <" CLC3GLS0 equ 01E2Ah ;# ">
-"13399
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13399: __asm("CLC3GLS1 equ 01E2Bh");
-[; <" CLC3GLS1 equ 01E2Bh ;# ">
-"13511
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13511: __asm("CLC3GLS2 equ 01E2Ch");
-[; <" CLC3GLS2 equ 01E2Ch ;# ">
-"13623
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13623: __asm("CLC3GLS3 equ 01E2Dh");
-[; <" CLC3GLS3 equ 01E2Dh ;# ">
-"13735
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13735: __asm("CLC4CON equ 01E2Eh");
-[; <" CLC4CON equ 01E2Eh ;# ">
-"13853
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13853: __asm("CLC4POL equ 01E2Fh");
-[; <" CLC4POL equ 01E2Fh ;# ">
-"13931
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 13931: __asm("CLC4SEL0 equ 01E30h");
-[; <" CLC4SEL0 equ 01E30h ;# ">
-"14035
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14035: __asm("CLC4SEL1 equ 01E31h");
-[; <" CLC4SEL1 equ 01E31h ;# ">
-"14139
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14139: __asm("CLC4SEL2 equ 01E32h");
-[; <" CLC4SEL2 equ 01E32h ;# ">
-"14243
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14243: __asm("CLC4SEL3 equ 01E33h");
-[; <" CLC4SEL3 equ 01E33h ;# ">
-"14347
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14347: __asm("CLC4GLS0 equ 01E34h");
-[; <" CLC4GLS0 equ 01E34h ;# ">
-"14459
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14459: __asm("CLC4GLS1 equ 01E35h");
-[; <" CLC4GLS1 equ 01E35h ;# ">
-"14571
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14571: __asm("CLC4GLS2 equ 01E36h");
-[; <" CLC4GLS2 equ 01E36h ;# ">
-"14683
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14683: __asm("CLC4GLS3 equ 01E37h");
-[; <" CLC4GLS3 equ 01E37h ;# ">
-"14795
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14795: __asm("PPSLOCK equ 01E8Fh");
-[; <" PPSLOCK equ 01E8Fh ;# ">
-"14815
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14815: __asm("INTPPS equ 01E90h");
-[; <" INTPPS equ 01E90h ;# ">
-"14873
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14873: __asm("T0CKIPPS equ 01E91h");
-[; <" T0CKIPPS equ 01E91h ;# ">
-"14931
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14931: __asm("T1CKIPPS equ 01E92h");
-[; <" T1CKIPPS equ 01E92h ;# ">
-"14989
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 14989: __asm("T1GPPS equ 01E93h");
-[; <" T1GPPS equ 01E93h ;# ">
-"15047
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15047: __asm("T2INPPS equ 01E9Ch");
-[; <" T2INPPS equ 01E9Ch ;# ">
-"15105
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15105: __asm("CCP1PPS equ 01EA1h");
-[; <" CCP1PPS equ 01EA1h ;# ">
-"15163
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15163: __asm("CCP2PPS equ 01EA2h");
-[; <" CCP2PPS equ 01EA2h ;# ">
-"15221
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15221: __asm("CWG1PPS equ 01EB1h");
-[; <" CWG1PPS equ 01EB1h ;# ">
-"15279
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15279: __asm("CLCIN0PPS equ 01EBBh");
-[; <" CLCIN0PPS equ 01EBBh ;# ">
-"15337
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15337: __asm("CLCIN1PPS equ 01EBCh");
-[; <" CLCIN1PPS equ 01EBCh ;# ">
-"15395
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15395: __asm("CLCIN2PPS equ 01EBDh");
-[; <" CLCIN2PPS equ 01EBDh ;# ">
-"15453
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15453: __asm("CLCIN3PPS equ 01EBEh");
-[; <" CLCIN3PPS equ 01EBEh ;# ">
-"15511
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15511: __asm("ADACTPPS equ 01EC3h");
-[; <" ADACTPPS equ 01EC3h ;# ">
-"15569
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15569: __asm("SSP1CLKPPS equ 01EC5h");
-[; <" SSP1CLKPPS equ 01EC5h ;# ">
-"15627
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15627: __asm("SSP1DATPPS equ 01EC6h");
-[; <" SSP1DATPPS equ 01EC6h ;# ">
-"15685
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15685: __asm("SSP1SSPPS equ 01EC7h");
-[; <" SSP1SSPPS equ 01EC7h ;# ">
-"15743
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15743: __asm("RX1DTPPS equ 01ECBh");
-[; <" RX1DTPPS equ 01ECBh ;# ">
-"15801
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15801: __asm("TX1CKPPS equ 01ECCh");
-[; <" TX1CKPPS equ 01ECCh ;# ">
-"15859
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15859: __asm("RA0PPS equ 01F10h");
-[; <" RA0PPS equ 01F10h ;# ">
-"15903
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15903: __asm("RA1PPS equ 01F11h");
-[; <" RA1PPS equ 01F11h ;# ">
-"15947
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15947: __asm("RA2PPS equ 01F12h");
-[; <" RA2PPS equ 01F12h ;# ">
-"15991
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 15991: __asm("RA3PPS equ 01F13h");
-[; <" RA3PPS equ 01F13h ;# ">
-"16035
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16035: __asm("RA4PPS equ 01F14h");
-[; <" RA4PPS equ 01F14h ;# ">
-"16079
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16079: __asm("RA5PPS equ 01F15h");
-[; <" RA5PPS equ 01F15h ;# ">
-"16123
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16123: __asm("ANSELA equ 01F38h");
-[; <" ANSELA equ 01F38h ;# ">
-"16168
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16168: __asm("WPUA equ 01F39h");
-[; <" WPUA equ 01F39h ;# ">
-"16218
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16218: __asm("ODCONA equ 01F3Ah");
-[; <" ODCONA equ 01F3Ah ;# ">
-"16263
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16263: __asm("SLRCONA equ 01F3Bh");
-[; <" SLRCONA equ 01F3Bh ;# ">
-"16308
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16308: __asm("INLVLA equ 01F3Ch");
-[; <" INLVLA equ 01F3Ch ;# ">
-"16358
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16358: __asm("IOCAP equ 01F3Dh");
-[; <" IOCAP equ 01F3Dh ;# ">
-"16408
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16408: __asm("IOCAN equ 01F3Eh");
-[; <" IOCAN equ 01F3Eh ;# ">
-"16458
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16458: __asm("IOCAF equ 01F3Fh");
-[; <" IOCAF equ 01F3Fh ;# ">
-"16508
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16508: __asm("STATUS_SHAD equ 01FE4h");
-[; <" STATUS_SHAD equ 01FE4h ;# ">
-"16548
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16548: __asm("WREG_SHAD equ 01FE5h");
-[; <" WREG_SHAD equ 01FE5h ;# ">
-"16568
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16568: __asm("BSR_SHAD equ 01FE6h");
-[; <" BSR_SHAD equ 01FE6h ;# ">
-"16588
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16588: __asm("PCLATH_SHAD equ 01FE7h");
-[; <" PCLATH_SHAD equ 01FE7h ;# ">
-"16608
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16608: __asm("FSR0_SHAD equ 01FE8h");
-[; <" FSR0_SHAD equ 01FE8h ;# ">
-"16615
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16615: __asm("FSR0L_SHAD equ 01FE8h");
-[; <" FSR0L_SHAD equ 01FE8h ;# ">
-"16635
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16635: __asm("FSR0H_SHAD equ 01FE9h");
-[; <" FSR0H_SHAD equ 01FE9h ;# ">
-"16655
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16655: __asm("FSR1_SHAD equ 01FEAh");
-[; <" FSR1_SHAD equ 01FEAh ;# ">
-"16662
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16662: __asm("FSR1L_SHAD equ 01FEAh");
-[; <" FSR1L_SHAD equ 01FEAh ;# ">
-"16682
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16682: __asm("FSR1H_SHAD equ 01FEBh");
-[; <" FSR1H_SHAD equ 01FEBh ;# ">
-"16702
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16702: __asm("STKPTR equ 01FEDh");
-[; <" STKPTR equ 01FEDh ;# ">
-"16746
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16746: __asm("TOSL equ 01FEEh");
-[; <" TOSL equ 01FEEh ;# ">
-"16816
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf15313.h: 16816: __asm("TOSH equ 01FEFh");
-[; <" TOSH equ 01FEFh ;# ">
-"29 ./main.h
-[p x FEXTOSC = HS ]
-"30
-[p x RSTOSC = HFINT1 ]
-"31
-[p x CLKOUTEN = OFF ]
-"32
-[p x CSWEN = ON ]
-"33
-[p x FCMEN = OFF ]
-"36
-[p x MCLRE = ON ]
-"37
-[p x PWRTE = OFF ]
-"38
-[p x LPBOREN = OFF ]
-"39
-[p x BOREN = OFF ]
-"40
-[p x BORV = LO ]
-"41
-[p x ZCD = OFF ]
-"42
-[p x PPS1WAY = ON ]
-"43
-[p x STVREN = ON ]
-"46
-[p x WDTCPS = WDTCPS_31 ]
-"47
-[p x WDTE = OFF ]
-"48
-[p x WDTCWS = WDTCWS_7 ]
-"49
-[p x WDTCCS = SC ]
-"52
-[p x BBSIZE = BB512 ]
-"53
-[p x BBEN = OFF ]
-"54
-[p x SAFEN = OFF ]
-"55
-[p x WRTAPP = OFF ]
-"56
-[p x WRTB = OFF ]
-"57
-[p x WRTC = OFF ]
-"58
-[p x WRTSAF = OFF ]
-"59
-[p x LVP = OFF ]
-"62
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10000: __asm("SSP1CLKPPS equ 0E20h");
+[; <" SSP1CLKPPS equ 0E20h ;# ">
+"10052
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10052: __asm("SSP1DATPPS equ 0E21h");
+[; <" SSP1DATPPS equ 0E21h ;# ">
+"10104
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10104: __asm("SSP1SSPPS equ 0E22h");
+[; <" SSP1SSPPS equ 0E22h ;# ">
+"10156
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10156: __asm("RXPPS equ 0E24h");
+[; <" RXPPS equ 0E24h ;# ">
+"10208
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10208: __asm("TXPPS equ 0E25h");
+[; <" TXPPS equ 0E25h ;# ">
+"10260
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10260: __asm("CLCIN0PPS equ 0E28h");
+[; <" CLCIN0PPS equ 0E28h ;# ">
+"10312
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10312: __asm("CLCIN1PPS equ 0E29h");
+[; <" CLCIN1PPS equ 0E29h ;# ">
+"10364
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10364: __asm("CLCIN2PPS equ 0E2Ah");
+[; <" CLCIN2PPS equ 0E2Ah ;# ">
+"10416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10416: __asm("CLCIN3PPS equ 0E2Bh");
+[; <" CLCIN3PPS equ 0E2Bh ;# ">
+"10468
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10468: __asm("RA0PPS equ 0E90h");
+[; <" RA0PPS equ 0E90h ;# ">
+"10520
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10520: __asm("RA1PPS equ 0E91h");
+[; <" RA1PPS equ 0E91h ;# ">
+"10572
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10572: __asm("RA2PPS equ 0E92h");
+[; <" RA2PPS equ 0E92h ;# ">
+"10624
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10624: __asm("RA4PPS equ 0E94h");
+[; <" RA4PPS equ 0E94h ;# ">
+"10676
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10676: __asm("RA5PPS equ 0E95h");
+[; <" RA5PPS equ 0E95h ;# ">
+"10728
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10728: __asm("CLCDATA equ 0F0Fh");
+[; <" CLCDATA equ 0F0Fh ;# ">
+"10754
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10754: __asm("CLC1CON equ 0F10h");
+[; <" CLC1CON equ 0F10h ;# ">
+"10872
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10872: __asm("CLC1POL equ 0F11h");
+[; <" CLC1POL equ 0F11h ;# ">
+"10950
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 10950: __asm("CLC1SEL0 equ 0F12h");
+[; <" CLC1SEL0 equ 0F12h ;# ">
+"11042
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11042: __asm("CLC1SEL1 equ 0F13h");
+[; <" CLC1SEL1 equ 0F13h ;# ">
+"11134
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11134: __asm("CLC1SEL2 equ 0F14h");
+[; <" CLC1SEL2 equ 0F14h ;# ">
+"11226
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11226: __asm("CLC1SEL3 equ 0F15h");
+[; <" CLC1SEL3 equ 0F15h ;# ">
+"11318
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11318: __asm("CLC1GLS0 equ 0F16h");
+[; <" CLC1GLS0 equ 0F16h ;# ">
+"11430
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11430: __asm("CLC1GLS1 equ 0F17h");
+[; <" CLC1GLS1 equ 0F17h ;# ">
+"11542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11542: __asm("CLC1GLS2 equ 0F18h");
+[; <" CLC1GLS2 equ 0F18h ;# ">
+"11654
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11654: __asm("CLC1GLS3 equ 0F19h");
+[; <" CLC1GLS3 equ 0F19h ;# ">
+"11766
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11766: __asm("CLC2CON equ 0F1Ah");
+[; <" CLC2CON equ 0F1Ah ;# ">
+"11884
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11884: __asm("CLC2POL equ 0F1Bh");
+[; <" CLC2POL equ 0F1Bh ;# ">
+"11962
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 11962: __asm("CLC2SEL0 equ 0F1Ch");
+[; <" CLC2SEL0 equ 0F1Ch ;# ">
+"12054
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12054: __asm("CLC2SEL1 equ 0F1Dh");
+[; <" CLC2SEL1 equ 0F1Dh ;# ">
+"12146
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12146: __asm("CLC2SEL2 equ 0F1Eh");
+[; <" CLC2SEL2 equ 0F1Eh ;# ">
+"12238
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12238: __asm("CLC2SEL3 equ 0F1Fh");
+[; <" CLC2SEL3 equ 0F1Fh ;# ">
+"12330
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12330: __asm("CLC2GLS0 equ 0F20h");
+[; <" CLC2GLS0 equ 0F20h ;# ">
+"12442
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12442: __asm("CLC2GLS1 equ 0F21h");
+[; <" CLC2GLS1 equ 0F21h ;# ">
+"12554
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12554: __asm("CLC2GLS2 equ 0F22h");
+[; <" CLC2GLS2 equ 0F22h ;# ">
+"12666
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12666: __asm("CLC2GLS3 equ 0F23h");
+[; <" CLC2GLS3 equ 0F23h ;# ">
+"12778
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12778: __asm("STATUS_SHAD equ 0FE4h");
+[; <" STATUS_SHAD equ 0FE4h ;# ">
+"12810
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12810: __asm("WREG_SHAD equ 0FE5h");
+[; <" WREG_SHAD equ 0FE5h ;# ">
+"12830
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12830: __asm("BSR_SHAD equ 0FE6h");
+[; <" BSR_SHAD equ 0FE6h ;# ">
+"12850
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12850: __asm("PCLATH_SHAD equ 0FE7h");
+[; <" PCLATH_SHAD equ 0FE7h ;# ">
+"12870
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12870: __asm("FSR0L_SHAD equ 0FE8h");
+[; <" FSR0L_SHAD equ 0FE8h ;# ">
+"12890
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12890: __asm("FSR0H_SHAD equ 0FE9h");
+[; <" FSR0H_SHAD equ 0FE9h ;# ">
+"12910
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12910: __asm("FSR1L_SHAD equ 0FEAh");
+[; <" FSR1L_SHAD equ 0FEAh ;# ">
+"12930
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12930: __asm("FSR1H_SHAD equ 0FEBh");
+[; <" FSR1H_SHAD equ 0FEBh ;# ">
+"12950
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12950: __asm("STKPTR equ 0FEDh");
+[; <" STKPTR equ 0FEDh ;# ">
+"12970
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12970: __asm("TOSL equ 0FEEh");
+[; <" TOSL equ 0FEEh ;# ">
+"12990
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12990: __asm("TOSH equ 0FEFh");
+[; <" TOSH equ 0FEFh ;# ">
+"31 ./main.h
 [p x CP = OFF ]
+"33
+[p x FEXTOSC = LP ]
+"34
+[p x RSTOSC = HFINT1 ]
+"35
+[p x CLKOUTEN = OFF ]
+"36
+[p x CSWEN = ON ]
+"37
+[p x FCMEN = OFF ]
+"40
+[p x MCLRE = ON ]
+"41
+[p x PWRTE = OFF ]
+"42
+[p x WDTE = OFF ]
+"43
+[p x LPBOREN = OFF ]
+"44
+[p x BOREN = OFF ]
+"45
+[p x BORV = LOW ]
+"46
+[p x PPS1WAY = ON ]
+"47
+[p x STVREN = ON ]
+"48
+[p x DEBUG = ON ]
+"51
+[p x WRT = OFF ]
+"52
+[p x LVP = OFF ]
+"55
+[p x CP = OFF ]
+"56
+[p x CPD = OFF ]
 "42 Retarget.c
 [; ;Retarget.c: 42: void putch(uint8_t data){
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
@@ -867,5 +772,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _Uart_UCA0_putc (1 -> _data `c ]
 "44
 [; ;Retarget.c: 44: }
-[e :UE 793 ]
+[e :UE 664 ]
 }

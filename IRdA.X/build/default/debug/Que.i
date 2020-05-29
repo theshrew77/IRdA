@@ -314,8 +314,10 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 6 "Que.c" 2
 
 # 1 "./main.h" 1
-# 29 "./main.h"
-#pragma config FEXTOSC = HS
+# 31 "./main.h"
+#pragma config CP = OFF
+
+#pragma config FEXTOSC = LP
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -324,31 +326,21 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 
 #pragma config MCLRE = ON
 #pragma config PWRTE = OFF
+#pragma config WDTE = OFF
 #pragma config LPBOREN = OFF
 #pragma config BOREN = OFF
-#pragma config BORV = LO
-#pragma config ZCD = OFF
+#pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
+#pragma config DEBUG = ON
 
 
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config BBSIZE = BB512
-#pragma config BBEN = OFF
-#pragma config SAFEN = OFF
-#pragma config WRTAPP = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config WRTSAF = OFF
+#pragma config WRT = OFF
 #pragma config LVP = OFF
 
 
 #pragma config CP = OFF
+#pragma config CPD = OFF
 # 7 "Que.c" 2
 
 # 1 "./Que.h" 1

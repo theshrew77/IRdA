@@ -7,8 +7,8 @@
 
 #ifndef CCP_CCP1_H
 #define	CCP_CCP1_H
-#define CCP_IE PIE6bits.CCP1IE
-#define CCP1_IF PIR6bits.CCP1IF
+#define CCP_IE PIE4bits.CCP1IE
+#define CCP1_IF PIR4bits.CCP1IF
 
 void ccp_CCP1Init(void);
 void ccp_CCP1En(void);

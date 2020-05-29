@@ -38,7 +38,7 @@
 
 
 
-
+volatile uint8_t IR_received = 0;
 
 
 
@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
     osc_Config1MHz();
     pwrmgmt_ConfigUnusedPins();
     pwrmgmt_DisablePeripherals();
-    #ifdef _16F15313 
+    #ifdef _16F18313 
         VREGCONbits.VREGPM=1;
     #endif
 
@@ -57,27 +57,31 @@ int main(int argc, char** argv) {
     configureIOCInt();
     tmr_TMR0Init();
     tmr_TMR0reset();
-    
+ 
     tmr_TMR1Init();
-    ccp_CCP1Init();
-    ccp_CCP1En();
-    tmr_TMR1En();
-    //SLEEP();
-    while(1);
+    //ccp_CCP1Init();
     
-   
+    tmr_TMR1En();
+    //ccp_CCP1En();
+    
+ 
+
 
     while(1){
         SLEEP();
-        while(!accquisitionComplete());
-        G_IE = 0;
-        //process to NEC
-        //check for NEC start condition
-        NECcommand = nec_ProcessPacket();
-        nec_ExecuteCommand(NECcommand);          
-        tmr_TMR0reset();
-        __delay_ms(5);
-        G_IE = 1;
+        
+        if(IR_received){
+            while(!accquisitionComplete());
+            G_IE = 0;
+            //process to NEC
+            //check for NEC start condition
+            NECcommand = nec_ProcessPacket();
+            nec_ExecuteCommand(NECcommand);          
+            tmr_TMR0reset();
+            IR_received = 0;
+            __delay_ms(5);
+            G_IE = 1;
+        }
         
       
     }

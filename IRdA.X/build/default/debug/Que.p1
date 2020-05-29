@@ -3,58 +3,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./Que.h: 14: typedef struct {
 [s S4 `c -> 2 `i `c 1 `c 1 ]
 [n S4 . Data In Out ]
-"29 ./main.h
-[p x FEXTOSC = HS ]
-"30
-[p x RSTOSC = HFINT1 ]
-"31
-[p x CLKOUTEN = OFF ]
-"32
-[p x CSWEN = ON ]
-"33
-[p x FCMEN = OFF ]
-"36
-[p x MCLRE = ON ]
-"37
-[p x PWRTE = OFF ]
-"38
-[p x LPBOREN = OFF ]
-"39
-[p x BOREN = OFF ]
-"40
-[p x BORV = LO ]
-"41
-[p x ZCD = OFF ]
-"42
-[p x PPS1WAY = ON ]
-"43
-[p x STVREN = ON ]
-"46
-[p x WDTCPS = WDTCPS_31 ]
-"47
-[p x WDTE = OFF ]
-"48
-[p x WDTCWS = WDTCWS_7 ]
-"49
-[p x WDTCCS = SC ]
-"52
-[p x BBSIZE = BB512 ]
-"53
-[p x BBEN = OFF ]
-"54
-[p x SAFEN = OFF ]
-"55
-[p x WRTAPP = OFF ]
-"56
-[p x WRTB = OFF ]
-"57
-[p x WRTC = OFF ]
-"58
-[p x WRTSAF = OFF ]
-"59
-[p x LVP = OFF ]
-"62
+"31 ./main.h
 [p x CP = OFF ]
+"33
+[p x FEXTOSC = LP ]
+"34
+[p x RSTOSC = HFINT1 ]
+"35
+[p x CLKOUTEN = OFF ]
+"36
+[p x CSWEN = ON ]
+"37
+[p x FCMEN = OFF ]
+"40
+[p x MCLRE = ON ]
+"41
+[p x PWRTE = OFF ]
+"42
+[p x WDTE = OFF ]
+"43
+[p x LPBOREN = OFF ]
+"44
+[p x BOREN = OFF ]
+"45
+[p x BORV = LOW ]
+"46
+[p x PPS1WAY = ON ]
+"47
+[p x STVREN = ON ]
+"48
+[p x DEBUG = ON ]
+"51
+[p x WRT = OFF ]
+"52
+[p x LVP = OFF ]
+"55
+[p x CP = OFF ]
+"56
+[p x CPD = OFF ]
 "27 Que.c
 [; ;Que.c: 27: int8_t QInit( t_Q *pQ )
 [v _QInit `(c ~T0 @X0 1 ef1`*S4 ]
