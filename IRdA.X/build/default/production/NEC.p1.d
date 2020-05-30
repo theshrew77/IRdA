@@ -5,4 +5,6 @@ tmr_TMR0.h  \
 uart_UCA0.h  \
 Que.h  \
 LED.h  \
-main.h 
+main.h  \
+RTC.h  \
+tmr_TMR1.h 

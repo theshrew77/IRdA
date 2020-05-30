@@ -22,6 +22,7 @@
 #include "PowerManagement.h"
 #include "tmr_TMR1.h"
 #include "ccp_CCP1.h"
+#include "RTC.h"
 
 
 
@@ -49,6 +50,7 @@ int main(int argc, char** argv) {
     osc_Config1MHz();
     pwrmgmt_ConfigUnusedPins();
     pwrmgmt_DisablePeripherals();
+    rtc_Reset();
     #ifdef _16F18313 
         VREGCONbits.VREGPM=1;
     #endif
@@ -61,7 +63,7 @@ int main(int argc, char** argv) {
     tmr_TMR1Init();
     //ccp_CCP1Init();
     
-    tmr_TMR1En();
+    //tmr_TMR1En();
     //ccp_CCP1En();
     
  

@@ -7710,6 +7710,21 @@ void ccp_CCP1Dis(void);
 void ccp_CCP1CompareMatch(void);
 # 9 "Interrupts.c" 2
 
+# 1 "./RTC.h" 1
+# 11 "./RTC.h"
+typedef struct
+{
+  uint8_t Seconds;
+  uint8_t Minutes;
+  uint8_t Hours;
+} RTC_t;
+
+void rtc_Init(void);
+void rtc_SetHourDelay(uint8_t hours);
+void rtc_Reset(void);
+void rtc_ISR(void);
+# 10 "Interrupts.c" 2
+
 
 
 extern uint8_t IR_received;
@@ -7747,7 +7762,7 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
         PIR1bits.TMR1IF = 0;
         tmr_TMR1Reset();
-
+        rtc_ISR();
     }
 
 
@@ -7765,6 +7780,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
 
     }
-# 88 "Interrupts.c"
+# 89 "Interrupts.c"
     return;
 }

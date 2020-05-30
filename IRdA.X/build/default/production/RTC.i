@@ -1,4 +1,4 @@
-# 1 "NEC.c"
+# 1 "RTC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "NEC.c" 2
+# 1 "RTC.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -7517,7 +7517,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "NEC.c" 2
+# 1 "RTC.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -7602,98 +7602,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 2 "NEC.c" 2
-
-# 1 "./NEC.h" 1
-# 60 "./NEC.h"
-typedef enum {
-    LEDON = 0xFF,
-    LEDOFF = 0xBF,
-    TIMER2H = 0xDF,
-    TIMER4H = 0x9F,
-    TIMER6H = 0xEF,
-    TIMER8H = 0xAF,
-    DIM = 0xF7,
-    BRIGHT = 0xB7,
-} NEC_commands_t;
-
-uint8_t nec_ProcessPacket(void);
-void nec_ExecuteCommand(uint8_t NECcommand);
-# 3 "NEC.c" 2
-
-# 1 "./tmr_TMR0.h" 1
-# 21 "./tmr_TMR0.h"
-void tmr_TMR0Init(void);
-uint16_t tmr_computeDelta(uint8_t i);
-uint8_t accquisitionComplete(void);
-void tmr_TMR0mark(void);
-void tmr_TMR0reset(void);
-void tmr_TMR0IncRollovers(void);
-void tmr_TMR0Dis(void);
-# 4 "NEC.c" 2
-
-# 1 "./uart_UCA0.h" 1
-# 11 "./uart_UCA0.h"
-# 1 "./Que.h" 1
-# 14 "./Que.h"
-typedef struct {
-  int8_t Data[2];
-  int8_t In;
-  int8_t Out;
-} t_Q;
-
-
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-# 11 "./uart_UCA0.h" 2
-# 20 "./uart_UCA0.h"
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-# 5 "NEC.c" 2
-
-# 1 "./LED.h" 1
-# 13 "./LED.h"
-void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
-# 6 "NEC.c" 2
-
-# 1 "./main.h" 1
-# 31 "./main.h"
-#pragma config CP = OFF
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config WDTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LOW
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-
-
-#pragma config WRT = OFF
-#pragma config LVP = OFF
-
-
-#pragma config CP = OFF
-#pragma config CPD = OFF
-# 7 "NEC.c" 2
+# 2 "RTC.c" 2
 
 # 1 "./RTC.h" 1
 # 11 "./RTC.h"
@@ -7708,7 +7617,7 @@ void rtc_Init(void);
 void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
-# 8 "NEC.c" 2
+# 3 "RTC.c" 2
 
 # 1 "./tmr_TMR1.h" 1
 # 22 "./tmr_TMR1.h"
@@ -7727,75 +7636,36 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
-# 9 "NEC.c" 2
+# 4 "RTC.c" 2
+
+# 1 "./LED.h" 1
+# 13 "./LED.h"
+void led_ConfigureLED(void);
+void led_Blink(uint8_t times);
+# 5 "RTC.c" 2
 
 
-uint8_t nec_ProcessPacket(void){
-    uint16_t delta;
-    uint8_t NECpacket [32] = {0};
-    uint8_t command = 0;
+RTC_t tRTC;
+uint8_t hourDelay = 0;
 
-    delta = tmr_computeDelta(0);
+void rtc_SetHourDelay(uint8_t hours){
+    hourDelay = hours;
+    rtc_Reset();
+    tmr_TMR1Reset();
+    tmr_TMR1En();
 
-
-    if (2700 < delta && delta < 4050){
-
-
-        for (int i = 1; i < 33; i++){
-            delta = tmr_computeDelta(i);
-            if (250 < delta && delta < 375){
-                NECpacket[i-1] = 0;
-            }
-            if (500 < delta && delta < 750){
-                NECpacket[i-1] = 1;
-            }
-        }
-
-        command += NECpacket[31];
-        command += NECpacket[30]*2;
-        command += NECpacket[29]*4;
-        command += NECpacket[28]*8;
-        command += NECpacket[27]*16;
-        command += NECpacket[26]*32;
-        command += NECpacket[25]*64;
-        command += NECpacket[24]*128;
-
-    }
-    return(command);
 }
 
-void nec_ExecuteCommand(uint8_t NECcommand){
-    switch (NECcommand)
-    {
-        case LEDON:
+void rtc_Reset(void){
+    tRTC.Seconds = 0;
+    tRTC.Minutes = 0;
+    tRTC.Hours = 0;
+}
 
-            LATAbits.LATA2 = 0;
-            tmr_TMR1Dis();
-            break;
-        case LEDOFF:
-
-            LATAbits.LATA2 = 1;
-            tmr_TMR1Dis();
-            break;
-        case TIMER2H:
-            LATAbits.LATA2 = 0;
-
-            rtc_SetHourDelay(10);
-            break;
-        case TIMER4H:
-
-            break;
-        case TIMER6H:
-
-            break;
-        case TIMER8H:
-
-            break;
-        case DIM:
-
-            break;
-        case BRIGHT:
-
-            break;
+void rtc_ISR(void){
+    if (++tRTC.Seconds==hourDelay){
+        tmr_TMR1Dis();
+        LATAbits.LATA2 = 1;
     }
+# 41 "RTC.c"
 }

@@ -7821,7 +7821,22 @@ void ccp_CCP1En(void);
 void ccp_CCP1Dis(void);
 void ccp_CCP1CompareMatch(void);
 # 24 "main.c" 2
-# 41 "main.c"
+
+# 1 "./RTC.h" 1
+# 11 "./RTC.h"
+typedef struct
+{
+  uint8_t Seconds;
+  uint8_t Minutes;
+  uint8_t Hours;
+} RTC_t;
+
+void rtc_Init(void);
+void rtc_SetHourDelay(uint8_t hours);
+void rtc_Reset(void);
+void rtc_ISR(void);
+# 25 "main.c" 2
+# 42 "main.c"
 volatile uint8_t IR_received = 0;
 
 
@@ -7833,6 +7848,7 @@ int main(int argc, char** argv) {
     osc_Config1MHz();
     pwrmgmt_ConfigUnusedPins();
     pwrmgmt_DisablePeripherals();
+    rtc_Reset();
 
 
 
@@ -7843,14 +7859,7 @@ int main(int argc, char** argv) {
     tmr_TMR0reset();
 
     tmr_TMR1Init();
-
-
-    tmr_TMR1En();
-
-
-
-
-
+# 72 "main.c"
     while(1){
         __asm("sleep");
 

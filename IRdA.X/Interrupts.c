@@ -7,6 +7,7 @@
 #include "Interrupts.h"
 #include "LED.h"
 #include "ccp_CCP1.h"
+#include "RTC.h"
 //#include <stdio.h>
 
 extern uint8_t IR_received;
@@ -44,7 +45,7 @@ __interrupt() void ISR(void){
         //LEDLAT ^= 1;
         TMR1IFG = 0;
         tmr_TMR1Reset();
-
+        rtc_ISR();
     }
     
     

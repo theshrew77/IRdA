@@ -5,7 +5,8 @@
 #include "uart_UCA0.h"
 #include "LED.h"
 #include "main.h"
-
+#include "RTC.h"
+#include "tmr_TMR1.h"
 
 uint8_t nec_ProcessPacket(void){
     uint16_t delta;
@@ -47,13 +48,17 @@ void nec_ExecuteCommand(uint8_t NECcommand){
         case LEDON:
             //Uart_UCA0_putc( 'a' );
             LEDLAT = 0;
+            tmr_TMR1Dis();
             break;
         case LEDOFF:
             //Uart_UCA0_putc( 'b' );
             LEDLAT = 1;
+            tmr_TMR1Dis();
             break;
         case TIMER2H:
+            LEDLAT = 0;
             //Uart_UCA0_putc( 'c' );
+            rtc_SetHourDelay(10);
             break;
         case TIMER4H:
             //Uart_UCA0_putc( 'd' );

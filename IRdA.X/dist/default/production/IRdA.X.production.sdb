@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16LF18313 ]
 [d frameptr 6 ]
-"73 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
+"78 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
 [e E4520 . `uc
 LEDON 255
 LEDOFF 191
@@ -24,17 +24,17 @@ BRIGHT 183
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
+"15 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _configureIOCInt configureIOCInt `(v  1 e 1 0 ]
-"30
+"31
 [v _ISR ISR `II(v  1 e 1 0 ]
 "6 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
 [v _led_ConfigureLED led_ConfigureLED `(v  1 e 1 0 ]
-"45 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
+"46 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"10 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
+"11 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
 [v _nec_ProcessPacket nec_ProcessPacket `(uc  1 e 1 0 ]
-"44
+"45
 [v _nec_ExecuteCommand nec_ExecuteCommand `(v  1 e 1 0 ]
 "10 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Oscillator.c
 [v _osc_Config1MHz osc_Config1MHz `(v  1 e 1 0 ]
@@ -48,6 +48,12 @@ BRIGHT 183
 [v _QOut QOut `(c  1 e 1 0 ]
 "125
 [v _QChkQ QChkQ `(c  1 e 1 0 ]
+"10 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
+[v _rtc_SetHourDelay rtc_SetHourDelay `(v  1 e 1 0 ]
+"18
+[v _rtc_Reset rtc_Reset `(v  1 e 1 0 ]
+"24
+[v _rtc_ISR rtc_ISR `(v  1 e 1 0 ]
 "15 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR0.c
 [v _tmr_computeDelta tmr_computeDelta `(us  1 e 2 0 ]
 "22
@@ -66,8 +72,12 @@ BRIGHT 183
 [v _tmr_TMR1Init tmr_TMR1Init `(v  1 e 1 0 ]
 "126
 [v _tmr_TMR1En tmr_TMR1En `(v  1 e 1 0 ]
+"132
+[v _tmr_TMR1Dis tmr_TMR1Dis `(v  1 e 1 0 ]
+[v i1_tmr_TMR1Dis tmr_TMR1Dis `(v  1 e 1 0 ]
 "137
 [v _tmr_TMR1Reset tmr_TMR1Reset `(v  1 e 1 0 ]
+[v i1_tmr_TMR1Reset tmr_TMR1Reset `(v  1 e 1 0 ]
 "93 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
 [v _Uart_UCA0_putc Uart_UCA0_putc `(c  1 e 1 0 ]
 [s S105 . 1 `uc 1 INTEDG 1 0 :1:0 
@@ -98,14 +108,14 @@ BRIGHT 183
 "484
 [u S320 . 1 `S311 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES320  1 e 1 @17 ]
-[s S544 . 1 `uc 1 CCP1IF 1 0 :1:0 
+[s S548 . 1 `uc 1 CCP1IF 1 0 :1:0 
 `uc 1 CCP2IF 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
 `uc 1 CWG1IF 1 0 :1:6 
 ]
 "614
-[u S549 . 1 `S544 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES549  1 e 1 @20 ]
+[u S553 . 1 `S548 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES553  1 e 1 @20 ]
 "634
 [v _TMR0L TMR0L `VEuc  1 e 1 @21 ]
 "772
@@ -124,12 +134,12 @@ BRIGHT 183
 ]
 [u S509 . 1 `S498 1 . 1 0 `S504 1 . 1 0 ]
 [v _T0CON0bits T0CON0bits `VES509  1 e 1 @23 ]
-[s S1024 . 1 `uc 1 T0CKPS 1 0 :4:0 
+[s S1037 . 1 `uc 1 T0CKPS 1 0 :4:0 
 `uc 1 T0ASYNC 1 0 :1:4 
 `uc 1 T0CS 1 0 :3:5 
 ]
 "1113
-[s S1028 . 1 `uc 1 T0CKPS0 1 0 :1:0 
+[s S1041 . 1 `uc 1 T0CKPS0 1 0 :1:0 
 `uc 1 T0CKPS1 1 0 :1:1 
 `uc 1 T0CKPS2 1 0 :1:2 
 `uc 1 T0CKPS3 1 0 :1:3 
@@ -138,13 +148,13 @@ BRIGHT 183
 `uc 1 T0CS1 1 0 :1:6 
 `uc 1 T0CS2 1 0 :1:7 
 ]
-[u S1037 . 1 `S1024 1 . 1 0 `S1028 1 . 1 0 ]
-[v _T0CON1bits T0CON1bits `VES1037  1 e 1 @24 ]
+[u S1050 . 1 `S1037 1 . 1 0 `S1041 1 . 1 0 ]
+[v _T0CON1bits T0CON1bits `VES1050  1 e 1 @24 ]
 "1175
 [v _TMR1L TMR1L `VEuc  1 e 1 @25 ]
 "1195
 [v _TMR1H TMR1H `VEuc  1 e 1 @26 ]
-[s S773 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S786 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 T1SOSC 1 0 :1:3 
@@ -152,14 +162,14 @@ BRIGHT 183
 `uc 1 TMR1CS 1 0 :2:6 
 ]
 "1237
-[s S780 . 1 `uc 1 . 1 0 :4:0 
+[s S793 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 `uc 1 TMR1CS0 1 0 :1:6 
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
-[u S786 . 1 `S773 1 . 1 0 `S780 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES786  1 e 1 @27 ]
+[u S799 . 1 `S786 1 . 1 0 `S793 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES799  1 e 1 @27 ]
 [s S440 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
@@ -190,14 +200,14 @@ BRIGHT 183
 "1563
 [u S288 . 1 `S279 1 . 1 0 ]
 [v _PIE1bits PIE1bits `VES288  1 e 1 @145 ]
-[s S951 . 1 `uc 1 CCP1IE 1 0 :1:0 
+[s S964 . 1 `uc 1 CCP1IE 1 0 :1:0 
 `uc 1 CCP2IE 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
 `uc 1 CWG1IE 1 0 :1:6 
 ]
 "1693
-[u S956 . 1 `S951 1 . 1 0 ]
-[v _PIE4bits PIE4bits `VES956  1 e 1 @148 ]
+[u S969 . 1 `S964 1 . 1 0 ]
+[v _PIE4bits PIE4bits `VES969  1 e 1 @148 ]
 [s S22 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
@@ -264,20 +274,20 @@ BRIGHT 183
 [v _CCPR1H CCPR1H `VEuc  1 e 1 @658 ]
 "4857
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
-[s S964 . 1 `uc 1 CCP1MODE 1 0 :4:0 
+[s S977 . 1 `uc 1 CCP1MODE 1 0 :4:0 
 `uc 1 CCP1FMT 1 0 :1:4 
 `uc 1 CCP1OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 CCP1EN 1 0 :1:7 
 ]
 "4877
-[s S970 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
+[s S983 . 1 `uc 1 CCP1MODE0 1 0 :1:0 
 `uc 1 CCP1MODE1 1 0 :1:1 
 `uc 1 CCP1MODE2 1 0 :1:2 
 `uc 1 CCP1MODE3 1 0 :1:3 
 ]
-[u S975 . 1 `S964 1 . 1 0 `S970 1 . 1 0 ]
-[v _CCP1CONbits CCP1CONbits `VES975  1 e 1 @659 ]
+[u S988 . 1 `S977 1 . 1 0 `S983 1 . 1 0 ]
+[v _CCP1CONbits CCP1CONbits `VES988  1 e 1 @659 ]
 [s S423 . 1 `uc 1 IOCAN0 1 0 :1:0 
 `uc 1 IOCAN1 1 0 :1:1 
 `uc 1 IOCAN2 1 0 :1:2 
@@ -298,7 +308,7 @@ BRIGHT 183
 "5324
 [u S488 . 1 `S481 1 . 1 0 ]
 [v _IOCAFbits IOCAFbits `VES488  1 e 1 @915 ]
-[s S634 . 1 `uc 1 IOCMD 1 0 :1:0 
+[s S647 . 1 `uc 1 IOCMD 1 0 :1:0 
 `uc 1 CLKRMD 1 0 :1:1 
 `uc 1 NVMMD 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -306,27 +316,27 @@ BRIGHT 183
 `uc 1 SYSCMD 1 0 :1:7 
 ]
 "8798
-[u S641 . 1 `S634 1 . 1 0 ]
-[v _PMD0bits PMD0bits `VES641  1 e 1 @2321 ]
-[s S651 . 1 `uc 1 TMR0MD 1 0 :1:0 
+[u S654 . 1 `S647 1 . 1 0 ]
+[v _PMD0bits PMD0bits `VES654  1 e 1 @2321 ]
+[s S664 . 1 `uc 1 TMR0MD 1 0 :1:0 
 `uc 1 TMR1MD 1 0 :1:1 
 `uc 1 TMR2MD 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 NCOMD 1 0 :1:7 
 ]
 "8842
-[u S657 . 1 `S651 1 . 1 0 ]
-[v _PMD1bits PMD1bits `VES657  1 e 1 @2322 ]
-[s S666 . 1 `uc 1 . 1 0 :1:0 
+[u S670 . 1 `S664 1 . 1 0 ]
+[v _PMD1bits PMD1bits `VES670  1 e 1 @2322 ]
+[s S679 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CMP1MD 1 0 :1:1 
 `uc 1 . 1 0 :3:2 
 `uc 1 ADCMD 1 0 :1:5 
 `uc 1 DACMD 1 0 :1:6 
 ]
 "8881
-[u S672 . 1 `S666 1 . 1 0 ]
-[v _PMD2bits PMD2bits `VES672  1 e 1 @2323 ]
-[s S681 . 1 `uc 1 CCP1MD 1 0 :1:0 
+[u S685 . 1 `S679 1 . 1 0 ]
+[v _PMD2bits PMD2bits `VES685  1 e 1 @2323 ]
+[s S694 . 1 `uc 1 CCP1MD 1 0 :1:0 
 `uc 1 CCP2MD 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 PWM5MD 1 0 :1:4 
@@ -334,23 +344,23 @@ BRIGHT 183
 `uc 1 CWG1MD 1 0 :1:6 
 ]
 "8916
-[u S688 . 1 `S681 1 . 1 0 ]
-[v _PMD3bits PMD3bits `VES688  1 e 1 @2324 ]
-[s S698 . 1 `uc 1 . 1 0 :1:0 
+[u S701 . 1 `S694 1 . 1 0 ]
+[v _PMD3bits PMD3bits `VES701  1 e 1 @2324 ]
+[s S711 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 MSSP1MD 1 0 :1:1 
 `uc 1 . 1 0 :3:2 
 `uc 1 UART1MD 1 0 :1:5 
 ]
 "8959
-[u S703 . 1 `S698 1 . 1 0 ]
-[v _PMD4bits PMD4bits `VES703  1 e 1 @2325 ]
-[s S711 . 1 `uc 1 DSMMD 1 0 :1:0 
+[u S716 . 1 `S711 1 . 1 0 ]
+[v _PMD4bits PMD4bits `VES716  1 e 1 @2325 ]
+[s S724 . 1 `uc 1 DSMMD 1 0 :1:0 
 `uc 1 CLC1MD 1 0 :1:1 
 `uc 1 CLC2MD 1 0 :1:2 
 ]
 "8986
-[u S715 . 1 `S711 1 . 1 0 ]
-[v _PMD5bits PMD5bits `VES715  1 e 1 @2326 ]
+[u S728 . 1 `S724 1 . 1 0 ]
+[v _PMD5bits PMD5bits `VES728  1 e 1 @2326 ]
 [s S39 . 1 `uc 1 DOZE 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 DOE 1 0 :1:4 
@@ -367,7 +377,7 @@ BRIGHT 183
 [v _CPUDOZEbits CPUDOZEbits `VES50  1 e 1 @2328 ]
 "9071
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2329 ]
-[s S803 . 1 `uc 1 . 1 0 :3:0 
+[s S816 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOSCR 1 0 :1:3 
 `uc 1 ORDY 1 0 :1:4 
 `uc 1 SOSCBE 1 0 :1:5 
@@ -375,9 +385,9 @@ BRIGHT 183
 `uc 1 CSWHOLD 1 0 :1:7 
 ]
 "9226
-[u S810 . 1 `S803 1 . 1 0 ]
-[v _OSCCON3bits OSCCON3bits `VES810  1 e 1 @2331 ]
-[s S898 . 1 `uc 1 PLLR 1 0 :1:0 
+[u S823 . 1 `S816 1 . 1 0 ]
+[v _OSCCON3bits OSCCON3bits `VES823  1 e 1 @2331 ]
+[s S911 . 1 `uc 1 PLLR 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADOR 1 0 :1:2 
 `uc 1 SOR 1 0 :1:3 
@@ -387,8 +397,8 @@ BRIGHT 183
 `uc 1 EXTOR 1 0 :1:7 
 ]
 "9273
-[u S907 . 1 `S898 1 . 1 0 ]
-[v _OSCSTAT1bits OSCSTAT1bits `VES907  1 e 1 @2332 ]
+[u S920 . 1 `S911 1 . 1 0 ]
+[v _OSCSTAT1bits OSCSTAT1bits `VES920  1 e 1 @2332 ]
 "9412
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2335 ]
 "10466
@@ -397,8 +407,13 @@ BRIGHT 183
 [v _seconds seconds `us  1 e 2 0 ]
 "9
 [v _delay delay `us  1 e 2 0 ]
-"41 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
+"42 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _IR_received IR_received `VEuc  1 e 1 0 ]
+[s S1116 . 3 `uc 1 Seconds 1 0 `uc 1 Minutes 1 1 `uc 1 Hours 1 2 ]
+"7 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
+[v _tRTC tRTC `S1116  1 e 3 0 ]
+"8
+[v _hourDelay hourDelay `uc  1 e 1 0 ]
 "8 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR0.c
 [v _TMR0rollovers TMR0rollovers `uc  1 s 1 TMR0rollovers ]
 "10
@@ -412,22 +427,17 @@ BRIGHT 183
 [s S158 . 4 `[2]c 1 Data 2 0 `c 1 In 1 2 `c 1 Out 1 3 ]
 "12 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\uart_UCA0.c
 [v _U0_RxBuf_t U0_RxBuf_t `S158  1 s 4 U0_RxBuf_t ]
-"45 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
+"46 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"47
+"48
 [v main@NECcommand NECcommand `uc  1 a 1 55 ]
-"90
+"92
 } 0
 "81 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR1.c
 [v _tmr_TMR1Init tmr_TMR1Init `(v  1 e 1 0 ]
 {
 "124
-} 0
-"126
-[v _tmr_TMR1En tmr_TMR1En `(v  1 e 1 0 ]
-{
-"130
 } 0
 "34 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR0.c
 [v _tmr_TMR0reset tmr_TMR0reset `(v  1 e 1 0 ]
@@ -456,18 +466,18 @@ BRIGHT 183
 {
 "14
 } 0
-"10 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
+"11 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
 [v _nec_ProcessPacket nec_ProcessPacket `(uc  1 e 1 0 ]
 {
-"21
+"22
 [v nec_ProcessPacket@i i `i  1 a 2 46 ]
-"12
-[v nec_ProcessPacket@NECpacket NECpacket `[32]uc  1 a 32 13 ]
-"11
-[v nec_ProcessPacket@delta delta `us  1 a 2 48 ]
 "13
+[v nec_ProcessPacket@NECpacket NECpacket `[32]uc  1 a 32 13 ]
+"12
+[v nec_ProcessPacket@delta delta `us  1 a 2 48 ]
+"14
 [v nec_ProcessPacket@command command `uc  1 a 1 45 ]
-"42
+"43
 } 0
 "15 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR0.c
 [v _tmr_computeDelta tmr_computeDelta `(us  1 e 2 0 ]
@@ -488,36 +498,64 @@ BRIGHT 183
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"44 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
+"45 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
 [v _nec_ExecuteCommand nec_ExecuteCommand `(v  1 e 1 0 ]
 {
 [v nec_ExecuteCommand@NECcommand NECcommand `uc  1 a 1 wreg ]
 [v nec_ExecuteCommand@NECcommand NECcommand `uc  1 a 1 wreg ]
-[v nec_ExecuteCommand@NECcommand NECcommand `uc  1 a 1 0 ]
-"74
+[v nec_ExecuteCommand@NECcommand NECcommand `uc  1 a 1 2 ]
+"79
+} 0
+"132 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR1.c
+[v _tmr_TMR1Dis tmr_TMR1Dis `(v  1 e 1 0 ]
+{
+"135
+} 0
+"10 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
+[v _rtc_SetHourDelay rtc_SetHourDelay `(v  1 e 1 0 ]
+{
+[v rtc_SetHourDelay@hours hours `uc  1 a 1 wreg ]
+[v rtc_SetHourDelay@hours hours `uc  1 a 1 wreg ]
+[v rtc_SetHourDelay@hours hours `uc  1 a 1 5 ]
+"16
+} 0
+"137 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR1.c
+[v _tmr_TMR1Reset tmr_TMR1Reset `(v  1 e 1 0 ]
+{
+"142
+} 0
+"126
+[v _tmr_TMR1En tmr_TMR1En `(v  1 e 1 0 ]
+{
+"130
+} 0
+"18 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
+[v _rtc_Reset rtc_Reset `(v  1 e 1 0 ]
+{
+"22
 } 0
 "6 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
 [v _led_ConfigureLED led_ConfigureLED `(v  1 e 1 0 ]
 {
 "9
 } 0
-"14 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
+"15 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _configureIOCInt configureIOCInt `(v  1 e 1 0 ]
 {
-"27
+"28
 } 0
 "22 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR0.c
 [v _accquisitionComplete accquisitionComplete `(uc  1 e 1 0 ]
 {
 "24
 } 0
-"30 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
+"31 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"89
+"90
 } 0
 "137 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR1.c
-[v _tmr_TMR1Reset tmr_TMR1Reset `(v  1 e 1 0 ]
+[v i1_tmr_TMR1Reset tmr_TMR1Reset `(v  1 e 1 0 ]
 {
 "142
 } 0
@@ -535,4 +573,14 @@ BRIGHT 183
 [v _tmr_TMR0Dis tmr_TMR0Dis `(v  1 e 1 0 ]
 {
 "74
+} 0
+"24 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
+[v _rtc_ISR rtc_ISR `(v  1 e 1 0 ]
+{
+"41
+} 0
+"132 C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\tmr_TMR1.c
+[v i1_tmr_TMR1Dis tmr_TMR1Dis `(v  1 e 1 0 ]
+{
+"135
 } 0
