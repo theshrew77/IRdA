@@ -23,6 +23,7 @@
 #include "tmr_TMR1.h"
 #include "ccp_CCP1.h"
 #include "RTC.h"
+#include "DAC.h"
 
 
 
@@ -63,6 +64,9 @@ int main(int argc, char** argv) {
     tmr_TMR0reset();
     
     tmr_TMR1Init();
+    
+    dac_DACInit();
+    dac_DACEn();
  
     //ccp_CCP1Init();
     

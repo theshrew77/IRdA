@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "DAC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
+# 1 "DAC.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -7523,9 +7517,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 7 "main.c" 2
-
-
+# 1 "DAC.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
@@ -7610,233 +7602,7 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 10 "main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
-# 11 "main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 411 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct __locale_struct * locale_t;
-# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 2 3
-
-
-void *memcpy (void *restrict, const void *restrict, size_t);
-void *memmove (void *, const void *, size_t);
-void *memset (void *, int, size_t);
-int memcmp (const void *, const void *, size_t);
-void *memchr (const void *, int, size_t);
-
-char *strcpy (char *restrict, const char *restrict);
-char *strncpy (char *restrict, const char *restrict, size_t);
-
-char *strcat (char *restrict, const char *restrict);
-char *strncat (char *restrict, const char *restrict, size_t);
-
-int strcmp (const char *, const char *);
-int strncmp (const char *, const char *, size_t);
-
-int strcoll (const char *, const char *);
-size_t strxfrm (char *restrict, const char *restrict, size_t);
-
-char *strchr (const char *, int);
-char *strrchr (const char *, int);
-
-size_t strcspn (const char *, const char *);
-size_t strspn (const char *, const char *);
-char *strpbrk (const char *, const char *);
-char *strstr (const char *, const char *);
-char *strtok (char *restrict, const char *restrict);
-
-size_t strlen (const char *);
-
-char *strerror (int);
-# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
-char *strtok_r (char *restrict, const char *restrict, char **restrict);
-int strerror_r (int, char *, size_t);
-char *stpcpy(char *restrict, const char *restrict);
-char *stpncpy(char *restrict, const char *restrict, size_t);
-size_t strnlen (const char *, size_t);
-char *strdup (const char *);
-char *strndup (const char *, size_t);
-char *strsignal(int);
-char *strerror_l (int, locale_t);
-int strcoll_l (const char *, const char *, locale_t);
-size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
-
-
-
-
-void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 12 "main.c" 2
-
-
-# 1 "./Debug.h" 1
-# 11 "./Debug.h"
-void debug_init(void);
-void debug_deinit(void);
-void debug_out(const char *fmt, ...);
-char *debug_in( char *buf, uint16_t Len, uint32_t tmo );
-int16_t debug_kbhit(void);
-uint16_t debug_enable(void);
-uint16_t debug_disable(void);
-uint16_t debug_getstatus(void);
-void debug_flush(void);
-# 14 "main.c" 2
-
-# 1 "./main.h" 1
-# 31 "./main.h"
-#pragma config CP = OFF
-
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT1
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = OFF
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config WDTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = LOW
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-
-
-#pragma config WRT = OFF
-#pragma config LVP = OFF
-
-
-#pragma config CP = OFF
-#pragma config CPD = OFF
-# 15 "main.c" 2
-
-# 1 "./uart_UCA0.h" 1
-# 11 "./uart_UCA0.h"
-# 1 "./Que.h" 1
-# 14 "./Que.h"
-typedef struct {
-  int8_t Data[2];
-  int8_t In;
-  int8_t Out;
-} t_Q;
-
-
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-# 11 "./uart_UCA0.h" 2
-# 20 "./uart_UCA0.h"
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-# 16 "main.c" 2
-
-# 1 "./Interrupts.h" 1
-# 19 "./Interrupts.h"
-void configureIOCInt(void);
-# 17 "main.c" 2
-
-# 1 "./tmr_TMR0.h" 1
-# 21 "./tmr_TMR0.h"
-void tmr_TMR0Init(void);
-uint16_t tmr_computeDelta(uint8_t i);
-uint8_t accquisitionComplete(void);
-void tmr_TMR0mark(void);
-void tmr_TMR0reset(void);
-void tmr_TMR0IncRollovers(void);
-void tmr_TMR0Dis(void);
-# 18 "main.c" 2
-
-# 1 "./NEC.h" 1
-# 60 "./NEC.h"
-typedef enum {
-    LEDON = 0xFF,
-    LEDOFF = 0xBF,
-    TIMER2H = 0xDF,
-    TIMER4H = 0x9F,
-    TIMER6H = 0xEF,
-    TIMER8H = 0xAF,
-    DIM = 0xF7,
-    BRIGHT = 0xB7,
-} NEC_commands_t;
-
-uint8_t nec_ProcessPacket(void);
-void nec_ExecuteCommand(uint8_t NECcommand);
-# 19 "main.c" 2
-
-# 1 "./LED.h" 1
-# 13 "./LED.h"
-void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
-# 20 "main.c" 2
-
-# 1 "./Oscillator.h" 1
-# 17 "./Oscillator.h"
-void _osc_Config32768Hz(void);
-void osc_Config16MHz(void);
-void osc_Config1MHz(void);
-# 21 "main.c" 2
-
-# 1 "./PowerManagement.h" 1
-# 10 "./PowerManagement.h"
-void pwrmgmt_DisablePeripherals(void);
-void pwrmgmt_ConfigUnusedPins(void);
-# 22 "main.c" 2
-
-# 1 "./tmr_TMR1.h" 1
-# 23 "./tmr_TMR1.h"
-void tmr_TMR1Init(void);
-void tmr_TMR1ClrRollovers(void);
-uint16_t *tmr_TMR1GetRollovers(void);
-void tmr_TMR1IncRollovers(void);
-void tmr_TMR1En(void);
-void tmr_TMR1Dis(void);
-void tmr_TMR1Reset(void);
-void tmr_TMR1Toggle(void);
-uint32_t tmr_TMR1GetCount(void);
-void tmr_TMR1reset(void);
-void tmr_TMR1mark(void);
-uint8_t accquisitionComplete(void);
-uint16_t *getTMR1countArray(void);
-uint16_t *getTMR1rolloverArray(void);
-uint16_t tmr_computeDelta(uint8_t i);
-void tmr_TMR1setPeriod(uint16_t period);
-# 23 "main.c" 2
-
-# 1 "./ccp_CCP1.h" 1
-# 13 "./ccp_CCP1.h"
-void ccp_CCP1Init(void);
-void ccp_CCP1En(void);
-void ccp_CCP1Dis(void);
-void ccp_CCP1CompareMatch(void);
-# 24 "main.c" 2
-
-# 1 "./RTC.h" 1
-# 11 "./RTC.h"
-typedef struct
-{
-  uint8_t Seconds;
-  uint8_t Minutes;
-  uint8_t Hours;
-} RTC_t;
-
-void rtc_Init(void);
-void rtc_SetHourDelay(uint8_t hours);
-void rtc_Reset(void);
-void rtc_ISR(void);
-# 25 "main.c" 2
+# 2 "DAC.c" 2
 
 # 1 "./DAC.h" 1
 # 16 "./DAC.h"
@@ -7844,59 +7610,38 @@ void dac_DAClevelChange(char direction);
 void dac_DACInit(void);
 void dac_DACEn(void);
 void dac_DACDis(void);
-# 26 "main.c" 2
-# 43 "main.c"
-volatile uint8_t IR_received = 0;
+# 3 "DAC.c" 2
 
 
+static uint8_t DAClevel = 0;
 
-int main(int argc, char** argv) {
+void dac_DACInit(void){
+    DACCON0bits.DAC1EN = 0x00;
+    DACCON0bits.DAC1OE = 0x00;
+    DACCON0bits.DAC1PSS = 0x00;
+    DACCON0bits.DAC1NSS = 0x00;
+}
 
+void dac_DACEn(void){
+    DACCON0bits.DAC1EN = 0x01;
+    DACCON0bits.DAC1OE = 0x01;
+}
 
-    uint8_t NECcommand = 0;
-    CPUDOZEbits.IDLEN = 0;
-    osc_Config1MHz();
-    pwrmgmt_ConfigUnusedPins();
+void dac_DACDis(void){
+    DACCON0bits.DAC1EN = 0x00;
+    DACCON0bits.DAC1OE = 0x00;
+}
 
-    rtc_Reset();
-
-
-
-
-    led_ConfigureLED();
-    configureIOCInt();
-
-    tmr_TMR0Init();
-    tmr_TMR0reset();
-
-    tmr_TMR1Init();
-
-    dac_DACInit();
-    dac_DACEn();
-
-
-
-
-
-
-
-    while(1){
-        __asm("sleep");
-        if(IR_received){
-            while(!accquisitionComplete());
-            INTCONbits.GIE = 0;
-
-
-            NECcommand = nec_ProcessPacket();
-            nec_ExecuteCommand(NECcommand);
-            tmr_TMR0reset();
-            IR_received = 0;
-            _delay((unsigned long)((5)*(1000000/4000.0)));
-            INTCONbits.GIE = 1;
-        }
-
-
+void dac_DAClevelChange(char direction){
+    switch (direction){
+        case 'u':
+            if(DAClevel > 0x00) DAClevel -=7;
+            break;
+        case 'd':
+            if(DAClevel < 0x1C) DAClevel += 7;
+            break;
     }
+    DACCON1bits.DAC1R = DAClevel;
 
-    return (0);
+
 }

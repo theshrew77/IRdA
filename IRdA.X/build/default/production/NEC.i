@@ -7730,6 +7730,14 @@ uint16_t tmr_computeDelta(uint8_t i);
 void tmr_TMR1setPeriod(uint16_t period);
 # 9 "NEC.c" 2
 
+# 1 "./DAC.h" 1
+# 16 "./DAC.h"
+void dac_DAClevelChange(char direction);
+void dac_DACInit(void);
+void dac_DACEn(void);
+void dac_DACDis(void);
+# 10 "NEC.c" 2
+
 
 uint8_t nec_ProcessPacket(void){
     uint16_t delta;
@@ -7794,9 +7802,11 @@ void nec_ExecuteCommand(uint8_t NECcommand){
             break;
         case DIM:
 
+            dac_DAClevelChange('d');
             break;
         case BRIGHT:
 
+            dac_DAClevelChange('u');
             break;
     }
 }

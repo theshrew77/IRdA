@@ -1,74 +1,34 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"9012 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9012:     struct {
-[s S462 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S462 . DOZE . DOE ROI DOZEN IDLEN ]
-"9020
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9020:     struct {
-[s S463 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S463 . DOZE0 DOZE1 DOZE2 ]
-"9011
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9011: typedef union {
-[u S461 `S462 1 `S463 1 ]
-[n S461 . . . ]
-"9026
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9026: extern volatile CPUDOZEbits_t CPUDOZEbits __attribute__((address(0x918)));
-[v _CPUDOZEbits `VS461 ~T0 @X0 0 e@2328 ]
-"19 ./Oscillator.h
-[; ;./Oscillator.h: 19: void osc_Config1MHz(void);
-[v _osc_Config1MHz `(v ~T0 @X0 0 ef ]
-"11 ./PowerManagement.h
-[; ;./PowerManagement.h: 11: void pwrmgmt_ConfigUnusedPins(void);
-[v _pwrmgmt_ConfigUnusedPins `(v ~T0 @X0 0 ef ]
-"20 ./RTC.h
-[; ;./RTC.h: 20: void rtc_Reset(void);
-[v _rtc_Reset `(v ~T0 @X0 0 ef ]
-"13 ./LED.h
-[; ;./LED.h: 13: void led_ConfigureLED(void);
-[v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
-"19 ./Interrupts.h
-[; ;./Interrupts.h: 19: void configureIOCInt(void);
-[v _configureIOCInt `(v ~T0 @X0 0 ef ]
-"21 ./tmr_TMR0.h
-[; ;./tmr_TMR0.h: 21: void tmr_TMR0Init(void);
-[v _tmr_TMR0Init `(v ~T0 @X0 0 ef ]
-"25
-[; ;./tmr_TMR0.h: 25: void tmr_TMR0reset(void);
-[v _tmr_TMR0reset `(v ~T0 @X0 0 ef ]
-"23 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 23: void tmr_TMR1Init(void);
-[v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
-"17 ./DAC.h
-[; ;./DAC.h: 17: void dac_DACInit(void);
-[v _dac_DACInit `(v ~T0 @X0 0 ef ]
-"18
-[; ;./DAC.h: 18: void dac_DACEn(void);
-[v _dac_DACEn `(v ~T0 @X0 0 ef ]
-"34 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 34: uint8_t accquisitionComplete(void);
-[v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
-"357 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 357:     struct {
-[s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . INTEDG . PEIE GIE ]
-"356
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 356: typedef union {
-[u S30 `S31 1 ]
-[n S30 . . ]
-"364
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 364: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"71 ./NEC.h
-[; ;./NEC.h: 71: uint8_t nec_ProcessPacket(void);
-[v _nec_ProcessPacket `(uc ~T0 @X0 0 ef ]
-"72
-[; ;./NEC.h: 72: void nec_ExecuteCommand(uint8_t NECcommand);
-[v _nec_ExecuteCommand `(v ~T0 @X0 0 ef1`uc ]
-[v F4479 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF4479 ~T0 @X0 0 e ]
-[p i __delay ]
+"2325 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2325:     struct {
+[s S127 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S127 . DAC1NSS . DAC1PSS . DAC1OE . DAC1EN ]
+"2334
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2334:     struct {
+[s S128 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S128 . . DAC1PSS0 DAC1PSS1 ]
+"2324
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2324: typedef union {
+[u S126 `S127 1 `S128 1 ]
+[n S126 . . . ]
+"2340
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2340: extern volatile DACCON0bits_t DACCON0bits __attribute__((address(0x118)));
+[v _DACCON0bits `VS126 ~T0 @X0 0 e@280 ]
+"2381
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2381:     struct {
+[s S130 :5 `uc 1 ]
+[n S130 . DAC1R ]
+"2384
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2384:     struct {
+[s S131 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S131 . DAC1R0 DAC1R1 DAC1R2 DAC1R3 DAC1R4 ]
+"2380
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2380: typedef union {
+[u S129 `S130 1 `S131 1 ]
+[n S129 . . . ]
+"2392
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2392: extern volatile DACCON1bits_t DACCON1bits __attribute__((address(0x119)));
+[v _DACCON1bits `VS129 ~T0 @X0 0 e@281 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -789,150 +749,112 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12990
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12990: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"31 ./main.h
-[p x CP = OFF ]
-"33
-[p x FEXTOSC = OFF ]
-"34
-[p x RSTOSC = HFINT1 ]
-"35
-[p x CLKOUTEN = OFF ]
-"36
-[p x CSWEN = ON ]
-"37
-[p x FCMEN = OFF ]
-"40
-[p x MCLRE = ON ]
-"41
-[p x PWRTE = OFF ]
-"42
-[p x WDTE = OFF ]
-"43
-[p x LPBOREN = OFF ]
-"44
-[p x BOREN = OFF ]
-"45
-[p x BORV = LOW ]
-"46
-[p x PPS1WAY = ON ]
-"47
-[p x STVREN = ON ]
-"48
-[p x DEBUG = OFF ]
-"51
-[p x WRT = OFF ]
-"52
-[p x LVP = OFF ]
-"55
-[p x CP = OFF ]
-"56
-[p x CPD = OFF ]
-"43 main.c
-[; ;main.c: 43: volatile uint8_t IR_received = 0;
-[v _IR_received `Vuc ~T0 @X0 1 e ]
-[i _IR_received
+"5 DAC.c
+[; ;DAC.c: 5: static uint8_t DAClevel = 0;
+[v _DAClevel `uc ~T0 @X0 1 s ]
+[i _DAClevel
 -> -> 0 `i `uc
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"47
-[; ;main.c: 47: int main(int argc, char** argv) {
-[v _main `(i ~T0 @X0 1 ef2`i`**uc ]
+"7
+[; ;DAC.c: 7: void dac_DACInit(void){
+[v _dac_DACInit `(v ~T0 @X0 1 ef ]
 {
-[e :U _main ]
-[v _argc `i ~T0 @X0 1 r1 ]
-[v _argv `**uc ~T0 @X0 1 r2 ]
+[e :U _dac_DACInit ]
 [f ]
-"50
-[; ;main.c: 50:     uint8_t NECcommand = 0;
-[v _NECcommand `uc ~T0 @X0 1 a ]
-[e = _NECcommand -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:     CPUDOZEbits.IDLEN = 0;
-[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
-"52
-[; ;main.c: 52:     osc_Config1MHz();
-[e ( _osc_Config1MHz ..  ]
-"53
-[; ;main.c: 53:     pwrmgmt_ConfigUnusedPins();
-[e ( _pwrmgmt_ConfigUnusedPins ..  ]
-"55
-[; ;main.c: 55:     rtc_Reset();
-[e ( _rtc_Reset ..  ]
-"60
-[; ;main.c: 60:     led_ConfigureLED();
-[e ( _led_ConfigureLED ..  ]
-"61
-[; ;main.c: 61:     configureIOCInt();
-[e ( _configureIOCInt ..  ]
-"63
-[; ;main.c: 63:     tmr_TMR0Init();
-[e ( _tmr_TMR0Init ..  ]
-"64
-[; ;main.c: 64:     tmr_TMR0reset();
-[e ( _tmr_TMR0reset ..  ]
-"66
-[; ;main.c: 66:     tmr_TMR1Init();
-[e ( _tmr_TMR1Init ..  ]
-"68
-[; ;main.c: 68:     dac_DACInit();
-[e ( _dac_DACInit ..  ]
-"69
-[; ;main.c: 69:     dac_DACEn();
-[e ( _dac_DACEn ..  ]
-"77
-[; ;main.c: 77:     while(1){
-[e :U 665 ]
-{
-"78
-[; ;main.c: 78:         __asm("sleep");
-[; <" sleep ;# ">
-"79
-[; ;main.c: 79:         if(IR_received){
-[e $ ! != -> _IR_received `i -> 0 `i 667  ]
-{
-"80
-[; ;main.c: 80:             while(!accquisitionComplete());
-[e $U 668  ]
-[e :U 669 ]
-[e :U 668 ]
-[e $ ! != -> ( _accquisitionComplete ..  `i -> 0 `i 669  ]
-[e :U 670 ]
-"81
-[; ;main.c: 81:             INTCONbits.GIE = 0;
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"84
-[; ;main.c: 84:             NECcommand = nec_ProcessPacket();
-[e = _NECcommand ( _nec_ProcessPacket ..  ]
-"85
-[; ;main.c: 85:             nec_ExecuteCommand(NECcommand);
-[e ( _nec_ExecuteCommand (1 _NECcommand ]
-"86
-[; ;main.c: 86:             tmr_TMR0reset();
-[e ( _tmr_TMR0reset ..  ]
-"87
-[; ;main.c: 87:             IR_received = 0;
-[e = _IR_received -> -> 0 `i `uc ]
-"88
-[; ;main.c: 88:             _delay((unsigned long)((5)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"89
-[; ;main.c: 89:             INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"90
-[; ;main.c: 90:         }
+"8
+[; ;DAC.c: 8:     DACCON0bits.DAC1EN = 0x00;
+[e = . . _DACCON0bits 0 6 -> -> 0 `i `uc ]
+"9
+[; ;DAC.c: 9:     DACCON0bits.DAC1OE = 0x00;
+[e = . . _DACCON0bits 0 4 -> -> 0 `i `uc ]
+"10
+[; ;DAC.c: 10:     DACCON0bits.DAC1PSS = 0x00;
+[e = . . _DACCON0bits 0 2 -> -> 0 `i `uc ]
+"11
+[; ;DAC.c: 11:     DACCON0bits.DAC1NSS = 0x00;
+[e = . . _DACCON0bits 0 0 -> -> 0 `i `uc ]
+"12
+[; ;DAC.c: 12: }
+[e :UE 660 ]
 }
-[e :U 667 ]
-"93
-[; ;main.c: 93:     }
+"14
+[; ;DAC.c: 14: void dac_DACEn(void){
+[v _dac_DACEn `(v ~T0 @X0 1 ef ]
+{
+[e :U _dac_DACEn ]
+[f ]
+"15
+[; ;DAC.c: 15:     DACCON0bits.DAC1EN = 0x01;
+[e = . . _DACCON0bits 0 6 -> -> 1 `i `uc ]
+"16
+[; ;DAC.c: 16:     DACCON0bits.DAC1OE = 0x01;
+[e = . . _DACCON0bits 0 4 -> -> 1 `i `uc ]
+"17
+[; ;DAC.c: 17: }
+[e :UE 661 ]
 }
-[e :U 664 ]
+"19
+[; ;DAC.c: 19: void dac_DACDis(void){
+[v _dac_DACDis `(v ~T0 @X0 1 ef ]
+{
+[e :U _dac_DACDis ]
+[f ]
+"20
+[; ;DAC.c: 20:     DACCON0bits.DAC1EN = 0x00;
+[e = . . _DACCON0bits 0 6 -> -> 0 `i `uc ]
+"21
+[; ;DAC.c: 21:     DACCON0bits.DAC1OE = 0x00;
+[e = . . _DACCON0bits 0 4 -> -> 0 `i `uc ]
+"22
+[; ;DAC.c: 22: }
+[e :UE 662 ]
+}
+"24
+[; ;DAC.c: 24: void dac_DAClevelChange(char direction){
+[v _dac_DAClevelChange `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _dac_DAClevelChange ]
+[v _direction `uc ~T0 @X0 1 r1 ]
+[f ]
+"25
+[; ;DAC.c: 25:     switch (direction){
 [e $U 665  ]
+{
+"26
+[; ;DAC.c: 26:         case 'u':
 [e :U 666 ]
-"95
-[; ;main.c: 95:     return (0);
-[e ) -> 0 `i ]
-[e $UE 663  ]
-"96
-[; ;main.c: 96: }
+"27
+[; ;DAC.c: 27:             if(DAClevel > 0x00) DAClevel -=7;
+[e $ ! > -> _DAClevel `i -> 0 `i 667  ]
+[e =- _DAClevel -> -> 7 `i `uc ]
+[e :U 667 ]
+"28
+[; ;DAC.c: 28:             break;
+[e $U 664  ]
+"29
+[; ;DAC.c: 29:         case 'd':
+[e :U 668 ]
+"30
+[; ;DAC.c: 30:             if(DAClevel < 0x1C) DAClevel += 7;
+[e $ ! < -> _DAClevel `i -> 28 `i 669  ]
+[e =+ _DAClevel -> -> 7 `i `uc ]
+[e :U 669 ]
+"31
+[; ;DAC.c: 31:             break;
+[e $U 664  ]
+"32
+[; ;DAC.c: 32:     }
+}
+[e $U 664  ]
+[e :U 665 ]
+[e [\ -> _direction `i , $ -> -> 117 `ui `i 666
+ , $ -> -> 100 `ui `i 668
+ 664 ]
+[e :U 664 ]
+"33
+[; ;DAC.c: 33:     DACCON1bits.DAC1R = DAClevel;
+[e = . . _DACCON1bits 0 0 _DAClevel ]
+"36
+[; ;DAC.c: 36: }
 [e :UE 663 ]
 }

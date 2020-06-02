@@ -7,6 +7,7 @@
 #include "main.h"
 #include "RTC.h"
 #include "tmr_TMR1.h"
+#include "DAC.h"
 
 uint8_t nec_ProcessPacket(void){
     uint16_t delta;
@@ -71,9 +72,11 @@ void nec_ExecuteCommand(uint8_t NECcommand){
             break;
         case DIM:
             //Uart_UCA0_putc( 'g' );
+            dac_DAClevelChange('d');
             break;
         case BRIGHT:
             //Uart_UCA0_putc( 'h' );
+            dac_DAClevelChange('u');
             break;
     }
 }
