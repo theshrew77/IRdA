@@ -17,6 +17,7 @@
       <itemPath>ccp_CCP1.h</itemPath>
       <itemPath>tmr_TMR0.h</itemPath>
       <itemPath>RTC.h</itemPath>
+      <itemPath>DAC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -38,6 +39,7 @@
       <itemPath>ccp_CCP1.c</itemPath>
       <itemPath>tmr_TMR0.c</itemPath>
       <itemPath>RTC.c</itemPath>
+      <itemPath>DAC.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
