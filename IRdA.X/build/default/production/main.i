@@ -7796,7 +7796,7 @@ void pwrmgmt_ConfigUnusedPins(void);
 # 22 "main.c" 2
 
 # 1 "./tmr_TMR1.h" 1
-# 22 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -7812,6 +7812,7 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPeriod(uint16_t period);
 # 23 "main.c" 2
 
 # 1 "./ccp_CCP1.h" 1
@@ -7842,7 +7843,8 @@ volatile uint8_t IR_received = 0;
 
 
 int main(int argc, char** argv) {
-    LATAbits.LATA2 = 0;
+
+
     uint8_t NECcommand = 0;
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
@@ -7855,14 +7857,20 @@ int main(int argc, char** argv) {
 
     led_ConfigureLED();
     configureIOCInt();
+
     tmr_TMR0Init();
     tmr_TMR0reset();
 
     tmr_TMR1Init();
-# 72 "main.c"
+
+
+
+
+
+
+
     while(1){
         __asm("sleep");
-
         if(IR_received){
             while(!accquisitionComplete());
             INTCONbits.GIE = 0;

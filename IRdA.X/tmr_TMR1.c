@@ -12,6 +12,11 @@
 //static uint16_t TMR1rolloverArray [34] = {0};
 //static uint8_t sample = 0;
 //static uint8_t accComplete = 0;
+static uint16_t TMR1preload = TMR1_1s;
+
+void tmr_TMR1setPreload(uint16_t preload){
+    TMR1preload = preload;
+}
 /*
 uint16_t tmr_computeDelta(uint8_t i){
     if (_XTAL_FREQ == 16000000){
@@ -106,11 +111,11 @@ void tmr_TMR1Init(void){
     OSCCON3bits.SOSCPWR = 0x00;     //set SOSC power level = low
     OSCCON3bits.SOSCBE = 0x00;      //configure secondary oscillator as crystal
     
-    TMR1XTALEN = 0x01;              //enable SOSC as clock source
+    //TMR1XTALEN = 0x01;              //enable SOSC as clock source
     
     TMR1IFG = 0;                    //clear TMR1 interrupt flag
-    TMR1H = (TMR1_1s & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
-    TMR1L = TMR1_1s & 0x00FF;
+    TMR1H = (TMR1preload & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
+    TMR1L = TMR1preload & 0x00FF;
  
     
 
@@ -124,20 +129,24 @@ void tmr_TMR1Init(void){
 }
 
 void tmr_TMR1En(void){
+    //enable SOSC as clock source
+    TMR1XTALEN = 0x01;
     //turn timer on
     TMR1_ON = 1;
    
 }
 
 void tmr_TMR1Dis(void){
+    //disable SOSC as clock source
+    TMR1XTALEN = 0x00;
     //turn timer off
     TMR1_ON = 0;
 }
 
 void tmr_TMR1Reset(void){
     TMR1_ON = 0;
-    TMR1H = (TMR1_1s & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
-    TMR1L = TMR1_1s & 0x00FF;
+    TMR1H = (TMR1preload & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
+    TMR1L = TMR1preload & 0x00FF;
     TMR1_ON = 1;
 }
 

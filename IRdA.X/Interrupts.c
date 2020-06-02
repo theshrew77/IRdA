@@ -42,7 +42,6 @@ __interrupt() void ISR(void){
     }
     
     if(TMR1IFG){
-        //LEDLAT ^= 1;
         TMR1IFG = 0;
         tmr_TMR1Reset();
         rtc_ISR();

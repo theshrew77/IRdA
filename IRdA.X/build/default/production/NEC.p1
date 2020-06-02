@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"36 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 36: uint16_t tmr_computeDelta(uint8_t i);
+"37 ./tmr_TMR1.h
+[; ;./tmr_TMR1.h: 37: uint16_t tmr_computeDelta(uint8_t i);
 [v _tmr_computeDelta `(us ~T0 @X0 0 ef1`uc ]
 "2029 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2029:     struct {
@@ -13,8 +13,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2038
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2038: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
 [v _LATAbits `VS112 ~T0 @X0 0 e@268 ]
-"27 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 27: void tmr_TMR1Dis(void);
+"28 ./tmr_TMR1.h
+[; ;./tmr_TMR1.h: 28: void tmr_TMR1Dis(void);
 [v _tmr_TMR1Dis `(v ~T0 @X0 0 ef ]
 "19 ./RTC.h
 [; ;./RTC.h: 19: void rtc_SetHourDelay(uint8_t hours);
@@ -790,8 +790,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [; ;NEC.c: 12:     uint16_t delta;
 [v _delta `us ~T0 @X0 1 a ]
-[v F4597 `uc ~T0 @X0 -> 32 `i s ]
-[i F4597
+[v F4599 `uc ~T0 @X0 -> 32 `i s ]
+[i F4599
 :U ..
 "13
 [; ;NEC.c: 13:     uint8_t NECpacket [32] = {0};
@@ -799,7 +799,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _NECpacket `uc ~T0 @X0 -> 32 `i a ]
-[e = _NECpacket F4597 ]
+[e = _NECpacket F4599 ]
 "14
 [; ;NEC.c: 14:     uint8_t command = 0;
 [v _command `uc ~T0 @X0 1 a ]
@@ -932,8 +932,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;NEC.c: 59:             LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "61
-[; ;NEC.c: 61:             rtc_SetHourDelay(10);
-[e ( _rtc_SetHourDelay (1 -> -> 10 `i `uc ]
+[; ;NEC.c: 61:             rtc_SetHourDelay(1);
+[e ( _rtc_SetHourDelay (1 -> -> 1 `i `uc ]
 "62
 [; ;NEC.c: 62:             break;
 [e $U 670  ]

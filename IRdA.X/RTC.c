@@ -22,10 +22,14 @@ void rtc_Reset(void){
 }
 
 void rtc_ISR(void){
-    if (++tRTC.Seconds==hourDelay){
-        tmr_TMR1Dis();
-        LEDLAT = 1;
+    
+    if (++tRTC.Seconds == 60){
+        if (++tRTC.Minutes == hourDelay){
+                tmr_TMR1Dis();
+                LEDLAT = 1;             
+        }
     }
+   
     /*
     if (++tRTC.Seconds == 60){
         if (++tRTC.Minutes == 60){

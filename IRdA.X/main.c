@@ -44,34 +44,34 @@ volatile uint8_t IR_received = 0;
 
 
 int main(int argc, char** argv) {
-    LEDLAT = 0;
+    
+    
     uint8_t NECcommand = 0;
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
     pwrmgmt_ConfigUnusedPins();
-    pwrmgmt_DisablePeripherals();
+    //pwrmgmt_DisablePeripherals();
     rtc_Reset();
     #ifdef _16F18313 
         VREGCONbits.VREGPM=1;
     #endif
-
+    
     led_ConfigureLED();
     configureIOCInt();
+    
     tmr_TMR0Init();
     tmr_TMR0reset();
- 
+    
     tmr_TMR1Init();
+ 
     //ccp_CCP1Init();
     
     //tmr_TMR1En();
     //ccp_CCP1En();
     
- 
-
-
+   
     while(1){
-        SLEEP();
-        
+        SLEEP();       
         if(IR_received){
             while(!accquisitionComplete());
             G_IE = 0;

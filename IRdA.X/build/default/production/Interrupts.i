@@ -7673,7 +7673,7 @@ void tmr_TMR0Dis(void);
 # 5 "Interrupts.c" 2
 
 # 1 "./tmr_TMR1.h" 1
-# 22 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -7689,6 +7689,7 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPeriod(uint16_t period);
 # 6 "Interrupts.c" 2
 
 # 1 "./Interrupts.h" 1
@@ -7759,7 +7760,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
     }
 
     if(PIR1bits.TMR1IF){
-
         PIR1bits.TMR1IF = 0;
         tmr_TMR1Reset();
         rtc_ISR();
@@ -7780,6 +7780,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
 
     }
-# 89 "Interrupts.c"
+# 88 "Interrupts.c"
     return;
 }

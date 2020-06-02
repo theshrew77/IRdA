@@ -7615,7 +7615,7 @@ void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
 # 5 "ccp_CCP1.c" 2
 # 1 "./tmr_TMR1.h" 1
-# 22 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -7631,6 +7631,7 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPeriod(uint16_t period);
 # 6 "ccp_CCP1.c" 2
 # 1 "./Interrupts.h" 1
 # 19 "./Interrupts.h"

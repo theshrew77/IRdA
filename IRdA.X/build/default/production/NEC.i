@@ -7711,7 +7711,7 @@ void rtc_ISR(void);
 # 8 "NEC.c" 2
 
 # 1 "./tmr_TMR1.h" 1
-# 22 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -7727,6 +7727,7 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPeriod(uint16_t period);
 # 9 "NEC.c" 2
 
 
@@ -7780,7 +7781,7 @@ void nec_ExecuteCommand(uint8_t NECcommand){
         case TIMER2H:
             LATAbits.LATA2 = 0;
 
-            rtc_SetHourDelay(10);
+            rtc_SetHourDelay(1);
             break;
         case TIMER4H:
 

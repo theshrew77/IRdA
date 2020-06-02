@@ -7607,7 +7607,7 @@ typedef uint32_t uint_fast32_t;
 
 
 # 1 "./tmr_TMR1.h" 1
-# 22 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -7623,6 +7623,7 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPeriod(uint16_t period);
 # 5 "tmr_TMR1.c" 2
 
 # 1 "./Interrupts.h" 1
@@ -7659,9 +7660,22 @@ void configureIOCInt(void);
 #pragma config CP = OFF
 #pragma config CPD = OFF
 # 7 "tmr_TMR1.c" 2
-# 81 "tmr_TMR1.c"
+
+
+
+
+
+
+
+
+static uint16_t TMR1preload = 0x7FFF;
+
+void tmr_TMR1setPreload(uint16_t preload){
+    TMR1preload = preload;
+}
+# 86 "tmr_TMR1.c"
 void tmr_TMR1Init(void){
-# 102 "tmr_TMR1.c"
+# 107 "tmr_TMR1.c"
     T1CONbits.T1CKPS = 0x00;
     T1CONbits.TMR1CS = 0x02;
     T1CONbits.T1SYNC = 1;
@@ -7669,11 +7683,11 @@ void tmr_TMR1Init(void){
     OSCCON3bits.SOSCPWR = 0x00;
     OSCCON3bits.SOSCBE = 0x00;
 
-    T1CONbits.T1SOSC = 0x01;
+
 
     PIR1bits.TMR1IF = 0;
-    TMR1H = (0x7FFF & 0xFF00) >> 8;
-    TMR1L = 0x7FFF & 0x00FF;
+    TMR1H = (TMR1preload & 0xFF00) >> 8;
+    TMR1L = TMR1preload & 0x00FF;
 
 
 
@@ -7688,18 +7702,22 @@ void tmr_TMR1Init(void){
 
 void tmr_TMR1En(void){
 
+    T1CONbits.T1SOSC = 0x01;
+
     T1CONbits.TMR1ON = 1;
 
 }
 
 void tmr_TMR1Dis(void){
 
+    T1CONbits.T1SOSC = 0x00;
+
     T1CONbits.TMR1ON = 0;
 }
 
 void tmr_TMR1Reset(void){
     T1CONbits.TMR1ON = 0;
-    TMR1H = (0x7FFF & 0xFF00) >> 8;
-    TMR1L = 0x7FFF & 0x00FF;
+    TMR1H = (TMR1preload & 0xFF00) >> 8;
+    TMR1L = TMR1preload & 0x00FF;
     T1CONbits.TMR1ON = 1;
 }

@@ -9,7 +9,8 @@
 #define	TMR_TMR1_H
 #define TMR1IFG     PIR1bits.TMR1IF
 #define TMR1MAX     0xFFFF
-#define TMR1_1s     0x7FFF
+#define TMR1_1s     0x7FFF 
+#define TMR1_candle 0xF999
 #define TMR1PRE     T1CONbits.T1CKPS
 //#define TMR116BEN   T1CONbits.RD16
 #define TMR1CS      T1CONbits.TMR1CS
@@ -34,6 +35,7 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPeriod(uint16_t period);
 
 #ifdef	__cplusplus
 extern "C" {

@@ -58,7 +58,7 @@ void nec_ExecuteCommand(uint8_t NECcommand){
         case TIMER2H:
             LEDLAT = 0;
             //Uart_UCA0_putc( 'c' );
-            rtc_SetHourDelay(10);
+            rtc_SetHourDelay(1);
             break;
         case TIMER4H:
             //Uart_UCA0_putc( 'd' );

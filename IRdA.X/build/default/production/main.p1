@@ -1,17 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"2029 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2029:     struct {
-[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S113 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"2028
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2028: typedef union {
-[u S112 `S113 1 ]
-[n S112 . . ]
-"2038
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2038: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
-[v _LATAbits `VS112 ~T0 @X0 0 e@268 ]
-"9012
+"9012 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 9012:     struct {
 [s S462 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S462 . DOZE . DOE ROI DOZEN IDLEN ]
@@ -50,11 +39,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "25
 [; ;./tmr_TMR0.h: 25: void tmr_TMR0reset(void);
 [v _tmr_TMR0reset `(v ~T0 @X0 0 ef ]
-"22 ./tmr_TMR1.h
-[; ;./tmr_TMR1.h: 22: void tmr_TMR1Init(void);
+"23 ./tmr_TMR1.h
+[; ;./tmr_TMR1.h: 23: void tmr_TMR1Init(void);
 [v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
-"33
-[; ;./tmr_TMR1.h: 33: uint8_t accquisitionComplete(void);
+"34
+[; ;./tmr_TMR1.h: 34: uint8_t accquisitionComplete(void);
 [v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
 "357 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 357:     struct {
@@ -850,49 +839,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"47
-[; ;main.c: 47:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"48
-[; ;main.c: 48:     uint8_t NECcommand = 0;
+"49
+[; ;main.c: 49:     uint8_t NECcommand = 0;
 [v _NECcommand `uc ~T0 @X0 1 a ]
 [e = _NECcommand -> -> 0 `i `uc ]
-"49
-[; ;main.c: 49:     CPUDOZEbits.IDLEN = 0;
-[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
 "50
-[; ;main.c: 50:     osc_Config1MHz();
-[e ( _osc_Config1MHz ..  ]
+[; ;main.c: 50:     CPUDOZEbits.IDLEN = 0;
+[e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
 "51
-[; ;main.c: 51:     pwrmgmt_ConfigUnusedPins();
-[e ( _pwrmgmt_ConfigUnusedPins ..  ]
+[; ;main.c: 51:     osc_Config1MHz();
+[e ( _osc_Config1MHz ..  ]
 "52
-[; ;main.c: 52:     pwrmgmt_DisablePeripherals();
-[e ( _pwrmgmt_DisablePeripherals ..  ]
+[; ;main.c: 52:     pwrmgmt_ConfigUnusedPins();
+[e ( _pwrmgmt_ConfigUnusedPins ..  ]
 "53
-[; ;main.c: 53:     rtc_Reset();
+[; ;main.c: 53:     pwrmgmt_DisablePeripherals();
+[e ( _pwrmgmt_DisablePeripherals ..  ]
+"54
+[; ;main.c: 54:     rtc_Reset();
 [e ( _rtc_Reset ..  ]
-"58
-[; ;main.c: 58:     led_ConfigureLED();
-[e ( _led_ConfigureLED ..  ]
 "59
-[; ;main.c: 59:     configureIOCInt();
-[e ( _configureIOCInt ..  ]
+[; ;main.c: 59:     led_ConfigureLED();
+[e ( _led_ConfigureLED ..  ]
 "60
-[; ;main.c: 60:     tmr_TMR0Init();
+[; ;main.c: 60:     configureIOCInt();
+[e ( _configureIOCInt ..  ]
+"62
+[; ;main.c: 62:     tmr_TMR0Init();
 [e ( _tmr_TMR0Init ..  ]
-"61
-[; ;main.c: 61:     tmr_TMR0reset();
-[e ( _tmr_TMR0reset ..  ]
 "63
-[; ;main.c: 63:     tmr_TMR1Init();
+[; ;main.c: 63:     tmr_TMR0reset();
+[e ( _tmr_TMR0reset ..  ]
+"65
+[; ;main.c: 65:     tmr_TMR1Init();
 [e ( _tmr_TMR1Init ..  ]
-"72
-[; ;main.c: 72:     while(1){
+"73
+[; ;main.c: 73:     while(1){
 [e :U 665 ]
 {
-"73
-[; ;main.c: 73:         __asm("sleep");
+"74
+[; ;main.c: 74:         __asm("sleep");
 [; <" sleep ;# ">
 "75
 [; ;main.c: 75:         if(IR_received){

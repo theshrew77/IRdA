@@ -7620,7 +7620,7 @@ void rtc_ISR(void);
 # 3 "RTC.c" 2
 
 # 1 "./tmr_TMR1.h" 1
-# 22 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
@@ -7636,6 +7636,7 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPeriod(uint16_t period);
 # 4 "RTC.c" 2
 
 # 1 "./LED.h" 1
@@ -7663,9 +7664,12 @@ void rtc_Reset(void){
 }
 
 void rtc_ISR(void){
-    if (++tRTC.Seconds==hourDelay){
-        tmr_TMR1Dis();
-        LATAbits.LATA2 = 1;
+
+    if (++tRTC.Seconds == 60){
+        if (++tRTC.Minutes == hourDelay){
+                tmr_TMR1Dis();
+                LATAbits.LATA2 = 1;
+        }
     }
-# 41 "RTC.c"
+# 45 "RTC.c"
 }

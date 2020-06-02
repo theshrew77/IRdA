@@ -7643,7 +7643,7 @@ void led_Blink(uint8_t times);
 
 void led_ConfigureLED(void){
     TRISAbits.TRISA2 = 0;
-    LATAbits.LATA2 = 0;
+    LATAbits.LATA2 = 1;
 }
 
 void led_Blink(uint8_t times){
