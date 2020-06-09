@@ -18,7 +18,8 @@ t_Q *getU0_RxBuf_t(void){
 void Uart_UCA0Init(void)
 {
    //Enable TX
-    RA0PPS = 0x0F;          //send UART TX to RA0
+    //RA0PPS = 0x0F;          //send UART TX to RA0
+    RA0PPS = 0x14;
     TX1STAbits.TXEN = 1;    //Enable Transmitter circuitry
     TX1STAbits.SYNC = 0;    //Disable synchronus mode
     RC1STAbits.SPEN = 1;    //Enable ESUART and set TX pin as output
@@ -39,10 +40,10 @@ void Uart_UCA0Init(void)
     BAUD1CONbits.BRG16 = 0;
     SPBRGL = 25;
     */
-    //configure 110 baud @ 32768Hz
+    //configure 9600 baud @ 1MHz
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
-    SPBRGL = 4;
+    SPBRGL = 12;
     
 }
 
@@ -97,4 +98,12 @@ int8_t  Uart_UCA0_putc( int8_t c )
   return(c);
 }
 
+void Uart_UCA0_puts(char*string){
+    uint16_t len;
+    len = strlen(string);
+    for (int i = 0; i < len; i++){
+        Uart_UCA0_putc( string[i] );
+        
+    }
+}
 

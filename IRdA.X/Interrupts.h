@@ -16,6 +16,11 @@
 #define IOCA_ANSEL  ANSELAbits.ANSA1
 #define IOCA_F      IOCAFbits.IOCAF1
 
+typedef enum{
+    INT_DELAY = 0,
+    INT_CANDLE = 1        
+} TMR1InterruptTypes_t;
+
 void configureIOCInt(void);
 
 #ifdef	__cplusplus

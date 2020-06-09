@@ -56,18 +56,37 @@
 #define NEC_TIMEOUT     0
 */
 #define NEC_ADDRESS     0
+#define NEWREMOTE
 
+#ifdef OLDREMOTE
 typedef enum {
     LEDON   =   0xFF,
-    LEDOFF     =   0xBF,
+    LEDOFF  =   0xBF,
     TIMER2H =   0xDF,    
     TIMER4H =   0x9F, 
     TIMER6H =   0xEF, 
     TIMER8H =   0xAF, 
     DIM =       0xF7, 
     BRIGHT =    0xB7, 
+    CANDLE =    0xCF,
+    LIGHT =     0x8F
 } NEC_commands_t;
+#endif
 
+#ifdef NEWREMOTE
+typedef enum {
+    LEDON   =   0x7F,
+    LEDOFF  =   0xFF,
+    TIMER2H =   0xCF,    
+    TIMER4H =   0x6F, 
+    TIMER6H =   0xAF, 
+    TIMER8H =   0x57, 
+    DIM =       0x8F, 
+    BRIGHT =    0xD7, 
+    CANDLE =    0x4F,
+    LIGHT =     0x97
+} NEC_commands_t;
+#endif
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 

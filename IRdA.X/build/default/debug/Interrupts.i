@@ -7605,10 +7605,15 @@ typedef uint32_t uint_fast32_t;
 # 2 "Interrupts.c" 2
 
 # 1 "./main.h" 1
-# 31 "./main.h"
+# 19 "./main.h"
+typedef enum{
+    OFF = 0,
+    ON = 1,
+}status_t;
+# 35 "./main.h"
 #pragma config CP = OFF
 
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -7623,7 +7628,7 @@ typedef uint32_t uint_fast32_t;
 #pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
-#pragma config DEBUG = ON
+#pragma config DEBUG = OFF
 
 
 #pragma config WRT = OFF
@@ -7673,13 +7678,14 @@ void tmr_TMR0Dis(void);
 # 5 "Interrupts.c" 2
 
 # 1 "./tmr_TMR1.h" 1
-# 21 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
 void tmr_TMR1IncRollovers(void);
 void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
+void tmr_TMR1Reset(void);
 void tmr_TMR1Toggle(void);
 uint32_t tmr_TMR1GetCount(void);
 void tmr_TMR1reset(void);
@@ -7688,17 +7694,30 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPreload(uint16_t preload);
+void tmr_TMR1SOSCpowerLevel(char level);
 # 6 "Interrupts.c" 2
 
 # 1 "./Interrupts.h" 1
 # 19 "./Interrupts.h"
+typedef enum{
+    INT_DELAY = 0,
+    INT_CANDLE = 1
+} TMR1InterruptTypes_t;
+
 void configureIOCInt(void);
 # 7 "Interrupts.c" 2
 
 # 1 "./LED.h" 1
-# 13 "./LED.h"
+# 15 "./LED.h"
 void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
+void led_Bright(void);
+
+void led_Dim(void);
+
+void led_Off(void);
+void led_Toggle(void);
 # 8 "Interrupts.c" 2
 
 # 1 "./ccp_CCP1.h" 1
@@ -7709,7 +7728,25 @@ void ccp_CCP1Dis(void);
 void ccp_CCP1CompareMatch(void);
 # 9 "Interrupts.c" 2
 
+# 1 "./RTC.h" 1
+# 11 "./RTC.h"
+typedef struct
+{
+  uint8_t Seconds;
+  uint8_t Minutes;
+  uint8_t Hours;
+} RTC_t;
 
+void rtc_Init(void);
+void rtc_SetHourDelay(uint8_t hours);
+void rtc_Reset(void);
+void rtc_ISR(void);
+# 10 "Interrupts.c" 2
+
+
+
+extern uint8_t IR_received;
+extern uint8_t TMR1IntType;
 
 void configureIOCInt(void){
 
@@ -7732,6 +7769,7 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
     if(PIR0bits.IOCIF){
 
+        IR_received = 1;
         IOCAFbits.IOCAF1 = 0;
         PIR0bits.IOCIF = 0;
         if (!T0CON0bits.T0EN) T0CON0bits.T0EN = 1;
@@ -7742,16 +7780,22 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
     if(PIR1bits.TMR1IF){
         PIR1bits.TMR1IF = 0;
+        tmr_TMR1Reset();
+        if (TMR1IntType == INT_DELAY){
 
+            rtc_ISR();
+        }
+        if (TMR1IntType == INT_CANDLE){
 
-
+            led_Toggle();
+        }
     }
 
 
     if (PIR4bits.CCP1IF){
         PIR4bits.CCP1IF = 0;
-        TMR1 = 0;
-        ccp_CCP1CompareMatch();
+
+
     }
 
 
@@ -7762,6 +7806,6 @@ __attribute__((picinterrupt(("")))) void ISR(void){
 
 
     }
-# 86 "Interrupts.c"
+# 97 "Interrupts.c"
     return;
 }

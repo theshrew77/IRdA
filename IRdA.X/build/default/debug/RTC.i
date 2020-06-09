@@ -1,4 +1,4 @@
-# 1 "ccp_CCP1.c"
+# 1 "RTC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ccp_CCP1.c" 2
+# 1 "RTC.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -7517,7 +7517,8 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 2 "ccp_CCP1.c" 2
+# 1 "RTC.c" 2
+
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -7601,25 +7602,23 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
-# 3 "ccp_CCP1.c" 2
-# 1 "./ccp_CCP1.h" 1
-# 13 "./ccp_CCP1.h"
-void ccp_CCP1Init(void);
-void ccp_CCP1En(void);
-void ccp_CCP1Dis(void);
-void ccp_CCP1CompareMatch(void);
-# 4 "ccp_CCP1.c" 2
-# 1 "./LED.h" 1
-# 15 "./LED.h"
-void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
-void led_Bright(void);
+# 2 "RTC.c" 2
 
-void led_Dim(void);
+# 1 "./RTC.h" 1
+# 11 "./RTC.h"
+typedef struct
+{
+  uint8_t Seconds;
+  uint8_t Minutes;
+  uint8_t Hours;
+} RTC_t;
 
-void led_Off(void);
-void led_Toggle(void);
-# 5 "ccp_CCP1.c" 2
+void rtc_Init(void);
+void rtc_SetHourDelay(uint8_t hours);
+void rtc_Reset(void);
+void rtc_ISR(void);
+# 3 "RTC.c" 2
+
 # 1 "./tmr_TMR1.h" 1
 # 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
@@ -7639,52 +7638,45 @@ uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1SOSCpowerLevel(char level);
-# 6 "ccp_CCP1.c" 2
-# 1 "./Interrupts.h" 1
-# 19 "./Interrupts.h"
-typedef enum{
-    INT_DELAY = 0,
-    INT_CANDLE = 1
-} TMR1InterruptTypes_t;
+# 4 "RTC.c" 2
 
-void configureIOCInt(void);
-# 7 "ccp_CCP1.c" 2
+# 1 "./LED.h" 1
+# 15 "./LED.h"
+void led_ConfigureLED(void);
+void led_Blink(uint8_t times);
+void led_Bright(void);
 
-uint16_t seconds = 0;
-uint16_t delay = 0;
+void led_Dim(void);
 
-void ccp_CCP1Init(void){
+void led_Off(void);
+void led_Toggle(void);
+# 5 "RTC.c" 2
 
 
-    CCP1CON = 0b00001011;
-# 23 "ccp_CCP1.c"
-    CCPR1H = 0x10;
-    CCPR1L = 0x00;
+RTC_t tRTC;
+uint8_t hourDelay = 0;
 
-
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
-    PIE4bits.CCP1IE = 1;
-
+void rtc_SetHourDelay(uint8_t hours){
+    hourDelay = hours;
+    rtc_Reset();
+    tmr_TMR1Reset();
+    tmr_TMR1En();
 
 }
 
-void ccp_CCP1En(void){
-    CCP1CONbits.CCP1EN = 1;
+void rtc_Reset(void){
+    tRTC.Seconds = 0;
+    tRTC.Minutes = 0;
+    tRTC.Hours = 0;
 }
 
-void ccp_CCP1Dis(void){
-    CCP1CONbits.CCP1EN = 0;
-}
+void rtc_ISR(void){
 
-void ccp_CCP1CompareMatch(void){
-# 52 "ccp_CCP1.c"
-}
-
-void ccp_CCP1CompareReset(void){
-    seconds = 0;
-}
-
-void ccp_CCP1SetDelay(uint16_t newDelay){
-    delay = newDelay;
+    if (++tRTC.Seconds == 60){
+        if (++tRTC.Minutes == hourDelay){
+                tmr_TMR1Dis();
+                led_Off();
+        }
+    }
+# 45 "RTC.c"
 }

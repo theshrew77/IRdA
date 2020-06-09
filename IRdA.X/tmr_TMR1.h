@@ -35,7 +35,8 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
-void tmr_TMR1setPeriod(uint16_t period);
+void tmr_TMR1setPreload(uint16_t preload);
+void tmr_TMR1SOSCpowerLevel(char level);
 
 #ifdef	__cplusplus
 extern "C" {

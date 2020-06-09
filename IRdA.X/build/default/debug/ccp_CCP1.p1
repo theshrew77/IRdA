@@ -45,17 +45,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4877
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 4877: extern volatile CCP1CONbits_t CCP1CONbits __attribute__((address(0x293)));
 [v _CCP1CONbits `VS244 ~T0 @X0 0 e@659 ]
-"2029
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2029:     struct {
-[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S113 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"2028
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2028: typedef union {
-[u S112 `S113 1 ]
-[n S112 . . ]
-"2038
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 2038: extern volatile LATAbits_t LATAbits __attribute__((address(0x10C)));
-[v _LATAbits `VS112 ~T0 @X0 0 e@268 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -848,9 +837,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _ccp_CCP1CompareMatch ]
 [f ]
-"43
-[; ;ccp_CCP1.c: 43:     LATAbits.LATA2 ^= 1;
-[e =^ . . _LATAbits 0 2 -> -> 1 `i `Vuc ]
 "52
 [; ;ccp_CCP1.c: 52: }
 [e :UE 663 ]

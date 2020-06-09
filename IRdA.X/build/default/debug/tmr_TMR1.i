@@ -7607,13 +7607,14 @@ typedef uint32_t uint_fast32_t;
 
 
 # 1 "./tmr_TMR1.h" 1
-# 21 "./tmr_TMR1.h"
+# 23 "./tmr_TMR1.h"
 void tmr_TMR1Init(void);
 void tmr_TMR1ClrRollovers(void);
 uint16_t *tmr_TMR1GetRollovers(void);
 void tmr_TMR1IncRollovers(void);
 void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
+void tmr_TMR1Reset(void);
 void tmr_TMR1Toggle(void);
 uint32_t tmr_TMR1GetCount(void);
 void tmr_TMR1reset(void);
@@ -7622,18 +7623,30 @@ uint8_t accquisitionComplete(void);
 uint16_t *getTMR1countArray(void);
 uint16_t *getTMR1rolloverArray(void);
 uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPreload(uint16_t preload);
+void tmr_TMR1SOSCpowerLevel(char level);
 # 5 "tmr_TMR1.c" 2
 
 # 1 "./Interrupts.h" 1
 # 19 "./Interrupts.h"
+typedef enum{
+    INT_DELAY = 0,
+    INT_CANDLE = 1
+} TMR1InterruptTypes_t;
+
 void configureIOCInt(void);
 # 6 "tmr_TMR1.c" 2
 
 # 1 "./main.h" 1
-# 31 "./main.h"
+# 19 "./main.h"
+typedef enum{
+    OFF = 0,
+    ON = 1,
+}status_t;
+# 35 "./main.h"
 #pragma config CP = OFF
 
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -7648,7 +7661,7 @@ void configureIOCInt(void);
 #pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
-#pragma config DEBUG = ON
+#pragma config DEBUG = OFF
 
 
 #pragma config WRT = OFF
@@ -7658,25 +7671,63 @@ void configureIOCInt(void);
 #pragma config CP = OFF
 #pragma config CPD = OFF
 # 7 "tmr_TMR1.c" 2
-# 81 "tmr_TMR1.c"
+
+
+
+
+
+
+
+
+static uint16_t TMR1preload = 0x7FFF;
+
+void tmr_TMR1setPreload(uint16_t preload){
+    TMR1preload = preload;
+}
+# 86 "tmr_TMR1.c"
 void tmr_TMR1Init(void){
-# 97 "tmr_TMR1.c"
-    T1CONbits.T1CKPS = 0x03;
-
+# 107 "tmr_TMR1.c"
+    T1CONbits.T1CKPS = 0x00;
     T1CONbits.TMR1CS = 0x02;
+    T1CONbits.T1SYNC = 1;
 
-    OSCCON3bits.SOSCPWR = 0x00;
+    OSCCON3bits.SOSCPWR = 0x01;
     OSCCON3bits.SOSCBE = 0x00;
 
-    T1CONbits.T1SOSC = 0x01;
-    _delay((unsigned long)((500)*(1000000/4000.0)));
 
 
-    T1CONbits.T1SYNC = 1;
-# 122 "tmr_TMR1.c"
+    PIR1bits.TMR1IF = 0;
+    TMR1H = (TMR1preload & 0xFF00) >> 8;
+    TMR1L = TMR1preload & 0x00FF;
+
+
+
+
+    PIE1bits.TMR1IE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+
+
+}
+
+void tmr_TMR1SOSCpowerLevel(char level){
+    switch (level){
+        case 'h':
+            OSCCON3bits.SOSCPWR = 0x01;
+            break;
+        case 'l':
+            OSCCON3bits.SOSCPWR = 0x00;
+            break;
+        default:
+            OSCCON3bits.SOSCPWR = 0x00;
+            break;
+    }
 }
 
 void tmr_TMR1En(void){
+
+    T1CONbits.T1SOSC = 0x01;
 
     T1CONbits.TMR1ON = 1;
 
@@ -7684,5 +7735,14 @@ void tmr_TMR1En(void){
 
 void tmr_TMR1Dis(void){
 
+    T1CONbits.T1SOSC = 0x00;
+
     T1CONbits.TMR1ON = 0;
+}
+
+void tmr_TMR1Reset(void){
+    T1CONbits.TMR1ON = 0;
+    TMR1H = (TMR1preload & 0xFF00) >> 8;
+    TMR1L = TMR1preload & 0x00FF;
+    T1CONbits.TMR1ON = 1;
 }

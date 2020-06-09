@@ -7617,14 +7617,24 @@ void tmr_TMR0Dis(void);
 
 # 1 "./Interrupts.h" 1
 # 19 "./Interrupts.h"
+typedef enum{
+    INT_DELAY = 0,
+    INT_CANDLE = 1
+} TMR1InterruptTypes_t;
+
 void configureIOCInt(void);
 # 4 "tmr_TMR0.c" 2
 
 # 1 "./main.h" 1
-# 31 "./main.h"
+# 19 "./main.h"
+typedef enum{
+    OFF = 0,
+    ON = 1,
+}status_t;
+# 35 "./main.h"
 #pragma config CP = OFF
 
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -7639,7 +7649,7 @@ void configureIOCInt(void);
 #pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
-#pragma config DEBUG = ON
+#pragma config DEBUG = OFF
 
 
 #pragma config WRT = OFF
@@ -7651,7 +7661,7 @@ void configureIOCInt(void);
 # 5 "tmr_TMR0.c" 2
 
 # 1 "./NEC.h" 1
-# 60 "./NEC.h"
+# 62 "./NEC.h"
 typedef enum {
     LEDON = 0xFF,
     LEDOFF = 0xBF,
@@ -7661,8 +7671,10 @@ typedef enum {
     TIMER8H = 0xAF,
     DIM = 0xF7,
     BRIGHT = 0xB7,
+    CANDLE = 0xCF,
+    LIGHT = 0x8F
 } NEC_commands_t;
-
+# 90 "./NEC.h"
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 # 6 "tmr_TMR0.c" 2

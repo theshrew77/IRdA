@@ -314,10 +314,15 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 # 6 "Que.c" 2
 
 # 1 "./main.h" 1
-# 31 "./main.h"
+# 19 "./main.h"
+typedef enum{
+    OFF = 0,
+    ON = 1,
+}status_t;
+# 35 "./main.h"
 #pragma config CP = OFF
 
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -332,7 +337,7 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 #pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
-#pragma config DEBUG = ON
+#pragma config DEBUG = OFF
 
 
 #pragma config WRT = OFF

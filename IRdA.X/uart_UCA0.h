@@ -10,8 +10,8 @@
 #include <stdint.h>
 #include "Que.h"
 
-#define UCA0TXBUF TXREG
-#define UCA0RXBUF RCREG
+#define UCA0TXBUF TX1REG
+#define UCA0RXBUF RC1REG
 #define IFG2 PIR3
 #define UCA0TXIFG   PIR1bits.TXIF
 #define UCA0RXIFG   PIR1bits.RCIF
@@ -25,6 +25,7 @@ int8_t  Uart_UCA0_getc( int8_t *Out );
 int8_t  Uart_UCA0_putc( int8_t c );
 t_Q     *getU0_RxBuf_t(void);
 void    Uart_UCA0_RxIntEn(void);
+void Uart_UCA0_puts(char*string);
 
 #ifdef	__cplusplus
 extern "C" {

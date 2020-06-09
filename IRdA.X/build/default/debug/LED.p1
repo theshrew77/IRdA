@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"6 LED.c
+[; ;LED.c: 6: static uint8_t LED_status = OFF;
+[c E4527 0 1 .. ]
+[n E4527 . OFF ON  ]
 "1474 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 1474:     struct {
 [s S84 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -745,96 +749,199 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12990
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12990: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"31 ./main.h
+"35 ./main.h
 [p x CP = OFF ]
-"33
-[p x FEXTOSC = LP ]
-"34
-[p x RSTOSC = HFINT1 ]
-"35
-[p x CLKOUTEN = OFF ]
-"36
-[p x CSWEN = ON ]
 "37
-[p x FCMEN = OFF ]
+[p x FEXTOSC = OFF ]
+"38
+[p x RSTOSC = HFINT1 ]
+"39
+[p x CLKOUTEN = OFF ]
 "40
-[p x MCLRE = ON ]
+[p x CSWEN = ON ]
 "41
-[p x PWRTE = OFF ]
-"42
-[p x WDTE = OFF ]
-"43
-[p x LPBOREN = OFF ]
+[p x FCMEN = OFF ]
 "44
-[p x BOREN = OFF ]
+[p x MCLRE = ON ]
 "45
-[p x BORV = LOW ]
+[p x PWRTE = OFF ]
 "46
-[p x PPS1WAY = ON ]
+[p x WDTE = OFF ]
 "47
-[p x STVREN = ON ]
+[p x LPBOREN = OFF ]
 "48
-[p x DEBUG = ON ]
+[p x BOREN = OFF ]
+"49
+[p x BORV = LOW ]
+"50
+[p x PPS1WAY = ON ]
 "51
-[p x WRT = OFF ]
+[p x STVREN = ON ]
 "52
-[p x LVP = OFF ]
+[p x DEBUG = OFF ]
 "55
-[p x CP = OFF ]
+[p x WRT = OFF ]
 "56
+[p x LVP = OFF ]
+"59
+[p x CP = OFF ]
+"60
 [p x CPD = OFF ]
 "6 LED.c
-[; ;LED.c: 6: void led_ConfigureLED(void){
+[; ;LED.c: 6: static uint8_t LED_status = OFF;
+[v _LED_status `uc ~T0 @X0 1 s ]
+[i _LED_status
+-> . `E4527 0 `uc
+]
+"8
+[; ;LED.c: 8: void led_ConfigureLED(void){
 [v _led_ConfigureLED `(v ~T0 @X0 1 ef ]
 {
 [e :U _led_ConfigureLED ]
 [f ]
-"7
-[; ;LED.c: 7:     TRISAbits.TRISA2 = 0;
-[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
-"8
-[; ;LED.c: 8:     LATAbits.LATA2 = 0;
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
 "9
-[; ;LED.c: 9: }
+[; ;LED.c: 9:     TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+"10
+[; ;LED.c: 10:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"11
+[; ;LED.c: 11:     TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+"12
+[; ;LED.c: 12:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"13
+[; ;LED.c: 13: }
 [e :UE 660 ]
 }
-"11
-[; ;LED.c: 11: void led_Blink(uint8_t times){
+"15
+[; ;LED.c: 15: void led_Bright(void){
+[v _led_Bright `(v ~T0 @X0 1 ef ]
+{
+[e :U _led_Bright ]
+[f ]
+"16
+[; ;LED.c: 16:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"17
+[; ;LED.c: 17:     TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+"18
+[; ;LED.c: 18:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"19
+[; ;LED.c: 19:     LED_status = ON;
+[e = _LED_status -> . `E4527 1 `uc ]
+"20
+[; ;LED.c: 20: }
+[e :UE 661 ]
+}
+"22
+[; ;LED.c: 22: void led_Dim(void){
+[v _led_Dim `(v ~T0 @X0 1 ef ]
+{
+[e :U _led_Dim ]
+[f ]
+"23
+[; ;LED.c: 23:     LATAbits.LATA2 = 0;
+[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
+"24
+[; ;LED.c: 24:     TRISAbits.TRISA2 = 1;
+[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
+"25
+[; ;LED.c: 25:     LED_status = ON;
+[e = _LED_status -> . `E4527 1 `uc ]
+"26
+[; ;LED.c: 26: }
+[e :UE 662 ]
+}
+"28
+[; ;LED.c: 28: void led_Off(void){
+[v _led_Off `(v ~T0 @X0 1 ef ]
+{
+[e :U _led_Off ]
+[f ]
+"29
+[; ;LED.c: 29:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"30
+[; ;LED.c: 30:     TRISAbits.TRISA2 = 0;
+[e = . . _TRISAbits 0 2 -> -> 0 `i `uc ]
+"31
+[; ;LED.c: 31:     LATAbits.LATA2 = 1;
+[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
+"32
+[; ;LED.c: 32:     LED_status = OFF;
+[e = _LED_status -> . `E4527 0 `uc ]
+"33
+[; ;LED.c: 33: }
+[e :UE 663 ]
+}
+"35
+[; ;LED.c: 35: void led_Toggle(void){
+[v _led_Toggle `(v ~T0 @X0 1 ef ]
+{
+[e :U _led_Toggle ]
+[f ]
+"36
+[; ;LED.c: 36:     if (LED_status == ON){
+[e $ ! == -> _LED_status `i -> . `E4527 1 `i 665  ]
+{
+"37
+[; ;LED.c: 37:         led_Off();
+[e ( _led_Off ..  ]
+"38
+[; ;LED.c: 38:     }
+}
+[e $U 666  ]
+"39
+[; ;LED.c: 39:     else
+[e :U 665 ]
+"40
+[; ;LED.c: 40:        led_Bright();
+[e ( _led_Bright ..  ]
+[e :U 666 ]
+"41
+[; ;LED.c: 41: }
+[e :UE 664 ]
+}
+"43
+[; ;LED.c: 43: void led_Blink(uint8_t times){
 [v _led_Blink `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _led_Blink ]
 [v _times `uc ~T0 @X0 1 r1 ]
 [f ]
-"12
-[; ;LED.c: 12:     for (int i = 0; i < times; i++){
+"44
+[; ;LED.c: 44:     for (int i = 0; i < times; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $U 665  ]
-[e :U 662 ]
+[e $U 671  ]
+[e :U 668 ]
 {
-"13
-[; ;LED.c: 13:         LATAbits.LATA2 = 1;
+"45
+[; ;LED.c: 45:         LATAbits.LATA2 = 1;
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"14
-[; ;LED.c: 14:         _delay((unsigned long)((500)*(1000000/4000.0)));
+"46
+[; ;LED.c: 46:         _delay((unsigned long)((500)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"15
-[; ;LED.c: 15:         LATAbits.LATA2 = 0;
+"47
+[; ;LED.c: 47:         LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"16
-[; ;LED.c: 16:         _delay((unsigned long)((500)*(1000000/4000.0)));
+"48
+[; ;LED.c: 48:         _delay((unsigned long)((500)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"17
-[; ;LED.c: 17:     }
+"49
+[; ;LED.c: 49:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 665 ]
-[e $ < _i -> _times `i 662  ]
-[e :U 663 ]
+[e :U 671 ]
+[e $ < _i -> _times `i 668  ]
+[e :U 669 ]
 }
-"18
-[; ;LED.c: 18: }
-[e :UE 661 ]
+"50
+[; ;LED.c: 50: }
+[e :UE 667 ]
 }

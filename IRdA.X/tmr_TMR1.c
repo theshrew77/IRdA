@@ -108,7 +108,7 @@ void tmr_TMR1Init(void){
     TMR1CS = 0x02;                  //select external clock source
     T1CONbits.T1SYNC = 1;           //put TMR1 in asynchronous mode to enable operation during sleep
     
-    OSCCON3bits.SOSCPWR = 0x00;     //set SOSC power level = low
+    OSCCON3bits.SOSCPWR = 0x01;     //set SOSC power level = low
     OSCCON3bits.SOSCBE = 0x00;      //configure secondary oscillator as crystal
     
     //TMR1XTALEN = 0x01;              //enable SOSC as clock source
@@ -126,6 +126,20 @@ void tmr_TMR1Init(void){
     
 
     
+}
+
+void tmr_TMR1SOSCpowerLevel(char level){
+    switch (level){
+        case 'h':
+            OSCCON3bits.SOSCPWR = 0x01;
+            break;
+        case 'l':
+            OSCCON3bits.SOSCPWR = 0x00;
+            break;
+        default:
+            OSCCON3bits.SOSCPWR = 0x00;
+            break;
+    }
 }
 
 void tmr_TMR1En(void){

@@ -7,4 +7,5 @@ tmr_TMR0.h  \
 tmr_TMR1.h  \
 Interrupts.h  \
 LED.h  \
-ccp_CCP1.h 
+ccp_CCP1.h  \
+RTC.h 

@@ -11,6 +11,7 @@
 //#include <stdio.h>
 
 extern uint8_t IR_received;
+extern uint8_t TMR1IntType;
 
 void configureIOCInt(void){
     //enable interrupt on change
@@ -35,7 +36,11 @@ __interrupt() void ISR(void){
         IR_received = 1;
         IOCA_F = 0; //YOU MUST CLEAR THE PIN SPECIFIC INTERRUPT FIRST 
         IOC_IF = 0;
-        if (!TMR0_ON) TMR0_ON = 1;
+        if (!TMR0_ON) {
+            TMR0H = TMR0_PLH;
+            TMR0L = TMR0_PLL;
+            TMR0_ON = 1;
+        }
         //LEDLAT ^= 1;
         tmr_TMR0mark();
         
@@ -44,7 +49,14 @@ __interrupt() void ISR(void){
     if(TMR1IFG){
         TMR1IFG = 0;
         tmr_TMR1Reset();
-        rtc_ISR();
+        if (TMR1IntType == INT_DELAY){
+            
+            rtc_ISR();
+        }
+        if (TMR1IntType == INT_CANDLE){
+            
+            led_Toggle();
+        }
     }
     
     
@@ -58,6 +70,8 @@ __interrupt() void ISR(void){
     
     if (TMR0IFG){
         TMR0IFG = 0;
+        //LED1LAT=0;
+        //LED1LAT=1;
         tmr_TMR0IncRollovers();
         
         

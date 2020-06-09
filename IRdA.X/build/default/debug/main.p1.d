@@ -11,4 +11,6 @@ LED.h  \
 Oscillator.h  \
 PowerManagement.h  \
 tmr_TMR1.h  \
-ccp_CCP1.h 
+ccp_CCP1.h  \
+RTC.h  \
+DAC.h 

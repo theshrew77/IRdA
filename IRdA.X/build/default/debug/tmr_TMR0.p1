@@ -780,43 +780,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12990
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h: 12990: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"31 ./main.h
+"35 ./main.h
 [p x CP = OFF ]
-"33
-[p x FEXTOSC = LP ]
-"34
-[p x RSTOSC = HFINT1 ]
-"35
-[p x CLKOUTEN = OFF ]
-"36
-[p x CSWEN = ON ]
 "37
-[p x FCMEN = OFF ]
+[p x FEXTOSC = OFF ]
+"38
+[p x RSTOSC = HFINT1 ]
+"39
+[p x CLKOUTEN = OFF ]
 "40
-[p x MCLRE = ON ]
+[p x CSWEN = ON ]
 "41
-[p x PWRTE = OFF ]
-"42
-[p x WDTE = OFF ]
-"43
-[p x LPBOREN = OFF ]
+[p x FCMEN = OFF ]
 "44
-[p x BOREN = OFF ]
+[p x MCLRE = ON ]
 "45
-[p x BORV = LOW ]
+[p x PWRTE = OFF ]
 "46
-[p x PPS1WAY = ON ]
+[p x WDTE = OFF ]
 "47
-[p x STVREN = ON ]
+[p x LPBOREN = OFF ]
 "48
-[p x DEBUG = ON ]
+[p x BOREN = OFF ]
+"49
+[p x BORV = LOW ]
+"50
+[p x PPS1WAY = ON ]
 "51
-[p x WRT = OFF ]
+[p x STVREN = ON ]
 "52
-[p x LVP = OFF ]
+[p x DEBUG = OFF ]
 "55
-[p x CP = OFF ]
+[p x WRT = OFF ]
 "56
+[p x LVP = OFF ]
+"59
+[p x CP = OFF ]
+"60
 [p x CPD = OFF ]
 "8 tmr_TMR0.c
 [; ;tmr_TMR0.c: 8: static uint8_t TMR0rollovers = 0;

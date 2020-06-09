@@ -7806,10 +7806,15 @@ extern __bank0 __bit __timeout;
 
 
 # 1 "./main.h" 1
-# 31 "./main.h"
+# 19 "./main.h"
+typedef enum{
+    OFF = 0,
+    ON = 1,
+}status_t;
+# 35 "./main.h"
 #pragma config CP = OFF
 
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -7824,7 +7829,7 @@ extern __bank0 __bit __timeout;
 #pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
-#pragma config DEBUG = ON
+#pragma config DEBUG = OFF
 
 
 #pragma config WRT = OFF
@@ -7875,14 +7880,15 @@ void Uart_UCA0Init(void)
 {
 
     RA0PPS = 0x0F;
+
     TX1STAbits.TXEN = 1;
     TX1STAbits.SYNC = 0;
     RC1STAbits.SPEN = 1;
     ANSELAbits.ANSA0 = 0;
-# 43 "uart_UCA0.c"
+# 44 "uart_UCA0.c"
     TX1STAbits.BRGH = 0;
     BAUD1CONbits.BRG16 = 0;
-    SPBRGL = 4;
+    SPBRGL = 1;
 
 }
 
@@ -7932,7 +7938,7 @@ int8_t Uart_UCA0_getc( int8_t *Out )
 
 int8_t Uart_UCA0_putc( int8_t c )
 {
-  while(!(PIR1bits.TXIF));
-  TXREG = c;
+
+  TX1REG = c;
   return(c);
 }

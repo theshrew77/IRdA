@@ -3,16 +3,48 @@
 #include "LED.h"
 #include "main.h"
 
+static uint8_t LED_status = OFF;
+
 void led_ConfigureLED(void){
-    LEDTRIS = 0;
-    LEDLAT  = 1;
+    LED1TRIS = 0;
+    LED1LAT  = 1;
+    LED2TRIS = 0;
+    LED2LAT  = 1;
+}
+
+void led_Bright(void){
+    LED1LAT = 0;
+    LED2TRIS = 0;
+    LED2LAT = 0;
+    LED_status = ON;
+}
+
+void led_Dim(void){
+    LED1LAT = 0;
+    LED2TRIS = 1;
+    LED_status = ON;
+}
+
+void led_Off(void){
+    LED1LAT = 1;
+    LED2TRIS = 0;
+    LED2LAT = 1;
+    LED_status = OFF;
+}
+
+void led_Toggle(void){
+    if (LED_status == ON){
+        led_Off();
+    }
+    else
+       led_Bright();     
 }
 
 void led_Blink(uint8_t times){
     for (int i = 0; i < times; i++){
-        LEDLAT = 1;
+        LED1LAT = 1;
         __delay_ms(500);
-        LEDLAT = 0;
+        LED1LAT = 0;
         __delay_ms(500);
     }
 }

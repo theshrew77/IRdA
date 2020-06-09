@@ -16,6 +16,12 @@
 /* Macro Definitions ---------------------------------------------------------*/
 #define CHECKBIT(var,nbit)  (var &  (1L << (nbit)))
 
+typedef enum{
+    OFF = 0,
+    ON = 1,        
+}status_t;
+
+//#define DEBUGGING
 
 
 

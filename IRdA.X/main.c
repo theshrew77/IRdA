@@ -5,7 +5,7 @@
  * Created on April 14, 2020, 7:54 PM
  */
 #include <xc.h>
-//#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdbool.h>
@@ -44,20 +44,25 @@ volatile uint8_t IR_received = 0;
 
 
 
+
 int main(int argc, char** argv) {
     
     
     uint8_t NECcommand = 0;
+    
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
-    pwrmgmt_ConfigUnusedPins();
-    //pwrmgmt_DisablePeripherals();
+    //pwrmgmt_ConfigUnusedPins();
+    pwrmgmt_DisablePeripherals();
+    
     rtc_Reset();
     #ifdef _16F18313 
         VREGCONbits.VREGPM=1;
     #endif
     
     led_ConfigureLED();
+   
+    led_Bright();
     configureIOCInt();
     
     tmr_TMR0Init();
@@ -65,27 +70,33 @@ int main(int argc, char** argv) {
     
     tmr_TMR1Init();
     
-    dac_DACInit();
-    dac_DACEn();
+    //dac_DACInit();
+    //dac_DACEn();
  
     //ccp_CCP1Init();
     
     //tmr_TMR1En();
     //ccp_CCP1En();
+#ifdef DEBUGGING
+    TRISAbits.TRISA0 = 0;
+    Uart_UCA0Init();
+#endif
+
     
-   
     while(1){
         SLEEP();       
         if(IR_received){
             while(!accquisitionComplete());
             G_IE = 0;
+            //LED1LAT =0;
             //process to NEC
             //check for NEC start condition
             NECcommand = nec_ProcessPacket();
             nec_ExecuteCommand(NECcommand);          
             tmr_TMR0reset();
             IR_received = 0;
-            __delay_ms(5);
+            //__delay_ms(5);
+            //LED1LAT=1;
             G_IE = 1;
         }
         

@@ -7605,7 +7605,7 @@ typedef uint32_t uint_fast32_t;
 # 2 "NEC.c" 2
 
 # 1 "./NEC.h" 1
-# 60 "./NEC.h"
+# 62 "./NEC.h"
 typedef enum {
     LEDON = 0xFF,
     LEDOFF = 0xBF,
@@ -7615,8 +7615,10 @@ typedef enum {
     TIMER8H = 0xAF,
     DIM = 0xF7,
     BRIGHT = 0xB7,
+    CANDLE = 0xCF,
+    LIGHT = 0x8F
 } NEC_commands_t;
-
+# 90 "./NEC.h"
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 # 3 "NEC.c" 2
@@ -7660,16 +7662,27 @@ void Uart_UCA0_RxIntEn(void);
 # 5 "NEC.c" 2
 
 # 1 "./LED.h" 1
-# 13 "./LED.h"
+# 15 "./LED.h"
 void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
+void led_Bright(void);
+
+void led_Dim(void);
+
+void led_Off(void);
+void led_Toggle(void);
 # 6 "NEC.c" 2
 
 # 1 "./main.h" 1
-# 31 "./main.h"
+# 19 "./main.h"
+typedef enum{
+    OFF = 0,
+    ON = 1,
+}status_t;
+# 35 "./main.h"
 #pragma config CP = OFF
 
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -7684,7 +7697,7 @@ void led_Blink(uint8_t times);
 #pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
-#pragma config DEBUG = ON
+#pragma config DEBUG = OFF
 
 
 #pragma config WRT = OFF
@@ -7695,7 +7708,62 @@ void led_Blink(uint8_t times);
 #pragma config CPD = OFF
 # 7 "NEC.c" 2
 
+# 1 "./RTC.h" 1
+# 11 "./RTC.h"
+typedef struct
+{
+  uint8_t Seconds;
+  uint8_t Minutes;
+  uint8_t Hours;
+} RTC_t;
 
+void rtc_Init(void);
+void rtc_SetHourDelay(uint8_t hours);
+void rtc_Reset(void);
+void rtc_ISR(void);
+# 8 "NEC.c" 2
+
+# 1 "./tmr_TMR1.h" 1
+# 23 "./tmr_TMR1.h"
+void tmr_TMR1Init(void);
+void tmr_TMR1ClrRollovers(void);
+uint16_t *tmr_TMR1GetRollovers(void);
+void tmr_TMR1IncRollovers(void);
+void tmr_TMR1En(void);
+void tmr_TMR1Dis(void);
+void tmr_TMR1Reset(void);
+void tmr_TMR1Toggle(void);
+uint32_t tmr_TMR1GetCount(void);
+void tmr_TMR1reset(void);
+void tmr_TMR1mark(void);
+uint8_t accquisitionComplete(void);
+uint16_t *getTMR1countArray(void);
+uint16_t *getTMR1rolloverArray(void);
+uint16_t tmr_computeDelta(uint8_t i);
+void tmr_TMR1setPreload(uint16_t preload);
+void tmr_TMR1SOSCpowerLevel(char level);
+# 9 "NEC.c" 2
+
+# 1 "./DAC.h" 1
+# 16 "./DAC.h"
+void dac_DAClevelChange(char direction);
+void dac_DACInit(void);
+void dac_DACEn(void);
+void dac_DACDis(void);
+# 10 "NEC.c" 2
+
+# 1 "./Interrupts.h" 1
+# 19 "./Interrupts.h"
+typedef enum{
+    INT_DELAY = 0,
+    INT_CANDLE = 1
+} TMR1InterruptTypes_t;
+
+void configureIOCInt(void);
+# 11 "NEC.c" 2
+
+
+uint8_t TMR1IntType;
 
 uint8_t nec_ProcessPacket(void){
     uint16_t delta;
@@ -7707,7 +7775,7 @@ uint8_t nec_ProcessPacket(void){
 
     if (2700 < delta && delta < 4050){
 
-
+        led_Bright();
         for (int i = 1; i < 33; i++){
             delta = tmr_computeDelta(i);
             if (250 < delta && delta < 375){
@@ -7728,6 +7796,7 @@ uint8_t nec_ProcessPacket(void){
         command += NECpacket[24]*128;
 
     }
+# 57 "NEC.c"
     return(command);
 }
 
@@ -7736,29 +7805,70 @@ void nec_ExecuteCommand(uint8_t NECcommand){
     {
         case LEDON:
 
-            LATAbits.LATA2 = 0;
+
+            tmr_TMR1Dis();
+            led_Bright();
             break;
         case LEDOFF:
 
-            LATAbits.LATA2 = 1;
+
+            led_Off();
+            tmr_TMR1Dis();
             break;
         case TIMER2H:
-
+            led_Bright();
+            TMR1IntType = INT_DELAY;
+            tmr_TMR1setPreload(0x7FFF);
+            tmr_TMR1SOSCpowerLevel('l');
+            rtc_SetHourDelay(1);
             break;
         case TIMER4H:
+            led_Bright();
+            TMR1IntType = INT_DELAY;
+            tmr_TMR1setPreload(0x7FFF);
+            tmr_TMR1SOSCpowerLevel('l');
+            rtc_SetHourDelay(4);
 
             break;
         case TIMER6H:
+            led_Bright();
+            TMR1IntType = INT_DELAY;
+            tmr_TMR1setPreload(0x7FFF);
+            tmr_TMR1SOSCpowerLevel('l');
+            rtc_SetHourDelay(6);
 
             break;
         case TIMER8H:
+            led_Bright();
+            TMR1IntType = INT_DELAY;
+            tmr_TMR1setPreload(0x7FFF);
+            tmr_TMR1SOSCpowerLevel('l');
+            rtc_SetHourDelay(8);
 
             break;
         case DIM:
 
+
+            led_Dim();
             break;
         case BRIGHT:
+            led_Bright();
+
 
             break;
+        case CANDLE:
+            tmr_TMR1setPreload(0xF999);
+            TMR1IntType = INT_CANDLE;
+            tmr_TMR1Reset();
+            tmr_TMR1SOSCpowerLevel('h');
+            tmr_TMR1En();
+            break;
+        case LIGHT:
+
+
+            tmr_TMR1Dis();
+            led_Bright();
+            break;
+
     }
 }

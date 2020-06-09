@@ -40,7 +40,7 @@ void ccp_CCP1Dis(void){
 }
 
 void ccp_CCP1CompareMatch(void){
-    LEDLAT ^= 1;
+    //LEDLAT ^= 1;
     /*
     seconds++;
     if (seconds == delay){

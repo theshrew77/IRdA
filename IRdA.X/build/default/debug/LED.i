@@ -7605,16 +7605,27 @@ typedef uint32_t uint_fast32_t;
 # 2 "LED.c" 2
 
 # 1 "./LED.h" 1
-# 13 "./LED.h"
+# 15 "./LED.h"
 void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
+void led_Bright(void);
+
+void led_Dim(void);
+
+void led_Off(void);
+void led_Toggle(void);
 # 3 "LED.c" 2
 
 # 1 "./main.h" 1
-# 31 "./main.h"
+# 19 "./main.h"
+typedef enum{
+    OFF = 0,
+    ON = 1,
+}status_t;
+# 35 "./main.h"
 #pragma config CP = OFF
 
-#pragma config FEXTOSC = LP
+#pragma config FEXTOSC = OFF
 #pragma config RSTOSC = HFINT1
 #pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
@@ -7629,7 +7640,7 @@ void led_Blink(uint8_t times);
 #pragma config BORV = LOW
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON
-#pragma config DEBUG = ON
+#pragma config DEBUG = OFF
 
 
 #pragma config WRT = OFF
@@ -7641,9 +7652,41 @@ void led_Blink(uint8_t times);
 # 4 "LED.c" 2
 
 
+static uint8_t LED_status = OFF;
+
 void led_ConfigureLED(void){
     TRISAbits.TRISA2 = 0;
+    LATAbits.LATA2 = 1;
+    TRISAbits.TRISA2 = 0;
+    LATAbits.LATA2 = 1;
+}
+
+void led_Bright(void){
     LATAbits.LATA2 = 0;
+    TRISAbits.TRISA2 = 0;
+    LATAbits.LATA2 = 0;
+    LED_status = ON;
+}
+
+void led_Dim(void){
+    LATAbits.LATA2 = 0;
+    TRISAbits.TRISA2 = 1;
+    LED_status = ON;
+}
+
+void led_Off(void){
+    LATAbits.LATA2 = 1;
+    TRISAbits.TRISA2 = 0;
+    LATAbits.LATA2 = 1;
+    LED_status = OFF;
+}
+
+void led_Toggle(void){
+    if (LED_status == ON){
+        led_Off();
+    }
+    else
+       led_Bright();
 }
 
 void led_Blink(uint8_t times){

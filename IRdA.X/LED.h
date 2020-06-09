@@ -7,12 +7,19 @@
 
 #ifndef LED_H
 #define	LED_H
-#define LEDTRIS TRISAbits.TRISA2
-#define LEDLAT  LATAbits.LATA2
+#define LED1TRIS    TRISAbits.TRISA2
+#define LED1LAT     LATAbits.LATA2
+#define LED2TRIS    TRISAbits.TRISA0
+#define LED2LAT     LATAbits.LATA0
 
 void led_ConfigureLED(void);
 void led_Blink(uint8_t times);
+void led_Bright(void);
 
+void led_Dim(void);
+
+void led_Off(void);
+void led_Toggle(void);
 
 #ifdef	__cplusplus
 extern "C" {

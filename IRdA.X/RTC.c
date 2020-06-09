@@ -26,7 +26,7 @@ void rtc_ISR(void){
     if (++tRTC.Seconds == 60){
         if (++tRTC.Minutes == hourDelay){
                 tmr_TMR1Dis();
-                LEDLAT = 1;             
+                led_Off();             
         }
     }
    
