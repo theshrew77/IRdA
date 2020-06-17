@@ -56,7 +56,10 @@
 #define NEC_TIMEOUT     0
 */
 #define NEC_ADDRESS     0
-#define NEWREMOTE
+//#define OLDREMOTE
+#define GRANDINROAD
+//#define SCOTTLIVING
+//#define LGTV
 
 #ifdef OLDREMOTE
 typedef enum {
@@ -73,7 +76,7 @@ typedef enum {
 } NEC_commands_t;
 #endif
 
-#ifdef NEWREMOTE
+#ifdef GRANDINROAD
 typedef enum {
     LEDON   =   0x7F,
     LEDOFF  =   0xFF,
@@ -83,6 +86,36 @@ typedef enum {
     TIMER8H =   0x57, 
     DIM =       0x8F, 
     BRIGHT =    0xD7, 
+    CANDLE =    0x4F,
+    LIGHT =     0x97
+} NEC_commands_t;
+#endif
+
+#ifdef SCOTTLIVING
+typedef enum {
+    LEDON   =   0xFF,
+    LEDOFF  =   0x7F,
+    TIMER2H =   0xBF,    
+    TIMER4H =   0x3F, 
+    TIMER6H =   0xDF, 
+    TIMER8H =   0x5F, 
+    DIM =       0x6F, 
+    BRIGHT =    0x1F, 
+    CANDLE =    0x4F,
+    LIGHT =     0x97
+} NEC_commands_t;
+#endif
+
+#ifdef LGTV
+typedef enum {
+    LEDON   =   0xB1,
+    LEDOFF  =   0x71,
+    TIMER2H =   0xBF,    
+    TIMER4H =   0x3F, 
+    TIMER6H =   0xDF, 
+    TIMER8H =   0x5F, 
+    DIM =       0x39, 
+    BRIGHT =    0x79, 
     CANDLE =    0x4F,
     LIGHT =     0x97
 } NEC_commands_t;

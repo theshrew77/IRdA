@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\IRdA.X.production.sym \
   --cmf=dist/default/production\IRdA.X.production.cmf -z -Q16LF18313 \
-  -oC:\Users\10158431\AppData\Local\Temp\s24uc.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\10158431\AppData\Local\Temp\s2r7k.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/IRdA.X.production.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=020C0h-020EFh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
   -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
@@ -27,7 +27,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-0800Ah -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\10158431\AppData\Local\Temp\s24uc.o \
+  -DENTRY=2 -k C:\Users\10158431\AppData\Local\Temp\s2r7k.o \
   dist/default/production\IRdA.X.production.o 
 
 Object code version is 3.11
@@ -37,7 +37,7 @@ Machine type is 16LF18313
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\10158431\AppData\Local\Temp\s24uc.o
+C:\Users\10158431\AppData\Local\Temp\s2r7k.o
                 end_init                             48       48        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        4    1000E       0

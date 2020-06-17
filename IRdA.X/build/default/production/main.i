@@ -7907,7 +7907,7 @@ void tmr_TMR0IncRollovers(void);
 void tmr_TMR0Dis(void);
 void tmr_TMR0_PrintCountArray(void);
 
-# 77 "NEC.h"
+# 80 "NEC.h"
 typedef enum {
 LEDON = 0x7F,
 LEDOFF = 0xFF,
@@ -7921,6 +7921,7 @@ CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
 
+# 123
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 

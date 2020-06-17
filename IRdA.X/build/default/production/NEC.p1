@@ -5182,20 +5182,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 58: extern char * strichr(const char *, int);
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
-[; ;NEC.h: 77: typedef enum {
-[; ;NEC.h: 78: LEDON = 0x7F,
-[; ;NEC.h: 79: LEDOFF = 0xFF,
-[; ;NEC.h: 80: TIMER2H = 0xCF,
-[; ;NEC.h: 81: TIMER4H = 0x6F,
-[; ;NEC.h: 82: TIMER6H = 0xAF,
-[; ;NEC.h: 83: TIMER8H = 0x57,
-[; ;NEC.h: 84: DIM = 0x8F,
-[; ;NEC.h: 85: BRIGHT = 0xD7,
-[; ;NEC.h: 86: CANDLE = 0x4F,
-[; ;NEC.h: 87: LIGHT = 0x97
-[; ;NEC.h: 88: } NEC_commands_t;
-[; ;NEC.h: 90: uint8_t nec_ProcessPacket(void);
-[; ;NEC.h: 91: void nec_ExecuteCommand(uint8_t NECcommand);
+[; ;NEC.h: 80: typedef enum {
+[; ;NEC.h: 81: LEDON = 0x7F,
+[; ;NEC.h: 82: LEDOFF = 0xFF,
+[; ;NEC.h: 83: TIMER2H = 0xCF,
+[; ;NEC.h: 84: TIMER4H = 0x6F,
+[; ;NEC.h: 85: TIMER6H = 0xAF,
+[; ;NEC.h: 86: TIMER8H = 0x57,
+[; ;NEC.h: 87: DIM = 0x8F,
+[; ;NEC.h: 88: BRIGHT = 0xD7,
+[; ;NEC.h: 89: CANDLE = 0x4F,
+[; ;NEC.h: 90: LIGHT = 0x97
+[; ;NEC.h: 91: } NEC_commands_t;
+[; ;NEC.h: 123: uint8_t nec_ProcessPacket(void);
+[; ;NEC.h: 124: void nec_ExecuteCommand(uint8_t NECcommand);
 [; ;tmr_TMR0.h: 26: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 27: uint16_t tmr_computeDelta(uint8_t i);
 [; ;tmr_TMR0.h: 28: uint8_t accquisitionComplete(void);

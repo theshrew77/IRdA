@@ -26,20 +26,6 @@
 #include "DAC.h"
 
 
-
-
-
-
-
-
-
-//test
-/*
- * 
- */
-
-
-
 volatile uint8_t IR_received = 0;
 
 
