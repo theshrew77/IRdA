@@ -7830,14 +7830,14 @@ uint16_t debug_disable(void);
 uint16_t debug_getstatus(void);
 void debug_flush(void);
 
-# 19 "main.h"
+# 18 "main.h"
 typedef enum{
 OFF = 0,
 ON = 1,
 }status_t;
 
 
-# 37
+# 36
 #pragma config CP = OFF
 
 #pragma config FEXTOSC = OFF
@@ -7865,30 +7865,6 @@ ON = 1,
 #pragma config CP = OFF
 #pragma config CPD = OFF
 
-# 14 "Que.h"
-typedef struct {
-int8_t Data[2];
-int8_t In;
-int8_t Out;
-} t_Q;
-
-
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-
-# 20 "uart_UCA0.h"
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-void Uart_UCA0_puts(char*string);
-
 # 19 "Interrupts.h"
 typedef enum{
 INT_DELAY = 0,
@@ -7907,7 +7883,7 @@ void tmr_TMR0IncRollovers(void);
 void tmr_TMR0Dis(void);
 void tmr_TMR0_PrintCountArray(void);
 
-# 80 "NEC.h"
+# 44 "NEC.h"
 typedef enum {
 LEDON = 0x7F,
 LEDOFF = 0xFF,
@@ -7921,7 +7897,7 @@ CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
 
-# 123
+# 87
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 
@@ -7942,32 +7918,14 @@ void osc_Config1MHz(void);
 
 # 10 "PowerManagement.h"
 void pwrmgmt_DisablePeripherals(void);
-void pwrmgmt_ConfigUnusedPins(void);
 
-# 23 "tmr_TMR1.h"
+# 22 "tmr_TMR1.h"
+void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
-void tmr_TMR1ClrRollovers(void);
-uint16_t *tmr_TMR1GetRollovers(void);
-void tmr_TMR1IncRollovers(void);
+void tmr_TMR1SOSCpowerLevel(char level);
 void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
 void tmr_TMR1Reset(void);
-void tmr_TMR1Toggle(void);
-uint32_t tmr_TMR1GetCount(void);
-void tmr_TMR1reset(void);
-void tmr_TMR1mark(void);
-uint8_t accquisitionComplete(void);
-uint16_t *getTMR1countArray(void);
-uint16_t *getTMR1rolloverArray(void);
-uint16_t tmr_computeDelta(uint8_t i);
-void tmr_TMR1setPreload(uint16_t preload);
-void tmr_TMR1SOSCpowerLevel(char level);
-
-# 13 "ccp_CCP1.h"
-void ccp_CCP1Init(void);
-void ccp_CCP1En(void);
-void ccp_CCP1Dis(void);
-void ccp_CCP1CompareMatch(void);
 
 # 11 "RTC.h"
 typedef struct
@@ -7982,13 +7940,7 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 16 "DAC.h"
-void dac_DAClevelChange(char direction);
-void dac_DACInit(void);
-void dac_DACEn(void);
-void dac_DACDis(void);
-
-# 43 "main.c"
+# 27 "main.c"
 volatile uint8_t IR_received = 0;
 
 
@@ -8001,12 +7953,10 @@ uint8_t NECcommand = 0;
 
 CPUDOZEbits.IDLEN = 0;
 osc_Config1MHz();
-
 pwrmgmt_DisablePeripherals();
 
 rtc_Reset();
 
-# 63
 led_ConfigureLED();
 
 led_Bright();
@@ -8017,7 +7967,6 @@ tmr_TMR0reset();
 
 tmr_TMR1Init();
 
-# 86
 while(1){
 asm("sleep");
 if(IR_received){
@@ -8025,13 +7974,10 @@ while(!accquisitionComplete());
 INTCONbits.GIE = 0;
 
 
-
 NECcommand = nec_ProcessPacket();
 nec_ExecuteCommand(NECcommand);
 tmr_TMR0reset();
 IR_received = 0;
-
-
 INTCONbits.GIE = 1;
 }
 

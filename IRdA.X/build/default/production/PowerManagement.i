@@ -7558,7 +7558,6 @@ extern __bank0 __bit __timeout;
 
 # 10 "PowerManagement.h"
 void pwrmgmt_DisablePeripherals(void);
-void pwrmgmt_ConfigUnusedPins(void);
 
 # 6 "PowerManagement.c"
 void pwrmgmt_DisablePeripherals(void){
@@ -7594,7 +7593,4 @@ PMD5bits.DSMMD = 1;
 
 
 }
-void pwrmgmt_ConfigUnusedPins(void){
-TRISAbits.TRISA0 = 1;
-ANSELAbits.ANSA0 = 1;
-}
+

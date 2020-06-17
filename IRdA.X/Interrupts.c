@@ -25,7 +25,7 @@ void configureIOCInt(void){
     IOCA_ANSEL = 0; 
 
     
-    //IOCAPbits.IOCAP4 = 1;
+
 }
 
 
@@ -41,7 +41,6 @@ __interrupt() void ISR(void){
             TMR0L = TMR0_PLL;
             TMR0_ON = 1;
         }
-        //LEDLAT ^= 1;
         tmr_TMR0mark();
         
     }
@@ -59,45 +58,12 @@ __interrupt() void ISR(void){
         }
     }
     
-    
-    if (CCP1_IF){   
-        CCP1_IF = 0;
-        //TMR1 = 0;
-        //ccp_CCP1CompareMatch();
-    }
-    
-    
-    
     if (TMR0IFG){
         TMR0IFG = 0;
-        //LED1LAT=0;
-        //LED1LAT=1;
         tmr_TMR0IncRollovers();
         
         
     }
-    
-    /*
-  if ( UCA0RXIFG )
-  {
-    QIn( UCA0RXBUF, getU0_RxBuf_t() );
-    printf("PIR3 = %d \r\n",PIR3);
-    LATAbits.LATA2 ^= 1;
-    BAUD1CONbits.WUE = 1;
-  }
-  */
-   /*
-    if(PIR1bits.RCIF){
-        TXREG = 'a';
-        //BAUDCONbits.WUE=1; //doesn't work
-        check = 1;
-        rxChar = RCREG;
-        //rxChar2 = RCREG; //doesn't work
-        BAUDCONbits.WUE = 1; //making this ^= always makes the interrupt run twice
-        //rxChar2 = RCREG; //doesnt work
-        
-    }
-    */
     
     return;
 }

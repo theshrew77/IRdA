@@ -39,9 +39,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S25 . . ]
 "364
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"123 NEC.h
+"87 NEC.h
 [v _nec_ProcessPacket `(uc ~T0 @X0 0 ef ]
-"124
+"88
 [v _nec_ExecuteCommand `(v ~T0 @X0 0 ef1`uc ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -5239,64 +5239,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Debug.h: 17: uint16_t debug_disable(void);
 [; ;Debug.h: 18: uint16_t debug_getstatus(void);
 [; ;Debug.h: 19: void debug_flush(void);
-[; ;main.h: 19: typedef enum{
-[; ;main.h: 20: OFF = 0,
-[; ;main.h: 21: ON = 1,
-[; ;main.h: 22: }status_t;
-"37 main.h
+[; ;main.h: 18: typedef enum{
+[; ;main.h: 19: OFF = 0,
+[; ;main.h: 20: ON = 1,
+[; ;main.h: 21: }status_t;
+"36 main.h
 [p x CP=OFF ]
-"39
+"38
 [p x FEXTOSC=OFF ]
-"40
+"39
 [p x RSTOSC=HFINT1 ]
-"41
+"40
 [p x CLKOUTEN=OFF ]
-"42
+"41
 [p x CSWEN=ON ]
-"43
+"42
 [p x FCMEN=OFF ]
-"46
+"45
 [p x MCLRE=ON ]
-"47
+"46
 [p x PWRTE=OFF ]
-"48
+"47
 [p x WDTE=OFF ]
-"49
+"48
 [p x LPBOREN=OFF ]
-"50
+"49
 [p x BOREN=OFF ]
-"51
+"50
 [p x BORV=LOW ]
-"52
+"51
 [p x PPS1WAY=ON ]
-"53
+"52
 [p x STVREN=ON ]
-"54
+"53
 [p x DEBUG=OFF ]
-"57
+"56
 [p x WRT=OFF ]
-"58
+"57
 [p x LVP=OFF ]
-"62
+"61
 [p x CPD=OFF ]
-[; ;Que.h: 14: typedef struct {
-[; ;Que.h: 15: int8_t Data[2];
-[; ;Que.h: 16: int8_t In;
-[; ;Que.h: 17: int8_t Out;
-[; ;Que.h: 18: } t_Q;
-[; ;Que.h: 21: int8_t QInit( t_Q *pQ );
-[; ;Que.h: 22: int8_t QIn( int8_t Src, t_Q *pQ );
-[; ;Que.h: 23: int8_t QOut( int8_t *Dest, t_Q *pQ );
-[; ;Que.h: 24: int8_t QChkQ( t_Q *pQ );
-[; ;uart_UCA0.h: 20: void Uart_UCA0Init(void);
-[; ;uart_UCA0.h: 21: void Uart_UCA0deInit(void);
-[; ;uart_UCA0.h: 22: int8_t Uart_UCA0_Flush(void);
-[; ;uart_UCA0.h: 23: int8_t Uart_UCA0_kbhit(void);
-[; ;uart_UCA0.h: 24: int8_t Uart_UCA0_getc( int8_t *Out );
-[; ;uart_UCA0.h: 25: int8_t Uart_UCA0_putc( int8_t c );
-[; ;uart_UCA0.h: 26: t_Q *getU0_RxBuf_t(void);
-[; ;uart_UCA0.h: 27: void Uart_UCA0_RxIntEn(void);
-[; ;uart_UCA0.h: 28: void Uart_UCA0_puts(char*string);
 [; ;Interrupts.h: 19: typedef enum{
 [; ;Interrupts.h: 20: INT_DELAY = 0,
 [; ;Interrupts.h: 21: INT_CANDLE = 1
@@ -5310,20 +5292,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr_TMR0.h: 31: void tmr_TMR0IncRollovers(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
 [; ;tmr_TMR0.h: 33: void tmr_TMR0_PrintCountArray(void);
-[; ;NEC.h: 80: typedef enum {
-[; ;NEC.h: 81: LEDON = 0x7F,
-[; ;NEC.h: 82: LEDOFF = 0xFF,
-[; ;NEC.h: 83: TIMER2H = 0xCF,
-[; ;NEC.h: 84: TIMER4H = 0x6F,
-[; ;NEC.h: 85: TIMER6H = 0xAF,
-[; ;NEC.h: 86: TIMER8H = 0x57,
-[; ;NEC.h: 87: DIM = 0x8F,
-[; ;NEC.h: 88: BRIGHT = 0xD7,
-[; ;NEC.h: 89: CANDLE = 0x4F,
-[; ;NEC.h: 90: LIGHT = 0x97
-[; ;NEC.h: 91: } NEC_commands_t;
-[; ;NEC.h: 123: uint8_t nec_ProcessPacket(void);
-[; ;NEC.h: 124: void nec_ExecuteCommand(uint8_t NECcommand);
+[; ;NEC.h: 44: typedef enum {
+[; ;NEC.h: 45: LEDON = 0x7F,
+[; ;NEC.h: 46: LEDOFF = 0xFF,
+[; ;NEC.h: 47: TIMER2H = 0xCF,
+[; ;NEC.h: 48: TIMER4H = 0x6F,
+[; ;NEC.h: 49: TIMER6H = 0xAF,
+[; ;NEC.h: 50: TIMER8H = 0x57,
+[; ;NEC.h: 51: DIM = 0x8F,
+[; ;NEC.h: 52: BRIGHT = 0xD7,
+[; ;NEC.h: 53: CANDLE = 0x4F,
+[; ;NEC.h: 54: LIGHT = 0x97
+[; ;NEC.h: 55: } NEC_commands_t;
+[; ;NEC.h: 87: uint8_t nec_ProcessPacket(void);
+[; ;NEC.h: 88: void nec_ExecuteCommand(uint8_t NECcommand);
 [; ;LED.h: 15: void led_ConfigureLED(void);
 [; ;LED.h: 16: void led_Blink(uint8_t times);
 [; ;LED.h: 17: void led_Bright(void);
@@ -5334,28 +5316,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Oscillator.h: 18: void osc_Config16MHz(void);
 [; ;Oscillator.h: 19: void osc_Config1MHz(void);
 [; ;PowerManagement.h: 10: void pwrmgmt_DisablePeripherals(void);
-[; ;PowerManagement.h: 11: void pwrmgmt_ConfigUnusedPins(void);
+[; ;tmr_TMR1.h: 22: void tmr_TMR1setPreload(uint16_t preload);
 [; ;tmr_TMR1.h: 23: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1ClrRollovers(void);
-[; ;tmr_TMR1.h: 25: uint16_t *tmr_TMR1GetRollovers(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1IncRollovers(void);
-[; ;tmr_TMR1.h: 27: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 28: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 29: void tmr_TMR1Reset(void);
-[; ;tmr_TMR1.h: 30: void tmr_TMR1Toggle(void);
-[; ;tmr_TMR1.h: 31: uint32_t tmr_TMR1GetCount(void);
-[; ;tmr_TMR1.h: 32: void tmr_TMR1reset(void);
-[; ;tmr_TMR1.h: 33: void tmr_TMR1mark(void);
-[; ;tmr_TMR1.h: 34: uint8_t accquisitionComplete(void);
-[; ;tmr_TMR1.h: 35: uint16_t *getTMR1countArray(void);
-[; ;tmr_TMR1.h: 36: uint16_t *getTMR1rolloverArray(void);
-[; ;tmr_TMR1.h: 37: uint16_t tmr_computeDelta(uint8_t i);
-[; ;tmr_TMR1.h: 38: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 39: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;ccp_CCP1.h: 13: void ccp_CCP1Init(void);
-[; ;ccp_CCP1.h: 14: void ccp_CCP1En(void);
-[; ;ccp_CCP1.h: 15: void ccp_CCP1Dis(void);
-[; ;ccp_CCP1.h: 16: void ccp_CCP1CompareMatch(void);
+[; ;tmr_TMR1.h: 24: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 27: void tmr_TMR1Reset(void);
 [; ;RTC.h: 11: typedef struct
 [; ;RTC.h: 12: {
 [; ;RTC.h: 13: uint8_t Seconds;
@@ -5366,111 +5332,107 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.h: 19: void rtc_SetHourDelay(uint8_t hours);
 [; ;RTC.h: 20: void rtc_Reset(void);
 [; ;RTC.h: 21: void rtc_ISR(void);
-[; ;DAC.h: 16: void dac_DAClevelChange(char direction);
-[; ;DAC.h: 17: void dac_DACInit(void);
-[; ;DAC.h: 18: void dac_DACEn(void);
-[; ;DAC.h: 19: void dac_DACDis(void);
-"43 main.c
+"27 main.c
 [v _IR_received `Vuc ~T0 @X0 1 e ]
 [i _IR_received
 -> -> 0 `i `uc
 ]
-[; ;main.c: 43: volatile uint8_t IR_received = 0;
+[; ;main.c: 27: volatile uint8_t IR_received = 0;
 [v $root$_main `(v ~T0 @X0 0 e ]
-"48
+"32
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
-[; ;main.c: 48: int main(int argc, char** argv) {
+[; ;main.c: 32: int main(int argc, char** argv) {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"51
+"35
 [v _NECcommand `uc ~T0 @X0 1 a ]
-[; ;main.c: 51: uint8_t NECcommand = 0;
+[; ;main.c: 35: uint8_t NECcommand = 0;
 [e = _NECcommand -> -> 0 `i `uc ]
-[; ;main.c: 53: CPUDOZEbits.IDLEN = 0;
-"53
+[; ;main.c: 37: CPUDOZEbits.IDLEN = 0;
+"37
 [e = . . _CPUDOZEbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 54: osc_Config1MHz();
-"54
+[; ;main.c: 38: osc_Config1MHz();
+"38
 [e ( _osc_Config1MHz ..  ]
-[; ;main.c: 56: pwrmgmt_DisablePeripherals();
-"56
+[; ;main.c: 39: pwrmgmt_DisablePeripherals();
+"39
 [e ( _pwrmgmt_DisablePeripherals ..  ]
-[; ;main.c: 58: rtc_Reset();
-"58
+[; ;main.c: 41: rtc_Reset();
+"41
 [e ( _rtc_Reset ..  ]
-[; ;main.c: 63: led_ConfigureLED();
-"63
+[; ;main.c: 43: led_ConfigureLED();
+"43
 [e ( _led_ConfigureLED ..  ]
-[; ;main.c: 65: led_Bright();
-"65
+[; ;main.c: 45: led_Bright();
+"45
 [e ( _led_Bright ..  ]
-[; ;main.c: 66: configureIOCInt();
-"66
+[; ;main.c: 46: configureIOCInt();
+"46
 [e ( _configureIOCInt ..  ]
-[; ;main.c: 68: tmr_TMR0Init();
-"68
+[; ;main.c: 48: tmr_TMR0Init();
+"48
 [e ( _tmr_TMR0Init ..  ]
-[; ;main.c: 69: tmr_TMR0reset();
-"69
+[; ;main.c: 49: tmr_TMR0reset();
+"49
 [e ( _tmr_TMR0reset ..  ]
-[; ;main.c: 71: tmr_TMR1Init();
-"71
+[; ;main.c: 51: tmr_TMR1Init();
+"51
 [e ( _tmr_TMR1Init ..  ]
-[; ;main.c: 86: while(1){
-"86
-[e :U 664 ]
-{
-[; ;main.c: 87: asm("sleep");
-"87
-[; <" sleep ;# ">
-[; ;main.c: 88: if(IR_received){
-"88
-[e $ ! != -> _IR_received `i -> -> -> 0 `i `Vuc `i 666  ]
-{
-[; ;main.c: 89: while(!accquisitionComplete());
-"89
-[e $U 667  ]
-[e :U 668 ]
-[e :U 667 ]
-[e $ ! != -> ( _accquisitionComplete ..  `i -> -> -> 0 `i `uc `i 668  ]
-[e :U 669 ]
-[; ;main.c: 90: INTCONbits.GIE = 0;
-"90
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 94: NECcommand = nec_ProcessPacket();
-"94
-[e = _NECcommand ( _nec_ProcessPacket ..  ]
-[; ;main.c: 95: nec_ExecuteCommand(NECcommand);
-"95
-[e ( _nec_ExecuteCommand (1 _NECcommand ]
-[; ;main.c: 96: tmr_TMR0reset();
-"96
-[e ( _tmr_TMR0reset ..  ]
-[; ;main.c: 97: IR_received = 0;
-"97
-[e = _IR_received -> -> 0 `i `uc ]
-[; ;main.c: 100: INTCONbits.GIE = 1;
-"100
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"101
-}
-[e :U 666 ]
-"104
-}
+[; ;main.c: 53: while(1){
+"53
 [e :U 663 ]
-"86
-[e $U 664  ]
+{
+[; ;main.c: 54: asm("sleep");
+"54
+[; <" sleep ;# ">
+[; ;main.c: 55: if(IR_received){
+"55
+[e $ ! != -> _IR_received `i -> -> -> 0 `i `Vuc `i 665  ]
+{
+[; ;main.c: 56: while(!accquisitionComplete());
+"56
+[e $U 666  ]
+[e :U 667 ]
+[e :U 666 ]
+[e $ ! != -> ( _accquisitionComplete ..  `i -> -> -> 0 `i `uc `i 667  ]
+[e :U 668 ]
+[; ;main.c: 57: INTCONbits.GIE = 0;
+"57
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 60: NECcommand = nec_ProcessPacket();
+"60
+[e = _NECcommand ( _nec_ProcessPacket ..  ]
+[; ;main.c: 61: nec_ExecuteCommand(NECcommand);
+"61
+[e ( _nec_ExecuteCommand (1 _NECcommand ]
+[; ;main.c: 62: tmr_TMR0reset();
+"62
+[e ( _tmr_TMR0reset ..  ]
+[; ;main.c: 63: IR_received = 0;
+"63
+[e = _IR_received -> -> 0 `i `uc ]
+[; ;main.c: 64: INTCONbits.GIE = 1;
+"64
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"65
+}
 [e :U 665 ]
-[; ;main.c: 101: }
-[; ;main.c: 104: }
-[; ;main.c: 106: return (0);
-"106
+"68
+}
+[e :U 662 ]
+"53
+[e $U 663  ]
+[e :U 664 ]
+[; ;main.c: 65: }
+[; ;main.c: 68: }
+[; ;main.c: 70: return (0);
+"70
 [e ) -> 0 `i ]
-[e $UE 662  ]
-[; ;main.c: 107: }
-"107
-[e :UE 662 ]
+[e $UE 661  ]
+[; ;main.c: 71: }
+"71
+[e :UE 661 ]
 }

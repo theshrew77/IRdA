@@ -5125,235 +5125,224 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 282: typedef uint32_t uintmax_t;
 [; ;stdint.h: 289: typedef int16_t intptr_t;
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
+[; ;tmr_TMR1.h: 22: void tmr_TMR1setPreload(uint16_t preload);
 [; ;tmr_TMR1.h: 23: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1ClrRollovers(void);
-[; ;tmr_TMR1.h: 25: uint16_t *tmr_TMR1GetRollovers(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1IncRollovers(void);
-[; ;tmr_TMR1.h: 27: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 28: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 29: void tmr_TMR1Reset(void);
-[; ;tmr_TMR1.h: 30: void tmr_TMR1Toggle(void);
-[; ;tmr_TMR1.h: 31: uint32_t tmr_TMR1GetCount(void);
-[; ;tmr_TMR1.h: 32: void tmr_TMR1reset(void);
-[; ;tmr_TMR1.h: 33: void tmr_TMR1mark(void);
-[; ;tmr_TMR1.h: 34: uint8_t accquisitionComplete(void);
-[; ;tmr_TMR1.h: 35: uint16_t *getTMR1countArray(void);
-[; ;tmr_TMR1.h: 36: uint16_t *getTMR1rolloverArray(void);
-[; ;tmr_TMR1.h: 37: uint16_t tmr_computeDelta(uint8_t i);
-[; ;tmr_TMR1.h: 38: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 39: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 24: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 27: void tmr_TMR1Reset(void);
 [; ;Interrupts.h: 19: typedef enum{
 [; ;Interrupts.h: 20: INT_DELAY = 0,
 [; ;Interrupts.h: 21: INT_CANDLE = 1
 [; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
 [; ;Interrupts.h: 24: void configureIOCInt(void);
-[; ;main.h: 19: typedef enum{
-[; ;main.h: 20: OFF = 0,
-[; ;main.h: 21: ON = 1,
-[; ;main.h: 22: }status_t;
-"37 main.h
+[; ;main.h: 18: typedef enum{
+[; ;main.h: 19: OFF = 0,
+[; ;main.h: 20: ON = 1,
+[; ;main.h: 21: }status_t;
+"36 main.h
 [p x CP=OFF ]
-"39
+"38
 [p x FEXTOSC=OFF ]
-"40
+"39
 [p x RSTOSC=HFINT1 ]
-"41
+"40
 [p x CLKOUTEN=OFF ]
-"42
+"41
 [p x CSWEN=ON ]
-"43
+"42
 [p x FCMEN=OFF ]
-"46
+"45
 [p x MCLRE=ON ]
-"47
+"46
 [p x PWRTE=OFF ]
-"48
+"47
 [p x WDTE=OFF ]
-"49
+"48
 [p x LPBOREN=OFF ]
-"50
+"49
 [p x BOREN=OFF ]
-"51
+"50
 [p x BORV=LOW ]
-"52
+"51
 [p x PPS1WAY=ON ]
-"53
+"52
 [p x STVREN=ON ]
-"54
+"53
 [p x DEBUG=OFF ]
-"57
+"56
 [p x WRT=OFF ]
-"58
+"57
 [p x LVP=OFF ]
-"62
+"61
 [p x CPD=OFF ]
-"15 tmr_TMR1.c
+"9 tmr_TMR1.c
 [v _TMR1preload `ui ~T0 @X0 1 s ]
 [i _TMR1preload
 -> -> 32767 `i `ui
 ]
-[; ;tmr_TMR1.c: 15: static uint16_t TMR1preload = 0x7FFF;
-"17
+[; ;tmr_TMR1.c: 9: static uint16_t TMR1preload = 0x7FFF;
+"11
 [v _tmr_TMR1setPreload `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;tmr_TMR1.c: 17: void tmr_TMR1setPreload(uint16_t preload){
+[; ;tmr_TMR1.c: 11: void tmr_TMR1setPreload(uint16_t preload){
 [e :U _tmr_TMR1setPreload ]
 [v _preload `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;tmr_TMR1.c: 18: TMR1preload = preload;
-"18
+[; ;tmr_TMR1.c: 12: TMR1preload = preload;
+"12
 [e = _TMR1preload _preload ]
-[; ;tmr_TMR1.c: 19: }
-"19
+[; ;tmr_TMR1.c: 13: }
+"13
 [e :UE 655 ]
 }
-"86
+"16
 [v _tmr_TMR1Init `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR1.c: 86: void tmr_TMR1Init(void){
+[; ;tmr_TMR1.c: 16: void tmr_TMR1Init(void){
 [e :U _tmr_TMR1Init ]
 [f ]
-[; ;tmr_TMR1.c: 107: T1CONbits.T1CKPS = 0x00;
-"107
+[; ;tmr_TMR1.c: 37: T1CONbits.T1CKPS = 0x00;
+"37
 [e = . . _T1CONbits 0 4 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 108: T1CONbits.TMR1CS = 0x02;
-"108
+[; ;tmr_TMR1.c: 38: T1CONbits.TMR1CS = 0x02;
+"38
 [e = . . _T1CONbits 0 5 -> -> 2 `i `uc ]
-[; ;tmr_TMR1.c: 109: T1CONbits.T1SYNC = 1;
-"109
+[; ;tmr_TMR1.c: 39: T1CONbits.T1SYNC = 1;
+"39
 [e = . . _T1CONbits 0 2 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 111: OSCCON3bits.SOSCPWR = 0x01;
-"111
+[; ;tmr_TMR1.c: 41: OSCCON3bits.SOSCPWR = 0x01;
+"41
 [e = . . _OSCCON3bits 0 4 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 112: OSCCON3bits.SOSCBE = 0x00;
-"112
+[; ;tmr_TMR1.c: 42: OSCCON3bits.SOSCBE = 0x00;
+"42
 [e = . . _OSCCON3bits 0 3 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 116: PIR1bits.TMR1IF = 0;
-"116
+[; ;tmr_TMR1.c: 45: PIR1bits.TMR1IF = 0;
+"45
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 117: TMR1H = (TMR1preload & 0xFF00) >> 8;
-"117
+[; ;tmr_TMR1.c: 46: TMR1H = (TMR1preload & 0xFF00) >> 8;
+"46
 [e = _TMR1H -> >> & _TMR1preload -> 65280 `ui -> 8 `i `uc ]
-[; ;tmr_TMR1.c: 118: TMR1L = TMR1preload & 0x00FF;
-"118
+[; ;tmr_TMR1.c: 47: TMR1L = TMR1preload & 0x00FF;
+"47
 [e = _TMR1L -> & _TMR1preload -> -> 255 `i `ui `uc ]
-[; ;tmr_TMR1.c: 123: PIE1bits.TMR1IE = 1;
-"123
+[; ;tmr_TMR1.c: 52: PIE1bits.TMR1IE = 1;
+"52
 [e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 124: INTCONbits.PEIE = 1;
-"124
+[; ;tmr_TMR1.c: 53: INTCONbits.PEIE = 1;
+"53
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 125: INTCONbits.GIE = 1;
-"125
+[; ;tmr_TMR1.c: 54: INTCONbits.GIE = 1;
+"54
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 129: }
-"129
+[; ;tmr_TMR1.c: 58: }
+"58
 [e :UE 656 ]
 }
-"131
+"60
 [v _tmr_TMR1SOSCpowerLevel `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;tmr_TMR1.c: 131: void tmr_TMR1SOSCpowerLevel(char level){
+[; ;tmr_TMR1.c: 60: void tmr_TMR1SOSCpowerLevel(char level){
 [e :U _tmr_TMR1SOSCpowerLevel ]
 [v _level `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;tmr_TMR1.c: 132: switch (level){
-"132
+[; ;tmr_TMR1.c: 61: switch (level){
+"61
 [e $U 659  ]
 {
-[; ;tmr_TMR1.c: 133: case 'h':
-"133
+[; ;tmr_TMR1.c: 62: case 'h':
+"62
 [e :U 660 ]
-[; ;tmr_TMR1.c: 134: OSCCON3bits.SOSCPWR = 0x01;
-"134
+[; ;tmr_TMR1.c: 63: OSCCON3bits.SOSCPWR = 0x01;
+"63
 [e = . . _OSCCON3bits 0 4 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 135: break;
-"135
+[; ;tmr_TMR1.c: 64: break;
+"64
 [e $U 658  ]
-[; ;tmr_TMR1.c: 136: case 'l':
-"136
+[; ;tmr_TMR1.c: 65: case 'l':
+"65
 [e :U 661 ]
-[; ;tmr_TMR1.c: 137: OSCCON3bits.SOSCPWR = 0x00;
-"137
+[; ;tmr_TMR1.c: 66: OSCCON3bits.SOSCPWR = 0x00;
+"66
 [e = . . _OSCCON3bits 0 4 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 138: break;
-"138
+[; ;tmr_TMR1.c: 67: break;
+"67
 [e $U 658  ]
-[; ;tmr_TMR1.c: 139: default:
-"139
+[; ;tmr_TMR1.c: 68: default:
+"68
 [e :U 662 ]
-[; ;tmr_TMR1.c: 140: OSCCON3bits.SOSCPWR = 0x00;
-"140
+[; ;tmr_TMR1.c: 69: OSCCON3bits.SOSCPWR = 0x00;
+"69
 [e = . . _OSCCON3bits 0 4 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 141: break;
-"141
+[; ;tmr_TMR1.c: 70: break;
+"70
 [e $U 658  ]
-"142
+"71
 }
-[; ;tmr_TMR1.c: 142: }
+[; ;tmr_TMR1.c: 71: }
 [e $U 658  ]
-"132
+"61
 [e :U 659 ]
 [e [\ _level , $ -> -> 104 `ui `uc 660
  , $ -> -> 108 `ui `uc 661
  662 ]
-"142
+"71
 [e :U 658 ]
-[; ;tmr_TMR1.c: 143: }
-"143
+[; ;tmr_TMR1.c: 72: }
+"72
 [e :UE 657 ]
 }
-"145
+"74
 [v _tmr_TMR1En `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR1.c: 145: void tmr_TMR1En(void){
+[; ;tmr_TMR1.c: 74: void tmr_TMR1En(void){
 [e :U _tmr_TMR1En ]
 [f ]
-[; ;tmr_TMR1.c: 147: T1CONbits.T1SOSC = 0x01;
-"147
+[; ;tmr_TMR1.c: 76: T1CONbits.T1SOSC = 0x01;
+"76
 [e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 149: T1CONbits.TMR1ON = 1;
-"149
+[; ;tmr_TMR1.c: 78: T1CONbits.TMR1ON = 1;
+"78
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 151: }
-"151
+[; ;tmr_TMR1.c: 80: }
+"80
 [e :UE 663 ]
 }
-"153
+"82
 [v _tmr_TMR1Dis `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR1.c: 153: void tmr_TMR1Dis(void){
+[; ;tmr_TMR1.c: 82: void tmr_TMR1Dis(void){
 [e :U _tmr_TMR1Dis ]
 [f ]
-[; ;tmr_TMR1.c: 155: T1CONbits.T1SOSC = 0x00;
-"155
+[; ;tmr_TMR1.c: 84: T1CONbits.T1SOSC = 0x00;
+"84
 [e = . . _T1CONbits 0 3 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 157: T1CONbits.TMR1ON = 0;
-"157
+[; ;tmr_TMR1.c: 86: T1CONbits.TMR1ON = 0;
+"86
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 158: }
-"158
+[; ;tmr_TMR1.c: 87: }
+"87
 [e :UE 664 ]
 }
-"160
+"89
 [v _tmr_TMR1Reset `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR1.c: 160: void tmr_TMR1Reset(void){
+[; ;tmr_TMR1.c: 89: void tmr_TMR1Reset(void){
 [e :U _tmr_TMR1Reset ]
 [f ]
-[; ;tmr_TMR1.c: 161: T1CONbits.TMR1ON = 0;
-"161
+[; ;tmr_TMR1.c: 90: T1CONbits.TMR1ON = 0;
+"90
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 162: TMR1H = (TMR1preload & 0xFF00) >> 8;
-"162
+[; ;tmr_TMR1.c: 91: TMR1H = (TMR1preload & 0xFF00) >> 8;
+"91
 [e = _TMR1H -> >> & _TMR1preload -> 65280 `ui -> 8 `i `uc ]
-[; ;tmr_TMR1.c: 163: TMR1L = TMR1preload & 0x00FF;
-"163
+[; ;tmr_TMR1.c: 92: TMR1L = TMR1preload & 0x00FF;
+"92
 [e = _TMR1L -> & _TMR1preload -> -> 255 `i `ui `uc ]
-[; ;tmr_TMR1.c: 164: T1CONbits.TMR1ON = 1;
-"164
+[; ;tmr_TMR1.c: 93: T1CONbits.TMR1ON = 1;
+"93
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 165: }
-"165
+[; ;tmr_TMR1.c: 94: }
+"94
 [e :UE 665 ]
 }

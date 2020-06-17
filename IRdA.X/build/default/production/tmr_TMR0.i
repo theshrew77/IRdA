@@ -7774,14 +7774,14 @@ INT_CANDLE = 1
 
 void configureIOCInt(void);
 
-# 19 "main.h"
+# 18 "main.h"
 typedef enum{
 OFF = 0,
 ON = 1,
 }status_t;
 
 
-# 37
+# 36
 #pragma config CP = OFF
 
 #pragma config FEXTOSC = OFF
@@ -7809,7 +7809,7 @@ ON = 1,
 #pragma config CP = OFF
 #pragma config CPD = OFF
 
-# 80 "NEC.h"
+# 44 "NEC.h"
 typedef enum {
 LEDON = 0x7F,
 LEDOFF = 0xFF,
@@ -7823,7 +7823,7 @@ CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
 
-# 123
+# 87
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 

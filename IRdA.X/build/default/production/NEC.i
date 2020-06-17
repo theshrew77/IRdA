@@ -7756,7 +7756,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 80 "NEC.h"
+# 44 "NEC.h"
 typedef enum {
 LEDON = 0x7F,
 LEDOFF = 0xFF,
@@ -7770,7 +7770,7 @@ CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
 
-# 123
+# 87
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 
@@ -7818,14 +7818,14 @@ void led_Dim(void);
 void led_Off(void);
 void led_Toggle(void);
 
-# 19 "main.h"
+# 18 "main.h"
 typedef enum{
 OFF = 0,
 ON = 1,
 }status_t;
 
 
-# 37
+# 36
 #pragma config CP = OFF
 
 #pragma config FEXTOSC = OFF
@@ -7866,24 +7866,13 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 23 "tmr_TMR1.h"
+# 22 "tmr_TMR1.h"
+void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
-void tmr_TMR1ClrRollovers(void);
-uint16_t *tmr_TMR1GetRollovers(void);
-void tmr_TMR1IncRollovers(void);
+void tmr_TMR1SOSCpowerLevel(char level);
 void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
 void tmr_TMR1Reset(void);
-void tmr_TMR1Toggle(void);
-uint32_t tmr_TMR1GetCount(void);
-void tmr_TMR1reset(void);
-void tmr_TMR1mark(void);
-uint8_t accquisitionComplete(void);
-uint16_t *getTMR1countArray(void);
-uint16_t *getTMR1rolloverArray(void);
-uint16_t tmr_computeDelta(uint8_t i);
-void tmr_TMR1setPreload(uint16_t preload);
-void tmr_TMR1SOSCpowerLevel(char level);
 
 # 16 "DAC.h"
 void dac_DAClevelChange(char direction);
@@ -7911,11 +7900,10 @@ uint8_t command = 0;
 
 delta = tmr_computeDelta(0);
 
-# 31
 if (2700 < delta && delta < 4050){
 
 
-for (int i = 1; i < 33; i++){
+for (uint8_t i = 1; i < 33; i++){
 delta = tmr_computeDelta(i);
 if (250 < delta && delta < 375){
 NECpacket[i-1] = 0;
@@ -7926,17 +7914,17 @@ NECpacket[i-1] = 1;
 }
 
 command += NECpacket[31];
-command += NECpacket[30]*2;
-command += NECpacket[29]*4;
-command += NECpacket[28]*8;
-command += NECpacket[27]*16;
-command += NECpacket[26]*32;
-command += NECpacket[25]*64;
-command += NECpacket[24]*128;
+command += NECpacket[30]*2U;
+command += NECpacket[29]*4U;
+command += NECpacket[28]*8U;
+command += NECpacket[27]*16U;
+command += NECpacket[26]*32U;
+command += NECpacket[25]*64U;
+command += NECpacket[24]*128U;
 
 }
 
-# 62
+# 57
 return(command);
 }
 

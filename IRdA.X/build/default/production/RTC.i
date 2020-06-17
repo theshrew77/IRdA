@@ -7655,24 +7655,13 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 23 "tmr_TMR1.h"
+# 22 "tmr_TMR1.h"
+void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
-void tmr_TMR1ClrRollovers(void);
-uint16_t *tmr_TMR1GetRollovers(void);
-void tmr_TMR1IncRollovers(void);
+void tmr_TMR1SOSCpowerLevel(char level);
 void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
 void tmr_TMR1Reset(void);
-void tmr_TMR1Toggle(void);
-uint32_t tmr_TMR1GetCount(void);
-void tmr_TMR1reset(void);
-void tmr_TMR1mark(void);
-uint8_t accquisitionComplete(void);
-uint16_t *getTMR1countArray(void);
-uint16_t *getTMR1rolloverArray(void);
-uint16_t tmr_computeDelta(uint8_t i);
-void tmr_TMR1setPreload(uint16_t preload);
-void tmr_TMR1SOSCpowerLevel(char level);
 
 # 15 "LED.h"
 void led_ConfigureLED(void);

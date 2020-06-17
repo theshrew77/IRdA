@@ -8,7 +8,6 @@
 #ifndef POWERMANAGEMENT_H
 #define	POWERMANAGEMENT_H
 void pwrmgmt_DisablePeripherals(void);
-void pwrmgmt_ConfigUnusedPins(void);
 #ifdef	__cplusplus
 extern "C" {
 #endif

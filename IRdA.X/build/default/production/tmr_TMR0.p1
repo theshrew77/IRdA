@@ -5213,60 +5213,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Interrupts.h: 21: INT_CANDLE = 1
 [; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
 [; ;Interrupts.h: 24: void configureIOCInt(void);
-[; ;main.h: 19: typedef enum{
-[; ;main.h: 20: OFF = 0,
-[; ;main.h: 21: ON = 1,
-[; ;main.h: 22: }status_t;
-"37 main.h
+[; ;main.h: 18: typedef enum{
+[; ;main.h: 19: OFF = 0,
+[; ;main.h: 20: ON = 1,
+[; ;main.h: 21: }status_t;
+"36 main.h
 [p x CP=OFF ]
-"39
+"38
 [p x FEXTOSC=OFF ]
-"40
+"39
 [p x RSTOSC=HFINT1 ]
-"41
+"40
 [p x CLKOUTEN=OFF ]
-"42
+"41
 [p x CSWEN=ON ]
-"43
+"42
 [p x FCMEN=OFF ]
-"46
+"45
 [p x MCLRE=ON ]
-"47
+"46
 [p x PWRTE=OFF ]
-"48
+"47
 [p x WDTE=OFF ]
-"49
+"48
 [p x LPBOREN=OFF ]
-"50
+"49
 [p x BOREN=OFF ]
-"51
+"50
 [p x BORV=LOW ]
-"52
+"51
 [p x PPS1WAY=ON ]
-"53
+"52
 [p x STVREN=ON ]
-"54
+"53
 [p x DEBUG=OFF ]
-"57
+"56
 [p x WRT=OFF ]
-"58
+"57
 [p x LVP=OFF ]
-"62
+"61
 [p x CPD=OFF ]
-[; ;NEC.h: 80: typedef enum {
-[; ;NEC.h: 81: LEDON = 0x7F,
-[; ;NEC.h: 82: LEDOFF = 0xFF,
-[; ;NEC.h: 83: TIMER2H = 0xCF,
-[; ;NEC.h: 84: TIMER4H = 0x6F,
-[; ;NEC.h: 85: TIMER6H = 0xAF,
-[; ;NEC.h: 86: TIMER8H = 0x57,
-[; ;NEC.h: 87: DIM = 0x8F,
-[; ;NEC.h: 88: BRIGHT = 0xD7,
-[; ;NEC.h: 89: CANDLE = 0x4F,
-[; ;NEC.h: 90: LIGHT = 0x97
-[; ;NEC.h: 91: } NEC_commands_t;
-[; ;NEC.h: 123: uint8_t nec_ProcessPacket(void);
-[; ;NEC.h: 124: void nec_ExecuteCommand(uint8_t NECcommand);
+[; ;NEC.h: 44: typedef enum {
+[; ;NEC.h: 45: LEDON = 0x7F,
+[; ;NEC.h: 46: LEDOFF = 0xFF,
+[; ;NEC.h: 47: TIMER2H = 0xCF,
+[; ;NEC.h: 48: TIMER4H = 0x6F,
+[; ;NEC.h: 49: TIMER6H = 0xAF,
+[; ;NEC.h: 50: TIMER8H = 0x57,
+[; ;NEC.h: 51: DIM = 0x8F,
+[; ;NEC.h: 52: BRIGHT = 0xD7,
+[; ;NEC.h: 53: CANDLE = 0x4F,
+[; ;NEC.h: 54: LIGHT = 0x97
+[; ;NEC.h: 55: } NEC_commands_t;
+[; ;NEC.h: 87: uint8_t nec_ProcessPacket(void);
+[; ;NEC.h: 88: void nec_ExecuteCommand(uint8_t NECcommand);
 [; ;Que.h: 14: typedef struct {
 [; ;Que.h: 15: int8_t Data[2];
 [; ;Que.h: 16: int8_t In;

@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c Que.c Retarget.c uart_UCA0.c Interrupts.c NEC.c PowerManagement.c tmr_TMR1.c LED.c Oscillator.c ccp_CCP1.c tmr_TMR0.c RTC.c DAC.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c Interrupts.c NEC.c PowerManagement.c tmr_TMR1.c LED.c Oscillator.c tmr_TMR0.c RTC.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/Que.p1 ${OBJECTDIR}/Retarget.p1 ${OBJECTDIR}/uart_UCA0.p1 ${OBJECTDIR}/Interrupts.p1 ${OBJECTDIR}/NEC.p1 ${OBJECTDIR}/PowerManagement.p1 ${OBJECTDIR}/tmr_TMR1.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/Oscillator.p1 ${OBJECTDIR}/ccp_CCP1.p1 ${OBJECTDIR}/tmr_TMR0.p1 ${OBJECTDIR}/RTC.p1 ${OBJECTDIR}/DAC.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Que.p1.d ${OBJECTDIR}/Retarget.p1.d ${OBJECTDIR}/uart_UCA0.p1.d ${OBJECTDIR}/Interrupts.p1.d ${OBJECTDIR}/NEC.p1.d ${OBJECTDIR}/PowerManagement.p1.d ${OBJECTDIR}/tmr_TMR1.p1.d ${OBJECTDIR}/LED.p1.d ${OBJECTDIR}/Oscillator.p1.d ${OBJECTDIR}/ccp_CCP1.p1.d ${OBJECTDIR}/tmr_TMR0.p1.d ${OBJECTDIR}/RTC.p1.d ${OBJECTDIR}/DAC.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/Interrupts.p1 ${OBJECTDIR}/NEC.p1 ${OBJECTDIR}/PowerManagement.p1 ${OBJECTDIR}/tmr_TMR1.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/Oscillator.p1 ${OBJECTDIR}/tmr_TMR0.p1 ${OBJECTDIR}/RTC.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/Interrupts.p1.d ${OBJECTDIR}/NEC.p1.d ${OBJECTDIR}/PowerManagement.p1.d ${OBJECTDIR}/tmr_TMR1.p1.d ${OBJECTDIR}/LED.p1.d ${OBJECTDIR}/Oscillator.p1.d ${OBJECTDIR}/tmr_TMR0.p1.d ${OBJECTDIR}/RTC.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/Que.p1 ${OBJECTDIR}/Retarget.p1 ${OBJECTDIR}/uart_UCA0.p1 ${OBJECTDIR}/Interrupts.p1 ${OBJECTDIR}/NEC.p1 ${OBJECTDIR}/PowerManagement.p1 ${OBJECTDIR}/tmr_TMR1.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/Oscillator.p1 ${OBJECTDIR}/ccp_CCP1.p1 ${OBJECTDIR}/tmr_TMR0.p1 ${OBJECTDIR}/RTC.p1 ${OBJECTDIR}/DAC.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/Interrupts.p1 ${OBJECTDIR}/NEC.p1 ${OBJECTDIR}/PowerManagement.p1 ${OBJECTDIR}/tmr_TMR1.p1 ${OBJECTDIR}/LED.p1 ${OBJECTDIR}/Oscillator.p1 ${OBJECTDIR}/tmr_TMR0.p1 ${OBJECTDIR}/RTC.p1
 
 # Source Files
-SOURCEFILES=main.c Que.c Retarget.c uart_UCA0.c Interrupts.c NEC.c PowerManagement.c tmr_TMR1.c LED.c Oscillator.c ccp_CCP1.c tmr_TMR0.c RTC.c DAC.c
+SOURCEFILES=main.c Interrupts.c NEC.c PowerManagement.c tmr_TMR1.c LED.c Oscillator.c tmr_TMR0.c RTC.c
 
 
 
@@ -101,30 +101,6 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Que.p1: Que.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Que.p1.d 
-	@${RM} ${OBJECTDIR}/Que.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Que.p1 Que.c 
-	@-${MV} ${OBJECTDIR}/Que.d ${OBJECTDIR}/Que.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Que.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Retarget.p1: Retarget.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Retarget.p1.d 
-	@${RM} ${OBJECTDIR}/Retarget.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Retarget.p1 Retarget.c 
-	@-${MV} ${OBJECTDIR}/Retarget.d ${OBJECTDIR}/Retarget.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Retarget.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/uart_UCA0.p1: uart_UCA0.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/uart_UCA0.p1.d 
-	@${RM} ${OBJECTDIR}/uart_UCA0.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/uart_UCA0.p1 uart_UCA0.c 
-	@-${MV} ${OBJECTDIR}/uart_UCA0.d ${OBJECTDIR}/uart_UCA0.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/uart_UCA0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -174,14 +150,6 @@ ${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Oscillator.d ${OBJECTDIR}/Oscillator.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ccp_CCP1.p1: ccp_CCP1.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ccp_CCP1.p1.d 
-	@${RM} ${OBJECTDIR}/ccp_CCP1.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/ccp_CCP1.p1 ccp_CCP1.c 
-	@-${MV} ${OBJECTDIR}/ccp_CCP1.d ${OBJECTDIR}/ccp_CCP1.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ccp_CCP1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tmr_TMR0.p1.d 
@@ -198,14 +166,6 @@ ${OBJECTDIR}/RTC.p1: RTC.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/RTC.d ${OBJECTDIR}/RTC.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/DAC.p1: DAC.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DAC.p1.d 
-	@${RM} ${OBJECTDIR}/DAC.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/DAC.p1 DAC.c 
-	@-${MV} ${OBJECTDIR}/DAC.d ${OBJECTDIR}/DAC.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/DAC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -214,30 +174,6 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/main.p1 main.c 
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Que.p1: Que.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Que.p1.d 
-	@${RM} ${OBJECTDIR}/Que.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Que.p1 Que.c 
-	@-${MV} ${OBJECTDIR}/Que.d ${OBJECTDIR}/Que.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Que.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/Retarget.p1: Retarget.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Retarget.p1.d 
-	@${RM} ${OBJECTDIR}/Retarget.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Retarget.p1 Retarget.c 
-	@-${MV} ${OBJECTDIR}/Retarget.d ${OBJECTDIR}/Retarget.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/Retarget.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/uart_UCA0.p1: uart_UCA0.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/uart_UCA0.p1.d 
-	@${RM} ${OBJECTDIR}/uart_UCA0.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/uart_UCA0.p1 uart_UCA0.c 
-	@-${MV} ${OBJECTDIR}/uart_UCA0.d ${OBJECTDIR}/uart_UCA0.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/uart_UCA0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -287,14 +223,6 @@ ${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Oscillator.d ${OBJECTDIR}/Oscillator.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ccp_CCP1.p1: ccp_CCP1.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ccp_CCP1.p1.d 
-	@${RM} ${OBJECTDIR}/ccp_CCP1.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/ccp_CCP1.p1 ccp_CCP1.c 
-	@-${MV} ${OBJECTDIR}/ccp_CCP1.d ${OBJECTDIR}/ccp_CCP1.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ccp_CCP1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tmr_TMR0.p1.d 
@@ -310,14 +238,6 @@ ${OBJECTDIR}/RTC.p1: RTC.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/RTC.p1 RTC.c 
 	@-${MV} ${OBJECTDIR}/RTC.d ${OBJECTDIR}/RTC.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/RTC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/DAC.p1: DAC.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DAC.p1.d 
-	@${RM} ${OBJECTDIR}/DAC.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c90 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/DAC.p1 DAC.c 
-	@-${MV} ${OBJECTDIR}/DAC.d ${OBJECTDIR}/DAC.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/DAC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

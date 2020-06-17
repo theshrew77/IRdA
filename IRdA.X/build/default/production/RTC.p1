@@ -4,11 +4,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S655 . Seconds Minutes Hours ]
 "20
 [v _rtc_Reset `(v ~T0 @X0 0 ef ]
-"29 tmr_TMR1.h
+"27 tmr_TMR1.h
 [v _tmr_TMR1Reset `(v ~T0 @X0 0 ef ]
-"27
+"25
 [v _tmr_TMR1En `(v ~T0 @X0 0 ef ]
-"28
+"26
 [v _tmr_TMR1Dis `(v ~T0 @X0 0 ef ]
 "21 LED.h
 [v _led_Off `(v ~T0 @X0 0 ef ]
@@ -5101,23 +5101,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.h: 19: void rtc_SetHourDelay(uint8_t hours);
 [; ;RTC.h: 20: void rtc_Reset(void);
 [; ;RTC.h: 21: void rtc_ISR(void);
+[; ;tmr_TMR1.h: 22: void tmr_TMR1setPreload(uint16_t preload);
 [; ;tmr_TMR1.h: 23: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1ClrRollovers(void);
-[; ;tmr_TMR1.h: 25: uint16_t *tmr_TMR1GetRollovers(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1IncRollovers(void);
-[; ;tmr_TMR1.h: 27: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 28: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 29: void tmr_TMR1Reset(void);
-[; ;tmr_TMR1.h: 30: void tmr_TMR1Toggle(void);
-[; ;tmr_TMR1.h: 31: uint32_t tmr_TMR1GetCount(void);
-[; ;tmr_TMR1.h: 32: void tmr_TMR1reset(void);
-[; ;tmr_TMR1.h: 33: void tmr_TMR1mark(void);
-[; ;tmr_TMR1.h: 34: uint8_t accquisitionComplete(void);
-[; ;tmr_TMR1.h: 35: uint16_t *getTMR1countArray(void);
-[; ;tmr_TMR1.h: 36: uint16_t *getTMR1rolloverArray(void);
-[; ;tmr_TMR1.h: 37: uint16_t tmr_computeDelta(uint8_t i);
-[; ;tmr_TMR1.h: 38: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 39: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 24: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 27: void tmr_TMR1Reset(void);
 [; ;LED.h: 15: void led_ConfigureLED(void);
 [; ;LED.h: 16: void led_Blink(uint8_t times);
 [; ;LED.h: 17: void led_Bright(void);

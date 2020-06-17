@@ -36,7 +36,4 @@
         //PMD5bits.CLC4MD = 1;
         
     }
-    void pwrmgmt_ConfigUnusedPins(void){
-        TRISAbits.TRISA0 = 1;
-        ANSELAbits.ANSA0 = 1;
-    }
+

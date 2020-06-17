@@ -22,16 +22,11 @@ uint8_t nec_ProcessPacket(void){
     uint8_t command = 0;
     
     delta = tmr_computeDelta(0);
-#ifdef DEBUGGING
-    itoa(str,delta,10);
-    Uart_UCA0_puts(str);
-    Uart_UCA0_puts(CRLF);
-#endif
 
     if (NEC_START_LOW < delta && delta < NEC_START_HIGH){
         
         
-        for (int i = 1; i < 33; i++){
+        for (uint8_t i = 1; i < 33; i++){
             delta = tmr_computeDelta(i);
             if (NEC_0_LOW < delta && delta < NEC_0_HIGH){
                 NECpacket[i-1] = 0;
@@ -42,13 +37,13 @@ uint8_t nec_ProcessPacket(void){
         }
         
         command += NECpacket[31];
-        command += NECpacket[30]*2;
-        command += NECpacket[29]*4;
-        command += NECpacket[28]*8;
-        command += NECpacket[27]*16;
-        command += NECpacket[26]*32;
-        command += NECpacket[25]*64;
-        command += NECpacket[24]*128;
+        command += NECpacket[30]*2U;
+        command += NECpacket[29]*4U;
+        command += NECpacket[28]*8U;
+        command += NECpacket[27]*16U;
+        command += NECpacket[26]*32U;
+        command += NECpacket[25]*64U;
+        command += NECpacket[24]*128U;
         
     }
 #ifdef DEBUGGING

@@ -7642,24 +7642,13 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 23 "tmr_TMR1.h"
+# 22 "tmr_TMR1.h"
+void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
-void tmr_TMR1ClrRollovers(void);
-uint16_t *tmr_TMR1GetRollovers(void);
-void tmr_TMR1IncRollovers(void);
+void tmr_TMR1SOSCpowerLevel(char level);
 void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
 void tmr_TMR1Reset(void);
-void tmr_TMR1Toggle(void);
-uint32_t tmr_TMR1GetCount(void);
-void tmr_TMR1reset(void);
-void tmr_TMR1mark(void);
-uint8_t accquisitionComplete(void);
-uint16_t *getTMR1countArray(void);
-uint16_t *getTMR1rolloverArray(void);
-uint16_t tmr_computeDelta(uint8_t i);
-void tmr_TMR1setPreload(uint16_t preload);
-void tmr_TMR1SOSCpowerLevel(char level);
 
 # 19 "Interrupts.h"
 typedef enum{
@@ -7669,14 +7658,14 @@ INT_CANDLE = 1
 
 void configureIOCInt(void);
 
-# 19 "main.h"
+# 18 "main.h"
 typedef enum{
 OFF = 0,
 ON = 1,
 }status_t;
 
 
-# 37
+# 36
 #pragma config CP = OFF
 
 #pragma config FEXTOSC = OFF
@@ -7704,24 +7693,23 @@ ON = 1,
 #pragma config CP = OFF
 #pragma config CPD = OFF
 
-# 15 "tmr_TMR1.c"
+# 9 "tmr_TMR1.c"
 static uint16_t TMR1preload = 0x7FFF;
 
 void tmr_TMR1setPreload(uint16_t preload){
 TMR1preload = preload;
 }
 
-# 86
+
 void tmr_TMR1Init(void){
 
-# 107
+# 37
 T1CONbits.T1CKPS = 0x00;
 T1CONbits.TMR1CS = 0x02;
 T1CONbits.T1SYNC = 1;
 
 OSCCON3bits.SOSCPWR = 0x01;
 OSCCON3bits.SOSCBE = 0x00;
-
 
 
 PIR1bits.TMR1IF = 0;
