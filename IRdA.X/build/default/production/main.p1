@@ -11,7 +11,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S456 . . . ]
 "9026
 [v _CPUDOZEbits `VS456 ~T0 @X0 0 e@2328 ]
-"19 Oscillator.h
+"17 Oscillator.h
 [v _osc_Config1MHz `(v ~T0 @X0 0 ef ]
 "10 PowerManagement.h
 [v _pwrmgmt_DisablePeripherals `(v ~T0 @X0 0 ef ]
@@ -19,17 +19,17 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _rtc_Reset `(v ~T0 @X0 0 ef ]
 "15 LED.h
 [v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
-"17
+"16
 [v _led_Bright `(v ~T0 @X0 0 ef ]
 "24 Interrupts.h
 [v _configureIOCInt `(v ~T0 @X0 0 ef ]
-"26 tmr_TMR0.h
+"31 tmr_TMR0.h
 [v _tmr_TMR0Init `(v ~T0 @X0 0 ef ]
-"30
+"29
 [v _tmr_TMR0reset `(v ~T0 @X0 0 ef ]
-"23 tmr_TMR1.h
+"22 tmr_TMR1.h
 [v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
-"28 tmr_TMR0.h
+"27 tmr_TMR0.h
 [v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
 "357 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [s S26 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -5284,44 +5284,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Interrupts.h: 21: INT_CANDLE = 1
 [; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
 [; ;Interrupts.h: 24: void configureIOCInt(void);
-[; ;tmr_TMR0.h: 26: void tmr_TMR0Init(void);
-[; ;tmr_TMR0.h: 27: uint16_t tmr_computeDelta(uint8_t i);
-[; ;tmr_TMR0.h: 28: uint8_t accquisitionComplete(void);
-[; ;tmr_TMR0.h: 29: void tmr_TMR0mark(void);
-[; ;tmr_TMR0.h: 30: void tmr_TMR0reset(void);
-[; ;tmr_TMR0.h: 31: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 26: uint16_t tmr_computeDelta(uint8_t i);
+[; ;tmr_TMR0.h: 27: uint8_t accquisitionComplete(void);
+[; ;tmr_TMR0.h: 28: void tmr_TMR0mark(void);
+[; ;tmr_TMR0.h: 29: void tmr_TMR0reset(void);
+[; ;tmr_TMR0.h: 30: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 31: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
-[; ;tmr_TMR0.h: 33: void tmr_TMR0_PrintCountArray(void);
-[; ;NEC.h: 44: typedef enum {
-[; ;NEC.h: 45: LEDON = 0x7F,
-[; ;NEC.h: 46: LEDOFF = 0xFF,
-[; ;NEC.h: 47: TIMER2H = 0xCF,
-[; ;NEC.h: 48: TIMER4H = 0x6F,
-[; ;NEC.h: 49: TIMER6H = 0xAF,
-[; ;NEC.h: 50: TIMER8H = 0x57,
-[; ;NEC.h: 51: DIM = 0x8F,
-[; ;NEC.h: 52: BRIGHT = 0xD7,
-[; ;NEC.h: 53: CANDLE = 0x4F,
-[; ;NEC.h: 54: LIGHT = 0x97
-[; ;NEC.h: 55: } NEC_commands_t;
+[; ;NEC.h: 59: typedef enum {
+[; ;NEC.h: 60: LEDON = 0xFF,
+[; ;NEC.h: 61: LEDOFF = 0x7F,
+[; ;NEC.h: 62: TIMER2H = 0xBF,
+[; ;NEC.h: 63: TIMER4H = 0x3F,
+[; ;NEC.h: 64: TIMER6H = 0xDF,
+[; ;NEC.h: 65: TIMER8H = 0x5F,
+[; ;NEC.h: 66: DIM = 0x6F,
+[; ;NEC.h: 67: BRIGHT = 0x1F,
+[; ;NEC.h: 68: CANDLE = 0x4F,
+[; ;NEC.h: 69: LIGHT = 0x97
+[; ;NEC.h: 70: } NEC_commands_t;
 [; ;NEC.h: 87: uint8_t nec_ProcessPacket(void);
 [; ;NEC.h: 88: void nec_ExecuteCommand(uint8_t NECcommand);
 [; ;LED.h: 15: void led_ConfigureLED(void);
-[; ;LED.h: 16: void led_Blink(uint8_t times);
-[; ;LED.h: 17: void led_Bright(void);
-[; ;LED.h: 19: void led_Dim(void);
-[; ;LED.h: 21: void led_Off(void);
-[; ;LED.h: 22: void led_Toggle(void);
-[; ;Oscillator.h: 17: void _osc_Config32768Hz(void);
-[; ;Oscillator.h: 18: void osc_Config16MHz(void);
-[; ;Oscillator.h: 19: void osc_Config1MHz(void);
+[; ;LED.h: 16: void led_Bright(void);
+[; ;LED.h: 17: void led_Dim(void);
+[; ;LED.h: 18: void led_Off(void);
+[; ;LED.h: 19: void led_Toggle(void);
+[; ;Oscillator.h: 17: void osc_Config1MHz(void);
 [; ;PowerManagement.h: 10: void pwrmgmt_DisablePeripherals(void);
-[; ;tmr_TMR1.h: 22: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 23: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;tmr_TMR1.h: 25: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 27: void tmr_TMR1Reset(void);
+[; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
+[; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
+[; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
 [; ;RTC.h: 11: typedef struct
 [; ;RTC.h: 12: {
 [; ;RTC.h: 13: uint8_t Seconds;

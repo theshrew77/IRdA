@@ -1,29 +1,29 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"27 tmr_TMR0.h
+"26 tmr_TMR0.h
 [v _tmr_computeDelta `(ui ~T0 @X0 0 ef1`uc ]
-"26 tmr_TMR1.h
+"25 tmr_TMR1.h
 [v _tmr_TMR1Dis `(v ~T0 @X0 0 ef ]
-"17 LED.h
+"16 LED.h
 [v _led_Bright `(v ~T0 @X0 0 ef ]
-"21
+"18
 [v _led_Off `(v ~T0 @X0 0 ef ]
-"77 NEC.c
-[c E4698 0 1 .. ]
-[n E4698 . INT_DELAY INT_CANDLE  ]
-"22 tmr_TMR1.h
+"63 NEC.c
+[c E4653 0 1 .. ]
+[n E4653 . INT_DELAY INT_CANDLE  ]
+"21 tmr_TMR1.h
 [v _tmr_TMR1setPreload `(v ~T0 @X0 0 ef1`ui ]
-"24
+"23
 [v _tmr_TMR1SOSCpowerLevel `(v ~T0 @X0 0 ef1`uc ]
 "19 RTC.h
 [v _rtc_SetHourDelay `(v ~T0 @X0 0 ef1`uc ]
-"19 LED.h
+"17 LED.h
 [v _led_Dim `(v ~T0 @X0 0 ef ]
-"27 tmr_TMR1.h
+"26 tmr_TMR1.h
 [v _tmr_TMR1Reset `(v ~T0 @X0 0 ef ]
-"25
+"24
 [v _tmr_TMR1En `(v ~T0 @X0 0 ef ]
-"61 NEC.c
-[c E4584 127 255 207 111 175 87 143 215 79 151 .. ]
+"51 NEC.c
+[c E4584 255 127 191 63 223 95 111 31 79 151 .. ]
 [n E4584 . LEDON LEDOFF TIMER2H TIMER4H TIMER6H TIMER8H DIM BRIGHT CANDLE LIGHT  ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -5182,52 +5182,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 58: extern char * strichr(const char *, int);
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
-[; ;NEC.h: 44: typedef enum {
-[; ;NEC.h: 45: LEDON = 0x7F,
-[; ;NEC.h: 46: LEDOFF = 0xFF,
-[; ;NEC.h: 47: TIMER2H = 0xCF,
-[; ;NEC.h: 48: TIMER4H = 0x6F,
-[; ;NEC.h: 49: TIMER6H = 0xAF,
-[; ;NEC.h: 50: TIMER8H = 0x57,
-[; ;NEC.h: 51: DIM = 0x8F,
-[; ;NEC.h: 52: BRIGHT = 0xD7,
-[; ;NEC.h: 53: CANDLE = 0x4F,
-[; ;NEC.h: 54: LIGHT = 0x97
-[; ;NEC.h: 55: } NEC_commands_t;
+[; ;NEC.h: 59: typedef enum {
+[; ;NEC.h: 60: LEDON = 0xFF,
+[; ;NEC.h: 61: LEDOFF = 0x7F,
+[; ;NEC.h: 62: TIMER2H = 0xBF,
+[; ;NEC.h: 63: TIMER4H = 0x3F,
+[; ;NEC.h: 64: TIMER6H = 0xDF,
+[; ;NEC.h: 65: TIMER8H = 0x5F,
+[; ;NEC.h: 66: DIM = 0x6F,
+[; ;NEC.h: 67: BRIGHT = 0x1F,
+[; ;NEC.h: 68: CANDLE = 0x4F,
+[; ;NEC.h: 69: LIGHT = 0x97
+[; ;NEC.h: 70: } NEC_commands_t;
 [; ;NEC.h: 87: uint8_t nec_ProcessPacket(void);
 [; ;NEC.h: 88: void nec_ExecuteCommand(uint8_t NECcommand);
-[; ;tmr_TMR0.h: 26: void tmr_TMR0Init(void);
-[; ;tmr_TMR0.h: 27: uint16_t tmr_computeDelta(uint8_t i);
-[; ;tmr_TMR0.h: 28: uint8_t accquisitionComplete(void);
-[; ;tmr_TMR0.h: 29: void tmr_TMR0mark(void);
-[; ;tmr_TMR0.h: 30: void tmr_TMR0reset(void);
-[; ;tmr_TMR0.h: 31: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 26: uint16_t tmr_computeDelta(uint8_t i);
+[; ;tmr_TMR0.h: 27: uint8_t accquisitionComplete(void);
+[; ;tmr_TMR0.h: 28: void tmr_TMR0mark(void);
+[; ;tmr_TMR0.h: 29: void tmr_TMR0reset(void);
+[; ;tmr_TMR0.h: 30: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 31: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
-[; ;tmr_TMR0.h: 33: void tmr_TMR0_PrintCountArray(void);
-[; ;Que.h: 14: typedef struct {
-[; ;Que.h: 15: int8_t Data[2];
-[; ;Que.h: 16: int8_t In;
-[; ;Que.h: 17: int8_t Out;
-[; ;Que.h: 18: } t_Q;
-[; ;Que.h: 21: int8_t QInit( t_Q *pQ );
-[; ;Que.h: 22: int8_t QIn( int8_t Src, t_Q *pQ );
-[; ;Que.h: 23: int8_t QOut( int8_t *Dest, t_Q *pQ );
-[; ;Que.h: 24: int8_t QChkQ( t_Q *pQ );
-[; ;uart_UCA0.h: 20: void Uart_UCA0Init(void);
-[; ;uart_UCA0.h: 21: void Uart_UCA0deInit(void);
-[; ;uart_UCA0.h: 22: int8_t Uart_UCA0_Flush(void);
-[; ;uart_UCA0.h: 23: int8_t Uart_UCA0_kbhit(void);
-[; ;uart_UCA0.h: 24: int8_t Uart_UCA0_getc( int8_t *Out );
-[; ;uart_UCA0.h: 25: int8_t Uart_UCA0_putc( int8_t c );
-[; ;uart_UCA0.h: 26: t_Q *getU0_RxBuf_t(void);
-[; ;uart_UCA0.h: 27: void Uart_UCA0_RxIntEn(void);
-[; ;uart_UCA0.h: 28: void Uart_UCA0_puts(char*string);
+[; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
+[; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
+[; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
 [; ;LED.h: 15: void led_ConfigureLED(void);
-[; ;LED.h: 16: void led_Blink(uint8_t times);
-[; ;LED.h: 17: void led_Bright(void);
-[; ;LED.h: 19: void led_Dim(void);
-[; ;LED.h: 21: void led_Off(void);
-[; ;LED.h: 22: void led_Toggle(void);
+[; ;LED.h: 16: void led_Bright(void);
+[; ;LED.h: 17: void led_Dim(void);
+[; ;LED.h: 18: void led_Off(void);
+[; ;LED.h: 19: void led_Toggle(void);
 [; ;main.h: 18: typedef enum{
 [; ;main.h: 19: OFF = 0,
 [; ;main.h: 20: ON = 1,
@@ -5278,338 +5264,315 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.h: 19: void rtc_SetHourDelay(uint8_t hours);
 [; ;RTC.h: 20: void rtc_Reset(void);
 [; ;RTC.h: 21: void rtc_ISR(void);
-[; ;tmr_TMR1.h: 22: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 23: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;tmr_TMR1.h: 25: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 27: void tmr_TMR1Reset(void);
-[; ;DAC.h: 16: void dac_DAClevelChange(char direction);
-[; ;DAC.h: 17: void dac_DACInit(void);
-[; ;DAC.h: 18: void dac_DACEn(void);
-[; ;DAC.h: 19: void dac_DACDis(void);
 [; ;Interrupts.h: 19: typedef enum{
 [; ;Interrupts.h: 20: INT_DELAY = 0,
 [; ;Interrupts.h: 21: INT_CANDLE = 1
 [; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
 [; ;Interrupts.h: 24: void configureIOCInt(void);
-"15 NEC.c
+"13 NEC.c
 [v _TMR1IntType `uc ~T0 @X0 1 e ]
-[; ;NEC.c: 15: uint8_t TMR1IntType;
+[; ;NEC.c: 13: uint8_t TMR1IntType;
 "16
-[v _str `uc ~T0 @X0 -> 6 `i e ]
-[; ;NEC.c: 16: char str[6];
-"17
-[v _CRLF `uc ~T0 @X0 -> 4 `i e ]
-[i _CRLF
-:U ..
--> 13 `c
--> 10 `c
--> 0 `c
-..
-]
-[; ;NEC.c: 17: char CRLF[4] = "\r\n";
-"19
 [v _nec_ProcessPacket `(uc ~T0 @X0 1 ef ]
 {
-[; ;NEC.c: 19: uint8_t nec_ProcessPacket(void){
+[; ;NEC.c: 16: uint8_t nec_ProcessPacket(void){
 [e :U _nec_ProcessPacket ]
 [f ]
-"20
+"17
 [v _delta `ui ~T0 @X0 1 a ]
-[v F4710 `uc ~T0 @X0 -> 32 `i s ]
-[i F4710
+[v F4663 `uc ~T0 @X0 -> 32 `i s ]
+[i F4663
 :U ..
-"21
+"18
 -> -> 0 `i `uc
 ..
 ]
 [v _NECpacket `uc ~T0 @X0 -> 32 `i a ]
-[; ;NEC.c: 20: uint16_t delta;
-[; ;NEC.c: 21: uint8_t NECpacket [32] = {0};
-[e = _NECpacket F4710 ]
-"22
+[; ;NEC.c: 17: uint16_t delta;
+[; ;NEC.c: 18: uint8_t NECpacket [32] = {0};
+[e = _NECpacket F4663 ]
+"19
 [v _command `uc ~T0 @X0 1 a ]
-[; ;NEC.c: 22: uint8_t command = 0;
+[; ;NEC.c: 19: uint8_t command = 0;
 [e = _command -> -> 0 `i `uc ]
-[; ;NEC.c: 24: delta = tmr_computeDelta(0);
-"24
+[; ;NEC.c: 21: delta = tmr_computeDelta(0);
+"21
 [e = _delta ( _tmr_computeDelta (1 -> -> 0 `i `uc ]
-[; ;NEC.c: 26: if (2700 < delta && delta < 4050){
-"26
-[e $ ! && < -> -> 2700 `i `ui _delta < _delta -> -> 4050 `i `ui 662  ]
+[; ;NEC.c: 23: if (2700 < delta && delta < 4050){
+"23
+[e $ ! && < -> -> 2700 `i `ui _delta < _delta -> -> 4050 `i `ui 661  ]
 {
-[; ;NEC.c: 29: for (uint8_t i = 1; i < 33; i++){
-"29
+[; ;NEC.c: 26: for (uint8_t i = 1; i < 33; i++){
+"26
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 33 `i 663  ]
-[e $U 664  ]
-[e :U 663 ]
+[e $ < -> _i `i -> 33 `i 662  ]
+[e $U 663  ]
+[e :U 662 ]
 {
-[; ;NEC.c: 30: delta = tmr_computeDelta(i);
-"30
+[; ;NEC.c: 27: delta = tmr_computeDelta(i);
+"27
 [e = _delta ( _tmr_computeDelta (1 _i ]
-[; ;NEC.c: 31: if (250 < delta && delta < 375){
-"31
-[e $ ! && < -> -> 250 `i `ui _delta < _delta -> -> 375 `i `ui 666  ]
+[; ;NEC.c: 28: if (250 < delta && delta < 375){
+"28
+[e $ ! && < -> -> 250 `i `ui _delta < _delta -> -> 375 `i `ui 665  ]
 {
-[; ;NEC.c: 32: NECpacket[i-1] = 0;
-"32
+[; ;NEC.c: 29: NECpacket[i-1] = 0;
+"29
 [e = *U + &U _NECpacket * -> -> - -> _i `i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 0 `i `uc ]
+"30
+}
+[e :U 665 ]
+[; ;NEC.c: 30: }
+[; ;NEC.c: 31: if (500 < delta && delta < 750){
+"31
+[e $ ! && < -> -> 500 `i `ui _delta < _delta -> -> 750 `i `ui 666  ]
+{
+[; ;NEC.c: 32: NECpacket[i-1] = 1;
+"32
+[e = *U + &U _NECpacket * -> -> - -> _i `i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 1 `i `uc ]
 "33
 }
 [e :U 666 ]
-[; ;NEC.c: 33: }
-[; ;NEC.c: 34: if (500 < delta && delta < 750){
 "34
-[e $ ! && < -> -> 500 `i `ui _delta < _delta -> -> 750 `i `ui 667  ]
-{
-[; ;NEC.c: 35: NECpacket[i-1] = 1;
-"35
-[e = *U + &U _NECpacket * -> -> - -> _i `i -> 1 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux -> -> 1 `i `uc ]
-"36
 }
-[e :U 667 ]
-"37
-}
-"29
+"26
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 33 `i 663  ]
-[e :U 664 ]
-"37
+[e $ < -> _i `i -> 33 `i 662  ]
+[e :U 663 ]
+"34
 }
-[; ;NEC.c: 36: }
-[; ;NEC.c: 37: }
-[; ;NEC.c: 39: command += NECpacket[31];
-"39
+[; ;NEC.c: 33: }
+[; ;NEC.c: 34: }
+[; ;NEC.c: 36: command += NECpacket[31];
+"36
 [e =+ _command *U + &U _NECpacket * -> -> -> 31 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux ]
-[; ;NEC.c: 40: command += NECpacket[30]*2U;
-"40
+[; ;NEC.c: 37: command += NECpacket[30]*2U;
+"37
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 30 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `ui -> 2 `ui `uc ]
-[; ;NEC.c: 41: command += NECpacket[29]*4U;
-"41
+[; ;NEC.c: 38: command += NECpacket[29]*4U;
+"38
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 29 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `ui -> 4 `ui `uc ]
-[; ;NEC.c: 42: command += NECpacket[28]*8U;
-"42
+[; ;NEC.c: 39: command += NECpacket[28]*8U;
+"39
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 28 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `ui -> 8 `ui `uc ]
-[; ;NEC.c: 43: command += NECpacket[27]*16U;
-"43
+[; ;NEC.c: 40: command += NECpacket[27]*16U;
+"40
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 27 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `ui -> 16 `ui `uc ]
-[; ;NEC.c: 44: command += NECpacket[26]*32U;
-"44
+[; ;NEC.c: 41: command += NECpacket[26]*32U;
+"41
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 26 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `ui -> 32 `ui `uc ]
-[; ;NEC.c: 45: command += NECpacket[25]*64U;
-"45
+[; ;NEC.c: 42: command += NECpacket[25]*64U;
+"42
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 25 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `ui -> 64 `ui `uc ]
-[; ;NEC.c: 46: command += NECpacket[24]*128U;
-"46
+[; ;NEC.c: 43: command += NECpacket[24]*128U;
+"43
 [e =+ _command -> * -> *U + &U _NECpacket * -> -> -> 24 `i `ui `ux -> -> # *U &U _NECpacket `ui `ux `ui -> 128 `ui `uc ]
-"48
+"45
 }
-[e :U 662 ]
-[; ;NEC.c: 48: }
-[; ;NEC.c: 57: return(command);
-"57
+[e :U 661 ]
+[; ;NEC.c: 45: }
+[; ;NEC.c: 47: return(command);
+"47
 [e ) _command ]
-[e $UE 661  ]
-[; ;NEC.c: 58: }
-"58
-[e :UE 661 ]
+[e $UE 660  ]
+[; ;NEC.c: 48: }
+"48
+[e :UE 660 ]
 }
-"60
+"50
 [v _nec_ExecuteCommand `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;NEC.c: 60: void nec_ExecuteCommand(uint8_t NECcommand){
+[; ;NEC.c: 50: void nec_ExecuteCommand(uint8_t NECcommand){
 [e :U _nec_ExecuteCommand ]
 [v _NECcommand `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;NEC.c: 61: switch (NECcommand)
-"61
-[e $U 670  ]
-[; ;NEC.c: 62: {
-"62
-{
-[; ;NEC.c: 63: case LEDON:
-"63
-[e :U 671 ]
-[; ;NEC.c: 66: tmr_TMR1Dis();
-"66
-[e ( _tmr_TMR1Dis ..  ]
-[; ;NEC.c: 67: led_Bright();
-"67
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 68: break;
-"68
+[; ;NEC.c: 51: switch (NECcommand)
+"51
 [e $U 669  ]
-[; ;NEC.c: 69: case LEDOFF:
-"69
-[e :U 672 ]
-[; ;NEC.c: 72: led_Off();
-"72
-[e ( _led_Off ..  ]
-[; ;NEC.c: 73: tmr_TMR1Dis();
-"73
+[; ;NEC.c: 52: {
+"52
+{
+[; ;NEC.c: 53: case LEDON:
+"53
+[e :U 670 ]
+[; ;NEC.c: 54: tmr_TMR1Dis();
+"54
 [e ( _tmr_TMR1Dis ..  ]
+[; ;NEC.c: 55: led_Bright();
+"55
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 56: break;
+"56
+[e $U 668  ]
+[; ;NEC.c: 57: case LEDOFF:
+"57
+[e :U 671 ]
+[; ;NEC.c: 58: led_Off();
+"58
+[e ( _led_Off ..  ]
+[; ;NEC.c: 59: tmr_TMR1Dis();
+"59
+[e ( _tmr_TMR1Dis ..  ]
+[; ;NEC.c: 60: break;
+"60
+[e $U 668  ]
+[; ;NEC.c: 61: case TIMER2H:
+"61
+[e :U 672 ]
+[; ;NEC.c: 62: led_Bright();
+"62
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 63: TMR1IntType = INT_DELAY;
+"63
+[e = _TMR1IntType -> . `E4653 0 `uc ]
+[; ;NEC.c: 64: tmr_TMR1setPreload(0x7FFF);
+"64
+[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
+[; ;NEC.c: 65: tmr_TMR1SOSCpowerLevel('l');
+"65
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
+[; ;NEC.c: 66: rtc_SetHourDelay(1);
+"66
+[e ( _rtc_SetHourDelay (1 -> -> 1 `i `uc ]
+[; ;NEC.c: 67: break;
+"67
+[e $U 668  ]
+[; ;NEC.c: 68: case TIMER4H:
+"68
+[e :U 673 ]
+[; ;NEC.c: 69: led_Bright();
+"69
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 70: TMR1IntType = INT_DELAY;
+"70
+[e = _TMR1IntType -> . `E4653 0 `uc ]
+[; ;NEC.c: 71: tmr_TMR1setPreload(0x7FFF);
+"71
+[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
+[; ;NEC.c: 72: tmr_TMR1SOSCpowerLevel('l');
+"72
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
+[; ;NEC.c: 73: rtc_SetHourDelay(4);
+"73
+[e ( _rtc_SetHourDelay (1 -> -> 4 `i `uc ]
 [; ;NEC.c: 74: break;
 "74
-[e $U 669  ]
-[; ;NEC.c: 75: case TIMER2H:
+[e $U 668  ]
+[; ;NEC.c: 75: case TIMER6H:
 "75
-[e :U 673 ]
+[e :U 674 ]
 [; ;NEC.c: 76: led_Bright();
 "76
 [e ( _led_Bright ..  ]
 [; ;NEC.c: 77: TMR1IntType = INT_DELAY;
 "77
-[e = _TMR1IntType -> . `E4698 0 `uc ]
+[e = _TMR1IntType -> . `E4653 0 `uc ]
 [; ;NEC.c: 78: tmr_TMR1setPreload(0x7FFF);
 "78
 [e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
 [; ;NEC.c: 79: tmr_TMR1SOSCpowerLevel('l');
 "79
 [e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 80: rtc_SetHourDelay(1);
+[; ;NEC.c: 80: rtc_SetHourDelay(6);
 "80
-[e ( _rtc_SetHourDelay (1 -> -> 1 `i `uc ]
+[e ( _rtc_SetHourDelay (1 -> -> 6 `i `uc ]
 [; ;NEC.c: 81: break;
 "81
-[e $U 669  ]
-[; ;NEC.c: 82: case TIMER4H:
+[e $U 668  ]
+[; ;NEC.c: 82: case TIMER8H:
 "82
-[e :U 674 ]
+[e :U 675 ]
 [; ;NEC.c: 83: led_Bright();
 "83
 [e ( _led_Bright ..  ]
 [; ;NEC.c: 84: TMR1IntType = INT_DELAY;
 "84
-[e = _TMR1IntType -> . `E4698 0 `uc ]
+[e = _TMR1IntType -> . `E4653 0 `uc ]
 [; ;NEC.c: 85: tmr_TMR1setPreload(0x7FFF);
 "85
 [e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
 [; ;NEC.c: 86: tmr_TMR1SOSCpowerLevel('l');
 "86
 [e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 87: rtc_SetHourDelay(4);
+[; ;NEC.c: 87: rtc_SetHourDelay(8);
 "87
-[e ( _rtc_SetHourDelay (1 -> -> 4 `i `uc ]
-[; ;NEC.c: 89: break;
-"89
-[e $U 669  ]
-[; ;NEC.c: 90: case TIMER6H:
-"90
-[e :U 675 ]
-[; ;NEC.c: 91: led_Bright();
-"91
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 92: TMR1IntType = INT_DELAY;
-"92
-[e = _TMR1IntType -> . `E4698 0 `uc ]
-[; ;NEC.c: 93: tmr_TMR1setPreload(0x7FFF);
-"93
-[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
-[; ;NEC.c: 94: tmr_TMR1SOSCpowerLevel('l');
-"94
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 95: rtc_SetHourDelay(6);
-"95
-[e ( _rtc_SetHourDelay (1 -> -> 6 `i `uc ]
-[; ;NEC.c: 97: break;
-"97
-[e $U 669  ]
-[; ;NEC.c: 98: case TIMER8H:
-"98
-[e :U 676 ]
-[; ;NEC.c: 99: led_Bright();
-"99
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 100: TMR1IntType = INT_DELAY;
-"100
-[e = _TMR1IntType -> . `E4698 0 `uc ]
-[; ;NEC.c: 101: tmr_TMR1setPreload(0x7FFF);
-"101
-[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
-[; ;NEC.c: 102: tmr_TMR1SOSCpowerLevel('l');
-"102
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 103: rtc_SetHourDelay(8);
-"103
 [e ( _rtc_SetHourDelay (1 -> -> 8 `i `uc ]
+[; ;NEC.c: 88: break;
+"88
+[e $U 668  ]
+[; ;NEC.c: 89: case DIM:
+"89
+[e :U 676 ]
+[; ;NEC.c: 90: led_Dim();
+"90
+[e ( _led_Dim ..  ]
+[; ;NEC.c: 91: break;
+"91
+[e $U 668  ]
+[; ;NEC.c: 92: case BRIGHT:
+"92
+[e :U 677 ]
+[; ;NEC.c: 93: led_Bright();
+"93
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 94: break;
+"94
+[e $U 668  ]
+[; ;NEC.c: 95: case CANDLE:
+"95
+[e :U 678 ]
+[; ;NEC.c: 96: tmr_TMR1setPreload(0xF999);
+"96
+[e ( _tmr_TMR1setPreload (1 -> 63897 `ui ]
+[; ;NEC.c: 97: TMR1IntType = INT_CANDLE;
+"97
+[e = _TMR1IntType -> . `E4653 1 `uc ]
+[; ;NEC.c: 98: tmr_TMR1Reset();
+"98
+[e ( _tmr_TMR1Reset ..  ]
+[; ;NEC.c: 99: tmr_TMR1SOSCpowerLevel('h');
+"99
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 104 `ui `uc ]
+[; ;NEC.c: 100: tmr_TMR1En();
+"100
+[e ( _tmr_TMR1En ..  ]
+[; ;NEC.c: 101: break;
+"101
+[e $U 668  ]
+[; ;NEC.c: 102: case LIGHT:
+"102
+[e :U 679 ]
+[; ;NEC.c: 103: tmr_TMR1Dis();
+"103
+[e ( _tmr_TMR1Dis ..  ]
+[; ;NEC.c: 104: led_Bright();
+"104
+[e ( _led_Bright ..  ]
 [; ;NEC.c: 105: break;
 "105
-[e $U 669  ]
-[; ;NEC.c: 106: case DIM:
-"106
-[e :U 677 ]
-[; ;NEC.c: 109: led_Dim();
-"109
-[e ( _led_Dim ..  ]
-[; ;NEC.c: 110: break;
-"110
-[e $U 669  ]
-[; ;NEC.c: 111: case BRIGHT:
-"111
-[e :U 678 ]
-[; ;NEC.c: 112: led_Bright();
-"112
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 115: break;
-"115
-[e $U 669  ]
-[; ;NEC.c: 116: case CANDLE:
-"116
-[e :U 679 ]
-[; ;NEC.c: 117: tmr_TMR1setPreload(0xF999);
-"117
-[e ( _tmr_TMR1setPreload (1 -> 63897 `ui ]
-[; ;NEC.c: 118: TMR1IntType = INT_CANDLE;
-"118
-[e = _TMR1IntType -> . `E4698 1 `uc ]
-[; ;NEC.c: 119: tmr_TMR1Reset();
-"119
-[e ( _tmr_TMR1Reset ..  ]
-[; ;NEC.c: 120: tmr_TMR1SOSCpowerLevel('h');
-"120
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 104 `ui `uc ]
-[; ;NEC.c: 121: tmr_TMR1En();
-"121
-[e ( _tmr_TMR1En ..  ]
-[; ;NEC.c: 122: break;
-"122
-[e $U 669  ]
-[; ;NEC.c: 123: case LIGHT:
-"123
-[e :U 680 ]
-[; ;NEC.c: 126: tmr_TMR1Dis();
-"126
-[e ( _tmr_TMR1Dis ..  ]
-[; ;NEC.c: 127: led_Bright();
-"127
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 128: break;
-"128
-[e $U 669  ]
-"130
+[e $U 668  ]
+"107
 }
-[; ;NEC.c: 130: }
-[e $U 669  ]
-"61
-[e :U 670 ]
-[e [\ _NECcommand , $ -> . `E4584 0 `uc 671
- , $ -> . `E4584 1 `uc 672
- , $ -> . `E4584 2 `uc 673
- , $ -> . `E4584 3 `uc 674
- , $ -> . `E4584 4 `uc 675
- , $ -> . `E4584 5 `uc 676
- , $ -> . `E4584 6 `uc 677
- , $ -> . `E4584 7 `uc 678
- , $ -> . `E4584 8 `uc 679
- , $ -> . `E4584 9 `uc 680
- 669 ]
-"130
+[; ;NEC.c: 107: }
+[e $U 668  ]
+"51
 [e :U 669 ]
-[; ;NEC.c: 131: }
-"131
-[e :UE 668 ]
+[e [\ _NECcommand , $ -> . `E4584 0 `uc 670
+ , $ -> . `E4584 1 `uc 671
+ , $ -> . `E4584 2 `uc 672
+ , $ -> . `E4584 3 `uc 673
+ , $ -> . `E4584 4 `uc 674
+ , $ -> . `E4584 5 `uc 675
+ , $ -> . `E4584 6 `uc 676
+ , $ -> . `E4584 7 `uc 677
+ , $ -> . `E4584 8 `uc 678
+ , $ -> . `E4584 9 `uc 679
+ 668 ]
+"107
+[e :U 668 ]
+[; ;NEC.c: 108: }
+"108
+[e :UE 667 ]
 }

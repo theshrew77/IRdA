@@ -7874,25 +7874,24 @@ INT_CANDLE = 1
 void configureIOCInt(void);
 
 # 26 "tmr_TMR0.h"
-void tmr_TMR0Init(void);
 uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
 void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
-void tmr_TMR0_PrintCountArray(void);
 
-# 44 "NEC.h"
+# 59 "NEC.h"
 typedef enum {
-LEDON = 0x7F,
-LEDOFF = 0xFF,
-TIMER2H = 0xCF,
-TIMER4H = 0x6F,
-TIMER6H = 0xAF,
-TIMER8H = 0x57,
-DIM = 0x8F,
-BRIGHT = 0xD7,
+LEDON = 0xFF,
+LEDOFF = 0x7F,
+TIMER2H = 0xBF,
+TIMER4H = 0x3F,
+TIMER6H = 0xDF,
+TIMER8H = 0x5F,
+DIM = 0x6F,
+BRIGHT = 0x1F,
 CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
@@ -7903,23 +7902,18 @@ void nec_ExecuteCommand(uint8_t NECcommand);
 
 # 15 "LED.h"
 void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
 void led_Bright(void);
-
 void led_Dim(void);
-
 void led_Off(void);
 void led_Toggle(void);
 
 # 17 "Oscillator.h"
-void _osc_Config32768Hz(void);
-void osc_Config16MHz(void);
 void osc_Config1MHz(void);
 
 # 10 "PowerManagement.h"
 void pwrmgmt_DisablePeripherals(void);
 
-# 22 "tmr_TMR1.h"
+# 21 "tmr_TMR1.h"
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
 void tmr_TMR1SOSCpowerLevel(char level);

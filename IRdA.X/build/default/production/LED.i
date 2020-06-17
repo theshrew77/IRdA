@@ -7644,11 +7644,8 @@ typedef uint16_t uintptr_t;
 
 # 15 "LED.h"
 void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
 void led_Bright(void);
-
 void led_Dim(void);
-
 void led_Off(void);
 void led_Toggle(void);
 
@@ -7725,11 +7722,3 @@ else
 led_Bright();
 }
 
-void led_Blink(uint8_t times){
-for (int i = 0; i < times; i++){
-LATAbits.LATA2 = 1;
-_delay((unsigned long)((500)*(1000000/4000.0)));
-LATAbits.LATA2 = 0;
-_delay((unsigned long)((500)*(1000000/4000.0)));
-}
-}

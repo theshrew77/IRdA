@@ -12,7 +12,6 @@
 #define TMR1_1s     0x7FFF 
 #define TMR1_candle 0xF999
 #define TMR1PRE     T1CONbits.T1CKPS
-//#define TMR116BEN   T1CONbits.RD16
 #define TMR1CS      T1CONbits.TMR1CS
 #define TMR1_ON     T1CONbits.TMR1ON
 #define TMR1_IE     PIE1bits.TMR1IE

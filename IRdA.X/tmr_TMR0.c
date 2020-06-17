@@ -11,25 +11,11 @@
 static uint8_t TMR0rollovers = 0;
 uint8_t TMR0count = 0;
 static uint16_t TMR0countArray [34] = {0};
-//static uint8_t TMR0rolloverArray [34] = {0};
 static uint8_t sample = 0;
 static uint8_t accComplete = 0;
-/*
-char str[6];
-char CRLF[4] = "\r\n";
 
-void tmr_TMR0_PrintCountArray(void){
-    for (int i = 0; i <34; i++){
-        itoa(str,TMR0countArray[i],10);
-        Uart_UCA0_puts(str);
-        Uart_UCA0_puts(CRLF);
-    }
-}
-*/
 uint16_t tmr_computeDelta(uint8_t i){
 
-    //return ((uint8_t)(TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*TMR0MAX - TMR0countArray[i]));
-    //return ((TMR0countArray[i+1]+(uint16_t)TMR0rolloverArray[i+1]*TMR0MAX - TMR0countArray[i]));
     return (((uint16_t)TMR0countArray[i+1] - TMR0countArray[i]));
 }
 
@@ -40,7 +26,6 @@ uint8_t accquisitionComplete(void){
 void tmr_TMR0mark(void){
     TMR0countArray[sample] = TMR0L;
     TMR0countArray[sample] += (uint16_t)TMR0H << 8;
-    //TMR0rolloverArray[sample] = TMR0rollovers;
     TMR0rollovers = 0;
     sample++;
 }
@@ -48,7 +33,6 @@ void tmr_TMR0mark(void){
 void tmr_TMR0reset(void){
     for (int i = 0; i < 33; i++){
         TMR0countArray[i] = 0;
-        //TMR0rolloverArray[i] = 0;
     }
     sample = 0;
     accComplete = 0;
@@ -76,9 +60,6 @@ void tmr_TMR0Init(void){
     P_IE = 1;
     G_IE = 1;
     
-    //calculate timer 1 max microseconds
-    //TMR1Max = TMR1MAX / _XTAL_FREQ
-
     
 }
 

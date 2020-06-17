@@ -7756,16 +7756,16 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 44 "NEC.h"
+# 59 "NEC.h"
 typedef enum {
-LEDON = 0x7F,
-LEDOFF = 0xFF,
-TIMER2H = 0xCF,
-TIMER4H = 0x6F,
-TIMER6H = 0xAF,
-TIMER8H = 0x57,
-DIM = 0x8F,
-BRIGHT = 0xD7,
+LEDON = 0xFF,
+LEDOFF = 0x7F,
+TIMER2H = 0xBF,
+TIMER4H = 0x3F,
+TIMER6H = 0xDF,
+TIMER8H = 0x5F,
+DIM = 0x6F,
+BRIGHT = 0x1F,
 CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
@@ -7775,46 +7775,26 @@ uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 
 # 26 "tmr_TMR0.h"
-void tmr_TMR0Init(void);
 uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
 void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
-void tmr_TMR0_PrintCountArray(void);
 
-# 14 "Que.h"
-typedef struct {
-int8_t Data[2];
-int8_t In;
-int8_t Out;
-} t_Q;
-
-
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-
-# 20 "uart_UCA0.h"
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-void Uart_UCA0_puts(char*string);
+# 21 "tmr_TMR1.h"
+void tmr_TMR1setPreload(uint16_t preload);
+void tmr_TMR1Init(void);
+void tmr_TMR1SOSCpowerLevel(char level);
+void tmr_TMR1En(void);
+void tmr_TMR1Dis(void);
+void tmr_TMR1Reset(void);
 
 # 15 "LED.h"
 void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
 void led_Bright(void);
-
 void led_Dim(void);
-
 void led_Off(void);
 void led_Toggle(void);
 
@@ -7866,20 +7846,6 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 22 "tmr_TMR1.h"
-void tmr_TMR1setPreload(uint16_t preload);
-void tmr_TMR1Init(void);
-void tmr_TMR1SOSCpowerLevel(char level);
-void tmr_TMR1En(void);
-void tmr_TMR1Dis(void);
-void tmr_TMR1Reset(void);
-
-# 16 "DAC.h"
-void dac_DAClevelChange(char direction);
-void dac_DACInit(void);
-void dac_DACEn(void);
-void dac_DACDis(void);
-
 # 19 "Interrupts.h"
 typedef enum{
 INT_DELAY = 0,
@@ -7888,10 +7854,9 @@ INT_CANDLE = 1
 
 void configureIOCInt(void);
 
-# 15 "NEC.c"
+# 13 "NEC.c"
 uint8_t TMR1IntType;
-char str[6];
-char CRLF[4] = "\r\n";
+
 
 uint8_t nec_ProcessPacket(void){
 uint16_t delta;
@@ -7924,7 +7889,6 @@ command += NECpacket[24]*128U;
 
 }
 
-# 57
 return(command);
 }
 
@@ -7932,14 +7896,10 @@ void nec_ExecuteCommand(uint8_t NECcommand){
 switch (NECcommand)
 {
 case LEDON:
-
-
 tmr_TMR1Dis();
 led_Bright();
 break;
 case LEDOFF:
-
-
 led_Off();
 tmr_TMR1Dis();
 break;
@@ -7956,7 +7916,6 @@ TMR1IntType = INT_DELAY;
 tmr_TMR1setPreload(0x7FFF);
 tmr_TMR1SOSCpowerLevel('l');
 rtc_SetHourDelay(4);
-
 break;
 case TIMER6H:
 led_Bright();
@@ -7964,7 +7923,6 @@ TMR1IntType = INT_DELAY;
 tmr_TMR1setPreload(0x7FFF);
 tmr_TMR1SOSCpowerLevel('l');
 rtc_SetHourDelay(6);
-
 break;
 case TIMER8H:
 led_Bright();
@@ -7972,17 +7930,12 @@ TMR1IntType = INT_DELAY;
 tmr_TMR1setPreload(0x7FFF);
 tmr_TMR1SOSCpowerLevel('l');
 rtc_SetHourDelay(8);
-
 break;
 case DIM:
-
-
 led_Dim();
 break;
 case BRIGHT:
 led_Bright();
-
-
 break;
 case CANDLE:
 tmr_TMR1setPreload(0xF999);
@@ -7992,8 +7945,6 @@ tmr_TMR1SOSCpowerLevel('h');
 tmr_TMR1En();
 break;
 case LIGHT:
-
-
 tmr_TMR1Dis();
 led_Bright();
 break;

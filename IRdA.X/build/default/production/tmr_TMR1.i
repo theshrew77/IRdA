@@ -7642,7 +7642,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 22 "tmr_TMR1.h"
+# 21 "tmr_TMR1.h"
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
 void tmr_TMR1SOSCpowerLevel(char level);

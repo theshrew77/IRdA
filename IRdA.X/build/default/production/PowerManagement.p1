@@ -5135,28 +5135,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;PowerManagement.c: 22: PMD3bits.CCP2MD = 1;
 "22
 [e = . . _PMD3bits 0 1 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 25: PMD3bits.PWM5MD = 1;
-"25
+[; ;PowerManagement.c: 23: PMD3bits.PWM5MD = 1;
+"23
 [e = . . _PMD3bits 0 3 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 26: PMD3bits.PWM6MD = 1;
-"26
+[; ;PowerManagement.c: 24: PMD3bits.PWM6MD = 1;
+"24
 [e = . . _PMD3bits 0 4 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 28: PMD4bits.UART1MD = 1;
-"28
+[; ;PowerManagement.c: 26: PMD4bits.UART1MD = 1;
+"26
 [e = . . _PMD4bits 0 3 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 30: PMD4bits.MSSP1MD = 1;
-"30
+[; ;PowerManagement.c: 27: PMD4bits.MSSP1MD = 1;
+"27
 [e = . . _PMD4bits 0 1 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 32: PMD5bits.CLC1MD = 1;
-"32
+[; ;PowerManagement.c: 29: PMD5bits.CLC1MD = 1;
+"29
 [e = . . _PMD5bits 0 1 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 33: PMD5bits.CLC2MD = 1;
-"33
+[; ;PowerManagement.c: 30: PMD5bits.CLC2MD = 1;
+"30
 [e = . . _PMD5bits 0 2 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 34: PMD5bits.DSMMD = 1;
-"34
+[; ;PowerManagement.c: 31: PMD5bits.DSMMD = 1;
+"31
 [e = . . _PMD5bits 0 0 -> -> 1 `i `uc ]
-[; ;PowerManagement.c: 38: }
-"38
+[; ;PowerManagement.c: 34: }
+"34
 [e :UE 655 ]
 }

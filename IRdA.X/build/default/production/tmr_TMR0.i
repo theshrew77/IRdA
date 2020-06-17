@@ -7757,14 +7757,13 @@ extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
 # 26 "tmr_TMR0.h"
-void tmr_TMR0Init(void);
 uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
 void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
-void tmr_TMR0_PrintCountArray(void);
 
 # 19 "Interrupts.h"
 typedef enum{
@@ -7809,16 +7808,16 @@ ON = 1,
 #pragma config CP = OFF
 #pragma config CPD = OFF
 
-# 44 "NEC.h"
+# 59 "NEC.h"
 typedef enum {
-LEDON = 0x7F,
-LEDOFF = 0xFF,
-TIMER2H = 0xCF,
-TIMER4H = 0x6F,
-TIMER6H = 0xAF,
-TIMER8H = 0x57,
-DIM = 0x8F,
-BRIGHT = 0xD7,
+LEDON = 0xFF,
+LEDOFF = 0x7F,
+TIMER2H = 0xBF,
+TIMER4H = 0x3F,
+TIMER6H = 0xDF,
+TIMER8H = 0x5F,
+DIM = 0x6F,
+BRIGHT = 0x1F,
 CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
@@ -7855,14 +7854,10 @@ void Uart_UCA0_puts(char*string);
 static uint8_t TMR0rollovers = 0;
 uint8_t TMR0count = 0;
 static uint16_t TMR0countArray [34] = {0};
-
 static uint8_t sample = 0;
 static uint8_t accComplete = 0;
 
-# 29
 uint16_t tmr_computeDelta(uint8_t i){
-
-
 
 return (((uint16_t)TMR0countArray[i+1] - TMR0countArray[i]));
 }
@@ -7874,7 +7869,6 @@ return(accComplete);
 void tmr_TMR0mark(void){
 TMR0countArray[sample] = TMR0L;
 TMR0countArray[sample] += (uint16_t)TMR0H << 8;
-
 TMR0rollovers = 0;
 sample++;
 }
@@ -7882,7 +7876,6 @@ sample++;
 void tmr_TMR0reset(void){
 for (int i = 0; i < 33; i++){
 TMR0countArray[i] = 0;
-
 }
 sample = 0;
 accComplete = 0;
@@ -7910,7 +7903,7 @@ PIE0bits.TMR0IE = 1;
 INTCONbits.PEIE = 1;
 INTCONbits.GIE = 1;
 
-# 83
+
 }
 
 void tmr_TMR0Dis(void){

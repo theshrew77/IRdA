@@ -7677,41 +7677,16 @@ ON = 1,
 #pragma config CP = OFF
 #pragma config CPD = OFF
 
-# 14 "Que.h"
-typedef struct {
-int8_t Data[2];
-int8_t In;
-int8_t Out;
-} t_Q;
-
-
-int8_t QInit( t_Q *pQ );
-int8_t QIn( int8_t Src, t_Q *pQ );
-int8_t QOut( int8_t *Dest, t_Q *pQ );
-int8_t QChkQ( t_Q *pQ );
-
-# 20 "uart_UCA0.h"
-void Uart_UCA0Init(void);
-void Uart_UCA0deInit(void);
-int8_t Uart_UCA0_Flush(void);
-int8_t Uart_UCA0_kbhit(void);
-int8_t Uart_UCA0_getc( int8_t *Out );
-int8_t Uart_UCA0_putc( int8_t c );
-t_Q *getU0_RxBuf_t(void);
-void Uart_UCA0_RxIntEn(void);
-void Uart_UCA0_puts(char*string);
-
 # 26 "tmr_TMR0.h"
-void tmr_TMR0Init(void);
 uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
 void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
-void tmr_TMR0_PrintCountArray(void);
 
-# 22 "tmr_TMR1.h"
+# 21 "tmr_TMR1.h"
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
 void tmr_TMR1SOSCpowerLevel(char level);
@@ -7729,19 +7704,10 @@ void configureIOCInt(void);
 
 # 15 "LED.h"
 void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
 void led_Bright(void);
-
 void led_Dim(void);
-
 void led_Off(void);
 void led_Toggle(void);
-
-# 13 "ccp_CCP1.h"
-void ccp_CCP1Init(void);
-void ccp_CCP1En(void);
-void ccp_CCP1Dis(void);
-void ccp_CCP1CompareMatch(void);
 
 # 11 "RTC.h"
 typedef struct
@@ -7756,7 +7722,7 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 13 "Interrupts.c"
+# 11 "Interrupts.c"
 extern uint8_t IR_received;
 extern uint8_t TMR1IntType;
 

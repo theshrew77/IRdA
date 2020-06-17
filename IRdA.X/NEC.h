@@ -21,8 +21,8 @@
 
 #define NEC_ADDRESS     0
 //#define OLDREMOTE
-#define GRANDINROAD
-//#define SCOTTLIVING
+//#define GRANDINROAD
+#define SCOTTLIVING
 //#define LGTV
 
 #ifdef OLDREMOTE

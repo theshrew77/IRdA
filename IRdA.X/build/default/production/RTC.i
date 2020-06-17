@@ -7655,7 +7655,7 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 22 "tmr_TMR1.h"
+# 21 "tmr_TMR1.h"
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
 void tmr_TMR1SOSCpowerLevel(char level);
@@ -7665,11 +7665,8 @@ void tmr_TMR1Reset(void);
 
 # 15 "LED.h"
 void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
 void led_Bright(void);
-
 void led_Dim(void);
-
 void led_Off(void);
 void led_Toggle(void);
 

@@ -49,7 +49,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S29 . . ]
 "447
 [v _PIR0bits `VS29 ~T0 @X0 0 e@16 ]
-"13 Interrupts.c
+"11 Interrupts.c
 [v _IR_received `uc ~T0 @X0 0 e ]
 "5315 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [s S264 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -74,7 +74,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR0H `Vuc ~T0 @X0 0 e@22 ]
 "634
 [v _TMR0L `Vuc ~T0 @X0 0 e@21 ]
-"29 tmr_TMR0.h
+"28 tmr_TMR0.h
 [v _tmr_TMR0mark `(v ~T0 @X0 0 ef ]
 "473 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [s S32 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -84,18 +84,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S31 . . ]
 "484
 [v _PIR1bits `VS31 ~T0 @X0 0 e@17 ]
-"27 tmr_TMR1.h
+"26 tmr_TMR1.h
 [v _tmr_TMR1Reset `(v ~T0 @X0 0 ef ]
-"14 Interrupts.c
+"12 Interrupts.c
 [v _TMR1IntType `uc ~T0 @X0 0 e ]
-"51
-[c E4441 0 1 .. ]
-[n E4441 . INT_DELAY INT_CANDLE  ]
+"49
+[c E4406 0 1 .. ]
+[n E4406 . INT_DELAY INT_CANDLE  ]
 "21 RTC.h
 [v _rtc_ISR `(v ~T0 @X0 0 ef ]
-"22 LED.h
+"19 LED.h
 [v _led_Toggle `(v ~T0 @X0 0 ef ]
-"31 tmr_TMR0.h
+"30 tmr_TMR0.h
 [v _tmr_TMR0IncRollovers `(v ~T0 @X0 0 ef ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -5216,53 +5216,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x LVP=OFF ]
 "61
 [p x CPD=OFF ]
-[; ;Que.h: 14: typedef struct {
-[; ;Que.h: 15: int8_t Data[2];
-[; ;Que.h: 16: int8_t In;
-[; ;Que.h: 17: int8_t Out;
-[; ;Que.h: 18: } t_Q;
-[; ;Que.h: 21: int8_t QInit( t_Q *pQ );
-[; ;Que.h: 22: int8_t QIn( int8_t Src, t_Q *pQ );
-[; ;Que.h: 23: int8_t QOut( int8_t *Dest, t_Q *pQ );
-[; ;Que.h: 24: int8_t QChkQ( t_Q *pQ );
-[; ;uart_UCA0.h: 20: void Uart_UCA0Init(void);
-[; ;uart_UCA0.h: 21: void Uart_UCA0deInit(void);
-[; ;uart_UCA0.h: 22: int8_t Uart_UCA0_Flush(void);
-[; ;uart_UCA0.h: 23: int8_t Uart_UCA0_kbhit(void);
-[; ;uart_UCA0.h: 24: int8_t Uart_UCA0_getc( int8_t *Out );
-[; ;uart_UCA0.h: 25: int8_t Uart_UCA0_putc( int8_t c );
-[; ;uart_UCA0.h: 26: t_Q *getU0_RxBuf_t(void);
-[; ;uart_UCA0.h: 27: void Uart_UCA0_RxIntEn(void);
-[; ;uart_UCA0.h: 28: void Uart_UCA0_puts(char*string);
-[; ;tmr_TMR0.h: 26: void tmr_TMR0Init(void);
-[; ;tmr_TMR0.h: 27: uint16_t tmr_computeDelta(uint8_t i);
-[; ;tmr_TMR0.h: 28: uint8_t accquisitionComplete(void);
-[; ;tmr_TMR0.h: 29: void tmr_TMR0mark(void);
-[; ;tmr_TMR0.h: 30: void tmr_TMR0reset(void);
-[; ;tmr_TMR0.h: 31: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 26: uint16_t tmr_computeDelta(uint8_t i);
+[; ;tmr_TMR0.h: 27: uint8_t accquisitionComplete(void);
+[; ;tmr_TMR0.h: 28: void tmr_TMR0mark(void);
+[; ;tmr_TMR0.h: 29: void tmr_TMR0reset(void);
+[; ;tmr_TMR0.h: 30: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 31: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
-[; ;tmr_TMR0.h: 33: void tmr_TMR0_PrintCountArray(void);
-[; ;tmr_TMR1.h: 22: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 23: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;tmr_TMR1.h: 25: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 27: void tmr_TMR1Reset(void);
+[; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
+[; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
+[; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
 [; ;Interrupts.h: 19: typedef enum{
 [; ;Interrupts.h: 20: INT_DELAY = 0,
 [; ;Interrupts.h: 21: INT_CANDLE = 1
 [; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
 [; ;Interrupts.h: 24: void configureIOCInt(void);
 [; ;LED.h: 15: void led_ConfigureLED(void);
-[; ;LED.h: 16: void led_Blink(uint8_t times);
-[; ;LED.h: 17: void led_Bright(void);
-[; ;LED.h: 19: void led_Dim(void);
-[; ;LED.h: 21: void led_Off(void);
-[; ;LED.h: 22: void led_Toggle(void);
-[; ;ccp_CCP1.h: 13: void ccp_CCP1Init(void);
-[; ;ccp_CCP1.h: 14: void ccp_CCP1En(void);
-[; ;ccp_CCP1.h: 15: void ccp_CCP1Dis(void);
-[; ;ccp_CCP1.h: 16: void ccp_CCP1CompareMatch(void);
+[; ;LED.h: 16: void led_Bright(void);
+[; ;LED.h: 17: void led_Dim(void);
+[; ;LED.h: 18: void led_Off(void);
+[; ;LED.h: 19: void led_Toggle(void);
 [; ;RTC.h: 11: typedef struct
 [; ;RTC.h: 12: {
 [; ;RTC.h: 13: uint8_t Seconds;
@@ -5273,131 +5249,131 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.h: 19: void rtc_SetHourDelay(uint8_t hours);
 [; ;RTC.h: 20: void rtc_Reset(void);
 [; ;RTC.h: 21: void rtc_ISR(void);
-[; ;Interrupts.c: 13: extern uint8_t IR_received;
-[; ;Interrupts.c: 14: extern uint8_t TMR1IntType;
-"16 Interrupts.c
+[; ;Interrupts.c: 11: extern uint8_t IR_received;
+[; ;Interrupts.c: 12: extern uint8_t TMR1IntType;
+"14 Interrupts.c
 [v _configureIOCInt `(v ~T0 @X0 1 ef ]
 {
-[; ;Interrupts.c: 16: void configureIOCInt(void){
+[; ;Interrupts.c: 14: void configureIOCInt(void){
 [e :U _configureIOCInt ]
 [f ]
-[; ;Interrupts.c: 18: PIE0bits.IOCIE = 1;
-"18
+[; ;Interrupts.c: 16: PIE0bits.IOCIE = 1;
+"16
 [e = . . _PIE0bits 0 2 -> -> 1 `i `uc ]
-[; ;Interrupts.c: 20: INTCONbits.GIE = 1;
-"20
+[; ;Interrupts.c: 18: INTCONbits.GIE = 1;
+"18
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;Interrupts.c: 23: IOCANbits.IOCAN1 = 1;
-"23
+[; ;Interrupts.c: 21: IOCANbits.IOCAN1 = 1;
+"21
 [e = . . _IOCANbits 0 1 -> -> 1 `i `uc ]
-[; ;Interrupts.c: 24: TRISAbits.TRISA1 = 1;
-"24
+[; ;Interrupts.c: 22: TRISAbits.TRISA1 = 1;
+"22
 [e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
-[; ;Interrupts.c: 25: ANSELAbits.ANSA1 = 0;
-"25
+[; ;Interrupts.c: 23: ANSELAbits.ANSA1 = 0;
+"23
 [e = . . _ANSELAbits 0 1 -> -> 0 `i `uc ]
-[; ;Interrupts.c: 29: }
-"29
-[e :UE 657 ]
+[; ;Interrupts.c: 27: }
+"27
+[e :UE 656 ]
 }
 [v $root$_ISR `(v ~T0 @X0 0 e ]
-"32
+"30
 [v _ISR `(v ~T4 @X0 1 ef ]
 {
-[; ;Interrupts.c: 32: __interrupt() void ISR(void){
+[; ;Interrupts.c: 30: __interrupt() void ISR(void){
 [e :U _ISR ]
 [f ]
-[; ;Interrupts.c: 35: if(PIR0bits.IOCIF){
-"35
-[e $ ! != -> . . _PIR0bits 0 2 `i -> -> -> 0 `i `Vuc `i 659  ]
+[; ;Interrupts.c: 33: if(PIR0bits.IOCIF){
+"33
+[e $ ! != -> . . _PIR0bits 0 2 `i -> -> -> 0 `i `Vuc `i 658  ]
 {
-[; ;Interrupts.c: 36: IR_received = 1;
-"36
+[; ;Interrupts.c: 34: IR_received = 1;
+"34
 [e = _IR_received -> -> 1 `i `uc ]
-[; ;Interrupts.c: 37: IOCAFbits.IOCAF1 = 0;
-"37
+[; ;Interrupts.c: 35: IOCAFbits.IOCAF1 = 0;
+"35
 [e = . . _IOCAFbits 0 1 -> -> 0 `i `uc ]
-[; ;Interrupts.c: 38: PIR0bits.IOCIF = 0;
-"38
+[; ;Interrupts.c: 36: PIR0bits.IOCIF = 0;
+"36
 [e = . . _PIR0bits 0 2 -> -> 0 `i `uc ]
-[; ;Interrupts.c: 39: if (!T0CON0bits.T0EN) {
-"39
-[e $ ! ! != -> . . _T0CON0bits 0 4 `i -> -> -> 0 `i `Vuc `i 660  ]
+[; ;Interrupts.c: 37: if (!T0CON0bits.T0EN) {
+"37
+[e $ ! ! != -> . . _T0CON0bits 0 4 `i -> -> -> 0 `i `Vuc `i 659  ]
 {
-[; ;Interrupts.c: 40: TMR0H = 0xB8;
-"40
+[; ;Interrupts.c: 38: TMR0H = 0xB8;
+"38
 [e = _TMR0H -> -> 184 `i `uc ]
-[; ;Interrupts.c: 41: TMR0L = 0x15;
-"41
+[; ;Interrupts.c: 39: TMR0L = 0x15;
+"39
 [e = _TMR0L -> -> 21 `i `uc ]
-[; ;Interrupts.c: 42: T0CON0bits.T0EN = 1;
-"42
+[; ;Interrupts.c: 40: T0CON0bits.T0EN = 1;
+"40
 [e = . . _T0CON0bits 0 4 -> -> 1 `i `uc ]
-"43
-}
-[e :U 660 ]
-[; ;Interrupts.c: 43: }
-[; ;Interrupts.c: 44: tmr_TMR0mark();
-"44
-[e ( _tmr_TMR0mark ..  ]
-"46
+"41
 }
 [e :U 659 ]
-[; ;Interrupts.c: 46: }
-[; ;Interrupts.c: 48: if(PIR1bits.TMR1IF){
-"48
-[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 661  ]
+[; ;Interrupts.c: 41: }
+[; ;Interrupts.c: 42: tmr_TMR0mark();
+"42
+[e ( _tmr_TMR0mark ..  ]
+"44
+}
+[e :U 658 ]
+[; ;Interrupts.c: 44: }
+[; ;Interrupts.c: 46: if(PIR1bits.TMR1IF){
+"46
+[e $ ! != -> . . _PIR1bits 0 0 `i -> -> -> 0 `i `Vuc `i 660  ]
 {
-[; ;Interrupts.c: 49: PIR1bits.TMR1IF = 0;
-"49
+[; ;Interrupts.c: 47: PIR1bits.TMR1IF = 0;
+"47
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;Interrupts.c: 50: tmr_TMR1Reset();
-"50
+[; ;Interrupts.c: 48: tmr_TMR1Reset();
+"48
 [e ( _tmr_TMR1Reset ..  ]
-[; ;Interrupts.c: 51: if (TMR1IntType == INT_DELAY){
+[; ;Interrupts.c: 49: if (TMR1IntType == INT_DELAY){
+"49
+[e $ ! == -> _TMR1IntType `i -> . `E4406 0 `i 661  ]
+{
+[; ;Interrupts.c: 51: rtc_ISR();
 "51
-[e $ ! == -> _TMR1IntType `i -> . `E4441 0 `i 662  ]
-{
-[; ;Interrupts.c: 53: rtc_ISR();
-"53
 [e ( _rtc_ISR ..  ]
-"54
-}
-[e :U 662 ]
-[; ;Interrupts.c: 54: }
-[; ;Interrupts.c: 55: if (TMR1IntType == INT_CANDLE){
-"55
-[e $ ! == -> _TMR1IntType `i -> . `E4441 1 `i 663  ]
-{
-[; ;Interrupts.c: 57: led_Toggle();
-"57
-[e ( _led_Toggle ..  ]
-"58
-}
-[e :U 663 ]
-"59
+"52
 }
 [e :U 661 ]
-[; ;Interrupts.c: 58: }
-[; ;Interrupts.c: 59: }
-[; ;Interrupts.c: 61: if (PIR0bits.TMR0IF){
-"61
-[e $ ! != -> . . _PIR0bits 0 3 `i -> -> -> 0 `i `Vuc `i 664  ]
+[; ;Interrupts.c: 52: }
+[; ;Interrupts.c: 53: if (TMR1IntType == INT_CANDLE){
+"53
+[e $ ! == -> _TMR1IntType `i -> . `E4406 1 `i 662  ]
 {
-[; ;Interrupts.c: 62: PIR0bits.TMR0IF = 0;
-"62
-[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
-[; ;Interrupts.c: 63: tmr_TMR0IncRollovers();
-"63
-[e ( _tmr_TMR0IncRollovers ..  ]
-"66
+[; ;Interrupts.c: 55: led_Toggle();
+"55
+[e ( _led_Toggle ..  ]
+"56
 }
-[e :U 664 ]
-[; ;Interrupts.c: 66: }
-[; ;Interrupts.c: 68: return;
-"68
-[e $UE 658  ]
-[; ;Interrupts.c: 69: }
-"69
-[e :UE 658 ]
+[e :U 662 ]
+"57
+}
+[e :U 660 ]
+[; ;Interrupts.c: 56: }
+[; ;Interrupts.c: 57: }
+[; ;Interrupts.c: 59: if (PIR0bits.TMR0IF){
+"59
+[e $ ! != -> . . _PIR0bits 0 3 `i -> -> -> 0 `i `Vuc `i 663  ]
+{
+[; ;Interrupts.c: 60: PIR0bits.TMR0IF = 0;
+"60
+[e = . . _PIR0bits 0 3 -> -> 0 `i `uc ]
+[; ;Interrupts.c: 61: tmr_TMR0IncRollovers();
+"61
+[e ( _tmr_TMR0IncRollovers ..  ]
+"64
+}
+[e :U 663 ]
+[; ;Interrupts.c: 64: }
+[; ;Interrupts.c: 66: return;
+"66
+[e $UE 657  ]
+[; ;Interrupts.c: 67: }
+"67
+[e :UE 657 ]
 }

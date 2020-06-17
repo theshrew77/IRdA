@@ -1,12 +1,10 @@
 #include <xc.h>
 #include <stdint.h>
 #include "main.h"
-#include "uart_UCA0.h"
 #include "tmr_TMR0.h"
 #include "tmr_TMR1.h"
 #include "Interrupts.h"
 #include "LED.h"
-#include "ccp_CCP1.h"
 #include "RTC.h"
 //#include <stdio.h>
 

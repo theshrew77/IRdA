@@ -7,7 +7,4 @@ Interrupts.h  \
 LED.h  \
 tmr_TMR0.h  \
 tmr_TMR1.h  \
-NEC.h  \
-uart_UCA0.h  \
-Que.h  \
-DAC.h 
+NEC.h 

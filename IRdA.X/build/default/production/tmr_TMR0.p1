@@ -5200,14 +5200,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;string.h: 58: extern char * strichr(const char *, int);
 [; ;string.h: 59: extern char * strrchr(const char *, int);
 [; ;string.h: 60: extern char * strrichr(const char *, int);
-[; ;tmr_TMR0.h: 26: void tmr_TMR0Init(void);
-[; ;tmr_TMR0.h: 27: uint16_t tmr_computeDelta(uint8_t i);
-[; ;tmr_TMR0.h: 28: uint8_t accquisitionComplete(void);
-[; ;tmr_TMR0.h: 29: void tmr_TMR0mark(void);
-[; ;tmr_TMR0.h: 30: void tmr_TMR0reset(void);
-[; ;tmr_TMR0.h: 31: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 26: uint16_t tmr_computeDelta(uint8_t i);
+[; ;tmr_TMR0.h: 27: uint8_t accquisitionComplete(void);
+[; ;tmr_TMR0.h: 28: void tmr_TMR0mark(void);
+[; ;tmr_TMR0.h: 29: void tmr_TMR0reset(void);
+[; ;tmr_TMR0.h: 30: void tmr_TMR0IncRollovers(void);
+[; ;tmr_TMR0.h: 31: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
-[; ;tmr_TMR0.h: 33: void tmr_TMR0_PrintCountArray(void);
 [; ;Interrupts.h: 19: typedef enum{
 [; ;Interrupts.h: 20: INT_DELAY = 0,
 [; ;Interrupts.h: 21: INT_CANDLE = 1
@@ -5253,18 +5252,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x LVP=OFF ]
 "61
 [p x CPD=OFF ]
-[; ;NEC.h: 44: typedef enum {
-[; ;NEC.h: 45: LEDON = 0x7F,
-[; ;NEC.h: 46: LEDOFF = 0xFF,
-[; ;NEC.h: 47: TIMER2H = 0xCF,
-[; ;NEC.h: 48: TIMER4H = 0x6F,
-[; ;NEC.h: 49: TIMER6H = 0xAF,
-[; ;NEC.h: 50: TIMER8H = 0x57,
-[; ;NEC.h: 51: DIM = 0x8F,
-[; ;NEC.h: 52: BRIGHT = 0xD7,
-[; ;NEC.h: 53: CANDLE = 0x4F,
-[; ;NEC.h: 54: LIGHT = 0x97
-[; ;NEC.h: 55: } NEC_commands_t;
+[; ;NEC.h: 59: typedef enum {
+[; ;NEC.h: 60: LEDON = 0xFF,
+[; ;NEC.h: 61: LEDOFF = 0x7F,
+[; ;NEC.h: 62: TIMER2H = 0xBF,
+[; ;NEC.h: 63: TIMER4H = 0x3F,
+[; ;NEC.h: 64: TIMER6H = 0xDF,
+[; ;NEC.h: 65: TIMER8H = 0x5F,
+[; ;NEC.h: 66: DIM = 0x6F,
+[; ;NEC.h: 67: BRIGHT = 0x1F,
+[; ;NEC.h: 68: CANDLE = 0x4F,
+[; ;NEC.h: 69: LIGHT = 0x97
+[; ;NEC.h: 70: } NEC_commands_t;
 [; ;NEC.h: 87: uint8_t nec_ProcessPacket(void);
 [; ;NEC.h: 88: void nec_ExecuteCommand(uint8_t NECcommand);
 [; ;Que.h: 14: typedef struct {
@@ -5305,77 +5304,77 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;tmr_TMR0.c: 13: static uint16_t TMR0countArray [34] = {0};
-"15
+"14
 [v _sample `uc ~T0 @X0 1 s ]
 [i _sample
 -> -> 0 `i `uc
 ]
-[; ;tmr_TMR0.c: 15: static uint8_t sample = 0;
-"16
+[; ;tmr_TMR0.c: 14: static uint8_t sample = 0;
+"15
 [v _accComplete `uc ~T0 @X0 1 s ]
 [i _accComplete
 -> -> 0 `i `uc
 ]
-[; ;tmr_TMR0.c: 16: static uint8_t accComplete = 0;
-"29
+[; ;tmr_TMR0.c: 15: static uint8_t accComplete = 0;
+"17
 [v _tmr_computeDelta `(ui ~T0 @X0 1 ef1`uc ]
 {
-[; ;tmr_TMR0.c: 29: uint16_t tmr_computeDelta(uint8_t i){
+[; ;tmr_TMR0.c: 17: uint16_t tmr_computeDelta(uint8_t i){
 [e :U _tmr_computeDelta ]
 [v _i `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;tmr_TMR0.c: 33: return (((uint16_t)TMR0countArray[i+1] - TMR0countArray[i]));
-"33
+[; ;tmr_TMR0.c: 19: return (((uint16_t)TMR0countArray[i+1] - TMR0countArray[i]));
+"19
 [e ) - *U + &U _TMR0countArray * -> -> + -> _i `i -> 1 `i `ui `ux -> -> # *U &U _TMR0countArray `ui `ux *U + &U _TMR0countArray * -> _i `ux -> -> # *U &U _TMR0countArray `ui `ux ]
 [e $UE 660  ]
-[; ;tmr_TMR0.c: 34: }
-"34
+[; ;tmr_TMR0.c: 20: }
+"20
 [e :UE 660 ]
 }
-"36
+"22
 [v _accquisitionComplete `(uc ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR0.c: 36: uint8_t accquisitionComplete(void){
+[; ;tmr_TMR0.c: 22: uint8_t accquisitionComplete(void){
 [e :U _accquisitionComplete ]
 [f ]
-[; ;tmr_TMR0.c: 37: return(accComplete);
-"37
+[; ;tmr_TMR0.c: 23: return(accComplete);
+"23
 [e ) _accComplete ]
 [e $UE 661  ]
-[; ;tmr_TMR0.c: 38: }
-"38
+[; ;tmr_TMR0.c: 24: }
+"24
 [e :UE 661 ]
 }
-"40
+"26
 [v _tmr_TMR0mark `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR0.c: 40: void tmr_TMR0mark(void){
+[; ;tmr_TMR0.c: 26: void tmr_TMR0mark(void){
 [e :U _tmr_TMR0mark ]
 [f ]
-[; ;tmr_TMR0.c: 41: TMR0countArray[sample] = TMR0L;
-"41
+[; ;tmr_TMR0.c: 27: TMR0countArray[sample] = TMR0L;
+"27
 [e = *U + &U _TMR0countArray * -> _sample `ux -> -> # *U &U _TMR0countArray `ui `ux -> _TMR0L `ui ]
-[; ;tmr_TMR0.c: 42: TMR0countArray[sample] += (uint16_t)TMR0H << 8;
-"42
+[; ;tmr_TMR0.c: 28: TMR0countArray[sample] += (uint16_t)TMR0H << 8;
+"28
 [e =+ *U + &U _TMR0countArray * -> _sample `ux -> -> # *U &U _TMR0countArray `ui `ux << -> _TMR0H `ui -> 8 `i ]
-[; ;tmr_TMR0.c: 44: TMR0rollovers = 0;
-"44
+[; ;tmr_TMR0.c: 29: TMR0rollovers = 0;
+"29
 [e = _TMR0rollovers -> -> 0 `i `uc ]
-[; ;tmr_TMR0.c: 45: sample++;
-"45
+[; ;tmr_TMR0.c: 30: sample++;
+"30
 [e ++ _sample -> -> 1 `i `uc ]
-[; ;tmr_TMR0.c: 46: }
-"46
+[; ;tmr_TMR0.c: 31: }
+"31
 [e :UE 662 ]
 }
-"48
+"33
 [v _tmr_TMR0reset `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR0.c: 48: void tmr_TMR0reset(void){
+[; ;tmr_TMR0.c: 33: void tmr_TMR0reset(void){
 [e :U _tmr_TMR0reset ]
 [f ]
-[; ;tmr_TMR0.c: 49: for (int i = 0; i < 33; i++){
-"49
+[; ;tmr_TMR0.c: 34: for (int i = 0; i < 33; i++){
+"34
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -5383,99 +5382,99 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 665  ]
 [e :U 664 ]
 {
-[; ;tmr_TMR0.c: 50: TMR0countArray[i] = 0;
-"50
+[; ;tmr_TMR0.c: 35: TMR0countArray[i] = 0;
+"35
 [e = *U + &U _TMR0countArray * -> -> _i `ui `ux -> -> # *U &U _TMR0countArray `ui `ux -> -> 0 `i `ui ]
-"52
+"36
 }
-"49
+"34
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 33 `i 664  ]
 [e :U 665 ]
-"52
+"36
 }
-[; ;tmr_TMR0.c: 52: }
-[; ;tmr_TMR0.c: 53: sample = 0;
-"53
+[; ;tmr_TMR0.c: 36: }
+[; ;tmr_TMR0.c: 37: sample = 0;
+"37
 [e = _sample -> -> 0 `i `uc ]
-[; ;tmr_TMR0.c: 54: accComplete = 0;
-"54
+[; ;tmr_TMR0.c: 38: accComplete = 0;
+"38
 [e = _accComplete -> -> 0 `i `uc ]
-[; ;tmr_TMR0.c: 55: }
-"55
+[; ;tmr_TMR0.c: 39: }
+"39
 [e :UE 663 ]
 }
-"57
+"41
 [v _tmr_TMR0IncRollovers `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR0.c: 57: void tmr_TMR0IncRollovers(void){
+[; ;tmr_TMR0.c: 41: void tmr_TMR0IncRollovers(void){
 [e :U _tmr_TMR0IncRollovers ]
 [f ]
-[; ;tmr_TMR0.c: 58: TMR0rollovers++;
-"58
+[; ;tmr_TMR0.c: 42: TMR0rollovers++;
+"42
 [e ++ _TMR0rollovers -> -> 1 `i `uc ]
-[; ;tmr_TMR0.c: 60: if ( TMR0rollovers > 0){
-"60
+[; ;tmr_TMR0.c: 44: if ( TMR0rollovers > 0){
+"44
 [e $ ! > -> _TMR0rollovers `i -> 0 `i 668  ]
 {
-[; ;tmr_TMR0.c: 61: tmr_TMR0Dis();
-"61
+[; ;tmr_TMR0.c: 45: tmr_TMR0Dis();
+"45
 [e ( _tmr_TMR0Dis ..  ]
-[; ;tmr_TMR0.c: 62: accComplete = 1;
-"62
+[; ;tmr_TMR0.c: 46: accComplete = 1;
+"46
 [e = _accComplete -> -> 1 `i `uc ]
-"63
+"47
 }
 [e :U 668 ]
-[; ;tmr_TMR0.c: 63: }
-[; ;tmr_TMR0.c: 65: }
-"65
+[; ;tmr_TMR0.c: 47: }
+[; ;tmr_TMR0.c: 49: }
+"49
 [e :UE 667 ]
 }
-"67
+"51
 [v _tmr_TMR0Init `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR0.c: 67: void tmr_TMR0Init(void){
+[; ;tmr_TMR0.c: 51: void tmr_TMR0Init(void){
 [e :U _tmr_TMR0Init ]
 [f ]
-[; ;tmr_TMR0.c: 68: T0CON1bits.T0CKPS = 0;
-"68
+[; ;tmr_TMR0.c: 52: T0CON1bits.T0CKPS = 0;
+"52
 [e = . . _T0CON1bits 0 0 -> -> 0 `i `uc ]
-[; ;tmr_TMR0.c: 69: T0CON0bits.T016BIT = 1;
-"69
+[; ;tmr_TMR0.c: 53: T0CON0bits.T016BIT = 1;
+"53
 [e = . . _T0CON0bits 0 1 -> -> 1 `i `uc ]
-[; ;tmr_TMR0.c: 70: T0CON1bits.T0CS = 2;
-"70
+[; ;tmr_TMR0.c: 54: T0CON1bits.T0CS = 2;
+"54
 [e = . . _T0CON1bits 0 2 -> -> 2 `i `uc ]
-[; ;tmr_TMR0.c: 71: TMR0H = 0xB8;
-"71
+[; ;tmr_TMR0.c: 55: TMR0H = 0xB8;
+"55
 [e = _TMR0H -> -> 184 `i `uc ]
-[; ;tmr_TMR0.c: 72: TMR0L = 0x15;
-"72
+[; ;tmr_TMR0.c: 56: TMR0L = 0x15;
+"56
 [e = _TMR0L -> -> 21 `i `uc ]
-[; ;tmr_TMR0.c: 75: PIE0bits.TMR0IE = 1;
-"75
+[; ;tmr_TMR0.c: 59: PIE0bits.TMR0IE = 1;
+"59
 [e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]
-[; ;tmr_TMR0.c: 76: INTCONbits.PEIE = 1;
-"76
+[; ;tmr_TMR0.c: 60: INTCONbits.PEIE = 1;
+"60
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-[; ;tmr_TMR0.c: 77: INTCONbits.GIE = 1;
-"77
+[; ;tmr_TMR0.c: 61: INTCONbits.GIE = 1;
+"61
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;tmr_TMR0.c: 83: }
-"83
+[; ;tmr_TMR0.c: 64: }
+"64
 [e :UE 669 ]
 }
-"85
+"66
 [v _tmr_TMR0Dis `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR0.c: 85: void tmr_TMR0Dis(void){
+[; ;tmr_TMR0.c: 66: void tmr_TMR0Dis(void){
 [e :U _tmr_TMR0Dis ]
 [f ]
-[; ;tmr_TMR0.c: 87: T0CON0bits.T0EN = 0;
-"87
+[; ;tmr_TMR0.c: 68: T0CON0bits.T0EN = 0;
+"68
 [e = . . _T0CON0bits 0 4 -> -> 0 `i `uc ]
-[; ;tmr_TMR0.c: 88: }
-"88
+[; ;tmr_TMR0.c: 69: }
+"69
 [e :UE 670 ]
 }

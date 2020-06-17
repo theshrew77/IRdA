@@ -1,7 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "6 LED.c
-[c E4388 0 1 .. ]
-[n E4388 . OFF ON  ]
+[c E4386 0 1 .. ]
+[n E4386 . OFF ON  ]
 "1474 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16lf18313.h
 [s S79 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S79 . TRISA0 TRISA1 TRISA2 . TRISA4 TRISA5 ]
@@ -18,10 +18,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S107 . . ]
 "2038
 [v _LATAbits `VS107 ~T0 @X0 0 e@268 ]
-[v F4338 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF4338 ~T0 @X0 0 e ]
-[p i __delay ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -5102,11 +5098,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 289: typedef int16_t intptr_t;
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
 [; ;LED.h: 15: void led_ConfigureLED(void);
-[; ;LED.h: 16: void led_Blink(uint8_t times);
-[; ;LED.h: 17: void led_Bright(void);
-[; ;LED.h: 19: void led_Dim(void);
-[; ;LED.h: 21: void led_Off(void);
-[; ;LED.h: 22: void led_Toggle(void);
+[; ;LED.h: 16: void led_Bright(void);
+[; ;LED.h: 17: void led_Dim(void);
+[; ;LED.h: 18: void led_Off(void);
+[; ;LED.h: 19: void led_Toggle(void);
 [; ;main.h: 18: typedef enum{
 [; ;main.h: 19: OFF = 0,
 [; ;main.h: 20: ON = 1,
@@ -5150,7 +5145,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "6 LED.c
 [v _LED_status `uc ~T0 @X0 1 s ]
 [i _LED_status
--> . `E4388 0 `uc
+-> . `E4386 0 `uc
 ]
 [; ;LED.c: 6: static uint8_t LED_status = OFF;
 "8
@@ -5192,7 +5187,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
 [; ;LED.c: 19: LED_status = ON;
 "19
-[e = _LED_status -> . `E4388 1 `uc ]
+[e = _LED_status -> . `E4386 1 `uc ]
 [; ;LED.c: 20: }
 "20
 [e :UE 656 ]
@@ -5211,7 +5206,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
 [; ;LED.c: 25: LED_status = ON;
 "25
-[e = _LED_status -> . `E4388 1 `uc ]
+[e = _LED_status -> . `E4386 1 `uc ]
 [; ;LED.c: 26: }
 "26
 [e :UE 657 ]
@@ -5233,7 +5228,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
 [; ;LED.c: 32: LED_status = OFF;
 "32
-[e = _LED_status -> . `E4388 0 `uc ]
+[e = _LED_status -> . `E4386 0 `uc ]
 [; ;LED.c: 33: }
 "33
 [e :UE 658 ]
@@ -5246,7 +5241,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 [; ;LED.c: 36: if (LED_status == ON){
 "36
-[e $ ! == -> _LED_status `i -> . `E4388 1 `i 660  ]
+[e $ ! == -> _LED_status `i -> . `E4386 1 `i 660  ]
 {
 [; ;LED.c: 37: led_Off();
 "37
@@ -5265,45 +5260,4 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LED.c: 41: }
 "41
 [e :UE 659 ]
-}
-"43
-[v _led_Blink `(v ~T0 @X0 1 ef1`uc ]
-{
-[; ;LED.c: 43: void led_Blink(uint8_t times){
-[e :U _led_Blink ]
-[v _times `uc ~T0 @X0 1 r1 ]
-[f ]
-[; ;LED.c: 44: for (int i = 0; i < times; i++){
-"44
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $U 666  ]
-[e :U 663 ]
-{
-[; ;LED.c: 45: LATAbits.LATA2 = 1;
-"45
-[e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-[; ;LED.c: 46: _delay((unsigned long)((500)*(1000000/4000.0)));
-"46
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-[; ;LED.c: 47: LATAbits.LATA2 = 0;
-"47
-[e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-[; ;LED.c: 48: _delay((unsigned long)((500)*(1000000/4000.0)));
-"48
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"49
-}
-"44
-[e ++ _i -> 1 `i ]
-[e :U 666 ]
-[e $ < _i -> _times `i 663  ]
-[e :U 664 ]
-"49
-}
-[; ;LED.c: 49: }
-[; ;LED.c: 50: }
-"50
-[e :UE 662 ]
 }

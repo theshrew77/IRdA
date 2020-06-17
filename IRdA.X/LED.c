@@ -40,11 +40,3 @@ void led_Toggle(void){
        led_Bright();     
 }
 
-void led_Blink(uint8_t times){
-    for (int i = 0; i < times; i++){
-        LED1LAT = 1;
-        __delay_ms(500);
-        LED1LAT = 0;
-        __delay_ms(500);
-    }
-}

@@ -23,15 +23,13 @@
 #define TMR0_PLL    0x15
 
 
-void tmr_TMR0Init(void);
 uint16_t tmr_computeDelta(uint8_t i);
 uint8_t accquisitionComplete(void);
 void tmr_TMR0mark(void);
 void tmr_TMR0reset(void);
 void tmr_TMR0IncRollovers(void);
+void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
-void tmr_TMR0_PrintCountArray(void);
-
 
 #ifdef	__cplusplus
 extern "C" {

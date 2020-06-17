@@ -3,22 +3,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OSCFRQ `Vuc ~T0 @X0 0 e@2335 ]
 "9071
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@2329 ]
-"9262
-[s S468 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S468 . PLLR . ADOR SOR LFOR . HFOR EXTOR ]
-"9261
-[u S467 `S468 1 ]
-[n S467 . . ]
-"9273
-[v _OSCSTAT1bits `VS467 ~T0 @X0 0 e@2332 ]
-"9217
-[s S466 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S466 . . NOSCR ORDY SOSCBE SOSCPWR CSWHOLD ]
-"9216
-[u S465 `S466 1 ]
-[n S465 . . ]
-"9226
-[v _OSCCON3bits `VS465 ~T0 @X0 0 e@2331 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -5070,65 +5054,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 137: extern __bank0 unsigned char __resetbits;
 [; ;pic.h: 138: extern __bank0 __bit __powerdown;
 [; ;pic.h: 139: extern __bank0 __bit __timeout;
-[; ;Oscillator.h: 17: void _osc_Config32768Hz(void);
-[; ;Oscillator.h: 18: void osc_Config16MHz(void);
-[; ;Oscillator.h: 19: void osc_Config1MHz(void);
-"4 Oscillator.c
-[v _osc_Config16MHz `(v ~T0 @X0 1 ef ]
-{
-[; ;Oscillator.c: 4: void osc_Config16MHz(void){
-[e :U _osc_Config16MHz ]
-[f ]
-[; ;Oscillator.c: 6: OSCFRQ = 0b0000101;
-"6
-[e = _OSCFRQ -> -> 5 `i `uc ]
-[; ;Oscillator.c: 7: OSCCON1 = 0b01100000;
-"7
-[e = _OSCCON1 -> -> 96 `i `uc ]
-[; ;Oscillator.c: 8: }
-"8
-[e :UE 655 ]
-}
-"10
+[; ;Oscillator.h: 17: void osc_Config1MHz(void);
+"6 Oscillator.c
 [v _osc_Config1MHz `(v ~T0 @X0 1 ef ]
 {
-[; ;Oscillator.c: 10: void osc_Config1MHz(void){
+[; ;Oscillator.c: 6: void osc_Config1MHz(void){
 [e :U _osc_Config1MHz ]
 [f ]
-[; ;Oscillator.c: 12: OSCFRQ = 0b0000000;
-"12
+[; ;Oscillator.c: 8: OSCFRQ = 0b0000000;
+"8
 [e = _OSCFRQ -> -> 0 `i `uc ]
-[; ;Oscillator.c: 13: OSCCON1 = 0b01100000;
-"13
+[; ;Oscillator.c: 9: OSCCON1 = 0b01100000;
+"9
 [e = _OSCCON1 -> -> 96 `i `uc ]
-[; ;Oscillator.c: 14: }
-"14
-[e :UE 656 ]
-}
-"17
-[v __osc_Config32768Hz `(v ~T0 @X0 1 ef ]
-{
-[; ;Oscillator.c: 17: void _osc_Config32768Hz(void){
-[e :U __osc_Config32768Hz ]
-[f ]
-[; ;Oscillator.c: 18: while(!OSCSTAT1bits.EXTOR);
-"18
-[e $U 658  ]
-[e :U 659 ]
-[e :U 658 ]
-[e $ ! != -> . . _OSCSTAT1bits 0 7 `i -> -> -> 0 `i `Vuc `i 659  ]
-[e :U 660 ]
-[; ;Oscillator.c: 19: OSCCON1 = 0b01110000;
-"19
-[e = _OSCCON1 -> -> 112 `i `uc ]
-[; ;Oscillator.c: 21: while(!OSCCON3bits.ORDY);
-"21
-[e $U 661  ]
-[e :U 662 ]
-[e :U 661 ]
-[e $ ! != -> . . _OSCCON3bits 0 2 `i -> -> -> 0 `i `Vuc `i 662  ]
-[e :U 663 ]
-[; ;Oscillator.c: 22: }
-"22
-[e :UE 657 ]
+[; ;Oscillator.c: 10: }
+"10
+[e :UE 655 ]
 }

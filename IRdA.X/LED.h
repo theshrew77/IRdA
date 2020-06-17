@@ -13,11 +13,8 @@
 #define LED2LAT     LATAbits.LATA0
 
 void led_ConfigureLED(void);
-void led_Blink(uint8_t times);
 void led_Bright(void);
-
 void led_Dim(void);
-
 void led_Off(void);
 void led_Toggle(void);
 
