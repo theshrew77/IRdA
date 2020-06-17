@@ -5131,11 +5131,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
 [; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
 [; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
-[; ;Interrupts.h: 19: typedef enum{
-[; ;Interrupts.h: 20: INT_DELAY = 0,
-[; ;Interrupts.h: 21: INT_CANDLE = 1
-[; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
-[; ;Interrupts.h: 24: void configureIOCInt(void);
+[; ;Interrupts.h: 26: typedef enum{
+[; ;Interrupts.h: 27: INT_DELAY = 0,
+[; ;Interrupts.h: 28: INT_CANDLE = 1
+[; ;Interrupts.h: 29: } TMR1InterruptTypes_t;
+[; ;Interrupts.h: 31: void configureIOCInt(void);
 [; ;main.h: 18: typedef enum{
 [; ;main.h: 19: OFF = 0,
 [; ;main.h: 20: ON = 1,
@@ -5246,103 +5246,103 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _tmr_TMR1SOSCpowerLevel ]
 [v _level `uc ~T0 @X0 1 r1 ]
 [f ]
-[; ;tmr_TMR1.c: 61: switch (level){
-"61
+[; ;tmr_TMR1.c: 67: switch (level){
+"67
 [e $U 659  ]
 {
-[; ;tmr_TMR1.c: 62: case 'h':
-"62
-[e :U 660 ]
-[; ;tmr_TMR1.c: 63: OSCCON3bits.SOSCPWR = 0x01;
-"63
-[e = . . _OSCCON3bits 0 4 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 64: break;
-"64
-[e $U 658  ]
-[; ;tmr_TMR1.c: 65: case 'l':
-"65
-[e :U 661 ]
-[; ;tmr_TMR1.c: 66: OSCCON3bits.SOSCPWR = 0x00;
-"66
-[e = . . _OSCCON3bits 0 4 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 67: break;
-"67
-[e $U 658  ]
-[; ;tmr_TMR1.c: 68: default:
+[; ;tmr_TMR1.c: 68: case 'h':
 "68
-[e :U 662 ]
-[; ;tmr_TMR1.c: 69: OSCCON3bits.SOSCPWR = 0x00;
+[e :U 660 ]
+[; ;tmr_TMR1.c: 69: OSCCON3bits.SOSCPWR = 0x01;
 "69
-[e = . . _OSCCON3bits 0 4 -> -> 0 `i `uc ]
+[e = . . _OSCCON3bits 0 4 -> -> 1 `i `uc ]
 [; ;tmr_TMR1.c: 70: break;
 "70
 [e $U 658  ]
+[; ;tmr_TMR1.c: 71: case 'l':
 "71
-}
-[; ;tmr_TMR1.c: 71: }
+[e :U 661 ]
+[; ;tmr_TMR1.c: 72: OSCCON3bits.SOSCPWR = 0x00;
+"72
+[e = . . _OSCCON3bits 0 4 -> -> 0 `i `uc ]
+[; ;tmr_TMR1.c: 73: break;
+"73
 [e $U 658  ]
-"61
+[; ;tmr_TMR1.c: 74: default:
+"74
+[e :U 662 ]
+[; ;tmr_TMR1.c: 75: OSCCON3bits.SOSCPWR = 0x00;
+"75
+[e = . . _OSCCON3bits 0 4 -> -> 0 `i `uc ]
+[; ;tmr_TMR1.c: 76: break;
+"76
+[e $U 658  ]
+"77
+}
+[; ;tmr_TMR1.c: 77: }
+[e $U 658  ]
+"67
 [e :U 659 ]
 [e [\ _level , $ -> -> 104 `ui `uc 660
  , $ -> -> 108 `ui `uc 661
  662 ]
-"71
+"77
 [e :U 658 ]
-[; ;tmr_TMR1.c: 72: }
-"72
+[; ;tmr_TMR1.c: 78: }
+"78
 [e :UE 657 ]
 }
-"74
+"80
 [v _tmr_TMR1En `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR1.c: 74: void tmr_TMR1En(void){
+[; ;tmr_TMR1.c: 80: void tmr_TMR1En(void){
 [e :U _tmr_TMR1En ]
 [f ]
-[; ;tmr_TMR1.c: 76: T1CONbits.T1SOSC = 0x01;
-"76
+[; ;tmr_TMR1.c: 82: T1CONbits.T1SOSC = 0x01;
+"82
 [e = . . _T1CONbits 0 3 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 78: T1CONbits.TMR1ON = 1;
-"78
+[; ;tmr_TMR1.c: 84: T1CONbits.TMR1ON = 1;
+"84
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 80: }
-"80
+[; ;tmr_TMR1.c: 86: }
+"86
 [e :UE 663 ]
 }
-"82
+"88
 [v _tmr_TMR1Dis `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR1.c: 82: void tmr_TMR1Dis(void){
+[; ;tmr_TMR1.c: 88: void tmr_TMR1Dis(void){
 [e :U _tmr_TMR1Dis ]
 [f ]
-[; ;tmr_TMR1.c: 84: T1CONbits.T1SOSC = 0x00;
-"84
+[; ;tmr_TMR1.c: 90: T1CONbits.T1SOSC = 0x00;
+"90
 [e = . . _T1CONbits 0 3 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 86: T1CONbits.TMR1ON = 0;
-"86
+[; ;tmr_TMR1.c: 92: T1CONbits.TMR1ON = 0;
+"92
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 87: }
-"87
+[; ;tmr_TMR1.c: 93: }
+"93
 [e :UE 664 ]
 }
-"89
+"95
 [v _tmr_TMR1Reset `(v ~T0 @X0 1 ef ]
 {
-[; ;tmr_TMR1.c: 89: void tmr_TMR1Reset(void){
+[; ;tmr_TMR1.c: 95: void tmr_TMR1Reset(void){
 [e :U _tmr_TMR1Reset ]
 [f ]
-[; ;tmr_TMR1.c: 90: T1CONbits.TMR1ON = 0;
-"90
+[; ;tmr_TMR1.c: 96: T1CONbits.TMR1ON = 0;
+"96
 [e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-[; ;tmr_TMR1.c: 91: TMR1H = (TMR1preload & 0xFF00) >> 8;
-"91
+[; ;tmr_TMR1.c: 97: TMR1H = (TMR1preload & 0xFF00) >> 8;
+"97
 [e = _TMR1H -> >> & _TMR1preload -> 65280 `ui -> 8 `i `uc ]
-[; ;tmr_TMR1.c: 92: TMR1L = TMR1preload & 0x00FF;
-"92
+[; ;tmr_TMR1.c: 98: TMR1L = TMR1preload & 0x00FF;
+"98
 [e = _TMR1L -> & _TMR1preload -> -> 255 `i `ui `uc ]
-[; ;tmr_TMR1.c: 93: T1CONbits.TMR1ON = 1;
-"93
+[; ;tmr_TMR1.c: 99: T1CONbits.TMR1ON = 1;
+"99
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;tmr_TMR1.c: 94: }
-"94
+[; ;tmr_TMR1.c: 100: }
+"100
 [e :UE 665 ]
 }

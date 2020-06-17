@@ -7865,7 +7865,7 @@ ON = 1,
 #pragma config CP = OFF
 #pragma config CPD = OFF
 
-# 19 "Interrupts.h"
+# 26 "Interrupts.h"
 typedef enum{
 INT_DELAY = 0,
 INT_CANDLE = 1
@@ -7921,7 +7921,7 @@ void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
 void tmr_TMR1Reset(void);
 
-# 11 "RTC.h"
+# 13 "RTC.h"
 typedef struct
 {
 uint8_t Seconds;
@@ -7942,23 +7942,17 @@ volatile uint8_t IR_received = 0;
 
 int main(int argc, char** argv) {
 
-
 uint8_t NECcommand = 0;
 
 CPUDOZEbits.IDLEN = 0;
 osc_Config1MHz();
 pwrmgmt_DisablePeripherals();
-
 rtc_Reset();
-
 led_ConfigureLED();
-
 led_Bright();
 configureIOCInt();
-
 tmr_TMR0Init();
 tmr_TMR0reset();
-
 tmr_TMR1Init();
 
 while(1){

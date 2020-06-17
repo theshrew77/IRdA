@@ -16,6 +16,13 @@
 #define IOCA_ANSEL  ANSELAbits.ANSA1
 #define IOCA_F      IOCAFbits.IOCAF1
 
+
+/*
+ This enum is used to make the same timer execute interrupts on 2 
+ * different timescales. Delay is for hour long timers. Candle is for
+ * strobing the LED. This feature is only applicable if a remote with a
+ * candle button is included.
+ */
 typedef enum{
     INT_DELAY = 0,
     INT_CANDLE = 1        

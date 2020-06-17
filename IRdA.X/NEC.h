@@ -19,7 +19,7 @@
 #define NEC_TIMEOUT     0
 
 
-#define NEC_ADDRESS     0
+#define NEC_ADDRESS     0 
 //#define OLDREMOTE
 //#define GRANDINROAD
 #define SCOTTLIVING

@@ -17,22 +17,24 @@ uint8_t nec_ProcessPacket(void){
     uint16_t delta;
     uint8_t NECpacket [32] = {0};
     uint8_t command = 0;
+    uint8_t address = 0;
     
-    delta = tmr_computeDelta(0);
+    delta = tmr_computeDelta(0);                            //compute the time between the first 2 falling edge IOC's. For NEC this should be 13.5 ms which is 2700 in tmr0 
 
-    if (NEC_START_LOW < delta && delta < NEC_START_HIGH){
+    if (NEC_START_LOW < delta && delta < NEC_START_HIGH){   //checks if the value is correct +/-20%
         
         
-        for (uint8_t i = 1; i < 33; i++){
+        for (uint8_t i = 1; i < 33; i++){                   //NEC packets are 32 bits hence the 33
             delta = tmr_computeDelta(i);
-            if (NEC_0_LOW < delta && delta < NEC_0_HIGH){
+            if (NEC_0_LOW < delta && delta < NEC_0_HIGH){   //checks if the value is correct +/-20%
                 NECpacket[i-1] = 0;
             }
-            if (NEC_1_LOW < delta && delta < NEC_1_HIGH){
+            if (NEC_1_LOW < delta && delta < NEC_1_HIGH){   //checks if the value is correct +/-20%
                 NECpacket[i-1] = 1;
             }
         }
         
+        //convert the last 8 bits to a command
         command += NECpacket[31];
         command += NECpacket[30]*2U;
         command += NECpacket[29]*4U;
@@ -42,9 +44,23 @@ uint8_t nec_ProcessPacket(void){
         command += NECpacket[25]*64U;
         command += NECpacket[24]*128U;
         
+        
+        //conver the first 8 bits into an address
+        address += NECpacket[7];
+        address += NECpacket[6]*2U;
+        address += NECpacket[5]*4U;
+        address += NECpacket[4]*8U;
+        address += NECpacket[3]*16U;
+        address += NECpacket[2]*32U;
+        address += NECpacket[1]*64U;
+        address += NECpacket[0]*128U;
+        
     }
-
-    return(command);
+    if (NEC_ADDRESS == address){
+        return(command);
+    }
+    else
+        return(0);
 }
 
 void nec_ExecuteCommand(uint8_t NECcommand){

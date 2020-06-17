@@ -42,8 +42,8 @@ void tmr_TMR1Init(void){
     OSCCON3bits.SOSCBE = 0x00;      //configure secondary oscillator as crystal
     
     
-    TMR1IFG = 0;                    //clear TMR1 interrupt flag
-    TMR1H = (TMR1preload & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
+    TMR1IFG = 0;                            //clear TMR1 interrupt flag
+    TMR1H = (TMR1preload & 0xFF00) >> 8;    // see tmr_TMR1.h for discussion of these values                  
     TMR1L = TMR1preload & 0x00FF;
  
     
@@ -58,6 +58,12 @@ void tmr_TMR1Init(void){
 }
 
 void tmr_TMR1SOSCpowerLevel(char level){
+    /*
+     * for the faster interrupts required to strobe the LED in
+     * candle mode the crystal driver circuitry needs to be set to high power
+     * to wake up fast enough
+     */
+    
     switch (level){
         case 'h':
             OSCCON3bits.SOSCPWR = 0x01;
@@ -88,7 +94,7 @@ void tmr_TMR1Dis(void){
 
 void tmr_TMR1Reset(void){
     TMR1_ON = 0;
-    TMR1H = (TMR1preload & 0xFF00) >> 8;// 0x7F;                   //set TMR1 register = 32767 = 0x7FFF
+    TMR1H = (TMR1preload & 0xFF00) >> 8;
     TMR1L = TMR1preload & 0x00FF;
     TMR1_ON = 1;
 }

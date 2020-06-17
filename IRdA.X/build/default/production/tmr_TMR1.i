@@ -7650,7 +7650,7 @@ void tmr_TMR1En(void);
 void tmr_TMR1Dis(void);
 void tmr_TMR1Reset(void);
 
-# 19 "Interrupts.h"
+# 26 "Interrupts.h"
 typedef enum{
 INT_DELAY = 0,
 INT_CANDLE = 1
@@ -7728,6 +7728,8 @@ INTCONbits.GIE = 1;
 }
 
 void tmr_TMR1SOSCpowerLevel(char level){
+
+# 67
 switch (level){
 case 'h':
 OSCCON3bits.SOSCPWR = 0x01;

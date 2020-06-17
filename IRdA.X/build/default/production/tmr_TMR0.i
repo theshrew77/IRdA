@@ -7765,7 +7765,7 @@ void tmr_TMR0IncRollovers(void);
 void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
 
-# 19 "Interrupts.h"
+# 26 "Interrupts.h"
 typedef enum{
 INT_DELAY = 0,
 INT_CANDLE = 1
@@ -7896,7 +7896,7 @@ T0CON1bits.T0CKPS = 0;
 T0CON0bits.T016BIT = 1;
 T0CON1bits.T0CS = 2;
 TMR0H = 0xB8;
-TMR0L = 0x15;
+TMR0L = 0xB8;
 
 
 PIE0bits.TMR0IE = 1;

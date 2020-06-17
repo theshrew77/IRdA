@@ -49,11 +49,11 @@ void tmr_TMR0IncRollovers(void){
 }
 
 void tmr_TMR0Init(void){
-    TMR0PRE = 0; //1:1 prescaler
-    TMR016BEN = 1; //enable reading timer register in 1 16 bit operation
-    TMR0CS = 2;   //select Fosc/4 as clock source
-    TMR0H = 0xB8;
-    TMR0L = 0x15;
+    TMR0PRE = 0;        //1:1 prescaler
+    TMR016BEN = 1;      //enable reading timer register in 1 16 bit operation
+    TMR0CS = 2;         //select Fosc/4 as clock source
+    TMR0H = TMR0_PLH;   //see tmr_TMR0.h for discussion of these values 
+    TMR0L = TMR0_PLH;
     
     //enable rollover interrupts
     TMR0_IE  = 1;

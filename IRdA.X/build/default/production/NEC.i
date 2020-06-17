@@ -7833,7 +7833,7 @@ ON = 1,
 #pragma config CP = OFF
 #pragma config CPD = OFF
 
-# 11 "RTC.h"
+# 13 "RTC.h"
 typedef struct
 {
 uint8_t Seconds;
@@ -7846,7 +7846,7 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 19 "Interrupts.h"
+# 26 "Interrupts.h"
 typedef enum{
 INT_DELAY = 0,
 INT_CANDLE = 1
@@ -7862,6 +7862,7 @@ uint8_t nec_ProcessPacket(void){
 uint16_t delta;
 uint8_t NECpacket [32] = {0};
 uint8_t command = 0;
+uint8_t address = 0;
 
 delta = tmr_computeDelta(0);
 
@@ -7878,6 +7879,7 @@ NECpacket[i-1] = 1;
 }
 }
 
+
 command += NECpacket[31];
 command += NECpacket[30]*2U;
 command += NECpacket[29]*4U;
@@ -7887,9 +7889,23 @@ command += NECpacket[26]*32U;
 command += NECpacket[25]*64U;
 command += NECpacket[24]*128U;
 
-}
 
+
+address += NECpacket[7];
+address += NECpacket[6]*2U;
+address += NECpacket[5]*4U;
+address += NECpacket[4]*8U;
+address += NECpacket[3]*16U;
+address += NECpacket[2]*32U;
+address += NECpacket[1]*64U;
+address += NECpacket[0]*128U;
+
+}
+if (0 == address){
 return(command);
+}
+else
+return(0);
 }
 
 void nec_ExecuteCommand(uint8_t NECcommand){

@@ -5207,11 +5207,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr_TMR0.h: 30: void tmr_TMR0IncRollovers(void);
 [; ;tmr_TMR0.h: 31: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
-[; ;Interrupts.h: 19: typedef enum{
-[; ;Interrupts.h: 20: INT_DELAY = 0,
-[; ;Interrupts.h: 21: INT_CANDLE = 1
-[; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
-[; ;Interrupts.h: 24: void configureIOCInt(void);
+[; ;Interrupts.h: 26: typedef enum{
+[; ;Interrupts.h: 27: INT_DELAY = 0,
+[; ;Interrupts.h: 28: INT_CANDLE = 1
+[; ;Interrupts.h: 29: } TMR1InterruptTypes_t;
+[; ;Interrupts.h: 31: void configureIOCInt(void);
 [; ;main.h: 18: typedef enum{
 [; ;main.h: 19: OFF = 0,
 [; ;main.h: 20: ON = 1,
@@ -5449,9 +5449,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr_TMR0.c: 55: TMR0H = 0xB8;
 "55
 [e = _TMR0H -> -> 184 `i `uc ]
-[; ;tmr_TMR0.c: 56: TMR0L = 0x15;
+[; ;tmr_TMR0.c: 56: TMR0L = 0xB8;
 "56
-[e = _TMR0L -> -> 21 `i `uc ]
+[e = _TMR0L -> -> 184 `i `uc ]
 [; ;tmr_TMR0.c: 59: PIE0bits.TMR0IE = 1;
 "59
 [e = . . _PIE0bits 0 3 -> -> 1 `i `uc ]

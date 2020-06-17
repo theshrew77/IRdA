@@ -7,7 +7,9 @@
 
 #ifndef RTC_H
 #define	RTC_H
-
+/*
+ *The RTC is driven off timer 1 configured to interrupt every 1 s when drive by an external 32.768KHz crystal
+ */
 typedef struct
 {
   uint8_t   Seconds;

@@ -7688,6 +7688,7 @@ ON = 1,
 static uint8_t LED_status = OFF;
 
 void led_ConfigureLED(void){
+
 TRISAbits.TRISA2 = 0;
 LATAbits.LATA2 = 1;
 TRISAbits.TRISA0 = 0;
@@ -7695,20 +7696,26 @@ LATAbits.LATA0 = 1;
 }
 
 void led_Bright(void){
+
 LATAbits.LATA2 = 0;
+
 TRISAbits.TRISA0 = 0;
 LATAbits.LATA0 = 0;
 LED_status = ON;
 }
 
 void led_Dim(void){
+
 LATAbits.LATA2 = 0;
+
 TRISAbits.TRISA0 = 1;
 LED_status = ON;
 }
 
 void led_Off(void){
+
 LATAbits.LATA2 = 1;
+
 TRISAbits.TRISA0 = 0;
 LATAbits.LATA0 = 1;
 LED_status = OFF;

@@ -91,7 +91,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "49
 [c E4406 0 1 .. ]
 [n E4406 . INT_DELAY INT_CANDLE  ]
-"21 RTC.h
+"23 RTC.h
 [v _rtc_ISR `(v ~T0 @X0 0 ef ]
 "19 LED.h
 [v _led_Toggle `(v ~T0 @X0 0 ef ]
@@ -5229,26 +5229,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
 [; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
 [; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
-[; ;Interrupts.h: 19: typedef enum{
-[; ;Interrupts.h: 20: INT_DELAY = 0,
-[; ;Interrupts.h: 21: INT_CANDLE = 1
-[; ;Interrupts.h: 22: } TMR1InterruptTypes_t;
-[; ;Interrupts.h: 24: void configureIOCInt(void);
+[; ;Interrupts.h: 26: typedef enum{
+[; ;Interrupts.h: 27: INT_DELAY = 0,
+[; ;Interrupts.h: 28: INT_CANDLE = 1
+[; ;Interrupts.h: 29: } TMR1InterruptTypes_t;
+[; ;Interrupts.h: 31: void configureIOCInt(void);
 [; ;LED.h: 15: void led_ConfigureLED(void);
 [; ;LED.h: 16: void led_Bright(void);
 [; ;LED.h: 17: void led_Dim(void);
 [; ;LED.h: 18: void led_Off(void);
 [; ;LED.h: 19: void led_Toggle(void);
-[; ;RTC.h: 11: typedef struct
-[; ;RTC.h: 12: {
-[; ;RTC.h: 13: uint8_t Seconds;
-[; ;RTC.h: 14: uint8_t Minutes;
-[; ;RTC.h: 15: uint8_t Hours;
-[; ;RTC.h: 16: } RTC_t;
-[; ;RTC.h: 18: void rtc_Init(void);
-[; ;RTC.h: 19: void rtc_SetHourDelay(uint8_t hours);
-[; ;RTC.h: 20: void rtc_Reset(void);
-[; ;RTC.h: 21: void rtc_ISR(void);
+[; ;RTC.h: 13: typedef struct
+[; ;RTC.h: 14: {
+[; ;RTC.h: 15: uint8_t Seconds;
+[; ;RTC.h: 16: uint8_t Minutes;
+[; ;RTC.h: 17: uint8_t Hours;
+[; ;RTC.h: 18: } RTC_t;
+[; ;RTC.h: 20: void rtc_Init(void);
+[; ;RTC.h: 21: void rtc_SetHourDelay(uint8_t hours);
+[; ;RTC.h: 22: void rtc_Reset(void);
+[; ;RTC.h: 23: void rtc_ISR(void);
 [; ;Interrupts.c: 11: extern uint8_t IR_received;
 [; ;Interrupts.c: 12: extern uint8_t TMR1IntType;
 "14 Interrupts.c

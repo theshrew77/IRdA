@@ -1,8 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"12 RTC.h
+"14 RTC.h
 [s S655 `uc 1 `uc 1 `uc 1 ]
 [n S655 . Seconds Minutes Hours ]
-"20
+"22
 [v _rtc_Reset `(v ~T0 @X0 0 ef ]
 "26 tmr_TMR1.h
 [v _tmr_TMR1Reset `(v ~T0 @X0 0 ef ]
@@ -5091,16 +5091,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 282: typedef uint32_t uintmax_t;
 [; ;stdint.h: 289: typedef int16_t intptr_t;
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
-[; ;RTC.h: 11: typedef struct
-[; ;RTC.h: 12: {
-[; ;RTC.h: 13: uint8_t Seconds;
-[; ;RTC.h: 14: uint8_t Minutes;
-[; ;RTC.h: 15: uint8_t Hours;
-[; ;RTC.h: 16: } RTC_t;
-[; ;RTC.h: 18: void rtc_Init(void);
-[; ;RTC.h: 19: void rtc_SetHourDelay(uint8_t hours);
-[; ;RTC.h: 20: void rtc_Reset(void);
-[; ;RTC.h: 21: void rtc_ISR(void);
+[; ;RTC.h: 13: typedef struct
+[; ;RTC.h: 14: {
+[; ;RTC.h: 15: uint8_t Seconds;
+[; ;RTC.h: 16: uint8_t Minutes;
+[; ;RTC.h: 17: uint8_t Hours;
+[; ;RTC.h: 18: } RTC_t;
+[; ;RTC.h: 20: void rtc_Init(void);
+[; ;RTC.h: 21: void rtc_SetHourDelay(uint8_t hours);
+[; ;RTC.h: 22: void rtc_Reset(void);
+[; ;RTC.h: 23: void rtc_ISR(void);
 [; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
 [; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
 [; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
