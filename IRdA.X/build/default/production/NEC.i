@@ -7921,13 +7921,15 @@ tmr_TMR1Dis();
 break;
 case TIMER2H:
 led_Bright();
+rtc_Reset();
 TMR1IntType = INT_DELAY;
 tmr_TMR1setPreload(0x7FFF);
 tmr_TMR1SOSCpowerLevel('l');
-rtc_SetHourDelay(1);
+rtc_SetHourDelay(2);
 break;
 case TIMER4H:
 led_Bright();
+rtc_Reset();
 TMR1IntType = INT_DELAY;
 tmr_TMR1setPreload(0x7FFF);
 tmr_TMR1SOSCpowerLevel('l');
@@ -7935,6 +7937,7 @@ rtc_SetHourDelay(4);
 break;
 case TIMER6H:
 led_Bright();
+rtc_Reset();
 TMR1IntType = INT_DELAY;
 tmr_TMR1setPreload(0x7FFF);
 tmr_TMR1SOSCpowerLevel('l');
@@ -7942,6 +7945,7 @@ rtc_SetHourDelay(6);
 break;
 case TIMER8H:
 led_Bright();
+rtc_Reset();
 TMR1IntType = INT_DELAY;
 tmr_TMR1setPreload(0x7FFF);
 tmr_TMR1SOSCpowerLevel('l');

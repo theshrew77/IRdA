@@ -22,24 +22,29 @@ void rtc_Reset(void){
 }
 
 void rtc_ISR(void){
-    
+  /*
     if (++tRTC.Seconds == 60){
+        tRTC.Seconds = 0;
         if (++tRTC.Minutes == hourDelay){
+            tRTC.Minutes = 0;
                 tmr_TMR1Dis();
                 led_Off();             
         }
     }
-   
-    /*
+*/
+    
     if (++tRTC.Seconds == 60){
+        tRTC.Seconds = 0;
         if (++tRTC.Minutes == 60){
+            tRTC.Minutes = 0;
             if(++tRTC.Hours == hourDelay){
+                tRTC.Hours = 0;
                 tmr_TMR1Dis();
-                LEDLAT = 1;             
+                led_Off();             
             } 
         }
     }
-    */
     
+  
  
 }

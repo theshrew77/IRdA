@@ -45,7 +45,7 @@ uint8_t nec_ProcessPacket(void){
         command += NECpacket[24]*128U;
         
         
-        //conver the first 8 bits into an address
+        //convert the first 8 bits into an address
         address += NECpacket[7];
         address += NECpacket[6]*2U;
         address += NECpacket[5]*4U;
@@ -76,13 +76,15 @@ void nec_ExecuteCommand(uint8_t NECcommand){
             break;
         case TIMER2H:
             led_Bright();
+            rtc_Reset();
             TMR1IntType = INT_DELAY;
             tmr_TMR1setPreload(TMR1_1s);
             tmr_TMR1SOSCpowerLevel('l');
-            rtc_SetHourDelay(1);
+            rtc_SetHourDelay(2);
             break;
         case TIMER4H:
             led_Bright();
+            rtc_Reset();
             TMR1IntType = INT_DELAY;
             tmr_TMR1setPreload(TMR1_1s);
             tmr_TMR1SOSCpowerLevel('l');
@@ -90,6 +92,7 @@ void nec_ExecuteCommand(uint8_t NECcommand){
             break;
         case TIMER6H:
             led_Bright();
+            rtc_Reset();
             TMR1IntType = INT_DELAY;
             tmr_TMR1setPreload(TMR1_1s);
             tmr_TMR1SOSCpowerLevel('l');
@@ -97,6 +100,7 @@ void nec_ExecuteCommand(uint8_t NECcommand){
             break;
         case TIMER8H:
             led_Bright();
+            rtc_Reset();
             TMR1IntType = INT_DELAY;
             tmr_TMR1setPreload(TMR1_1s);
             tmr_TMR1SOSCpowerLevel('l');

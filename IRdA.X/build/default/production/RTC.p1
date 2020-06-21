@@ -5173,25 +5173,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 "26
 [e $ ! == -> =+ . _tRTC 0 -> -> 1 `i `uc `i -> 60 `i 659  ]
 {
-[; ;RTC.c: 27: if (++tRTC.Minutes == hourDelay){
+[; ;RTC.c: 27: tRTC.Seconds = 0;
 "27
+[e = . _tRTC 0 -> -> 0 `i `uc ]
+[; ;RTC.c: 28: if (++tRTC.Minutes == hourDelay){
+"28
 [e $ ! == -> =+ . _tRTC 1 -> -> 1 `i `uc `i -> _hourDelay `i 660  ]
 {
-[; ;RTC.c: 28: tmr_TMR1Dis();
-"28
-[e ( _tmr_TMR1Dis ..  ]
-[; ;RTC.c: 29: led_Off();
+[; ;RTC.c: 29: tRTC.Minutes = 0;
 "29
-[e ( _led_Off ..  ]
+[e = . _tRTC 1 -> -> 0 `i `uc ]
+[; ;RTC.c: 30: tmr_TMR1Dis();
 "30
+[e ( _tmr_TMR1Dis ..  ]
+[; ;RTC.c: 31: led_Off();
+"31
+[e ( _led_Off ..  ]
+"32
 }
 [e :U 660 ]
-"31
+"33
 }
 [e :U 659 ]
-[; ;RTC.c: 30: }
-[; ;RTC.c: 31: }
-[; ;RTC.c: 45: }
-"45
+[; ;RTC.c: 32: }
+[; ;RTC.c: 33: }
+[; ;RTC.c: 49: }
+"49
 [e :UE 658 ]
 }
