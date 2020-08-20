@@ -5169,35 +5169,46 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.c: 24: void rtc_ISR(void){
 [e :U _rtc_ISR ]
 [f ]
-[; ;RTC.c: 26: if (++tRTC.Seconds == 60){
-"26
+[; ;RTC.c: 36: if (++tRTC.Seconds == 60){
+"36
 [e $ ! == -> =+ . _tRTC 0 -> -> 1 `i `uc `i -> 60 `i 659  ]
 {
-[; ;RTC.c: 27: tRTC.Seconds = 0;
-"27
+[; ;RTC.c: 37: tRTC.Seconds = 0;
+"37
 [e = . _tRTC 0 -> -> 0 `i `uc ]
-[; ;RTC.c: 28: if (++tRTC.Minutes == hourDelay){
-"28
-[e $ ! == -> =+ . _tRTC 1 -> -> 1 `i `uc `i -> _hourDelay `i 660  ]
+[; ;RTC.c: 38: if (++tRTC.Minutes == 60){
+"38
+[e $ ! == -> =+ . _tRTC 1 -> -> 1 `i `uc `i -> 60 `i 660  ]
 {
-[; ;RTC.c: 29: tRTC.Minutes = 0;
-"29
+[; ;RTC.c: 39: tRTC.Minutes = 0;
+"39
 [e = . _tRTC 1 -> -> 0 `i `uc ]
-[; ;RTC.c: 30: tmr_TMR1Dis();
-"30
+[; ;RTC.c: 40: if(++tRTC.Hours == hourDelay){
+"40
+[e $ ! == -> =+ . _tRTC 2 -> -> 1 `i `uc `i -> _hourDelay `i 661  ]
+{
+[; ;RTC.c: 41: tRTC.Hours = 0;
+"41
+[e = . _tRTC 2 -> -> 0 `i `uc ]
+[; ;RTC.c: 42: tmr_TMR1Dis();
+"42
 [e ( _tmr_TMR1Dis ..  ]
-[; ;RTC.c: 31: led_Off();
-"31
+[; ;RTC.c: 43: led_Off();
+"43
 [e ( _led_Off ..  ]
-"32
+"44
+}
+[e :U 661 ]
+"45
 }
 [e :U 660 ]
-"33
+"46
 }
 [e :U 659 ]
-[; ;RTC.c: 32: }
-[; ;RTC.c: 33: }
-[; ;RTC.c: 49: }
-"49
+[; ;RTC.c: 44: }
+[; ;RTC.c: 45: }
+[; ;RTC.c: 46: }
+[; ;RTC.c: 50: }
+"50
 [e :UE 658 ]
 }

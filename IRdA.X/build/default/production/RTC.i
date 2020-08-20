@@ -7690,14 +7690,19 @@ tRTC.Hours = 0;
 
 void rtc_ISR(void){
 
+# 36
 if (++tRTC.Seconds == 60){
 tRTC.Seconds = 0;
-if (++tRTC.Minutes == hourDelay){
+if (++tRTC.Minutes == 60){
 tRTC.Minutes = 0;
+if(++tRTC.Hours == hourDelay){
+tRTC.Hours = 0;
 tmr_TMR1Dis();
 led_Off();
 }
 }
+}
 
-# 49
+
+
 }
