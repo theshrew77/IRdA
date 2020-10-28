@@ -9,7 +9,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _led_Off `(v ~T0 @X0 0 ef ]
 "22 RTC.h
 [v _rtc_Reset `(v ~T0 @X0 0 ef ]
-"80 NEC.c
+"81 NEC.c
 [c E4653 0 1 .. ]
 [n E4653 . INT_DELAY INT_CANDLE  ]
 "21 tmr_TMR1.h
@@ -5449,171 +5449,174 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;NEC.c: 71: led_Bright();
 "71
 [e ( _led_Bright ..  ]
-[; ;NEC.c: 72: break;
+[; ;NEC.c: 72: tmr_TMR1Dis();
 "72
-[e $U 670  ]
-[; ;NEC.c: 73: case LEDOFF:
+[e ( _tmr_TMR1Dis ..  ]
+[; ;NEC.c: 73: break;
 "73
-[e :U 673 ]
-[; ;NEC.c: 74: led_Off();
+[e $U 670  ]
+[; ;NEC.c: 74: case LEDOFF:
 "74
-[e ( _led_Off ..  ]
-[; ;NEC.c: 75: tmr_TMR1Dis();
+[e :U 673 ]
+[; ;NEC.c: 75: led_Off();
 "75
-[e ( _tmr_TMR1Dis ..  ]
-[; ;NEC.c: 76: break;
+[e ( _led_Off ..  ]
+[; ;NEC.c: 76: tmr_TMR1Dis();
 "76
-[e $U 670  ]
-[; ;NEC.c: 77: case TIMER2H:
-"77
-[e :U 674 ]
-[; ;NEC.c: 78: led_Bright();
-"78
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 79: rtc_Reset();
-"79
-[e ( _rtc_Reset ..  ]
-[; ;NEC.c: 80: TMR1IntType = INT_DELAY;
-"80
-[e = _TMR1IntType -> . `E4653 0 `uc ]
-[; ;NEC.c: 81: tmr_TMR1setPreload(0x7FFF);
-"81
-[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
-[; ;NEC.c: 82: tmr_TMR1SOSCpowerLevel('l');
-"82
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 83: rtc_SetHourDelay(2);
-"83
-[e ( _rtc_SetHourDelay (1 -> -> 2 `i `uc ]
-[; ;NEC.c: 84: break;
-"84
-[e $U 670  ]
-[; ;NEC.c: 85: case TIMER4H:
-"85
-[e :U 675 ]
-[; ;NEC.c: 86: led_Bright();
-"86
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 87: rtc_Reset();
-"87
-[e ( _rtc_Reset ..  ]
-[; ;NEC.c: 88: TMR1IntType = INT_DELAY;
-"88
-[e = _TMR1IntType -> . `E4653 0 `uc ]
-[; ;NEC.c: 89: tmr_TMR1setPreload(0x7FFF);
-"89
-[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
-[; ;NEC.c: 90: tmr_TMR1SOSCpowerLevel('l');
-"90
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 91: rtc_SetHourDelay(4);
-"91
-[e ( _rtc_SetHourDelay (1 -> -> 4 `i `uc ]
-[; ;NEC.c: 92: break;
-"92
-[e $U 670  ]
-[; ;NEC.c: 93: case TIMER6H:
-"93
-[e :U 676 ]
-[; ;NEC.c: 94: led_Bright();
-"94
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 95: rtc_Reset();
-"95
-[e ( _rtc_Reset ..  ]
-[; ;NEC.c: 96: TMR1IntType = INT_DELAY;
-"96
-[e = _TMR1IntType -> . `E4653 0 `uc ]
-[; ;NEC.c: 97: tmr_TMR1setPreload(0x7FFF);
-"97
-[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
-[; ;NEC.c: 98: tmr_TMR1SOSCpowerLevel('l');
-"98
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 99: rtc_SetHourDelay(6);
-"99
-[e ( _rtc_SetHourDelay (1 -> -> 6 `i `uc ]
-[; ;NEC.c: 100: break;
-"100
-[e $U 670  ]
-[; ;NEC.c: 101: case TIMER8H:
-"101
-[e :U 677 ]
-[; ;NEC.c: 102: led_Bright();
-"102
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 103: rtc_Reset();
-"103
-[e ( _rtc_Reset ..  ]
-[; ;NEC.c: 104: TMR1IntType = INT_DELAY;
-"104
-[e = _TMR1IntType -> . `E4653 0 `uc ]
-[; ;NEC.c: 105: tmr_TMR1setPreload(0x7FFF);
-"105
-[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
-[; ;NEC.c: 106: tmr_TMR1SOSCpowerLevel('l');
-"106
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
-[; ;NEC.c: 107: rtc_SetHourDelay(8);
-"107
-[e ( _rtc_SetHourDelay (1 -> -> 8 `i `uc ]
-[; ;NEC.c: 108: break;
-"108
-[e $U 670  ]
-[; ;NEC.c: 109: case DIM:
-"109
-[e :U 678 ]
-[; ;NEC.c: 110: led_Dim();
-"110
-[e ( _led_Dim ..  ]
-[; ;NEC.c: 111: break;
-"111
-[e $U 670  ]
-[; ;NEC.c: 112: case BRIGHT:
-"112
-[e :U 679 ]
-[; ;NEC.c: 113: led_Bright();
-"113
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 114: break;
-"114
-[e $U 670  ]
-[; ;NEC.c: 115: case CANDLE:
-"115
-[e :U 680 ]
-[; ;NEC.c: 116: tmr_TMR1setPreload(0xF999);
-"116
-[e ( _tmr_TMR1setPreload (1 -> 63897 `ui ]
-[; ;NEC.c: 117: TMR1IntType = INT_CANDLE;
-"117
-[e = _TMR1IntType -> . `E4653 1 `uc ]
-[; ;NEC.c: 118: tmr_TMR1Reset();
-"118
-[e ( _tmr_TMR1Reset ..  ]
-[; ;NEC.c: 119: tmr_TMR1SOSCpowerLevel('h');
-"119
-[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 104 `ui `uc ]
-[; ;NEC.c: 120: tmr_TMR1En();
-"120
-[e ( _tmr_TMR1En ..  ]
-[; ;NEC.c: 121: break;
-"121
-[e $U 670  ]
-[; ;NEC.c: 122: case LIGHT:
-"122
-[e :U 681 ]
-[; ;NEC.c: 123: tmr_TMR1Dis();
-"123
 [e ( _tmr_TMR1Dis ..  ]
-[; ;NEC.c: 124: led_Bright();
-"124
-[e ( _led_Bright ..  ]
-[; ;NEC.c: 125: break;
-"125
+[; ;NEC.c: 77: break;
+"77
 [e $U 670  ]
-"127
+[; ;NEC.c: 78: case TIMER2H:
+"78
+[e :U 674 ]
+[; ;NEC.c: 79: led_Bright();
+"79
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 80: rtc_Reset();
+"80
+[e ( _rtc_Reset ..  ]
+[; ;NEC.c: 81: TMR1IntType = INT_DELAY;
+"81
+[e = _TMR1IntType -> . `E4653 0 `uc ]
+[; ;NEC.c: 82: tmr_TMR1setPreload(0x7FFF);
+"82
+[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
+[; ;NEC.c: 83: tmr_TMR1SOSCpowerLevel('l');
+"83
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
+[; ;NEC.c: 84: rtc_SetHourDelay(2);
+"84
+[e ( _rtc_SetHourDelay (1 -> -> 2 `i `uc ]
+[; ;NEC.c: 85: break;
+"85
+[e $U 670  ]
+[; ;NEC.c: 86: case TIMER4H:
+"86
+[e :U 675 ]
+[; ;NEC.c: 87: led_Bright();
+"87
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 88: rtc_Reset();
+"88
+[e ( _rtc_Reset ..  ]
+[; ;NEC.c: 89: TMR1IntType = INT_DELAY;
+"89
+[e = _TMR1IntType -> . `E4653 0 `uc ]
+[; ;NEC.c: 90: tmr_TMR1setPreload(0x7FFF);
+"90
+[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
+[; ;NEC.c: 91: tmr_TMR1SOSCpowerLevel('l');
+"91
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
+[; ;NEC.c: 92: rtc_SetHourDelay(4);
+"92
+[e ( _rtc_SetHourDelay (1 -> -> 4 `i `uc ]
+[; ;NEC.c: 93: break;
+"93
+[e $U 670  ]
+[; ;NEC.c: 94: case TIMER6H:
+"94
+[e :U 676 ]
+[; ;NEC.c: 95: led_Bright();
+"95
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 96: rtc_Reset();
+"96
+[e ( _rtc_Reset ..  ]
+[; ;NEC.c: 97: TMR1IntType = INT_DELAY;
+"97
+[e = _TMR1IntType -> . `E4653 0 `uc ]
+[; ;NEC.c: 98: tmr_TMR1setPreload(0x7FFF);
+"98
+[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
+[; ;NEC.c: 99: tmr_TMR1SOSCpowerLevel('l');
+"99
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
+[; ;NEC.c: 100: rtc_SetHourDelay(6);
+"100
+[e ( _rtc_SetHourDelay (1 -> -> 6 `i `uc ]
+[; ;NEC.c: 101: break;
+"101
+[e $U 670  ]
+[; ;NEC.c: 102: case TIMER8H:
+"102
+[e :U 677 ]
+[; ;NEC.c: 103: led_Bright();
+"103
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 104: rtc_Reset();
+"104
+[e ( _rtc_Reset ..  ]
+[; ;NEC.c: 105: TMR1IntType = INT_DELAY;
+"105
+[e = _TMR1IntType -> . `E4653 0 `uc ]
+[; ;NEC.c: 106: tmr_TMR1setPreload(0x7FFF);
+"106
+[e ( _tmr_TMR1setPreload (1 -> -> 32767 `i `ui ]
+[; ;NEC.c: 107: tmr_TMR1SOSCpowerLevel('l');
+"107
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
+[; ;NEC.c: 108: rtc_SetHourDelay(8);
+"108
+[e ( _rtc_SetHourDelay (1 -> -> 8 `i `uc ]
+[; ;NEC.c: 109: break;
+"109
+[e $U 670  ]
+[; ;NEC.c: 110: case DIM:
+"110
+[e :U 678 ]
+[; ;NEC.c: 111: led_Dim();
+"111
+[e ( _led_Dim ..  ]
+[; ;NEC.c: 112: break;
+"112
+[e $U 670  ]
+[; ;NEC.c: 113: case BRIGHT:
+"113
+[e :U 679 ]
+[; ;NEC.c: 114: led_Bright();
+"114
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 115: break;
+"115
+[e $U 670  ]
+[; ;NEC.c: 116: case CANDLE:
+"116
+[e :U 680 ]
+[; ;NEC.c: 117: tmr_TMR1setPreload(0xF999);
+"117
+[e ( _tmr_TMR1setPreload (1 -> 63897 `ui ]
+[; ;NEC.c: 118: TMR1IntType = INT_CANDLE;
+"118
+[e = _TMR1IntType -> . `E4653 1 `uc ]
+[; ;NEC.c: 119: tmr_TMR1Reset();
+"119
+[e ( _tmr_TMR1Reset ..  ]
+[; ;NEC.c: 120: tmr_TMR1SOSCpowerLevel('h');
+"120
+[e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 104 `ui `uc ]
+[; ;NEC.c: 121: tmr_TMR1En();
+"121
+[e ( _tmr_TMR1En ..  ]
+[; ;NEC.c: 122: break;
+"122
+[e $U 670  ]
+[; ;NEC.c: 123: case LIGHT:
+"123
+[e :U 681 ]
+[; ;NEC.c: 124: tmr_TMR1Dis();
+"124
+[e ( _tmr_TMR1Dis ..  ]
+[; ;NEC.c: 125: led_Bright();
+"125
+[e ( _led_Bright ..  ]
+[; ;NEC.c: 126: break;
+"126
+[e $U 670  ]
+"128
 }
-[; ;NEC.c: 127: }
+[; ;NEC.c: 128: }
 [e $U 670  ]
 "67
 [e :U 671 ]
@@ -5628,9 +5631,9 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> . `E4584 8 `uc 680
  , $ -> . `E4584 9 `uc 681
  670 ]
-"127
-[e :U 670 ]
-[; ;NEC.c: 128: }
 "128
+[e :U 670 ]
+[; ;NEC.c: 129: }
+"129
 [e :UE 669 ]
 }

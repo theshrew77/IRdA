@@ -56,7 +56,7 @@ __interrupt() void ISR(void){
         }
     }
     
-    if (TMR0IFG){                       //check if timer 0 is the interrupt source. This occurs when it times our from receiving an NEC packet
+    if (TMR0IFG){                       //check if timer 0 is the interrupt source. This occurs when it times out from receiving an NEC packet
         TMR0IFG = 0;                    //clear the interrupt flag
         tmr_TMR0IncRollovers();         //increment the rollover count
         

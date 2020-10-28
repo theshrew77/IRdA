@@ -8,10 +8,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _tmr_TMR1Reset `(v ~T0 @X0 0 ef ]
 "24
 [v _tmr_TMR1En `(v ~T0 @X0 0 ef ]
-"25
-[v _tmr_TMR1Dis `(v ~T0 @X0 0 ef ]
-"18 LED.h
-[v _led_Off `(v ~T0 @X0 0 ef ]
+"19 LED.h
+[v _led_Toggle `(v ~T0 @X0 0 ef ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -5190,25 +5188,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.c: 41: tRTC.Hours = 0;
 "41
 [e = . _tRTC 2 -> -> 0 `i `uc ]
-[; ;RTC.c: 42: tmr_TMR1Dis();
-"42
-[e ( _tmr_TMR1Dis ..  ]
-[; ;RTC.c: 43: led_Off();
-"43
-[e ( _led_Off ..  ]
+[; ;RTC.c: 44: rtc_SetHourDelay(24 - hourDelay);
 "44
-}
-[e :U 661 ]
+[e ( _rtc_SetHourDelay (1 -> - -> 24 `i -> _hourDelay `i `uc ]
+[; ;RTC.c: 45: led_Toggle();
 "45
-}
-[e :U 660 ]
+[e ( _led_Toggle ..  ]
 "46
 }
+[e :U 661 ]
+"47
+}
+[e :U 660 ]
+"48
+}
 [e :U 659 ]
-[; ;RTC.c: 44: }
-[; ;RTC.c: 45: }
 [; ;RTC.c: 46: }
-[; ;RTC.c: 50: }
-"50
+[; ;RTC.c: 47: }
+[; ;RTC.c: 48: }
+[; ;RTC.c: 52: }
+"52
 [e :UE 658 ]
 }

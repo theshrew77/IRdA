@@ -7914,6 +7914,7 @@ switch (NECcommand)
 case LEDON:
 tmr_TMR1Dis();
 led_Bright();
+tmr_TMR1Dis();
 break;
 case LEDOFF:
 led_Off();

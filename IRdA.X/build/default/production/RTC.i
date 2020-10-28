@@ -7697,8 +7697,10 @@ if (++tRTC.Minutes == 60){
 tRTC.Minutes = 0;
 if(++tRTC.Hours == hourDelay){
 tRTC.Hours = 0;
-tmr_TMR1Dis();
-led_Off();
+
+
+rtc_SetHourDelay(24 - hourDelay);
+led_Toggle();
 }
 }
 }
