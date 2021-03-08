@@ -7689,6 +7689,9 @@ static uint8_t LED_status = OFF;
 
 void led_ConfigureLED(void){
 
+
+
+
 TRISAbits.TRISA2 = 0;
 LATAbits.LATA2 = 1;
 TRISAbits.TRISA0 = 0;

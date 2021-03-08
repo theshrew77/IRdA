@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\10158431\AppData\Local\Temp\s38o0.o
+$C:\Users\10158431\AppData\Local\Temp\skd8.o
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 43 43 1 2
 config CONFIG 0 8007 8007 4 2
@@ -134,36 +134,36 @@ STRING 3F3-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\IRdA.X.production.o
-44 cinit CODE >5058:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-44 cinit CODE >5061:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-44 cinit CODE >5117:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-47 cinit CODE >5118:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-48 cinit CODE >5119:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-4B cinit CODE >5120:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-4C cinit CODE >5137:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-4D cinit CODE >5138:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-4E cinit CODE >5142:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-4F cinit CODE >5143:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-50 cinit CODE >5144:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-51 cinit CODE >5145:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-52 cinit CODE >5146:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-53 cinit CODE >5147:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-56 cinit CODE >5151:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-57 cinit CODE >5152:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-58 cinit CODE >5153:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-59 cinit CODE >5154:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-5A cinit CODE >5155:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-5B cinit CODE >5156:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-5E cinit CODE >5160:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-5F cinit CODE >5161:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-60 cinit CODE >5162:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-61 cinit CODE >5163:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-62 cinit CODE >5164:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-63 cinit CODE >5165:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-66 cinit CODE >5171:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-66 cinit CODE >5173:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-67 cinit CODE >5174:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-68 cinit CODE >5175:C:\Users\10158431\AppData\Local\Temp\s38o0.s
+44 cinit CODE >5058:C:\Users\10158431\AppData\Local\Temp\skd8.s
+44 cinit CODE >5061:C:\Users\10158431\AppData\Local\Temp\skd8.s
+44 cinit CODE >5117:C:\Users\10158431\AppData\Local\Temp\skd8.s
+47 cinit CODE >5118:C:\Users\10158431\AppData\Local\Temp\skd8.s
+48 cinit CODE >5119:C:\Users\10158431\AppData\Local\Temp\skd8.s
+4B cinit CODE >5120:C:\Users\10158431\AppData\Local\Temp\skd8.s
+4C cinit CODE >5137:C:\Users\10158431\AppData\Local\Temp\skd8.s
+4D cinit CODE >5138:C:\Users\10158431\AppData\Local\Temp\skd8.s
+4E cinit CODE >5142:C:\Users\10158431\AppData\Local\Temp\skd8.s
+4F cinit CODE >5143:C:\Users\10158431\AppData\Local\Temp\skd8.s
+50 cinit CODE >5144:C:\Users\10158431\AppData\Local\Temp\skd8.s
+51 cinit CODE >5145:C:\Users\10158431\AppData\Local\Temp\skd8.s
+52 cinit CODE >5146:C:\Users\10158431\AppData\Local\Temp\skd8.s
+53 cinit CODE >5147:C:\Users\10158431\AppData\Local\Temp\skd8.s
+56 cinit CODE >5151:C:\Users\10158431\AppData\Local\Temp\skd8.s
+57 cinit CODE >5152:C:\Users\10158431\AppData\Local\Temp\skd8.s
+58 cinit CODE >5153:C:\Users\10158431\AppData\Local\Temp\skd8.s
+59 cinit CODE >5154:C:\Users\10158431\AppData\Local\Temp\skd8.s
+5A cinit CODE >5155:C:\Users\10158431\AppData\Local\Temp\skd8.s
+5B cinit CODE >5156:C:\Users\10158431\AppData\Local\Temp\skd8.s
+5E cinit CODE >5160:C:\Users\10158431\AppData\Local\Temp\skd8.s
+5F cinit CODE >5161:C:\Users\10158431\AppData\Local\Temp\skd8.s
+60 cinit CODE >5162:C:\Users\10158431\AppData\Local\Temp\skd8.s
+61 cinit CODE >5163:C:\Users\10158431\AppData\Local\Temp\skd8.s
+62 cinit CODE >5164:C:\Users\10158431\AppData\Local\Temp\skd8.s
+63 cinit CODE >5165:C:\Users\10158431\AppData\Local\Temp\skd8.s
+66 cinit CODE >5171:C:\Users\10158431\AppData\Local\Temp\skd8.s
+66 cinit CODE >5173:C:\Users\10158431\AppData\Local\Temp\skd8.s
+67 cinit CODE >5174:C:\Users\10158431\AppData\Local\Temp\skd8.s
+68 cinit CODE >5175:C:\Users\10158431\AppData\Local\Temp\skd8.s
 4 intentry CODE >30:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 6 intentry CODE >33:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 B intentry CODE >34:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
@@ -185,24 +185,24 @@ F intentry CODE >35:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 3D intentry CODE >60:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 3E intentry CODE >61:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 41 intentry CODE >67:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
-388 text33 CODE >16:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-388 text33 CODE >18:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-38A text33 CODE >20:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-38C text33 CODE >21:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-38E text33 CODE >22:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-391 text33 CODE >23:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3A4 text32 CODE >33:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3A4 text32 CODE >35:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3A6 text32 CODE >37:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3A8 text32 CODE >38:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3AA text32 CODE >39:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3AC text32 CODE >40:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-366 text31 CODE >42:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-366 text31 CODE >43:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-36C text31 CODE >44:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-36F text31 CODE >45:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-370 text31 CODE >47:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-373 text31 CODE >48:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+388 text33 CODE >19:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+388 text33 CODE >21:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+38A text33 CODE >23:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+38C text33 CODE >24:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+38E text33 CODE >25:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+391 text33 CODE >26:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3A4 text32 CODE >36:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3A4 text32 CODE >38:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3A6 text32 CODE >40:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3A8 text32 CODE >41:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3AA text32 CODE >42:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3AC text32 CODE >43:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+366 text31 CODE >45:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+366 text31 CODE >46:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+36C text31 CODE >47:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+36F text31 CODE >48:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+370 text31 CODE >50:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+373 text31 CODE >51:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
 3DA text30 CODE >18:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
 3DA text30 CODE >19:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
 3DC text30 CODE >20:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
@@ -260,28 +260,28 @@ F intentry CODE >35:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 385 text20 CODE >23:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 387 text20 CODE >27:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\Interrupts.c
 39B text19 CODE >8:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-39B text19 CODE >10:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-39D text19 CODE >11:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-39F text19 CODE >12:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3A1 text19 CODE >13:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3A3 text19 CODE >14:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-374 text18 CODE >16:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-374 text18 CODE >18:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-376 text18 CODE >20:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-378 text18 CODE >21:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-37A text18 CODE >22:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-37D text18 CODE >23:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3B5 text17 CODE >25:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3B5 text17 CODE >27:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3B7 text17 CODE >29:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3B9 text17 CODE >30:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-3BC text17 CODE >31:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-392 text16 CODE >33:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-392 text16 CODE >35:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-394 text16 CODE >37:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-396 text16 CODE >38:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-398 text16 CODE >39:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
-39A text16 CODE >40:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+39B text19 CODE >13:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+39D text19 CODE >14:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+39F text19 CODE >15:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3A1 text19 CODE >16:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3A3 text19 CODE >17:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+374 text18 CODE >19:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+374 text18 CODE >21:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+376 text18 CODE >23:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+378 text18 CODE >24:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+37A text18 CODE >25:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+37D text18 CODE >26:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3B5 text17 CODE >28:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3B5 text17 CODE >30:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3B7 text17 CODE >32:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3B9 text17 CODE >33:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+3BC text17 CODE >34:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+392 text16 CODE >36:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+392 text16 CODE >38:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+394 text16 CODE >40:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+396 text16 CODE >41:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+398 text16 CODE >42:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
+39A text16 CODE >43:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\LED.c
 3D5 text15 CODE >18:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
 3D5 text15 CODE >19:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
 3D7 text15 CODE >20:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\RTC.c
@@ -487,14 +487,14 @@ F5 text6 CODE >42:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\NEC.c
 260 maintext CODE >55:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 263 maintext CODE >56:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
 265 maintext CODE >57:C:\Users\10158431\MPLABXProjects\IRdA\IRdA.X\main.c
-3C5 clrtext CODE >5126:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-3C5 clrtext CODE >5127:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-3C6 clrtext CODE >5128:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-3C6 clrtext CODE >5129:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-3C7 clrtext CODE >5130:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-3C8 clrtext CODE >5131:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-3C9 clrtext CODE >5132:C:\Users\10158431\AppData\Local\Temp\s38o0.s
-3CA clrtext CODE >5133:C:\Users\10158431\AppData\Local\Temp\s38o0.s
+3C5 clrtext CODE >5126:C:\Users\10158431\AppData\Local\Temp\skd8.s
+3C5 clrtext CODE >5127:C:\Users\10158431\AppData\Local\Temp\skd8.s
+3C6 clrtext CODE >5128:C:\Users\10158431\AppData\Local\Temp\skd8.s
+3C6 clrtext CODE >5129:C:\Users\10158431\AppData\Local\Temp\skd8.s
+3C7 clrtext CODE >5130:C:\Users\10158431\AppData\Local\Temp\skd8.s
+3C8 clrtext CODE >5131:C:\Users\10158431\AppData\Local\Temp\skd8.s
+3C9 clrtext CODE >5132:C:\Users\10158431\AppData\Local\Temp\skd8.s
+3CA clrtext CODE >5133:C:\Users\10158431\AppData\Local\Temp\skd8.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -521,12 +521,12 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 _T1CONbits 1B 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s38o0.o
+___sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\skd8.o
 _main 450 0 CODE 0 maintext dist/default/production\IRdA.X.production.o
 _tRTC 50 0 BANK0 1 bssBANK0 dist/default/production\IRdA.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __end_of_led_ConfigureLED 748 0 CODE 0 text19 dist/default/production\IRdA.X.production.o
-start 86 0 CODE 0 init C:\Users\10158431\AppData\Local\Temp\s38o0.o
+start 86 0 CODE 0 init C:\Users\10158431\AppData\Local\Temp\skd8.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -540,12 +540,12 @@ tmr_TMR1setPreload@preload 74 0 COMMON 1 cstackCOMMON dist/default/production\IR
 __size_of_tmr_TMR1setPreload 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s38o0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s38o0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s38o0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s38o0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s38o0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\s38o0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\skd8.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\skd8.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\skd8.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\skd8.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\skd8.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\10158431\AppData\Local\Temp\skd8.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 tmr_TMR0reset@i 20 0 BANK0 1 cstackBANK0 dist/default/production\IRdA.X.production.o
 _tmr_TMR0reset 56A 0 CODE 0 text2 dist/default/production\IRdA.X.production.o
@@ -578,8 +578,8 @@ i1_led_Off 748 0 CODE 0 text32 dist/default/production\IRdA.X.production.o
 __end_of_tmr_computeDelta 648 0 CODE 0 text7 dist/default/production\IRdA.X.production.o
 __end_of_tmr_TMR1SOSCpowerLevel 5FE 0 CODE 0 text10 dist/default/production\IRdA.X.production.o
 __end_ofi1_rtc_SetHourDelay 6CC 0 CODE 0 text27 dist/default/production\IRdA.X.production.o
-___stackhi 20EF 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s38o0.o
-___stacklo 20C0 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\s38o0.o
+___stackhi 20EF 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\skd8.o
+___stacklo 20C0 0 ABS 0 - C:\Users\10158431\AppData\Local\Temp\skd8.o
 __size_ofi1_tmr_TMR1Reset 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_tmr_computeDelta 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
@@ -603,7 +603,7 @@ __end_of_nec_ExecuteCommand 450 0 CODE 0 text8 dist/default/production\IRdA.X.pr
 _TMR0countArray A0 0 BANK1 1 bssBANK1 dist/default/production\IRdA.X.production.o
 __end_of_tmr_TMR0IncRollovers 68C 0 CODE 0 text24 dist/default/production\IRdA.X.production.o
 _tmr_TMR1En 7C6 0 CODE 0 text14 dist/default/production\IRdA.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\s38o0.o
+___int_sp 0 0 STACK 2 stack C:\Users\10158431\AppData\Local\Temp\skd8.o
 __size_of_tmr_TMR0Init 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_tmr_TMR1Init 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __size_of_tmr_TMR0mark 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
@@ -761,7 +761,7 @@ __CFG_BORV$LOW 0 0 ABS 0 - dist/default/production\IRdA.X.production.o
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
 _led_Bright 6E8 0 CODE 0 text18 dist/default/production\IRdA.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\10158431\AppData\Local\Temp\s38o0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\10158431\AppData\Local\Temp\skd8.o
 tmr_computeDelta@i 74 0 COMMON 1 cstackCOMMON dist/default/production\IRdA.X.production.o
 _IR_received 57 0 BANK0 1 bssBANK0 dist/default/production\IRdA.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -

@@ -6,6 +6,9 @@
 static uint8_t LED_status = OFF;
 
 void led_ConfigureLED(void){
+    
+    //ODCONAbits.ODCA2 = 1;
+    
     //set both LED pins as outputs and high
     LED1TRIS = 0;
     LED1LAT  = 1;

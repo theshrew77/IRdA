@@ -31,7 +31,7 @@ volatile uint8_t IR_received = 0;
 int main(int argc, char** argv) {
     
     uint8_t NECcommand = 0;
-    //dummy change
+    
     CPUDOZEbits.IDLEN = 0;
     osc_Config1MHz();
     pwrmgmt_DisablePeripherals();
