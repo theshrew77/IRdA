@@ -1,15 +1,15 @@
-Microchip MPLAB XC8 Compiler V2.10 ()
+Microchip MPLAB XC8 Compiler V2.32
 
 Linker command line:
 
--W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
-  -cs -h+dist/default/production\IRdA.X.production.sym \
+-W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt -cn \
+  -h+dist/default/production\IRdA.X.production.sym \
   --cmf=dist/default/production\IRdA.X.production.cmf -z -Q16LF18313 \
-  -oC:\Users\10158431\AppData\Local\Temp\skd8.2 --defsym=__MPLAB_BUILD=1 \
-  -Mdist/default/production/IRdA.X.production.map -E1 -ver=XC8 --acfsm=1493 \
-  -ASTACK=020C0h-020EFh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
-  -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
-  -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
+  -oC:\Users\jense\AppData\Local\Temp\xcAsb0k.4 --defsym=__MPLAB_BUILD=1 \
+  -Mdist/default/production/IRdA.X.production.map -E1 -ver=XC8 Compiler \
+  --acfsm=1493 -ASTACK=020C0h-020EFh -pstack=STACK -ACODE=00h-07FFh \
+  -ASTRCODE=00h-07FFh -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 \
+  -AENTRY=00h-0FFhx8 -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
   -ABANK2=0120h-016Fh -ABIGRAM=02000h-020EFh \
   -ARAM=020h-06Fh,0A0h-0EFh,0120h-016Fh \
   -AABS1=020h-07Fh,0A0h-0EFh,0120h-016Fh -ASFR0=00h-01Fh -ASFR1=080h-09Fh \
@@ -23,11 +23,11 @@ Linker command line:
   -ASFR23=0B80h-0BEFh -ASFR24=0C00h-0C6Fh -ASFR25=0C80h-0CEFh \
   -ASFR26=0D00h-0D6Fh -ASFR27=0D80h-0DEFh -ASFR28=0E00h-0E6Fh \
   -ASFR29=0E80h-0EEFh -ASFR30=0F00h-0F6Fh -ASFR31=0F80h-0FEFh \
+  -ACONFIG=08007h-0800Ah -DCONFIG=2 -AIDLOC=08000h-08003h -DIDLOC=2 \
+  -AEEDATA=00h-0FFh/0F000h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
+  -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -ACONFIG=08007h-0800Ah -pconfig=CONFIG -DCONFIG=2 \
-  -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
-  -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\10158431\AppData\Local\Temp\skd8.o \
+  -pfunctab=ENTRY -k C:\Users\jense\AppData\Local\Temp\xcAsb0k.o \
   dist/default/production\IRdA.X.production.o 
 
 Object code version is 3.11
@@ -37,13 +37,14 @@ Machine type is 16LF18313
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\10158431\AppData\Local\Temp\skd8.o
+C:\Users\jense\AppData\Local\Temp\xcAsb0k.o
                 end_init                             43       43        1        8       0
                 reset_vec                             0        0        1        0       0
-                config                             8007     8007        4    1000E       0
+                config                             8007     8007        4        0       4
 dist/default/production\IRdA.X.production.o
                 cinit                                44       44       25        8       0
                 intentry                              4        4       3F        8       0
+                config                             8007     8007        4        0       4
                 text33                              388      388        A        8       0
                 text32                              3A4      3A4        9        8       0
                 text31                              366      366        E        8       0
@@ -77,15 +78,15 @@ dist/default/production\IRdA.X.production.o
                 text2                               2B5      2B5       20        8       0
                 text1                               2D5      2D5       16        8       0
                 maintext                            228      228       40        8       0
-                cstackBANK0                          20       20       30       20       1
+                cstackBANK0                          20       20       2E       20       1
                 cstackCOMMON                         70       70        6       70       1
                 clrtext                             3C5      3C5        6        8       0
                 bssBANK2                            120      120       20      120       1
                 bssBANK1                             A0       A0       44       A0       1
-                bssBANK0                             50       50        8       20       1
+                bssBANK0                             4E       4E        8       20       1
                 dataCOMMON                           78       78        2       70       1
                 bssCOMMON                            76       76        2       70       1
-                nvBANK0                              58       58        1       20       1
+                nvBANK0                              56       56        1       20       1
                 idataCOMMON                         3F1      3F1        2        8       0
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -146,9 +147,9 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssCOMMON                            76       76        2         1
 
         CLASS   BANK0          
-                cstackBANK0                          20       20       30         1
-                bssBANK0                             50       50        8         1
-                nvBANK0                              58       58        1         1
+                cstackBANK0                          20       20       2E         1
+                bssBANK0                             4E       4E        8         1
+                nvBANK0                              56       56        1         1
 
         CLASS   BANK1          
                 bssBANK1                             A0       A0       44         1
@@ -228,7 +229,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   SFR31          
 
         CLASS   CONFIG         
-                config                             8007     8007        4         0
+                config                             8007     8007        4         4
 
         CLASS   IDLOC          
 
@@ -298,17 +299,16 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000001  000001         0       0  CODE        2
                 intentry                       000004  0003EF  0003F3         8       0  CODE        2
-                cstackBANK0                    000020  000039  000059        20       1  BANK0       1
+                cstackBANK0                    000020  000037  000057        20       1  BANK0       1
                 cstackCOMMON                   000070  00000A  00007A        70       1  COMMON      1
                 bssBANK1                       0000A0  000044  0000E4        A0       1  BANK1       1
                 bssBANK2                       000120  000020  000140       120       1  BANK2       1
-                config                         008007  000004  00800B     1000E       0  CONFIG      2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            00059-0006F              17           1
+        BANK0            00057-0006F              19           1
         BANK1            000E4-000EF               C           1
         BANK2            00140-0016F              30           1
         BIGRAM           02000-020EF              F0           1
@@ -321,7 +321,7 @@ UNUSED ADDRESS RANGES
         ENTRY            00001-00003               3           2
                          003F3-007FF             100
         IDLOC            08000-08003               4           2
-        RAM              00059-0006F              17           1
+        RAM              00057-0006F              19           1
                          000E4-000EF               C
                          00140-0016F              30
         SFR0             00000-0001F              20           1
@@ -364,16 +364,16 @@ UNUSED ADDRESS RANGES
 
                                   Symbol Table
 
-?_tmr_computeDelta                   cstackBANK0  00020
+?_tmr_computeDelta                   cstackCOMMON 00074
 _ANSELAbits                          (abs)        0018C
 _CPUDOZEbits                         (abs)        00918
 _INTCONbits                          (abs)        0000B
 _IOCAFbits                           (abs)        00393
 _IOCANbits                           (abs)        00392
-_IR_received                         bssBANK0     00057
+_IR_received                         bssBANK0     00055
 _ISR                                 intentry     00004
 _LATAbits                            (abs)        0010C
-_LED_status                          nvBANK0      00058
+_LED_status                          nvBANK0      00056
 _OSCCON1                             (abs)        00919
 _OSCCON3bits                         (abs)        0091B
 _OSCFRQ                              (abs)        0091F
@@ -393,30 +393,12 @@ _T1CONbits                           (abs)        0001B
 _TMR0H                               (abs)        00016
 _TMR0L                               (abs)        00015
 _TMR0countArray                      bssBANK1     000A0
-_TMR0rollovers                       bssBANK0     00056
+_TMR0rollovers                       bssBANK0     00054
 _TMR1H                               (abs)        0001A
 _TMR1IntType                         bssCOMMON    00077
 _TMR1L                               (abs)        00019
 _TMR1preload                         dataCOMMON   00078
 _TRISAbits                           (abs)        0008C
-__CFG_BOREN$OFF                      (abs)        00000
-__CFG_BORV$LOW                       (abs)        00000
-__CFG_CLKOUTEN$OFF                   (abs)        00000
-__CFG_CP$OFF                         (abs)        00000
-__CFG_CPD$OFF                        (abs)        00000
-__CFG_CSWEN$ON                       (abs)        00000
-__CFG_DEBUG$OFF                      (abs)        00000
-__CFG_FCMEN$OFF                      (abs)        00000
-__CFG_FEXTOSC$OFF                    (abs)        00000
-__CFG_LPBOREN$OFF                    (abs)        00000
-__CFG_LVP$OFF                        (abs)        00000
-__CFG_MCLRE$ON                       (abs)        00000
-__CFG_PPS1WAY$ON                     (abs)        00000
-__CFG_PWRTE$OFF                      (abs)        00000
-__CFG_RSTOSC$HFINT1                  (abs)        00000
-__CFG_STVREN$ON                      (abs)        00000
-__CFG_WDTE$OFF                       (abs)        00000
-__CFG_WRT$OFF                        (abs)        00000
 __Habs1                              abs1         00000
 __Hbank0                             bank0        00000
 __Hbank1                             bank1        00000
@@ -467,7 +449,6 @@ __Heeprom_data                       eeprom_data  00000
 __Hend_init                          end_init     00044
 __Hfunctab                           functab      00000
 __HidataCOMMON                       idataCOMMON  00000
-__Hidloc                             idloc        00000
 __Hinit                              init         00043
 __Hintentry                          intentry     00043
 __Hmaintext                          maintext     00000
@@ -507,10 +488,11 @@ __Hsfr6                              sfr6         00000
 __Hsfr7                              sfr7         00000
 __Hsfr8                              sfr8         00000
 __Hsfr9                              sfr9         00000
-__Hspace_0                           (abs)        0800B
+__Hspace_0                           (abs)        003F3
 __Hspace_1                           (abs)        00140
 __Hspace_2                           (abs)        00000
 __Hspace_3                           (abs)        00000
+__Hspace_4                           (abs)        10012
 __Hstack                             stack        00000
 __Hstrings                           strings      00000
 __Htext                              text         00000
@@ -556,7 +538,7 @@ __Lcinit                             cinit        00044
 __Lclrtext                           clrtext      00000
 __Lcode                              code         00000
 __Lcommon                            common       00000
-__Lconfig                            config       08007
+__Lconfig                            config       00000
 __LcstackBANK0                       cstackBANK0  00000
 __LcstackCOMMON                      cstackCOMMON 00000
 __LdataCOMMON                        dataCOMMON   00000
@@ -564,7 +546,6 @@ __Leeprom_data                       eeprom_data  00000
 __Lend_init                          end_init     00043
 __Lfunctab                           functab      00000
 __LidataCOMMON                       idataCOMMON  00000
-__Lidloc                             idloc        00000
 __Linit                              init         00043
 __Lintentry                          intentry     00004
 __Lmaintext                          maintext     00000
@@ -608,10 +589,11 @@ __Lspace_0                           (abs)        00000
 __Lspace_1                           (abs)        00000
 __Lspace_2                           (abs)        00000
 __Lspace_3                           (abs)        00000
+__Lspace_4                           (abs)        00000
 __Lstack                             stack        00000
 __Lstrings                           strings      00000
 __Ltext                              text         00000
-__S0                                 (abs)        0800B
+__S0                                 (abs)        003F3
 __S1                                 (abs)        00140
 __S2                                 (abs)        00000
 __S3                                 (abs)        00000
@@ -656,7 +638,7 @@ __end_ofi1_rtc_SetHourDelay          text27       00366
 __end_ofi1_tmr_TMR1En                text29       003EB
 __end_ofi1_tmr_TMR1Reset             text28       003C5
 __initialization                     cinit        00044
-__pbssBANK0                          bssBANK0     00050
+__pbssBANK0                          bssBANK0     0004E
 __pbssBANK1                          bssBANK1     000A0
 __pbssBANK2                          bssBANK2     00120
 __pbssCOMMON                         bssCOMMON    00076
@@ -666,7 +648,7 @@ __pdataCOMMON                        dataCOMMON   00078
 __pidataCOMMON                       idataCOMMON  003F1
 __pintentry                          intentry     00004
 __pmaintext                          maintext     00228
-__pnvBANK0                           nvBANK0      00058
+__pnvBANK0                           nvBANK0      00056
 __ptext1                             text1        002D5
 __ptext10                            text10       002EB
 __ptext11                            text11       003DF
@@ -733,10 +715,10 @@ __size_ofi1_rtc_Reset                (abs)        00000
 __size_ofi1_rtc_SetHourDelay         (abs)        00000
 __size_ofi1_tmr_TMR1En               (abs)        00000
 __size_ofi1_tmr_TMR1Reset            (abs)        00000
-_accComplete                         bssBANK0     00054
+_accComplete                         bssBANK0     00052
 _accquisitionComplete                text21       003EB
 _configureIOCInt                     text20       0037E
-_hourDelay                           bssBANK0     00053
+_hourDelay                           bssBANK0     00051
 _led_Bright                          text18       00374
 _led_ConfigureLED                    text19       0039B
 _led_Dim                             text17       003B5
@@ -751,7 +733,7 @@ _rtc_ISR                             text26       00268
 _rtc_Reset                           text15       003D5
 _rtc_SetHourDelay                    text12       00346
 _sample                              bssCOMMON    00076
-_tRTC                                bssBANK0     00050
+_tRTC                                bssBANK0     0004E
 _tmr_TMR0Dis                         text25       003EE
 _tmr_TMR0IncRollovers                text24       00335
 _tmr_TMR0Init                        text3        00324
@@ -781,13 +763,13 @@ intlevel2                            functab      00000
 intlevel3                            functab      00000
 intlevel4                            functab      00000
 intlevel5                            functab      00000
-main@NECcommand                      cstackBANK0  0004F
+main@NECcommand                      cstackBANK0  0004D
 nec_ExecuteCommand@NECcommand        cstackBANK0  00020
-nec_ProcessPacket@NECpacket          cstackBANK0  00025
-nec_ProcessPacket@address            cstackBANK0  00046
-nec_ProcessPacket@command            cstackBANK0  00045
-nec_ProcessPacket@delta              cstackBANK0  00048
-nec_ProcessPacket@i                  cstackBANK0  00047
+nec_ProcessPacket@NECpacket          cstackBANK0  00023
+nec_ProcessPacket@address            cstackBANK0  00044
+nec_ProcessPacket@command            cstackBANK0  00043
+nec_ProcessPacket@delta              cstackBANK0  00046
+nec_ProcessPacket@i                  cstackBANK0  00045
 reset_vec                            reset_vec    00000
 rtc_SetHourDelay@hours               cstackCOMMON 00075
 start                                init         00043
@@ -795,1142 +777,85 @@ start_initialization                 cinit        00044
 tmr_TMR0reset@i                      cstackBANK0  00020
 tmr_TMR1SOSCpowerLevel@level         cstackCOMMON 00074
 tmr_TMR1setPreload@preload           cstackCOMMON 00074
-tmr_computeDelta@i                   cstackCOMMON 00074
+tmr_computeDelta@i                   cstackBANK0  00020
 wtemp0                               (abs)        0007E
-
-
-FUNCTION INFORMATION:
-
- *************** function _main *****************
- Defined at:
-		line 31 in file "main.c"
- Parameters:    Size  Location     Type
-  argc            2   42[BANK0 ] int 
-  argv            2   44[BANK0 ] PTR PTR unsigned char 
- Auto vars:     Size  Location     Type
-  NECcommand      1   47[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  2   42[BANK0 ] int 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       4       0       0
-      Locals:         0       1       0       0
-      Temps:          0       1       0       0
-      Totals:         0       6       0       0
-Total ram usage:        6 bytes
- Hardware stack levels required when called:    7
- This function calls:
-		_accquisitionComplete
-		_configureIOCInt
-		_led_Bright
-		_led_ConfigureLED
-		_nec_ExecuteCommand
-		_nec_ProcessPacket
-		_osc_Config1MHz
-		_pwrmgmt_DisablePeripherals
-		_rtc_Reset
-		_tmr_TMR0Init
-		_tmr_TMR0reset
-		_tmr_TMR1Init
- This function is called by:
-		Startup code after reset
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR1Init *****************
- Defined at:
-		line 16 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR0reset *****************
- Defined at:
-		line 33 in file "tmr_TMR0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  i               2    0[BANK0 ] int 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       2       0       0
-      Temps:          1       0       0       0
-      Totals:         1       2       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR0Init *****************
- Defined at:
-		line 51 in file "tmr_TMR0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _pwrmgmt_DisablePeripherals *****************
- Defined at:
-		line 6 in file "PowerManagement.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _osc_Config1MHz *****************
- Defined at:
-		line 6 in file "Oscillator.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _nec_ProcessPacket *****************
- Defined at:
-		line 16 in file "NEC.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  i               1   39[BANK0 ] unsigned char 
-  NECpacket      32    5[BANK0 ] unsigned char [32]
-  delta           2   40[BANK0 ] unsigned int 
-  address         1   38[BANK0 ] unsigned char 
-  command         1   37[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0      37       0       0
-      Temps:          0       2       0       0
-      Totals:         0      39       0       0
-Total ram usage:       39 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_tmr_computeDelta
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _tmr_computeDelta *****************
- Defined at:
-		line 17 in file "tmr_TMR0.c"
- Parameters:    Size  Location     Type
-  i               1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  i               1    4[COMMON] unsigned char 
- Return value:  Size  Location     Type
-                  2    0[BANK0 ] unsigned int 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       3       0       0
-      Locals:         1       0       0       0
-      Temps:          0       0       0       0
-      Totals:         1       3       0       0
-Total ram usage:        4 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ProcessPacket
- This function uses a non-reentrant model
-
-
- *************** function _nec_ExecuteCommand *****************
- Defined at:
-		line 66 in file "NEC.c"
- Parameters:    Size  Location     Type
-  NECcommand      1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  NECcommand      1    0[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       1       0       0
-      Temps:          0       0       0       0
-      Totals:         0       1       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    6
- This function calls:
-		_led_Bright
-		_led_Dim
-		_led_Off
-		_rtc_Reset
-		_rtc_SetHourDelay
-		_tmr_TMR1Dis
-		_tmr_TMR1En
-		_tmr_TMR1Reset
-		_tmr_TMR1SOSCpowerLevel
-		_tmr_TMR1setPreload
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR1setPreload *****************
- Defined at:
-		line 11 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-  preload         2    4[COMMON] unsigned int 
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         2       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         2       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ExecuteCommand
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR1SOSCpowerLevel *****************
- Defined at:
-		line 60 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-  level           1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  level           1    4[COMMON] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         1       0       0       0
-      Temps:          0       0       0       0
-      Totals:         1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ExecuteCommand
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR1Dis *****************
- Defined at:
-		line 88 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ExecuteCommand
- This function uses a non-reentrant model
-
-
- *************** function _rtc_SetHourDelay *****************
- Defined at:
-		line 10 in file "RTC.c"
- Parameters:    Size  Location     Type
-  hours           1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  hours           1    5[COMMON] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         1       0       0       0
-      Temps:          1       0       0       0
-      Totals:         2       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_rtc_Reset
-		_tmr_TMR1En
-		_tmr_TMR1Reset
- This function is called by:
-		_nec_ExecuteCommand
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR1Reset *****************
- Defined at:
-		line 95 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ExecuteCommand
-		_rtc_SetHourDelay
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR1En *****************
- Defined at:
-		line 80 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ExecuteCommand
-		_rtc_SetHourDelay
- This function uses a non-reentrant model
-
-
- *************** function _rtc_Reset *****************
- Defined at:
-		line 18 in file "RTC.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
-		_nec_ExecuteCommand
-		_rtc_SetHourDelay
- This function uses a non-reentrant model
-
-
- *************** function _led_Off *****************
- Defined at:
-		line 36 in file "LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ExecuteCommand
- This function uses a non-reentrant model
-
-
- *************** function _led_Dim *****************
- Defined at:
-		line 28 in file "LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_nec_ExecuteCommand
- This function uses a non-reentrant model
-
-
- *************** function _led_Bright *****************
- Defined at:
-		line 19 in file "LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
-		_nec_ExecuteCommand
- This function uses a non-reentrant model
-
-
- *************** function _led_ConfigureLED *****************
- Defined at:
-		line 8 in file "LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _configureIOCInt *****************
- Defined at:
-		line 14 in file "Interrupts.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _accquisitionComplete *****************
- Defined at:
-		line 22 in file "tmr_TMR0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    4
- This function calls:
-		Nothing
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _ISR *****************
- Defined at:
-		line 30 in file "Interrupts.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          1       0       0       0
-      Totals:         1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    3
- This function calls:
-		_led_Toggle
-		_rtc_ISR
-		_tmr_TMR0IncRollovers
-		_tmr_TMR0mark
-		i1_tmr_TMR1Reset
- This function is called by:
-		Interrupt level 1
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR0mark *****************
- Defined at:
-		line 26 in file "tmr_TMR0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, status,2, status,0
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          3       0       0       0
-      Totals:         3       0       0       0
-Total ram usage:        3 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_ISR
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR0IncRollovers *****************
- Defined at:
-		line 41 in file "tmr_TMR0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          1       0       0       0
-      Totals:         1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		_tmr_TMR0Dis
- This function is called by:
-		_ISR
- This function uses a non-reentrant model
-
-
- *************** function _tmr_TMR0Dis *****************
- Defined at:
-		line 66 in file "tmr_TMR0.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_tmr_TMR0IncRollovers
- This function uses a non-reentrant model
-
-
- *************** function _rtc_ISR *****************
- Defined at:
-		line 24 in file "RTC.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          1       0       0       0
-      Totals:         1       0       0       0
-Total ram usage:        1 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    2
- This function calls:
-		_led_Toggle
-		i1_rtc_SetHourDelay
- This function is called by:
-		_ISR
- This function uses a non-reentrant model
-
-
- *************** function i1_rtc_SetHourDelay *****************
- Defined at:
-		line 10 in file "RTC.c"
- Parameters:    Size  Location     Type
-  hours           1    wreg     unsigned char 
- Auto vars:     Size  Location     Type
-  hours           1    1[COMMON] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         1       0       0       0
-      Temps:          1       0       0       0
-      Totals:         2       0       0       0
-Total ram usage:        2 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		i1_rtc_Reset
-		i1_tmr_TMR1En
-		i1_tmr_TMR1Reset
- This function is called by:
-		_rtc_ISR
- This function uses a non-reentrant model
-
-
- *************** function i1_tmr_TMR1Reset *****************
- Defined at:
-		line 95 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_ISR
-		i1_rtc_SetHourDelay
- This function uses a non-reentrant model
-
-
- *************** function i1_tmr_TMR1En *****************
- Defined at:
-		line 80 in file "tmr_TMR1.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		i1_rtc_SetHourDelay
- This function uses a non-reentrant model
-
-
- *************** function i1_rtc_Reset *****************
- Defined at:
-		line 18 in file "RTC.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		i1_rtc_SetHourDelay
- This function uses a non-reentrant model
-
-
- *************** function _led_Toggle *****************
- Defined at:
-		line 45 in file "LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, status,2, status,0, pclath, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    1
- This function calls:
-		i1_led_Bright
-		i1_led_Off
- This function is called by:
-		_ISR
-		_rtc_ISR
- This function uses a non-reentrant model
-
-
- *************** function i1_led_Off *****************
- Defined at:
-		line 36 in file "LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		status,2
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_led_Toggle
- This function uses a non-reentrant model
-
-
- *************** function i1_led_Bright *****************
- Defined at:
-		line 19 in file "LED.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-		None
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		None
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMMON   BANK0   BANK1   BANK2
-      Params:         0       0       0       0
-      Locals:         0       0       0       0
-      Temps:          0       0       0       0
-      Totals:         0       0       0       0
-Total ram usage:        0 bytes
- Hardware stack levels used:    1
- This function calls:
-		Nothing
- This function is called by:
-		_led_Toggle
- This function uses a non-reentrant model
-
 
 
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 LED.c
-		_led_ConfigureLED		CODE           	039B	0000	10
-		_led_Toggle    		CODE           	0366	0000	15
-		_led_Dim       		CODE           	03B5	0000	9
-		_led_Bright    		CODE           	0374	0000	11
-		_led_Off       		CODE           	0392	0000	10
+		_led_ConfigureLED		CODE           	039B	0000	9
+		_led_Toggle    		CODE           	0366	0000	14
+		_led_Dim       		CODE           	03B5	0000	8
+		_led_Bright    		CODE           	0374	0000	10
+		_led_Off       		CODE           	0392	0000	9
 
-LED.c estimated size: 55
+LED.c estimated size: 50
 
 PowerManagement.c
-		_pwrmgmt_DisablePeripherals		CODE           	02FF	0000	20
+		_pwrmgmt_DisablePeripherals		CODE           	02FF	0000	19
 
-PowerManagement.c estimated size: 20
+PowerManagement.c estimated size: 19
 
 tmr_TMR1.c
-		_tmr_TMR1SOSCpowerLevel		CODE           	02EB	0000	21
-		_tmr_TMR1En    		CODE           	03E3	0000	5
-		_tmr_TMR1Dis   		CODE           	03DF	0000	5
-		_tmr_TMR1Init  		CODE           	02D5	0000	23
-		_tmr_TMR1Reset 		CODE           	03AD	0000	9
-		_tmr_TMR1setPreload		CODE           	03D0	0000	6
+		_tmr_TMR1SOSCpowerLevel		CODE           	02EB	0000	20
+		_tmr_TMR1En    		CODE           	03E3	0000	4
+		_tmr_TMR1Dis   		CODE           	03DF	0000	4
+		_tmr_TMR1Init  		CODE           	02D5	0000	22
+		_tmr_TMR1Reset 		CODE           	03AD	0000	8
+		_tmr_TMR1setPreload		CODE           	03D0	0000	5
 
-tmr_TMR1.c estimated size: 69
+tmr_TMR1.c estimated size: 63
 
 Oscillator.c
-		_osc_Config1MHz		CODE           	03CB	0000	6
+		_osc_Config1MHz		CODE           	03CB	0000	5
 
-Oscillator.c estimated size: 6
+Oscillator.c estimated size: 5
 
 NEC.c
-		_nec_ProcessPacket		CODE           	0069	0000	268
-		_nec_ExecuteCommand		CODE           	0174	0000	181
+		_nec_ProcessPacket		CODE           	0069	0000	267
+		_nec_ExecuteCommand		CODE           	0174	0000	180
 
-NEC.c estimated size: 449
+NEC.c estimated size: 447
 
 Interrupts.c
-		_ISR           		CODE           	0004	0000	64
-		_configureIOCInt		CODE           	037E	0000	11
+		_ISR           		CODE           	0004	0000	63
+		_configureIOCInt		CODE           	037E	0000	10
 
-Interrupts.c estimated size: 75
+Interrupts.c estimated size: 73
 
 shared
-		i1_rtc_SetHourDelay		CODE           	0356	0000	17
-		i1_tmr_TMR1En  		CODE           	03E7	0000	5
-		i1_led_Off     		CODE           	03A4	0000	10
-		i1_led_Bright  		CODE           	0388	0000	11
-		__initialization		CODE           	0044	0000	35
-		i1_tmr_TMR1Reset		CODE           	03BD	0000	9
-		i1_rtc_Reset   		CODE           	03DA	0000	6
+		i1_rtc_SetHourDelay		CODE           	0356	0000	16
+		i1_tmr_TMR1En  		CODE           	03E7	0000	4
+		i1_led_Off     		CODE           	03A4	0000	9
+		i1_led_Bright  		CODE           	0388	0000	10
+		__initialization		CODE           	0044	0000	34
+		i1_tmr_TMR1Reset		CODE           	03BD	0000	8
+		i1_rtc_Reset   		CODE           	03DA	0000	5
 
-shared estimated size: 93
+shared estimated size: 86
 
 tmr_TMR0.c
-		_tmr_computeDelta		CODE           	0312	0000	19
-		_tmr_TMR0Dis   		CODE           	03EE	0000	4
-		_tmr_TMR0mark  		CODE           	0293	0000	35
-		_tmr_TMR0Init  		CODE           	0324	0000	18
-		_tmr_TMR0reset 		CODE           	02B5	0000	33
-		_tmr_TMR0IncRollovers		CODE           	0335	0000	18
-		_accquisitionComplete		CODE           	03EB	0000	4
+		_tmr_computeDelta		CODE           	0312	0000	18
+		_tmr_TMR0Dis   		CODE           	03EE	0000	3
+		_tmr_TMR0mark  		CODE           	0293	0000	34
+		_tmr_TMR0Init  		CODE           	0324	0000	17
+		_tmr_TMR0reset 		CODE           	02B5	0000	32
+		_tmr_TMR0IncRollovers		CODE           	0335	0000	17
+		_accquisitionComplete		CODE           	03EB	0000	3
 
-tmr_TMR0.c estimated size: 131
+tmr_TMR0.c estimated size: 124
 
 main.c
-		_main          		CODE           	0228	0000	65
+		_main          		CODE           	0228	0000	64
 
-main.c estimated size: 65
+main.c estimated size: 64
 
 RTC.c
-		_rtc_Reset     		CODE           	03D5	0000	6
-		_rtc_SetHourDelay		CODE           	0346	0000	17
-		_rtc_ISR       		CODE           	0268	0000	44
+		_rtc_Reset     		CODE           	03D5	0000	5
+		_rtc_SetHourDelay		CODE           	0346	0000	16
+		_rtc_ISR       		CODE           	0268	0000	43
 
-RTC.c estimated size: 67
+RTC.c estimated size: 64
 

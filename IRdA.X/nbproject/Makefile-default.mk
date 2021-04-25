@@ -94,7 +94,7 @@ MP_PROCESSOR_OPTION=16LF18313
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
@@ -102,7 +102,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Interrupts.p1.d 
 	@${RM} ${OBJECTDIR}/Interrupts.p1 
@@ -110,7 +110,7 @@ ${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Interrupts.d ${OBJECTDIR}/Interrupts.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Interrupts.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/NEC.p1: NEC.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/NEC.p1: NEC.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/NEC.p1.d 
 	@${RM} ${OBJECTDIR}/NEC.p1 
@@ -118,7 +118,7 @@ ${OBJECTDIR}/NEC.p1: NEC.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/NEC.d ${OBJECTDIR}/NEC.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/NEC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/PowerManagement.p1: PowerManagement.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/PowerManagement.p1: PowerManagement.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/PowerManagement.p1.d 
 	@${RM} ${OBJECTDIR}/PowerManagement.p1 
@@ -126,7 +126,7 @@ ${OBJECTDIR}/PowerManagement.p1: PowerManagement.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/PowerManagement.d ${OBJECTDIR}/PowerManagement.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/PowerManagement.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/tmr_TMR1.p1: tmr_TMR1.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/tmr_TMR1.p1: tmr_TMR1.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tmr_TMR1.p1.d 
 	@${RM} ${OBJECTDIR}/tmr_TMR1.p1 
@@ -134,7 +134,7 @@ ${OBJECTDIR}/tmr_TMR1.p1: tmr_TMR1.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/tmr_TMR1.d ${OBJECTDIR}/tmr_TMR1.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tmr_TMR1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/LED.p1: LED.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/LED.p1: LED.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/LED.p1.d 
 	@${RM} ${OBJECTDIR}/LED.p1 
@@ -142,7 +142,7 @@ ${OBJECTDIR}/LED.p1: LED.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/LED.d ${OBJECTDIR}/LED.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/LED.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Oscillator.p1.d 
 	@${RM} ${OBJECTDIR}/Oscillator.p1 
@@ -150,7 +150,7 @@ ${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Oscillator.d ${OBJECTDIR}/Oscillator.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tmr_TMR0.p1.d 
 	@${RM} ${OBJECTDIR}/tmr_TMR0.p1 
@@ -158,7 +158,7 @@ ${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/tmr_TMR0.d ${OBJECTDIR}/tmr_TMR0.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tmr_TMR0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/RTC.p1: RTC.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/RTC.p1: RTC.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/RTC.p1.d 
 	@${RM} ${OBJECTDIR}/RTC.p1 
@@ -167,7 +167,7 @@ ${OBJECTDIR}/RTC.p1: RTC.c  nbproject/Makefile-${CND_CONF}.mk
 	@${FIXDEPS} ${OBJECTDIR}/RTC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.p1.d 
 	@${RM} ${OBJECTDIR}/main.p1 
@@ -175,7 +175,7 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Interrupts.p1.d 
 	@${RM} ${OBJECTDIR}/Interrupts.p1 
@@ -183,7 +183,7 @@ ${OBJECTDIR}/Interrupts.p1: Interrupts.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Interrupts.d ${OBJECTDIR}/Interrupts.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Interrupts.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/NEC.p1: NEC.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/NEC.p1: NEC.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/NEC.p1.d 
 	@${RM} ${OBJECTDIR}/NEC.p1 
@@ -191,7 +191,7 @@ ${OBJECTDIR}/NEC.p1: NEC.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/NEC.d ${OBJECTDIR}/NEC.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/NEC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/PowerManagement.p1: PowerManagement.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/PowerManagement.p1: PowerManagement.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/PowerManagement.p1.d 
 	@${RM} ${OBJECTDIR}/PowerManagement.p1 
@@ -199,7 +199,7 @@ ${OBJECTDIR}/PowerManagement.p1: PowerManagement.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/PowerManagement.d ${OBJECTDIR}/PowerManagement.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/PowerManagement.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/tmr_TMR1.p1: tmr_TMR1.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/tmr_TMR1.p1: tmr_TMR1.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tmr_TMR1.p1.d 
 	@${RM} ${OBJECTDIR}/tmr_TMR1.p1 
@@ -207,7 +207,7 @@ ${OBJECTDIR}/tmr_TMR1.p1: tmr_TMR1.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/tmr_TMR1.d ${OBJECTDIR}/tmr_TMR1.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tmr_TMR1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/LED.p1: LED.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/LED.p1: LED.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/LED.p1.d 
 	@${RM} ${OBJECTDIR}/LED.p1 
@@ -215,7 +215,7 @@ ${OBJECTDIR}/LED.p1: LED.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/LED.d ${OBJECTDIR}/LED.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/LED.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/Oscillator.p1.d 
 	@${RM} ${OBJECTDIR}/Oscillator.p1 
@@ -223,7 +223,7 @@ ${OBJECTDIR}/Oscillator.p1: Oscillator.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/Oscillator.d ${OBJECTDIR}/Oscillator.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/Oscillator.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/tmr_TMR0.p1.d 
 	@${RM} ${OBJECTDIR}/tmr_TMR0.p1 
@@ -231,7 +231,7 @@ ${OBJECTDIR}/tmr_TMR0.p1: tmr_TMR0.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/tmr_TMR0.d ${OBJECTDIR}/tmr_TMR0.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tmr_TMR0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/RTC.p1: RTC.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/RTC.p1: RTC.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/RTC.p1.d 
 	@${RM} ${OBJECTDIR}/RTC.p1 
