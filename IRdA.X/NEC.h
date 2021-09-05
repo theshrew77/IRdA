@@ -86,6 +86,7 @@ typedef enum {
 #endif
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
+void nec_TimerCommand(uint8_t hours);
 
 #ifdef	__cplusplus
 extern "C" {

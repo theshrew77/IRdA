@@ -31,7 +31,7 @@ void tmr_TMR0mark(void){
 }
 
 void tmr_TMR0reset(void){
-    for (int i = 0; i < 33; i++){
+    for (uint8_t i = 0; i < 33; i++){
         TMR0countArray[i] = 0;
     }
     sample = 0;

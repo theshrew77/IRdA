@@ -63,54 +63,46 @@ uint8_t nec_ProcessPacket(void){
         return(0);
 }
 
+void nec_TimerCommand(uint8_t hours)
+{
+    led_Ack();
+    led_Bright();
+    rtc_Reset();
+    TMR1IntType = INT_DELAY;
+    tmr_TMR1setPreload(TMR1_1s);
+    tmr_TMR1SOSCpowerLevel('l');
+    rtc_SetHourDelay(hours);
+}
 void nec_ExecuteCommand(uint8_t NECcommand){
     switch (NECcommand)
     {
         case LEDON:
+            led_Ack();
             tmr_TMR1Dis();
             led_Bright();  
-            tmr_TMR1Dis();
             break;
         case LEDOFF:
             led_Off();
             tmr_TMR1Dis();
             break;
         case TIMER2H:
-            led_Bright();
-            rtc_Reset();
-            TMR1IntType = INT_DELAY;
-            tmr_TMR1setPreload(TMR1_1s);
-            tmr_TMR1SOSCpowerLevel('l');
-            rtc_SetHourDelay(2);
+            nec_TimerCommand(2);
             break;
         case TIMER4H:
-            led_Bright();
-            rtc_Reset();
-            TMR1IntType = INT_DELAY;
-            tmr_TMR1setPreload(TMR1_1s);
-            tmr_TMR1SOSCpowerLevel('l');
-            rtc_SetHourDelay(4);
+            nec_TimerCommand(4);
             break;
         case TIMER6H:
-            led_Bright();
-            rtc_Reset();
-            TMR1IntType = INT_DELAY;
-            tmr_TMR1setPreload(TMR1_1s);
-            tmr_TMR1SOSCpowerLevel('l');
-            rtc_SetHourDelay(6);
+            nec_TimerCommand(6);
             break;
         case TIMER8H:
-            led_Bright();
-            rtc_Reset();
-            TMR1IntType = INT_DELAY;
-            tmr_TMR1setPreload(TMR1_1s);
-            tmr_TMR1SOSCpowerLevel('l');
-            rtc_SetHourDelay(8);
+            nec_TimerCommand(8);
             break;
         case DIM:
+            led_Ack();
             led_Dim();
             break;
         case BRIGHT:
+            led_Ack();
             led_Bright();
             break;
         case CANDLE:
@@ -121,6 +113,7 @@ void nec_ExecuteCommand(uint8_t NECcommand){
             tmr_TMR1En();
             break;
         case LIGHT:
+            led_Ack();
             tmr_TMR1Dis();
             led_Bright();
             break;
