@@ -7772,6 +7772,7 @@ LIGHT = 0x97
 # 87
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
+void nec_TimerCommand(uint8_t hours);
 
 # 26 "tmr_TMR0.h"
 uint16_t tmr_computeDelta(uint8_t i);
@@ -7796,6 +7797,7 @@ void led_Bright(void);
 void led_Dim(void);
 void led_Off(void);
 void led_Toggle(void);
+void led_Ack(void);
 
 # 18 "main.h"
 typedef enum{
@@ -7907,54 +7909,46 @@ else
 return(0);
 }
 
+void nec_TimerCommand(uint8_t hours)
+{
+led_Ack();
+led_Bright();
+rtc_Reset();
+TMR1IntType = INT_DELAY;
+tmr_TMR1setPreload(0x7FFF);
+tmr_TMR1SOSCpowerLevel('l');
+rtc_SetHourDelay(hours);
+}
 void nec_ExecuteCommand(uint8_t NECcommand){
 switch (NECcommand)
 {
 case LEDON:
+led_Ack();
 tmr_TMR1Dis();
 led_Bright();
-tmr_TMR1Dis();
 break;
 case LEDOFF:
 led_Off();
 tmr_TMR1Dis();
 break;
 case TIMER2H:
-led_Bright();
-rtc_Reset();
-TMR1IntType = INT_DELAY;
-tmr_TMR1setPreload(0x7FFF);
-tmr_TMR1SOSCpowerLevel('l');
-rtc_SetHourDelay(2);
+nec_TimerCommand(2);
 break;
 case TIMER4H:
-led_Bright();
-rtc_Reset();
-TMR1IntType = INT_DELAY;
-tmr_TMR1setPreload(0x7FFF);
-tmr_TMR1SOSCpowerLevel('l');
-rtc_SetHourDelay(4);
+nec_TimerCommand(4);
 break;
 case TIMER6H:
-led_Bright();
-rtc_Reset();
-TMR1IntType = INT_DELAY;
-tmr_TMR1setPreload(0x7FFF);
-tmr_TMR1SOSCpowerLevel('l');
-rtc_SetHourDelay(6);
+nec_TimerCommand(6);
 break;
 case TIMER8H:
-led_Bright();
-rtc_Reset();
-TMR1IntType = INT_DELAY;
-tmr_TMR1setPreload(0x7FFF);
-tmr_TMR1SOSCpowerLevel('l');
-rtc_SetHourDelay(8);
+nec_TimerCommand(8);
 break;
 case DIM:
+led_Ack();
 led_Dim();
 break;
 case BRIGHT:
+led_Ack();
 led_Bright();
 break;
 case CANDLE:
@@ -7965,6 +7959,7 @@ tmr_TMR1SOSCpowerLevel('h');
 tmr_TMR1En();
 break;
 case LIGHT:
+led_Ack();
 tmr_TMR1Dis();
 led_Bright();
 break;

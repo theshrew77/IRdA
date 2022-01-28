@@ -19,8 +19,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _rtc_Reset `(v ~T0 @X0 0 ef ]
 "15 LED.h
 [v _led_ConfigureLED `(v ~T0 @X0 0 ef ]
-"16
-[v _led_Bright `(v ~T0 @X0 0 ef ]
+"18
+[v _led_Off `(v ~T0 @X0 0 ef ]
 "31 Interrupts.h
 [v _configureIOCInt `(v ~T0 @X0 0 ef ]
 "31 tmr_TMR0.h
@@ -5305,11 +5305,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;NEC.h: 70: } NEC_commands_t;
 [; ;NEC.h: 87: uint8_t nec_ProcessPacket(void);
 [; ;NEC.h: 88: void nec_ExecuteCommand(uint8_t NECcommand);
+[; ;NEC.h: 89: void nec_TimerCommand(uint8_t hours);
 [; ;LED.h: 15: void led_ConfigureLED(void);
 [; ;LED.h: 16: void led_Bright(void);
 [; ;LED.h: 17: void led_Dim(void);
 [; ;LED.h: 18: void led_Off(void);
 [; ;LED.h: 19: void led_Toggle(void);
+[; ;LED.h: 20: void led_Ack(void);
 [; ;Oscillator.h: 17: void osc_Config1MHz(void);
 [; ;PowerManagement.h: 10: void pwrmgmt_DisablePeripherals(void);
 [; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
@@ -5362,9 +5364,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 39: led_ConfigureLED();
 "39
 [e ( _led_ConfigureLED ..  ]
-[; ;main.c: 40: led_Bright();
+[; ;main.c: 40: led_Off();
 "40
-[e ( _led_Bright ..  ]
+[e ( _led_Off ..  ]
 [; ;main.c: 41: configureIOCInt();
 "41
 [e ( _configureIOCInt ..  ]

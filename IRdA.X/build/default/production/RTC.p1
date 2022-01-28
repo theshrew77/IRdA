@@ -5110,6 +5110,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LED.h: 17: void led_Dim(void);
 [; ;LED.h: 18: void led_Off(void);
 [; ;LED.h: 19: void led_Toggle(void);
+[; ;LED.h: 20: void led_Ack(void);
 "7 RTC.c
 [v _tRTC `S655 ~T0 @X0 1 e ]
 [; ;RTC.c: 7: RTC_t tRTC;

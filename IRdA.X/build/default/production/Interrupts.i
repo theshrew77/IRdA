@@ -7707,6 +7707,7 @@ void led_Bright(void);
 void led_Dim(void);
 void led_Off(void);
 void led_Toggle(void);
+void led_Ack(void);
 
 # 13 "RTC.h"
 typedef struct

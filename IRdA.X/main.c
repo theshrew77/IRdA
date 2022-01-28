@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
     pwrmgmt_DisablePeripherals();
     rtc_Reset();
     led_ConfigureLED();
-    led_Bright();
+    led_Off();
     configureIOCInt();
     tmr_TMR0Init();
     tmr_TMR0reset();

@@ -7824,6 +7824,7 @@ LIGHT = 0x97
 # 87
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
+void nec_TimerCommand(uint8_t hours);
 
 # 14 "Que.h"
 typedef struct {
@@ -7873,7 +7874,7 @@ sample++;
 }
 
 void tmr_TMR0reset(void){
-for (int i = 0; i < 33; i++){
+for (uint8_t i = 0; i < 33; i++){
 TMR0countArray[i] = 0;
 }
 sample = 0;

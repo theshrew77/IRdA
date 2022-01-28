@@ -7647,6 +7647,7 @@ void led_Bright(void);
 void led_Dim(void);
 void led_Off(void);
 void led_Toggle(void);
+void led_Ack(void);
 
 # 18 "main.h"
 typedef enum{
@@ -7686,6 +7687,7 @@ ON = 1,
 # 6 "LED.c"
 static uint8_t LED_status = OFF;
 
+# 13
 void led_ConfigureLED(void){
 
 
@@ -7699,9 +7701,8 @@ LATAbits.LATA0 = 1;
 
 void led_Bright(void){
 
-LATAbits.LATA2 = 0;
+LATAbits.LATA2 = 1;
 
-TRISAbits.TRISA0 = 0;
 LATAbits.LATA0 = 0;
 LED_status = ON;
 }
@@ -7710,16 +7711,15 @@ void led_Dim(void){
 
 LATAbits.LATA2 = 0;
 
-TRISAbits.TRISA0 = 1;
+LATAbits.LATA0 = 1;
 LED_status = ON;
 }
 
 void led_Off(void){
 
-LATAbits.LATA2 = 1;
+LATAbits.LATA2 = 0;
 
-TRISAbits.TRISA0 = 0;
-LATAbits.LATA0 = 1;
+LATAbits.LATA0 = 0;
 LED_status = OFF;
 }
 
@@ -7729,5 +7729,15 @@ led_Off();
 }
 else
 led_Bright();
+}
+
+void led_Ack(void){
+if (LED_status == ON){
+led_Off();
+_delay((unsigned long)((100)*(1000000/4000.0)));
+led_Bright();
+}
+
+
 }
 

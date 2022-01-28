@@ -7668,6 +7668,7 @@ void led_Bright(void);
 void led_Dim(void);
 void led_Off(void);
 void led_Toggle(void);
+void led_Ack(void);
 
 # 7 "RTC.c"
 RTC_t tRTC;

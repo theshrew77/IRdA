@@ -7898,6 +7898,7 @@ LIGHT = 0x97
 # 87
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
+void nec_TimerCommand(uint8_t hours);
 
 # 15 "LED.h"
 void led_ConfigureLED(void);
@@ -7905,6 +7906,7 @@ void led_Bright(void);
 void led_Dim(void);
 void led_Off(void);
 void led_Toggle(void);
+void led_Ack(void);
 
 # 17 "Oscillator.h"
 void osc_Config1MHz(void);
@@ -7948,7 +7950,7 @@ osc_Config1MHz();
 pwrmgmt_DisablePeripherals();
 rtc_Reset();
 led_ConfigureLED();
-led_Bright();
+led_Off();
 configureIOCInt();
 tmr_TMR0Init();
 tmr_TMR0reset();

@@ -5239,6 +5239,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LED.h: 17: void led_Dim(void);
 [; ;LED.h: 18: void led_Off(void);
 [; ;LED.h: 19: void led_Toggle(void);
+[; ;LED.h: 20: void led_Ack(void);
 [; ;RTC.h: 13: typedef struct
 [; ;RTC.h: 14: {
 [; ;RTC.h: 15: uint8_t Seconds;
