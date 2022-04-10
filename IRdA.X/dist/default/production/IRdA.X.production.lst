@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Thu Jan 27 20:34:38 2022
+                                                                                               Sun Apr 10 10:23:36 2022
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16LF18313
@@ -4112,42 +4112,42 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4098  01BB  0821               	movf	nec_ExecuteCommand@NECcommand,w
   4099                           
   4100                           ; Switch size 1, requested type "simple"
-  4101                           ; Number of cases is 10, Range of values is 31 to 255
+  4101                           ; Number of cases is 10, Range of values is 79 to 255
   4102                           ; switch strategies available:
   4103                           ; Name         Instructions Cycles
   4104                           ; simple_byte           31    16 (average)
   4105                           ; jumptable            263     9 (fixed)
   4106                           ;	Chosen strategy is simple_byte
-  4107  01BC  3A1F               	xorlw	31	; case 31
+  4107  01BC  3A4F               	xorlw	79	; case 79
   4108  01BD  1903               	skipnz
-  4109  01BE  29A3               	goto	l1802
-  4110  01BF  3A20               	xorlw	32	; case 63
+  4109  01BE  29A7               	goto	l1806
+  4110  01BF  3A18               	xorlw	24	; case 87
   4111  01C0  1903               	skipnz
-  4112  01C1  298D               	goto	l1792
-  4113  01C2  3A70               	xorlw	112	; case 79
+  4112  01C1  2997               	goto	l1796
+  4113  01C2  3A38               	xorlw	56	; case 111
   4114  01C3  1903               	skipnz
-  4115  01C4  29A7               	goto	l1806
-  4116  01C5  3A10               	xorlw	16	; case 95
+  4115  01C4  298D               	goto	l1792
+  4116  01C5  3A10               	xorlw	16	; case 127
   4117  01C6  1903               	skipnz
-  4118  01C7  2997               	goto	l1796
-  4119  01C8  3A30               	xorlw	48	; case 111
+  4118  01C7  2977               	goto	l1782
+  4119  01C8  3AF0               	xorlw	240	; case 143
   4120  01C9  1903               	skipnz
   4121  01CA  299C               	goto	l1798
-  4122  01CB  3A10               	xorlw	16	; case 127
+  4122  01CB  3A18               	xorlw	24	; case 151
   4123  01CC  1903               	skipnz
-  4124  01CD  2981               	goto	l1788
-  4125  01CE  3AE8               	xorlw	232	; case 151
+  4124  01CD  2977               	goto	l1782
+  4125  01CE  3A38               	xorlw	56	; case 175
   4126  01CF  1903               	skipnz
-  4127  01D0  2977               	goto	l1782
-  4128  01D1  3A28               	xorlw	40	; case 191
+  4127  01D0  2992               	goto	l1794
+  4128  01D1  3A60               	xorlw	96	; case 207
   4129  01D2  1903               	skipnz
   4130  01D3  2988               	goto	l1790
-  4131  01D4  3A60               	xorlw	96	; case 223
+  4131  01D4  3A18               	xorlw	24	; case 215
   4132  01D5  1903               	skipnz
-  4133  01D6  2992               	goto	l1794
-  4134  01D7  3A20               	xorlw	32	; case 255
+  4133  01D6  29A3               	goto	l1802
+  4134  01D7  3A28               	xorlw	40	; case 255
   4135  01D8  1903               	skipnz
-  4136  01D9  2977               	goto	l1782
+  4136  01D9  2981               	goto	l1788
   4137  01DA  29DB               	goto	l148
   4138  01DB                     l148:
   4139  01DB  0008               	return
@@ -6351,7 +6351,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Thu Jan 27 20:34:38 2022
+Symbol Table                                                                                   Sun Apr 10 10:23:36 2022
 
                 __end_ofi1_rtc_Reset 03A2                          _IR_received 0056  
                __end_ofi1_tmr_TMR1En 03B3                                   l35 01F9  

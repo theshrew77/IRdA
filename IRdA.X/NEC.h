@@ -22,7 +22,8 @@
 #define NEC_ADDRESS     0 
 //#define OLDREMOTE
 //#define GRANDINROAD
-#define SCOTTLIVING
+//#define SCOTTLIVING
+#define ALIBABA
 //#define LGTV
 
 #ifdef OLDREMOTE
@@ -41,6 +42,21 @@ typedef enum {
 #endif
 
 #ifdef GRANDINROAD
+typedef enum {
+    LEDON   =   0x7F,
+    LEDOFF  =   0xFF,
+    TIMER2H =   0xCF,    
+    TIMER4H =   0x6F, 
+    TIMER6H =   0xAF, 
+    TIMER8H =   0x57, 
+    DIM =       0x8F, 
+    BRIGHT =    0xD7, 
+    CANDLE =    0x4F,
+    LIGHT =     0x97
+} NEC_commands_t;
+#endif
+
+#ifdef ALIBABA
 typedef enum {
     LEDON   =   0x7F,
     LEDOFF  =   0xFF,

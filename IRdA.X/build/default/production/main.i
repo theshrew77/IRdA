@@ -7881,21 +7881,21 @@ void tmr_TMR0IncRollovers(void);
 void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
 
-# 59 "NEC.h"
+# 60 "NEC.h"
 typedef enum {
-LEDON = 0xFF,
-LEDOFF = 0x7F,
-TIMER2H = 0xBF,
-TIMER4H = 0x3F,
-TIMER6H = 0xDF,
-TIMER8H = 0x5F,
-DIM = 0x6F,
-BRIGHT = 0x1F,
+LEDON = 0x7F,
+LEDOFF = 0xFF,
+TIMER2H = 0xCF,
+TIMER4H = 0x6F,
+TIMER6H = 0xAF,
+TIMER8H = 0x57,
+DIM = 0x8F,
+BRIGHT = 0xD7,
 CANDLE = 0x4F,
 LIGHT = 0x97
 } NEC_commands_t;
 
-# 87
+# 103
 uint8_t nec_ProcessPacket(void);
 void nec_ExecuteCommand(uint8_t NECcommand);
 void nec_TimerCommand(uint8_t hours);

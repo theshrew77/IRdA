@@ -39,9 +39,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S25 . . ]
 "365
 [v _INTCONbits `VS25 ~T0 @X0 0 e@11 ]
-"87 NEC.h
+"103 NEC.h
 [v _nec_ProcessPacket `(uc ~T0 @X0 0 ef ]
-"88
+"104
 [v _nec_ExecuteCommand `(v ~T0 @X0 0 ef1`uc ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -5291,21 +5291,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr_TMR0.h: 30: void tmr_TMR0IncRollovers(void);
 [; ;tmr_TMR0.h: 31: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
-[; ;NEC.h: 59: typedef enum {
-[; ;NEC.h: 60: LEDON = 0xFF,
-[; ;NEC.h: 61: LEDOFF = 0x7F,
-[; ;NEC.h: 62: TIMER2H = 0xBF,
-[; ;NEC.h: 63: TIMER4H = 0x3F,
-[; ;NEC.h: 64: TIMER6H = 0xDF,
-[; ;NEC.h: 65: TIMER8H = 0x5F,
-[; ;NEC.h: 66: DIM = 0x6F,
-[; ;NEC.h: 67: BRIGHT = 0x1F,
-[; ;NEC.h: 68: CANDLE = 0x4F,
-[; ;NEC.h: 69: LIGHT = 0x97
-[; ;NEC.h: 70: } NEC_commands_t;
-[; ;NEC.h: 87: uint8_t nec_ProcessPacket(void);
-[; ;NEC.h: 88: void nec_ExecuteCommand(uint8_t NECcommand);
-[; ;NEC.h: 89: void nec_TimerCommand(uint8_t hours);
+[; ;NEC.h: 60: typedef enum {
+[; ;NEC.h: 61: LEDON = 0x7F,
+[; ;NEC.h: 62: LEDOFF = 0xFF,
+[; ;NEC.h: 63: TIMER2H = 0xCF,
+[; ;NEC.h: 64: TIMER4H = 0x6F,
+[; ;NEC.h: 65: TIMER6H = 0xAF,
+[; ;NEC.h: 66: TIMER8H = 0x57,
+[; ;NEC.h: 67: DIM = 0x8F,
+[; ;NEC.h: 68: BRIGHT = 0xD7,
+[; ;NEC.h: 69: CANDLE = 0x4F,
+[; ;NEC.h: 70: LIGHT = 0x97
+[; ;NEC.h: 71: } NEC_commands_t;
+[; ;NEC.h: 103: uint8_t nec_ProcessPacket(void);
+[; ;NEC.h: 104: void nec_ExecuteCommand(uint8_t NECcommand);
+[; ;NEC.h: 105: void nec_TimerCommand(uint8_t hours);
 [; ;LED.h: 15: void led_ConfigureLED(void);
 [; ;LED.h: 16: void led_Bright(void);
 [; ;LED.h: 17: void led_Dim(void);
