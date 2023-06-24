@@ -9,7 +9,7 @@
 #define	TMR_TMR1_H
 #define TMR1IFG     PIR1bits.TMR1IF
 #define TMR1MAX     0xFFFF
-#define TMR1_1s     0x7FFF 
+#define TMR1_1s     0x8000 
 #define TMR1_candle 0xF999
 #define TMR1PRE     T1CONbits.T1CKPS
 #define TMR1CS      T1CONbits.TMR1CS

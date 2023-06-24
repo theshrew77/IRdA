@@ -1,9 +1,19 @@
  build/default/production/tmr_TMR0.d  \
  build/default/production/tmr_TMR0.p1:  \
  tmr_TMR0.c  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/language_support.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/pic.h  \
 main.h  \
 Interrupts.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/__size_t.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/eeprom_routines.h  \
 tmr_TMR0.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/pic_chip_select.h  \
 NEC.h  \
 uart_UCA0.h  \
-Que.h 
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/xc.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/proc/pic16lf18313.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/htc.h  \
+Que.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/__null.h  \
+C:/Users/jense/.mchp_packs/Microchip/PIC16F1xxxx_DFP/1.3.117/xc8/pic/include/__at.h 

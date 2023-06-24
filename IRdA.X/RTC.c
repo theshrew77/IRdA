@@ -22,7 +22,7 @@ void rtc_Reset(void){
 }
 
 void rtc_ISR(void){
-  /*
+    /*
     if (++tRTC.Seconds == 60){
         tRTC.Seconds = 0;
         if (++tRTC.Minutes == hourDelay){
@@ -46,7 +46,7 @@ void rtc_ISR(void){
             } 
         }
     }
+
     
-  
- 
+    
 }
