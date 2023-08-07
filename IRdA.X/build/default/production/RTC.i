@@ -7655,7 +7655,7 @@ void rtc_SetHourDelay(uint8_t hours);
 void rtc_Reset(void);
 void rtc_ISR(void);
 
-# 21 "tmr_TMR1.h"
+# 25 "tmr_TMR1.h"
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
 void tmr_TMR1SOSCpowerLevel(char level);
@@ -7692,9 +7692,9 @@ tRTC.Hours = 0;
 void rtc_ISR(void){
 
 # 36
-if (++tRTC.Seconds == 15){
+if (++tRTC.Seconds == 60){
 tRTC.Seconds = 0;
-if (++tRTC.Minutes == 5){
+if (++tRTC.Minutes == 60){
 tRTC.Minutes = 0;
 if(++tRTC.Hours == hourDelay){
 tRTC.Hours = 0;
@@ -7706,5 +7706,6 @@ led_Toggle();
 }
 }
 
-# 54
+
+
 }

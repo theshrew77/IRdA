@@ -7642,7 +7642,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 21 "tmr_TMR1.h"
+# 25 "tmr_TMR1.h"
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
 void tmr_TMR1SOSCpowerLevel(char level);
@@ -7694,7 +7694,7 @@ ON = 1,
 #pragma config CPD = OFF
 
 # 9 "tmr_TMR1.c"
-static uint16_t TMR1preload = 0x8000;
+static uint16_t TMR1preload = 0x8003;
 
 void tmr_TMR1setPreload(uint16_t preload){
 TMR1preload = preload;

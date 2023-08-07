@@ -534,7 +534,7 @@ ON 1
 "24 E:\ART\TinySpot\Code\VersionControlled\IRdA\IRdA.X\RTC.c
 [v _rtc_ISR rtc_ISR `(v  1 e 1 0 ]
 {
-"54
+"52
 } 0
 "10
 [v i1_rtc_SetHourDelay rtc_SetHourDelay `(v  1 e 1 0 ]

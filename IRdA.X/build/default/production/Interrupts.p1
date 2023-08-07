@@ -84,7 +84,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S31 . . ]
 "484
 [v _PIR1bits `VS31 ~T0 @X0 0 e@17 ]
-"26 tmr_TMR1.h
+"30 tmr_TMR1.h
 [v _tmr_TMR1Reset `(v ~T0 @X0 0 ef ]
 "12 Interrupts.c
 [v _TMR1IntType `uc ~T0 @X0 0 e ]
@@ -5223,12 +5223,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr_TMR0.h: 30: void tmr_TMR0IncRollovers(void);
 [; ;tmr_TMR0.h: 31: void tmr_TMR0Init(void);
 [; ;tmr_TMR0.h: 32: void tmr_TMR0Dis(void);
-[; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1setPreload(uint16_t preload);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Init(void);
+[; ;tmr_TMR1.h: 27: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 28: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 29: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 30: void tmr_TMR1Reset(void);
 [; ;Interrupts.h: 26: typedef enum{
 [; ;Interrupts.h: 27: INT_DELAY = 0,
 [; ;Interrupts.h: 28: INT_CANDLE = 1

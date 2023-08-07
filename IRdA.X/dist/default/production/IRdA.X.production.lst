@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Thu Apr 27 22:00:55 2023
+                                                                                               Fri Aug 04 18:09:35 2023
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16LF18313
@@ -2503,7 +2503,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2489  03B9                     __pidataCOMMON:
   2490                           
   2491                           ;initializer for _TMR1preload
-  2492  03B9  3400               	retlw	0
+  2492  03B9  3403               	retlw	3
   2493  03BA  3480               	retlw	128
   2494  0018                     _T0CON1bits	set	24
   2495  0019                     _TMR1L	set	25
@@ -4266,8 +4266,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4252  0274  01F7               	clrf	_TMR1IntType
   4253  0275                     l1722:
   4254                           
-  4255                           ;NEC.c: 72: tmr_TMR1setPreload(0x8000);
-  4256  0275  3000               	movlw	0
+  4255                           ;NEC.c: 72: tmr_TMR1setPreload(0x8003);
+  4256  0275  3003               	movlw	3
   4257  0276  00F4               	movwf	tmr_TMR1setPreload@preload
   4258  0277  3080               	movlw	128
   4259  0278  00F5               	movwf	tmr_TMR1setPreload@preload+1
@@ -5481,13 +5481,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5467                           ; Regs used in _rtc_ISR: [wreg+status,2+status,0+pclath+cstack]
   5468                           
   5469                           
-  5470                           ;RTC.c: 36: if (++tRTC.Seconds == 15){
+  5470                           ;RTC.c: 36: if (++tRTC.Seconds == 60){
   5471  021C  3001               	movlw	1
   5472  021D  00F2               	movwf	??_rtc_ISR
   5473  021E  0872               	movf	??_rtc_ISR,w
   5474  021F  0020               	movlb	0	; select bank0
   5475  0220  07CE               	addwf	_tRTC,f
-  5476  0221  300F               	movlw	15
+  5476  0221  303C               	movlw	60
   5477  0222  064E               	xorwf	_tRTC,w
   5478  0223  1D03               	btfss	3,2
   5479  0224  2A26               	goto	u59_21
@@ -5501,12 +5501,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   5487  0227  01CE               	clrf	_tRTC
   5488  0228                     i1l1576:
   5489                           
-  5490                           ;RTC.c: 38: if (++tRTC.Minutes == 5){
+  5490                           ;RTC.c: 38: if (++tRTC.Minutes == 60){
   5491  0228  3001               	movlw	1
   5492  0229  00F2               	movwf	??_rtc_ISR
   5493  022A  0872               	movf	??_rtc_ISR,w
   5494  022B  07CF               	addwf	_tRTC+1,f
-  5495  022C  3005               	movlw	5
+  5495  022C  303C               	movlw	60
   5496  022D  064F               	xorwf	_tRTC+1,w
   5497  022E  1D03               	btfss	3,2
   5498  022F  2A31               	goto	u60_21
@@ -6350,7 +6350,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Thu Apr 27 22:00:55 2023
+Symbol Table                                                                                   Fri Aug 04 18:09:35 2023
 
                 __end_ofi1_rtc_Reset 03A2                          _IR_received 0056  
                __end_ofi1_tmr_TMR1En 03B3                                   l35 01F9  

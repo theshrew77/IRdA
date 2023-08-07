@@ -27,7 +27,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _tmr_TMR0Init `(v ~T0 @X0 0 ef ]
 "29
 [v _tmr_TMR0reset `(v ~T0 @X0 0 ef ]
-"22 tmr_TMR1.h
+"26 tmr_TMR1.h
 [v _tmr_TMR1Init `(v ~T0 @X0 0 ef ]
 "27 tmr_TMR0.h
 [v _accquisitionComplete `(uc ~T0 @X0 0 ef ]
@@ -5314,12 +5314,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LED.h: 20: void led_Ack(void);
 [; ;Oscillator.h: 17: void osc_Config1MHz(void);
 [; ;PowerManagement.h: 10: void pwrmgmt_DisablePeripherals(void);
-[; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1setPreload(uint16_t preload);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Init(void);
+[; ;tmr_TMR1.h: 27: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 28: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 29: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 30: void tmr_TMR1Reset(void);
 [; ;RTC.h: 13: typedef struct
 [; ;RTC.h: 14: {
 [; ;RTC.h: 15: uint8_t Seconds;

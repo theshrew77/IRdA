@@ -4,9 +4,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S655 . Seconds Minutes Hours ]
 "22
 [v _rtc_Reset `(v ~T0 @X0 0 ef ]
-"26 tmr_TMR1.h
+"30 tmr_TMR1.h
 [v _tmr_TMR1Reset `(v ~T0 @X0 0 ef ]
-"24
+"28
 [v _tmr_TMR1En `(v ~T0 @X0 0 ef ]
 "19 LED.h
 [v _led_Toggle `(v ~T0 @X0 0 ef ]
@@ -5099,12 +5099,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.h: 21: void rtc_SetHourDelay(uint8_t hours);
 [; ;RTC.h: 22: void rtc_Reset(void);
 [; ;RTC.h: 23: void rtc_ISR(void);
-[; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1setPreload(uint16_t preload);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Init(void);
+[; ;tmr_TMR1.h: 27: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 28: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 29: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 30: void tmr_TMR1Reset(void);
 [; ;LED.h: 15: void led_ConfigureLED(void);
 [; ;LED.h: 16: void led_Bright(void);
 [; ;LED.h: 17: void led_Dim(void);
@@ -5168,16 +5168,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.c: 24: void rtc_ISR(void){
 [e :U _rtc_ISR ]
 [f ]
-[; ;RTC.c: 36: if (++tRTC.Seconds == 15){
+[; ;RTC.c: 36: if (++tRTC.Seconds == 60){
 "36
-[e $ ! == -> =+ . _tRTC 0 -> -> 1 `i `uc `i -> 15 `i 659  ]
+[e $ ! == -> =+ . _tRTC 0 -> -> 1 `i `uc `i -> 60 `i 659  ]
 {
 [; ;RTC.c: 37: tRTC.Seconds = 0;
 "37
 [e = . _tRTC 0 -> -> 0 `i `uc ]
-[; ;RTC.c: 38: if (++tRTC.Minutes == 5){
+[; ;RTC.c: 38: if (++tRTC.Minutes == 60){
 "38
-[e $ ! == -> =+ . _tRTC 1 -> -> 1 `i `uc `i -> 5 `i 660  ]
+[e $ ! == -> =+ . _tRTC 1 -> -> 1 `i `uc `i -> 60 `i 660  ]
 {
 [; ;RTC.c: 39: tRTC.Minutes = 0;
 "39
@@ -5207,7 +5207,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;RTC.c: 46: }
 [; ;RTC.c: 47: }
 [; ;RTC.c: 48: }
-[; ;RTC.c: 54: }
-"54
+[; ;RTC.c: 52: }
+"52
 [e :UE 658 ]
 }

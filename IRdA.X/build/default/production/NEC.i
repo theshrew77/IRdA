@@ -7784,7 +7784,7 @@ void tmr_TMR0IncRollovers(void);
 void tmr_TMR0Init(void);
 void tmr_TMR0Dis(void);
 
-# 21 "tmr_TMR1.h"
+# 25 "tmr_TMR1.h"
 void tmr_TMR1setPreload(uint16_t preload);
 void tmr_TMR1Init(void);
 void tmr_TMR1SOSCpowerLevel(char level);
@@ -7916,7 +7916,7 @@ led_Ack();
 led_Bright();
 rtc_Reset();
 TMR1IntType = INT_DELAY;
-tmr_TMR1setPreload(0x8000);
+tmr_TMR1setPreload(0x8003);
 tmr_TMR1SOSCpowerLevel('l');
 rtc_SetHourDelay(hours);
 }

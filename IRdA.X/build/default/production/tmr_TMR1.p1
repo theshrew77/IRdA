@@ -5125,12 +5125,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 282: typedef uint32_t uintmax_t;
 [; ;stdint.h: 289: typedef int16_t intptr_t;
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
-[; ;tmr_TMR1.h: 21: void tmr_TMR1setPreload(uint16_t preload);
-[; ;tmr_TMR1.h: 22: void tmr_TMR1Init(void);
-[; ;tmr_TMR1.h: 23: void tmr_TMR1SOSCpowerLevel(char level);
-[; ;tmr_TMR1.h: 24: void tmr_TMR1En(void);
-[; ;tmr_TMR1.h: 25: void tmr_TMR1Dis(void);
-[; ;tmr_TMR1.h: 26: void tmr_TMR1Reset(void);
+[; ;tmr_TMR1.h: 25: void tmr_TMR1setPreload(uint16_t preload);
+[; ;tmr_TMR1.h: 26: void tmr_TMR1Init(void);
+[; ;tmr_TMR1.h: 27: void tmr_TMR1SOSCpowerLevel(char level);
+[; ;tmr_TMR1.h: 28: void tmr_TMR1En(void);
+[; ;tmr_TMR1.h: 29: void tmr_TMR1Dis(void);
+[; ;tmr_TMR1.h: 30: void tmr_TMR1Reset(void);
 [; ;Interrupts.h: 26: typedef enum{
 [; ;Interrupts.h: 27: INT_DELAY = 0,
 [; ;Interrupts.h: 28: INT_CANDLE = 1
@@ -5179,9 +5179,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 tmr_TMR1.c
 [v _TMR1preload `ui ~T0 @X0 1 s ]
 [i _TMR1preload
--> 32768 `ui
+-> 32771 `ui
 ]
-[; ;tmr_TMR1.c: 9: static uint16_t TMR1preload = 0x8000;
+[; ;tmr_TMR1.c: 9: static uint16_t TMR1preload = 0x8003;
 "11
 [v _tmr_TMR1setPreload `(v ~T0 @X0 1 ef1`ui ]
 {
