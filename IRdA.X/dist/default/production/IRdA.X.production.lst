@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Fri Aug 04 18:09:35 2023
+                                                                                               Sat Aug 26 14:39:55 2023
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16LF18313
@@ -2503,7 +2503,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2489  03B9                     __pidataCOMMON:
   2490                           
   2491                           ;initializer for _TMR1preload
-  2492  03B9  3403               	retlw	3
+  2492  03B9  3405               	retlw	5
   2493  03BA  3480               	retlw	128
   2494  0018                     _T0CON1bits	set	24
   2495  0019                     _TMR1L	set	25
@@ -4266,8 +4266,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   4252  0274  01F7               	clrf	_TMR1IntType
   4253  0275                     l1722:
   4254                           
-  4255                           ;NEC.c: 72: tmr_TMR1setPreload(0x8003);
-  4256  0275  3003               	movlw	3
+  4255                           ;NEC.c: 72: tmr_TMR1setPreload(0x8005);
+  4256  0275  3005               	movlw	5
   4257  0276  00F4               	movwf	tmr_TMR1setPreload@preload
   4258  0277  3080               	movlw	128
   4259  0278  00F5               	movwf	tmr_TMR1setPreload@preload+1
@@ -6350,7 +6350,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Fri Aug 04 18:09:35 2023
+Symbol Table                                                                                   Sat Aug 26 14:39:55 2023
 
                 __end_ofi1_rtc_Reset 03A2                          _IR_received 0056  
                __end_ofi1_tmr_TMR1En 03B3                                   l35 01F9  

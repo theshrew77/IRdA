@@ -5179,9 +5179,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "9 tmr_TMR1.c
 [v _TMR1preload `ui ~T0 @X0 1 s ]
 [i _TMR1preload
--> 32771 `ui
+-> 32773 `ui
 ]
-[; ;tmr_TMR1.c: 9: static uint16_t TMR1preload = 0x8003;
+[; ;tmr_TMR1.c: 9: static uint16_t TMR1preload = 0x8005;
 "11
 [v _tmr_TMR1setPreload `(v ~T0 @X0 1 ef1`ui ]
 {

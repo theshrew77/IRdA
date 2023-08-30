@@ -7694,7 +7694,7 @@ ON = 1,
 #pragma config CPD = OFF
 
 # 9 "tmr_TMR1.c"
-static uint16_t TMR1preload = 0x8003;
+static uint16_t TMR1preload = 0x8005;
 
 void tmr_TMR1setPreload(uint16_t preload){
 TMR1preload = preload;

@@ -7916,7 +7916,7 @@ led_Ack();
 led_Bright();
 rtc_Reset();
 TMR1IntType = INT_DELAY;
-tmr_TMR1setPreload(0x8003);
+tmr_TMR1setPreload(0x8005);
 tmr_TMR1SOSCpowerLevel('l');
 rtc_SetHourDelay(hours);
 }

@@ -5454,9 +5454,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;NEC.c: 71: TMR1IntType = INT_DELAY;
 "71
 [e = _TMR1IntType -> . `E4657 0 `uc ]
-[; ;NEC.c: 72: tmr_TMR1setPreload(0x8003);
+[; ;NEC.c: 72: tmr_TMR1setPreload(0x8005);
 "72
-[e ( _tmr_TMR1setPreload (1 -> 32771 `ui ]
+[e ( _tmr_TMR1setPreload (1 -> 32773 `ui ]
 [; ;NEC.c: 73: tmr_TMR1SOSCpowerLevel('l');
 "73
 [e ( _tmr_TMR1SOSCpowerLevel (1 -> -> 108 `ui `uc ]
